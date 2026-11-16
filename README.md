@@ -53,7 +53,7 @@ The development contains no `sorry` and no axioms. Each of the eighteen results 
 
 The formalization follows a LaTeX transcription of the typed thesis. Four statements are formalized with a correction:
 
-- **Lemma 2.1.** The recursion is y<sub>h+1</sub> ≤ c b<sup>h</sup> y<sub>h</sub><sup>1+ε</sup>, as in Ladyzhenskaya–Ural'tseva and as applied in (2.6). With b<sup>h+1</sup>, as printed, the threshold θ is insufficient.
+- **Lemma 2.1.** The recursion is y<sub>h+1</sub> ≤ c b<sup>h</sup> y<sub>h</sub><sup>1+ε</sup>, as in Ladyzhenskaya–Ural'tseva and as applied in (2.6). With b<sup>h+1</sup>, as printed, the lemma holds only after θ is replaced by a smaller threshold (equivalently, c by cb).
 - **Lemma 3.2(a).** The constant 1/16 is replaced by min{1/16, 2<sup>−1−4/p</sup>}. This equals 1/16 for p ≥ 4/3; the step −λ/4<sup>2/p</sup> < −λ/8 on p. 24 needs p > 4/3.
 - **Theorems 3 and 5.** τ ∈ (0, n), not [0, n). For τ = 0, part (i) would assert |∇u| ∈ L<sup>p,n</sup> = L<sup>∞</sup>, and the proof needs τ > 0 in Lemma 4.3.
 - **Theorem 7.** The distortion matrix satisfies K<sup>−2/n</sup>|ξ|² ≤ (τξ, ξ) ≤ K<sup>2(n−1)/n</sup>|ξ|²; the printed upper bound |ξ|² holds only when τ = I. The exponent β depends only on n, K and δ (the printed "k" is K).
@@ -64,21 +64,22 @@ Misprints that do not affect statements were corrected in the transcription. The
 
 | Thesis | Lean | Meaning |
 |---|---|---|
-| W<sup>1,p</sup>, W<sup>1,p</sup><sub>loc</sub>, W<sup>1,p</sup><sub>0</sub> | `MemW1pOn`, `MemW1pLocOn`, `MemW1pZeroOn` | with distributional gradient (`HasWeakGradientOn`) |
+| W<sup>1,p</sup>, W<sup>1,p</sup><sub>loc</sub>, W<sup>1,p</sup><sub>0</sub> | `MemW1pOn`, `MemW1pLocOn`, `MemW1pZeroOn` | with distributional gradient (`HasWeakGradientOn`). `HasWeakGradientOn` has no integrability clause of its own; since Lean gives a non-integrable function the integral 0, it has its intended meaning only together with the L<sup>p</sup> conditions of `MemW1pOn` or `MemW1pLocOn`, which is how it is always used |
 | weak solution of (1.1) | `IsWeakSolutionOn` | the integrand of (1.2) is integrable and its integral vanishes for all compactly supported W<sup>1,p</sup> test functions |
-| local minimum (§4) | `IsLocalMinimumOn` | |
+| local minimum (§4) | `IsLocalMinimumOn` | F(u) ≤ F(u + φ) on the support of every compactly supported W<sup>1,p</sup> function φ, both integrals finite. The finiteness of ∫ f(x, u+φ, ∇u+∇φ) is part of the definition; under (F1) it holds automatically, so there the definition agrees with the thesis |
 | (Q1)–(Q2), (Q3)–(Q5), (Q6) | `EllipticStructureQ12`, `EllipticStructureQ345`, `EllipticStructureQ6` | |
 | (F1), (F1)–(F3) | `VariationalGrowthF1`, `VariationalStructureF123` | |
 | Morrey, Campanato spaces | `MorreyBoundOn`, `CampanatoBoundOn` | with Ω(x, ρ) = Ω ∩ B<sub>ρ</sub>(x) |
 | C<sup>η</sup>, C<sup>1+β</sup> | `MemHolderOn`, `MemC1HolderOn` | Hölder classes on the closure of Ω′ |
-| K-quasiregular, distortion matrix τ | `IsQuasiregularOn`, `IsDistortionMatrix` | |
+| K-quasiregular, distortion matrix τ | `IsQuasiregularOn`, `IsDistortionMatrix` | \|DF\|<sup>n</sup> ≤ K J<sub>F</sub> a.e. with \|DF\| the operator norm, written as \|DF(x)ξ\|<sup>n</sup> ≤ K J<sub>F</sub>(x)\|ξ\|<sup>n</sup> for all ξ (so J<sub>F</sub> ≥ 0 a.e.); τ = J<sub>F</sub><sup>2/n</sup>(DF<sup>T</sup>DF)<sup>−1</sup> where J<sub>F</sub> > 0 and τ = I elsewhere |
 
 Points where the Lean statement makes a choice the reader should check:
 
 - **"Depends only on."** When the thesis says that a constant or a norm depends only on certain quantities, the Lean statement chooses it (`∃ C, ...`) after exactly those quantities and before the remaining data. For example, in Theorem 1 the constant is chosen from n, p and a bound r for γ<sub>1</sub>/γ<sub>0</sub>.
 - **Representatives.** Sobolev functions are known only up to null sets. Pointwise conclusions are therefore stated almost everywhere (the supremum in Theorem 1 is an essential supremum on B<sub>R/2</sub>). Hölder conclusions assert a representative w, equal to u almost everywhere, with the stated regularity.
-- **Measurability.** A and B are Carathéodory: measurable in x and continuous in (z, h).
-- **Domains.** In Theorems 3–7, Ω′ is a bounded Lipschitz domain (`IsBoundedLipschitzDomain`) with closure inside Ω, as Campanato's theorem requires.
+- **Measurability.** A and B (and f) are Carathéodory: measurable in x and continuous in (z, h). The continuity is required for every x, not only for almost every x. This is slightly stronger than the Carathéodory condition, but harmless: A may be modified on a null set of x.
+- **Domains.** In Theorems 3–7, Ω′ is a bounded Lipschitz domain (`IsBoundedLipschitzDomain`) with Ω′ ⋐ Ω (closure of Ω′ inside Ω), as Campanato's theorem requires.
+- **Theorem 7.** The statement assumes that Ω is connected and that τ is Hölder with one constant on all of Ω. Neither is a real restriction. Ω′ is connected (`IsBoundedLipschitzDomain` includes connectedness), so for a locally Hölder τ one applies the theorem with Ω replaced by a connected open neighbourhood of the closure of Ω′ with compact closure in Ω.
 - **Non-vacuity.** Model witnesses show that the structure hypotheses are satisfiable, including at ε = 0 and 1 < p < 2: `ModelFieldStructureQ12` (A(h) = |h|<sup>p−2</sup>h), `ModelDensityStructureF123` and `ModelQuasiregularIdentity`.
 
 ## Theorem 1
@@ -108,6 +109,8 @@ theorem GradientSupEstimate :
               ≤ C / R ^ (n : ℝ) * ∫ y in Metric.ball x₀ R, (ε + ‖g y‖ ^ 2) ^ (p / 2) := ...
 ```
 
+The hypothesis A(0) = 0 loses no generality, since div A(∇u) = 0 is unchanged when the constant A(0) is subtracted from A.
+
 The other statements have the same shape: the cited results first, then the constants, then the data. They are longer; see the files linked above.
 
 ## Cited results
@@ -120,7 +123,7 @@ The cited results are predicates, stated in the file of the same name. Each is a
 | (C2) monotone operators | `CitedDirichletW1p` | solvability of the Dirichlet problem for (3.1) on a ball with W<sup>1,p</sup> boundary data |
 | (C3) [DB, Lemma 5.1], [T, Thm 3] | `CitedDirichletHolder` | existence and regularity in Lemma 3.1; uniqueness and the oscillation bound are proved |
 | (C4) [G], [GG2], [LU] | `CitedHolderOscillationMinimum`, `CitedHolderOscillationSolution` | De Giorgi–Ladyzhenskaya–Ural'tseva Hölder estimates for bounded minima (p. 31) and bounded solutions ((5.1)) |
-| (C5) Campanato [G, ch. III] | `CitedCampanatoEmbedding` | ℒ<sup>p,λ</sup> ⊂ C<sup>0,(λ−n)/p</sup> on a bounded Lipschitz domain, n < λ < n + p |
+| (C5) Campanato [G, ch. III] | `CitedCampanatoEmbedding` | ℒ<sup>p,λ</sup> ⊂ C<sup>0,(λ−n)/p</sup> on a bounded Lipschitz domain, n < λ < n + p, with a bound on the Hölder constant. The Lean form also assumes the L<sup>p</sup> bound (`MorreyBoundOn` with λ = 0) with the same constant; this only weakens the hypothesis |
 | (C6) | `CitedSobolevPoincareBall` | Sobolev–Poincaré inequality on balls with exponent n/(n−1) |
 | (C7) [BI], [R], [GLM] | `CitedQuasiregularBasics` | a K-quasiregular map has a continuous representative; J<sub>F</sub> > 0 a.e. unless F is a.e. constant; each component solves (5.11) and minimizes ∫(τ∇v, ∇v)<sup>n/2</sup> |
 
