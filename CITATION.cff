@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite the thesis and this repository."
+title: "Lean 4 formalization of: Regularity of the gradient for a class of nonlinear possibly degenerate elliptic equations"
+type: software
+license: Apache-2.0
+authors:
+  - family-names: Manfredi
+    given-names: Juan J.
+    affiliation: University of Pittsburgh
+preferred-citation:
+  type: thesis
+  title: "Regularity of the gradient for a class of nonlinear possibly degenerate elliptic equations"
+  authors:
+    - family-names: Manfredi
+      given-names: Juan J.
+  institution:
+    name: "Washington University in St. Louis"
+  thesis-type: "Ph.D. thesis"
+  year: 1986

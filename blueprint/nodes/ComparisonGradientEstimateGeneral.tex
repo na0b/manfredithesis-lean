@@ -1,0 +1,574 @@
+\begin{lemma}[Lemma 5.1, with the decay rate of (4.17) of the thesis]
+Let $n\ge2$, $p>1$ and let $\mu,\gamma_0,\gamma_1,\gamma_2,\gamma_3,\gamma_4>0$
+with $\gamma_0\le\gamma_1$ (``the data'' of \S5), suppose the
+Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}), and assume the cited Dirichlet result (C3)
+with H\"older boundary data (\noderef{CitedDirichletHolder}) in the universal
+form described below.  Then (A) and (B) below both hold.
+
+\medskip
+\noindent\textbf{(A) The estimate of Lemma 5.1.}  Let $M\ge0$, let $d>0$ and
+let $\sigma\colon\R\to\R$.  Then there exist a nonnegative, bounded,
+continuous, increasing function $\sigma_2$ with $\sigma_2(0)=0$ and a number
+$R_1>0$, both depending only on the data, $M$, $d$ and $\sigma$, such that the
+following holds.  Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open,
+let $\Omega'$ be open and bounded with $\overline{\Omega'}\subseteq\Omega$ and
+$d\le d(\Omega',\partial\Omega)$ (i.e.\ $d\le|x-y|$ for every $x\in\Omega'$ and
+every $y\notin\Omega$).  Let $A$ and $B$ satisfy
+(Q1) of the thesis--(Q6) of the thesis on $\Omega$ with these parameters and modulus
+$\sigma$ (\noderef{EllipticStructureQ12}, \noderef{EllipticStructureQ345},
+\noderef{EllipticStructureQ6}), and assume the cited H\"older estimates (C4)
+(\noderef{CitedHolderOscillationSolution}).  Let
+$u\in W^{1,p}(\Omega)\cap L^\infty(\Omega)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}) and $|u|\le M$ a.e.\ be a weak solution of (1.1) of the thesis
+in $\Omega$ (\noderef{IsWeakSolutionOn}).  Let $x_0\in\Omega'$ and
+$0<R\le R_1$ with $\overline B_R(x_0)\subseteq\Omega$, and let $v$ be the
+comparison map for $u$ on $B_R(x_0)$ with the frozen operator
+$h\mapsto A(x_0,U(x_0),h)$ (\noderef{FrozenComparisonOn}), i.e.\ the solution of
+(5.2) of the thesis, with weak gradient $g_v$, continuous extension $V$ and
+continuous representative $U$ of $u$ on $\overline B_R(x_0)$.  Put $w=u-v$, so
+$\nabla w=g-g_v$.  Then
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\;\le\;\sigma_2(R)\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\]
+
+\medskip
+\noindent\textbf{(B) The decay rate.}  Let $0<\alpha\le1$ and $\delta>0$.  Then
+there is $\delta'>0$, depending only on the data, $\alpha$ and $\delta$, with
+the following property.  Let $M\ge0$, let $d>0$, let $\sigma\colon\R\to\R$, let
+$c_\sigma>0$ and $C_1\ge0$, and suppose the modulus obeys the H\"older
+condition that Theorem~Theorem~6 of the thesis assumes in addition (paper l.~1566--1567),
+\[
+\sigma(t)\le c_\sigma t^{\delta}\qquad(t\ge0).
+\]
+Then there is $R_1'>0$, depending only on the data,
+$\alpha,\delta,c_\sigma,C_1,M,d$ and $\sigma$, such that the following holds.
+Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open, let $\Omega'$ be
+open and bounded with $\overline{\Omega'}\subseteq\Omega$ and $d\le|x-y|$ for
+every $x\in\Omega'$ and every $y\notin\Omega$.  Let $A$ and $B$ satisfy
+(Q1) of the thesis--(Q6) of the thesis on $\Omega$ with these parameters and modulus
+$\sigma$ (\noderef{EllipticStructureQ12}, \noderef{EllipticStructureQ345},
+\noderef{EllipticStructureQ6}), and assume the cited H\"older estimates (C4)
+(\noderef{CitedHolderOscillationSolution}).  Let
+$u\in W^{1,p}(\Omega)\cap L^\infty(\Omega)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}) and $|u|\le M$ a.e.\ be a weak solution of (1.1) of the thesis
+in $\Omega$ (\noderef{IsWeakSolutionOn}).  Let $x_0\in\Omega'$ and
+$0<R\le R_1'$ with $\overline B_R(x_0)\subseteq\Omega$, and let $v,V,g_v,U$ be
+as in (A), i.e.\ let the frozen comparison bundle
+$\mathrm{FrozenComparisonOn}(n,p,x_0,R,A(x_0,U(x_0),\cdot),u,U,g,v,V,g_v)$ hold.
+Suppose in addition that the representative $U$ is H\"older continuous of
+exponent $\alpha$ on the closed ball with constant $C_1$:
+\[
+|U(x)-U(y)|\le C_1|x-y|^{\alpha}
+\qquad\bigl(x,y\in\overline B_R(x_0)\bigr).
+\]
+Then
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\;\le\;R^{\delta'}\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\]
+
+\medskip
+\noindent\textbf{Why (B) is a second clause and not a strengthening of (A), and
+why $\alpha$ and $\delta$ are bound inside it.}  Lemma 5.1 as the thesis states
+it at l.~1531--1537 assumes no rate for the modulus of (Q6) of the thesis: ``there
+exist a bounded continuous increasing function $\sigma_2(t)$ such that
+$\sigma_2(0)=0$ and $R_1>0$ depending only on the data and
+$d(\Omega',\partial\Omega)$''.  Neither $\alpha$ nor $\delta$ occurs there, and
+$\delta$ is the exponent of the H\"older condition that only
+Theorem~Theorem~6 of the thesis adds.  So $\alpha$ and $\delta$ must not be in scope in
+(A): they are bound at the head of (B) only, and $\sigma_2$ and $R_1$
+accordingly depend on exactly the quantities the thesis lists ($\sigma$ being
+named because the modulus is a parameter of this lemma rather than fixed once
+and for all).  Theorem 5 (\noderef{SolutionMorreyRegularity}) consumes (A) and
+nothing else; Theorem 6 consumes (B).
+
+\medskip
+\noindent\textbf{On the dependence of $\delta'$.}  Theorem~Theorem~6 of the thesis says
+$\lambda_0$ and $\beta=\lambda_0/p$ ``depend exclusively on the data'', while
+the \emph{norm} depends also on $d(\Omega',\partial\Omega)$ and
+$\|u\|_{W^{1,p}(\Omega)}$; its \S4 counterpart states the same list explicitly
+at l.~1359--1361 and adds $\delta$ (``for a certain $\delta'>0$, depending only
+on $\delta,\lambda,\Lambda,\nu_0,\nu_1,n,p$ and $a$'').  So $\delta'$ depends on
+the data, on $\delta$ and on $\alpha$ --- $\alpha$ being ours rather than the
+thesis', because we make the H\"older exponent a bound parameter --- and must
+not depend on $M$, on $d$, on $\sigma$ or on $c_\sigma$; it is accordingly bound
+before all four.  The radius $R_1'$ is bound after $c_\sigma$ and $C_1$ and may
+depend on everything.
+
+\medskip
+\noindent\textbf{Why the H\"older exponent $\alpha$ is a parameter and the
+H\"older datum a hypothesis.}  The thesis derives $\sigma_0$ and $\sigma_1$ ---
+printed at l.~1524--1528 --- from a bound
+$\sup_{B_R}|u(x_0)-u(x)|\le C_1R^{\alpha}$ in which $\alpha$ is the exponent of
+the cited H\"older estimates (C4).  That exponent is \emph{not} available here
+with the dependence $\delta'$ needs: (C4) (\noderef{CitedHolderOscillationSolution})
+binds $M$ before its exponent, so an $\alpha$ extracted from (C4) inside this
+lemma would be a function of $M$, and so would $\delta'$.  The paper's own route
+avoids this, because Theorem~Theorem~6 of the thesis is stated in the situation of
+Theorem~Theorem~5 of the thesis and Theorem 5's part (iii)
+(\noderef{SolutionMorreyRegularity}) gives $u\in C^\eta$ for \emph{every}
+$\eta<1$: a consumer may therefore fix $\alpha$ --- $\alpha=\tfrac12$ serves ---
+and absorb the resulting constant into $C_1$.  Accordingly $\alpha$ is bound at
+the head of (B), the $C^\alpha$ datum appears only inside (B), and $C_1$ is
+bound with $c_\sigma$, before $R_1'$ and after $\delta'$.  The datum is imposed
+on the continuous representative $U$ and not on $u$: $u$ is a $W^{1,p}$
+function, so a pointwise H\"older bound on it is not what Theorem 5 (iii)
+delivers, whereas \noderef{FrozenComparisonOn} already designates $U$ as the
+continuous representative and this lemma already uses the value $U(x_0)$ in the
+frozen operator.
+
+\medskip
+\noindent\textbf{Two cited results, and why they are at the head.}  The proof
+instantiates Lemma~Lemma~3.1 of the thesis (\noderef{DirichletProblemRestricted}) at the
+normalised frozen operator, and that node requires two cited results of the
+paper's Note: the Sobolev--Poincar\'e inequality on balls (C6)
+(\noderef{CitedSobolevPoincareBall}), which is a statement about $n$ alone, and
+the cited Dirichlet result (C3) with H\"older boundary data
+(\noderef{CitedDirichletHolder}), which is carried here for \emph{every} field
+$A'\colon\R^n\to\R^n$ and all parameters $\varepsilon',\gamma_0',\gamma_1'$ with
+$\gamma_0'>0$ and $\gamma_1'>0$.  The universal shape is forced: the field (C3)
+is applied to is the normalised frozen operator $\widetilde A=A^0-A^0(0)$, which
+is produced inside the proof at a centre and a value chosen there, so no single
+instance can be named in the statement.  Both clauses are propositions
+mentioning only $n$ and $p$, both of which are already bound above them, and
+each is universally quantified over its remaining parameters; so placing them at
+the head leaves the dependence lists of $\sigma_2$, $R_1$, $\delta'$ and $R_1'$
+exactly as stated above, and no ``depending only on'' phrase changes.  This is
+the opposite of what would happen if a genuine \emph{parameter} were hoisted:
+$\alpha$ and $\delta$ are real numbers that the constants may be functions of,
+which is why they are bound inside clause (B) and not at the head.
+\end{lemma}
+\begin{proof}
+Throughout, $B_R$ abbreviates $B_R(x_0)$, $A^0$ the frozen field
+$h\mapsto A(x_0,U(x_0),h)$, $\widetilde A$ its normalisation
+$h\mapsto A^0(h)-A^0(0)$, and $w$ the difference $u-v$, whose weak gradient on
+$B_R$ is $g-g_v$.  Write
+\[
+W=\int_{B_R}\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}|g-g_v|^2dx,
+\qquad
+J=\int_{B_R}\bigl(1+|g|^2\bigr)^{\frac p2}dx,
+\qquad
+N=\int_{B_R}|g-g_v|^p\,dx .
+\]
+
+\medskip
+\noindent\emph{Step 0: the two constants fixed before everything else.}  Apply
+\noderef{SolutionFrozenMonotonicityIntegral} with the present $n$, $p$ and
+$r=\gamma_1/\gamma_0>0$ --- its hypotheses before the constant are $2\le n$,
+$1<p$ and $0<r$ --- and let $C_M>0$ be the constant it produces; it depends only
+on $n,p$ and $\gamma_1/\gamma_0$.  Apply \noderef{WeightedRemainderAbsorption}
+with the parameter $p$, whose only hypothesis before the constants is $1<p$, and
+let $b_0>0$ and $c>0$ be the threshold and the constant it produces, both
+depending only on $p$.  Put $K=1/(\gamma_0C_M)>0$.
+
+\medskip
+\noindent\emph{Step 1: a split that keeps the quantifier order of both clauses
+honest.}  Clause (A) asserts $\sigma_2$ and $R_1$, and clause (B) asserts
+$R_1'$, \emph{before} the inner block in which
+$\mathrm{EllipticStructureQ6}\;n\;p\;\Omega\;A\;\sigma$
+(\noderef{EllipticStructureQ6}) and
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$
+(\noderef{CitedHolderOscillationSolution}) are assumed; (C6) and (C3) were
+hoisted to the head of the lemma, but those two were not.  Yet Step 8 below
+builds all five properties of $\sigma_2$ out of the four $\sigma$-clauses of
+\noderef{EllipticStructureQ6}, Step 7 builds $\alpha$ and $C_1$ out of
+\noderef{CitedHolderOscillationSolution}, $R_1$ comes from continuity of
+$\sigma_1$ at $0$ --- again a $\sigma$-clause consequence --- and (9c)'s $R_1'$
+inherits that dependence.  The two are reconciled by splitting on propositions
+that mention only quantities already bound.
+
+Two such propositions are available.  First, the conjunction of the four
+$\sigma$-clauses of \noderef{EllipticStructureQ6} --- \texttt{sigmabdd},
+\texttt{sigmacont}, \texttt{sigmamono} and \texttt{sigmazero} --- which assert
+respectively that $\sigma$ is bounded above, continuous, nondecreasing and zero
+at $0$.  Each of the four mentions \emph{only} $\sigma$, and in both clauses
+$\sigma$ is bound before the witnesses: in clause (A) before $\sigma_2$ and
+$R_1$, in clause (B) before $R_1'$.  (The fifth clause, \texttt{Q6}, does
+mention $\Omega$ and $A$ and is therefore \emph{not} decidable here; it is used
+only inside the inner block, in Step 5's freezing estimate, where $\Omega$ and
+$A$ are in scope.)  Second,
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$, a proposition in $n$ and $p$
+alone --- both bound at the head of the lemma --- since all of its remaining
+parameters are universally quantified inside it.
+
+\emph{Clause \textup{(A)}.}  Decide the conjunction of the four
+$\sigma$-clauses and of $\mathrm{CitedHolderOscillationSolution}\;n\;p$ before
+choosing $\sigma_2$ and $R_1$.  If it \emph{fails}, then for every $\Omega$ and
+$A$ the hypothesis
+$\mathrm{EllipticStructureQ6}\;n\;p\;\Omega\;A\;\sigma$ is false, or
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$ is; either way the inner
+implication of clause (A) has a false hypothesis and is satisfied by any choice,
+and we take $\sigma_2\equiv0$ and $R_1=1$.  These meet the five demands the
+statement makes: $R_1=1>0$; $\sigma_2$ is bounded (by $0$), continuous,
+nondecreasing and nonnegative on all of $\R$; and $\sigma_2(0)=0$.  No
+dependence list is affected, $0$ and $1$ depending on nothing at all.  If it
+\emph{holds}, we fix the four $\sigma$-clauses and
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$ once here and run Steps 2--9
+inside this branch; every constant produced below is then produced under them,
+and their dependence lists are exactly as recorded, these hypotheses
+contributing no new quantity.
+
+\emph{Clause \textup{(B)}.}  Its rate exponent $\delta'$ needs no split: it is
+produced by \noderef{ModulusPowerDecayTransfer} from $p,\alpha,\delta$ alone,
+all bound before it.  Its radius $R_1'$ does need one, and the four
+$\sigma$-clauses suffice: decide them before choosing $R_1'$, take $R_1'=1$ in
+the negative branch --- where $\mathrm{EllipticStructureQ6}$ again fails for
+every $\Omega$ and $A$, so the inner implication is vacuous --- and run Steps
+2--9 in the positive branch.  Clause (B) does not need the second split: it
+assumes its own H\"older datum at its own $\alpha$ and derives nothing from
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$, which it carries only because
+the inner hypothesis list is shared with clause (A).
+
+\medskip
+\noindent\emph{Step 2: the two moduli, fixed before the data.}  Let
+$\sigma$ be given with the four $\sigma$-clauses, say $\sigma\le C_\sigma$, and
+let $\alpha$ and $C_1$ with $0<\alpha\le1$ and $C_1\ge0$ be given --- in clause
+(A) they come from Step 7 below, in clause (B) they are hypotheses of the clause.
+Apply \noderef{SolutionComparisonModulus} with the present $p$, that $\alpha$
+and $C_1$, with $K=1/(\gamma_0C_M)$, with $\gamma_4$ and with $C_\sigma$ and
+$\sigma$.  Its hypotheses are $1<p$, $0<\alpha$, $\alpha\le1$, $0\le C_1$,
+$0<K$ (as $\gamma_0,C_M>0$), $0<\gamma_4$ and the four $\sigma$-clauses, all
+present.  It produces $\sigma_0,\sigma_1$ that are nonnegative, bounded,
+continuous and nondecreasing on all of $\R$ with
+$\sigma_0(0)=\sigma_1(0)=0$, and that satisfy
+\[
+\sigma_0(t)=K\Bigl(\frac{p-1}p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
++4\gamma_4C_1t^{\alpha}\Bigr),
+\qquad
+\sigma_1(t)=K\cdot\frac1p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
+\tag{9.1}
+\]
+for $0<t\le1$.  \emph{These are the thesis' own explicit formulas at
+l.~1524--1528}, with its $C(p)$ written $C_M$ and with the constant $4$ in place
+of its printed $2$ in the $\gamma_4$ term; the latter is Step 6's correction,
+authorised by the source's adjudicated \texttt{CHECK} at l.~1514 and discussed
+there.
+
+Now fix the data $\varepsilon,\Omega,\Omega',A,B,u,U,g,x_0,R,v,V,g_v$ with all
+the hypotheses of the inner block, together with $0<R\le1$ and the H\"older
+datum
+\[
+|U(x)-U(x_0)|\le C_1R^{\alpha}\qquad\bigl(x\in\overline B_R\bigr).
+\tag{9.2}
+\]
+From $\overline B_R\subseteq\Omega$ we get $B_R\subseteq\Omega$ and
+$x_0\in\Omega$, and $|B_R|<\infty$ with $|B_R|>0$ (Preamble: the volume of a
+ball).  Restricting the two $L^p$ memberships of \noderef{MemW1pOn} from
+$\Omega$ to $B_R$ gives $u,g\in L^p(B_R)$, clause (2) of
+\noderef{FrozenComparisonOn} gives $g_v\in L^p(B_R)$, and $g-g_v\in L^p(B_R)$ as
+their difference.
+
+\medskip
+\noindent\emph{Step 3: the frozen field, before and after normalisation.}
+Apply \noderef{FrozenSolutionStructureQ12} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1$ --- its hypotheses are $2\le n$, $1<p$,
+$0\le\varepsilon$, $0<\gamma_0$ and $0<\gamma_1$, the last from
+$0<\gamma_0\le\gamma_1$ --- the open set $\Omega$, the field $A$, the modulus
+$\sigma$, the point $x_1=x_0\in\Omega$ and the value $z_1=U(x_0)$, together with
+the \noderef{EllipticStructureQ12} and \noderef{EllipticStructureQ6} hypotheses
+of the present lemma.  It gives \emph{both}
+\[
+\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;
+\mathrm{univ}\;A^0
+\qquad\text{and}\qquad
+\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;
+\mathrm{univ}\;\widetilde A
+\]
+(\noderef{EllipticStructureQ12}).  \emph{Both are used, and for different
+things}: the un-normalised bundle feeds Step 4's monotonicity, where only the
+difference $A^0(a)-A^0(b)$ appears and the constant cancels, while the
+normalised one feeds the dual memberships of Step 3 and the comparison of Step
+7, each of which is stated for the normalised field.  This step is also where
+pm-0034's gap is closed: the (Q1) and (Q2) clauses are almost-everywhere in $x$
+and so say nothing at the single frozen point $x_0$ until upgraded, and the
+upgrade --- which consumes (Q6) of the thesis --- is inside that node.
+
+\medskip
+\noindent\emph{Step 4: the Lebesgue data of the two pairings.}  Apply
+\noderef{SolutionWeakFormDualData} with the present
+$n,p,\varepsilon,\mu,\gamma_0,\dots,\gamma_4$, the open set $\Omega$, the field
+$A$, the right-hand side $B$, the pair $(u,g)$ and the measurable set $B_R$.
+Its hypotheses are $2\le n$, $1<p$, $0\le\varepsilon\le1$, $0<\gamma_0$,
+$0<\gamma_1$, $0<\gamma_3$, $0<\gamma_4$, the two structure bundles
+\noderef{EllipticStructureQ12} and \noderef{EllipticStructureQ345}, the
+measurability of $B_R$, the inclusion $B_R\subseteq\Omega$, $|B_R|<\infty$ and
+$u,g\in L^p(B_R)$, all present or recorded in Step 2.  It gives
+\[
+A(\cdot,u,g)\in L^{p/(p-1)}(B_R)
+\qquad\text{and}\qquad
+B(\cdot,u,g)\in L^1(B_R).
+\]
+Apply \noderef{FrozenFieldDualMemLp} twice, with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1$, with $A^0$ in the role of its $A$, with
+$B_R$ in the role of its $S$, and with $g$ and then $g_v$ in the role of its
+$g_v$.  Its hypotheses are $2\le n$, $1<p$, $0\le\varepsilon\le1$, $0<\gamma_0$,
+$0<\gamma_1$, the bundle for the \emph{normalised} field $\widetilde A$ on
+$\mathrm{univ}$ --- which is exactly the second conclusion of Step 3, so no
+transfer is needed --- $|B_R|<\infty$, and the relevant $L^p(B_R)$ membership.
+It gives
+\[
+A^0(g)\in L^{p/(p-1)}(B_R)
+\qquad\text{and}\qquad
+A^0(g_v)\in L^{p/(p-1)}(B_R).
+\]
+Each pairing of one of these three with $g-g_v\in L^p(B_R)$ is then integrable
+on $B_R$ by H\"older's inequality at the conjugate exponents $\frac p{p-1}$ and
+$p$ (Preamble), and that is what licenses every splitting of an integral below.
+
+\medskip
+\noindent\emph{Step 5: the comparison bound for $v$, and the essential bound on
+$w$.}  Put $M_\pm=U(x_0)\pm C_1R^{\alpha}$.  On the sphere $S_R$ we have
+$V=U$ by clause (8) of \noderef{FrozenComparisonOn}, and $S_R\subseteq\overline
+B_R$, so (9.2) gives $M_-\le V\le M_+$ there.  Apply
+\noderef{BallSolutionConstantBounds} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1$, with $A^0$ in the role of its $A$, with the
+centre $x_0$ and radius $R$, with $v$, $V$, $g_v$ in the roles of its $v$, $V$,
+$g_v$, and with $M_-$, $M_+$ in the roles of its $m$, $M$.  Its hypotheses are
+$2\le n$, $1<p$, $0\le\varepsilon$, $0<\gamma_0$, $\gamma_0\le\gamma_1$;
+\noderef{CitedSobolevPoincareBall}, a hypothesis of the present lemma; $0<R$;
+the bundle for the normalised field from Step 3; the weak-solution property
+$\mathrm{IsWeakSolutionOn}\;n\;p\;B_R\;A^0\;0\;v\;g_v$
+(\noderef{IsWeakSolutionOn}), which is clause (1) of
+\noderef{FrozenComparisonOn} verbatim --- \emph{for $A^0$, not for
+$\widetilde A$}, which is why no transfer of the weak form is needed;
+$v\in W^{1,p}(B_R)$ with weak gradient $g_v$ (\noderef{MemW1pOn}), clause (2);
+$V$ continuous on $\overline B_R$, clause (6); $V=v$ on $B_R$, clause (7); and
+the boundary trapping just shown.  \emph{That node performs the normalisation
+internally}, taking the bundle for $\widetilde A$ and the weak form for $A^0$,
+so pm-0048's transfer argument is not needed here and is not reproduced.  Its
+conclusion is
+\[
+M_-\le v\le M_+\quad\text{a.e. on }B_R,
+\qquad\text{that is}\qquad
+|v-U(x_0)|\le C_1R^{\alpha}\quad\text{a.e. on }B_R .
+\tag{9.3}
+\]
+Since $U=u$ at every point of $B_R$ by clause (5) of
+\noderef{FrozenComparisonOn}, (9.2) also gives
+$|u(x)-U(x_0)|\le C_1R^{\alpha}$ for every $x\in B_R$.  Adding this to (9.3)
+through the single value $U(x_0)$,
+\[
+|w|=|u-v|\le2C_1R^{\alpha}\le4C_1R^{\alpha}\qquad\text{a.e. on }B_R ,
+\tag{9.4}
+\]
+the last step because $C_1R^{\alpha}\ge0$.  \emph{The route through
+\noderef{DirichletProblemRestricted} that this node's earlier sketch names is
+circular}: that node's uniqueness clause demands
+$\mathrm{ContDiffOn}\;\R\;1\;v$ on $B_R$ and
+$\mathrm{MemHolderOn}\;n\;\beta\;(\overline B_R)\;V$ of the competitor, which
+\noderef{FrozenComparisonOn} does not supply, and
+\noderef{CitedDirichletHolder} states its regularity only of the solution
+\emph{it} produces, so using it to certify $v$ presupposes that $v$ is that
+solution.  We compare $v$ with constants instead, which is what the citation
+above does.  In particular the thesis' (5.3) of the thesis,
+$\operatorname*{osc}(v,B_R)\le\operatorname*{osc}(u,B_R)$, is \emph{not} needed
+as an intermediate: (9.3) bounds $v$ directly.
+
+\medskip
+\noindent\emph{Step 6: \textup{(5.4)}, \textup{(5.5)}, \textup{(5.7)} and
+\textup{(5.8)}.}  Each of the four displays of the source's derivation is now a
+single citation.
+
+\emph{(5.4) of the thesis.}  Apply \noderef{SolutionFrozenTestIdentity} with the
+present $n,p$, the open set $\Omega$, the field $A$, the right-hand side $B$,
+the pair $(u,U,g)$, the centre $x_0$, the radius $R$, the bound
+$T=4C_1R^{\alpha}$ and the comparison datum $(v,V,g_v)$.  Its hypotheses are
+$1\le n$ (from $2\le n$), $1<p$, $\Omega$ open, $0<R$, $B_R\subseteq\Omega$, the
+weak-solution property \noderef{IsWeakSolutionOn}, the comparison datum
+\noderef{FrozenComparisonOn}, the three $L^{p/(p-1)}$ memberships and the $L^1$
+membership from Step 4, $g-g_v\in L^p(B_R)$ from Step 2, $T\ge0$, and the
+essential bound (9.4).  It gives
+\[
+I_1\ \le\ I_2+I_3,
+\qquad
+I_1=\int_{B_R}\bigl(A^0(g)-A^0(g_v),g-g_v\bigr)dx,
+\]
+with $I_2=\bigl|\int_{B_R}(A(x,u,g)-A^0(g),g-g_v)dx\bigr|$ and
+$I_3=\bigl|\int_{B_R}B(x,u,g)\,w\,dx\bigr|$.
+
+\emph{(5.5) of the thesis.}  Apply the conclusion of
+\noderef{SolutionFrozenMonotonicityIntegral}, whose constant $C_M$ was fixed in
+Step 0, at the present $\varepsilon,\gamma_0,\gamma_1$, the field $A^0$, the
+centre $x_0$, the radius $R$ and the pair $(g,g_v)$.  Its remaining hypotheses
+are $0\le\varepsilon$, $0<\gamma_0$, $\gamma_1\le(\gamma_1/\gamma_0)\gamma_0$ ---
+an equality, since $\gamma_0\ne0$ --- $0<R$, the un-normalised bundle from Step
+3, the three $L^p(B_R)$ memberships from Step 2, and the integrability of
+$x\mapsto(A^0(g)-A^0(g_v),g-g_v)$, which is the H\"older pairing recorded at the
+end of Step 4.  It gives
+\[
+C_M\gamma_0\,W\ \le\ I_1 .
+\]
+
+\emph{(5.6) of the thesis--(5.7) of the thesis.}  Apply
+\noderef{SolutionFreezingErrorBound} with the present $n,p$, the open set
+$\Omega$, the field $A$, the modulus $\sigma$, the function $u$, the fields $g$
+and $g_v$, the point $x_0$, the value $z_0=U(x_0)$, the radius $R$ and the pair
+$(\alpha,C_1)$.  Its hypotheses are $1\le n$, $1<p$, the bundle
+\noderef{EllipticStructureQ6}, $x_0\in\Omega$, $0<R$, $B_R\subseteq\Omega$,
+$0<\alpha$, $0\le C_1$, the pointwise bound
+$|u(x)-U(x_0)|\le C_1R^{\alpha}$ on $B_R$ from Step 5, $g,g-g_v\in L^p(B_R)$,
+and the two memberships $A(\cdot,u,g),A^0(g)\in L^{p/(p-1)}(B_R)$ from Step 4.
+It gives
+\[
+I_2\ \le\ \sigma\bigl(R+C_1R^{\alpha}\bigr)
+\Bigl\{\frac{p-1}p\,J+\frac1p\,N\Bigr\}.
+\]
+
+\emph{(5.8) of the thesis.}  Apply \noderef{SolutionRightHandSideBound} with the
+present $n,p,\varepsilon,\mu,\gamma_2,\gamma_3,\gamma_4$, the open set
+$\Omega$, the field $A$, the right-hand side $B$, the pair $(u,v)$, the field
+$g$, the centre $x_0$, the radius $R$ and the pair $(\alpha,C_1)$.  Its
+hypotheses are $1\le n$, $1<p$, $0<\gamma_4$, $0<R$, $B_R\subseteq\Omega$,
+$0<\alpha$, $0\le C_1$, the bundle \noderef{EllipticStructureQ345},
+$g\in L^p(B_R)$, the integrability $B(\cdot,u,g)\in L^1(B_R)$ from Step 4, and
+the essential bound (9.4).  It gives
+\[
+I_3\ \le\ 4C_1\gamma_4R^{\alpha}\,J .
+\]
+\emph{On the constant $4$}: the source's printed (5.8) of the thesis carries
+$2C_1\gamma_4$, and its adjudicated \texttt{CHECK} at l.~1514 records that the
+printed chain for $|w|$ --- through a point of $\partial B_R$ --- really yields
+$4C_1R^{\alpha}$.  Step 5 above reaches the \emph{sharper} bound
+$2C_1R^{\alpha}$, because (9.3) lets $u$ and $v$ be compared through the single
+value $U(x_0)$ rather than through a boundary point; we weaken it to
+$4C_1R^{\alpha}$ in (9.4) and carry $4$ into $\sigma_0$, which is the constant
+the absorption step below and the moduli (9.1) are written with.  Nothing in the
+proof asserts the printed inequality, and the slack is harmless because
+$\sigma_0$ absorbs it.
+
+\medskip
+\noindent\emph{Step 7: \textup{(5.9)}.}  Chain the four displays of Step 6:
+\[
+C_M\gamma_0\,W\ \le\ I_1\ \le\ I_2+I_3\ \le\
+\sigma\bigl(R+C_1R^{\alpha}\bigr)\Bigl\{\frac{p-1}p\,J+\frac1p\,N\Bigr\}
++4C_1\gamma_4R^{\alpha}\,J ,
+\]
+and regroup the right-hand side as
+$\bigl(\frac{p-1}p\sigma(R+C_1R^{\alpha})+4\gamma_4C_1R^{\alpha}\bigr)J
++\bigl(\frac1p\sigma(R+C_1R^{\alpha})\bigr)N$.  Multiplying by
+$K=1/(\gamma_0C_M)>0$ and reading off (9.1) at $t=R$, which is legitimate
+because $0<R\le1$, gives the thesis' (5.9) of the thesis,
+\[
+W\ \le\ \sigma_0(R)\,J+\sigma_1(R)\,N .
+\tag{9.5}
+\]
+
+\medskip
+\noindent\emph{Step 8: the absorption, and clause \textup{(A)}.}  Since
+$\sigma_1$ is continuous with $\sigma_1(0)=0$ and $b_0>0$, there is $\rho>0$
+with $\sigma_1(\rho)\le b_0$.  In clause (A), take
+\[
+\sigma_2(t)=c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}+\sigma_1(t)^{\frac p2}\bigr),
+\qquad
+R_1=\min\{R_0,1,\rho\},
+\]
+where $R_0$ is the radius produced in Step 9 below.  The five demands the
+statement makes of $\sigma_2$ follow from the corresponding properties of
+$\sigma_0$ and $\sigma_1$ from Step 2, together with the facts that
+$s\mapsto s^{p/2}$ is continuous, nondecreasing and nonnegative on $[0,\infty)$
+with $0^{p/2}=0$ (pm-0024, $p/2>0$), and that $c>0$: boundedness, because
+$\sigma_0,\sigma_1$ are bounded by some $C_b\ge0$ and then
+$\sigma_2\le c(C_b+2C_b^{p/2})$; continuity and monotonicity, as a nonnegative
+combination of continuous nondecreasing functions; $\sigma_2(0)=0$; and
+$\sigma_2\ge0$.
+
+Now let $0<R\le R_1$.  Then $R\le R_0$, $R\le1$ and $R\le\rho$, so
+$\sigma_1(R)\le\sigma_1(\rho)\le b_0$ by monotonicity.  Apply the conclusion of
+\noderef{WeightedRemainderAbsorption}, whose constants were fixed in Step 0,
+with the dimension $n$, the present $\varepsilon$, with $\sigma_0(R)$ in the
+role of its $a$ and $\sigma_1(R)$ in the role of its $b$, with $B_R$ in the role
+of its $B$, and with $g$ and $g_v$ in the roles of its $G$ and $G_v$.  Its
+hypotheses are $0\le\varepsilon\le1$; $0\le\sigma_0(R)$ and
+$0\le\sigma_1(R)\le b_0$; $B_R$ measurable with $|B_R|\ne\infty$ (Preamble: the
+volume of a ball); the three $L^p(B_R)$ memberships of $g$, $g_v$ and $g-g_v$
+from Step 2; and its weighted hypothesis, which is exactly (9.5).  Its
+conclusion is
+\[
+N\ \le\ c\bigl(\sigma_0(R)+\sigma_0(R)^{\frac p2}+\sigma_1(R)^{\frac p2}\bigr)J
+=\sigma_2(R)\,J ,
+\]
+which is clause (A).  \emph{The single closed form the thesis displays at the
+end of its two-regime argument is the $1<p<2$ branch only and is false for
+$p>2$}; that is reported and repaired inside
+\noderef{WeightedRemainderAbsorption}, which owns it, and is not reintroduced
+here.  The paper's own proof of Lemma~Lemma~5.1 of the thesis is the one sentence at
+l.~1540--1542, ``this follows from (5.9) of the thesis like Lemma~Lemma~4.1 of the thesis
+followed from (4.7) of the thesis''; the adjudicated \texttt{CHECK} immediately above
+it records that the analogue of (5.9) of the thesis is (4.8) of the thesis and not
+(4.7) of the thesis, so the step cited here is the passage from (5.9) of the thesis
+exactly as Lemma~Lemma~4.1 of the thesis passes from (4.8) of the thesis.
+
+Finally $\sigma_2$ and $R_1$ depend only on
+$n,p,\mu,\gamma_0,\dots,\gamma_4,M,d$ and $\sigma$, because $\sigma_0$,
+$\sigma_1$, $C_1$, $\alpha$ and $R_0$ do and because $c$, $b_0$ and $C_M$ depend
+only on $n,p$ and $\gamma_1/\gamma_0$.  There is \emph{no} $\alpha$ and
+\emph{no} $\delta$ in that list as free parameters: $\alpha$ is produced from the
+data in Step 9 and is not a parameter of clause (A), and $\delta$ appears only
+in clause (B).
+
+\medskip
+\noindent\emph{Step 9: the two H\"older data, and clause \textup{(B)}.}
+
+\textbf{(9a) Clause \textup{(A)}'s $\alpha$, $R_0$ and $C_1$.}  Apply
+\noderef{SolutionHolderDatumOnBall} with the present
+$n,p,\mu,\gamma_0,\dots,\gamma_4$, with $M$ and with $d$.  Its hypotheses are
+$1\le n$, $1<p$, $0<\mu$, $0<\gamma_0$, $\gamma_0\le\gamma_1$, $0<\gamma_2$,
+$0<\gamma_3$, $0<\gamma_4$, $0\le M$, $0<d$ and
+$\mathrm{CitedHolderOscillationSolution}\;n\;p$, which Step 1's split has fixed
+in this branch.  It produces $\alpha,R_0,C_1$ with $0<\alpha\le1$, $R_0>0$ and
+$C_1\ge0$, depending only on $n,p,\mu,\gamma_0,\dots,\gamma_4,M$ and $d$, and
+\emph{bound before $\varepsilon$ and before all the data}, which is what clause
+(A) requires of them: $\sigma_2$ inherits $R^{\alpha}$ through (9.1), and clause
+(A) binds $\sigma_2$ and $R_1$ before $\varepsilon$.  An $\alpha$ depending on
+$\varepsilon$ would require one $\sigma_2$ to dominate $R^{\alpha(\varepsilon)}$
+for every $\varepsilon$, and since $R^{\alpha}\to1$ as $\alpha\downarrow0$ for
+each fixed $R\in(0,1)$, no nondecreasing function with $\sigma_2(0)=0$ could do
+that.  Given the data and $0<R\le R_1\le R_0$, the node's remaining hypotheses
+are $0\le\varepsilon\le1$, $\Omega$ open, the separation
+$d\le\mathrm{dist}(x,y)$ for $x\in\Omega'$ and $y\notin\Omega$, $x_0\in\Omega'$,
+the two structure bundles, the weak-solution property, $|u|\le M$ a.e.\ on
+$\Omega$, $0<R$, $R\le R_0$, the continuity of $U$ on $\overline B_R$ (clause
+(4) of \noderef{FrozenComparisonOn}) and $U=u$ on $B_R$ (clause (5)).  Its
+conclusion is exactly (9.2), which is what Steps 2 and 5--6 consumed.
+
+\textbf{(9b) Clause \textup{(B)}'s H\"older datum.}  In clause (B) the datum is
+a hypothesis rather than a consequence: it reads
+$|U(x)-U(y)|\le C_1\mathrm{dist}(x,y)^{\alpha}$ for $x,y\in\overline B_R$.  Read
+at $y=x_0$, and using $\mathrm{dist}(x,x_0)\le R$ together with monotonicity of
+$s\mapsto s^{\alpha}$ on $[0,\infty)$ and $C_1\ge0$, it gives (9.2) directly.
+Nothing in Steps 2--8 uses any property of $\alpha$ and $C_1$ beyond
+$0<\alpha\le1$, $C_1\ge0$ and (9.2) itself, all of which clause (B) supplies, so
+the whole chain runs again on clause (B)'s own data.  \emph{What is combined with
+it is the absorption inequality of Step 8, re-run on clause \textup{(B)}'s data
+--- not the conclusion of clause \textup{(A)}, which is a different statement at
+a different threshold and is not used here.}
+
+\textbf{(9c) The decay rate.}  Let $0<\alpha\le1$ and $\delta>0$ be given.
+Apply \noderef{ModulusPowerDecayTransfer} with the present $p$, that $\alpha$
+and that $\delta$; its hypotheses are $1<p$, $0<\alpha$, $\alpha\le1$ and
+$0<\delta$.  It produces $\delta'>0$ depending only on $p,\alpha,\delta$, which
+is the binder order clause (B) requires.  Now let $M,d,\sigma,c_\sigma,C_1$ and
+the rate hypothesis $\sigma(t)\le c_\sigma t^{\delta}$ for $t\ge0$ be given,
+with $0\le M$, $0<d$, $0<c_\sigma$ and $0\le C_1$, and let $\sigma_0,\sigma_1$
+be the moduli of Step 2 for this $\alpha$ and $C_1$.  Apply the node's
+conclusion at $c_\sigma$, $C_1$, $K=1/(\gamma_0C_M)$, $\gamma_4$ and $c$, and at
+$\sigma,\sigma_0,\sigma_1$: its remaining hypotheses are $0<c_\sigma$,
+$0\le C_1$, $0<K$, $0<\gamma_4$, $0<c$, the rate hypothesis, the two closed
+forms (9.1) on $(0,1]$, and the nonnegativity of $\sigma_0$ and $\sigma_1$, all
+in hand.  It produces $R_2$ with $0<R_2\le1$ and
+\[
+\sigma_2(t)=c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}
++\sigma_1(t)^{\frac p2}\bigr)\ \le\ t^{\delta'}
+\qquad\bigl(0<t\le R_2\bigr).
+\]
+Take $R_1'=\min\{R_2,\rho\}>0$, with $\rho$ as in Step 8.  For $0<R\le R_1'$ we
+have $R\le R_2\le1$ and $R\le\rho$, so Step 8's absorption applies and gives
+$N\le\sigma_2(R)J$, while $J\ge0$ because its integrand is nonnegative.  Hence
+\[
+N\ \le\ \sigma_2(R)\,J\ \le\ R^{\delta'}J ,
+\]
+which is clause (B).  The whole dependence on $c_\sigma,C_1,M,d$ and $\sigma$ has
+been pushed into the threshold $R_1'$ --- the thesis' ``a radius threshold that
+does depend on $c$'' --- while $\delta'$ depends only on $p,\alpha$ and
+$\delta$.
+\end{proof}

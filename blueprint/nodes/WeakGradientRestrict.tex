@@ -1,0 +1,119 @@
+\begin{lemma}[Restriction of a weak gradient to an open subset]
+Let $n\ge1$ and $q\ge1$, let $\Omega,\Omega'\subseteq\R^n$ be open with
+$\Omega'\subseteq\Omega$, let $f\colon\R^n\to\R$ and let
+$g\colon\R^n\to\R^n$.  Then:
+\begin{enumerate}
+\item if $f\in W^{1,q}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}),
+  then $f\in W^{1,q}(\Omega')$ with weak gradient $g$;
+\item if $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}), then $f\in W^{1,q}_{\mathrm{loc}}(\Omega')$ with weak
+  gradient $g$; and
+\item if $f\in W^{1,q}(\Omega)$ with weak gradient $g$, then
+  $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$; and
+\item if $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$ and
+  $\overline{\Omega'}$ is compact with $\overline{\Omega'}\subseteq\Omega$, then
+  $f\in W^{1,q}(\Omega')$ with weak gradient $g$.
+\end{enumerate}
+
+The four clauses are the four ways the development passes between the two
+predicates and the two sets.  Clause (3) is not a special case of (1) or (2):
+it changes the predicate, not the set, and it is what lets a global
+$W^{1,q}$ hypothesis feed a node whose statement asks for the local one.
+Clause (4) is the converse passage, and it is the one that costs something: a
+local hypothesis on $\Omega$ yields a \emph{global} $W^{1,q}$ conclusion on
+$\Omega'$ only when $\Omega'$ is compactly contained in $\Omega$, which is
+exactly the hypothesis that makes $\overline{\Omega'}$ an admissible compact set
+for the local clause.  It is the standard exhaustion step --- a solution known
+only locally on a ball is in $W^{1,q}$ of every smaller concentric ball --- and
+without it as a statement the step gets written out inline at each use.  In
+clauses (1) and (2) the weak gradient is unchanged --- it is the \emph{same}
+field $g$, not a restriction of it --- because the defining identity of
+\noderef{HasWeakGradientOn} on a smaller set tests $g$ against fewer functions
+and asks nothing of $g$ off $\Omega'$.  The converse of (1) is false in general
+and is not claimed: a function may be in $W^{1,q}$ of each of two open sets
+without being in $W^{1,q}$ of their union; the opposite direction, extending a
+compactly supported Sobolev function from a smaller set to a larger one, is a
+separate statement with its own hypotheses and is not part of this node.
+
+As with the other facts in this family the statement is abstract: no operator,
+no solution, no structure condition.
+\end{lemma}
+\begin{proof}
+Throughout, $D_i$ is the derivative in the direction of the $i$-th standard
+basis vector, and a test function for an open set $U$ means a function
+$\varphi\in C^\infty(\R^n)$ with compact support and
+$\operatorname{supp}\varphi\subseteq U$, the test class of
+\noderef{HasWeakGradientOn}.
+
+\emph{Step 1: the weak-gradient identity passes to $\Omega'$.}  Assume
+$\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$ (\noderef{HasWeakGradientOn}), let
+$\varphi$ be a test function for $\Omega'$ and let $i\in\{1,\dots,n\}$.  Since
+$\operatorname{supp}\varphi\subseteq\Omega'\subseteq\Omega$, the function
+$\varphi$ is also a test function for $\Omega$, so the hypothesis gives
+\[
+\int_\Omega f\,D_i\varphi\,dx=-\int_\Omega g^i\,\varphi\,dx .
+\tag{1}
+\]
+Both integrands vanish off $\operatorname{supp}\varphi$: the function $\varphi$
+vanishes on the open complement of its support, hence so does $D_i\varphi$.
+Therefore, as functions on $\R^n$,
+\[
+\mathbf1_\Omega\cdot\bigl(f\,D_i\varphi\bigr)
+=\mathbf1_{\Omega'}\cdot\bigl(f\,D_i\varphi\bigr),
+\qquad
+\mathbf1_\Omega\cdot\bigl(g^i\varphi\bigr)
+=\mathbf1_{\Omega'}\cdot\bigl(g^i\varphi\bigr),
+\]
+because the two indicators agree on $\operatorname{supp}\varphi$ --- both are
+$1$ there, as $\operatorname{supp}\varphi\subseteq\Omega'\subseteq\Omega$ ---
+and both products vanish off $\operatorname{supp}\varphi$.  An integral over a
+set depends on the integrand only through its product with the indicator of that
+set, so each side of (1) is unchanged when $\Omega$ is replaced by $\Omega'$:
+\[
+\int_{\Omega'}f\,D_i\varphi\,dx=-\int_{\Omega'}g^i\,\varphi\,dx .
+\]
+As $\varphi$ and $i$ were arbitrary, this is
+$\mathrm{HasWeakGradientOn}(n,\Omega',f,g)$.  No integrability was used: the two
+displayed equalities are equalities of integrands.
+
+\emph{Step 2: clause (1).}  Assume $f\in W^{1,q}(\Omega)$ with weak gradient $g$.
+Its first clause gives $\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$, so Step 1
+gives $\mathrm{HasWeakGradientOn}(n,\Omega',f,g)$.  Its second and third clauses
+give $f\in L^q(\Omega)$ and $|g|\in L^q(\Omega)$, and since
+$\Omega'\subseteq\Omega$ the Preamble's transport fact for $L^q$ membership
+under restriction to a subset gives $f\in L^q(\Omega')$ and
+$|g|\in L^q(\Omega')$.  By \noderef{MemW1pOn}, $f\in W^{1,q}(\Omega')$ with weak
+gradient $g$.
+
+\emph{Step 3: clause (2).}  Assume $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with
+weak gradient $g$.  Its first clause and Step 1 give
+$\mathrm{HasWeakGradientOn}(n,\Omega',f,g)$.  For the local clause on $\Omega'$,
+let $K\subseteq\Omega'$ be compact; then $K\subseteq\Omega$, so the local clause
+of \noderef{MemW1pLocOn} on $\Omega$ applies to $K$ verbatim and gives
+$f\in L^q(K)$ and $|g|\in L^q(K)$.  By \noderef{MemW1pLocOn},
+$f\in W^{1,q}_{\mathrm{loc}}(\Omega')$ with weak gradient $g$.  (Here nothing
+had to be transported: the local clause quantifies over compact subsets, and a
+compact subset of $\Omega'$ is one of $\Omega$.)
+
+\emph{Step 4': clause (4).}  Assume $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with
+weak gradient $g$, and let $\overline{\Omega'}$ be compact with
+$\overline{\Omega'}\subseteq\Omega$.  The first clause and Step 1 give
+$\mathrm{HasWeakGradientOn}(n,\Omega',f,g)$ (the hypothesis
+$\Omega'\subseteq\Omega$ of the lemma is what Step 1 uses, and it also follows
+from $\overline{\Omega'}\subseteq\Omega$).  For the $L^q$ clauses, apply the
+local clause of \noderef{MemW1pLocOn} to the compact set
+$\overline{\Omega'}\subseteq\Omega$: it gives $f\in L^q(\overline{\Omega'})$ and
+$|g|\in L^q(\overline{\Omega'})$.  Since $\Omega'\subseteq\overline{\Omega'}$,
+the Preamble's transport fact for $L^q$ membership under restriction to a subset
+gives $f\in L^q(\Omega')$ and $|g|\in L^q(\Omega')$.  By \noderef{MemW1pOn},
+$f\in W^{1,q}(\Omega')$ with weak gradient $g$.
+
+\emph{Step 4: clause (3).}  Assume $f\in W^{1,q}(\Omega)$ with weak gradient
+$g$.  Its first clause is already
+$\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$, which is the first clause of
+\noderef{MemW1pLocOn} on the same set.  For the local clause, let
+$K\subseteq\Omega$ be compact; from $f\in L^q(\Omega)$ and $|g|\in L^q(\Omega)$
+the Preamble's transport fact for restriction to a subset gives $f\in L^q(K)$
+and $|g|\in L^q(K)$.  By \noderef{MemW1pLocOn},
+$f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$.
+\end{proof}

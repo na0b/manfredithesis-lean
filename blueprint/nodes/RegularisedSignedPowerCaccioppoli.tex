@@ -1,0 +1,246 @@
+\begin{helper}[The Caccioppoli estimate (D.5) for the regularised signed power, at an arbitrary level and an arbitrary cut-off]
+Let $n\ge2$, let $1<p<2$ and let $r>0$.  Let $C_1,C_2\in\R$ with
+\[
+C_1=\frac2p\,2^{1-\frac p2},
+\qquad
+C_2=\Bigl(\frac{2nrC_1p^2}{4(p-1)}\Bigr)^{2}.
+\]
+Let $\pi,\pi'\colon\R\times\R\to\R$ be two families of functions of one real
+variable, written $\pi_\eta$ and $\pi'_\eta$, such that for every $\eta>0$:
+\begin{enumerate}
+\item[(H1)] $0<|s|+\eta$ for every $s\in\R$;
+\item[(H2)] $(p-1)(|s|+\eta)^{p-2}\le\pi'_\eta(s)$ for every $s\in\R$;
+\item[(H3)] $|\pi'_\eta(s)|\le\eta^{p-2}$ for every $s\in\R$;
+\item[(H4)] $\pi'_\eta$ is continuous;
+\item[(H5)] $\pi_\eta$ is $C^1$.
+\end{enumerate}
+Let $\varepsilon,\gamma_0,\gamma_1\in\R$, let
+$A\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let $g\colon\R^n\to\R^n$, let
+$Dg\colon\{1,\dots,n\}\to(\R^n\to\R^n)$, let $x_0\in\R^n$, let $R\in\R$ and let
+$k$ be an index.  Assume
+\begin{enumerate}
+\item[(H6)] $0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$,
+  $\gamma_0\le\gamma_1$ and $0<R$;
+\item[(H7)] the field $(x,z,h)\mapsto A(h)$ satisfies \texttt{Q1} and
+  \texttt{Q2} on $B_R(x_0)$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item[(H8)] the cited regularity for $\varepsilon>0$ holds for $A$ on
+  $B_R(x_0)$ with those parameters (\noderef{CitedRegularityEpsPos});
+\item[(H9)] $u$ is a weak solution on $B_R(x_0)$ of the equation with field
+  $(x,z,h)\mapsto A(h)$ and vanishing right-hand side, with weak gradient $g$
+  (\noderef{IsWeakSolutionOn});
+\item[(H10)] $g^i\in W^{1,2}_{\mathrm{loc}}(B_R(x_0))$ with weak gradient
+  $Dg^i$, for every index $i$ (\noderef{MemW1pLocOn});
+\item[(H11)] (almost-everywhere transport of a $W^{1,2}$ pair) for every
+  $\Omega\subseteq\R^n$, all $f_1,f_2\colon\R^n\to\R$ and all
+  $G_1,G_2\colon\R^n\to\R^n$: if $f_1\in W^{1,2}(\Omega)$ with weak gradient
+  $G_1$ (\noderef{MemW1pOn}), $f_1=f_2$ almost everywhere on $\Omega$ and
+  $G_1=G_2$ almost everywhere on $\Omega$, then $f_2\in W^{1,2}(\Omega)$ with
+  weak gradient $G_2$;
+\item[(H12)] for every $\eta>0$ and every $T$ with $0<T<R$, the function
+  $\psi_\eta=\pi_\eta\circ g^k$ lies in $W^{1,2}(B_T(x_0))$ with weak gradient
+  $\pi'_\eta(g^k)Dg^k$ (\noderef{MemW1pOn}).
+\end{enumerate}
+Write $w=\varepsilon+\|g\|^2$ and
+$V_\eta=\tfrac p2(|g^k|+\eta)^{p/2-1}Dg^k$.  Then for every $\eta>0$ with
+$\eta^2<\varepsilon$, every $\ell\in\R$ and every $\zeta\colon\R^n\to\R$ which
+is $C^\infty$, compactly supported and satisfies
+$\operatorname{supp}\zeta\subseteq B_R(x_0)$:
+\begin{enumerate}
+\item[(i)] the function $w^{\frac p2-1}\|V_\eta\|^2\zeta^2$ is integrable on
+  $B_R(x_0)$;
+\item[(ii)] with $A^+_\ell(\eta)=B_R(x_0)\cap\{\psi_\eta>\ell\}$,
+  \[
+  \int_{A^+_\ell(\eta)}w^{\frac p2-1}\|V_\eta\|^2\zeta^2\,dx
+  \ \le\ C_2\int_{B_R(x_0)}\bigl((\psi_\eta-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx ;
+  \]
+\item[(iii)] with $A^-_\ell(\eta)=B_R(x_0)\cap\{\psi_\eta<\ell\}$,
+  \[
+  \int_{A^-_\ell(\eta)}w^{\frac p2-1}\|V_\eta\|^2\zeta^2\,dx
+  \ \le\ C_2\int_{B_R(x_0)}\bigl((\ell-\psi_\eta)^+\bigr)^2|\nabla\zeta|^2\,dx .
+  \]
+\end{enumerate}
+Here $|\nabla\zeta|^2=\sum_i(D_i\zeta)^2$ and $(t)^+=\max\{t,0\}$.
+\end{helper}
+\begin{proof}
+Throughout, $\eta>0$ with $\eta^2<\varepsilon$, $\ell\in\R$ and $\zeta$ are
+fixed as in the statement, $B_R=B_R(x_0)$, and
+$\psi_\eta=\pi_\eta\circ g^k$.  Note $\gamma_1>0$, since $0<\gamma_0\le\gamma_1$
+by (H6).  For the consumer of this lemma $\pi_\eta(s)=(|s|+\eta)^{p-2}s$ and
+$\pi'_\eta$ is its derivative, for which (H1)--(H5) are the thesis'
+inequalities on p.~21 and (H12) is the chain rule for a $C^1$ function of a
+$W^{1,2}$ function; but nothing below uses more than (H1)--(H5) and (H12).
+
+\emph{Step 0: elementary consequences of the exponent range, and the weight.}
+From $1<p<2$ and $n\ge2$ we get $p>0$, $p-1>0$, $p-2<0$ and $n>0$ as reals.
+Since $\|g(x)\|^2\ge0$ we have $w(x)=\varepsilon+\|g(x)\|^2\ge\varepsilon>0$ at
+every $x$, so $w^{s}$ is defined and positive for every real $s$; as
+$p/2-1<0$, monotonicity of $t\mapsto t^{s}$ for $s<0$ gives
+$w^{\frac p2-1}\le\varepsilon^{\frac p2-1}$ everywhere.  By (H8) there is a
+continuous $g'$ on $B_R$ with $g=g'$ almost everywhere on $B_R$; hence
+$w=\varepsilon+\|g'\|^2$ almost everywhere on $B_R$, the right-hand side is
+continuous and bounded away from $0$ on $B_R$, and therefore for every real $s$
+and every compact $K\subseteq B_R$ the function $w^{s}$ is almost everywhere
+equal on $K$ to a continuous function and is bounded on $K$.  That is the only
+use made of (H8): it supplies measurability and local boundedness of the
+weight at the two exponents $p/2-1$ and $(p-2)/4$ that appear below.
+
+\emph{Step 1: an intermediate radius.}  $\operatorname{supp}\zeta$ is a compact
+subset of $B_R$, so there is $T$ with $0<T<R$ and
+$\operatorname{supp}\zeta\subseteq B_T(x_0)$: if $\operatorname{supp}\zeta$ is
+empty take $T=R/2$; otherwise the continuous function
+$z\mapsto\operatorname{dist}(z,x_0)$ attains a maximum on it at some $y$, and
+$T=(\operatorname{dist}(y,x_0)+R)/2$ works, since
+$\operatorname{dist}(y,x_0)<R$.  The same construction gives such a $T$ for any
+compact subset of $B_R$, and it is used in that generality below.
+
+\emph{Step 2: the truncated test function.}  Put
+\[
+\theta^+_\eta=(\psi_\eta-\ell)^+,\qquad \varphi^+=\theta^+_\eta\,\zeta^2 .
+\]
+By (H12) at the radius $T$ of Step 1, $\psi_\eta\in W^{1,2}(B_T)$ with weak
+gradient $\pi'_\eta(g^k)Dg^k$.  By \noderef{WeakGradientPositivePart} with
+$q=2$, the level $c=\ell$, the open set $B_T$ of finite volume and that pair,
+$\theta^+_\eta\in W^{1,2}(B_T)$ with weak gradient
+$\chi_{\{\psi_\eta>\ell\}}\pi'_\eta(g^k)Dg^k$.  Since (H12) holds for
+\emph{every} $T<R$ and the construction of $\theta^+_\eta$ does not involve
+$\zeta$, and since every compact subset of $B_R$ sits inside some $B_T$ with
+$T<R$ by Step 1, the same conclusion holds on every $B_T$, $T<R$; this is the
+converse localisation, and it gives
+$\theta^+_\eta\in W^{1,2}_{\mathrm{loc}}(B_R)$ with that weak gradient --- note
+that it is cheaper here than in general because $\Omega$ is a ball, so the
+intermediate radius is produced directly and no interposed compact set is
+needed.  Now $\zeta^2$ is $C^\infty$ with compact support contained in $B_R$,
+so clause (2) of \noderef{WeakGradientSmoothMul} with $q=2$ and $\Omega=B_R$
+gives $\varphi^+\in W^{1,2}(B_R)$ with weak gradient
+\[
+g_{\varphi^+}=\zeta^2\chi_{\{\psi_\eta>\ell\}}\pi'_\eta(g^k)Dg^k
++\theta^+_\eta\,\nabla(\zeta^2),
+\qquad \nabla(\zeta^2)=2\zeta\nabla\zeta ,
+\]
+and $\varphi^+$ has compact support with
+$\operatorname{supp}\varphi^+\subseteq\operatorname{supp}\zeta\subseteq B_R$.
+Where (H11) is needed is exactly here and in Step 1's instances: the pairs
+produced by the composition and product rules agree almost everywhere with the
+pairs written above, and (H11) transports membership along such an agreement.
+
+\emph{Step 3: the differentiated equation against $\varphi^+$ (this is (D3)).}
+Apply \noderef{DifferentiatedEquationWeak} with
+$n,p,\varepsilon,\gamma_0,\gamma_1$ --- its hypotheses $2\le n$, $1<p$,
+$0<\varepsilon$, $0<\gamma_0$ and $\gamma_0\le\gamma_1$ all being part of (H6)
+--- the open set $B_R$, the field $A$, the solution $u$ with gradient $g$
+(H9), the family $Dg$ (H10), the index $k$ and the pair
+$(\varphi^+,g_{\varphi^+})$ of Step 2.  It gives
+\[
+\int_{B_R}\sum_{i,j}\bigl(DA(g)e_j\bigr)_i\,(Dg^k)_j\,(g_{\varphi^+})_i\,dx=0 .
+\]
+Separating the two summands of $g_{\varphi^+}$ --- legitimate because each is
+integrable on $\operatorname{supp}\zeta$, by (H3), (H10) and Step 0, and both
+vanish off $\operatorname{supp}\zeta$, so the split may be performed on
+$\operatorname{supp}\zeta$ and then extended to $B_R$ --- and using that for
+each fixed $i$ one has
+$\sum_j\bigl(DA(g)e_j\bigr)_i(Dg^k)_j=\bigl(DA(g)Dg^k\bigr)_i$, because
+$DA(g)$ is linear in its direction argument and $Dg^k=\sum_j(Dg^k)_je_j$, this
+reads
+\[
+\int_{B_R}\chi_{\{\psi_\eta>\ell\}}\pi'_\eta(g^k)\,
+\bigl\langle DA(g)Dg^k,Dg^k\bigr\rangle\zeta^2
+=-2\int_{B_R}\theta^+_\eta\,\zeta\,
+\bigl\langle DA(g)Dg^k,\nabla\zeta\bigr\rangle .
+\]
+On the left, \texttt{Q1} of (H7) with $\xi=Dg^k$ and $h=g(x)$ --- its guard
+$\varepsilon+\|g\|^2=w\ne0$ holding since $\varepsilon>0$ --- gives
+$\langle DA(g)Dg^k,Dg^k\rangle\ge\gamma_0w^{p/2-1}\|Dg^k\|^2$, and (H2) gives
+$\pi'_\eta(g^k)\ge(p-1)(|g^k|+\eta)^{p-2}$, the two being combined because
+both factors are nonnegative.  On the right, \texttt{Q2} gives
+$|(DA(g)e_j)_i|\le\gamma_1w^{p/2-1}$, whence
+\[
+\bigl|\langle DA(g)Dg^k,\nabla\zeta\rangle\bigr|
+\le\gamma_1w^{\frac p2-1}\sum_{i,j}|(Dg^k)_j|\,|(\nabla\zeta)_i|
+\le n\gamma_1w^{\frac p2-1}\|Dg^k\|\,|\nabla\zeta| ,
+\]
+using $\sum_j|a_j|\le\sqrt n\,\|a\|$ (Cauchy--Schwarz, Preamble) twice.  Hence
+\[
+\gamma_0(p-1)\!\!\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|Dg^k\|^2(|g^k|+\eta)^{p-2}\zeta^2
+\ \le\ 2n\gamma_1\!\!\int_{B_R}\!\!
+w^{\frac p2-1}\|Dg^k\|\,\theta^+_\eta\,|\zeta|\,|\nabla\zeta| ,
+\tag{D.3}
+\]
+the integrand on the right vanishing off $A^+_\ell(\eta)$ because
+$\theta^+_\eta$ does.  This is the thesis' (3.13).
+
+\emph{Step 4: the finiteness assertion (i).}  By (H1) and the definition of
+$V_\eta$,
+\[
+\|V_\eta\|^2=\tfrac{p^2}4(|g^k|+\eta)^{p-2}\|Dg^k\|^2 ,
+\]
+which is the thesis' (3.14), and since $p-2<0$ and $|g^k|+\eta\ge\eta$ we get
+$(|g^k|+\eta)^{p-2}\le\eta^{p-2}$, so
+$\|V_\eta\|\le\tfrac p2\eta^{p/2-1}\|Dg^k\|$.  By (H10) and Step 1,
+$\|Dg^k\|$ lies in $L^2$ of the compact set $\operatorname{supp}\zeta$;
+$w^{p/2-1}\le\varepsilon^{p/2-1}$ by Step 0; and $\zeta$ is bounded and
+vanishes off $\operatorname{supp}\zeta$.  Hence
+$w^{\frac p2-1}\|V_\eta\|^2\zeta^2$ is integrable on $\operatorname{supp}\zeta$
+and vanishes identically on $B_R\setminus\operatorname{supp}\zeta$, so it is
+integrable on $B_R$, which is (i); measurability of the weight on
+$\operatorname{supp}\zeta$ is Step 0 and measurability of $g^k$ and $Dg^k$
+there is (H9)--(H10).  The same bound, applied on $A^+_\ell(\eta)$ in place of
+$B_R$, shows that the left-hand side of (D.3) is finite.
+
+\emph{Step 5: the Cauchy--Schwarz step (this is (D4)).}  Since
+$\eta^2<\varepsilon$ we have $w\ge\varepsilon>\eta^2$, and $w\ge(g^k)^2$
+because $\|g\|^2\ge(g^k)^2$; hence
+$w^{1/2}\ge\max\{\eta,|g^k|\}\ge\tfrac12(|g^k|+\eta)$, and therefore, since
+$1-p/2>0$,
+\[
+(|g^k|+\eta)^{1-\frac p2}\le\bigl(2w^{1/2}\bigr)^{1-\frac p2}
+=2^{1-\frac p2}w^{\frac{2-p}4}.
+\]
+\emph{This is the only place where the hypothesis $\eta^2<\varepsilon$ is
+used.}  From the identity of Step 4,
+$\|Dg^k\|=\tfrac2p(|g^k|+\eta)^{1-\frac p2}\|V_\eta\|$, so
+\[
+w^{\frac p2-1}\|Dg^k\|\ \le\ \tfrac2p2^{1-\frac p2}\,
+w^{\frac p2-1+\frac{2-p}4}\|V_\eta\|\ =\ C_1\,w^{\frac{p-2}4}\|V_\eta\| ,
+\tag{D.4}
+\]
+because $\tfrac p2-1+\tfrac{2-p}4=\tfrac{p-2}4$.  Substituting (D.4) and the
+identity $\|V_\eta\|^2=\tfrac{p^2}4(|g^k|+\eta)^{p-2}\|Dg^k\|^2$ into (D.3),
+and applying the Cauchy--Schwarz inequality (Preamble) to the right-hand side
+written as the product of $w^{\frac{p-2}4}\|V_\eta\|\,|\zeta|$ and
+$\theta^+_\eta|\nabla\zeta|$ --- and noting
+$\bigl(w^{\frac{p-2}4}\bigr)^2=w^{\frac p2-1}$, so that the first factor's
+square integral is exactly the left-hand side ---
+\[
+\tfrac{4\gamma_0(p-1)}{p^2}\!\!\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|V_\eta\|^2\zeta^2
+\ \le\ 2n\gamma_1C_1\Bigl(\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|V_\eta\|^2\zeta^2\Bigr)^{\frac12}
+\Bigl(\int_{B_R}(\theta^+_\eta)^2|\nabla\zeta|^2\Bigr)^{\frac12}.
+\]
+Write $X$ for the integral on the left.  It is finite by Step 4 and
+nonnegative.  If $X=0$ then (ii) holds outright, because its right-hand side is
+nonnegative: $C_2\ge0$ and the integrand
+$\bigl((\psi_\eta-\ell)^+\bigr)^2|\nabla\zeta|^2$ is nonnegative.  If $X>0$ we
+may divide the displayed inequality by $X^{1/2}$ and square, obtaining
+\[
+X\ \le\ \Bigl(\frac{2n\gamma_1C_1p^2}{4\gamma_0(p-1)}\Bigr)^{2}
+\int_{B_R}\bigl((\psi_\eta-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+\]
+and $\gamma_1\le r\gamma_0$ with $\gamma_0>0$ turns the constant into
+$\bigl(2nrC_1p^2/(4(p-1))\bigr)^2=C_2$.  That is (ii).
+
+\emph{Step 6: the lower level sets (iii).}  By
+\noderef{WeakGradientLinear} (clause (2), $q=2$, $a=-1$, $b=0$, both pairs
+taken to be the pair of (H12)) the pair $(-\psi_\eta,-\pi'_\eta(g^k)Dg^k)$
+lies in $W^{1,2}(B_T)$ for every $T<R$, and
+\noderef{WeakGradientPositivePart} applied to it at the level $-\ell$ gives
+$(\ell-\psi_\eta)^+\in W^{1,2}(B_T)$ with weak gradient
+$-\chi_{\{\psi_\eta<\ell\}}\pi'_\eta(g^k)Dg^k$.  Steps 2--5 now run verbatim
+with $\theta^-_\eta=(\ell-\psi_\eta)^+$ in place of $\theta^+_\eta$ and
+$A^-_\ell(\eta)$ in place of $A^+_\ell(\eta)$: the sign of the test function's
+weak gradient enters only inside the absolute values taken in Step 3, and the
+lower bound of (H2) is applied on $A^-_\ell(\eta)$, where
+$\chi_{\{\psi_\eta<\ell\}}=1$.  This gives (iii) and completes the proof.
+\end{proof}

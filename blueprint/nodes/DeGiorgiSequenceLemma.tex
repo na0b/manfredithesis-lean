@@ -1,0 +1,114 @@
+\begin{lemma}[Lemma 2.1]
+Let $(y_h)_{h=0,1,2,\dots}$ be a sequence of nonnegative real numbers such that
+for some positive numbers $c$, $\varepsilon$ and some $b>1$ the recursion
+relation
+\[
+y_{h+1}\le c\,b^{h}\,y_h^{1+\varepsilon},\qquad h=0,1,2,\dots
+\]
+is satisfied.  Then, if
+\[
+y_0\le\theta=c^{-\frac1\varepsilon}\,b^{-\frac1{\varepsilon^2}},
+\]
+it follows that $\lim_{h\to\infty}y_h=0$.
+\end{lemma}
+\begin{proof}
+This is Lemma~Lemma~2.1 of the thesis of the paper with the correction prescribed by the
+paper's Note for the formalization: the recursion is $y_{h+1}\le
+c\,b^{h}y_h^{1+\varepsilon}$, as in [LU, p.~66] and as the recursion is actually
+applied in (2.6) of the thesis, rather than the printed $y_{h+1}\le
+c\,b^{h+1}y_h^{1+\varepsilon}$, for which the threshold $\theta$ is
+insufficient.  All powers are real powers of positive reals.
+
+Set $\theta=c^{-1/\varepsilon}b^{-1/\varepsilon^2}$; since $c>0$ and $b>0$ we
+have $\theta>0$, and in particular $\theta\ge0$.
+
+\emph{Step 1 (the threshold identity).}  We claim
+\[
+c\,\theta^{\varepsilon}=b^{-1/\varepsilon},
+\]
+with exact equality.  Indeed, since $c^{-1/\varepsilon}\ge0$ and
+$b^{-1/\varepsilon^2}\ge0$,
+\[
+\theta^{\varepsilon}
+=\bigl(c^{-1/\varepsilon}\bigr)^{\varepsilon}\bigl(b^{-1/\varepsilon^{2}}\bigr)^{\varepsilon}
+=c^{(-1/\varepsilon)\cdot\varepsilon}\,b^{(-1/\varepsilon^{2})\cdot\varepsilon}
+=c^{-1}\,b^{-1/\varepsilon},
+\]
+using that $(xy)^{\varepsilon}=x^{\varepsilon}y^{\varepsilon}$ for
+$x,y\ge0$ and $(x^{s})^{t}=x^{st}$ for $x\ge0$, together with
+$(-1/\varepsilon)\varepsilon=-1$ and
+$(-1/\varepsilon^{2})\varepsilon=-1/\varepsilon$ (here $\varepsilon\neq0$).
+Multiplying by $c$ and using $c\cdot c^{-1}=1$ (valid as $c\neq0$) gives the
+claim.
+
+\emph{Step 2 (the induction invariant).}  We prove by induction on $h$ that
+\[
+y_h\le\theta\,b^{-h/\varepsilon}\qquad\text{for all }h=0,1,2,\dots
+\]
+For $h=0$ this is the hypothesis $y_0\le\theta$, because
+$b^{-0/\varepsilon}=b^{0}=1$.
+
+Assume $y_k\le\theta b^{-k/\varepsilon}$ for some $k\ge0$.  Both sides are
+nonnegative ($y_k\ge0$ by hypothesis, and $\theta b^{-k/\varepsilon}\ge0$), and
+the exponent $1+\varepsilon$ is positive, so raising to the power
+$1+\varepsilon$ preserves the inequality:
+\[
+y_k^{1+\varepsilon}\le\bigl(\theta\,b^{-k/\varepsilon}\bigr)^{1+\varepsilon}.
+\]
+Since $c\,b^{k}\ge0$, multiplying by $c\,b^{k}$ and combining with the recursion
+at $h=k$ gives
+\[
+y_{k+1}\le c\,b^{k}\,y_k^{1+\varepsilon}
+\le c\,b^{k}\bigl(\theta\,b^{-k/\varepsilon}\bigr)^{1+\varepsilon}.
+\]
+We now compute the right-hand side exactly.  First, since
+$\theta\ge0$ and $b^{-k/\varepsilon}\ge0$,
+\[
+\bigl(\theta\,b^{-k/\varepsilon}\bigr)^{1+\varepsilon}
+=\theta^{1+\varepsilon}\,b^{(-k/\varepsilon)(1+\varepsilon)}
+=\theta\cdot\theta^{\varepsilon}\cdot b^{(-k/\varepsilon)(1+\varepsilon)} ,
+\]
+using $\theta^{1+\varepsilon}=\theta^{1}\theta^{\varepsilon}=\theta\,\theta^{\varepsilon}$.
+Therefore
+\[
+c\,b^{k}\bigl(\theta\,b^{-k/\varepsilon}\bigr)^{1+\varepsilon}
+=\theta\cdot\bigl(c\,\theta^{\varepsilon}\bigr)\cdot
+  \Bigl(b^{k}\,b^{(-k/\varepsilon)(1+\varepsilon)}\Bigr)
+=\theta\cdot b^{-1/\varepsilon}\cdot b^{\,k+(-k/\varepsilon)(1+\varepsilon)} ,
+\]
+where we used Step 1 and $b^{s}b^{t}=b^{s+t}$ (valid since $b>0$).  The
+remaining exponent simplifies: since $\varepsilon\neq0$,
+\[
+k+\Bigl(-\frac k\varepsilon\Bigr)(1+\varepsilon)
+=k-\frac k\varepsilon-k=-\frac k\varepsilon .
+\]
+Hence
+\[
+c\,b^{k}\bigl(\theta\,b^{-k/\varepsilon}\bigr)^{1+\varepsilon}
+=\theta\,b^{-1/\varepsilon}\,b^{-k/\varepsilon}
+=\theta\,b^{-(k+1)/\varepsilon},
+\]
+again by $b^{s}b^{t}=b^{s+t}$ and
+$-1/\varepsilon-k/\varepsilon=-(k+1)/\varepsilon$.  Combining,
+$y_{k+1}\le\theta\,b^{-(k+1)/\varepsilon}$, which completes the induction.
+
+Observe that the chain of identities above is a chain of \emph{equalities}: the
+induction closes with no margin to spare.  This is exactly why the printed form
+of the recursion, with $b^{h+1}$ in place of $b^{h}$, fails with this
+$\theta$: it would produce an extra factor $b>1$ in the last display and break
+the induction.
+
+\emph{Step 3 (passage to the limit).}  Put $q=b^{-1/\varepsilon}$.  Then $q>0$,
+and since $b>1$ and $-1/\varepsilon<0$ we have $q<1$.  Moreover, for every
+$h\in\mathbb N$,
+\[
+b^{-h/\varepsilon}=\bigl(b^{-1/\varepsilon}\bigr)^{h}=q^{h},
+\]
+because $b>0$ and $(-1/\varepsilon)\cdot h=-h/\varepsilon$.  Thus Step 2 reads
+\[
+0\le y_h\le\theta\,q^{h}\qquad\text{for all }h,
+\]
+the left inequality being the hypothesis that the $y_h$ are nonnegative.  Since
+$0\le q<1$, the geometric sequence $q^h$ tends to $0$, hence so does
+$\theta q^{h}$.  By the squeeze theorem, $y_h\to0$ as $h\to\infty$.
+\end{proof}

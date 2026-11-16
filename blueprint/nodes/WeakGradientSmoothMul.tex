@@ -1,0 +1,202 @@
+\begin{lemma}[Product rule against a smooth compactly supported factor]
+Let $n\ge1$ and $q\ge1$ be real, let $\Omega\subseteq\R^n$ be open, let
+$f,g$ be given on $\R^n$ with values in $\R$ and $\R^n$ respectively, and let
+$\psi\colon\R^n\to\R$ be of class $C^\infty$ with compact support and
+$\operatorname{supp}\psi\subseteq\Omega$.  Write
+\[
+\Theta=\bigl(f\psi,\ \psi\,g+f\,\nabla\psi\bigr),
+\]
+where $\nabla\psi$ is the vector field whose $i$-th component is the classical
+partial derivative $D_i\psi$.  Then:
+\begin{enumerate}
+\item if $|\Omega|<\infty$ and $f\in W^{1,q}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pOn}), then $f\psi\in W^{1,q}(\Omega)$ with weak gradient
+  $\psi g+f\nabla\psi$ (\noderef{MemW1pOn}), i.e.\ $\Theta$ is a
+  $W^{1,q}(\Omega)$ pair;
+\item if $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}), with no hypothesis on $|\Omega|$, then the same
+  conclusion holds: $f\psi\in W^{1,q}(\Omega)$ with weak gradient
+  $\psi g+f\nabla\psi$ (\noderef{MemW1pOn}).
+\end{enumerate}
+The two clauses are stated deliberately, and the redundancy between them is not
+a defect.  Clause (2) formally subsumes clause (1), because
+$W^{1,q}(\Omega)\subseteq W^{1,q}_{\mathrm{loc}}(\Omega)$ with the same weak
+gradient --- this is clause (3) of \noderef{WeakGradientRestrict} --- so the
+hypotheses of clause (1) imply those of clause (2) and the conclusions
+coincide.  Clause (1) is retained because it is the form in which consumers
+that already carry a global $W^{1,q}(\Omega)$ membership on a set of finite
+volume (a ball, say) cite the product rule, and reading off clause (1) saves
+them the detour through the inclusion.  Neither clause should be deleted as
+dead: clause (1) is cited, and clause (2) is the strictly stronger statement.
+\end{lemma}
+\begin{proof}
+By \noderef{MemW1pOn} the conclusion of either clause has two halves: the
+test-function identity
+\[
+\int_\Omega f\psi\,D_i\varphi\,dx
+=-\int_\Omega\bigl(\psi\,g^i+f\,D_i\psi\bigr)\varphi\,dx
+\tag{1}
+\]
+for every $\varphi\in C^\infty(\R^n)$ with compact support contained in
+$\Omega$ and every $i\in\{1,\dots,n\}$ --- this is
+\noderef{HasWeakGradientOn} for the pair $(f\psi,\ \psi g+f\nabla\psi)$, whose
+$i$-th component is $\psi g^i+fD_i\psi$ --- and the integrability statements
+$f\psi\in L^q(\Omega)$ and $|\psi g+f\nabla\psi|\in L^q(\Omega)$.
+
+The hypothesis $\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$ is the first clause
+of \noderef{MemW1pOn} and also the first clause of \noderef{MemW1pLocOn}, so it
+is available in both cases; Steps 0, 3 and 4 below use only it, and the two
+clauses differ only in Steps 1 and 2, where the $L^q$ memberships of
+$f\psi$ and $\psi g+f\nabla\psi$ are established.
+
+\emph{Step 0: the bounds on $\psi$, and the compact set $K$.}  The function
+$\psi$ is continuous with compact support, hence bounded; and each $D_i\psi$ is
+continuous (as $\psi$ is $C^\infty$) with support contained in
+$\operatorname{supp}\psi$, hence also bounded.  Put
+\[
+K=\operatorname{supp}\psi,
+\qquad
+\Lambda=\sup_{\R^n}|\psi|<\infty,
+\qquad
+\Lambda'=\max_{1\le i\le n}\ \sup_{\R^n}|D_i\psi|<\infty ,
+\]
+so that $|\nabla\psi(x)|=\bigl(\sum_i(D_i\psi(x))^2\bigr)^{1/2}\le\sqrt n\,\Lambda'$
+for every $x$.  By hypothesis $K$ is compact and $K\subseteq\Omega$.  Both
+$\psi$ and $\nabla\psi$ vanish off $K$: the first because
+$\{\psi\ne0\}\subseteq K$ by definition of the support; the second because
+$\R^n\setminus K$ is open and $\psi$ is identically zero on it, so every
+partial derivative of $\psi$ is zero there as well.  Consequently
+\[
+f\psi\quad\text{and}\quad \psi g+f\nabla\psi\quad\text{vanish off }K .
+\tag{2}
+\]
+
+\emph{Step 1: integrability under the hypothesis of clause (1).}  Assume
+$|\Omega|<\infty$ and $f\in W^{1,q}(\Omega)$ with weak gradient $g$.  By
+\noderef{MemW1pOn} we have $f\in L^q(\Omega)$ and $|g|\in L^q(\Omega)$, and $f$
+and $g$ are almost everywhere strongly measurable on $\Omega$; $\psi$ and
+$\nabla\psi$ are continuous, hence measurable.  So $f\psi$ and
+$\psi g+f\nabla\psi$ are measurable on $\Omega$.
+
+Pointwise $|f\psi|\le\Lambda|f|$, and $t\mapsto t^q$ is nondecreasing on
+$[0,\infty)$, so monotonicity of the integral (Preamble) gives
+$\int_\Omega|f\psi|^q\le\Lambda^q\int_\Omega|f|^q<\infty$; thus
+$f\psi\in L^q(\Omega)$.  Next,
+\[
+|\psi g+f\nabla\psi|\ \le\ \Lambda|g|+\sqrt n\,\Lambda'\,|f|
+\tag{3}
+\]
+pointwise, by the triangle inequality in $\R^n$ and Step 0.  Both
+$\Lambda|g|$ and $\sqrt n\Lambda'|f|$ lie in $L^q(\Omega)$, hence so does their
+sum by the $L^q$ triangle inequality (Minkowski, Preamble); and the measurable
+function $|\psi g+f\nabla\psi|$, being dominated by that sum, satisfies
+$\int_\Omega|\psi g+f\nabla\psi|^q\le\int_\Omega(\Lambda|g|+\sqrt n\Lambda'|f|)^q<\infty$
+by monotonicity of the integral again.  So
+$|\psi g+f\nabla\psi|\in L^q(\Omega)$.
+
+\emph{Step 2: integrability under the hypothesis of clause (2).}  Assume
+instead $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$, and
+nothing about $|\Omega|$.  The local clause of \noderef{MemW1pLocOn}, applied
+to the compact set $K\subseteq\Omega$ of Step 0, gives $f\in L^q(K)$ and
+$|g|\in L^q(K)$; in particular $f$ and $g$ are almost everywhere strongly
+measurable on $K$, so there are measurable $\tilde f,\tilde g$ with
+$\tilde f=f$ and $\tilde g=g$ almost everywhere on $K$.  Since $\psi$ and
+$\nabla\psi$ vanish off $K$ by $(2)$, the functions
+$\mathbf1_K\tilde f\psi$ and
+$\mathbf1_K(\psi\tilde g+\tilde f\nabla\psi)$ are measurable on $\R^n$ and
+agree with $f\psi$ and $\psi g+f\nabla\psi$ off a subset of $K$ of measure
+zero; so $f\psi$ and $\psi g+f\nabla\psi$ are almost everywhere strongly
+measurable on $\Omega$.
+
+The two estimates of Step 1 hold pointwise everywhere, in particular on $K$:
+$|f\psi|\le\Lambda|f|$ and $(3)$.  Running the argument of Step 1 over $K$
+instead of $\Omega$ --- monotonicity of the integral for the first, and
+Minkowski on $K$ followed by monotonicity for the second --- gives
+$f\psi\in L^q(K)$ and $|\psi g+f\nabla\psi|\in L^q(K)$.  By $(2)$ both
+functions vanish off the measurable set $K\subseteq\Omega$, so the
+zero-extension item of the Preamble ($L^q$ of a set is $L^q$ of the
+zero-extension, and a function vanishing outside a measurable subset and lying
+in $L^q$ there lies in $L^q$ of any larger set) upgrades these to
+$f\psi\in L^q(\Omega)$ and $|\psi g+f\nabla\psi|\in L^q(\Omega)$.
+
+\emph{Step 3: $\varphi\psi$ is an admissible test function.}  Fix
+$\varphi\in C^\infty(\R^n)$ with compact support and
+$\operatorname{supp}\varphi\subseteq\Omega$, and fix $i$.  Put
+$\Phi=\varphi\psi$.  Then:
+
+\begin{itemize}
+\item $\Phi\in C^\infty(\R^n)$, being a product of two $C^\infty$ functions.
+\item $\{\Phi\ne0\}=\{\varphi\ne0\}\cap\{\psi\ne0\}$, so
+  $\operatorname{supp}\Phi=\overline{\{\Phi\ne0\}}
+  \subseteq\overline{\{\varphi\ne0\}}=\operatorname{supp}\varphi$.  Being a
+  closed subset of the compact set $\operatorname{supp}\varphi$, the set
+  $\operatorname{supp}\Phi$ is compact.
+\item $\operatorname{supp}\Phi\subseteq\operatorname{supp}\varphi\subseteq\Omega$.
+\end{itemize}
+
+So $\Phi$ lies in the test class of \noderef{HasWeakGradientOn} for the open set
+$\Omega$.  Put also
+\[
+L=\operatorname{supp}\varphi\cap K ,
+\]
+a compact subset of $\Omega$ (an intersection of two compact sets, both
+contained in $\Omega$).  We record the integrability we shall need on $L$:
+\emph{$f$ and each $g^i$ are in $L^1(L)$.}  Indeed, under the hypothesis of
+clause (1) we have $f\in L^q(\Omega)$ and $|g|\in L^q(\Omega)$, hence
+$f,|g|\in L^q(L)$ by the subset item of the Preamble; under the hypothesis of
+clause (2) we have $f,|g|\in L^q(K)$ by Step 2 and hence again $f,|g|\in L^q(L)$
+by the same item.  In either case $L$ is compact, so $|L|<\infty$, and
+$q\ge1$, so H\"older on a set of finite measure (Preamble) gives
+$L^q(L)\subseteq L^1(L)$; finally $|g^i|\le|g|$ pointwise.
+
+\emph{Step 4: the computation.}  The defining identity of
+\noderef{HasWeakGradientOn}, which the pair $(f,g)$ satisfies on $\Omega$,
+applied to the test function $\Phi$ and the index $i$, reads
+\[
+\int_\Omega f\,D_i\Phi\,dx=-\int_\Omega g^i\,\Phi\,dx .
+\tag{4}
+\]
+By the classical product rule for the $C^\infty$ functions $\varphi$ and $\psi$,
+\[
+D_i\Phi=D_i(\varphi\psi)=\psi\,D_i\varphi+\varphi\,D_i\psi
+\qquad\text{everywhere on }\R^n .
+\]
+Substituting this into the left-hand side of (4), the integrand splits as
+$f\psi D_i\varphi+f\varphi D_i\psi$.  Each of the four functions
+\[
+f\,D_i\Phi,\qquad f\psi\,D_i\varphi,\qquad f\varphi\,D_i\psi,\qquad
+g^i\,\varphi\psi
+\]
+vanishes off $L$: the first because $\Phi=\varphi\psi$ is identically zero on
+each of the two open sets $\R^n\setminus\operatorname{supp}\varphi$ and
+$\R^n\setminus K$, hence so is $D_i\Phi$, and the union of those two open sets
+is $\R^n\setminus L$; the second and fourth because $\psi$ vanishes off $K$ and
+$\varphi$ off $\operatorname{supp}\varphi$; the third because $D_i\psi$
+vanishes off $K$ (Step 0) and $\varphi$ off $\operatorname{supp}\varphi$.  On $L$ each is measurable and
+dominated by a constant multiple of $|f|+|g|\in L^1(L)$ (Step 3), the constants
+coming from the bounds of Step 0 together with
+$\sup|\varphi|,\sup|D_i\varphi|<\infty$.  So all four are in $L^1(\Omega)$
+(domination and the zero-extension item, Preamble), and the integral of a sum
+is the sum of the integrals; thus (4) becomes
+\[
+\int_\Omega (f\psi)\,D_i\varphi\,dx+\int_\Omega f\,(D_i\psi)\,\varphi\,dx
+=-\int_\Omega g^i\,\varphi\psi\,dx .
+\tag{5}
+\]
+All three integrals in (5) are finite by the domination just given, so we may
+move the second integral to the right-hand side:
+\[
+\int_\Omega (f\psi)\,D_i\varphi\,dx
+=-\int_\Omega g^i\,\psi\,\varphi\,dx-\int_\Omega f\,(D_i\psi)\,\varphi\,dx
+=-\int_\Omega\bigl(\psi\,g^i+f\,D_i\psi\bigr)\varphi\,dx ,
+\]
+the last step combining the two finite integrals into one, again legitimate
+because both integrands are in $L^1(\Omega)$.  This is exactly (1).
+
+Since $\varphi$ and $i$ were arbitrary, the pair
+$(f\psi,\ \psi g+f\nabla\psi)$ satisfies \noderef{HasWeakGradientOn} on
+$\Omega$.  Combining this with the two $L^q$ memberships of Step 1 proves
+clause (1), and combining it with the two $L^q$ memberships of Step 2 proves
+clause (2): in both cases $f\psi\in W^{1,q}(\Omega)$ with weak gradient
+$\psi g+f\nabla\psi$ (\noderef{MemW1pOn}).
+\end{proof}

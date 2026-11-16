@@ -1,0 +1,190 @@
+\begin{helper}[(Q2) integrated along a segment: a growth bound on $A$ itself]
+Let $n\ge2$ and $p>1$.  There is a constant $c=c(n,p)>0$ such that the
+following holds.  Let $\varepsilon\ge0$, let $\gamma_0,\gamma_1>0$, let
+$\Omega\subseteq\R^n$, and let $A\colon\R^n\times\R\times\R^n\to\R^n$ satisfy
+\noderef{EllipticStructureQ12} with these data --- \emph{all} of that node's
+clauses, as that node states them; they are not re-expanded here, and
+$D(\varepsilon)=\{h\in\R^n:\varepsilon+|h|^2\ne0\}$ is the set on which its
+differentiability clause and its two bounds are stated.
+Then for a.e.\ $x\in\R^n$: if $x\in\Omega$, then for every $z\in\R$ and every
+$h\in\R^n$,
+\[
+|A(x,z,h)|\ \le\ |A(x,z,0)|
+\;+\;c\,\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|h| .
+\]
+All powers are real powers of nonnegative reals, with the convention
+$0^{s}=0$ for $s\ne0$.
+
+The constant must be allowed to depend on $p$ and not on $n$ alone: for
+$1<p<2$ the weight is singular at the origin, and the bound carries the factor
+$\frac1{p-1}$ produced by $\int_0^1t^{p-2}\,dt$.  Since
+$|h|\le(\varepsilon+|h|^2)^{1/2}$, the right-hand side is at most
+$|A(x,z,0)|+c\,\gamma_1(\varepsilon+|h|^2)^{\frac{p-1}2}$; for
+$0\le\varepsilon\le1$ this is the thesis' remark on p.~2 that (Q4) of the thesis
+follows from (Q2) of the thesis when $A(x,z,0)=0$, and it is the form from which
+consumers deduce $A(\cdot,u,\nabla u)\in L^{p/(p-1)}$ out of $\nabla u\in L^p$.
+\end{helper}
+\begin{proof}
+Write $s=\frac p2-1$ and set
+\[
+c_1=\max\Bigl\{1,\ \tfrac1{p-1}\Bigr\},\qquad c=n\,c_1 .
+\]
+Both are finite and positive: $p>1$ makes $\frac1{p-1}$ finite and positive,
+and $n\ge2$ makes $n>0$.  The constant depends only on $n$ and $p$, which is
+the required quantifier order.  Note that $\gamma_0$ and (Q1) of the thesis play no
+part below; only (Q2) of the thesis and the $C^1$ clause of
+\noderef{EllipticStructureQ12} are used.
+
+\emph{Choice of $x$.}  By \noderef{EllipticStructureQ12} the condition
+(Q2) of the thesis holds for a.e.\ $x$, i.e.\ there is a null set $N$ such that for
+every $x\notin N$ with $x\in\Omega$, (Q2) of the thesis holds at $x$ for all
+$z,h,i,j$.  Since the conclusion to be proved is itself an
+``a.e.\ $x$'' statement, it suffices to prove it for each such $x$.  Fix
+$x\notin N$ with $x\in\Omega$, and fix $z\in\R$ and $h\in\R^n$.  (The set
+$\R^n\setminus N$ is nonempty, indeed of full measure, because Lebesgue measure
+on $\R^n$ is not the zero measure.)
+
+\emph{Step 0: the case $h=0$.}  If $h=0$ the claim reads
+$|A(x,z,0)|\le|A(x,z,0)|+c\gamma_1(\varepsilon)^{s}\cdot0$, and the added term
+is $0$; so the inequality holds.  Assume from now on $h\ne0$, so that $|h|>0$
+and $\varepsilon+|h|^2>0$.
+
+\emph{Step 1: the operator bound coming from (Q2) of the thesis.}  Let
+$g\in D(\varepsilon)$ and write $D A(x,z,g)$ for the differential of
+$A(x,z,\cdot)$ at $g$, which exists because $D(\varepsilon)$ is open and
+$A(x,z,\cdot)$ is of class $C^1$ there by \noderef{EllipticStructureQ12}, since
+$x\in\Omega$; and (Q2) of the thesis is available at $g$ for the same reason, $g$
+lying in $D(\varepsilon)$.  Writing
+$h=\sum_{j=1}^nh^je_j$ in the standard basis and using linearity of
+$DA(x,z,g)$,
+\[
+\bigl(DA(x,z,g)h\bigr)^i=\sum_{j=1}^nh^j\,D_{h_j}A^i(x,z,g)
+\qquad(i=1,\dots,n).
+\]
+By (Q2) of the thesis, $|D_{h_j}A^i(x,z,g)|\le\gamma_1(\varepsilon+|g|^2)^{s}$ for
+all $i,j$, so
+\[
+\bigl|\bigl(DA(x,z,g)h\bigr)^i\bigr|
+\ \le\ \gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}\sum_{j=1}^n|h^j|
+\ \le\ \sqrt n\,\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}\,|h| ,
+\]
+the last step being Cauchy--Schwarz (Preamble) applied to the vectors
+$(|h^1|,\dots,|h^n|)$ and $(1,\dots,1)$.  Summing the squares over $i$ and
+taking square roots,
+\[
+\bigl|DA(x,z,g)h\bigr|
+=\Bigl(\sum_{i=1}^n\bigl|\bigl(DA(x,z,g)h\bigr)^i\bigr|^2\Bigr)^{1/2}
+\ \le\ \sqrt n\cdot\sqrt n\,\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}|h|
+= n\,\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}|h| .
+\tag{$*$}
+\]
+
+\emph{Step 2: the fundamental theorem of calculus along $[0,h]$.}  Define
+$\Psi\colon\R\to\R^n$ by $\Psi(t)=A(x,z,th)$.  First, $\Psi$ is continuous on
+$[0,1]$: $t\mapsto th$ is continuous and $A(x,z,\cdot)$ is continuous on all of
+$\R^n$ by the first clause of \noderef{EllipticStructureQ12}.  Second, for
+$t\in(0,1]$ the point $th$ lies in $D(\varepsilon)$, because $h\ne0$ and $t>0$
+give $\varepsilon+|th|^2\ge t^2|h|^2>0$; since $D(\varepsilon)$ is open and
+$A(x,z,\cdot)$ is $C^1$ there, and $t\mapsto th$ is linear, the chain rule gives
+that $\Psi$ is differentiable at every such $t$ with
+\[
+\Psi'(t)=DA(x,z,th)\,h\qquad(0<t\le1).
+\]
+At $t=0$ the point $0$ lies in $D(\varepsilon)$ only when $\varepsilon\ne0$, and
+nothing below needs differentiability there: the single excluded point is an
+\emph{endpoint} of the segment $[0,h]$, so the variant of the fundamental
+theorem of calculus that asks for differentiability on the open interval and
+continuity on the closed one (Preamble) is exactly the right tool.
+We check that $\Psi'$ is interval-integrable on $[0,1]$.  It is measurable:
+by the Preamble item on measurability of the derivative, the map
+$g\mapsto DA(x,z,g)h$ is measurable, and $t\mapsto th$ is continuous, so the
+composition $t\mapsto DA(x,z,th)h$ is measurable, hence strongly measurable
+because $\R^n$ is separable.  (Only differentiability of $A$ in $h$ is used
+here, which the $C^1$ clause of \noderef{EllipticStructureQ12} supplies a
+fortiori; no continuity of $g\mapsto DA(x,z,g)$ is needed at this step, which
+is why the Preamble item on measurability of an arbitrary derivative is the
+right tool.)  It is
+dominated: by $(*)$ with $g=th$, and because $|th|=|t|\,|h|$ gives
+$|th|^2=t^2|h|^2$,
+\[
+|\Psi'(t)|\ \le\ n\,\gamma_1\,|h|\,\bigl(\varepsilon+t^2|h|^2\bigr)^{s}
+\qquad(0<t\le1),
+\]
+hence for almost every $t\in[0,1]$, the excluded endpoint $t=0$ being a null
+set; an almost-everywhere domination is all the Preamble item on domination
+asks for.
+The right-hand side is interval-integrable on $[0,1]$: it is the constant
+$n\gamma_1|h|$ times $t\mapsto(\varepsilon+|th+(1-t)\cdot0|^2)^{s}$, which is
+interval-integrable by \noderef{SegmentWeightIntegrable} applied with the
+segment endpoints $a=h$ and $b=0$.  By the Preamble item on domination,
+$\Psi'$ is interval-integrable on $[0,1]$.  Hence the open-interval form of the
+fundamental theorem of calculus (Preamble) --- differentiability on $(0,1)$ from
+the previous paragraph, continuity on $[0,1]$ from the first clause of
+\noderef{EllipticStructureQ12}, interval-integrability of the derivative just
+established --- applies and gives
+\[
+A(x,z,h)-A(x,z,0)=\Psi(1)-\Psi(0)=\int_0^1\Psi'(t)\,dt .
+\]
+
+\emph{Step 3: estimating the integral.}  By the norm inequality for the
+integral and then monotonicity (both Preamble), using the domination of
+Step 2,
+\[
+\bigl|A(x,z,h)-A(x,z,0)\bigr|\ \le\ \int_0^1|\Psi'(t)|\,dt
+\ \le\ n\,\gamma_1\,|h|\int_0^1\bigl(\varepsilon+t^2|h|^2\bigr)^{s}dt .
+\]
+We claim
+\[
+\int_0^1\bigl(\varepsilon+t^2|h|^2\bigr)^{s}dt
+\ \le\ c_1\bigl(\varepsilon+|h|^2\bigr)^{s} .
+\tag{$**$}
+\]
+The integral on the left is finite by \noderef{SegmentWeightIntegrable}, as
+noted in Step 2.
+
+\emph{Proof of $(**)$ when $p\ge2$, i.e.\ $s\ge0$.}  For $t\in[0,1]$ we have
+$t^2\le1$, hence $\varepsilon+t^2|h|^2\le\varepsilon+|h|^2$; since $s\ge0$ the
+map $u\mapsto u^{s}$ is nondecreasing on $[0,\infty)$, so
+$(\varepsilon+t^2|h|^2)^{s}\le(\varepsilon+|h|^2)^{s}$ for every $t\in[0,1]$.
+Integrating over the unit interval gives $(**)$ with the constant $1\le c_1$.
+
+\emph{Proof of $(**)$ when $1<p<2$, i.e.\ $-\tfrac12<s<0$.}  Let
+$t\in(0,1]$.  Since $t^2\le1$ and $\varepsilon\ge0$ we have
+$t^2\varepsilon\le\varepsilon$, hence
+\[
+0\ <\ t^2\bigl(\varepsilon+|h|^2\bigr)=t^2\varepsilon+t^2|h|^2
+\ \le\ \varepsilon+t^2|h|^2 ,
+\]
+the strict positivity because $t>0$ and $\varepsilon+|h|^2>0$ (Step 0).  As
+$s<0$, the map $u\mapsto u^{s}$ is decreasing on $(0,\infty)$, so
+\[
+\bigl(\varepsilon+t^2|h|^2\bigr)^{s}
+\ \le\ \bigl(t^2(\varepsilon+|h|^2)\bigr)^{s}
+= t^{2s}\bigl(\varepsilon+|h|^2\bigr)^{s} ,
+\]
+where the product rule for real powers is available because both factors
+$t^2$ and $\varepsilon+|h|^2$ are strictly positive.  The single point $t=0$
+is a null set, so the bound holds a.e.\ on $[0,1]$, and both sides are
+interval-integrable there: the left by \noderef{SegmentWeightIntegrable}, the
+right because $2s=p-2>-1$ (Preamble item on real powers).  Integrating,
+\[
+\int_0^1\bigl(\varepsilon+t^2|h|^2\bigr)^{s}dt
+\ \le\ \bigl(\varepsilon+|h|^2\bigr)^{s}\int_0^1t^{2s}\,dt
+=\frac{\bigl(\varepsilon+|h|^2\bigr)^{s}}{2s+1}
+=\frac{\bigl(\varepsilon+|h|^2\bigr)^{s}}{p-1}
+\ \le\ c_1\bigl(\varepsilon+|h|^2\bigr)^{s},
+\]
+using $\int_0^1t^{r}\,dt=\frac1{r+1}$ for $r>-1$ and $2s+1=p-1>0$, and
+$(\varepsilon+|h|^2)^{s}\ge0$.  This proves $(**)$ in the second case, and the
+factor $\frac1{p-1}$ is exactly the $p$-dependence announced in the statement.
+
+\emph{Conclusion.}  Combining Step 3 with $(**)$,
+\[
+\bigl|A(x,z,h)-A(x,z,0)\bigr|
+\ \le\ n\,c_1\,\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{s}|h|
+= c\,\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{s}|h| ,
+\]
+and the triangle inequality $|A(x,z,h)|\le|A(x,z,0)|+|A(x,z,h)-A(x,z,0)|$
+yields the assertion.  Since $x$ was an arbitrary point outside the null set
+$N$, the assertion holds for a.e.\ $x$, as claimed.
+\end{proof}

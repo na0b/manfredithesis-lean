@@ -1,0 +1,170 @@
+\begin{helper}[The weight sandwich]
+Let $n\ge2$ and $p>1$, and let $\rho\colon\R^n\to\R$ satisfy
+\[
+\rho\in C^\infty(\R^n),
+\qquad
+\rho\ge0,
+\qquad
+\operatorname{supp}\rho\subseteq\overline{B_1(0)},
+\qquad
+\int_{\R^n}\rho\,dz=1 ,
+\]
+and suppose there is $\kappa>0$ with $\rho\ge\kappa$ on $\overline{B_{7/8}(0)}$.
+Then there are constants $c_1$ and $C_2$ with $0<c_1\le C_2$ such that the
+scalar kernel
+\[
+K(h,e)=\int_{\R^n}\bigl(|h+\sqrt e\,z|^2\bigr)^{\frac p2-1}\rho(z)\,dz
+\]
+satisfies
+\[
+c_1\bigl(e+|h|^2\bigr)^{\frac p2-1}\ \le\ K(h,e)\ \le\ C_2\bigl(e+|h|^2\bigr)^{\frac p2-1}
+\]
+for every $h\in\R^n$ and every $e>0$.
+
+\textbf{What the constants depend on.}  They are bound after $n$, $p$ and
+$\rho$ and before $h$ and $e$, which is the order in which the proof produces
+them: they are built from $n$, $p$, $\sup\rho$, $\kappa$ and the volume of a
+ball, and from nothing else.  That is the form the consumer needs, because it
+applies the two inequalities at every $h$ and every $e\in(0,1]$ with one and the
+same pair of constants.
+
+\textbf{On the exponent at the origin.}  The base $|h+\sqrt e\,z|^2$ vanishes at
+the single point $z=-h/\sqrt e$, where the convention for $0^{p/2-1}$ fixed for
+this development gives the value $0$.  For $p\ge2$ that convention is harmless
+and the lower bound is proved on a ball of positive $\rho$-mass away from that
+point; for $1<p<2$ the integrand is genuinely singular there, and what the upper
+bound asserts is that the singularity is integrable against $\rho$ uniformly in
+$h$ and $e$.  Both halves are proved below for every $p>1$ at once.
+\end{helper}
+\begin{proof}
+Write $q=\tfrac p2-1$ and $W=e+|h|^2$, and note that two consequences of the
+hypotheses on $\rho$ are used throughout and are recorded first.  First,
+$\operatorname{supp}\rho$ is compact: it is closed, being a closure, and is
+contained in $\overline{B_1(0)}$, a closed bounded --- hence compact --- subset
+of $\R^n$, and a closed subset of a compact set is compact.  Second,
+$\|\rho\|_\infty<\infty$: $\rho$ is continuous, hence bounded on that compact
+set, and vanishes off it.  For
+$|z|\le1$ one has $|h+\sqrt e\,z|^2\le2|h|^2+2e\le2W$, which settles the two
+cases where the sign of $q$ is convenient: for $p\ge2$ ($q\ge0$) it gives
+$K\le2^qW^q$ pointwise in $z$ and hence after integration against $\rho$, since
+$\int\rho=1$; and for $1<p<2$ ($q<0$) it gives $K\ge2^qW^q$ the same way.
+\emph{One point must be discarded in the second case.}  For $q<0$ the step from
+$x\le y$ to $x^q\ge y^q$ needs $x>0$, and $x=|h+\sqrt e\,z|^2$ vanishes at the
+single $z=-h/\sqrt e$, where pm-0024's convention makes $x^q=0^q=0$, which is
+\emph{not} $\ge(2W)^q>0$.  That $z$ is one point of $\R^n$, hence a Lebesgue
+null set, so the pointwise inequality holds almost everywhere and the integrated
+inequality $K\ge2^qW^q$ is unaffected (Preamble, clause (a) of the domination
+item and the monotonicity of the integral over a fixed set, both insensitive to
+a null set).  In the case $p\ge2$ no point need be discarded: there
+$0^q=0\le(2W)^q$ for $q>0$, and at $p=2$ both sides are $1$.  The two remaining
+cases are the ones that do the work.
+
+\emph{The lower bound for $p\ge2$.}  Here the integrand must be kept away from
+$0$, so $|h+\sqrt e\,z|$ has to be bounded below on a set of positive
+$\rho$-measure; it cannot be bounded below for every $z$, since $h+\sqrt e\,z$
+vanishes at one $z$.  Let $u$ be a unit vector with $(u,h)\ge0$ and put
+$Z=B_{1/8}(\tfrac34u)\subseteq B_{7/8}(0)$.  For $z\in Z$ write $z=\tfrac34u+w$
+with $|w|\le\tfrac18$; from
+\[
+\Bigl|\frac h{\sqrt e}+\tfrac34u\Bigr|^2
+=\frac{|h|^2}e+\frac32\frac{(u,h)}{\sqrt e}+\frac9{16}\ \ge\ \frac9{16}
+\]
+we get $\bigl|\tfrac h{\sqrt e}+z\bigr|\ge\tfrac34-\tfrac18=\tfrac58$, i.e.
+\[
+|h+\sqrt e\,z|\ \ge\ \tfrac58\sqrt e\quad(z\in Z),
+\qquad
+\int_Z\rho\ \ge\ \kappa\,\bigl|B_{1/8}(0)\bigr|=:m>0 ,
+\]
+and the mass bound is uniform in $u$ exactly because $\rho\ge\kappa>0$ on
+$\overline{B_{7/8}(0)}$, which contains every such $Z$.  Now split.  If
+$|h|\le2\sqrt e$ then $W\le5e$, so on $Z$ one has
+$|h+\sqrt e\,z|^2\ge\tfrac{25}{64}e\ge\tfrac5{64}W$ and hence
+$K\ge m\bigl(\tfrac5{64}\bigr)^qW^q$.  If $|h|>2\sqrt e$ then
+$|h+\sqrt e\,z|\ge|h|-\sqrt e\ge\tfrac12|h|$ for \emph{every} $|z|\le1$, while
+$W\le\tfrac54|h|^2$, so $|h+\sqrt e\,z|^2\ge\tfrac14|h|^2\ge\tfrac15W$ and
+$K\ge\bigl(\tfrac15\bigr)^qW^q$.  Since $m\le1$ and $\tfrac5{64}<\tfrac15$, the
+constant $c_\ast=m\bigl(\tfrac5{64}\bigr)^q$ serves in both cases, i.e.
+$K\ge c_\ast W^q$ whenever $p\ge2$.
+
+\emph{The upper bound for $1<p<2$.}  Here the integrand is singular where
+$h+\sqrt e\,z$ vanishes, and what is needed is that the singularity is
+integrable against $\rho$ \emph{uniformly} in $h$ and $e$.  Scaling, with
+$a=h/\sqrt e$,
+\[
+K(h,e)=e^{\frac{p-2}2}I(a),
+\qquad
+I(a)=\int_{\R^n}\rho(z)\,|a+z|^{p-2}\,dz .
+\]
+If $|a|\le2$ then $|a+z|\le3$ on $\operatorname{supp}\rho$, so, substituting
+$w=a+z$ (Preamble: invariance of Lebesgue measure under translations) and
+bounding $\rho$ by $\|\rho\|_\infty$,
+\[
+I(a)\ \le\ \|\rho\|_\infty\int_{\{|w|\le3\}}|w|^{p-2}\,dw ,
+\]
+and that integral is finite with a bound depending only on $n$ and $p$.
+\emph{We do not use the polar-coordinate closed form} $n\omega_n\,3^{n+p-2}/(n+p-2)$,
+which no node states and which the Preamble does not declare; dyadic annuli and
+the declared volume-of-a-ball item suffice, and only finiteness is needed.
+
+Write $s=p-2$, so $s<0$ and $n+s=n+p-2>0$, since $n\ge2$ and $p>1$.  The value
+of the integrand at $w=0$ is $0^{s}=0$ by pm-0024's convention, so the origin
+contributes nothing and we may integrate over $\{0<|w|\le3\}$ instead.  For each
+integer $k\ge0$ put
+\[
+A_k=\bigl\{w:3\cdot2^{-(k+1)}<|w|\le3\cdot2^{-k}\bigr\} ,
+\]
+a disjoint family whose union is exactly $\{0<|w|\le3\}$: given $w$ with
+$0<|w|\le3$ there is exactly one $k\ge0$ with
+$3\cdot2^{-(k+1)}<|w|\le3\cdot2^{-k}$.  On $A_k$ the exponent being negative
+gives $|w|^{s}\le\bigl(3\cdot2^{-(k+1)}\bigr)^{s}$, and
+$A_k\subseteq B_{3\cdot2^{-k}+\eta}(0)$ for every $\eta>0$, so
+$|A_k|\le\omega_n\bigl(3\cdot2^{-k}+\eta\bigr)^n$ (Preamble: the volume of a
+ball); letting $\eta\downarrow0$ gives
+$|A_k|\le\omega_n\bigl(3\cdot2^{-k}\bigr)^n$, with no need to measure the
+bounding sphere.
+Hence
+\[
+\int_{A_k}|w|^{s}\,dw
+\ \le\ \omega_n3^{n}2^{-kn}\cdot3^{s}2^{-(k+1)s}
+=\omega_n3^{\,n+s}2^{-s}\bigl(2^{-(n+s)}\bigr)^{k} .
+\]
+Since $n+s>0$ we have $2^{-(n+s)}<1$, so these terms are a convergent geometric
+series with sum
+\[
+S:=\omega_n3^{\,n+s}2^{-s}\bigl(1-2^{-(n+s)}\bigr)^{-1}<\infty .
+\]
+To conclude, put $f=|w|^{s}\mathbf1_{\{0<|w|\le3\}}$ and, for each integer $K\ge0$,
+$f_K=|w|^{s}\mathbf1_{E_K}$ with $E_K=\bigcup_{k\le K}A_k
+=\{3\cdot2^{-(K+1)}<|w|\le3\}$.  Each $f_K$ is nonnegative and measurable,
+$f_K\le f_{K+1}$, and $f_K\to f$ pointwise, since every $w$ with $0<|w|\le3$
+lies in $E_K$ for all large $K$.  By finite additivity of the integral over the
+disjoint $A_0,\dots,A_K$, $\int f_K\le\sum_{k=0}^{K}\omega_n3^{n+s}2^{-s}
+\bigl(2^{-(n+s)}\bigr)^{k}\le S$ for every $K$; and Fatou's lemma (Preamble),
+applied to the sequence $(f_K)$ whose pointwise limit --- and hence pointwise
+$\liminf$ --- is $f$, gives
+\[
+\int_{\{0<|w|\le3\}}|w|^{s}\,dw=\int f\ \le\ \liminf_K\int f_K\ \le\ S .
+\]
+So $I(a)\le\|\rho\|_\infty S<\infty$ when $|a|\le2$.  This, with
+$\|\rho\|_\infty$ and $\omega_n$, is where the dimension enters, and the
+condition $n+p-2>0$ is exactly what makes the geometric ratio less than $1$.  If $|a|\ge2$ then $|a+z|\ge|a|-1\ge\tfrac12|a|$ on
+$\operatorname{supp}\rho$, so $I(a)\le2^{2-p}|a|^{p-2}$.  As $1+|a|\le\tfrac32|a|$
+in the second case and $1+|a|\le3$ in the first, both give
+$I(a)\le C(n,p)\,(1+|a|)^{p-2}$, whence
+\[
+K(h,e)\ \le\ C\,e^{\frac{p-2}2}\Bigl(1+\frac{|h|}{\sqrt e}\Bigr)^{p-2}
+=C\,\bigl(\sqrt e+|h|\bigr)^{p-2}\ \le\ C\,W^{\frac{p-2}2}=C\,W^q ,
+\]
+the last step because $(\sqrt e+|h|)^2\ge e+|h|^2=W$ and $p-2<0$.
+
+The four cases together give the two displayed inequalities for every $p>1$,
+every $h\in\R^n$ and every $e>0$, with
+$c_1=\min\{2^q,\,c_\ast\}$ and
+$C_2=\max\{2^q,\,C\}$, where $m$, $C$ and the constants of the four cases are
+the ones exhibited above: each is built from $n$, $p$, $\|\rho\|_\infty$,
+$\kappa$ and the volume of a ball alone, and none of them involves $h$ or $e$.
+Finally $0<c_1\le C_2$: both are positive because $m>0$, $2^q>0$ and
+$(\tfrac5{64})^q>0$, so $c_\ast>0$, and $c_1\le C_2$ because the lower bound and the upper
+bound may be read at one and the same pair $(h,e)$ --- say $h=0$, $e=1$ --- where
+$(e+|h|^2)^q=1$ and so $c_1\le K(0,1)\le C_2$.
+\end{proof}

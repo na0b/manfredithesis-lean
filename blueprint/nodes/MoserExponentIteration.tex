@@ -1,0 +1,127 @@
+\begin{helper}[The exponent iteration of Moser's argument, with the Chebyshev passage to a pointwise bound]
+Let $n\in\mathbb{N}$ and let $\chi,\sigma_1,\sigma_2,D,E\in\R$ satisfy
+\begin{enumerate}
+\item[(H1)] $\chi>1$, $\displaystyle\sigma_1=\frac\chi{2(\chi-1)}$,
+  $\displaystyle\sigma_2=\frac\chi{2(\chi-1)^2}$,
+  $E=(2D)^{\sigma_1}2^{\sigma_2}$, $E>0$ and $D\ge1$.
+\end{enumerate}
+Let $x_0\in\R^n$, let $R\in\R$ and let $v\colon\R^n\to\R$ satisfy
+\begin{enumerate}
+\item[(H2)] $R>0$, $v$ is measurable, $v\ge0$ everywhere, and
+  $0<|B_R(x_0)|$.
+\end{enumerate}
+Let $Y\colon\R\times\R\to\R$ and $\mathrm{Bnd}\colon\R\times\R\to\mathrm{Prop}$
+satisfy
+\begin{enumerate}
+\item[(H3)] $\displaystyle Y(s,\rho)=\Bigl(\frac1{|B_R(x_0)|}
+  \int_{B_\rho(x_0)}v^{2s}dx\Bigr)^{\frac1{2s}}$ for all $s,\rho$.
+  \emph{Both radii are normalised by the measure of the OUTER ball
+  $B_R(x_0)$}, never by $|B_\rho(x_0)|$: that is the convention that makes the
+  radii cancel in the iteration, and it is restated here because a helper
+  inherits none of its parent's notation;
+\item[(H4)] $\mathrm{Bnd}(\rho,A)$ is the statement that $v\le A$ almost
+  everywhere on $B_\rho(x_0)$;
+\item[(H5)] $v^{2s}$ is integrable on $B_\rho(x_0)$ whenever $s>1$ and
+  $0<\rho<R$;
+\item[(H6)] $Y(s,\rho)\ge0$ whenever $s>0$;
+\item[(H7)] (the reverse-H\"older step) for every $\theta>1$ and all radii
+  $R/2\le r'<r\le\frac34R$,
+  \[
+  Y(\theta\chi,r')\ \le\ \Bigl(\frac{DR}{r-r'}\Bigr)^{\frac1\theta}Y(\theta,r);
+  \]
+\item[(H8)] $Y(s,a)\le Y(s,b)$ whenever $s>1$, $0<a\le b<R$.
+\end{enumerate}
+Then for all radii $R/2\le\rho'<\rho\le\frac34R$,
+\[
+\mathrm{Bnd}\Bigl(\rho',\ E\Bigl(\frac R{\rho-\rho'}\Bigr)^{\sigma_1}Y(2,\rho)\Bigr),
+\]
+that is, $v\le E\bigl(R/(\rho-\rho')\bigr)^{\sigma_1}Y(2,\rho)$ almost
+everywhere on $B_{\rho'}(x_0)$.
+\end{helper}
+\begin{proof}
+Write $B_\rho=B_\rho(x_0)$ and fix $R/2\le\rho'<\rho\le\frac34R$.  Then
+$\rho'>0$, $\rho-\rho'>0$ and $\rho<R$, so $R/(\rho-\rho')>0$.  Put
+\[
+A=E\Bigl(\frac R{\rho-\rho'}\Bigr)^{\sigma_1}Y(2,\rho)\ \ge\ 0 ,
+\]
+nonnegative by (H1), (H6) and positivity of $R/(\rho-\rho')$.
+
+\emph{Step 1: the exponents and radii of the iteration.}  Put
+\[
+\theta_j=2\chi^j,\qquad r_j=\rho'+2^{-j}(\rho-\rho')\qquad(j=0,1,2,\dots),
+\]
+so $\theta_0=2$, $\theta_{j+1}=\theta_j\chi$, every $\theta_j>1$ because
+$\chi\ge1$; and $r_0=\rho$, $r_j$ decreases to $\rho'$ with
+$r_j-r_{j+1}=2^{-j-1}(\rho-\rho')$, every $r_j$ lying in
+$[\rho',\rho]\subseteq[R/2,\frac34R]$.  Also $\theta_j\to\infty$, since
+$\chi>1$.
+
+\emph{Step 2: the chain.}  By Step 1 each consecutive pair
+$(r_{j+1},r_j)$ satisfies $R/2\le r_{j+1}<r_j\le\frac34R$, so (H7) at
+$\theta=\theta_j$ gives
+\[
+Y(\theta_{j+1},r_{j+1})\ \le\ K_j^{\frac1{\theta_j}}\,Y(\theta_j,r_j),
+\qquad
+K_j=\frac{2^{j+1}DR}{\rho-\rho'} .
+\]
+All the quantities $Y(\theta_j,r_j)$ are finite by (H5) and nonnegative by
+(H6), so multiplying these inequalities for $j=0,\dots,m-1$ is legitimate and
+gives
+\[
+Y(\theta_m,r_m)\ \le\ \Bigl(\prod_{j=0}^{m-1}K_j^{\frac1{\theta_j}}\Bigr)Y(2,\rho).
+\]
+
+\emph{Step 3: the exponent sums.}  Each $K_j\ge1$: indeed $D\ge1$ by (H1), and
+$R/(\rho-\rho')\ge4$ because both radii lie in $[R/2,\frac34R]$, so
+$\rho-\rho'\le R/4$.  \emph{That is what lets every partial product be bounded
+by the infinite one}, the partial products being increasing.  Writing
+$K_j=2^jK_0$ with $K_0=2DR/(\rho-\rho')\ge1$,
+\[
+\sum_{j\ge0}\frac1{\theta_j}=\frac12\sum_{j\ge0}\chi^{-j}
+=\frac12\cdot\frac\chi{\chi-1}=\sigma_1,
+\qquad
+\sum_{j\ge0}\frac j{\theta_j}=\frac12\sum_{j\ge0}j\chi^{-j}
+=\frac12\cdot\frac\chi{(\chi-1)^2}=\sigma_2,
+\]
+both finite because $\chi>1$ --- a geometric and a differentiated geometric
+series --- and both matching (H1).  Hence
+$\prod_{j\ge0}K_j^{1/\theta_j}=K_0^{\sigma_1}2^{\sigma_2}
+=(2D)^{\sigma_1}2^{\sigma_2}\bigl(R/(\rho-\rho')\bigr)^{\sigma_1}
+=E\bigl(R/(\rho-\rho')\bigr)^{\sigma_1}$, using (H1) and the splitting of a
+real power of a product of positive factors.  Combining with (H8), which gives
+$Y(\theta_m,\rho')\le Y(\theta_m,r_m)$ since $\rho'\le r_m<R$ and
+$\theta_m>1$, we obtain the uniform bound
+\[
+Y(\theta_m,\rho')\ \le\ A\qquad(m\in\mathbb{N}).
+\tag{1}
+\]
+
+\emph{Step 4: the Chebyshev passage from (1) to the pointwise bound.}  Let
+$t>A$; we claim $|B_{\rho'}\cap\{v>t\}|=0$.  Note $t>0$, since $A\ge0$.  The
+set $Z=B_{\rho'}\cap\{v>t\}$ is measurable, $v$ being measurable by (H2), and
+$|Z|\le|B_{\rho'}|<\infty$.  Suppose $|Z|>0$.  By the Chebyshev--Markov
+inequality (Preamble: the essential supremum as the limit of normalised $L^q$
+means, clause (2)), applied on $B_{\rho'}$ at the exponent $2\theta_m$ and the
+level $t$,
+\[
+Y(\theta_m,\rho')
+=\Bigl(\frac1{|B_R|}\int_{B_{\rho'}}v^{2\theta_m}\Bigr)^{\frac1{2\theta_m}}
+\ \ge\ t\Bigl(\frac{|Z|}{|B_R|}\Bigr)^{\frac1{2\theta_m}} ,
+\]
+the integral being finite by (H5).  As $m\to\infty$ we have
+$1/(2\theta_m)\to0$ by Step 1, and $|Z|/|B_R|$ is a fixed number in $(0,1]$ by
+$|Z|>0$ and (H2), so $(|Z|/|B_R|)^{1/(2\theta_m)}\to1$ and the right-hand side
+tends to $t$.  Hence $\liminf_mY(\theta_m,\rho')\ge t>A$, contradicting (1).
+So $|Z|=0$, as claimed.
+
+\emph{Step 5: conclusion.}  Apply Step 4 at $t=A+\frac1{k+1}$ for each
+$k\in\mathbb{N}$: each set $B_{\rho'}\cap\{v>A+\frac1{k+1}\}$ is null, and
+\[
+B_{\rho'}\cap\{v>A\}=\bigcup_{k\in\mathbb{N}}
+B_{\rho'}\cap\Bigl\{v>A+\tfrac1{k+1}\Bigr\},
+\]
+because $v(x)>A$ forces $v(x)>A+\frac1{k+1}$ for some $k$.  A countable union
+of null sets is null, so $B_{\rho'}\cap\{v>A\}$ is null, i.e.\ $v\le A$ almost
+everywhere on $B_{\rho'}$.  By (H4) that is $\mathrm{Bnd}(\rho',A)$, which is
+the assertion.
+\end{proof}

@@ -1,0 +1,61 @@
+\begin{lemma}[From almost everywhere to everywhere for a continuous matrix field]
+Let $n\ge2$, let $K\ge1$, let $\lambda,\Lambda\in\R$, let $\Omega\subseteq\R^n$ be open and
+let $\tau,\tau'\colon\R^n\to\R^{n\times n}$ satisfy $\tau=\tau'$ almost
+everywhere on $\Omega$ with every entry $x\mapsto\tau'(x)_{jk}$ continuous on
+$\Omega$.  Suppose that for almost every $x\in\Omega$ the matrix $\tau(x)$ is
+symmetric with $\det\tau(x)=1$ and
+\[
+K^{-\frac2n}|\xi|^2\le(\tau(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2\quad
+(\xi\in\R^n),
+\qquad
+\lambda|h|^{\,n}\le(\tau(x)h,h)^{\frac n2}\le\Lambda|h|^{\,n}\quad(h\in\R^n).
+\]
+Then for \emph{every} $x\in\Omega$ the matrix $\tau'(x)$ is symmetric with
+$\det\tau'(x)=1$ and
+\[
+K^{-\frac2n}|\xi|^2\le(\tau'(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2\quad
+(\xi\in\R^n),
+\qquad
+\lambda|h|^{\,n}\le(\tau'(x)h,h)^{\frac n2}\le\Lambda|h|^{\,n}\quad(h\in\R^n).
+\]
+\end{lemma}
+\begin{proof}
+This step is needed because the hypotheses on $\tau$ hold only almost
+everywhere, while the structure conditions that consume them downstream are
+asserted at \emph{every} point of their domain.  Fix $\xi\in\R^n$ and let
+\[
+E_\xi=\Bigl\{x\in\Omega:\ K^{-\frac2n}|\xi|^2\le(\tau'(x)\xi,\xi)
+\le K^{\frac{2(n-1)}n}|\xi|^2\Bigr\}.
+\]
+By the two-sided hypothesis on $\tau$ and the almost-everywhere equality
+$\tau=\tau'$ on $\Omega$, the set $\Omega\setminus E_\xi$ is null.  The function
+$x\mapsto(\tau'(x)\xi,\xi)=\sum_a\sum_b\tau'(x)_{ab}\xi_a\xi_b$ is continuous on
+$\Omega$, being a finite linear combination of the continuous entries, so
+$E_\xi$ is relatively closed in $\Omega$ and $\Omega\setminus E_\xi$ is
+relatively open in $\Omega$, hence open in $\R^n$ since $\Omega$ is open.  A
+nonempty open subset of $\R^n$ contains a ball $B_\rho(z)$ of positive radius and
+so has positive volume $\omega_n\rho^n>0$ (Preamble: the volume of a ball);
+since $\Omega\setminus E_\xi$ is null it must therefore be empty.  So
+$E_\xi=\Omega$.  As $\xi$ was arbitrary,
+\[
+K^{-\frac2n}|\xi|^2\le(\tau'(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2
+\qquad\text{for every }x\in\Omega\text{ and every }\xi\in\R^n .
+\tag{2.1}
+\]
+The identical argument applied to $x\mapsto\tau'(x)_{jk}-\tau'(x)_{kj}$, to
+$x\mapsto\det\tau'(x)$ (a polynomial in the entries, hence continuous) and, for
+each fixed $h$, to $x\mapsto(\tau'(x)h,h)^{n/2}$ --- continuous because
+$(\tau'(x)h,h)\ge0$ and $t\mapsto t^{n/2}$ is continuous on $[0,\infty)$, the
+nonnegativity being the left half of (2.1) together with $K^{-\frac2n}>0$, which
+holds because $K\ge1>0$; \emph{this is the only place the hypothesis $K\ge1$ is
+used, and without it the quadratic form can be negative --- at $n=2$, $K=-1$ the
+two bounds of \textup{(2.1)} both read $-|\xi|^2$ --- so the composition is not
+covered by continuity on $[0,\infty)$} --- upgrades the remaining
+almost-everywhere statements as well:
+$\tau'(x)$ is symmetric, $\det\tau'(x)=1$, and
+$\lambda|h|^{\,n}\le(\tau'(x)h,h)^{n/2}\le\Lambda|h|^{\,n}$ for every
+$x\in\Omega$ and every $h\in\R^n$.  In each case the set where the asserted
+(closed) condition holds is the preimage of a closed set under a function
+continuous on $\Omega$, hence relatively closed in $\Omega$; its complement in
+$\Omega$ is open in $\R^n$ and null, hence empty.
+\end{proof}

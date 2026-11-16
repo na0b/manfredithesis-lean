@@ -1,0 +1,367 @@
+\begin{theorem}[Theorem 2]
+Let $n\ge2$, $p>1$ and $r>0$, and suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Then there exist constants $C=C(p,r,n)>0$ and
+$\alpha=\alpha(p,r,n)$ with $0<\alpha\le1$ with the following property.  Let
+$\varepsilon\ge0$, $\gamma_0>0$, $\gamma_1\le r\gamma_0$, let
+$\Omega\subseteq\R^n$ be open, let $A$ satisfy (Q1) of the thesis--(Q2) of the thesis on
+$\Omega$ with parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), let $u$ be a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $\Omega$ (\noderef{IsWeakSolutionOn}) with
+weak gradient $g=\nabla u$, let $\overline B_R(x_0)\subseteq\Omega$ and let
+$0<\rho\le R$.  Then
+\[
+\operatorname*{osc}(\nabla u,B_\rho)\;\le\;C\,\sup_{B_R}|\nabla u|\,
+\Bigl(\frac\rho R\Bigr)^{\alpha}.
+\]
+Both the oscillation and the supremum are essential (p.~6 of the paper), so the
+statement is written as: for every $S$ with $|\nabla u|\le S$ a.e.\ in $B_R$,
+\[
+|g(x)-g(y)|\le C\,S\,(\rho/R)^{\alpha}
+\quad\text{for a.e.\ }x\in B_\rho\text{ and a.e.\ }y\in B_\rho .
+\]
+Quantifying over all essential upper bounds $S$ is equivalent to using
+$\esssup_{B_R}|\nabla u|$, which is itself such a bound.  The constants $C$ and
+$\alpha$ are bound before $\varepsilon,\gamma_0,\gamma_1$ and all the data, and
+the structure constants enter only through $\gamma_1\le r\gamma_0$: this is the
+formal content of ``$C$ and $\alpha$ depend only on $p$, $\gamma_1/\gamma_0$ and
+$n$''.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constants of \noderef{OscillationDecayLemma} and \noderef{DegenerateAlternative} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $C$ and $\alpha$, it introduces no dependence of
+$C$ and $\alpha$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+
+The cited solvability result (C2) (\noderef{CitedDirichletW1p}) is assumed here
+for \emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ \emph{with $\gamma_0'>0$ and $\gamma_1'>0$},
+which is the form (C2) has in the paper's Note.  The hypothesis is bound before the constant, but it introduces no
+dependence on any quantity outside the list the paper names: it mentions only
+$n$ and $p$, both already bound, and it carries no numerical content of its own.
+It is needed because the reduction of the case $\varepsilon=0$ to
+$\varepsilon>0$ goes through \noderef{DegenerateLimitTransfer}, whose own (C2)
+hypothesis is of that universal shape --- it has to be, since the regularized
+fields to which (C2) is applied are produced inside that node's conclusion.
+
+The cited regularity result (C1) (\noderef{CitedRegularityEpsPos}) is assumed in
+the same way: for \emph{every} field $A'$, \emph{every} open set $\Omega'$ and
+all parameters $\varepsilon',\gamma_0',\gamma_1'$ with
+$\gamma_0'>0$ and $\gamma_1'>0$.  That is the form (C1) has in the
+paper's Note, which states it for an arbitrary operator and an arbitrary
+solution: ``If $\varepsilon>0$ and $A\colon\R^n\to\R^n$ satisfies
+(Q1) of the thesis and (Q2) of the thesis, then every weak solution
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ of (3.1) of the thesis satisfies
+$u\in W^{2,2}_{\mathrm{loc}}(\Omega)$ and $\nabla u\in C(\Omega)$'' (Note for the
+formalization, (C1)).  So the universal clause is the faithful transcription and
+a clause attached only to the field $A$ and the domain $\Omega$ of this theorem
+would be the weakening.  The clause is quantified over
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$, $\gamma_1'>0$ and over
+open sets $\Omega'$ only, and those side conditions are not optional: the
+structure conditions (Q1) of the thesis--(Q2) of the thesis carry positive constants in
+the thesis (``$\gamma_0,\gamma_1>0$''), and (C1) is a statement about weak
+solutions on an open set, so a clause quantified over $\gamma_0'\le0$ or over
+arbitrary $\Omega'$ would assert more than the cited result does --- and since
+this is a hypothesis of the present theorem, asserting more than the literature
+gives risks making the theorem vacuously true.  The remaining antecedents need
+no guard, because \noderef{CitedRegularityEpsPos} carries $\varepsilon>0$,
+(Q1) of the thesis--(Q2) of the thesis and the weak-solution property inside its own
+statement.  The same two positivity conditions are attached to the (C2) clause;
+(C2) needs no openness condition, since \noderef{CitedDirichletW1p} is a
+statement about balls and fixes its own domain.  Quantifying the set is not decorative: the proof consumes (C1) on
+the balls $B_{R'}\subseteq B_R$ on which the alternative
+\noderef{DegenerateAlternative} is applied --- that node asks for the predicate
+itself at the ball --- and \noderef{CaccioppoliLevelWeight} takes the family
+$D(\nabla u)$ as a parameter, which the proof must produce from the existential
+inside (C1)'s conclusion.  Like (C2) and (C6), (C1) carries no numerical
+content: it asserts membership and the existence of a continuous representative
+of the gradient, and names no constant, so although
+it is bound before the existentials for $C$ and $\alpha$ it introduces no
+dependence of them on anything outside the list $p$, $\gamma_1/\gamma_0$, $n$
+that the paper names.
+\end{theorem}
+\begin{proof}
+Write $B_\sigma=B_\sigma(x_0)$ and $g^k=D_ku$.  Constants named $c$, $C$ or
+$\gamma$ with a subscript are positive and depend only on $n$, $p$ and $r$;
+this is checked at each occurrence.  $\omega_n=|B_1|$, so
+$|B_\sigma|=\omega_n\sigma^{\,n}$ (Preamble: the volume of a ball).
+
+The proof has two parts.  Part A fixes the constants; the exponent $\alpha$
+among them is produced by \noderef{GradientOscillationEstimateEpsPos}, which is
+the statement under the extra hypothesis $\varepsilon>0$ in a slightly more
+flexible form (thesis pp.~27--29).  Part B removes $\varepsilon>0$.
+
+\medskip
+\noindent\emph{Part A: the constants.}
+
+\textbf{(A0)} $S\ge0$.  The theorem's datum is a number $S$ with
+$\|g\|\le S$ almost everywhere on $B_R$, and three steps below need $S$ to be
+nonnegative.  It is: $|B_R|=\omega_nR^n>0$ (Preamble: the volume of a ball,
+using $R\ge\rho>0$), so the set of $x\in B_R$ at which $\|g(x)\|\le S$ holds has
+positive measure and is in particular nonempty; at any of its points
+$0\le\|g(x)\|\le S$.
+
+\textbf{(A1)} Apply \noderef{DegenerateLimitTransfer} with $n,p,r$ --- its
+hypotheses are $2\le n$, $1<p$, $0<r$ --- and let $r'>0$ be the number it
+produces; it depends only on $n,p,r$.  Put $r_+=\max\{r,r'\}>0$.  Every node
+below that takes a ratio bound is instantiated at $r_+$, so that one set of
+constants serves both the given problem, whose ratio bound is $r\le r_+$, and
+the approximating problems of Part B, whose ratio bound is $r'\le r_+$.
+
+\textbf{(A2)} Apply \noderef{GradientOscillationEstimateEpsPos} with $n,p,r_+$
+--- its hypotheses there are $2\le n$, $1<p$ and $0<r_+$ --- together with the
+Sobolev--Poincar\'e hypothesis \noderef{CitedSobolevPoincareBall} and the
+universal cited regularity hypothesis (C1) (\noderef{CitedRegularityEpsPos}) of
+the present theorem; those three are exactly its remaining head hypotheses, and
+the last two are independent of the ratio bound, so they serve $r_+$ as well as
+$r$.  Let $\alpha$ with $0<\alpha\le1$ be the exponent it produces; it depends
+only on $n,p,r_+$, hence only on $n,p,r$.  Write (A2) also for its conclusion:
+\emph{for every $\varepsilon>0$, $\gamma_0>0$ and $\gamma_1\le r_+\gamma_0$,
+every open $\Omega_0$, every $A$ satisfying (Q1) of the thesis--(Q2) of the thesis on
+$\Omega_0$ with parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), every weak solution $u$ of
+$\operatorname{div}A(\nabla u)=0$ in $\Omega_0$ (\noderef{IsWeakSolutionOn})
+with weak gradient $g$, every $x_0$ and every $R_0>0$ with
+$B_{R_0}(x_0)\subseteq\Omega_0$, every $T\ge0$ with $\|g\|\le T$ a.e.\ on
+$B_{R_0}(x_0)$, every $0<\rho\le R_0$ and every $k$,}
+\[
+\operatorname*{osc}\bigl(g^k,B_\rho(x_0)\bigr)
+\ \le\ 16\,T\,\Bigl(\frac\rho{R_0}\Bigr)^{\alpha},
+\]
+\emph{where $\operatorname*{osc}(f,E)=\operatorname{ess\,sup}_Ef-
+\operatorname{ess\,inf}_Ef$ (\noderef{EssOscOn}).}  Two features of that
+statement are used below: it asks only for the \emph{open} ball
+$B_{R_0}(x_0)\subseteq\Omega_0$, which is what lets (B6$'$) apply it with
+$\Omega_0$ a ball, and it does not require $\gamma_1>0$, that being derived
+inside it from $\gamma_0>0$ and the structure conditions.
+
+\textbf{(A3)} Apply \noderef{GradientSupEstimate} (Theorem~1) with $n,p,r_+$,
+\noderef{CitedSobolevPoincareBall} and the two universal cited hypotheses (C2)
+(\noderef{CitedDirichletW1p}) and (C1) (\noderef{CitedRegularityEpsPos}) of the
+present theorem --- those three are exactly its remaining head hypotheses, and
+they are independent of the ratio bound, so they serve $r_+$ as well as $r$ ---
+and let $C_1>0$ be its constant.  Put
+\[
+\kappa=\bigl(C_1\,2^{\,2p-2}\,\omega_n\,2^{\,n}\bigr)^{1/p},
+\qquad
+C=\max\bigl\{16\sqrt n,\ 4\kappa\cdot16\sqrt n,\ 8\bigr\}
+=\max\bigl\{64\sqrt n\,\kappa,\ 16\sqrt n,\ 8\bigr\} .
+\]
+All of $r_+,\alpha,C_1,\kappa,C$ are functions of $n$, $p$ and $r$ alone and
+are fixed before $\varepsilon,\gamma_0,\gamma_1,S,\Omega,A,u,g,x_0,R,\rho$,
+which is the quantifier order the statement asserts.  The order of choice is
+acyclic: $r_+$ first, then $\alpha$ and $C_1$ at $r_+$, then $\kappa$ and
+$C$.
+
+\medskip
+\noindent\emph{Part B: the general case $\varepsilon\ge0$.}
+
+\textbf{(B1$'$) If $\varepsilon>0$.}  Apply (A2) with
+$\Omega_0=\Omega$, $R_0=R$ and $T=S$; the inclusion $B_R\subseteq\Omega$ follows
+from $\overline B_R\subseteq\Omega$, and $\gamma_1\le r\gamma_0\le r_+\gamma_0$.
+Its hypothesis $T\ge0$ is (A0), its hypothesis $\|g\|\le T=S$ a.e.\ on $B_R$
+is the theorem's datum, and $R_0=R>0$ because $R\ge\rho>0$.
+For a.e.\ $x\in B_\rho$ and a.e.\ $y\in B_\rho$ one has
+$\operatorname{ess\,inf}_{B_\rho}g^k\le g^k(x)\le
+\operatorname{ess\,sup}_{B_\rho}g^k$ and the same for $y$, so
+$|g^k(x)-g^k(y)|\le\operatorname*{osc}(g^k,B_\rho)$ for every $k$; hence
+\[
+\|g(x)-g(y)\|=\Bigl(\sum_k\bigl(g^k(x)-g^k(y)\bigr)^2\Bigr)^{1/2}
+\le\sqrt n\max_k\operatorname*{osc}(g^k,B_\rho)
+\le16\sqrt n\,S\Bigl(\frac\rho R\Bigr)^{\alpha}
+\le C\,S\,\Bigl(\frac\rho R\Bigr)^{\alpha}.
+\]
+
+\textbf{(B2$'$) The normalisation $A(0)=0$.}  Put $\widetilde A(h)=A(h)-A(0)$.
+Then $\widetilde A(0)=0$; $\widetilde A$ satisfies
+(Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the same
+$p,\varepsilon,\gamma_0,\gamma_1$, because \texttt{hcont} and \texttt{hdiff} are
+unaffected by subtracting a constant and \texttt{Q1} and \texttt{Q2} involve
+only $\operatorname{fderiv}$ of the field, which is unchanged
+(\noderef{EllipticStructureQ12}); and $u$ is a weak solution for
+$\widetilde A$ in $\Omega$ iff it is one for $A$.  For the last point, the first
+clause of \noderef{IsWeakSolutionOn} does not mention the field, and for a test
+pair $(\varphi,g_\varphi)$ with $\varphi\in W^{1,p}(\Omega)$ of weak gradient
+$g_\varphi$ (\noderef{MemW1pOn}), compact support and
+$\operatorname{tsupport}\varphi\subseteq\Omega$, the two integrands differ by
+$\sum_i(A(0))_ig_\varphi^{\,i}$ at every point.  That difference is integrable
+on $\Omega$ (see below), so either both integrands are integrable --- in which
+case the two integrals differ by the integral of the difference --- or neither
+is, in which case both integrals are $0$ by the convention of the Bochner
+integral and the two identities hold together.  In the first case the two
+identities agree because
+\[
+\int_\Omega g_\varphi^{\,i}\,dx=0\qquad(i=1,\dots,n).
+\]
+Indeed $g_\varphi=0$ a.e.\ on the open set
+$\Omega\setminus\operatorname{tsupport}\varphi$, where $\varphi$ vanishes
+identically, because $0$ is also a weak gradient of $\varphi$ there and a weak
+gradient is determined almost everywhere (Preamble: the fundamental lemma of the
+calculus of variations, second consequence); in particular $g_\varphi^{\,i}$ is
+integrable on $\Omega$, being supported in a compact set and in $L^p$ of it.
+Now let $\delta_\flat>0$ be such that the closed
+$\delta_\flat$-neighbourhood $K$ of $\operatorname{tsupport}\varphi$ is
+contained in $\Omega$ --- such a $\delta_\flat$ exists because
+$\operatorname{tsupport}\varphi$ is compact and $\Omega$ open --- and put
+$\psi=\mathbf1_{K_{1/2}}*\rho_{\delta_\flat/4}$, where $K_{1/2}$ is the closed
+$\delta_\flat/2$-neighbourhood of $\operatorname{tsupport}\varphi$ and
+$\rho_{\delta_\flat/4}$ is the standard mollifier of the Preamble in dimension
+$n$ at scale $\delta_\flat/4$.  Then $\psi$ is smooth (Preamble:
+convolution with a smooth compactly supported kernel), $\psi=1$ on the closed
+$\delta_\flat/4$-neighbourhood of $\operatorname{tsupport}\varphi$ and
+$\psi=0$ off $K$, so $\psi$ is a legitimate test function for
+\noderef{HasWeakGradientOn} on $\Omega$.  That identity, applied to $\psi$ and
+the index $i$, reads
+$\int_\Omega\varphi\,D_i\psi=-\int_\Omega g_\varphi^{\,i}\psi$.  Its left-hand
+side vanishes, because $\psi$ is constant on a neighbourhood of
+$\operatorname{tsupport}\varphi$ --- so $D_i\psi=0$ there --- while $\varphi=0$
+off $\operatorname{tsupport}\varphi$; and its right-hand side is
+$-\int_\Omega g_\varphi^{\,i}$, because $\psi=1$ on
+$\operatorname{tsupport}\varphi$ and $g_\varphi^{\,i}=0$ a.e.\ off it.  This
+proves the display.  Hence the two weak-solution properties coincide, and since
+the conclusion of the theorem mentions only $g$, we may and do replace $A$ by
+$\widetilde A$.  (This is thesis l.~542, ``Since $\dv A(0)=0$ we may assume
+without loss of generality that $A(0)=0$''; the normalisation is internal to the
+proof and is \emph{not} a hypothesis of the theorem.)
+
+\textbf{(B3$'$) The structure on all of $\R^n$.}  $\Omega\ne\emptyset$, because
+$\overline B_R\subseteq\Omega$ and $R\ge\rho>0$.  Of the six clauses of
+\noderef{EllipticStructureQ12} for the field $(x,z,h)\mapsto\widetilde A(h)$,
+the first two need no argument here: Carath\'eodory measurability in the point
+holds because the field is constant in $x$, its value at $(x,z,h)$ being
+$\widetilde A(h)$ with no occurrence of $x$, and a constant map is Borel
+measurable; Carath\'eodory joint continuity holds because the field is constant
+in $z$ as well, so $(z,h)\mapsto\widetilde A(h)$ is the composition of the
+continuous projection $(z,h)\mapsto h$ with the continuous $\widetilde A$.
+Neither mentions a domain, so both hold on $\R^n$ outright.  Each of the
+remaining four clauses has the form ``for (almost) every $x$, if $x\in\Omega$ then $P$'' with $P$ a
+statement that does not mention $x$ or $z$: \texttt{hcont} is
+``$\widetilde A$ is continuous'', \texttt{hdiff} is
+``$\widetilde A$ is $C^1$ on $\{\varepsilon+\|h\|^2\ne0\}$'', and \texttt{Q1},
+\texttt{Q2} are inequalities in $h$ and $\xi$ alone.  The almost-everywhere
+clauses hold at almost every $x$, and $|\Omega|\ge|B_R|>0$, so there is an $x\in\Omega$
+at which they hold; the pointwise ones hold at every $x\in\Omega\ne\emptyset$.
+Either way $P$ is true, hence holds for every $x\in\R^n$, and
+$\widetilde A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n=\mathrm{univ}$
+with the same parameters.
+
+\textbf{(B4$'$) The approximating sequence.}  Assume now $\varepsilon=0$.  By
+clause (4) of \noderef{WeakGradientRestrict} with $q=p$ and the open sets
+$\Omega\supseteq B_R$, together with the first clause of
+\noderef{IsWeakSolutionOn} and the facts that $\overline B_R$ is compact and
+$\overline B_R\subseteq\Omega$, we get $u\in W^{1,p}(B_R)$ with weak gradient
+$g$ (\noderef{MemW1pOn}).  Apply \noderef{DegenerateLimitTransfer} --- the
+instance of (A1) --- with $\gamma_0,\gamma_1$ (so $0<\gamma_0$ and
+$\gamma_1\le r\gamma_0$), the field $\widetilde A$ with
+$\widetilde A(0)=0$ by (B2$'$) and (Q1) of the thesis--(Q2) of the thesis at
+$\varepsilon=0$ on $\mathrm{univ}$ by (B3$'$), the present theorem's universal
+hypothesis (C2) (\noderef{CitedDirichletW1p}), the centre $x_0$, the radius
+$R>0$, and the pair $(u,g)$ with $u\in W^{1,p}(B_R)$ and the weak-solution
+property for $\widetilde A$ on $B_R$.  That last item is
+\noderef{IsWeakSolutionRestrict}, applied with $n$, the exponent $p$, the open
+set $\Omega$, the centre $x_0$, the radius $R$, the first field
+$(x,z,h)\mapsto\widetilde A(h)$, the second field identically $0$ and the pair
+$(u,g)$: its hypotheses are $1\le n$ and $1\le p$ (from $2\le n$ and $1<p$), the
+openness of $\Omega$, $R>0$ (from $R\ge\rho>0$), the inclusion
+$B_R\subseteq\Omega$ (from $B_R\subseteq\overline B_R\subseteq\Omega$), and the
+weak-solution property for $\widetilde A$ on $\Omega$ --- which is the theorem's
+datum for $A$ on $\Omega$ (\noderef{IsWeakSolutionOn}) transported to
+$\widetilde A$ by (B2$'$).  It produces
+$e_m>0$ with $e_m\to0$, fields $A_m$ with $A_m(0)=0$ and constants
+$\gamma_0^{(m)}>0$, $\gamma_1^{(m)}\le r'\gamma_0^{(m)}\le r_+\gamma_0^{(m)}$
+such that $A_m$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\mathrm{univ}$ at
+$e_m$, and functions $u_m$ with weak gradients $g_m$ that are weak solutions of
+$\operatorname{div}A_m(\nabla u_m)=0$ in $B_R$
+(\noderef{IsWeakSolutionOn}), with $u_m-u\in W^{1,p}_0(B_R)$ of weak gradient
+$g_m-g$ (\noderef{MemW1pZeroOn}),
+$\int_{B_R}\|g_m-g\|^p\,dx\to0$, and $g_m\to g$ a.e.\ on $B_R$.
+
+\textbf{(B5$'$) A uniform gradient bound on $B_{R/4}$.}  Apply the conclusion of
+\noderef{GradientSupEstimate} --- the instance of (A3), with the constant $C_1$
+--- for each $m$, with $\varepsilon=e_m\ge0$, the constants
+$\gamma_0^{(m)},\gamma_1^{(m)}$ (so $0<\gamma_0^{(m)}$ and
+$\gamma_1^{(m)}\le r_+\gamma_0^{(m)}$), the open set $B_R$, the field $A_m$ with
+$A_m(0)=0$, the solution $u_m$ with weak gradient $g_m$, the centre $x_0$ and
+the radius $R/2>0$, whose closed ball $\overline B_{R/2}$ is contained in the
+open $B_R$.  Its structure hypothesis on $B_R$ follows from the one on
+$\mathrm{univ}$: each of the last four clauses of
+\noderef{EllipticStructureQ12} is an assertion of the form ``for (almost) every
+$x$, if $x\in\Omega'$ then \dots'', so replacing $\Omega'=\mathrm{univ}$ by the
+subset $B_R$ only weakens the antecedent, while the first two clauses --- the
+Carath\'eodory pair, i.e.\ measurability of $x\mapsto A_m(x,z,h)$ on $\R^n$ and
+joint continuity of $(z,h)\mapsto A_m(x,z,h)$ at every $x\in\R^n$ --- carry no
+domain guard and are literally the same assertion for $B_R$ as for
+$\mathrm{univ}$.  Its conclusion is
+\[
+\bigl(e_m+\|g_m(x)\|^2\bigr)^{p/2}
+\le\frac{C_1}{(R/2)^{\,n}}\int_{B_{R/2}}\bigl(e_m+\|g_m(y)\|^2\bigr)^{p/2}dy
+\qquad\text{for a.e. }x\in B_{R/4}.
+\]
+Bound the integral.  Since $(e_m+t^2)^{p/2}\le(e_m^{1/2}+t)^{p}$ for $t\ge0$ and
+$(a+b)^p\le2^{p-1}(a^p+b^p)$ for $a,b\ge0$ (convexity of $s\mapsto s^p$),
+\[
+\bigl(e_m+\|g_m\|^2\bigr)^{p/2}\le2^{p-1}\bigl(e_m^{p/2}+\|g_m\|^{p}\bigr)
+\le2^{p-1}e_m^{p/2}+2^{2p-2}\bigl(\|g\|^{p}+\|g_m-g\|^{p}\bigr),
+\]
+so, writing $\varepsilon_m=\int_{B_R}\|g_m-g\|^p$ and using $\|g\|\le S$ a.e.\
+on $B_R$ and $|B_{R/2}|\le|B_R|=\omega_nR^n$,
+\[
+\int_{B_{R/2}}\bigl(e_m+\|g_m\|^2\bigr)^{p/2}
+\le2^{p-1}e_m^{p/2}\omega_nR^n+2^{2p-2}\omega_nR^nS^p+2^{2p-2}\varepsilon_m .
+\]
+Since $e_m\to0$ and $\varepsilon_m\to0$, the right-hand side has limit
+$2^{2p-2}\omega_nR^nS^p$.  Also $\|g_m\|^p\le(e_m+\|g_m\|^2)^{p/2}$, so, putting
+$S_m=\operatorname{ess\,sup}_{B_{R/4}}\|g_m\|$,
+\[
+S_m^{\,p}\le\frac{C_1\,2^{\,n}}{R^{\,n}}\int_{B_{R/2}}\bigl(e_m+\|g_m\|^2\bigr)^{p/2},
+\qquad\text{hence}\qquad
+\limsup_{m\to\infty}S_m\le\bigl(C_1\,2^{\,n}\,2^{2p-2}\omega_n\bigr)^{1/p}S=\kappa S .
+\]
+In particular $S_m<\infty$ for every $m$.  Also $S_m\ge0$: the function
+$\|g_m\|$ is nonnegative everywhere and $|B_{R/4}|=\omega_n(R/4)^n>0$
+(Preamble: the volume of a ball), so the essential supremum of a nonnegative
+function over a set of positive measure is nonnegative --- it is an essential
+upper bound for $\|g_m\|$ there, and an essential upper bound on a set of
+positive measure is attained-or-exceeded at some point of it, where the function
+is $\ge0$.  So $0\le S_m<\infty$, and $S_m$ is an admissible value of
+the $T$ of (A2) for $\|g_m\|$ on $B_{R/4}$: both the
+nonnegativity and the essential bound are in hand.
+
+\textbf{(B6$'$) Passing (A2) to the limit.}  Let
+$0<\rho\le R/4$.  For each $m$ apply (A2) with
+$\varepsilon=e_m>0$, the constants $\gamma_0^{(m)},\gamma_1^{(m)}$, the open set
+$\Omega_0=B_R$, the field $A_m$, the solution $u_m$ with weak gradient $g_m$,
+the radius $R_0=R/4$ --- so $B_{R/4}\subseteq B_R$ --- and $T=S_m$.  It gives,
+for every $k$, $\operatorname*{osc}(g_m^k,B_\rho)\le16S_m(4\rho/R)^{\alpha}$,
+and hence, by the componentwise argument of (B1$'$), for a.e.\ $x$ and a.e.\
+$y$ in $B_\rho$,
+\[
+\|g_m(x)-g_m(y)\|\le16\sqrt n\,S_m\Bigl(\frac{4\rho}R\Bigr)^{\alpha}
+\le64\sqrt n\,S_m\Bigl(\frac\rho R\Bigr)^{\alpha},
+\]
+using $4^{\alpha}\le4$.  For each $m$ the set of $x\in B_\rho$ for which the
+inner almost-everywhere statement fails is null, and for each such $x$ the set of
+bad $y$ is null; intersecting over the countably many $m$ and with the
+full-measure sets on which $g_m\to g$ (from (B4$'$)) leaves a full-measure set of
+$x\in B_\rho$ and, for each of them, a full-measure set of $y\in B_\rho$, such
+that the displayed bound holds for \emph{every} $m$ and $g_m(x)\to g(x)$,
+$g_m(y)\to g(y)$.  For such $x,y$, passing to the limit in
+$\|g_m(x)-g_m(y)\|\le64\sqrt n\,S_m(\rho/R)^{\alpha}$ and using (B5$'$),
+\[
+\|g(x)-g(y)\|=\lim_{m\to\infty}\|g_m(x)-g_m(y)\|
+\le\liminf_{m\to\infty}64\sqrt n\,S_m\Bigl(\frac\rho R\Bigr)^{\alpha}
+\le64\sqrt n\,\kappa\,S\Bigl(\frac\rho R\Bigr)^{\alpha}
+\le C\,S\,\Bigl(\frac\rho R\Bigr)^{\alpha},
+\]
+the last inequality but one because
+$\liminf_mS_m\le\limsup_mS_m\le\kappa S$ by (B5$'$).  For the remaining radii
+$R/4<\rho\le R$ the trivial bound suffices: for a.e.\
+$x,y\in B_\rho\subseteq B_R$ we have $\|g(x)\|\le S$ and $\|g(y)\|\le S$, so
+$\|g(x)-g(y)\|\le2S$, while $(\rho/R)^{\alpha}>4^{-\alpha}\ge\tfrac14$ and
+therefore $2S\le8S(\rho/R)^{\alpha}\le C\,S(\rho/R)^{\alpha}$ --- the first of
+those two inequalities multiplies $\tfrac14<(\rho/R)^{\alpha}$ by $8S$ and so
+needs $S\ge0$, which is (A0); for $S<0$ it would be false.  Together with
+(B1$'$) this proves the theorem for every $\varepsilon\ge0$.
+\end{proof}

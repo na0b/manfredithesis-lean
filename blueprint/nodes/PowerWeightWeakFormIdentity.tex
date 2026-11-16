@@ -1,0 +1,200 @@
+\begin{helper}[The weak-form transport of the differentiated equation to the power weight, and the identity (5)]
+Let $n\ge2$ and $p>1$.  Let $\varepsilon,\gamma_0,\gamma_1,t\in\R$, let
+$\Omega\subseteq\R^n$, let $A\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$ and let $\zeta\colon\R^n\to\R$.  Throughout,
+$\operatorname{supp}$ denotes the \emph{closed} support, $K=\operatorname{supp}\zeta$,
+and every power of a positive real is the real power, written exactly as the
+structure conditions (Q1) of the thesis--(Q2) of the thesis print them.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\varepsilon$, $0<\gamma_0$, $\gamma_0\le\gamma_1$, $\Omega$ is
+  open and nonempty;
+\item[(H2)] the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}); the cited
+  regularity result (C1) holds for $A$ on $\Omega$ with those parameters
+  (\noderef{CitedRegularityEpsPos}); $u$ is a weak solution of
+  $\operatorname{div}A(\nabla u)=0$ in $\Omega$ with weak gradient $g$
+  (\noderef{IsWeakSolutionOn}); and $g^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$
+  with weak gradient $Dg^i$ for every $i$ (\noderef{MemW1pLocOn});
+\item[(H3)] $\zeta$ is $C^\infty$ with compact support and $K\subseteq\Omega$.
+\end{enumerate}
+Let $w\colon\R^n\to\R$ and $Dw\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H4)] $w=\varepsilon+|g|^2$ pointwise, $w>0$ everywhere, and
+  $(Dw)_i=2\sum_kg^k(Dg^k)_i$ pointwise.
+\end{enumerate}
+Let $a_{ij}\colon\R^n\to\R$ and $T_1,T_2,T_3\in\R$ satisfy
+\begin{enumerate}
+\item[(H5)] $a_{ij}(x)=\bigl(dA(g(x))e_j\bigr)_i$ for all $x,i,j$, and
+  \[
+  T_1=\int_\Omega\zeta^2w^{\frac t2}\sum_k\sum_{i,j}a_{ij}(Dg^k)_j(Dg^k)_i,
+  \quad
+  T_2=\frac t4\int_\Omega\zeta^2w^{\frac t2-1}\sum_{i,j}a_{ij}(Dw)_j(Dw)_i,
+  \]
+  \[
+  T_3=\int_\Omega\zeta\,w^{\frac t2}\sum_{i,j}a_{ij}(Dw)_j\,D_i\zeta .
+  \]
+  \emph{The coefficient is paired with $(Dg^k)_j=D_jD_ku$ throughout, exactly as
+  \noderef{DifferentiatedEquationWeak} states it; that index placement is
+  load-bearing, not cosmetic.}
+\end{enumerate}
+Let $g'\colon\R^n\to\R^n$ and $w'\colon\R^n\to\R$ satisfy
+\begin{enumerate}
+\item[(H6)] $g'$ is continuous on $\Omega$ and $g=g'$ almost everywhere on
+  $\Omega$; $w=w'$ almost everywhere on $\Omega$; $(w')^1=w'$ pointwise; and for
+  every real $\sigma$ and every compact $K'\subseteq\Omega$ there is $L\ge0$
+  with $(w')^\sigma\le L$ on $K'$.
+\end{enumerate}
+Assume finally the following bookkeeping on $K$ and $\Omega$:
+\begin{enumerate}
+\item[(H7)] $\sum_i(Dw)_i^2\le4w\sum_k|Dg^k|^2$ pointwise; $K$ is compact and
+  measurable; $\zeta$ and every $D_i\zeta$ vanish off $K$; a function vanishing
+  off $K$ and integrable on $K$ is integrable on $\Omega$; and
+  $\sum_k|Dg^k|^2$ is integrable on $K$;
+\item[(H8)] there are $L_\zeta\ge0$ with $\zeta^2\le L_\zeta$ pointwise,
+  $L_{w,1}$ with $(w')^1\le L_{w,1}$ on $K$, and $L_{D\zeta}$ with
+  $\sum_i(D_i\zeta)^2\le L_{D\zeta}$ pointwise;
+\item[(H9)] $g$ is almost everywhere strongly measurable on $K$, and each of
+  $w^\sigma$ (for every real $\sigma$), $g^k$, $(Dg^k)_i$ and $(Dw)_i$ is almost
+  everywhere measurable on $K$.
+\end{enumerate}
+Then all of the following hold:
+\[
+T_1+T_2=-T_3 ,
+\]
+the integrands of $T_1$, $T_2$ and $T_3$ are integrable on $\Omega$, and the
+integrand of $T_3$ is integrable on $K$.
+\end{helper}
+\begin{proof}
+By (H1) and (H2) the structure conditions may be read at every point of
+$\Omega$ in the sense used below; in particular, fixing a point $x_\ast\in\Omega$,
+available because $\Omega$ is nonempty, and reading clause (4) of (H2) at
+$x_\ast$ and $z=0$: since $\varepsilon>0$ \emph{strictly},
+$D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$ is all of $\R^n$, so $A$ is of
+class $C^1$ on $\R^n$ and the symbols $a_{ij}$ of (H5) are genuine partial
+derivatives of a $C^1$ map, with $dA$ continuous.  \emph{The strictness of
+$\varepsilon>0$ is what makes this available}, and it is also what makes the
+chain rule of Step 1 possible.
+
+\emph{Step 1: the chain rule for the power weight.}  Fix $k$ and define
+$F_k\colon\R^n\to\R$ by
+$F_k(y)=y_k\bigl(\varepsilon+\sum_jy_j^2\bigr)^{t/2}$.  It is of class $C^1$ on
+$\R^n$: $y\mapsto\varepsilon+|y|^2$ is a polynomial, hence smooth, with values
+in $[\varepsilon,\infty)\subseteq(0,\infty)$ because $\varepsilon>0$, while
+$\lambda\mapsto\lambda^{t/2}$ is smooth on $(0,\infty)$, and a product of $C^1$
+functions is $C^1$.  Its partial derivatives are
+\[
+D_jF_k(y)=\delta_{jk}\bigl(\varepsilon+|y|^2\bigr)^{\frac t2}
++t\,y_ky_j\bigl(\varepsilon+|y|^2\bigr)^{\frac t2-1}.
+\]
+
+\emph{(1a) The primed family.}  By (H2) each $g^j$ lies in
+$W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Dg^j$
+(\noderef{MemW1pLocOn}); we record that $g'^j$ does too, with the \emph{same}
+$Dg^j$.  Both clauses of \noderef{MemW1pLocOn} are integral statements: the
+weak-gradient identity has $g^j$ only inside an integral, and $g^j=g'^j$ almost
+everywhere on $\Omega$ by (H6), so the two integrands agree almost everywhere
+and the identity transports; and for compact $K'\subseteq\Omega$ the $L^2$
+clauses transport for the same reason, $Dg^j$ being unchanged.
+
+\emph{(1b) The composition, performed on the representative.}  Apply
+\noderef{WeakGradientVectorComp} with this $n$, with $m=n$, with $q=2$, with
+the open set $\Omega$, with the family $G_j=g'^j$ and $DG_j=Dg^j$, and with
+$F=F_k$.  \emph{This is the VECTOR-argument chain rule and not the scalar one}:
+$F_k$ depends on all $n$ components of $y$ at once, so differentiating
+$w^{t/2}=\bigl(\varepsilon+\sum_jy_j^2\bigr)^{t/2}$ along $g$ requires the
+composition of a $C^1$ function of $n$ real arguments with the whole family of
+weak derivatives; the one-variable chain rule cannot produce it.  The node's
+hypotheses hold: $1\le n$ and $1\le2$; $\Omega$ is open; the
+$W^{1,2}_{\mathrm{loc}}$ clause is (1a); the family is locally uniformly
+bounded, because for compact $K'\subseteq\Omega$ the function $|g'|$ is
+continuous on $K'$ by (H6) and hence bounded there, say by $L$, so that
+$|g'^j(x)|\le L$ at \emph{every} $x\in K'$ and every $j$; and $F_k$ is $C^1$.
+\emph{That pointwise bound is why the representative is needed}: the node asks
+for a bound at every point of $K'$, and the given $g$ need not satisfy one,
+since altering a weak gradient on a null set leaves (H2) intact while
+destroying any pointwise bound.  Since $F_k(g'(x))=g'^k(x)(w')^{t/2}(x)$ by
+(H6), the conclusion is that $g'^k(w')^{t/2}$ lies in
+$W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient
+$\sum_jD_jF_k(g')Dg^j=(w')^{t/2}Dg^k+\tfrac t2g'^k(w')^{t/2-1}Dw'$, the
+rewriting using $\sum_jg'^jDg^j=\tfrac12Dw'$, which is (H4) read on the
+representative.
+
+\emph{(1c) Transport back.}  By (H6), $g^kw^{t/2}$ equals $g'^k(w')^{t/2}$
+almost everywhere on $\Omega$ and
+$\Psi^k:=w^{t/2}Dg^k+\tfrac t2g^kw^{t/2-1}Dw$ equals the primed field almost
+everywhere.  Repeating the unfolding of (1a) verbatim with these pairs --- both
+clauses being integrals, hence unchanged when the integrand is altered on a null
+set --- gives
+\[
+g^k\,w^{\frac t2}\in W^{1,2}_{\mathrm{loc}}(\Omega)
+\quad\text{with weak gradient}\quad
+\Psi^k=w^{\frac t2}Dg^k+\frac t2\,g^k\,w^{\frac t2-1}Dw .
+\tag{1}
+\]
+
+\emph{Step 2: the admissible test pair.}  Put
+$\varphi_k=g^kw^{t/2}\zeta^2$ and
+$g_{\varphi_k}=\zeta^2\Psi^k+2\zeta\,g^kw^{t/2}\,\nabla\zeta$.  The support
+statement is immediate: $\zeta^2$ and $\nabla(\zeta^2)=2\zeta\nabla\zeta$ vanish
+off $K$ by (H7), so $\varphi_k$ and $g_{\varphi_k}$ do, and
+$\operatorname{supp}\varphi_k\subseteq K\subseteq\Omega$ with $K$ compact by
+(H3), (H7).  For the membership, apply clause (2) of
+\noderef{WeakGradientSmoothMul} with this $n$, $q=2$, the open set $\Omega$, the
+pair of (1) in the role of $(f,g)$ and the smooth factor $\zeta^2$: its
+hypotheses are $1\le n$, $1\le2$, openness of $\Omega$, the \emph{local}
+membership (1), and that $\zeta^2$ is $C^\infty$ with compact support inside
+$\Omega$, which follows from (H3).  \emph{It is clause (2) and not clause (1)
+that applies}, because $g^kw^{t/2}$ is only locally in $W^{1,2}$ and $\Omega$ may
+have infinite volume; clause (2) assumes neither.  Its conclusion is
+$\varphi_k\in W^{1,2}(\Omega)$ (\noderef{MemW1pOn}) with weak gradient
+$\zeta^2\Psi^k+g^kw^{t/2}\nabla(\zeta^2)=g_{\varphi_k}$, the last equality being
+the classical product rule $D_i(\zeta^2)=2\zeta D_i\zeta$ for the smooth
+$\zeta$.
+
+\emph{Step 3: the three integrands are integrable.}  By (Q2) of the thesis of (H2),
+$|a_{ij}|\le\gamma_1w^{p/2-1}$ almost everywhere on $\Omega$.  Each of
+$w^{p/2-1}$, $w^{t/2}$ and $w^{t/2-1}$ is bounded almost everywhere on $K$: by
+(H6) the corresponding power of $w'$ is bounded on the compact $K$ by some
+$L$, and $w^\sigma=(w')^\sigma$ almost everywhere, while a bound holding almost
+everywhere dominates the same integral.  Also $\zeta$ and $\nabla\zeta$ are
+bounded by (H8), $|Dg^k|\in L^2(K)$ for each $k$ by (H2), and
+$|Dw|\le2\sqrt w\bigl(\sum_k|Dg^k|^2\bigr)^{1/2}\in L^2(K)$ by (H7) together
+with the bound on $w$ from (H6) and (H8).  Measurability of every factor on $K$
+is (H9).  So each of the three integrands is dominated almost everywhere on $K$
+by a constant multiple of a product of two $L^2(K)$ functions, hence lies in
+$L^1(K)$ by Cauchy--Schwarz (Preamble); in particular the integrand of $T_3$ is
+integrable on $K$, which is the last assertion.  Each integrand vanishes off
+$K$ by (H7), so by the extension clause of (H7) each is integrable on $\Omega$,
+which gives the three middle assertions.
+
+\emph{Step 4: substitution and summation over $k$.}  Apply
+\noderef{DifferentiatedEquationWeak} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,Dg$, the index $k$ and the test
+pair $(\varphi_k,g_{\varphi_k})$ of Step 2.  Its hypotheses are $2\le n$,
+$1<p$, $0<\varepsilon$, $0<\gamma_0$, $\gamma_0\le\gamma_1$ --- all of (H1) ---
+openness of $\Omega$, the four clauses of (H2), and the test-class conditions,
+which are Step 2.  Its conclusion is
+\[
+\int_\Omega\sum_{i,j}a_{ij}\,(Dg^k)_j\,(g_{\varphi_k})_i\,dx=0
+\qquad(k=1,\dots,n),
+\]
+the coefficient being paired with $(Dg^k)_j$ exactly as in (H5).  Insert
+\[
+(g_{\varphi_k})_i=\zeta^2\Bigl(w^{\frac t2}(Dg^k)_i
++\tfrac t2g^kw^{\frac t2-1}(Dw)_i\Bigr)+2\zeta g^kw^{\frac t2}D_i\zeta ,
+\]
+which is Step 2's field written out with (1), and sum the $n$ identities.  Using
+$\sum_kg^k(Dg^k)_j=\tfrac12(Dw)_j$ from (H4) in the second and third groups of
+terms, the sum becomes
+\[
+\int_\Omega\zeta^2w^{\frac t2}\sum_k\sum_{i,j}a_{ij}(Dg^k)_j(Dg^k)_i
++\frac t4\int_\Omega\zeta^2w^{\frac t2-1}\sum_{i,j}a_{ij}(Dw)_j(Dw)_i
++\int_\Omega\zeta w^{\frac t2}\sum_{i,j}a_{ij}(Dw)_jD_i\zeta=0 ,
+\]
+that is $T_1+T_2+T_3=0$ by (H5).  The rearrangement of the finite sums and the
+splitting of the integral into the three pieces are legitimate precisely because
+each piece is integrable on $\Omega$ by Step 3.  Rearranging gives
+$T_1+T_2=-T_3$, which is the first assertion, and the proof is complete.
+\end{proof}

@@ -1,0 +1,26 @@
+\begin{definition}
+Let $n\ge2$, $p>1$, $\varepsilon,\gamma_0,\gamma_1\in\R$ and let
+$A\colon\R^n\to\R^n$.  The predicate
+$\mathrm{CitedDirichletHolder}(n,p,\varepsilon,\gamma_0,\gamma_1,A)$ is the cited
+result (C3) of the Note for the formalization ([DB, Lemma 5.1], [T, Theorem 3]):
+
+\emph{if $A$ satisfies (Q1) of the thesis--(Q2) of the thesis with some $\varepsilon\ge0$
+and $A(0)=0$, then for every ball $B_R(x_0)$, every $0\le\beta<1$ and every
+$f\in C^\beta(\partial B_R(x_0))$ (\noderef{MemHolderOn}) the Dirichlet problem
+\[
+\operatorname{div}A(\nabla u)=0\ \text{in }B_R,\qquad u=f\ \text{on }\partial B_R
+\]
+has a weak solution $u\in W^{1,p}_{\mathrm{loc}}(B_R)\cap C^1(B_R)$ whose
+continuous extension $U$ to $\overline B_R$ lies in $C^\beta(\overline B_R)$ and
+satisfies $U=f$ on $\partial B_R$; and if moreover $f=b|_{\partial B_R}$ with
+$b\in W^{1,p}(B_R)\cap C(\overline B_R)$, then also $u-b\in W^{1,p}_0(B_R)$.}
+
+The boundary condition is encoded, here and everywhere in this development, as
+the conjunction of \emph{(a)} the continuous extension of $u$ to $\overline B_R$
+agrees pointwise with the datum on the sphere, and \emph{(b)} membership of the
+difference in $W^{1,p}_0(B_R)$ whenever the datum is the restriction of a
+Sobolev function; $\partial B_R$ is Lebesgue-null, so an almost-everywhere
+statement on the sphere would be vacuous.  Only existence and regularity are
+cited: as the Note records, the uniqueness assertion and the oscillation bound
+of Lemma~Lemma~3.1 of the thesis are not part of (C3) and must be proved.
+\end{definition}

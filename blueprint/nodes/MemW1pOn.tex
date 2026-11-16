@@ -1,0 +1,19 @@
+\begin{definition}
+Let $1\le p<\infty$, let $\Omega\subseteq\R^n$, let $f\colon\R^n\to\R$ and
+$g\colon\R^n\to\R^n$. We write $f\in W^{1,p}(\Omega)$ \emph{with weak gradient
+$g$}, denoted $\mathrm{MemW1pOn}(n,p,\Omega,f,g)$, if
+\begin{enumerate}
+\item $g$ is the weak gradient of $f$ on $\Omega$ in the sense of
+  \noderef{HasWeakGradientOn}; and
+\item $f\in L^p(\Omega)$ and $|g|\in L^p(\Omega)$, i.e.\ $f$ and $g$ are
+  measurable on $\Omega$ and $\int_\Omega|f|^p\,dx<\infty$,
+  $\int_\Omega|g|^p\,dx<\infty$.
+\end{enumerate}
+This is the Sobolev space $W^{1,p}(\Omega)$ of \S1 of the paper: functions whose
+first distributional derivatives are functions in $L^p(\Omega)$. Because the
+ambient Mathlib library carries no theory of $W^{1,p}$, the weak gradient is
+carried as an explicit second argument rather than being extracted from $f$;
+it is uniquely determined almost everywhere on $\Omega$ when $\Omega$ is open.
+All non-integer powers in this development are real powers
+($\mathtt{Real.rpow}$), with nonnegative base.
+\end{definition}

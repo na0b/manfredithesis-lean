@@ -1,0 +1,69 @@
+\begin{helper}[A radial cut-off built from an abstract smooth profile]
+Let $n\in\N$, let $\psi\colon\R\to\R$, let $\Lambda,r',r\in\R$ and let
+$x_0\in\R^n$.  Throughout, $\operatorname{supp}\zeta$ denotes the \emph{closed}
+support of $\zeta$, $|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$ with
+$\partial_i\zeta(x)=d\zeta(x)[e_i]$, and $|\cdot|$ is the Euclidean norm.
+Assume
+\begin{enumerate}
+\item[(H1)] $\psi$ is smooth, $0\le\psi\le1$, $\psi=1$ on $(-\infty,3/8]$ and
+  $\psi=0$ on $[5/8,\infty)$;
+\item[(H2)] $|\psi'|\le\Lambda$ everywhere;
+\item[(H3)] $\sum_i(w_i)^2=|w|^2$ for every $w\in\R^n$;
+\item[(H4)] $0<r'<r$.
+\end{enumerate}
+Then there is $\zeta\colon\R^n\to\R$ which is smooth, satisfies
+$0\le\zeta\le1$, equals $1$ on $B_{r'}(x_0)$, has compact support with
+$\operatorname{supp}\zeta\subseteq B_r(x_0)$, and satisfies
+\[
+|\nabla\zeta(x)|^2\ \le\ \Bigl(\frac{2\Lambda}{r-r'}\Bigr)^{2}
+\qquad\text{for every }x\in\R^n .
+\]
+The profile $\psi$ is an arbitrary function with the properties (H1)--(H2); in
+particular this construction is not an instance of the one
+\texttt{StandardRadialCutoff} states, which fixes a specific profile, and only
+the shape of the conclusion is shared.
+\end{helper}
+\begin{proof}
+Set $a=r^2-r'^2$, which is positive by (H4) since $0<r'<r$, and put
+\[
+h(x)=a^{-1}\bigl(|x-x_0|^2-r'^2\bigr),\qquad \zeta=\psi\circ h .
+\]
+
+\emph{Smoothness.}  The map $x\mapsto|x-x_0|^2$ is a polynomial in the
+coordinates by (H3), hence smooth, so $h$ is smooth and $\zeta$ is smooth as a
+composition with the smooth $\psi$ of (H1).
+
+\emph{The two plateaux.}  If $x\in B_{r'}(x_0)$ then $|x-x_0|^2<r'^2$, so
+$h(x)<0\le3/8$ and $\zeta(x)=\psi(h(x))=1$ by (H1).  If
+$x\notin B_r(x_0)$ then $|x-x_0|^2\ge r^2$, so
+$h(x)\ge a^{-1}(r^2-r'^2)=1>5/8$ and $\zeta(x)=0$ by (H1).  Hence
+$\{\zeta\neq0\}\subseteq B_r(x_0)$, so $\operatorname{supp}\zeta$, being the
+closure of that set, is a closed subset of the compact
+$\overline{B_r(x_0)}$ and is therefore compact; moreover
+$\operatorname{supp}\zeta\subseteq B_r(x_0)$, because $\zeta$ vanishes on a
+neighbourhood of every point of the sphere $|x-x_0|=r$, where $h\ge1$.
+
+\emph{The pointwise bounds.}  $0\le\zeta\le1$ holds pointwise because
+$0\le\psi\le1$ by (H1).
+
+\emph{The gradient bound.}  Where $\zeta$ is differentiable, the chain rule and
+the derivative of $x\mapsto|x-x_0|^2$ give
+\[
+\nabla\zeta(x)=\psi'\bigl(h(x)\bigr)\,a^{-1}\,2(x-x_0),
+\qquad\text{so}\qquad
+|\nabla\zeta(x)|^2=\bigl(\psi'(h(x))\bigr)^2\,\frac{4|x-x_0|^2}{a^2},
+\]
+using (H3) to compute the coordinate sum of squares.  If
+$x\notin\operatorname{supp}\zeta$ the derivative vanishes and the asserted
+bound is trivial.  Otherwise $|x-x_0|\le r$ by the previous paragraph, and
+$|\psi'|\le\Lambda$ by (H2), so
+\[
+|\nabla\zeta(x)|^2\ \le\ \Lambda^2\frac{4r^2}{(r^2-r'^2)^2}
+=\Lambda^2\frac{4r^2}{(r-r')^2(r+r')^2}
+\ \le\ \frac{4\Lambda^2}{(r-r')^2}
+=\Bigl(\frac{2\Lambda}{r-r'}\Bigr)^{2},
+\]
+the last inequality because $r\le r+r'$ by $r'>0$, so
+$r^2\le(r+r')^2$.  This proves the gradient bound for every $x$, and the
+witness $\zeta$ has all the asserted properties.
+\end{proof}

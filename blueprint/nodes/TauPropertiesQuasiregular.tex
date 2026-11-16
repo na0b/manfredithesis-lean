@@ -1,0 +1,209 @@
+\begin{helper}[Properties of the distortion matrix]
+Let $n\ge2$ and $K\ge1$.  Then there are constants $0<\lambda\le\Lambda$,
+depending only on $n$ and $K$, with the following property.  Let
+$\Omega\subseteq\R^n$ be open, let $F$ be $K$-quasiregular on $\Omega$ with
+component gradients $G$ (\noderef{IsQuasiregularOn}), let $\tau$ be its
+distortion matrix (\noderef{IsDistortionMatrix}), assume the cited properties
+(C7) of quasiregular mappings (\noderef{CitedQuasiregularBasics}), and suppose
+$F$ is not almost everywhere constant on $\Omega$, i.e.\ there is no
+$c\in\R^n$ with $F=c$ almost everywhere on $\Omega$.  Then for almost every
+$x\in\Omega$:
+\begin{enumerate}
+\item $\tau(x)$ is symmetric and positive definite with $\det\tau(x)=1$;
+\item for every $\xi\in\R^n$,
+\[
+K^{-\frac2n}|\xi|^2\;\le\;(\tau(x)\xi,\xi)\;\le\;K^{\frac{2(n-1)}n}|\xi|^2 ;
+\]
+\item for every $h\in\R^n$,
+\[
+\lambda\,|h|^{n}\;\le\;\bigl(\tau(x)h,h\bigr)^{\frac n2}\;\le\;\Lambda\,|h|^{n} .
+\]
+\end{enumerate}
+Here $(\tau(x)\xi,\xi)=\sum_{a,b}\tau(x)_{ab}\xi^a\xi^b$.
+Part (3) says that the functional
+$v\mapsto\int_E(\tau(x)\nabla v,\nabla v)^{n/2}dx$ satisfies the growth condition
+(F1) of the thesis of \S4 with $p=n$, $a=0$, $\varepsilon=0$ and $\lambda,\Lambda$
+depending only on $K$ (and $n$), which is what Theorem~Theorem~7 of the thesis needs in
+order to apply Theorems~Theorem~3 of the thesis and Theorem~4 of the thesis; parts (1) and (2) give in
+particular that the operator
+$h\mapsto(\tau(x)h,h)^{\frac n2-1}\tau(x)h$ of (5.11) of the thesis satisfies
+(Q1) of the thesis--(Q5) of the thesis with $\varepsilon=0$ and constants depending only on
+$n$ and $K$.
+
+\medskip
+\noindent\textbf{Correction reported.}  Following the paper's Note for the
+formalization, the upper bound in (2) is $K^{2(n-1)/n}|\xi|^2$, not the printed
+$|\xi|^2$.  The printed bound is false unless $\tau=I$: since
+$\det\tau(x)\equiv1$, the largest eigenvalue of $\tau(x)$ is at least $1$, with
+equality only if $\tau(x)=I$ (for example $n=2$, $DF=\mathrm{diag}(a,b)$ with
+$a>b>0$ gives $\tau=\mathrm{diag}(b/a,a/b)$).  Any $K$-dependent bound suffices
+for the argument.
+\end{helper}
+\begin{proof}
+Throughout write $M(x)$ for the matrix with entries $M(x)_{ij}=G^i(x)^j$, so
+that $M(x)=DF(x)$ and $J_F(x)=\det M(x)$, and
+$(\tau(x)\xi,\xi)=\sum_{a,b}\tau(x)_{ab}\xi^a\xi^b$.
+
+\emph{Step 0: the constants, chosen before the data.}  Put
+\[
+\lambda=K^{-1},\qquad \Lambda=K^{\,n-1} ,
+\]
+which depend only on $n$ and $K$, as the statement requires.  They satisfy
+$0<\lambda$ and $\lambda\le\Lambda$: indeed $K\ge1$ gives $K^{-1}>0$ and
+$K^{-1}\le1$, and $n\ge2$ gives $n-1\ge1$, so $K^{\,n-1}\ge K\ge1\ge K^{-1}$.
+Now fix $\Omega$, $F$, $G$ and $\tau$ satisfying all the hypotheses.
+
+\emph{Step 1: the full-measure set on which we argue.}  Two of the hypotheses
+hold only almost everywhere, and we intersect their full-measure sets.
+\begin{itemize}
+\item Apply the cited properties (C7) (\noderef{CitedQuasiregularBasics}) to the
+  present data: its two hypotheses are that $F$ is $K$-quasiregular on $\Omega$
+  with component gradients $G$ (\noderef{IsQuasiregularOn}) and that $\tau$ is
+  its distortion matrix (\noderef{IsDistortionMatrix}), both hypotheses of the
+  present node.  Its clause (2), applied to the present hypothesis that $F$ is
+  not almost everywhere constant on $\Omega$ --- which is exactly the antecedent
+  of that clause, the cited result stating its non-constancy condition
+  almost-everywhere-invariantly because $F$ is a $W^{1,n}_{\mathrm{loc}}$ map and
+  so determined only up to a null set --- gives a null set $N_1$ with
+  \[
+  J_F(x)>0\qquad\text{for every }x\in\Omega\setminus N_1 .
+  \]
+\item The second clause of \noderef{IsQuasiregularOn} gives a null set $N_2$
+  with
+  \[
+  \bigl|M(x)\xi\bigr|^{n}\le K\,J_F(x)\,|\xi|^{n}
+  \qquad\text{for every }x\in\Omega\setminus N_2\text{ and every }\xi\in\R^n ,
+  \tag{5.10}
+  \]
+  where $|M(x)\xi|^2=\sum_i\bigl(\sum_jG^i(x)^j\xi^j\bigr)^2$ is the squared
+  Euclidean norm of $M(x)\xi$ and the left-hand side is its $n$-th power, which
+  is how that clause is written.
+\end{itemize}
+The set $N=N_1\cup N_2$ is null, and all three assertions will be proved at
+every $x\in\Omega\setminus N$; since the conclusion is an almost-everywhere
+statement on $\Omega$, that suffices.  Fix such an $x$ and abbreviate
+$M=M(x)$, $J=J_F(x)>0$, $\tau=\tau(x)$.
+
+\emph{Step 2: part (1).}  The matrix $M^tM$ is symmetric, because
+$(M^tM)^t=M^t(M^t)^t=M^tM$, and positive definite: for $\xi\in\R^n$,
+$(M^tM\xi,\xi)=|M\xi|^2\ge0$, with equality only if $M\xi=0$, i.e.\ only if
+$\xi=0$, because $\det M=J>0$ makes $M$ invertible.  In particular $M^tM$ is
+invertible, and $\det(M^tM)=\det M^t\det M=(\det M)^2=J^2$.
+
+Since $J>0$, the first branch of \noderef{IsDistortionMatrix} applies at $x$
+(that predicate is asserted at every point of $\Omega$, and $x\in\Omega$):
+\[
+\tau\cdot\bigl(M^tM\bigr)=J^{\frac2n}\,I .
+\]
+Multiplying on the right by $(M^tM)^{-1}$,
+\[
+\tau=J^{\frac2n}\bigl(M^tM\bigr)^{-1} .
+\tag{T1}
+\]
+The inverse of a symmetric positive definite matrix is symmetric and positive
+definite, and $J^{2/n}>0$, so $\tau$ is symmetric and positive definite.  Its
+determinant is
+\[
+\det\tau=\bigl(J^{\frac2n}\bigr)^{n}\det\bigl(M^tM\bigr)^{-1}
+=J^{2}\cdot J^{-2}=1 ,
+\]
+using that $\det(cA)=c^{n}\det A$ for an $n\times n$ matrix $A$ and a scalar
+$c$, that $\det(A^{-1})=(\det A)^{-1}$, and $\det(M^tM)=J^2$ from the previous
+paragraph.  This is part (1).
+
+\emph{Step 3: the eigenvalues of $\tau$, and $(5.10)$ in the form
+$\sigma_n^{\,n}\le KJ$.}  Because $M^tM$ is symmetric and positive definite, the
+spectral theorem for a real symmetric matrix --- in Mathlib
+\texttt{Matrix.IsHermitian.spectral\_theorem}, whose only hypothesis is
+symmetry --- gives an orthonormal basis $e_1,\dots,e_n$ of $\R^n$ and numbers
+$\sigma_1^2\le\dots\le\sigma_n^2$ with $M^tMe_i=\sigma_i^2e_i$; each is
+positive, because $\sigma_i^2=(M^tMe_i,e_i)>0$ by the positive definiteness just
+proved and $e_i\ne0$.  Write $\sigma_i>0$ for the positive square roots (the
+singular values of $M$).  A matrix diagonalised in an orthonormal basis has
+determinant the product of its eigenvalues, so
+$\det(M^tM)=\prod_i\sigma_i^2$; with $\det(M^tM)=J^2$, $J>0$ and
+$\sigma_i>0$ we get
+\[
+J=\prod_{i=1}^n\sigma_i .
+\tag{T2}
+\]
+By $(\mathrm{T1})$, the same basis diagonalises $\tau$, with
+\[
+\tau e_i=J^{\frac2n}\sigma_i^{-2}e_i ,
+\tag{T3}
+\]
+because $(M^tM)^{-1}e_i=\sigma_i^{-2}e_i$.  So the eigenvalues of $\tau$ are
+$J^{2/n}\sigma_i^{-2}$, and they are listed in decreasing order of $i$: the
+largest is $J^{2/n}\sigma_1^{-2}$ and the smallest is $J^{2/n}\sigma_n^{-2}$.
+
+Taking $\xi=e_n$ in $(5.10)$, which is legitimate because $x\notin N_2$, and
+using $|Me_n|^2=(M^tMe_n,e_n)=\sigma_n^2|e_n|^2=\sigma_n^2$ and $|e_n|=1$,
+\[
+\sigma_n^{\,n}=\bigl(\sigma_n^2\bigr)^{\frac n2}=|Me_n|^{n}\le KJ .
+\tag{5.10$'$}
+\]
+This is the form of the quasiregularity condition used below; it is the thesis'
+(5.10) of the thesis, recovered from the $\xi$-wise form that
+\noderef{IsQuasiregularOn} states.
+
+\emph{Step 4: part (2).}  For the lower bound, $(5.10')$ gives
+$\sigma_n^2\le(KJ)^{2/n}=K^{2/n}J^{2/n}$, hence
+\[
+\min_i J^{\frac2n}\sigma_i^{-2}=J^{\frac2n}\sigma_n^{-2}
+\ \ge\ J^{\frac2n}\bigl(K^{\frac2n}J^{\frac2n}\bigr)^{-1}=K^{-\frac2n} ,
+\]
+where the first equality is Step 3 and the inequality uses $J^{2/n}>0$ and
+$0<\sigma_n^2\le K^{2/n}J^{2/n}$.  For the upper bound, $(\mathrm{T2})$ and
+$\sigma_i\le\sigma_n$ for every $i$ give
+$J=\sigma_1\prod_{i\ge2}\sigma_i\le\sigma_1\sigma_n^{\,n-1}$, so, raising to the
+power $2/n>0$,
+\[
+J^{\frac2n}\sigma_1^{-2}
+\le\sigma_1^{\frac2n}\sigma_n^{\frac{2(n-1)}n}\sigma_1^{-2}
+=\sigma_1^{\frac2n-2}\sigma_n^{\frac{2(n-1)}n}
+=\Bigl(\frac{\sigma_n}{\sigma_1}\Bigr)^{\frac{2(n-1)}n} ,
+\]
+the last equality because $\frac2n-2=-\frac{2(n-1)}n$.  Now $(5.10')$ together
+with $J\le\sigma_1\sigma_n^{\,n-1}$ gives
+$\sigma_n^{\,n}\le KJ\le K\sigma_1\sigma_n^{\,n-1}$, and dividing by
+$\sigma_n^{\,n-1}>0$ yields $\sigma_n\le K\sigma_1$, i.e.\
+$\sigma_n/\sigma_1\le K$.  Since $\frac{2(n-1)}n>0$ and $t\mapsto
+t^{2(n-1)/n}$ is nondecreasing on $[0,\infty)$,
+\[
+\max_i J^{\frac2n}\sigma_i^{-2}=J^{\frac2n}\sigma_1^{-2}
+\ \le\ K^{\frac{2(n-1)}n} .
+\]
+Finally, these two eigenvalue bounds give the quadratic-form bounds of part (2).
+Indeed let $\xi\in\R^n$ and expand $\xi=\sum_i c_ie_i$ in the orthonormal basis
+of Step 3, so that $|\xi|^2=\sum_ic_i^2$ and, by $(\mathrm{T3})$ and the orthonormality,
+\[
+(\tau\xi,\xi)=\sum_{i}J^{\frac2n}\sigma_i^{-2}c_i^2 .
+\]
+Bounding each coefficient $J^{2/n}\sigma_i^{-2}$ below by
+$\min_iJ^{2/n}\sigma_i^{-2}\ge K^{-2/n}$ and above by
+$\max_iJ^{2/n}\sigma_i^{-2}\le K^{2(n-1)/n}$, and using $c_i^2\ge0$,
+\[
+K^{-\frac2n}|\xi|^2\ \le\ (\tau\xi,\xi)\ \le\ K^{\frac{2(n-1)}n}|\xi|^2 ,
+\]
+which is part (2).  (Taking $\xi\ne0$ and using $K^{-2/n}>0$ re-proves the
+positive definiteness asserted in part (1).)
+
+\emph{Step 5: part (3).}  Let $h\in\R^n$.  By part (2),
+\[
+0\le K^{-\frac2n}|h|^2\ \le\ (\tau h,h)\ \le\ K^{\frac{2(n-1)}n}|h|^2 ,
+\]
+and $t\mapsto t^{n/2}$ is nondecreasing on $[0,\infty)$ because $n/2>0$, so
+raising the three quantities to the power $n/2$ preserves the inequalities:
+\[
+\bigl(K^{-\frac2n}|h|^2\bigr)^{\frac n2}\le(\tau h,h)^{\frac n2}
+\le\bigl(K^{\frac{2(n-1)}n}|h|^2\bigr)^{\frac n2} .
+\]
+Using $(st)^{n/2}=s^{n/2}t^{n/2}$ for $s,t\ge0$, $(|h|^2)^{n/2}=|h|^{n}$ and
+$(K^{r})^{n/2}=K^{rn/2}$ for $K>0$, the two outer terms are
+$K^{-1}|h|^{n}=\lambda|h|^{n}$ and
+$K^{\,n-1}|h|^{n}=\Lambda|h|^{n}$, which is part (3) with the $\lambda$ and
+$\Lambda$ of Step 0.
+
+Parts (1), (2) and (3) hold at every $x\in\Omega\setminus N$ with $N$ null, so
+they hold almost everywhere on $\Omega$, and the proof is complete.
+\end{proof}

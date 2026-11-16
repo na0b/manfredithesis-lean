@@ -1,0 +1,140 @@
+\begin{lemma}[The frozen quadratic-form integrand and condition (F2)]
+Let $n\ge2$, $K\ge1$, and let $\nu_0,\nu_1$ satisfy
+\[
+0<\nu_0\le\frac nK,\qquad n(n-1)K^{\,n-1}\le\nu_1 .
+\]
+Let $T\in\R^{n\times n}$ be symmetric with
+\[
+K^{-\frac2n}|\xi|^2\le(T\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2
+\qquad(\xi\in\R^n),
+\]
+and put $f(h)=(Th,h)^{n/2}$.  Then $f$ is $C^1$ on $\R^n$, $f$ is $C^2$ on
+$\{h:0+|h|^2\ne0\}$, and for all $h,\zeta\in\R^n$ with $0+|h|^2\ne0$,
+\[
+\nu_0\,(0+|h|^2)^{\frac n2-1}|\zeta|^2
+\le D^2f(h)[\zeta,\zeta]
+\le\nu_1\,(0+|h|^2)^{\frac n2-1}|\zeta|^2 .
+\]
+Moreover, for every $T'\in\R^{n\times n}$ with
+$0\le(T'\xi,\xi)\le K^{2(n-1)/n}|\xi|^2$ for all $\xi$, and every $w\in\R$ with
+$|T_{ab}-T'_{ab}|\le w$ for all $a,b$,
+\[
+\bigl|(Th,h)^{\frac n2}-(T'h,h)^{\frac n2}\bigr|
+\le\frac{n^2}2K^{\frac{(n-1)(n-2)}n}\,w\,|h|^{\,n}
+\qquad(h\in\R^n).
+\]
+\end{lemma}
+\begin{proof}
+Write $q(h)=(Th,h)$, so $f=q^{n/2}$, and note $K>0$ from $K\ge1$.  Since $T$ is
+symmetric, $q$ is a quadratic form with
+\[
+Dq(h)[\zeta]=2(Th,\zeta),\qquad D^2q(h)[\zeta,\zeta]=2(T\zeta,\zeta),
+\]
+and $q$ is a polynomial, hence $C^\infty$.  By the lower bound,
+$q(h)\ge K^{-2/n}|h|^2>0$ for $h\ne0$ and $q\ge0$ everywhere, so $T$ is
+symmetric positive definite, $\langle v,w\rangle_T=(Tv,w)$ is an inner product
+on $\R^n$ and the Cauchy--Schwarz inequality
+\[
+(Th,\zeta)^2\le(Th,h)\,(T\zeta,\zeta)
+\tag{5.1}
+\]
+holds for all $h,\zeta$.
+
+\emph{$C^2$ off the origin.}  On $\{h:|h|^2\ne0\}=\{h\ne0\}$ we have
+$q(h)\ge K^{-2/n}|h|^2>0$, so $q$ maps that open set into $(0,\infty)$, where
+$t\mapsto t^{n/2}$ is $C^\infty$; therefore $f$ is $C^\infty$, in particular
+$C^2$, on $\{h\ne0\}$.  The chain rule there gives
+\[
+Df(h)[\zeta]=n\,q^{\frac n2-1}(Th,\zeta),
+\]
+\[
+D^2f(h)[\zeta,\zeta]
+=2n\bigl(\tfrac n2-1\bigr)q^{\frac n2-2}(Th,\zeta)^2
++n\,q^{\frac n2-1}(T\zeta,\zeta),
+\tag{5.2}
+\]
+the coefficients being $\tfrac n2(\tfrac n2-1)\cdot2^2=2n(\tfrac n2-1)=n(n-2)$ on
+the first term and $\tfrac n2\cdot2=n$ on the second.  \emph{At $n=2$ the first
+term's coefficient $2n(n/2-1)$ vanishes}, so the term is absent and
+$f(h)=(Th,h)$ is a quadratic form; the factor $q^{n/2-2}=q^{-1}$ that
+would otherwise appear there is multiplied by $0$, and in any case the
+second-derivative bounds are asserted only where $0+|h|^2\ne0$, i.e.\ where
+$h\ne0$ and so $q>0$.  So no junk value of the real-power convention is ever
+reached.
+
+\emph{The lower bound.}  Since $n\ge2$ we have $2n(\tfrac n2-1)=n(n-2)\ge0$, and
+$(Th,\zeta)^2\ge0$, so the first term of (5.2) is nonnegative and may be
+dropped.  Since $n/2-1\ge0$ --- again $n\ge2$ --- the map $t\mapsto t^{n/2-1}$ is
+nondecreasing on $[0,\infty)$, so $q\ge K^{-2/n}|h|^2$ gives
+$q^{n/2-1}\ge(K^{-2/n})^{n/2-1}|h|^{\,n-2}=K^{\frac2n-1}|h|^{\,n-2}$.  With
+$(T\zeta,\zeta)\ge K^{-2/n}|\zeta|^2$,
+\[
+D^2f(h)[\zeta,\zeta]\ \ge\ n\,K^{\frac2n-1}K^{-\frac2n}|h|^{\,n-2}|\zeta|^2
+=\frac nK|h|^{\,n-2}|\zeta|^2\ \ge\ \nu_0\,|h|^{\,n-2}|\zeta|^2 ,
+\]
+the last step because $\nu_0\le n/K$ by hypothesis and
+$|h|^{\,n-2}|\zeta|^2\ge0$.  \emph{So $n\ge2$ is consumed exactly twice here,
+both times in the lower bound}: once for $n(n-2)\ge0$, which lets the first term
+be discarded instead of estimated from below, and once for $n/2-1\ge0$, which
+makes the substitution of the lower bound on $q$ legitimate.
+
+\emph{The upper bound.}  By (5.1), $(Th,\zeta)^2\le q\,(T\zeta,\zeta)$, so the
+first term of (5.2) is at most $n(n-2)q^{n/2-1}(T\zeta,\zeta)$ and
+\[
+D^2f(h)[\zeta,\zeta]\le\bigl[n(n-2)+n\bigr]q^{\frac n2-1}(T\zeta,\zeta)
+=n(n-1)\,q^{\frac n2-1}(T\zeta,\zeta).
+\]
+By the upper bound on the form, $q\le K^{2(n-1)/n}|h|^2$, so
+$q^{n/2-1}\le K^{(n-1)(n-2)/n}|h|^{\,n-2}$, and
+$(T\zeta,\zeta)\le K^{2(n-1)/n}|\zeta|^2$.  The two powers of $K$
+compose exactly:
+\[
+\frac{(n-1)(n-2)}n+\frac{2(n-1)}n=\frac{(n-1)(n-2+2)}n=n-1,
+\]
+so
+\[
+D^2f(h)[\zeta,\zeta]\le n(n-1)K^{\,n-1}|h|^{\,n-2}|\zeta|^2
+\le \nu_1\,|h|^{\,n-2}|\zeta|^2 ,
+\]
+the last step because $n(n-1)K^{\,n-1}\le\nu_1$ by hypothesis and
+$|h|^{\,n-2}|\zeta|^2\ge0$.  Since $(0+|h|^2)^{n/2-1}=|h|^{\,n-2}$ for
+$h\ne0$, the two displays are exactly the asserted second-derivative bounds.
+
+\emph{$f$ is $C^1$ on all of $\R^n$}, and this is \emph{not} guarded.  Off the
+origin this follows from the $C^\infty$ statement above.  At the origin,
+$q(h)\le K^{2(n-1)/n}|h|^2$ gives $f(h)\le K^{\,n-1}|h|^{\,n}$, and $n\ge2$
+makes $|h|^{\,n}=o(|h|)$ as $h\to0$, so $f$ is differentiable at $0$ with
+$Df(0)=0$.  For the continuity of $Df$ at $0$, (5.1) and the two-sided bounds
+give
+\[
+|Df(h)[\zeta]|=n\,q^{\frac n2-1}|(Th,\zeta)|
+\le n\,q^{\frac n2-1}q^{\frac12}(T\zeta,\zeta)^{\frac12}
+=n\,q^{\frac{n-1}2}(T\zeta,\zeta)^{\frac12}
+\le n\,K^{\,n-1}|h|^{\,n-1}|\zeta| ,
+\]
+using $q^{(n-1)/2}\le(K^{2(n-1)/n}|h|^2)^{(n-1)/2}=K^{(n-1)^2/n}|h|^{n-1}$ and
+$(T\zeta,\zeta)^{1/2}\le K^{(n-1)/n}|\zeta|$, whose powers of $K$ sum to
+$(n-1)^2/n+(n-1)/n=(n-1)n/n=n-1$.  As $n-1\ge1>0$, the right-hand side tends to
+$0$ with $h$, so $\|Df(h)\|\to0=\|Df(0)\|$ and $Df$ is continuous at $0$.
+
+\emph{The oscillation bound.}  Let $T'$ and $w$ be as in the statement, let
+$h\in\R^n$, and write $q_1=(Th,h)$, $q_2=(T'h,h)$, both $\ge0$.  First,
+\[
+|q_1-q_2|=\Bigl|\bigl((T-T')h,h\bigr)\Bigr|
+\le\max_{a,b}|T_{ab}-T'_{ab}|\cdot\Bigl(\sum_a|h_a|\Bigr)^2
+\le n\,w\,|h|^2,
+\]
+using $(\sum_a|h_a|)^2\le n|h|^2$ (Cauchy--Schwarz).  Second, by the mean value
+theorem applied to $t\mapsto t^{n/2}$ on the interval with endpoints $q_1,q_2$,
+whose derivative $\tfrac n2t^{n/2-1}$ is nondecreasing because $n/2-1\ge0$,
+\[
+\bigl|q_1^{n/2}-q_2^{n/2}\bigr|
+\le\frac n2\max(q_1,q_2)^{\frac n2-1}|q_1-q_2|
+\le\frac n2K^{\frac{(n-1)(n-2)}n}|h|^{\,n-2}\cdot n\,w\,|h|^2
+=\frac{n^2}2K^{\frac{(n-1)(n-2)}n}w\,|h|^{\,n},
+\]
+where $\max(q_1,q_2)\le K^{2(n-1)/n}|h|^2$ by the upper bounds assumed on both
+forms, and raising to the power $n/2-1\ge0$ preserves the inequality, giving
+$\max(q_1,q_2)^{n/2-1}\le K^{(n-1)(n-2)/n}|h|^{n-2}$.  At $h=0$ both sides
+vanish.  This is the asserted bound.
+\end{proof}

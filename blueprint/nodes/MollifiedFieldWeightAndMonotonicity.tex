@@ -1,0 +1,145 @@
+\begin{helper}[The uniform-in-$e$ weight bound for the mollified field, and the monotonicity constant it produces]
+Let $n\in\mathbb{N}$ and $p\in\R$.  All powers of positive reals below are real
+powers, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print them; no sign is assumed for the exponent
+$p/2-1$, so the argument covers $p$ on either side of $2$.
+$\operatorname{supp}$ denotes the \emph{closed} support.  Let
+$\rho\colon\R^n\to\R$ satisfy
+\begin{enumerate}
+\item[(H1)] $\rho\ge0$ everywhere;
+\item[(H2)] $z\mapsto\rho(z)f(z)$ is integrable for every continuous
+  $f\colon\R^n\to\R$, and $z\mapsto\rho(z)F(z)$ is integrable for every
+  continuous $F\colon\R^n\to\R^n$;
+\item[(H3)] $|z|\le1$ for every $z\in\operatorname{supp}\rho$;
+\item[(H4)] (averaging from below) if $f\colon\R^n\to\R$ is continuous and
+  $C\le f$ on $\operatorname{supp}\rho$, then
+  $C\le\int_{\R^n}\rho(z)f(z)\,dz$.
+\end{enumerate}
+Let $\gamma_0\in\R$ with $\gamma_0>0$, let $A\colon\R^n\to\R^n$ be continuous,
+and let $A_\bullet\colon\R\times\R^n\to\R^n$, written $A_e$, satisfy
+\begin{enumerate}
+\item[(H5)] $A_e(h)=\int_{\R^n}\rho(z)A(h+\sqrt e\,z)\,dz
+  -\int_{\R^n}\rho(z)A(\sqrt e\,z)\,dz$ for all $e$ and $h$.
+\end{enumerate}
+Let $C_M\in\R$ with $C_M>0$ and assume
+\begin{enumerate}
+\item[(H6)] (the monotonicity bound for the \emph{unmollified} field)
+  \[
+  C_M\gamma_0\bigl(0+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+  \ \le\ \bigl(A(a)-A(b),\,a-b\bigr)
+  \qquad(a,b\in\R^n);
+  \]
+\item[(H7)] $\sum_iv_iw_i=\langle w,v\rangle$ for all $v,w\in\R^n$, and
+  $|x+y|^2\le2|x|^2+2|y|^2$ for all $x,y\in\R^n$;
+\item[(H8)] $|a+w|^2+|b+w|^2>0$ whenever $a\ne b$, for every $w\in\R^n$.
+\end{enumerate}
+Let $c_1,C_2^{w}\in\R$ with $c_1>0$ and assume the weight sandwich at a single
+point:
+\begin{enumerate}
+\item[(H9)] for every $h\in\R^n$ and every $e>0$,
+  \[
+  c_1\bigl(e+|h|^2\bigr)^{\frac p2-1}
+  \ \le\ \int_{\R^n}\bigl(|h+\sqrt e\,z|^2\bigr)^{\frac p2-1}\rho(z)\,dz
+  \ \le\ C_2^{w}\bigl(e+|h|^2\bigr)^{\frac p2-1}.
+  \]
+\end{enumerate}
+Finally let $c_w\in\R$ with
+\begin{enumerate}
+\item[(H10)] $0<c_w$, $c_w\le\min\{c_1,1\}\cdot2^{-(p/2-1)}$ and
+  $c_w\le4^{p/2-1}$.
+\end{enumerate}
+Then both of the following hold.
+\begin{enumerate}
+\item[(i)] For every $e$ with $0<e\le1$ and all $a\ne b$ in $\R^n$,
+  \[
+  c_w\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}
+  \ \le\ \int_{\R^n}\rho(z)\bigl(|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2\bigr)^{\frac p2-1}dz .
+  \]
+\item[(ii)] There is $c_3>0$ such that for every $e$ with $0<e\le1$ and all
+  $a,b\in\R^n$,
+  \[
+  c_3\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+  \ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr).
+  \]
+\end{enumerate}
+\end{helper}
+\begin{proof}
+The two conclusions are stated together because (i) is consumed inside the
+proof of (ii) and nowhere else, while (ii) is what a consumer needs; separating
+them would strand (i).
+
+\emph{Step 1: conclusion (i).}  Fix $0<e\le1$ and $a\ne b$.  Then
+$0\le\sqrt e\le1$ and $(\sqrt e)^2=e$.  Also $|a-b|>0$, and
+$e+|a|^2+|b|^2>0$, the first summand being positive.  We compare the two-point
+weight at $z$ with the one-point weight at $a$ and with the constant
+$e+|a|^2+|b|^2$.
+
+For the upper comparison, (H7) and (H3) give, for $z\in\operatorname{supp}\rho$,
+\[
+|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2
+\le2|a|^2+2e|z|^2+2|b|^2+2e|z|^2
+\le2\bigl(|a|^2+|b|^2\bigr)+4e
+\le4\bigl(e+|a|^2+|b|^2\bigr),
+\]
+using $|z|\le1$, $e\le1$ and $2\le4$.  For the lower comparison, discarding the
+second summand,
+\[
+|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2\ \ge\ |a+\sqrt e\,z|^2 ,
+\]
+and the base is positive by (H8) whenever $a\ne b$, so no reading of
+$0^{p/2-1}$ is involved anywhere below.
+
+Now $t\mapsto t^{p/2-1}$ is monotone on $(0,\infty)$ --- increasing if
+$p>2$, decreasing if $p<2$, constant if $p=2$ --- so exactly one of the two
+comparisons above is the useful one in each regime, and the two constants
+$2^{-(p/2-1)}$ and $4^{p/2-1}$ of (H10) are chosen so that $c_w$ is dominated
+by whichever is relevant.  Combining the relevant comparison with the lower
+half of the weight sandwich (H9) at $h=a$, which gives
+$c_1(e+|a|^2)^{p/2-1}\le\int(|a+\sqrt e\,z|^2)^{p/2-1}\rho(z)dz$, and with
+$\min\{c_1,1\}\le c_1$, yields the pointwise bound
+\[
+c_w\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}
+\ \le\ \bigl(|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2\bigr)^{\frac p2-1}
+\qquad(z\in\operatorname{supp}\rho).
+\]
+The right-hand side is continuous in $z$, its base being positive and bounded
+away from $0$ on the compact $\operatorname{supp}\rho$, so (H4) --- averaging a
+continuous function bounded below against the probability density $\rho$ ---
+transports the pointwise bound to the integral and gives (i).  Integrability of
+the averaged function is (H2).
+
+\emph{Step 2: conclusion (ii), with $c_3=C_M\gamma_0c_w$.}  That number is
+positive, by $C_M>0$, $\gamma_0>0$ and $c_w>0$.  Fix $0<e\le1$ and $a,b$.  If
+$a=b$ both sides vanish and there is nothing to prove, so assume $a\ne b$.
+
+Apply (H6) at the translated pair $a+\sqrt e\,z$, $b+\sqrt e\,z$, whose
+difference is again $a-b$:
+\[
+C_M\gamma_0\bigl(|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A(a+\sqrt e\,z)-A(b+\sqrt e\,z),\,a-b\bigr)
+\]
+for every $z$, the base being positive by (H8).  Both sides are continuous in
+$z$ --- the left because its base is positive, the right because $A$ is
+continuous --- and both are integrable against $\rho(z)\,dz$ by (H2).
+Integrating and using (H5), the two renormalising constants cancelling in the
+difference,
+\[
+\int_{\R^n}\rho(z)\bigl[A(a+\sqrt e\,z)-A(b+\sqrt e\,z)\bigr]dz
+=A_e(a)-A_e(b),
+\]
+so by (H7), which identifies the coordinate sum with the inner product and lets
+the inner product be taken under the integral sign against the fixed vector
+$a-b$,
+\[
+C_M\gamma_0|a-b|^2\int_{\R^n}\rho(z)
+\bigl(|a+\sqrt e\,z|^2+|b+\sqrt e\,z|^2\bigr)^{\frac p2-1}dz
+\ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr).
+\]
+Finally apply (i) to the integral on the left and multiply by the nonnegative
+factor $C_M\gamma_0|a-b|^2$:
+\[
+C_M\gamma_0c_w\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr),
+\]
+which is (ii) with $c_3=C_M\gamma_0c_w$.
+\end{proof}

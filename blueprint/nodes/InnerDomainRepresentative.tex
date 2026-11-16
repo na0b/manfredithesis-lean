@@ -1,0 +1,237 @@
+\begin{lemma}[The inner domain and the continuous representative]
+Let $n\ge1$, $p\ge1$, $0<\alpha\le1$, $d_0>0$, $M\ge0$ and $d>0$.  Let
+$\Omega\subseteq\R^n$ be open, let $\Omega'\subseteq\R^n$ be nonempty and
+bounded with
+\[
+d\le|x-y|\qquad\text{for every }x\in\Omega'\text{ and every }y\notin\Omega ,
+\]
+and let $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn})
+satisfy $|u|\le M$ almost everywhere on $\Omega$ and the oscillation decay
+\[
+\operatorname*{osc}\bigl(u,B_\rho(y)\bigr)\le4^\alpha
+\max\bigl\{\operatorname*{osc}\bigl(u,B_{R_3}(y)\bigr),\ d_0R_3\bigr\}
+\Bigl(\frac\rho{R_3}\Bigr)^\alpha
+\qquad\bigl(\overline B_{R_3}(y)\subseteq\Omega,\ 0<\rho\le R_3\bigr)
+\]
+(\noderef{EssOscOn}).  Then there are an open set $\Omega_1\subseteq\R^n$ and a
+function $U$ such that
+\begin{itemize}
+\item[(i)] $\Omega_1$ is bounded, $\overline{\Omega'}\subseteq\Omega_1$ and
+  $\overline{\Omega_1}\subseteq\Omega$;
+\item[(ii)] $\frac d2\le|x-y|$ for every $x\in\Omega'$ and every
+  $y\notin\Omega_1$, and $\frac d2\le|x-y|$ for every $x\in\Omega_1$ and every
+  $y\notin\Omega$;
+\item[(iii)] $\overline B_{d/2}(x)\subseteq\Omega$ for every $x\in\Omega_1$;
+\item[(iv)] $U=u$ almost everywhere on $\Omega$ and $U\in W^{1,p}(\Omega)$ with
+  weak gradient $g$ (\noderef{MemW1pOn});
+\item[(v)] $U$ is continuous on $\Omega_1$, and
+  $U\in C^\alpha\bigl(\overline B_{d/16}(x)\bigr)$ (\noderef{MemHolderOn}) for
+  every $x\in\Omega_1$.
+\end{itemize}
+
+\noindent\textbf{What this node is.}  Two things the thesis' \S4 and \S5 do
+silently and that both of their main theorems need before the comparison
+argument can start.  First, the passage from $\Omega'$ to an interposed inner
+domain: the thesis states its Morrey and Campanato conclusions with the
+subscript ``loc'' and so never names a second set, but a formalization whose
+constants must depend only on the quantities the thesis lists (and in
+particular on $d=d(\Omega',\partial\Omega)$ rather than on $\Omega'$ itself)
+has to exhibit the intermediate set and its margins explicitly; $\Omega_1$ is
+that set, and (i)--(iii) are exactly the margins the comparison argument
+consumes.  Second, the passage from $u$ to a continuous representative: the
+thesis evaluates $u$ at the centre of each small ball when it freezes the
+operator, and it compares $v$ with $u$ on the \emph{sphere}, both of which are
+meaningless for an equivalence class modulo null sets.  The De Giorgi
+oscillation decay, which is the hypothesis assumed here and which the cited
+H\"older estimates (C4) of the paper's Note for the formalization supply in both
+settings, is what makes the choice possible, and (iv)--(v) record that
+the choice costs nothing: the representative has the same weak gradient, so
+every Sobolev hypothesis on $u$ transfers to it.
+
+\noindent\textbf{On the form of the decay hypothesis.}  The hypothesis is
+stated in the shape in which the cited H\"older estimates (C4) produce it ---
+with the maximum against
+$d_0R_3$, at an arbitrary centre, and for every radius $R_3$ whose closed ball
+lies in $\Omega$ --- so that a consumer can discharge it by quoting (C4)
+verbatim, and the conversion of that shape into a bound of the pure form
+$K(\rho/s)^\alpha$ at the fixed scale $s=d/8$ is performed once, here.  The
+hypothesis is \emph{not} that $u$ is continuous: that would beg the question
+this node answers.
+
+\noindent\textbf{On the constant.}  No constant appears in the conclusion: (v)
+asserts H\"older continuity on each ball $\overline B_{d/16}(x)$ without a
+norm bound, which is all the comparison argument of \S4 uses (it feeds the
+H\"older datum of the Dirichlet problem, whose solution carries no constant of
+the datum into the later estimates).  So no quantifier-order question arises
+here, and $\alpha$ and $d_0$, which come from (C4) and therefore depend on the
+consumer's $\varepsilon$, may be bound with the data.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the two inner domains.}  Put
+\[
+\Omega_1=\Bigl\{x:\operatorname{dist}(x,\Omega')<\frac d2\Bigr\},
+\qquad
+\Omega_2=\Bigl\{x:\operatorname{dist}(x,\Omega')<\frac{3d}4\Bigr\},
+\]
+where $\operatorname{dist}(x,\Omega')=\inf\{|x-x'|:x'\in\Omega'\}$ is finite
+because $\Omega'$ is nonempty.  Both are open, being preimages of open
+half-lines under the continuous function
+$x\mapsto\operatorname{dist}(x,\Omega')$, both are bounded (they are contained
+in the $d$-neighbourhood of the bounded set $\Omega'$), and both contain
+$\Omega'$.  For the containments and the separations we use the following
+consequence of the hypothesis ``$d\le|x-y|$ for every $x\in\Omega'$ and every
+$y\notin\Omega$'':
+\[
+0<c<d,\quad \operatorname{dist}(x,\Omega')<c,\quad y\notin\Omega
+\ \Longrightarrow\ |x-y|>d-c ,
+\tag{1}
+\]
+because such an $x$ admits $x'\in\Omega'$ with $|x-x'|<c$, and then
+$d\le|x'-y|\le|x'-x|+|x-y|<c+|x-y|$.  Five consequences:
+\begin{itemize}
+\item $\Omega_2\subseteq\Omega$, and hence
+  $\Omega'\subseteq\Omega_1\subseteq\Omega_2\subseteq\Omega$: if
+  $x\in\Omega_2$ and $x\notin\Omega$ then $(1)$ with $c=\frac{3d}4$ and $y=x$
+  would give $0=|x-x|>\frac d4$, which is false.
+\item $\overline B_{d/8}(x)\subseteq\Omega$ for every $x\in\Omega_2$: if
+  $|z-x|\le\frac d8$ then
+  $\operatorname{dist}(z,\Omega')\le\operatorname{dist}(x,\Omega')+|z-x|
+  <\frac{3d}4+\frac d8=\frac{7d}8$, and $(1)$ with $c=\frac{7d}8$ and $y=z$
+  excludes $z\notin\Omega$ as in the previous item.
+\item the separation of $\Omega_1$ from the complement of $\Omega$:
+  \[
+  \frac d2\le|x-y|\qquad\text{for every }x\in\Omega_1
+  \text{ and every }y\notin\Omega ,
+  \tag{2}
+  \]
+  which is $(1)$ with $c=\frac d2$ (and which $(1)$ even gives with strict
+  inequality).  This is the second half of (ii).  Consequently
+  $\overline B_{d/2}(x)\subseteq\Omega$ for $x\in\Omega_1$, which is (iii): a
+  point $z$ with $|z-x|\le\frac d2$ and $z\notin\Omega$ would contradict the
+  strict form of $(2)$ for the pair $(x,z)$.
+\item $\overline{\Omega_1}\subseteq\Omega_2$ and
+  $\overline{\Omega_2}\subseteq\Omega$: a point of the closure of
+  $\{\operatorname{dist}(\cdot,\Omega')<c\}$ satisfies
+  $\operatorname{dist}(\cdot,\Omega')\le c$, hence lies in
+  $\{\operatorname{dist}(\cdot,\Omega')<c'\}$ for any $c'>c$, and the second
+  containment then follows from the first item applied with $\frac{7d}8$ in
+  place of $\frac{3d}4$.  Together with the first item this gives
+  $\overline{\Omega_1}\subseteq\Omega$.  Also
+  $\overline{\Omega'}\subseteq\Omega_1$, since every point of
+  $\overline{\Omega'}$ has distance $0$ from $\Omega'$; with the boundedness of
+  $\Omega_1$ and $\overline{\Omega_1}\subseteq\Omega$ this is (i).
+\item if $x\in\Omega_1$ then $\overline B_{d/8}(x)\subseteq\Omega_2$, because
+  $\operatorname{dist}(z,\Omega')\le\operatorname{dist}(x,\Omega')+|z-x|
+  <\frac d2+\frac d8<\frac{3d}4$.
+\end{itemize}
+The first half of (ii) remains: if $x\in\Omega'$ and $y\notin\Omega_1$ then
+$\operatorname{dist}(y,\Omega')\ge\frac d2$, and since $x\in\Omega'$ the
+definition of the distance to a set gives
+$|x-y|\ge\operatorname{dist}(y,\Omega')\ge\frac d2$.
+
+\emph{Step 2: the continuous representative on $\Omega_2$.}  First,
+$\operatorname*{osc}(u,B_{R_3}(y))\le2M$ whenever $B_{R_3}(y)\subseteq\Omega$:
+the bound $|u|\le M$ almost everywhere on $\Omega$ restricts to $B_{R_3}(y)$,
+so the essential supremum of $u$ there is at most $M$ and its essential infimum
+at least $-M$ (the two facts about the essential supremum recorded in the
+Preamble item on the essential supremum, applied to $u$ and to $-u$).
+
+Put $s=\frac d8>0$ and
+\[
+K=4^\alpha\max\{2M,\ d_0s\}+2M\ \ge\ 2M\ \ge0 .
+\]
+We claim that
+\[
+\operatorname*{osc}\bigl(u,B_\rho(y)\bigr)\le K\Bigl(\frac\rho s\Bigr)^\alpha
+\qquad\text{whenever }\overline B_\rho(y)\subseteq\Omega_2 .
+\tag{3}
+\]
+Indeed, such a $y$ lies in $\Omega_2$, so
+$\overline B_s(y)=\overline B_{d/8}(y)\subseteq\Omega$ by the second
+consequence recorded in Step 1.  If $\rho\le s$, then the decay hypothesis with
+$R_3=s$ --- admissible because $\overline B_s(y)\subseteq\Omega$ and
+$0<\rho\le s$ --- together with the bound
+$\operatorname*{osc}(u,B_s(y))\le2M$ give
+$\operatorname*{osc}(u,B_\rho(y))\le4^\alpha\max\{2M,d_0s\}(\rho/s)^\alpha
+\le K(\rho/s)^\alpha$.  If $\rho>s$, then
+$\overline B_\rho(y)\subseteq\Omega_2\subseteq\Omega$ gives
+$\operatorname*{osc}(u,B_\rho(y))\le2M\le K\le K(\rho/s)^\alpha$, because
+$(\rho/s)^\alpha\ge1$ for $\rho\ge s$ and $\alpha>0$.
+
+Now let $x_1\in\Omega_1$ and apply \noderef{OscillationDecayToHolder} with the
+parameters $n,\alpha,K,M$ --- its hypotheses $1\le n$, $0<\alpha\le1$,
+$0\le K$, $0\le M$ hold --- and with the data $\Omega_2$ (open), $u$, the
+centre $x_1$ and the radius $s$: the containment
+$\overline B_s(x_1)\subseteq\Omega_2$ is the last consequence of Step 1, the
+bound $|u|\le M$ almost everywhere on $\Omega_2$ is the restriction of the
+hypothesis on $\Omega$, and the decay hypothesis is exactly $(3)$.  Let
+$C_2>0$ be the constant the node produces (it depends only on $n,\alpha,K,M$).
+The node yields a function $U_{x_1}$ with
+\begin{itemize}
+\item $U_{x_1}=u$ almost everywhere on $\Omega_2$,
+\item $U_{x_1}$ continuous on $\Omega_2$,
+\item $U_{x_1}$ H\"older continuous of exponent $\alpha$ on
+  $\overline B_{s/2}(x_1)$ (\noderef{MemHolderOn}), with
+  $|U_{x_1}(x)-U_{x_1}(y)|\le C_2K\bigl(|x-y|/s\bigr)^\alpha$ there.
+\end{itemize}
+Any two of these functions, say $U_{x_1}$ and $U_{x_2}$ with
+$x_1,x_2\in\Omega_1$, agree at every point of $\Omega_2$: their difference is
+continuous on the open set $\Omega_2$ and vanishes almost everywhere there, so
+the set where it does not vanish --- the preimage of $\R\setminus\{0\}$ under
+a function continuous on the open set $\Omega_2$, hence an open subset of
+$\Omega_2$ --- has measure zero and is therefore empty (a nonempty open set
+contains a ball, whose measure is positive by the Preamble item on the volume
+of a ball).  Fix now one $x_1^0\in\Omega_1$, which is possible because
+$\Omega'\subseteq\Omega_1$ and $\Omega'$ is nonempty, and put
+$U_0=U_{x_1^0}$; by the preceding sentence $U_{x_1}=U_0$ at every point of
+$\Omega_2$, for every $x_1\in\Omega_1$.  Thus
+\[
+U_0=u\ \text{a.e. on }\Omega_2,
+\qquad U_0\ \text{continuous on }\Omega_2,
+\tag{4}
+\]
+and for every $x_1\in\Omega_1$,
+\[
+|U_0(x)-U_0(y)|\le C_2Ks^{-\alpha}|x-y|^\alpha
+\qquad\bigl(x,y\in\overline B_{s/2}(x_1)\bigr),
+\tag{5}
+\]
+the constant $C_2Ks^{-\alpha}$ being nonnegative.  Indeed
+$\overline B_{s/2}(x_1)\subseteq\overline B_{d/8}(x_1)\subseteq\Omega_2$ by
+the last consequence of Step 1 and $s/2=d/16<d/8$, so on
+$\overline B_{s/2}(x_1)$ the function $U_0$ coincides with $U_{x_1}$, whose
+H\"older bound reads
+$|U_{x_1}(x)-U_{x_1}(y)|\le C_2K(|x-y|/s)^\alpha=C_2Ks^{-\alpha}|x-y|^\alpha$,
+the last equality because $|x-y|\ge0$ and $s>0$.
+
+\emph{Step 3: the modification and the transport of the Sobolev datum.}  Define
+\[
+U(x)=\begin{cases}U_0(x),&x\in\Omega_2,\\ u(x),&x\notin\Omega_2 .\end{cases}
+\]
+By $(4)$, $U=u$ almost everywhere on $\Omega$: the two functions can differ
+only inside $\Omega_2$, where $U_0=u$ almost everywhere.  Apply
+\noderef{AEModificationInvariance} with the parameters $n,p$ --- its hypotheses
+$1\le n$, $1\le p$ hold --- on the open set $\Omega$, with $f=u$, $f'=U$ and
+the field $g$, the almost-everywhere equality just established.  Its clause (2)
+gives
+\[
+U\in W^{1,p}(\Omega)\ \text{with weak gradient }g\ (\noderef{MemW1pOn}),
+\]
+which together with $U=u$ almost everywhere on $\Omega$ is (iv).
+
+Finally (v).  On $\Omega_2$ the function $U$ coincides with $U_0$ by
+definition, so $U$ is continuous on $\Omega_2$ by $(4)$, hence on
+$\Omega_1\subseteq\Omega_2$.  Let $x\in\Omega_1$.  By the last consequence of
+Step 1, $\overline B_{d/8}(x)\subseteq\Omega_2$, and
+$\overline B_{d/16}(x)=\overline B_{s/2}(x)\subseteq\overline B_{d/8}(x)$
+because $s=d/8$; so on $\overline B_{d/16}(x)$ the function $U$ coincides with
+$U_0$.  Therefore $U$ is continuous on $\overline B_{d/16}(x)$, and by $(5)$
+applied at the centre $x$,
+\[
+|U(y)-U(z)|\le C_2Ks^{-\alpha}|y-z|^\alpha
+\qquad\bigl(y,z\in\overline B_{d/16}(x)\bigr).
+\]
+With the nonnegative constant $C_2Ks^{-\alpha}$ these two facts are exactly
+$U\in C^\alpha(\overline B_{d/16}(x))$ (\noderef{MemHolderOn}), which is (v).
+This completes the proof.
+\end{proof}

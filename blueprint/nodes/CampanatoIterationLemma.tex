@@ -1,0 +1,117 @@
+\begin{lemma}[Lemma 4.3]
+Let $A,\alpha,\beta>0$ with $\beta<\alpha$.  Then there exist
+$\delta_0=\delta_0(A,\alpha,\beta)>0$ and $C=C(A,\alpha,\beta)>0$ with the
+following property.  Let $0\le\delta<\delta_0$, let $B>0$, let $R_0>0$ and let
+$\varphi\colon\R\to\R$ be nonnegative and nondecreasing and satisfy
+\[
+\varphi(\rho)\le A\Bigl[\Bigl(\frac\rho R\Bigr)^{\alpha}+\delta\Bigr]\varphi(R)+BR^{\beta}
+\qquad\text{for all }0<\rho\le R\le R_0 .
+\]
+Then
+\[
+\varphi(\rho)\le C\Bigl(\frac\rho R\Bigr)^{\beta}\bigl[\varphi(R)+BR^{\beta}\bigr]
+\qquad\text{for all }0<\rho\le R\le R_0 .
+\]
+\end{lemma}
+\begin{proof}
+The thesis gives no proof of this lemma (it is quoted from [GG1]); here is one.
+All powers are real powers of positive reals.
+
+\emph{Choice of the parameters.}  Put $\gamma=\frac{\alpha+\beta}2$, so that
+$\beta<\gamma<\alpha$ and $\alpha-\gamma=\frac{\alpha-\beta}2>0$.  Put
+\[
+\kappa=\min\Bigl\{\tfrac12,\ (2A)^{-\frac1{\alpha-\gamma}}\Bigr\}\in(0,1),
+\qquad \delta_0=\kappa^{\alpha},
+\qquad
+S=\frac1{1-\kappa^{\gamma-\beta}} .
+\]
+Here $S$ is finite and positive because $0<\kappa<1$ and $\gamma-\beta>0$ give
+$0<\kappa^{\gamma-\beta}<1$.  Finally put
+\[
+C=\kappa^{-\beta}\max\{1,\ S\kappa^{-\beta}\}>0 .
+\]
+Both $\delta_0$ and $C$ depend only on $A$, $\alpha$ and $\beta$.  By
+construction $\kappa\le(2A)^{-1/(\alpha-\gamma)}$, hence
+$\kappa^{\alpha-\gamma}\le(2A)^{-1}$, i.e.
+\begin{equation}
+2A\,\kappa^{\alpha}\le\kappa^{\gamma}. \tag{$*$}
+\end{equation}
+
+\emph{Step 1: one step of the iteration.}  Let $0<R\le R_0$ and assume
+$0\le\delta<\delta_0=\kappa^{\alpha}$.  Applying the hypothesis with
+$\rho=\kappa R$ (note $0<\kappa R\le R\le R_0$) and using
+$(\kappa R/R)^{\alpha}=\kappa^{\alpha}$ and $\varphi(R)\ge0$,
+\[
+\varphi(\kappa R)\le A\bigl[\kappa^{\alpha}+\delta\bigr]\varphi(R)+BR^{\beta}
+\le 2A\kappa^{\alpha}\varphi(R)+BR^{\beta}
+\le\kappa^{\gamma}\varphi(R)+BR^{\beta},
+\]
+where the middle step uses $\delta<\kappa^{\alpha}$ and the last step is $(*)$.
+Since this holds for every radius in $(0,R_0]$, and $\kappa^kR\le R\le R_0$ for
+every $k\ge0$, we get
+\begin{equation}
+\varphi(\kappa^{k+1}R)\le\kappa^{\gamma}\varphi(\kappa^{k}R)+B(\kappa^{k}R)^{\beta}
+=\kappa^{\gamma}\varphi(\kappa^{k}R)+BR^{\beta}\kappa^{k\beta}
+\qquad(k=0,1,2,\dots). \tag{$**$}
+\end{equation}
+
+\emph{Step 2: iteration.}  Fix $0<R\le R_0$ and write $a_k=\varphi(\kappa^kR)$.
+We prove by induction on $k\ge0$ that
+\begin{equation}
+a_k\le\kappa^{k\gamma}a_0+BR^{\beta}\sum_{j=0}^{k-1}\kappa^{j\gamma}\kappa^{(k-1-j)\beta}, \tag{$\dagger$}
+\end{equation}
+the empty sum being $0$.  For $k=0$ this is $a_0\le a_0$.  Assuming $(\dagger)$
+for $k$, multiply it by $\kappa^{\gamma}>0$ and add $BR^{\beta}\kappa^{k\beta}$;
+by $(**)$,
+\[
+a_{k+1}\le\kappa^{(k+1)\gamma}a_0
++BR^{\beta}\Bigl(\sum_{j=0}^{k-1}\kappa^{(j+1)\gamma}\kappa^{(k-1-j)\beta}+\kappa^{k\beta}\Bigr)
+=\kappa^{(k+1)\gamma}a_0+BR^{\beta}\sum_{j=0}^{k}\kappa^{j\gamma}\kappa^{(k-j)\beta},
+\]
+where the last equality is the reindexing $j\mapsto j+1$ of the first sum
+together with the term $j=0$, which is $\kappa^{k\beta}$.  This is $(\dagger)$
+for $k+1$.
+
+We now simplify $(\dagger)$.  Since $0<\kappa<1$ and $\gamma>\beta$ we have
+$\kappa^{\gamma}\le\kappa^{\beta}$, so $\kappa^{k\gamma}\le\kappa^{k\beta}$.
+For the sum, factor out $\kappa^{(k-1)\beta}$:
+\[
+\sum_{j=0}^{k-1}\kappa^{j\gamma}\kappa^{(k-1-j)\beta}
+=\kappa^{(k-1)\beta}\sum_{j=0}^{k-1}\kappa^{j(\gamma-\beta)}
+\le\kappa^{(k-1)\beta}\,S=\kappa^{k\beta}\,S\kappa^{-\beta},
+\]
+using $\sum_{j\ge0}\kappa^{j(\gamma-\beta)}=S$.  Hence, for all $k\ge0$,
+\begin{equation}
+\varphi(\kappa^{k}R)\ \le\ \kappa^{k\beta}\,\max\{1,S\kappa^{-\beta}\}\,
+\bigl[\varphi(R)+BR^{\beta}\bigr]. \tag{$\ddagger$}
+\end{equation}
+
+\emph{Step 3: from the dyadic radii to all radii.}  Let $0<\rho\le R\le R_0$.
+Since $0<\kappa<1$ we have $\kappa^{k}\to0$, so the set of integers $k\ge0$ with
+$\kappa^{k}R\ge\rho$ is finite and nonempty (it contains $k=0$, because
+$\rho\le R$); let $k$ be its largest element.  Then
+\[
+\kappa^{k+1}R<\rho\le\kappa^{k}R .
+\]
+By monotonicity of $\varphi$ and $(\ddagger)$,
+\[
+\varphi(\rho)\le\varphi(\kappa^{k}R)\le\kappa^{k\beta}\max\{1,S\kappa^{-\beta}\}
+\bigl[\varphi(R)+BR^{\beta}\bigr].
+\]
+From $\kappa^{k+1}R<\rho$ we get $\kappa^{k}<\rho/(\kappa R)$, hence, as
+$\beta>0$,
+\[
+\kappa^{k\beta}<\Bigl(\frac{\rho}{\kappa R}\Bigr)^{\beta}
+=\kappa^{-\beta}\Bigl(\frac\rho R\Bigr)^{\beta}.
+\]
+Combining the two displays,
+\[
+\varphi(\rho)\le\kappa^{-\beta}\max\{1,S\kappa^{-\beta}\}
+\Bigl(\frac\rho R\Bigr)^{\beta}\bigl[\varphi(R)+BR^{\beta}\bigr]
+=C\Bigl(\frac\rho R\Bigr)^{\beta}\bigl[\varphi(R)+BR^{\beta}\bigr],
+\]
+which is the assertion.  Note that $\gamma>\beta$ was used exactly once, to make
+the geometric series $S$ converge; in the applications in
+Theorems~Theorem~3 of the thesis and Theorem~5 of the thesis this is what the restriction $\tau>0$
+(so that $\beta=n-\tau<\alpha=n$) buys.
+\end{proof}

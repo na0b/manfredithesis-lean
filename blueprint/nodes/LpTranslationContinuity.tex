@@ -1,0 +1,64 @@
+\begin{helper}[Continuity of translation in $L^r$]
+Let $n\in\N$ and let $k$ be an index in $\{1,\dots,n\}$.  Throughout, $e_k$ is
+the $k$-th standard basis vector, so $x+se_k$ translates $x$ by $s$ in the
+$k$-th coordinate direction; the exponent is the real $r$, so
+$\|v\|_{L^r(\R^n)}=\bigl(\int_{\R^n}|v|^{r}\bigr)^{1/r}$; and all integrals are
+against Lebesgue measure on all of $\R^n$.  Then for every real $r\ge1$ and
+every $w\in L^{r}(\R^n)$,
+\[
+\bigl\|w(\cdot+se_k)-w\bigr\|_{L^{r}(\R^n)}\ \longrightarrow\ 0
+\qquad (s\to0),
+\]
+the limit being over all real $s$, of either sign.
+
+Nothing in the statement mentions a domain, a weak derivative or an exponent
+other than $r$: it is a statement about an arbitrary $L^r$ function on $\R^n$,
+which is why it is stated for arbitrary $r$ and $w$ with only $n$ and $k$ as
+parameters.
+\end{helper}
+\begin{proof}
+Fix $r\ge1$ and $w\in L^{r}(\R^n)$, and note $r>0$, so the exponent
+$\mathrm{ofReal}\,r$ is neither $0$ nor $\infty$ and is $\ge1$.  Write
+$\tau_sv=v(\cdot+se_k)$.  Two facts are used repeatedly.  First, translation
+preserves the seminorm: the map $x\mapsto x+se_k$ preserves Lebesgue measure
+(Preamble, invariance under translations), so
+$\|\tau_sv\|_{L^{r}}=\|v\|_{L^{r}}$ for every $v$ that is almost everywhere
+strongly measurable.  Second, $\|e_k\|=1$, so $\|se_k\|=|s|$.
+
+Let $\varepsilon>0$.  By the density of the compactly supported continuous
+functions in $L^{r}$ (Preamble) there is $v$ continuous with compact support
+and
+\[
+\|w-v\|_{L^{r}}\ \le\ \frac\varepsilon3 .
+\]
+
+\emph{The splitting.}  Pointwise,
+\[
+\tau_sw-w=\bigl(\tau_sw-\tau_sv\bigr)+\bigl(\tau_sv-v\bigr)+\bigl(v-w\bigr),
+\]
+so by the $L^{r}$ triangle inequality (Minkowski, Preamble), applied twice,
+\[
+\|\tau_sw-w\|_{L^{r}}
+\ \le\ \|\tau_s(w-v)\|_{L^{r}}+\|\tau_sv-v\|_{L^{r}}+\|v-w\|_{L^{r}} .
+\]
+The first term equals $\|w-v\|_{L^{r}}\le\varepsilon/3$ by the translation
+invariance recorded above, and the third is $\le\varepsilon/3$ by the choice of
+$v$.  Both bounds are independent of $s$.
+
+\emph{The middle term.}  Let $K_0=\operatorname{supp}v$, a compact set, and let
+$K_1$ be the closed $1$-neighbourhood of $K_0$, also compact, so that for
+$|s|\le1$ both $v$ and $\tau_sv$ vanish off $K_1$.  Being continuous with
+compact support, $v$ is uniformly continuous, so
+$\sup_x|v(x+se_k)-v(x)|\to0$ as $s\to0$, using $\|se_k\|=|s|$.  On the finite
+measure set $K_1$ the $L^{r}$ seminorm is dominated by the sup norm,
+$\|\tau_sv-v\|_{L^{r}(\R^n)}=\|\tau_sv-v\|_{L^{r}(K_1)}
+  \le|K_1|^{1/r}\sup_x|v(x+se_k)-v(x)|$,
+by monotonicity of the integral (Preamble) and $|K_1|<\infty$.  Hence there is
+$\sigma\in(0,1]$ with $\|\tau_sv-v\|_{L^{r}}\le\varepsilon/3$ whenever
+$|s|<\sigma$.
+
+\emph{Conclusion.}  For $|s|<\sigma$ the three terms sum to at most
+$\varepsilon$, so $\|\tau_sw-w\|_{L^{r}}\le\varepsilon$.  Since
+$\varepsilon>0$ was arbitrary and the quantity is nonnegative, it tends to $0$
+as $s\to0$.
+\end{proof}

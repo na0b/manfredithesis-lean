@@ -1,0 +1,18 @@
+\begin{definition}
+Let $q\ge1$, $\lambda\ge0$, let $\Omega\subseteq\R^n$, let
+$u\colon\R^n\to\R$ and let $N\ge0$.  Write $\Omega(x,\rho)=\Omega\cap B_\rho(x)$.
+We say that $u$ \emph{lies in the Morrey space $L^{q,\lambda}(\Omega)$ with norm
+at most $N$}, written $\mathrm{MorreyBoundOn}(n,q,\lambda,\Omega,u,N)$, if
+$u\in L^q(\Omega)$ and
+\[
+\int_{\Omega(x,\rho)}|u|^q\,dx\;\le\;N^q\rho^{\lambda}
+\qquad\text{for all }x\in\Omega\text{ and }0<\rho<\operatorname{diam}\Omega .
+\]
+This is the definition of \S4: $u\in L^{q,\lambda}(\Omega)$ iff
+$\sup_{x,\rho}\rho^{-\lambda}\int_{\Omega(x,\rho)}|u|^q\,dx
+=\|u\|^q_{L^{q,\lambda}(\Omega)}<\infty$, and
+$\mathrm{MorreyBoundOn}(\dots,N)$ says exactly
+$\|u\|_{L^{q,\lambda}(\Omega)}\le N$.  Membership in $L^{q,\lambda}(\Omega)$ is
+the statement that such an $N$ exists; carrying $N$ explicitly is what lets the
+theorems of \S4 and \S5 say which quantities the norm depends on.
+\end{definition}

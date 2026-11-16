@@ -1,0 +1,160 @@
+\begin{helper}[Mollifications converge in $L^q$]
+Let $n\ge1$ and let $q\ge1$.  Let $\rho_m\colon\R^n\to\R$ and $\delta_m\in\R$
+($m\in\mathbb{N}$) satisfy
+\begin{enumerate}
+\item $\delta_m\to0$ as $m\to\infty$;
+\item each $\rho_m$ is $C^\infty$, nonnegative and compactly supported, with
+  $\operatorname{supp}\rho_m\subseteq\overline{B_{\delta_m}(0)}$ and
+  $\int_{\R^n}\rho_m=1$;
+\item (contraction) for every $u\in L^q(\R^n)$ and every $m$,
+  \[
+  \|u*\rho_m\|_{L^q(\R^n)}\le\|u\|_{L^q(\R^n)} ,
+  \]
+  where $(u*\rho_m)(x)=\int_{\R^n}u(y)\rho_m(x-y)\,dy$.
+\end{enumerate}
+Then for every $w\in L^q(\R^n)$,
+\[
+\|w*\rho_m-w\|_{L^q(\R^n)}\longrightarrow0\qquad(m\to\infty).
+\]
+\end{helper}
+\begin{proof}
+Fix $w\in L^q(\R^n)$.  Since $q\ge1$ we have $q>0$, so the exponent is finite
+and at least $1$; in particular the $L^q$ triangle inequality (Minkowski,
+Preamble) is available.
+
+\emph{Step 1: each $\rho_m$ is an integrable probability density, also after
+reflection and translation.}  Each $\rho_m$ is continuous, being $C^\infty$, and
+has compact support, hence is integrable.  For every $m$ and every $x\in\R^n$,
+\[
+\int_{\R^n}\rho_m(x-y)\,dy=\int_{\R^n}\rho_m=1 ,
+\tag{1}
+\]
+by invariance of Lebesgue measure under translations and under the unimodular
+map $y\mapsto-y$ (Preamble).
+
+\emph{Step 2: the quantity to be estimated.}  It suffices to show that for every
+$\varepsilon>0$ there is $M$ with
+$\|w*\rho_m-w\|_{L^q(\R^n)}\le\varepsilon$ for all $m\ge M$.  Fix such an
+$\varepsilon$, which we may assume finite, and note that $\varepsilon/3$ is
+neither $0$ nor $\infty$ and that
+$\varepsilon/3+\varepsilon/3+\varepsilon/3=3\cdot(\varepsilon/3)\le\varepsilon$.
+
+\emph{Step 3: a continuous compactly supported approximant and the splitting of
+the convolution.}  By the Preamble item on density of the compactly supported
+continuous functions in $L^q$, applied at the exponent $q$ and the tolerance
+$\varepsilon/3$, there is a continuous $v\colon\R^n\to\R$ with compact support
+such that $v\in L^q(\R^n)$ and
+\[
+\|w-v\|_{L^q(\R^n)}\le\frac\varepsilon3 .
+\tag{2}
+\]
+Then $w-v\in L^q(\R^n)$, and both $v$ and $w-v$ are locally integrable, since
+$q\ge1$ and an $L^q$ function is locally integrable for $q\ge1$.  Because each
+$\rho_m$ is continuous with compact support, the convolutions $(w-v)*\rho_m$ and
+$v*\rho_m$ exist at every point, and convolution is additive in its first
+argument, so from $(w-v)+v=w$ we get
+\[
+(w*\rho_m)(x)=\bigl((w-v)*\rho_m\bigr)(x)+(v*\rho_m)(x)
+\qquad(x\in\R^n,\ m\in\mathbb{N}).
+\tag{3}
+\]
+
+\emph{Step 4: a fixed compact set and a real tolerance.}  Put
+\[
+C=\bigl\{x\in\R^n:\operatorname{dist}\bigl(x,\operatorname{supp}v\bigr)\le1\bigr\} .
+\]
+Since $\operatorname{supp}v$ is compact, $C$ is compact, hence closed and
+measurable, and $|C|<\infty$.  Put $A=|C|^{1/q}\in[0,\infty)$ and
+\[
+s=\frac{(\varepsilon/3)}{A+1}>0 ,
+\]
+reading $\varepsilon/3$ as a real number here, which is legitimate because it is
+neither $0$ nor $\infty$.  Then $A\,s\le\varepsilon/3$, since
+$A\,s=A(\varepsilon/3)/(A+1)\le\varepsilon/3$ as $A\ge0$.
+
+\emph{Step 5: a uniform-continuity radius for $v$.}  Being continuous with
+compact support, $v$ is uniformly continuous, so there is $R>0$ with
+\[
+|v(y)-v(x)|\le s\qquad\text{whenever }\|y-x\|\le R .
+\tag{4}
+\]
+
+\emph{Step 6: choice of $M$.}  Since $\delta_m\to0$ and $\min\{R,1\}>0$, there is
+$M$ such that $\delta_m\le\min\{R,1\}$ for every $m\ge M$.  Fix $m\ge M$; then
+$\delta_m\le R$ and $\delta_m\le1$.  All remaining estimates are for this $m$.
+
+\emph{Step 7: a uniform pointwise bound on $v*\rho_m-v$.}  Let $x\in\R^n$.  The
+functions $y\mapsto v(y)\rho_m(x-y)$ and $y\mapsto v(x)\rho_m(x-y)$ are
+integrable --- the first because the convolution $v*\rho_m$ exists at $x$, the
+second because $\rho_m$ is integrable and $v(x)$ is a constant --- so by (1),
+\[
+(v*\rho_m)(x)-v(x)
+=\int_{\R^n}v(y)\rho_m(x-y)\,dy-v(x)\int_{\R^n}\rho_m(x-y)\,dy
+=\int_{\R^n}\bigl(v(y)-v(x)\bigr)\rho_m(x-y)\,dy .
+\]
+Hence, by the norm inequality for the integral and monotonicity of the integral
+(Preamble),
+\[
+\bigl|(v*\rho_m)(x)-v(x)\bigr|
+\le\int_{\R^n}\bigl|v(y)-v(x)\bigr|\,\rho_m(x-y)\,dy
+\le\int_{\R^n}s\,\rho_m(x-y)\,dy=s ,
+\tag{5}
+\]
+the last equality by (1).  The middle inequality is checked pointwise in $y$:
+if $\rho_m(x-y)=0$ both integrands vanish; and if $\rho_m(x-y)\ne0$ then
+$x-y\in\operatorname{supp}\rho_m\subseteq\overline{B_{\delta_m}(0)}$, so
+$\|y-x\|=\|x-y\|\le\delta_m\le R$ and (4) gives
+$|v(y)-v(x)|\le s$, whence
+$|v(y)-v(x)|\rho_m(x-y)\le s\,\rho_m(x-y)$ because $\rho_m\ge0$.  The two
+integrands are integrable: the left one is the difference of the two integrable
+functions above, and the right one is a constant multiple of a translate and
+reflection of $\rho_m$.
+
+\emph{Step 8: $v*\rho_m-v$ vanishes off $C$, hence is small in $L^q$.}  Let
+$x\notin C$.  Then $x\notin\operatorname{supp}v$, so $v(x)=0$.  Moreover
+$(v*\rho_m)(x)=0$: for each $y$, either $\rho_m(x-y)=0$ and the integrand
+$v(y)\rho_m(x-y)$ vanishes, or $\rho_m(x-y)\ne0$, in which case
+$\|x-y\|\le\delta_m\le1$ as in Step 7, and then $v(y)=0$ --- for if
+$v(y)\ne0$ then $y\in\operatorname{supp}v$ and
+$\operatorname{dist}(x,\operatorname{supp}v)\le\|x-y\|\le1$ would put $x\in C$.
+So the integrand vanishes identically and the integral is $0$.  Therefore
+\[
+v*\rho_m-v=\mathbf 1_C\cdot\bigl(v*\rho_m-v\bigr),
+\]
+and consequently, using the identification of the $L^q$ seminorm of an
+indicator with the $L^q$ seminorm for the restricted measure (Preamble),
+\[
+\|v*\rho_m-v\|_{L^q(\R^n)}=\|v*\rho_m-v\|_{L^q(C)}\le s\,|C|^{1/q}=A\,s
+\le\frac\varepsilon3 ,
+\tag{6}
+\]
+where the inequality is the standard $L^q$ bound for a function bounded almost
+everywhere by $s$ on a measure space of total mass $|C|$, available by (5), and
+the last step is Step 4.
+
+\emph{Step 9: conclusion.}  By (3),
+\[
+w*\rho_m-w=(w-v)*\rho_m+\bigl(v*\rho_m-v\bigr)+(v-w),
+\]
+as one checks at each point: the right-hand side is
+$\bigl((w-v)*\rho_m\bigr)(x)+(v*\rho_m)(x)-v(x)+v(x)-w(x)
+=(w*\rho_m)(x)-w(x)$.  All three summands are almost everywhere strongly
+measurable: $(w-v)*\rho_m$ and $v*\rho_m$ are continuous, being convolutions of
+a locally integrable function with a smooth compactly supported kernel
+(Preamble), $v$ is continuous, and $w$ is in $L^q$.  Two applications of the
+$L^q$ triangle inequality (Minkowski, Preamble) therefore give
+\[
+\|w*\rho_m-w\|_{L^q}
+\le\|(w-v)*\rho_m\|_{L^q}+\|v*\rho_m-v\|_{L^q}+\|v-w\|_{L^q} .
+\]
+The first term is at most $\|w-v\|_{L^q}\le\varepsilon/3$, by the contraction
+hypothesis applied to $u=w-v\in L^q(\R^n)$ and then (2); the second is at most
+$\varepsilon/3$ by (6); and the third equals $\|w-v\|_{L^q}\le\varepsilon/3$,
+since $v-w=-(w-v)$ and the $L^q$ seminorm is unchanged under negation.  Adding,
+\[
+\|w*\rho_m-w\|_{L^q(\R^n)}
+\le\frac\varepsilon3+\frac\varepsilon3+\frac\varepsilon3\le\varepsilon .
+\]
+This holds for every $m\ge M$, and $\varepsilon>0$ was arbitrary, so
+$\|w*\rho_m-w\|_{L^q(\R^n)}\to0$.
+\end{proof}

@@ -1,0 +1,456 @@
+\begin{proposition}[H\"older's inequality on a set of finite measure]
+Let $(X,\mu)$ be a measure space, let $E\subseteq X$ be measurable, and let
+$q,q'\in(1,\infty)$ be conjugate, $\tfrac1q+\tfrac1{q'}=1$.  If $f,g\ge0$ are
+measurable on $E$ with $f\in L^{q}(E)$ and $g\in L^{q'}(E)$, then
+\[
+\int_E fg\,d\mu\ \le\ \Bigl(\int_E f^{q}\,d\mu\Bigr)^{1/q}
+\Bigl(\int_E g^{q'}\,d\mu\Bigr)^{1/q'} .
+\]
+Consequently, if $\mu(E)<\infty$ and $q\in[1,\infty)$, then taking $f\equiv1$
+gives, for every measurable $g$ with $|g|\in L^{q}(E)$,
+\[
+\int_E|g|\,d\mu\ \le\ \mu(E)^{1-\frac1q}\Bigl(\int_E|g|^{q}\,d\mu\Bigr)^{1/q}
+\ <\ \infty ,
+\]
+so $L^{q}(E)\subseteq L^{1}(E)$ whenever $\mu(E)<\infty$ and $q\ge1$.  More
+generally $L^{q}(E)\subseteq L^{s}(E)$ for $1\le s\le q$ and $\mu(E)<\infty$.
+In Mathlib the inequality is
+\texttt{MeasureTheory.integral\_mul\_le\_Lp\_mul\_Lq\_of\_nonneg}; the
+quantitative inclusion with its $\mu(E)^{1/s-1/q}$ factor is
+\texttt{MeasureTheory.eLpNorm\_le\_eLpNorm\_mul\_rpow\_measure\_univ}, and the
+membership statement $L^{q}\subseteq L^{s}$ for a finite measure is
+\texttt{MeasureTheory.MemLp.mono\_exponent}.  The last two are applied to the
+restricted measure $\mu|_E$, which is finite exactly when $\mu(E)<\infty$.
+
+Two further facts about $L^{q}$ of a set, used wherever a Sobolev-type
+membership is transported between sets, are recorded here rather than repeated.
+First, $L^{q}$ membership is inherited by subsets: if $E'\subseteq E$ are
+measurable and $f\in L^{q}(E)$ then $f\in L^{q}(E')$, because
+$\mu|_{E'}\le\mu|_{E}$ and $L^{q}$ membership is monotone in the measure
+(\texttt{MeasureTheory.Measure.restrict\_mono} and
+\texttt{MeasureTheory.MemLp.mono\_measure}).  Second, $L^{q}$ of a set is the
+same thing as $L^{q}$ of the zero-extension: for measurable $E$,
+\[
+f\in L^{q}(E)\iff \mathbf1_Ef\in L^{q}(X)
+\]
+(\texttt{MeasureTheory.memLp\_indicator\_iff\_restrict}, whose only hypothesis
+is measurability of $E$; the underlying norm identity is
+\texttt{MeasureTheory.eLpNorm\_indicator\_eq\_eLpNorm\_restrict}).  Combining the
+two: if $f$ vanishes outside a measurable $E\subseteq E''$ and $f\in L^{q}(E)$,
+then $f\in L^{q}(E'')$, since $\mathbf1_Ef=f$ and
+$\mathbf1_{E''}f$ have the same $L^q(X)$ norm.
+\end{proposition}
+
+\begin{proposition}[The $L^{q}$ triangle inequality (Minkowski)]
+Let $(X,\mu)$ be a measure space and $q\in[1,\infty]$.  If $f,g$ are measurable
+then
+\[
+\|f+g\|_{L^{q}(\mu)}\ \le\ \|f\|_{L^{q}(\mu)}+\|g\|_{L^{q}(\mu)} ,
+\]
+and in particular $L^{q}(\mu)$ is closed under addition: $f,g\in L^{q}(\mu)$
+implies $f+g\in L^{q}(\mu)$.  It is also closed under multiplication by a real
+scalar, $\|cf\|_{L^q(\mu)}=|c|\,\|f\|_{L^q(\mu)}$, so $f\in L^q(\mu)$ implies
+$cf\in L^q(\mu)$; consequently $L^q(\mu)$ is closed under real linear
+combinations.  In Mathlib these are
+\texttt{MeasureTheory.eLpNorm\_add\_le} (which needs $1\le q$ and almost
+everywhere strong measurability of $f$ and $g$),
+\texttt{MeasureTheory.MemLp.add}, and
+\texttt{MeasureTheory.MemLp.const\_mul} / \texttt{MeasureTheory.MemLp.const\_smul}
+for the scalar multiples.  All of them hold for functions valued in a real
+Banach space as well as for real-valued ones, which is how they are applied to
+weak gradients below.  A constant function lies in $L^q(\mu)$ when $\mu$ is
+finite (\texttt{MeasureTheory.memLp\_const}).
+\end{proposition}
+
+\begin{proposition}[Cauchy--Schwarz]
+Let $F$ be a real inner product space.  Then for all $x,y\in F$,
+\[
+|(x,y)|\ \le\ |x|\,|y| ,
+\qquad\text{equivalently}\qquad
+(x,y)^2\ \le\ (x,x)\,(y,y) .
+\]
+In Mathlib these are \texttt{abs\_real\_inner\_le\_norm} and
+\texttt{real\_inner\_mul\_inner\_self\_le}.  Both apply to
+$\R^n=\texttt{EuclideanSpace}\ \R\ (\texttt{Fin}\ n)$ with its standard inner
+product, for which $(x,y)=\sum_{i}x_iy_i$ and $|x|^2=(x,x)$.
+\end{proposition}
+
+\begin{proposition}[A nonnegative function with vanishing integral vanishes almost everywhere]
+Let $(X,\mu)$ be a measure space and let $f:X\to\R$ be integrable with
+$f\ge0$ $\mu$-almost everywhere.  Then
+\[
+\int_X f\,d\mu=0\quad\Longleftrightarrow\quad f=0\ \ \mu\text{-a.e.}
+\]
+In Mathlib this is
+\texttt{MeasureTheory.integral\_eq\_zero\_iff\_of\_nonneg\_ae}.  Note that both
+hypotheses are needed: integrability of $f$ and almost everywhere
+nonnegativity.  Applied on a measurable subset $E$ with the restricted measure,
+it says that an integrable $f\ge0$ with $\int_Ef\,d\mu=0$ vanishes a.e.\ on
+$E$.
+\end{proposition}
+
+\begin{proposition}[Lebesgue dominated convergence]
+Let $(X,\mu)$ be a measure space, let $G$ be a real Banach space, and let
+$F_k:X\to G$ be almost everywhere strongly measurable for every $k\in\mathbb{N}$.
+Suppose there is an integrable $b:X\to\R$ with $|F_k|\le b$ $\mu$-a.e.\ for
+every $k$, and suppose $F_k\to f$ $\mu$-a.e.  Then
+\[
+\lim_{k\to\infty}\int_X F_k\,d\mu=\int_X f\,d\mu .
+\]
+In Mathlib this is
+\texttt{MeasureTheory.tendsto\_integral\_of\_dominated\_convergence}, whose
+four hypotheses are exactly measurability of each $F_k$, integrability of the
+bound $b$, the almost everywhere domination $|F_k|\le b$ for each $k$, and the
+almost everywhere convergence $F_k\to f$.
+\end{proposition}
+
+\begin{proposition}[Measurability of superlevel sets and of countable operations on them]
+Let $X$ be a measurable space and let $f:X\to\R$ be measurable.  Then for every
+$t\in\R$ the superlevel set
+\[
+\{f>t\}=\{x\in X: t<f(x)\}
+\]
+is measurable; the same holds for $\{f<t\}$, and hence for $\{f\ge t\}$ and
+$\{f\le t\}$ by complementation.  Moreover the measurable sets are closed under
+differences $S_1\setminus S_2$ and under countable unions and intersections
+$\bigcup_{k}S_k$, $\bigcap_{k}S_k$.  In Mathlib the superlevel set is
+\texttt{measurableSet\_lt} (applied with the constant function $t$ and with
+$f$), and the set operations are \texttt{MeasurableSet.diff},
+\texttt{MeasurableSet.iUnion} and \texttt{MeasurableSet.iInter}.
+\end{proposition}
+
+\begin{proposition}[The fundamental theorem of calculus in interval-integral form]
+Let $E$ be a real Banach space, let $a,b\in\R$, and let
+$\varphi,\varphi':\R\to E$ be such that $\varphi$ has derivative $\varphi'(t)$
+at every point $t$ of the closed interval with endpoints $a$ and $b$.  If
+$\varphi'$ is interval-integrable on that interval, then
+\[
+\int_a^b\varphi'(t)\,dt=\varphi(b)-\varphi(a) .
+\]
+In Mathlib this is
+\texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDerivAt}.  There is also a
+variant requiring differentiability only on the open interval, with continuity
+on the closed interval,
+\texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDerivAt\_of\_le}.  Applied to
+$\varphi(t)=\Phi(tx+(1-t)y)$ for $\Phi$ differentiable on $\R^n$, this is the
+segment form used repeatedly below: $\Phi(x)-\Phi(y)=\int_0^1
+D\Phi\bigl(tx+(1-t)y\bigr)(x-y)\,dt$, valid as soon as the integrand is
+interval-integrable on $[0,1]$.
+\end{proposition}
+
+\begin{proposition}[Interval integrability of $t^{r}$ for $r>-1$]
+Let $r\in\R$ with $r>-1$ and let $a,b\in\R$.  Then $t\mapsto t^{r}$, the real
+power \texttt{Real.rpow}, is interval-integrable with respect to Lebesgue
+measure on the interval with endpoints $a$ and $b$; in particular $\int_0^1t^{r}\,dt=\frac1{r+1}<\infty$.
+In Mathlib this is \texttt{intervalIntegral.intervalIntegrable\_rpow'}, whose
+only hypothesis is $-1<r$, so the interval may straddle or lie below $0$.  The
+conventions of \texttt{Real.rpow} off the positive axis are $0^{r}=0$ for
+$r\ne0$ and $0^{0}=1$ (\texttt{Real.zero\_rpow}), and
+$t^{r}=|t|^{r}\cos(r\pi)$ for $t<0$ (\texttt{Real.rpow\_def\_of\_neg}) -- in
+particular $t^{r}$ is \emph{not} $0$ for $t<0$ in general.  The hypothesis
+$r>-1$ is sharp: for $r\le-1$ the integral over $[0,1]$ diverges.
+\end{proposition}
+
+\begin{proposition}[Measurability of the derivative]
+Let $E,F$ be finite-dimensional real normed spaces and let $\Phi:E\to F$ be an
+arbitrary map.  Then $x\mapsto D\Phi(x)$ is measurable, where $D\Phi(x)$ is
+taken to be $0$ at points of non-differentiability; consequently, for each fixed
+$y\in E$ the map $x\mapsto D\Phi(x)y$ is measurable, and for $F$-valued
+$\psi:\R\to F$ the map $t\mapsto\psi'(t)$ is strongly measurable.  No
+differentiability or continuity of $\Phi$ is assumed.  In Mathlib these are
+\texttt{measurable\_fderiv}, \texttt{measurable\_fderiv\_apply\_const} and
+\texttt{stronglyMeasurable\_deriv}.  This is what makes a derivative obtained
+from bare differentiability -- as opposed to $C^1$ regularity -- eligible for
+the integrability hypothesis of the fundamental theorem of calculus above.
+\end{proposition}
+
+\begin{proposition}[Domination, monotonicity and the norm inequality for the integral]
+Let $(X,\mu)$ be a measure space and let $G$ be a real Banach space.
+\emph{(a) Domination.}  If $g:X\to\R$ is integrable, $f:X\to G$ is almost
+everywhere strongly measurable and $|f|\le g$ $\mu$-a.e., then $f$ is
+integrable.  \emph{(b) Monotonicity.}  If $f,g:\R\to\R$ are
+interval-integrable on $[\alpha,\beta]$ with $\alpha\le\beta$ and $f\le g$
+there, then $\int_\alpha^\beta f\le\int_\alpha^\beta g$.  \emph{(c) Norm
+inequality.}  If $f:\R\to G$ is interval-integrable on $[\alpha,\beta]$ with
+$\alpha\le\beta$, then
+\[
+\Bigl|\int_\alpha^\beta f(t)\,dt\Bigr|\ \le\ \int_\alpha^\beta|f(t)|\,dt .
+\]
+In Mathlib these are \texttt{MeasureTheory.Integrable.mono'} together with its
+interval form \texttt{IntervalIntegrable.mono\_fun},
+\texttt{intervalIntegral.integral\_mono\_on} (and its almost everywhere variant
+\texttt{intervalIntegral.integral\_mono\_ae}), and
+\texttt{intervalIntegral.norm\_integral\_le\_integral\_norm}.
+\end{proposition}
+
+\begin{proposition}[Density of the compactly supported continuous functions in $L^{q}$]
+Let $\mu$ be a (weakly regular, $\sigma$-finite) Borel measure on $\R^n$ --- in
+particular Lebesgue measure --- let $q\in[1,\infty)$ and let $w\in L^{q}(\mu)$.
+Then for every $\sigma>0$ there is a continuous $v\colon\R^n\to\R$ with compact
+support, $v\in L^{q}(\mu)$, such that
+\[
+\|w-v\|_{L^{q}(\mu)}\ \le\ \sigma .
+\]
+In Mathlib this is
+\texttt{MeasureTheory.MemLp.exists\_hasCompactSupport\_eLpNorm\_sub\_le}, which
+returns a $v$ that is simultaneously continuous, compactly supported and in
+$L^{q}$.
+\end{proposition}
+
+\begin{proposition}[Invariance of Lebesgue measure under translations and unimodular linear maps]
+Lebesgue measure on $\R^n$ is invariant under every translation
+$x\mapsto x+a$: for measurable $S$ one has $|S+a|=|S|$, and consequently, for
+every $q\in[1,\infty]$ and every almost everywhere strongly measurable
+$w\colon\R^n\to\R$,
+\[
+\|w(\cdot+a)\|_{L^{q}(\R^n)}=\|w\|_{L^{q}(\R^n)} ,
+\qquad
+\int_{S+a}w(x)\,dx=\int_{S}w(x+a)\,dx .
+\]
+In Mathlib the measure statement is
+\texttt{MeasureTheory.measure\_preimage\_add} together with
+\texttt{measurePreserving\_add\_right} (Lebesgue measure is both left and right
+invariant, being a Haar measure of an abelian group), and the seminorm statement
+follows by \texttt{MeasureTheory.eLpNorm\_comp\_measurePreserving} applied to
+that measure-preserving map.
+
+More generally, if $T\colon\R^N\to\R^N$ is linear with $\det T\ne0$ then
+$|T^{-1}(S)|=|\det T|^{-1}|S|$ for every measurable $S$, and the pushforward of
+Lebesgue measure under $T$ is $|\det T|^{-1}$ times Lebesgue measure; in
+particular, when $|\det T|=1$ the map $T$ preserves Lebesgue measure, hence
+preserves Lebesgue measurability and null sets, and
+$\int_{\R^N}w\circ T=\int_{\R^N}w$ for every nonnegative measurable $w$.  In
+Mathlib these are
+\texttt{MeasureTheory.Measure.addHaar\_preimage\_linearMap} and
+\texttt{MeasureTheory.Measure.map\_linearMap\_addHaar\_eq\_smul\_addHaar}.  The
+case used below is the shear $T(x,s)=(x+s\,e_k,\ s)$ of
+$\R^n\times\R=\R^{n+1}$, whose matrix is triangular with unit diagonal, so
+$\det T=1$.
+\end{proposition}
+
+\begin{proposition}[Tonelli and Fubini]
+Let $\mu,\nu$ be $\sigma$-finite measures and let $\Theta\ge0$ be measurable on
+the product.  Then the two iterated integrals agree in $[0,\infty]$:
+\[
+\int\!\!\Bigl(\int\Theta(x,y)\,d\nu(y)\Bigr)d\mu(x)
+=\int\!\!\Bigl(\int\Theta(x,y)\,d\mu(x)\Bigr)d\nu(y) .
+\]
+No integrability hypothesis is needed, only measurability on the product and
+nonnegativity; both sides may be $+\infty$.  In Mathlib this is
+\texttt{MeasureTheory.lintegral\_lintegral\_swap}.
+
+The same exchange holds for a Banach-space valued $\Theta$ that is integrable on
+the product rather than nonnegative, which is Fubini's theorem,
+\texttt{MeasureTheory.integral\_integral\_swap}.  A continuous function with
+compact support on $\R^N$ is integrable, so the exchange is available for such
+$\Theta$.
+\end{proposition}
+
+\begin{proposition}[An almost everywhere convergent subsequence out of $L^{q}$ convergence]
+Let $q\in[1,\infty)$, let $w_j,w$ be almost everywhere strongly measurable with
+$\|w_j-w\|_{L^{q}(\mu)}\to0$.  Then there is a strictly increasing sequence
+$j_1<j_2<\cdots$ with $w_{j_i}\to w$ $\mu$-almost everywhere.  In Mathlib this
+is \texttt{MeasureTheory.tendstoInMeasure\_of\_tendsto\_eLpNorm\_of\_ne\_top}
+(which turns the $L^{q}$ convergence into convergence in measure, for
+$0\ne q\ne\infty$) followed by
+\texttt{MeasureTheory.TendstoInMeasure.exists\_seq\_tendsto\_ae}.
+\end{proposition}
+
+\begin{proposition}[Convolution with a smooth compactly supported kernel]
+Let $w\in L^{1}_{\mathrm{loc}}(\R^n)$ and let $\rho\colon\R^n\to\R$ be of class
+$C^{\infty}$ with compact support.  Then the convolution
+\[
+(w*\rho)(x)=\int_{\R^n}w(y)\,\rho(x-y)\,dy
+\]
+is of class $C^{\infty}$ on $\R^n$, and its partial derivatives are obtained by
+differentiating the kernel:
+\[
+D_i(w*\rho)=w*(D_i\rho)\qquad(i=1,\dots,n).
+\]
+In Mathlib these are \texttt{HasCompactSupport.contDiff\_convolution\_right}
+(smoothness, from local integrability of $w$ and smoothness and compact support
+of $\rho$) and \texttt{HasCompactSupport.hasFDerivAt\_convolution\_right}, whose
+conclusion is that $w*\rho$ is differentiable at every point with differential
+the convolution of $w$ against the differential of $\rho$.
+\end{proposition}
+
+\begin{proposition}[The fundamental lemma of the calculus of variations (du Bois--Reymond)]
+Let $U\subseteq\R^n$ be open, let $F$ be a real Banach space and let
+$w\colon\R^n\to F$ be locally integrable on $U$.  Suppose that
+\[
+\int_{\R^n}\varphi(x)\,w(x)\,dx=0
+\]
+for every $\varphi\in C^\infty(\R^n)$ with compact support and
+$\operatorname{supp}\varphi\subseteq U$.  Then $w=0$ almost everywhere on $U$.
+In Mathlib this is
+\texttt{IsOpen.ae\_eq\_zero\_of\_integral\_contDiff\_smul\_eq\_zero}, whose
+hypotheses are exactly openness of $U$, \texttt{LocallyIntegrableOn} of $w$ on
+$U$, and the vanishing of $\int\varphi\cdot w$ for every $\varphi$ that is
+$C^\infty$, compactly supported and with $\operatorname{tsupport}$ inside $U$ ---
+\emph{verbatim} the test class of \noderef{HasWeakGradientOn}; the conclusion is
+the ``almost every $x$, if $x\in U$ then $w(x)=0$'' form.  The integral in the
+hypothesis is over all of $\R^n$, which for an integrand vanishing off
+$\operatorname{supp}\varphi\subseteq U$ is the same as the integral over $U$.
+The version without the open set, \texttt{ae\_eq\_zero\_of\_integral\_contDiff\_smul\_eq\_zero},
+asks for global local integrability and drops the support restriction.
+
+Two consequences used below.  Applied to a difference $w_1-w_2$ of locally
+integrable functions, it says that two such functions with the same integrals
+against all test functions agree almost everywhere on $U$.  Applied to the
+weak-gradient identity of \noderef{HasWeakGradientOn}, it says that a weak
+gradient is determined almost everywhere on $U$, and in particular that a
+function whose weak gradient is tested only against functions supported in an
+open subset on which it vanishes has that weak gradient vanishing almost
+everywhere there.
+\end{proposition}
+
+\begin{proposition}[Symmetry of the second derivative (Clairaut)]
+Let $E,F$ be real normed spaces and let $\Phi\colon E\to F$ be differentiable at
+every point, with derivative $D\Phi\colon E\to\mathcal L(E,F)$.  If $D\Phi$ is
+itself differentiable at a point $x$, with derivative
+$D^2\Phi(x)\in\mathcal L(E,\mathcal L(E,F))$, then $D^2\Phi(x)$ is symmetric:
+\[
+D^2\Phi(x)[v][w]=D^2\Phi(x)[w][v]\qquad\text{for all }v,w\in E .
+\]
+In Mathlib this is \texttt{second\_derivative\_symmetric}, with the local variant
+\texttt{second\_derivative\_symmetric\_of\_eventually} requiring the first
+derivative only on a neighbourhood of $x$.  Note that the hypothesis is
+\emph{Fr\'echet twice differentiability} and nothing more --- no $C^2$
+regularity is required.  For $\Phi\in C^\infty(\R^n)$ this gives the classical
+$D_iD_j\Phi=D_jD_i\Phi$ at every point.
+\end{proposition}
+
+\begin{proposition}[Integration by parts in a direction]
+Let $f,g\colon\R^n\to\R$ and let $v\in\R^n$.  Assume $f$ is differentiable at
+every point of $\operatorname{supp}g$, that $g$ is differentiable at every point
+of $\operatorname{supp}f$, and that the three functions
+$x\mapsto D_vf(x)\,g(x)$, $x\mapsto f(x)\,D_vg(x)$ and $x\mapsto f(x)g(x)$ are
+Lebesgue integrable on $\R^n$, where $D_v$ denotes the directional derivative
+$D_vf(x)=Df(x)[v]$.  Then
+\[
+\int_{\R^n}f(x)\,D_vg(x)\,dx=-\int_{\R^n}D_vf(x)\,g(x)\,dx .
+\]
+In Mathlib this is
+\texttt{integral\_mul\_fderiv\_eq\_neg\_fderiv\_mul\_of\_integrable}, stated for
+a Haar measure on a finite-dimensional real normed space with the Borel
+$\sigma$-algebra --- hypotheses that Lebesgue measure on
+$\texttt{EuclideanSpace}\ \R\ (\texttt{Fin}\ n)$ satisfies --- and with exactly
+the three integrability assumptions and the two differentiability assumptions
+listed above.  The typical application here takes $v=e_i$ the $i$-th standard
+basis vector, so that $D_v=D_i$, and one of $f,g$ continuous with compact
+support, in which case all three integrability hypotheses follow because a
+continuous function with compact support is integrable and the product of a
+continuous function with a continuous compactly supported one is again
+continuous with compact support.
+\end{proposition}
+
+\begin{proposition}[The volume of a ball]
+Let $n\ge1$, let $x_0\in\R^n$ and let $\rho\ge0$.  Then the Lebesgue measure of
+the ball $B_\rho(x_0)$ does not depend on its centre and scales as the $n$-th
+power of its radius:
+\[
+|B_\rho(x_0)|=|B_\rho(0)|=\rho^{\,n}\,|B_1(0)| .
+\]
+Writing $\omega_n=|B_1(0)|\in(0,\infty)$, this is $|B_\rho(x_0)|=\omega_n\rho^n$;
+in particular $|B_{2\rho}|=2^n|B_\rho|$ and
+$|B_{2\rho}\setminus B_\rho|=(1-2^{-n})\,|B_{2\rho}|$.  In Mathlib these are
+\texttt{MeasureTheory.Measure.addHaar\_ball\_center} (independence of the
+centre) and \texttt{MeasureTheory.Measure.addHaar\_ball} (the factor
+$\rho^{\operatorname{finrank}}$), both for a Haar measure on a
+finite-dimensional real normed space, hypotheses that Lebesgue measure on
+$\texttt{EuclideanSpace}\ \R\ (\texttt{Fin}\ n)$ satisfies; the second needs
+$\rho\ge0$ and a nontrivial space.
+\end{proposition}
+
+\begin{proposition}[A standard mollifier]
+Let $n\ge1$ and $\delta>0$.  There is a function $\rho_\delta\colon\R^n\to\R$
+with
+\[
+\rho_\delta\in C^\infty(\R^n),
+\qquad
+\rho_\delta\ge0,
+\qquad
+\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}\ \text{ compact},
+\qquad
+\int_{\R^n}\rho_\delta\,dz=1 .
+\]
+In Mathlib such a family is provided by \texttt{ContDiffBump}: for a bump $f$
+centred at $0$ with outer radius $\delta$, the normalisation $f.\mathtt{normed}$
+is smooth (\texttt{ContDiffBump.contDiff\_normed}), nonnegative
+(\texttt{ContDiffBump.nonneg\_normed}), has integral $1$
+(\texttt{ContDiffBump.integral\_normed}), has
+$\operatorname{tsupport}$ exactly $\overline{B_\delta(0)}$
+(\texttt{ContDiffBump.tsupport\_normed\_eq}) and compact support
+(\texttt{ContDiffBump.hasCompactSupport\_normed}).  Two further properties of
+the same object are used below, and they too need no formula.  Take the bump with
+inner radius $\tfrac78\delta$ and outer radius $\delta$.  On the inner ball it
+is identically $1$ (\texttt{ContDiffBump.one\_of\_mem\_closedBall}), so by
+$\rho_\delta=f/\!\int f$ (\texttt{ContDiffBump.normed\_def}) and
+$\int f>0$ (\texttt{ContDiffBump.integral\_pos}) it is there equal to a positive
+constant:
+\[
+\rho_\delta(z)=\kappa_\delta>0
+\qquad\text{for }|z|\le\tfrac78\delta ,
+\]
+and everywhere it is bounded by the reciprocal of the measure of that inner ball
+(\texttt{ContDiffBump.normed\_le\_div\_measure\_closedBall\_rIn}):
+\[
+\sup_{\R^n}\rho_\delta\ \le\ \frac1{\bigl|B_{7\delta/8}(0)\bigr|}<\infty .
+\]
+These seven properties are the only ones used wherever a mollifier appears
+below; no explicit formula for $\rho_\delta$ is needed, and none should be
+relied on.
+\end{proposition}
+
+\begin{proposition}[Fatou's lemma]
+Let $(X,\mu)$ be a measure space and let $w_m\colon X\to[0,\infty]$ be
+measurable for every $m\in\mathbb{N}$.  Then
+\[
+\int_X\liminf_{m\to\infty}w_m\,d\mu\ \le\ \liminf_{m\to\infty}\int_Xw_m\,d\mu .
+\]
+In particular, if $w_m\ge0$ are measurable and $w_m\to w$ $\mu$-almost
+everywhere, then $\int_Xw\,d\mu\le\liminf_m\int_Xw_m\,d\mu$: no uniform bound
+and no integrability of the limit are assumed, and both sides may be $+\infty$.
+In Mathlib this is \texttt{MeasureTheory.lintegral\_liminf\_le} for measurable
+$w_m$ and \texttt{MeasureTheory.lintegral\_liminf\_le'} for almost everywhere
+measurable ones, stated for the $[0,\infty]$-valued lower Lebesgue integral,
+which for a nonnegative measurable function agrees with the Bochner integral
+whenever the latter is defined.
+\end{proposition}
+
+\begin{proposition}[The essential supremum as the limit of normalised $L^q$ means]
+Let $(X,\mu)$ be a measure space with $0<\mu(X)<\infty$, let
+$f\colon X\to\R$ be almost everywhere strongly measurable and put
+$M=\operatorname*{ess\,sup}_X|f|\in[0,\infty]$.  For $q\in[1,\infty)$ write
+\[
+N_q=\Bigl(\frac1{\mu(X)}\int_X|f|^{q}\,d\mu\Bigr)^{1/q}.
+\]
+Then:
+\begin{enumerate}
+\item $N_q\le M$ for every $q$.  This is monotonicity of the integral
+  (Preamble) applied to the almost everywhere bound $|f|\le M$, which is
+  \texttt{ae\_le\_essSup}.
+\item If $0\le t<M$ then $\mu\{|f|>t\}>0$, and
+  $N_q\ge t\bigl(\mu\{|f|>t\}/\mu(X)\bigr)^{1/q}$ for every $q$.  The first
+  assertion is the contrapositive of \texttt{essSup\_le\_of\_ae\_le} --- if
+  $\mu\{|f|>t\}=0$ then $|f|\le t$ almost everywhere and so $M\le t$ --- and the
+  second is the Chebyshev--Markov inequality
+  \texttt{MeasureTheory.pow\_mul\_meas\_ge\_le\_eLpNorm}, which bounds
+  $\bigl(\varepsilon\,\mu\{\varepsilon\le|f|^{q}\}\bigr)^{1/q}$ below the
+  $L^{q}$ seminorm, taken at $\varepsilon=t^{q}$ and divided by
+  $\mu(X)^{1/q}$.
+\item Consequently $N_q\to M$ as $q\to\infty$, and $q\mapsto N_q$ is
+  nondecreasing.
+\end{enumerate}
+Clauses (1) and (2) are the Mathlib content; clause (3) is recorded here, rather
+than left to each consumer, because it is the form actually used and it follows
+from (1) and (2) in two lines: (1) gives
+$\limsup_{q\to\infty}N_q\le M$, and for each $t<M$ clause (2) gives
+$\liminf_{q\to\infty}N_q\ge t\lim_{q\to\infty}c^{1/q}=t$, where
+$c=\mu\{|f|>t\}/\mu(X)\in(0,1]$, so $\liminf_{q\to\infty}N_q\ge M$ on letting
+$t\uparrow M$; this covers $M=\infty$ as well, both sides then being $+\infty$.
+The monotonicity in (3) is H\"older on a set of finite measure (Preamble)
+applied to the normalised measure $\mu/\mu(X)$, which has total mass $1$: for
+$q\le q'$ it gives $N_q\le N_{q'}$.
+\end{proposition}
+

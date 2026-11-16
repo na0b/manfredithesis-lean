@@ -1,0 +1,394 @@
+\begin{lemma}[Moser's local boundedness estimate]
+Let $n\ge2$ and $Q>0$, and suppose the Sobolev--Poincar\'e inequality on balls
+holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}).  Then there is a
+constant $C=C(n,Q)>0$ with the following property.  Let $B_R=B_R(x_0)\subseteq\R^n$
+with $R>0$, let $v\colon\R^n\to\R$ be measurable with $v\ge0$ everywhere and
+with $v^2$ integrable on $B_R$, and for every $\theta>1$ let
+$g_\theta\colon\R^n\to\R^n$ be a vector field such that
+\begin{enumerate}
+\item $v^\theta\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $g_\theta$
+  (\noderef{MemW1pLocOn}); and
+\item for every $\theta>1$ and every $\zeta\in C_0^\infty(\R^n)$ with
+  $\operatorname{supp}\zeta$ compact and contained in $B_R$,
+  \[
+  \int_{B_R}|g_\theta|^2\zeta^2\,dx
+  \ \le\ Q\int_{B_R}\bigl(v^\theta\bigr)^2|\nabla\zeta|^2\,dx ,
+  \]
+  with one and the same $Q$ for every $\theta$.
+\end{enumerate}
+Then
+\[
+v(x)\ \le\ C\Bigl(R^{-n}\int_{B_R}v^2\,dy\Bigr)^{\frac12}
+\qquad\text{for almost every }x\in B_{R/2}(x_0).
+\]
+
+\textbf{What the hypothesis says and why its uniformity is the point.}  The
+inequality in (2) is a Caccioppoli, or reverse-Poincar\'e, inequality for the
+single power $v^\theta$; the content of the hypothesis is that one constant $Q$
+serves \emph{every} exponent $\theta>1$.  A $\theta$-dependent constant would
+not do: the conclusion is reached by iterating (2) along an exponent sequence
+$\theta_j\to\infty$ and multiplying the constants produced at each step, and
+that product converges only because the constant does not grow with $\theta$.
+This is also why the conclusion's constant depends on $n$ and $Q$ alone.
+
+\textbf{On the two regularity hypotheses.}  Measurability of $v$ and
+integrability of $v^2$ on $B_R$ are hypotheses the statement must carry even
+though they go unmentioned where this estimate is used.  Measurability is what
+makes the essential supremum of $v$, and hence the conclusion, meaningful.
+Integrability of $v^2$ on $B_R$ is needed because $B_R$ is not compactly
+contained in itself, so hypothesis (1) --- which controls $v^\theta$ only on
+compact subsets of $B_R$ --- does not supply it; without it the right-hand side
+would be the integral of a non-integrable function and the inequality would
+assert $v\le0$.  Both are automatic at the point of use, where $v$ is a
+continuous function and the integral on the right is finite because the closed
+ball is a compact subset of the domain.
+
+\textbf{On the normalisation and the scale.}  The conclusion is
+scale-invariant: if $v$ and $(g_\theta)$ satisfy the hypotheses on $B_R(x_0)$
+then $\tilde v(y)=v(x_0+Ry)$ and the correspondingly rescaled gradients satisfy
+them on $B_1(0)$ with the same $Q$, and the two conclusions correspond under
+that change of variables, because the factor $R^{-n}$ is exactly the volume
+normalisation.  The inequality is therefore the scale-invariant form of the
+estimate ``$\sup_{B_{1/2}}v\le C(n,Q)\bigl(\int_{B_1}v^2\bigr)^{1/2}$'' that the
+thesis obtains at $R=1$ from the reverse-H\"older family and then rescales; the
+proof below runs at a general $R$ throughout, so no rescaling is needed.  The
+supremum is the essential one (p.~6 of the paper), so the conclusion is stated
+as an almost-everywhere bound.
+
+\textbf{What the node is for.}  The thesis discharges this step in one sentence
+--- ``We can now use Moser's iteration technique as in [GT, chapter 8]'' (p.~17)
+--- and the Note for the formalization closes its list of citable results with
+``Everything else must be proved'', so Moser's technique must be carried out.
+This lemma is that step, isolated from the equation: it mentions no operator $A$,
+no solution $u$ and neither of the structure conditions, exactly as \S2 of the
+thesis isolates the De Giorgi-type lemmas from the equation.
+\end{lemma}
+\begin{proof}
+Throughout, balls are concentric at $x_0$ and $|E|$ denotes Lebesgue measure;
+$|B_\rho|=\omega_n\rho^n$ with $\omega_n=|B_1(0)|$ (Preamble).  Let $\chi>1$ and
+$C_S>0$ be the constants furnished by \noderef{SobolevExponentTwoBall} for this
+$n$: its two hypotheses before the constants are $2\le n$, which is a hypothesis
+of the present lemma, and \noderef{CitedSobolevPoincareBall} in dimension $n$,
+which is also a hypothesis of the present lemma and is carried here for exactly
+this use.  Both constants depend only on $n$.
+Enlarging $C_S$ if necessary we may and do assume $C_S\ge1$, which preserves its
+inequality.  For $s\ge1$ and $R/2\le\rho\le\frac34R$ set
+\[
+Y(s,\rho)=\Bigl(\frac1{|B_R|}\int_{B_\rho}v^{2s}\,dx\Bigr)^{\frac1{2s}},
+\qquad
+S(\rho)=\operatorname*{ess\,sup}_{B_\rho}v,
+\qquad
+Y_2=\Bigl(\frac1{|B_R|}\int_{B_R}v^2\,dx\Bigr)^{\frac12}.
+\]
+These are well defined: $v$ is measurable and nonnegative, and for
+$\rho\le\frac34R$ the closed ball $\overline B_\rho$ is a compact subset of
+$B_R$, so hypothesis (1) at the exponent $s$ makes $v^s$ square integrable there
+and $Y(s,\rho)<\infty$ for every $s>1$; $Y(1,\rho)\le Y_2<\infty$ by the
+integrability hypothesis.  We also record once that $S$ is nondecreasing, and
+that $v\le S(\rho)$ almost everywhere on $B_\rho$ (Preamble: a function does not
+exceed its essential supremum almost everywhere, the bound used in clause (1) of
+the item on the limit of normalised $L^q$ means).
+
+\emph{Step 0: the degenerate case.}  If $\int_{B_R}v^2\,dx=0$ then, $v$ being
+nonnegative and measurable, $v=0$ almost everywhere on $B_R$ (Preamble: a
+nonnegative function with vanishing integral is almost everywhere zero), so
+$v\le0$ almost everywhere on $B_{R/2}$ and the conclusion holds for any $C>0$,
+both sides being $0$.  Assume from now on $\int_{B_R}v^2\,dx>0$, i.e.\ $Y_2>0$.
+
+\emph{Step 1: the cut-off.}  Let $\rho_{1/8}$ be the standard mollifier of the
+Preamble in dimension one at scale $\tfrac18$ --- smooth, nonnegative, supported
+in $[-\tfrac18,\tfrac18]$ and of total integral $1$ --- and put
+$\psi=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}$.  Then $\psi\in C^\infty(\R)$ with
+$\psi'=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}'$ (Preamble: convolution with a smooth
+compactly supported kernel, the indicator being locally integrable),
+$0\le\psi\le1$,
+$\psi=1$ on $(-\infty,\tfrac38]$ and $\psi=0$ on $[\tfrac58,\infty)$ --- for
+$t\le\tfrac38$ every $s$ with $|s|\le\tfrac18$ has $t-s\le\tfrac12$, so the
+convolution integrates $\rho_{1/8}$ over its whole support, and for
+$t\ge\tfrac58$ every such $s$ has $t-s\ge\tfrac12$, so the integrand vanishes
+almost everywhere --- and
+$|\psi'|\le\|\rho_{1/8}'\|_{L^1(\R)}=:\Lambda<\infty$, an absolute constant,
+because $|\mathbf1_{(-\infty,1/2]}|\le1$ and $\rho_{1/8}'$ is continuous with
+compact support.  Given radii
+$R/2\le r'<r\le\frac34R$ put
+\[
+\zeta(x)=\psi\Bigl(\frac{|x-x_0|-r'}{r-r'}\Bigr).
+\]
+Then $0\le\zeta\le1$; $\zeta=1$ on $\overline B_{r'}$, since there the argument
+of $\psi$ is $\le0$; and $\zeta$ is smooth, because $x\mapsto|x-x_0|$ is smooth
+away from $x_0$ and $\zeta$ is constant on the neighbourhood $B_{r'}$ of $x_0$.
+
+\emph{The support of $\zeta$.}  As everywhere in this tablet,
+$\operatorname{supp}$ denotes the \emph{closed} support, $\operatorname{supp}
+\zeta=\overline{\{x:\zeta(x)\ne0\}}$, and that is what the clauses this $\zeta$
+is fed into bind: hypothesis (2) of the present lemma,
+\noderef{WeakGradientSmoothMul} in Step 2 and \noderef{SobolevExponentTwoBall}
+in Step 3.  Now $\zeta=0$ outside $\overline B_{r'+\frac58(r-r')}$, because
+there the argument of $\psi$ is $\ge\tfrac58$.  That set is \emph{closed}, so it
+contains not merely $\{\zeta\ne0\}$ but its closure:
+\[
+\operatorname{supp}\zeta\ \subseteq\ \overline B_{r'+\frac58(r-r')}\ \subseteq\ B_r ,
+\]
+the last inclusion because $r'+\tfrac58(r-r')<r$ --- equivalently
+$\tfrac58(r-r')<r-r'$, which holds since $r>r'$ --- and a closed ball of radius
+strictly less than $r$ about $x_0$ lies in the open ball $B_r$.  In particular
+$\operatorname{supp}\zeta$ is a closed subset of the compact
+$\overline B_{r'+\frac58(r-r')}$, hence compact, i.e.\ $\zeta$ has compact
+support.  Finally
+$|\nabla\zeta|=|\psi'|/(r-r')\le\Lambda/(r-r')$, and $\nabla\zeta=0$ at every
+point outside $\operatorname{supp}\zeta$.  \emph{This last step is the one place
+where the closedness of the support does work, so it is worth saying once}: the
+complement of $\operatorname{supp}\zeta$ is open and $\zeta$ vanishes
+identically on it, so every derivative of $\zeta$ vanishes there as well.  The
+same inference from the bare set $\{\zeta\ne0\}$ would not be available, that
+set not being closed in general.  So $\nabla\zeta$ too vanishes outside
+$\operatorname{supp}\zeta\subseteq B_r$.
+
+\emph{Step 2: $v^\theta\zeta$ is an admissible test function for the Sobolev
+inequality.}  Fix $\theta>1$ and radii $R/2\le r'<r\le\frac34R$, write
+$f=v^\theta$, $g=g_\theta$ and $\varphi=f\zeta$ with $\zeta$ as in Step 1.
+
+First, $f\in W^{1,2}(B_r)$ with weak gradient $g$.  Hypothesis (1)
+(\noderef{MemW1pLocOn}) gives, on the one hand, that $g$ is the weak gradient of
+$f$ on $B_R$ (\noderef{HasWeakGradientOn}) and, on the other, that $f$ and $g$
+are square integrable on every compact subset of $B_R$; $\overline B_r$ is such a
+subset because $r\le\frac34R<R$, so $f,g\in L^2(\overline B_r)$ and hence
+$f,g\in L^2(B_r)$: indeed $|f|^2\mathbf 1_{B_r}\le|f|^2\mathbf
+1_{\overline B_r}$ pointwise with the right-hand side integrable, so clause (a)
+of the Preamble's domination proposition applies, and likewise for $g$.  For
+the weak-gradient identity on the smaller set, we must verify it for the whole
+test class that \noderef{HasWeakGradientOn} quantifies over at $B_r$, which is
+the triple: $\eta$ of class $C^\infty$ on $\R^n$, $\eta$ of compact support, and
+$\operatorname{supp}\eta\subseteq B_r$.  So let $\eta$ be such a test function
+and let $i\in\{1,\dots,n\}$.  Since $r\le\frac34R<R$ we have
+$B_r\subseteq B_R$ and therefore $\operatorname{supp}\eta\subseteq B_R$, so
+$\eta$ also belongs to the test class of \noderef{HasWeakGradientOn} at $B_R$
+and the identity there gives
+$\int_{B_R}f\,D_i\eta\,dx=-\int_{B_R}g_i\,\eta\,dx$.  Both integrands vanish at
+every point outside $\operatorname{supp}\eta$: there $\eta=0$, and
+$D_i\eta=0$ by the openness argument recorded in Step 1, the complement of the
+closed support being open with $\eta$ identically $0$ on it.  They are integrable on $\overline B_r$, being products of an
+$L^2(\overline B_r)$ function with a bounded one.  Since
+$\operatorname{supp}\eta\subseteq B_r\subseteq B_R$, each integral over $B_R$
+therefore equals the corresponding integral over $B_r$.  Hence
+$\int_{B_r}f\,D_i\eta=-\int_{B_r}g_i\eta$ for every $\eta$ in the test class at
+$B_r$, which is exactly the assertion that $g$ is the weak gradient of $f$ on
+$B_r$ (\noderef{HasWeakGradientOn}), and therefore
+$f\in W^{1,2}(B_r)$ with weak gradient $g$ (\noderef{MemW1pOn}).
+
+Now $1\le n$ and $1\le2$; $B_r$ is open; $\zeta$ is of class $C^\infty$, has
+compact support and satisfies $\operatorname{supp}\zeta\subseteq B_r$, which are
+the three cut-off conditions \noderef{WeakGradientSmoothMul} binds and which
+Step 1 established in exactly that form; $|B_r|<\infty$, so
+$\mathrm{volume}\,B_r\ne\infty$; and $f\in W^{1,2}(B_r)$ with weak gradient $g$
+(\noderef{MemW1pOn}), just shown.  So clause (1) of
+\noderef{WeakGradientSmoothMul} applies with $q=2$, $\Omega=B_r$, the pair
+$(f,g)$ and $\psi=\zeta$: the product $\varphi=f\zeta$ lies in
+$W^{1,2}(B_r)$ with weak gradient
+\[
+g_\varphi=\zeta\,g+f\,\nabla\zeta .
+\]
+Finally $\varphi=f\zeta$ vanishes wherever $\zeta$ does, so
+$\{\varphi\ne0\}\subseteq\{\zeta\ne0\}$ and hence, taking closures,
+$\operatorname{supp}\varphi\subseteq\operatorname{supp}\zeta\subseteq B_r$; and
+$\operatorname{supp}\varphi$, a closed subset of the compact
+$\operatorname{supp}\zeta$, is compact, so $\varphi$ has compact support.  These
+are the two support conditions \noderef{SobolevExponentTwoBall} binds on its
+test function.
+
+\emph{Step 3: the reverse-H\"older step.}  Keep $\theta,r',r,\zeta,\varphi$ as in
+Step 2.  Apply \noderef{SobolevExponentTwoBall} at the radius $\rho=r$ to the
+pair $(\varphi,g_\varphi)$.  Its four remaining hypotheses are: $0<r$, which
+holds because $r>r'\ge R/2>0$; $\varphi\in W^{1,2}(B_r)$ with weak gradient
+$g_\varphi$ (\noderef{MemW1pOn}), which is Step 2; and the compactness of
+$\operatorname{supp}\varphi$ together with
+$\operatorname{supp}\varphi\subseteq B_r$, also Step 2.  It gives
+\[
+\Bigl(\frac1{|B_r|}\int_{B_r}|\varphi|^{2\chi}dx\Bigr)^{\frac1{2\chi}}
+\ \le\ C_S\,r\,\Bigl(\frac1{|B_r|}\int_{B_r}|g_\varphi|^2dx\Bigr)^{\frac12}.
+\]
+We bound the two sides.  On the left, $\zeta=1$ on $B_{r'}$, so $\varphi=v^\theta$
+there, and $|\varphi|^{2\chi}\ge0$ elsewhere; together with
+$|B_r|^{-1}\ge|B_R|^{-1}$ this gives
+\[
+\Bigl(\frac1{|B_R|}\int_{B_{r'}}v^{2\theta\chi}dx\Bigr)^{\frac1{2\chi}}
+\ \le\
+\Bigl(\frac1{|B_r|}\int_{B_r}|\varphi|^{2\chi}dx\Bigr)^{\frac1{2\chi}} .
+\]
+On the right, $|g_\varphi|^2=|\zeta g+v^\theta\nabla\zeta|^2
+\le2\zeta^2|g|^2+2(v^\theta)^2|\nabla\zeta|^2$, by
+$|a+b|^2\le(|a|+|b|)^2\le2|a|^2+2|b|^2$ (the triangle inequality and
+$2st\le s^2+t^2$); both terms vanish outside
+$\operatorname{supp}\zeta\subseteq B_r$ --- the first because $\zeta$ does, the
+second because $\nabla\zeta$ does, both by Step 1 --- so their integrals over
+$B_r$ and over $B_R$ agree.  Hypothesis (2) of the present lemma may now be
+applied at this $\theta$ and this $\zeta$: it quantifies over cut-offs of class
+$C^\infty$ with compact support and support inside $B_R$, and
+Step 1 gives $\operatorname{supp}\zeta\subseteq B_r\subseteq B_R$.  It gives
+\[
+\int_{B_r}|g_\varphi|^2dx
+\ \le\ 2\int_{B_R}|g|^2\zeta^2dx+2\int_{B_R}(v^\theta)^2|\nabla\zeta|^2dx
+\ \le\ (2Q+2)\int_{B_R}(v^\theta)^2|\nabla\zeta|^2dx .
+\]
+Since $|\nabla\zeta|\le\Lambda/(r-r')$ and $\nabla\zeta$ vanishes outside
+$\operatorname{supp}\zeta\subseteq B_r$ (Step 1),
+the last integral is at most $\Lambda^2(r-r')^{-2}\int_{B_r}v^{2\theta}dx$.
+Finally $|B_r|^{-1}=(R/r)^n|B_R|^{-1}\le2^n|B_R|^{-1}$ because $r\ge R/2$, and
+$r\le R$.  Combining,
+\[
+\Bigl(\frac1{|B_R|}\int_{B_{r'}}v^{2\theta\chi}dx\Bigr)^{\frac1{2\chi}}
+\ \le\ D\,\frac R{r-r'}
+\Bigl(\frac1{|B_R|}\int_{B_r}v^{2\theta}dx\Bigr)^{\frac12},
+\qquad
+D=C_S\,2^{\frac n2}(2Q+2)^{\frac12}\Lambda ,
+\]
+Here $D=D(n,Q)$ depends only on $n$ and $Q$: $C_S$ and $\chi$ depend only on
+$n$, and $\Lambda=\|\rho_{1/8}'\|_{L^1(\R)}$ is an absolute constant.  Enlarging
+$D$ if necessary we may and do assume $D\ge1$, which preserves the last display:
+its right-hand side is nondecreasing in $D$, because $R/(r-r')>0$ and the
+remaining factor is nonnegative.  (Only an upper bound on $\Lambda$ was
+established in Step 1, so no lower bound on $D$ may be read off its factors; the
+enlargement is what makes $D\ge1$ available, and it is used in Step 4 to bound
+the partial products by the infinite one.)
+Raising both sides of the last display --- both nonnegative and finite --- to the
+power $1/\theta$, which is monotone, and recalling the notation of the preamble
+to this proof,
+\[
+Y(\theta\chi,r')\ \le\ \Bigl(D\,\frac R{r-r'}\Bigr)^{\frac1\theta}Y(\theta,r)
+\qquad\Bigl(\theta>1,\ \tfrac R2\le r'<r\le\tfrac34R\Bigr).
+\tag{1}
+\]
+
+\emph{Step 4: the exponent iteration.}  Fix radii $R/2\le\rho'<\rho\le\frac34R$
+and set
+\[
+\theta_j=2\chi^j,\qquad r_j=\rho'+2^{-j}(\rho-\rho')\qquad(j=0,1,2,\dots),
+\]
+so that $\theta_0=2$, $\theta_{j+1}=\theta_j\chi$, $r_0=\rho$, $r_j$ decreases to
+$\rho'$ and $r_j-r_{j+1}=2^{-j-1}(\rho-\rho')$.  Every $\theta_j$ exceeds $1$ and
+every $r_j$ lies in $[R/2,\frac34R]$, so $(1)$ applies to each consecutive pair
+and gives
+\[
+Y(\theta_{j+1},r_{j+1})\ \le\ K_j^{\frac1{\theta_j}}\,Y(\theta_j,r_j),
+\qquad
+K_j=\frac{2^{j+1}DR}{\rho-\rho'} .
+\]
+All the quantities $Y(\theta_j,r_j)$ are finite, as noted at the outset, so
+multiplying these inequalities for $j=0,\dots,m-1$ is legitimate and yields
+\[
+Y(\theta_m,r_m)\ \le\ \Bigl(\prod_{j=0}^{m-1}K_j^{\frac1{\theta_j}}\Bigr)
+Y(2,\rho).
+\]
+Each $K_j\ge1$, because $D\ge1$ and $R/(\rho-\rho')\ge4$ (the two radii lie in
+$[R/2,\frac34R]$, so $\rho-\rho'\le R/4$), so the partial products increase and
+are bounded by the infinite one, which we now evaluate.  Writing
+$K_j=2^jK_0$ with $K_0=2DR/(\rho-\rho')$,
+\[
+\sum_{j\ge0}\frac1{\theta_j}=\frac12\sum_{j\ge0}\chi^{-j}=\frac12\frac\chi{\chi-1}=:\sigma_1,
+\qquad
+\sum_{j\ge0}\frac j{\theta_j}=\frac12\sum_{j\ge0}j\chi^{-j}
+=\frac12\frac\chi{(\chi-1)^2}=:\sigma_2 ,
+\]
+both finite because $\chi>1$ (a geometric and a differentiated geometric series),
+and both depending only on $n$.  Hence
+\[
+\prod_{j\ge0}K_j^{\frac1{\theta_j}}
+=K_0^{\sigma_1}2^{\sigma_2}
+=\Bigl(\frac{2DR}{\rho-\rho'}\Bigr)^{\sigma_1}2^{\sigma_2},
+\]
+and therefore, for every $m$,
+\[
+Y(\theta_m,\rho')\ \le\ Y(\theta_m,r_m)
+\ \le\ E\Bigl(\frac R{\rho-\rho'}\Bigr)^{\sigma_1}Y(2,\rho),
+\qquad E:=(2D)^{\sigma_1}2^{\sigma_2}=E(n,Q),
+\]
+the first inequality because $B_{\rho'}\subseteq B_{r_m}$ and the integrand is
+nonnegative.  Now let $m\to\infty$.  Since
+$0<|B_{\rho'}|<\infty$ and $v$ is measurable,
+\[
+\Bigl(\frac1{|B_{\rho'}|}\int_{B_{\rho'}}v^{2\theta_m}dx\Bigr)^{\frac1{2\theta_m}}
+\ \longrightarrow\ S(\rho')
+\]
+as $2\theta_m\to\infty$ (Preamble: the essential supremum as the limit of
+normalised $L^q$ means, clause (3), applied on $B_{\rho'}$); and
+$Y(\theta_m,\rho')$ differs from the left-hand side by the factor
+$(|B_{\rho'}|/|B_R|)^{1/(2\theta_m)}$, which tends to $1$ because
+$|B_{\rho'}|/|B_R|\in(0,1]$ is a fixed positive number and
+$1/(2\theta_m)\to0$.  Hence $Y(\theta_m,\rho')\to S(\rho')$, and
+\[
+S(\rho')\ \le\ E\Bigl(\frac R{\rho-\rho'}\Bigr)^{\sigma_1}Y(2,\rho)
+\qquad\Bigl(\tfrac R2\le\rho'<\rho\le\tfrac34R\Bigr).
+\tag{2}
+\]
+In particular $S(\rho')<\infty$ for every $\rho'<\frac34R$; applied with
+$\rho'=\frac58R$ and $\rho=\frac34R$, $(2)$ gives the finite bound
+\[
+M:=S\bigl(\tfrac58R\bigr)\ \le\ E\,8^{\sigma_1}\,Y\bigl(2,\tfrac34R\bigr)\ <\ \infty .
+\tag{3}
+\]
+
+\emph{Step 5: from the $L^4$ mean back to the $L^2$ mean.}  Let
+$R/2\le\rho\le\frac58R$.  Since $v\le S(\rho)$ almost everywhere on $B_\rho$ and
+$v\ge0$, we have $v^4\le S(\rho)^2v^2$ almost everywhere there, so
+\[
+Y(2,\rho)^4=\frac1{|B_R|}\int_{B_\rho}v^4dx
+\ \le\ S(\rho)^2\,\frac1{|B_R|}\int_{B_\rho}v^2dx
+\ \le\ S(\rho)^2Y_2^2 ,
+\]
+that is $Y(2,\rho)\le S(\rho)^{1/2}Y_2^{1/2}$.  Substituting this into $(2)$,
+\[
+S(\rho')\ \le\ E\Bigl(\frac R{\rho-\rho'}\Bigr)^{\sigma_1}
+S(\rho)^{\frac12}\,Y_2^{\frac12}
+\qquad\Bigl(\tfrac R2\le\rho'<\rho\le\tfrac58R\Bigr).
+\tag{4}
+\]
+
+\emph{Step 6: the radius iteration, and the constant.}  Put
+\[
+\rho_i=\frac R2+\bigl(1-2^{-i}\bigr)\frac R8\qquad(i=0,1,2,\dots),
+\]
+so $\rho_0=R/2$, the $\rho_i$ increase to $\frac58R$, all lie in
+$[\frac R2,\frac58R]$, and
+$\rho_{i+1}-\rho_i=2^{-i-1}\frac R8=2^{-i-4}R$, whence
+$R/(\rho_{i+1}-\rho_i)=2^{i+4}$.  By $(4)$ applied to the pair
+$(\rho_i,\rho_{i+1})$,
+\[
+S(\rho_i)\ \le\ E\,2^{(i+4)\sigma_1}\,S(\rho_{i+1})^{\frac12}\,Y_2^{\frac12}
+\qquad(i\ge0).
+\tag{5}
+\]
+If $S(R/2)=0$ the conclusion is immediate, as in Step 0; so assume
+$S(R/2)>0$.  Then $S(\rho_i)\ge S(\rho_0)>0$ for every $i$, and
+$S(\rho_i)\le M<\infty$ by $(3)$, so $s_i:=\log S(\rho_i)$ is a finite real
+number for every $i$ and $(5)$ reads
+\[
+s_i\ \le\ \log E+(i+4)\sigma_1\log2+\tfrac12\log Y_2+\tfrac12s_{i+1}.
+\]
+Iterating this from $i=0$ to $i=m-1$ --- each step multiplies the remaining tail
+by $\tfrac12$ --- gives
+\[
+s_0\ \le\ \sum_{i=0}^{m-1}2^{-i}\Bigl[\log E+(i+4)\sigma_1\log2+\tfrac12\log Y_2\Bigr]
++2^{-m}s_m .
+\]
+Here $2^{-m}s_m\le2^{-m}\log M\to0$, and the three series converge:
+$\sum_{i\ge0}2^{-i}=2$ and $\sum_{i\ge0}(i+4)2^{-i}=2+8=10$.  Letting
+$m\to\infty$,
+\[
+s_0\ \le\ 2\log E+10\,\sigma_1\log2+\log Y_2 ,
+\qquad\text{i.e.}\qquad
+S\bigl(\tfrac R2\bigr)\ \le\ E^2\,2^{10\sigma_1}\,Y_2 .
+\]
+Finally $|B_R|=\omega_nR^n$, so
+$Y_2=\omega_n^{-1/2}\bigl(R^{-n}\int_{B_R}v^2dx\bigr)^{1/2}$, and with
+\[
+C:=E^2\,2^{10\sigma_1}\,\omega_n^{-\frac12}>0 ,
+\]
+which depends only on $n$ and $Q$ --- through $\chi$ and $C_S$, which depend only
+on $n$, through the absolute constant $\Lambda$, and through $Q$ itself ---
+we obtain
+\[
+\operatorname*{ess\,sup}_{B_{R/2}}v\ \le\ C\Bigl(R^{-n}\int_{B_R}v^2dx\Bigr)^{\frac12}.
+\]
+Since $v$ does not exceed its essential supremum almost everywhere (Preamble,
+as recorded at the outset of this proof), this is the assertion.
+\end{proof}

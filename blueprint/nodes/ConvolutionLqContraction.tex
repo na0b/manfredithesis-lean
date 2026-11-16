@@ -1,0 +1,106 @@
+\begin{helper}[Convolution against a probability density contracts the $L^q$ seminorm]
+Let $n\in\N$ and let $q\in\R$ with $q\ge1$.  Let $\rho\colon\R^n\to\R$ and
+$w\colon\R^n\to\R$.  Throughout, $|\cdot|$ is the Euclidean norm on $\R^n$,
+integrals without an indicated domain are over all of $\R^n$ against Lebesgue
+measure, $\operatorname{supp}\rho$ denotes the \emph{closed} support, and
+\[
+(w*\rho)(x)=\int_{\R^n}w(y)\rho(x-y)\,dy
+\]
+is the convolution, while $\|\cdot\|_{L^q}$ is the $L^q$ seminorm at the real
+exponent $q$, i.e.\ $\|v\|_{L^q}=\bigl(\int|v|^q\bigr)^{1/q}$.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho$ is continuous on $\R^n$, $\rho\ge0$ everywhere, $\rho$ has
+  compact support, and $\int_{\R^n}\rho=1$;
+\item[(H2)] $w\in L^q(\R^n)$.
+\end{enumerate}
+Then
+\[
+\|w*\rho\|_{L^q}\ \le\ \|w\|_{L^q}.
+\]
+This is Young's convolution inequality in the case where the kernel is a
+probability density, i.e.\ at the $L^1$ end; no smoothness of $\rho$ is
+assumed, and (H2) is used only to select a measurable representative of $w$.
+\end{helper}
+\begin{proof}
+\emph{Step 1: a measurable representative.}  By (H2) there is a strongly
+measurable $w'$ with $w=w'$ almost everywhere.  Replacing $w$ by $w'$ changes
+neither side: $\|w\|_{L^q}=\|w'\|_{L^q}$ because the two integrands agree
+almost everywhere, and for every $x$ the integrands of $(w*\rho)(x)$ and
+$(w'*\rho)(x)$ agree almost everywhere in $y$, so the two convolutions agree
+pointwise and hence have the same seminorm.  We may therefore assume $w$
+strongly measurable, and we write $w$ for $w'$ below.
+
+\emph{Step 2: two unit-mass identities.}  By (H1) the kernel $\rho$ is
+continuous with compact support, hence integrable, and nonnegative with
+$\int\rho=1$.  Lebesgue measure is invariant under $y\mapsto x-y$ and under
+$x\mapsto x-y$ (translations and the reflection, Preamble), so
+\[
+\int_{\R^n}\rho(x-y)\,dy=1\quad\text{for every }x,
+\qquad
+\int_{\R^n}\rho(x-y)\,dx=1\quad\text{for every }y .
+\tag{M}
+\]
+Both are used below, the first in $y$ at fixed $x$ and the second in $x$ at
+fixed $y$.  Every integral from here on is an integral of a nonnegative
+function with values in $[0,\infty]$, so all the manipulations below are
+legitimate without any integrability hypothesis; finiteness is never needed and
+never claimed.
+
+\emph{Step 3: the pointwise bound.}  Fix $x$.  By the norm inequality for the
+integral (Preamble), in the form $\bigl|\int f\bigr|\le\int|f|$ with the
+right-hand side read as an integral of a nonnegative function with values in
+$[0,\infty]$, together with $\rho\ge0$,
+\[
+\bigl|(w*\rho)(x)\bigr|\ \le\ \int_{\R^n}|w(y)|\,\rho(x-y)\,dy .
+\tag{1}
+\]
+If $q=1$, raising (1) to the first power is already the pointwise bound
+\[
+\bigl|(w*\rho)(x)\bigr|^{q}\ \le\ \int_{\R^n}|w(y)|^{q}\rho(x-y)\,dy .
+\tag{2}
+\]
+If $q>1$, let $q'$ be the Hölder conjugate of $q$, so $q'>0$ and
+$\tfrac1q+\tfrac1{q'}=1$, and split the kernel as
+\[
+\rho(x-y)=\rho(x-y)^{\frac1q}\,\rho(x-y)^{\frac1{q'}} ,
+\]
+which is legitimate because $\rho\ge0$ and the two exponents sum to $1$.
+Hölder's inequality (Preamble) applied to the pair
+$\bigl(|w(y)|\rho(x-y)^{1/q},\ \rho(x-y)^{1/q'}\bigr)$ with exponents $q,q'$
+turns the right-hand side of (1) into --- the Preamble states it for two
+nonnegative measurable functions lying in $L^{q}$ and $L^{q'}$, and that
+finiteness may be assumed here without loss, since if $\int\rho(x-\cdot)=1$ is
+finite while $\int|w|^{q}\rho(x-\cdot)=+\infty$ the asserted bound (2) is
+trivially true ---
+\[
+\int|w|\rho(x-\cdot)
+\ \le\ \Bigl(\int|w(y)|^{q}\rho(x-y)\,dy\Bigr)^{\frac1q}
+   \Bigl(\int\rho(x-y)\,dy\Bigr)^{\frac1{q'}}
+= \Bigl(\int|w(y)|^{q}\rho(x-y)\,dy\Bigr)^{\frac1q},
+\]
+the two $q$-th and $q'$-th powers collapsing as
+$\bigl(|w|\rho^{1/q}\bigr)^{q}=|w|^{q}\rho$ and
+$\bigl(\rho^{1/q'}\bigr)^{q'}=\rho$, and the last factor being $1$ by the first
+identity of (M).  Raising that to the $q$-th power and combining with (1) gives
+(2) again.  So (2) holds for every $x$ and every $q\ge1$.
+
+\emph{Step 4: integrate and exchange.}  Integrating (2) in $x$ and exchanging
+the two integrations,
+\[
+\int\bigl|(w*\rho)(x)\bigr|^{q}dx
+\ \le\ \int\!\!\int|w(y)|^{q}\rho(x-y)\,dy\,dx
+= \int|w(y)|^{q}\Bigl(\int\rho(x-y)\,dx\Bigr)dy
+= \int|w(y)|^{q}dy ,
+\]
+where the exchange is Tonelli's theorem (Preamble) --- applicable because the
+integrand $(x,y)\mapsto|w(y)|^{q}\rho(x-y)$ is nonnegative and jointly
+measurable, being the product of $y\mapsto|w(y)|^{q}$ with $w$ strongly
+measurable by Step 1 and of the continuous $(x,y)\mapsto\rho(x-y)$ --- and the
+inner integral is $1$ for each fixed $y$ by the second identity of (M), the
+factor $|w(y)|^{q}$ being constant in $x$.
+
+\emph{Step 5: conclusion.}  Both seminorms are $q$-th roots of the two
+integrals just compared, $\|v\|_{L^q}=\bigl(\int|v|^{q}\bigr)^{1/q}$, and
+$t\mapsto t^{1/q}$ is nondecreasing on $[0,\infty]$ since $q>0$.  Hence
+$\|w*\rho\|_{L^q}\le\|w\|_{L^q}$, which is the assertion.
+\end{proof}

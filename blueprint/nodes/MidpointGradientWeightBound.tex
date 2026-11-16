@@ -1,0 +1,142 @@
+\begin{helper}[The elementary inequality after (4.4)]
+Let $p>1$.  Then there is a constant $C=C(p)>0$ such that for every integer
+$n\ge1$, every $\varepsilon\ge0$ and all $a,b\in\R^n$,
+\[
+\int_0^1(1-t)\bigl(\varepsilon+|ta+(1-t)b|^2\bigr)^{\frac p2-1}dt
+\;\ge\;C\,\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1} .
+\]
+All powers are real powers of nonnegative reals.
+
+The constant is chosen before the dimension, which is what the paper's
+``where $C(p)$ is a constant depending only on $p$'' (thesis p.~34, the
+sentence following (4.4) of the thesis) asserts: $C$ may depend on $p$ and on nothing
+else, $n$ included.  The proof below produces such a $C$ explicitly.
+\end{helper}
+\begin{proof}
+Write $s=\frac p2-1$, $\varphi(t)=ta+(1-t)b$ for $t\in[0,1]$, and
+$T=\varepsilon+|a|^2+|b|^2$.  Note $\varphi(0)=b$, $\varphi(1)=a$ and
+$\varphi(t)-\varphi(t')=(t-t')(a-b)$.  Set $M=\max\{|a|,|b|\}$ and $L=|a-b|$.
+
+\emph{Why the constant may be chosen before the dimension.}  Every quantity
+occurring in the two sides of the asserted inequality is a function of the three
+real numbers $|a|$, $|b|$ and $(a,b)$ alone, with no other dependence on $n$ or
+on $a,b$ themselves.  Indeed, expanding the inner product,
+\[
+|\varphi(t)|^2=|t\,a+(1-t)b|^2
+=t^2|a|^2+2t(1-t)\,(a,b)+(1-t)^2|b|^2
+\qquad(t\in\R),
+\]
+which uses only $|x+y|^2=|x|^2+2(x,y)+|y|^2$, the bilinearity of the inner
+product and its symmetry; and $T=\varepsilon+|a|^2+|b|^2$ is already of that
+form.  So for a given triple $(|a|,|b|,(a,b))$ the assertion is literally the
+same assertion in every dimension $n\ge1$ that realises that triple, and a
+constant proved to work for all such triples works in every dimension at once.
+The constants produced in the three cases below are built only from $p$ and the
+numerical factors $2$, $\tfrac12$, $\tfrac34$, $\tfrac14$, $8$, $64$, $128$ and
+$16$, never from $n$, which is the concrete form of that observation; the
+estimates themselves use only the triangle inequality $|x+y|\le|x|+|y|$ and
+$|a|^2+|b|^2\le2M^2$, both valid in every dimension.
+
+\emph{Degenerate case.}  If $T=0$ then $\varepsilon=0$ and $a=b=0$, so
+$\varphi\equiv0$ and both sides equal $C\cdot0^{s}$ resp.\
+$\int_0^1(1-t)0^{s}dt$, which are $0$ when $s\ne0$ and $C$ resp.\ $\tfrac12$
+when $s=0$.  The inequality therefore holds in this case as soon as
+$C\le\tfrac12$, which the choices below respect.  Assume from now on $T>0$.
+
+\emph{Case 1: $1<p<2$, i.e.\ $s<0$.}  For every $t\in[0,1]$,
+\[
+|\varphi(t)|\le t|a|+(1-t)|b|\le|a|+|b| ,
+\]
+hence $|\varphi(t)|^2\le(|a|+|b|)^2\le2(|a|^2+|b|^2)$ and therefore
+\[
+0<\varepsilon+|\varphi(t)|^2\le\varepsilon+2(|a|^2+|b|^2)\le 2T .
+\]
+(The left strict inequality holds because if $\varepsilon+|\varphi(t)|^2=0$ then
+$\varepsilon=0$ and $\varphi(t)=0$; since $s<0$ we may in that case replace the
+integrand by $+\infty$ at that single point, so the bound below is only
+improved. More precisely, the function $t\mapsto\varepsilon+|\varphi(t)|^2$
+vanishes for at most one $t$, and for all other $t$ the inequality
+$(\varepsilon+|\varphi(t)|^2)^{s}\ge(2T)^{s}$ holds; a single point does not
+affect the integral.)  Since $s<0$, raising to the power $s$ reverses the
+inequality:
+\[
+\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s}\ge(2T)^{s}=2^{s}T^{s}
+\qquad\text{for a.e.\ }t\in[0,1].
+\]
+Before integrating we record that the integrand is interval-integrable on
+$[0,1]$, so that the monotonicity of the integral may be applied to it: by
+\noderef{SegmentWeightIntegrable}, with the present $n,p,\varepsilon,a,b$ --- its
+hypotheses are exactly $p>1$ and $\varepsilon\ge0$, both of which we have --- the
+weight $t\mapsto(\varepsilon+|\varphi(t)|^2)^{s}$ is interval-integrable with
+respect to Lebesgue measure on $[0,1]$, and multiplying it by the continuous
+bounded factor $1-t$ preserves interval-integrability.  This is the one place in
+the proof where finiteness is not automatic: in the present case $s<0$ and the
+weight is unbounded near a zero of $\varepsilon+|\varphi|^2$, so without
+\noderef{SegmentWeightIntegrable} the left-hand side of the asserted inequality
+need not be a well-defined finite number, and comparing it with
+$\tfrac12 2^{s}T^{s}$ would compare a junk value.  (In Case 2 below $s\ge0$ and
+the integrand is continuous on $[0,1]$, hence integrable with no further
+argument.)
+
+Multiplying by $(1-t)\ge0$ and integrating, and using
+$\int_0^1(1-t)\,dt=\tfrac12$,
+\[
+\int_0^1(1-t)\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s}dt\ \ge\ \tfrac12\,2^{s}\,T^{s} .
+\]
+So the claim holds in this case with $C=2^{s-1}=2^{p/2-2}$.
+
+\emph{Case 2: $p\ge2$, i.e.\ $s\ge0$.}  We first produce a set of $t$'s of
+substantial measure on which $|\varphi(t)|$ is bounded below by a fixed multiple
+of $M$.
+
+\emph{Subcase 2a: $L<M/2$.}  Suppose $|a|=M$ (the case $|b|=M$ is symmetric).
+For every $t\in[0,1]$, $|\varphi(t)-a|=(1-t)L\le L<M/2$, hence
+\[
+|\varphi(t)|\ \ge\ |a|-|\varphi(t)-a|\ >\ M-\tfrac M2=\tfrac M2 .
+\]
+Thus $|\varphi(t)|\ge M/2$ for every $t\in[0,1]$, and we may take
+$E=[0,\tfrac34]$, which has measure $\tfrac34\ge\tfrac14$, with
+$|\varphi(t)|\ge M/8$ on $E$ (indeed $M/2\ge M/8$).
+
+\emph{Subcase 2b: $L\ge M/2$.}  Let
+$Z=\{t\in[0,1]:|\varphi(t)|\le M/8\}$.  If $t,t'\in Z$ then
+\[
+|t-t'|\,L=|\varphi(t)-\varphi(t')|\le|\varphi(t)|+|\varphi(t')|\le\tfrac M4 ,
+\]
+so $|t-t'|\le M/(4L)\le M/(4\cdot M/2)=\tfrac12$ (if $M=0$ then $a=b=0$,
+$L=0$, and $T=\varepsilon$; this degenerate situation is covered by Subcase 2a
+with the bound $|\varphi(t)|\ge0$ and is treated at the end of this case).
+Hence $Z$ is contained in an interval of length $\tfrac12$, so its Lebesgue
+measure is at most $\tfrac12$.  Put $E=[0,\tfrac34]\setminus Z$; then
+$|E|\ge\tfrac34-\tfrac12=\tfrac14$ and $|\varphi(t)|>M/8$ on $E$.
+
+In both subcases we have a measurable $E\subseteq[0,\tfrac34]$ with
+$|E|\ge\tfrac14$ and $|\varphi(t)|\ge M/8$ for $t\in E$.  On $E$,
+\[
+\varepsilon+|\varphi(t)|^2\ \ge\ \varepsilon+\tfrac{M^2}{64}
+\ \ge\ \tfrac1{64}\bigl(\varepsilon+M^2\bigr)
+\ \ge\ \tfrac1{128}\bigl(\varepsilon+|a|^2+|b|^2\bigr)=\tfrac{T}{128},
+\]
+where the last step uses $|a|^2+|b|^2\le2M^2$, so
+$\varepsilon+|a|^2+|b|^2\le\varepsilon+2M^2\le2(\varepsilon+M^2)$.  Since
+$s\ge0$, raising to the power $s$ preserves the inequality:
+$(\varepsilon+|\varphi(t)|^2)^{s}\ge128^{-s}T^{s}$ on $E$.  Moreover
+$1-t\ge\tfrac14$ on $E\subseteq[0,\tfrac34]$.  Since the integrand is
+nonnegative (both factors are $\ge0$), restricting the integral to $E$ gives
+\[
+\int_0^1(1-t)\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s}dt
+\ \ge\ \int_E\tfrac14\cdot128^{-s}T^{s}\,dt
+\ \ge\ \tfrac14\cdot\tfrac14\cdot128^{-s}\,T^{s}
+=\tfrac1{16}\,128^{-s}\,T^{s} .
+\]
+If $M=0$ then $a=b=0$, $\varphi\equiv0$, $T=\varepsilon>0$, and
+$\varepsilon+|\varphi(t)|^2=\varepsilon=T$ for every $t$, so the integral equals
+$\tfrac12T^{s}$, which is at least $\tfrac1{16}128^{-s}T^{s}$.  So the claim
+holds in Case 2 with $C=\tfrac1{16}128^{-s}=\tfrac1{16}128^{1-p/2}$.
+
+Taking $C=\min\{2^{p/2-2},\ \tfrac1{16}128^{1-p/2},\ \tfrac12\}>0$, which depends
+only on $p$ and in particular not on $n$, $\varepsilon$, $a$ or $b$, proves the
+lemma in all cases; the hypothesis $n\ge1$ was used nowhere beyond guaranteeing
+that $\R^n$ is a nonzero space, and the displayed choice of $C$ is made once,
+before any dimension is named.
+\end{proof}

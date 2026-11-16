@@ -1,0 +1,65 @@
+\begin{lemma}[A continuous modulus of continuity on a compact set]
+Let $n\in\N$, let $A\subseteq\R^n$ be compact and let
+$\tau'\colon\R^n\to\R^{n\times n}$ have every entry $x\mapsto\tau'(x)_{jk}$
+continuous on $A$.  Then there is $\sigma\colon\R\to\R$ with $\sigma\ge0$,
+$\sigma$ continuous, $\sigma$ nondecreasing, $\sigma(0)=0$, $\sigma$ bounded
+above by some constant, and
+\[
+|\tau'(x)_{jk}-\tau'(y)_{jk}|\le\sigma\bigl(\operatorname{dist}(x,y)\bigr)
+\qquad\text{for all }x,y\in A\text{ and all }j,k,
+\]
+and such that for all $\delta,C$ with $0<\delta\le1$ and $C\ge0$, if
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\operatorname{dist}(x,y)^\delta$ for all
+$x,y\in A$ and all $j,k$, then $\sigma(t)\le 2Ct^\delta$ for every $t\ge0$.
+\end{lemma}
+\begin{proof}
+For $t\ge0$ put
+\[
+\omega(t)=\max_{j,k}\ \sup\bigl\{|\tau'(x)_{jk}-\tau'(y)_{jk}|:\
+x,y\in A,\ \operatorname{dist}(x,y)\le t\bigr\} ,
+\]
+with the convention $\omega(t)=0$ for $t<0$ and when the supremum is over the
+empty set.  Each entry $\tau'_{jk}$ is continuous on the compact set $A$, hence
+bounded and \emph{uniformly} continuous there.  So $\omega$ is finite,
+nondecreasing, $\omega(0)=0$ (as $\operatorname{dist}(x,y)\le0$ forces $x=y$)
+and $\omega(t)\to0$ as $t\to0^+$.  By construction
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le\omega(\operatorname{dist}(x,y))$ for
+$x,y\in A$ and all $j,k$.
+
+Now set
+\[
+\tilde\sigma(t)=\int_1^2\omega(tv)\,dv\ \ (t>0),\qquad
+\tilde\sigma(t)=0\ \ (t\le0),\qquad \sigma=\tilde\sigma .
+\]
+Then: $\tilde\sigma\ge0$; $\tilde\sigma(t)\ge\omega(t)$ for $t>0$, because
+$\omega(tv)\ge\omega(t)$ for $v\in[1,2]$ by monotonicity and the interval has
+length $1$; $\tilde\sigma$ is nondecreasing on $\R$, since $t\mapsto\omega(tv)$
+is nondecreasing for each $v>0$ and $\tilde\sigma\ge0=\tilde\sigma(t)$ for
+$t\le0$; $\tilde\sigma$ is bounded, by $\sup\omega<\infty$; and
+$\tilde\sigma(0)=0$.  For continuity: on $t>0$ the substitution $s=tv$ gives
+$\tilde\sigma(t)=t^{-1}\int_t^{2t}\omega(s)\,ds=t^{-1}(\Phi(2t)-\Phi(t))$ with
+$\Phi(s)=\int_0^s\omega$, and $\Phi$ is Lipschitz with constant $\sup\omega$
+because $\omega$ is bounded and measurable (being monotone), so $\tilde\sigma$ is
+continuous on $(0,\infty)$; it is continuous on $(-\infty,0)$ trivially; and at
+$0$ it is continuous because $0\le\tilde\sigma(t)\le\omega(2t)\to0$ as
+$t\to0^+$, again by monotonicity.  Hence $\sigma$ is nonnegative, continuous,
+nondecreasing, bounded, $\sigma(0)=0$, and
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le\omega(\operatorname{dist}(x,y))
+\le\sigma(\operatorname{dist}(x,y))$ for $x,y\in A$, the last step because
+$\tilde\sigma\ge\omega$ on $(0,\infty)$ and both vanish at $0$.
+
+\emph{The H\"older rate.}  Let $0<\delta\le1$ and $C\ge0$ and suppose
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\operatorname{dist}(x,y)^\delta$ for all
+$x,y\in A$ and all $j,k$.  For $t>0$ and $x,y\in A$ with
+$\operatorname{dist}(x,y)\le t$ this gives
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le Ct^\delta$, since $r\mapsto r^\delta$ is
+nondecreasing on $[0,\infty)$ for $\delta>0$; hence $\omega(t)\le Ct^\delta$,
+and so
+\[
+\tilde\sigma(t)=\int_1^2\omega(tv)\,dv\le\int_1^2C(tv)^\delta dv
+=Ct^\delta\int_1^2v^\delta dv\le 2^{\delta}Ct^\delta\le2Ct^\delta,
+\]
+using $\int_1^2v^\delta dv\le\max_{v\in[1,2]}v^\delta=2^\delta$ and then
+$\delta\le1$.  At $t=0$ both sides vanish, $\tilde\sigma(0)=0=\omega(0)$.
+Therefore $\sigma(t)\le2Ct^\delta$ for all $t\ge0$.
+\end{proof}

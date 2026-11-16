@@ -1,0 +1,61 @@
+\begin{helper}[The truncated primitive of the signed power]
+Let $p,\mu\in\R$ with $1<p$ and $0<\mu$, assume $0\le\frac p2-1$, and let
+$\varphi\colon\R\to\R$ satisfy $\varphi(0)=0$, $\varphi(-s)=-\varphi(s)$ for
+every $s$, and $\varphi(s)=s^{p/2}$ for every $s>0$ --- that is, $\varphi$ is
+the signed power $\varphi(s)=|s|^{\frac p2-1}s$, presented through the three
+identities the consumer holds.  Every power of a nonnegative real is the real
+power.  Then there is $F\colon\R\to\R$ such that
+\begin{enumerate}
+\item[(i)] $F$ is $C^1$;
+\item[(ii)] $|F'(t)|\le\frac p2\mu^{\frac p2-1}$ for \emph{every} real $t$;
+\item[(iii)] $F(s)=\varphi(s)$ whenever $|s|\le\mu$;
+\item[(iv)] $F'(s)=\frac p2|s|^{\frac p2-1}$ whenever $|s|\le\mu$.
+\end{enumerate}
+Everything here is one-dimensional: no domain, no Sobolev space and no
+reference to the equation occurs.  The point of the construction is clause
+(ii): the signed power itself has an unbounded derivative, so it is not an
+admissible outer function for the scalar chain rule
+\texttt{WeakGradientC1Comp}, which asks for a global $C^1$ function with a
+global derivative bound, whereas $F$ is, and (iii)--(iv) are what transport the
+conclusion back to the signed power on the set where the argument is bounded by
+$\mu$.
+\end{helper}
+\begin{proof}
+Define
+\[
+\psi_\mu(t)=\frac p2\bigl(\min\{|t|,\mu\}\bigr)^{\frac p2-1},
+\qquad
+F(s)=\int_0^s\psi_\mu(t)\,dt .
+\]
+
+\emph{Step 1: $\psi_\mu$ is continuous, even and bounded.}  The map
+$t\mapsto\min\{|t|,\mu\}$ is continuous and nonnegative, and
+$\lambda\mapsto\lambda^{\frac p2-1}$ is continuous on $[0,\infty)$ because the
+exponent is nonnegative; hence $\psi_\mu$ is continuous.  It is even because
+$|-t|=|t|$.  For the bound, $0\le\min\{|t|,\mu\}\le\mu$ and the monotonicity of
+the real power with nonnegative exponent give
+$\bigl(\min\{|t|,\mu\}\bigr)^{\frac p2-1}\le\mu^{\frac p2-1}$, so
+$0\le\psi_\mu(t)\le\frac p2\mu^{\frac p2-1}$, using $p>1>0$; in particular
+$|\psi_\mu(t)|\le\frac p2\mu^{\frac p2-1}$.
+
+\emph{Step 2: (i) and (ii).}  Since $\psi_\mu$ is continuous, it is locally
+integrable, so the fundamental theorem of calculus (Preamble) applies to the
+interval integral defining $F$: $F$ is differentiable at every $s$ with
+$F'(s)=\psi_\mu(s)$.  As $\psi_\mu$ is continuous, $F$ is $C^1$, which is (i),
+and Step 1 gives (ii).
+
+\emph{Step 3: (iv).}  If $|s|\le\mu$ then $\min\{|s|,\mu\}=|s|$, so
+$F'(s)=\psi_\mu(s)=\frac p2|s|^{\frac p2-1}$.
+
+\emph{Step 4: (iii).}  Both $F$ and $\varphi$ are odd: $F$ because it is the
+integral from $0$ of the even function $\psi_\mu$, and $\varphi$ by hypothesis.
+It therefore suffices to prove $F=\varphi$ on $[0,\mu]$.  At $s=0$ both vanish,
+$F(0)=0$ by the definition of the integral and $\varphi(0)=0$ by hypothesis.
+For $0<s\le\mu$, Step 3 gives $F'(t)=\frac p2t^{\frac p2-1}$ for
+$t\in(0,s]$, which is also the derivative of $t\mapsto t^{p/2}$; since
+$\varphi(t)=t^{p/2}$ for $t>0$ by hypothesis, $F$ and $\varphi$ have the same
+derivative on $(0,s]$ and the same value at $0$, so they agree at $s$ by
+uniqueness of antiderivatives with a common value at a point --- concretely,
+$F(s)=\int_0^s\frac p2t^{\frac p2-1}dt=s^{p/2}=\varphi(s)$.  Together with
+oddness this gives (iii) for every $s$ with $|s|\le\mu$.
+\end{proof}

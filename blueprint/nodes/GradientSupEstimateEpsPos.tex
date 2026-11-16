@@ -1,0 +1,301 @@
+\begin{lemma}[The gradient sup bound in the nondegenerate case]
+Let $n\ge2$, $p>1$ and $r>0$, suppose the Sobolev--Poincar\'e inequality on
+balls holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume
+the cited regularity result (C1) (\noderef{CitedRegularityEpsPos}) for
+\emph{every} field $A'\colon\R^n\to\R^n$, \emph{every} open set
+$\Omega'\subseteq\R^n$ and all parameters $\varepsilon',\gamma_0',\gamma_1'$
+with $\gamma_0'>0$ and $\gamma_1'>0$.  Then there is a constant $C=C(p,r,n)>0$
+with the following property.  Let $\varepsilon>0$, $\gamma_0>0$ and $\gamma_1>0$
+with $\gamma_1\le r\gamma_0$, let $\Omega\subseteq\R^n$ be open, let
+$A\colon\R^n\to\R^n$ satisfy (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with
+parameters $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}),
+let $u$ be a weak solution of $\operatorname{div}A(\nabla u)=0$ in $\Omega$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g$, and let $y\in\R^n$ and
+$\rho>0$ satisfy $\overline B_\rho(y)\subseteq\Omega$.  Then for almost every
+$x\in B_{\rho/2}(y)$,
+\[
+\bigl(\varepsilon+|g(x)|^2\bigr)^{\frac p2}
+\ \le\ \frac{C}{\rho^n}\int_{B_\rho(y)}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx .
+\]
+The conclusion is an almost-everywhere statement about the given weak gradient
+$g$, and deliberately so: a weak gradient is an almost-everywhere class, so no
+pointwise assertion may be made about $g$ itself.  The constant $C$ is bound
+before $\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,y,\rho$, and the structure
+constants enter only through the bound $\gamma_1\le r\gamma_0$; no restriction
+$\rho=1$ is imposed and no rescaling is needed, the two quantitative inputs
+being already scale-invariant.
+\end{lemma}
+\begin{proof}
+Write $B_\sigma(y)$ for the open ball of radius $\sigma$ about $y$,
+$\overline B_\sigma(y)$ for the closed one, $|E|$ for Lebesgue measure, $D_i$
+for the derivative in the direction of the $i$-th standard basis vector, and
+$(\cdot,\cdot)$, $|\cdot|$ for the Euclidean inner product and norm; all
+non-integer powers are real powers of nonnegative numbers.
+
+\emph{Step 0: the constant, chosen before all the data.}  Let $c>0$ be the
+constant that \noderef{CaccioppoliPowerWeight} supplies for the triple
+$(n,p,r)$; its hypotheses there are $2\le n$, $1<p$ and $r>0$, all of which are
+hypotheses of the present lemma, so $c=c(n,p,r)$.  Let $C_0>0$ be the constant
+that \noderef{MoserLocalBoundedness} supplies for the pair $(n,Q)$ with $Q=c$;
+its hypotheses there are $2\le n$, $0<Q$ and the Sobolev--Poincar\'e inequality
+on balls in dimension $n$ (\noderef{CitedSobolevPoincareBall}), which is a
+hypothesis of the present lemma.  So $C_0=C_0(n,c)$.  Put
+\[
+C=C_0^{\,2}>0 .
+\]
+Both $c$ and $C_0$, hence $C$, are determined by $n,p,r$ alone and are fixed
+before $\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,y,\rho$, which is the
+quantifier order the statement requires.
+
+Now fix data as in the statement.
+
+\emph{A1: what (C1) supplies.}  The present lemma assumes the cited regularity
+result (C1) for every field, every open set and all parameters with positive
+structure constants.  Instantiate that clause at
+$\varepsilon,\gamma_0,\gamma_1,\Omega,A$: its side conditions $\gamma_0>0$,
+$\gamma_1>0$ and openness of $\Omega$ hold.  The resulting predicate
+\noderef{CitedRegularityEpsPos} has as its own antecedents $\varepsilon>0$, the
+structure conditions on $\Omega$ (\noderef{EllipticStructureQ12}) and the
+weak-solution property (\noderef{IsWeakSolutionOn}), all of which hold, and it
+yields
+\begin{enumerate}
+\item $u\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}); and
+\item a field $\hat g$ with (i) $\hat g$ continuous on $\Omega$, (ii)
+  $g=\hat g$ almost everywhere on $\Omega$, and (iii) a family
+  $D\hat g=(D\hat g^1,\dots,D\hat g^n)$ with
+  $\hat g^k\in W^{1,2}_{\mathrm{loc}}(\Omega)$ and weak gradient $D\hat g^k$ for
+  each $k$ (\noderef{MemW1pLocOn}).
+\end{enumerate}
+Fix such a $\hat g$ and such a family $D\hat g$ once and for all.
+
+\emph{A warning about the two fields.}  In this proof $g$ is the lemma's own
+given field --- the weak gradient of $u$, named in the hypotheses --- and
+$\hat g$ is the representative that (C1) produces.  Clauses (i) and (iii) are
+properties of $\hat g$ and \emph{not} of $g$: a weak gradient is an
+almost-everywhere class, so neither continuity nor pointwise boundedness can be
+asserted of $g$, and \noderef{CitedRegularityEpsPos} is stated with the
+representative existentially bound for exactly that reason.  \emph{The
+consequence is structural, not cosmetic: $w$ and $v$ below are built from
+$\hat g$, steps A2--A6 are run for $\hat g$, and the passage back to $g$ is made
+once, at A7, where the conclusion is already an almost-everywhere statement.}
+This is available because $w$ and $v$ are internal to this proof --- no step and
+no cited node fixes their names --- so the representative may be carried where
+points are needed and the given field where only integrals are.
+
+\emph{A2: the functions $w$ and $v$, built from the representative.}  Put
+\[
+w=\varepsilon+|\hat g|^2,\qquad v=w^{\frac p4},
+\]
+both defined at every point.  On $\Omega$ we have $w\ge\varepsilon>0$, so $v>0$
+there; and $w$ is continuous on $\Omega$ by A1(2)(i), hence so is $v$, because
+$s\mapsto s^{p/4}$ is continuous on $(0,\infty)$.  Note for later that
+$v^2=w^{p/2}$ and, for $\theta>0$, $(v^\theta)^2=w^{p\theta/2}$, the exponent
+rules for real powers being available since $w>0$ on $\Omega$.
+
+\emph{A3: $v^\theta$ is a local $W^{1,2}$ function, with an explicit weak
+gradient.}  Fix $t>0$ and put $\theta=1+\frac tp$, so that $\theta>1$ and
+$v^\theta=w^{\frac{p+t}4}$; as $t$ runs over $(0,\infty)$, $\theta$ runs over
+all of $(1,\infty)$, and $t=p(\theta-1)$ recovers $t$ from $\theta$.  Apply
+\noderef{WeakGradientVectorComp} with $n$, $m=n$, $q=2$, the open set $\Omega$,
+the functions $G_k=\hat g^k$ with weak gradients $DG_k=D\hat g^k$, and
+\[
+F(y_1,\dots,y_n)=\Bigl(\varepsilon+\sum_{k=1}^ny_k^2\Bigr)^{\frac{p+t}4}.
+\]
+Its hypotheses hold: $1\le n$ and $1\le2$; $\Omega$ is open; each
+$G_k\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $DG_k$ by A1(2)(iii);
+the family is locally uniformly bounded, since for compact $K\subseteq\Omega$
+the function $|\hat g|$ is continuous on $K$ by A1(2)(i) and therefore bounded
+there, say by $L$, whence $|G_k(x)|\le|\hat g(x)|\le L$ for all $x\in K$ and all
+$k$.  \emph{This is the hypothesis that forces the representative on us: it asks
+for a bound at \emph{every} point of $K$, and the given $g$ need not satisfy
+one, a weak gradient being alterable on a null set without disturbing any
+hypothesis of this lemma.}  And $F$ is of class $C^1$ on $\R^n$, being the
+composition of the polynomial $y\mapsto\varepsilon+|y|^2$, which is smooth and
+takes values in $[\varepsilon,\infty)\subseteq(0,\infty)$ because
+$\varepsilon>0$, with $s\mapsto s^{(p+t)/4}$, which is smooth on $(0,\infty)$.
+Since $F(G(x))=\bigl(\varepsilon+|\hat g(x)|^2\bigr)^{(p+t)/4}=v^\theta(x)$, the
+conclusion is that $v^\theta\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak
+gradient
+\[
+G_\theta=\sum_{k=1}^nD_kF(G)\,D\hat g^k
+=\frac{p+t}4\,w^{\frac{p+t}4-1}\,\nabla w,
+\qquad
+\nabla w:=2\sum_{k=1}^n\hat g^k\,D\hat g^k ,
+\]
+where the middle equality is the computation
+$D_kF(y)=\frac{p+t}4\bigl(\varepsilon+|y|^2\bigr)^{\frac{p+t}4-1}\cdot2y_k$
+evaluated at $y=G(x)$.  Finally $B_\rho(y)$ is open and contained in
+$\overline B_\rho(y)\subseteq\Omega$, so clause (2) of
+\noderef{WeakGradientRestrict}, applied with $q=2$, the sets
+$\Omega\supseteq B_\rho(y)$ and the pair $(v^\theta,G_\theta)$, gives
+\[
+v^\theta\in W^{1,2}_{\mathrm{loc}}\bigl(B_\rho(y)\bigr)
+\quad\text{with weak gradient}\quad G_\theta .
+\tag{A3}
+\]
+
+\emph{A4: the Caccioppoli inequality in the form Moser's lemma consumes.}
+Apply \noderef{CaccioppoliPowerWeight} for the triple $(n,p,r)$, whose constant
+$c$ was fixed in Step 0, to the data
+$\varepsilon,\gamma_0,\gamma_1,t,\Omega,A,u,g,D\hat g$ and an arbitrary $\zeta$
+which is of class $C^\infty$ on $\R^n$, has compact support, and satisfies
+$\mathrm{tsupport}\,\zeta\subseteq\Omega$ --- these are the three conditions
+that node binds on its cut-off, and $\mathrm{tsupport}$, the \emph{closure} of
+the support, is the one it asks about, so it is the one used here and below.
+Its hypotheses are $\varepsilon>0$, $\gamma_0>0$, $\gamma_1\le r\gamma_0$,
+$t>0$, openness of $\Omega$, the structure conditions
+(\noderef{EllipticStructureQ12}), the cited regularity result (C1)
+(\noderef{CitedRegularityEpsPos}) at these very data, which is the instance A1
+already formed, the weak-solution property (\noderef{IsWeakSolutionOn}), the
+membership $g^k\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient
+$D\hat g^k$ for every $k$ (\noderef{MemW1pLocOn}), established in the next
+paragraph, and the three cut-off conditions just listed.
+
+\emph{The one transfer back to the given field.}  That node carries its
+gradient-regularity hypothesis on the \emph{same} field as its weak-solution
+hypothesis, namely on $g$, whereas A1(2)(iii) supplies it for $\hat g$.  The two
+are reconciled once, and the fact needed is that $\mathrm{MemW1pLocOn}$ is
+unchanged when the function is modified on a null set, the weak gradient being
+kept.  By \noderef{MemW1pLocOn} that assertion is two things, and each is an
+integral one.  First the identity of \noderef{HasWeakGradientOn}: for every test
+function $\psi$ of that node's class and every index $i$,
+$\int_\Omega\hat g^k\,D_i\psi\,dx=-\int_\Omega(D\hat g^k)_i\,\psi\,dx$, and
+$g^k=\hat g^k$ almost everywhere on $\Omega$ by A1(2)(ii), so the two left-hand
+integrands agree almost everywhere and the integrals are equal, giving
+$\int_\Omega g^k\,D_i\psi\,dx=-\int_\Omega(D\hat g^k)_i\,\psi\,dx$.  Second the
+$L^2$ clauses: for compact $K\subseteq\Omega$ we have $g^k=\hat g^k$ almost
+everywhere on $K$ and $D\hat g^k$ is not changed at all, so $g^k\in L^2(K)$ and
+$D\hat g^k\in L^2(K)$ follow from the same statements for $\hat g^k$.  Hence
+\[
+g^k\in W^{1,2}_{\mathrm{loc}}(\Omega)\ \text{ with weak gradient }\ D\hat g^k
+\qquad(k=1,\dots,n),
+\tag{A4a}
+\]
+which is the hypothesis just invoked.  (No further node is needed for it: the
+two clauses of \noderef{MemW1pLocOn} are the only facts used, and both are
+integral assertions.)
+
+Its conclusion is
+\[
+\int_\Omega\Bigl(\frac{p+t}4\Bigr)^2w_\flat^{\frac{p+t}2-2}
+\Bigl(\sum_{i=1}^n(\nabla w_\flat)_i^2\Bigr)\zeta^2\,dx
+\ \le\ c\int_\Omega w_\flat^{\frac{p+t}2}\,|\nabla\zeta|^2\,dx ,
+\]
+where $w_\flat=\varepsilon+|g|^2$ and
+$(\nabla w_\flat)_i=2\sum_kg^k(D\hat g^k)^i$ are the weight and the field that
+node forms from the data it was given, i.e.\ from $g$ and $D\hat g$.
+
+\emph{The weights agree almost everywhere, so the display may be rewritten in
+$w$.}  By A1(2)(ii), $g=\hat g$ almost everywhere on $\Omega$, and $w_\flat$,
+$\nabla w_\flat$ are obtained from $g$ by the same two formulas that produce
+$w$, $\nabla w$ from $\hat g$ --- the second with the \emph{same} family
+$D\hat g$ in both cases --- so
+\[
+w_\flat=w\quad\text{and}\quad\nabla w_\flat=\nabla w
+\qquad\text{almost everywhere on }\Omega ,
+\tag{A4b}
+\]
+and hence so does every real power of the weight.  Both sides of the display are
+integrals, so altering their integrands on a null set changes neither, and the
+display holds verbatim with $w$ and $\nabla w$ in place of $w_\flat$ and
+$\nabla w_\flat$.  Now by A3
+\[
+|G_\theta|^2=\Bigl(\frac{p+t}4\Bigr)^2\bigl(w^{\frac{p+t}4-1}\bigr)^2|\nabla w|^2
+=\Bigl(\frac{p+t}4\Bigr)^2w^{\frac{p+t}2-2}\sum_{i=1}^n(\nabla w)_i^2
+\]
+on $\Omega$, using $(w^a)^2=w^{2a}$ for $w>0$ and
+$2\bigl(\frac{p+t}4-1\bigr)=\frac{p+t}2-2$; and
+$(v^\theta)^2=w^{p\theta/2}=w^{\frac{p+t}2}$ by A2.  So the display reads
+\[
+\int_\Omega|G_\theta|^2\zeta^2\,dx
+\ \le\ c\int_\Omega(v^\theta)^2|\nabla\zeta|^2\,dx
+\]
+for every such $\zeta$.  If moreover $\mathrm{tsupport}\,\zeta\subseteq
+B_\rho(y)$, then both integrands vanish at every point outside
+$\mathrm{tsupport}\,\zeta$: there $\zeta=0$, because
+$\mathrm{supp}\,\zeta\subseteq\mathrm{tsupport}\,\zeta$, so $\zeta^2=0$; and the
+complement of $\mathrm{tsupport}\,\zeta$ is open with $\zeta$ identically $0$ on
+it, so $\nabla\zeta=0$ there as well.  Hence each integrand has the same product
+with the indicator of $\Omega$ as with the indicator of $B_\rho(y)$, the two
+indicators agreeing on $\mathrm{tsupport}\,\zeta$, and the two integrals may be
+taken over $B_\rho(y)$:
+\[
+\int_{B_\rho(y)}|G_\theta|^2\zeta^2\,dx
+\ \le\ c\int_{B_\rho(y)}(v^\theta)^2|\nabla\zeta|^2\,dx
+\tag{A4}
+\]
+for every $\zeta$ of class $C^\infty$ with compact support and
+$\mathrm{tsupport}\,\zeta\subseteq B_\rho(y)$ --- which is exactly the cut-off
+class the Caccioppoli hypothesis of \noderef{MoserLocalBoundedness} quantifies
+over, at the ball $B_\rho(y)$.  The constant $c$ does not depend on $t$, hence
+not on $\theta$: it was chosen in Step 0, before $t$ was introduced, and this
+uniformity is exactly what \noderef{MoserLocalBoundedness} requires of its $Q$.
+
+\emph{A5: truncation, and the three remaining hypotheses of Moser's lemma.}  Put
+$\tilde v=\mathbf1_{B_\rho(y)}v$, the function equal to $v$ on $B_\rho(y)$ and
+to $0$ elsewhere.  Then:
+\begin{enumerate}
+\item $\tilde v\ge0$ everywhere, since $v=w^{p/4}\ge0$ as a real power of a
+  nonnegative number.
+\item $\tilde v$ is measurable.  For $a<0$ the superlevel set $\{\tilde v>a\}$
+  is all of $\R^n$; for $a\ge0$ it is $\{x\in B_\rho(y):v(x)>a\}$, which is open
+  because $v$ is continuous on the open set $B_\rho(y)\subseteq\Omega$ by A2 ---
+  legitimately, $v$ having been built from the continuous $\hat g$ and not from
+  $g$.  All superlevel sets being measurable, $\tilde v$ is measurable
+  (Preamble).
+\item $\tilde v^2$ is integrable on $B_\rho(y)$.  Indeed $\tilde v^2=w^{p/2}$
+  there, $\overline B_\rho(y)$ is a compact subset of $\Omega$ and $w$ is
+  continuous on $\Omega$, so $w^{p/2}$ is continuous on $\overline B_\rho(y)$
+  and therefore bounded there, while $|B_\rho(y)|<\infty$; the Preamble item on
+  domination gives integrability.
+\end{enumerate}
+Moreover $\tilde v^\theta=v^\theta$ on $B_\rho(y)$ for every $\theta>0$.  The
+two hypotheses of \noderef{MoserLocalBoundedness} that mention the powers of the
+function are statements about $B_\rho(y)$ only: the defining identity of
+\noderef{HasWeakGradientOn} on $B_\rho(y)$ and the local $L^2$ clauses of
+\noderef{MemW1pLocOn} on $B_\rho(y)$ integrate over $B_\rho(y)$ and over its
+compact subsets, and (A4) integrates over $B_\rho(y)$.  Since $\tilde v^\theta$
+and $v^\theta$ agree there, (A3) and (A4) hold verbatim with $\tilde v$ in place
+of $v$.
+
+\emph{A6: Moser's lemma.}  Apply \noderef{MoserLocalBoundedness} with $n$,
+$Q=c$, the hypothesis \noderef{CitedSobolevPoincareBall} of the present lemma,
+and then with the centre $y$, the radius $\rho$, the function $\tilde v$ and the
+family of fields $\theta\mapsto G_{p(\theta-1)}$ for $\theta>1$ (and, say, $0$
+for $\theta\le1$; the hypotheses only ever evaluate it at $\theta>1$).  Its
+hypotheses are: $2\le n$ and $0<c$ (Step 0); (C6), which the present lemma
+assumes; $0<\rho$; measurability and nonnegativity of $\tilde v$ and
+integrability of $\tilde v^2$ on $B_\rho(y)$, which are A5(1)--(3); the
+membership $\tilde v^\theta\in W^{1,2}_{\mathrm{loc}}(B_\rho(y))$ with weak
+gradient $G_{p(\theta-1)}$ for every $\theta>1$, which is (A3) together with A5,
+since $t=p(\theta-1)>0$ and then $\theta=1+t/p$; and the Caccioppoli inequality
+for every $\theta>1$ and every cut-off, with the single constant $c$, which is
+(A4) together with A5.  The conclusion is: for almost every
+$x\in B_{\rho/2}(y)$,
+\[
+\tilde v(x)\ \le\ C_0\Bigl(\rho^{-n}\int_{B_\rho(y)}\tilde v^2\,dx\Bigr)^{\frac12}.
+\]
+
+\emph{A7: squaring, and the passage back to the given field.}  Let
+$x\in B_{\rho/2}(y)$ be a point where the last display holds \emph{and} at which
+$g(x)=\hat g(x)$; almost every point of $B_{\rho/2}(y)$ is such a point, being
+in the intersection of two sets of full measure in $B_\rho(y)$ --- the first
+from A6's conclusion, the second from A1(2)(ii).  There
+$\tilde v(x)=v(x)=w(x)^{p/4}$, since $B_{\rho/2}(y)\subseteq B_\rho(y)$, and
+$w(x)=\varepsilon+|\hat g(x)|^2=\varepsilon+|g(x)|^2$ by the choice of $x$.
+Both sides of the display are nonnegative, so squaring preserves the inequality,
+and $\bigl(w(x)^{p/4}\bigr)^2=w(x)^{p/2}$ while
+$\int_{B_\rho(y)}\tilde v^2=\int_{B_\rho(y)}w^{p/2}$ by A5(3); and
+$\int_{B_\rho(y)}w^{p/2}=\int_{B_\rho(y)}(\varepsilon+|g|^2)^{p/2}$, the two
+integrands agreeing almost everywhere by (A4b).  \emph{This is the single point
+at which the argument returns to $g$, and it is legitimate because the
+conclusion is itself an almost-everywhere statement and its right-hand side is
+an integral.}  Hence for almost every $x\in B_{\rho/2}(y)$
+\[
+\bigl(\varepsilon+|g(x)|^2\bigr)^{\frac p2}=w(x)^{\frac p2}
+\ \le\ \frac{C_0^{\,2}}{\rho^n}\int_{B_\rho(y)}w^{\frac p2}\,dx
+=\frac{C}{\rho^n}\int_{B_\rho(y)}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx ,
+\]
+which is the assertion, with the constant $C=C_0^{\,2}$ of Step 0.
+\end{proof}

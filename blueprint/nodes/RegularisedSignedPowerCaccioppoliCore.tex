@@ -1,0 +1,164 @@
+\begin{helper}[The sign-free core of inequality (D.5)]
+Let $n\in\N$ with $n\ge2$, let $p,r,\eta,\varepsilon,\gamma_0,\gamma_1,R\in\R$,
+let $\pi'\colon\R\times\R\to\R$ (written $\pi'_\eta(s)$), let $x_0\in\R^n$, let
+$A\colon\R^n\to\R^n$, $u\colon\R^n\to\R$, $g\colon\R^n\to\R^n$, let $Dg$ assign
+to each index $j$ a field $Dg^j\colon\R^n\to\R^n$, let $k$ be an index, let
+$\zeta,W\colon\R^n\to\R$, let $a_{ij}\colon\R^n\to\R$ and let
+$L_\zeta,L_{D\zeta},L_W\in\R$.  Throughout, $|\cdot|$ and $(\cdot,\cdot)$ are
+the Euclidean norm and inner product, $D_i$ is the derivative in the direction
+of the $i$-th standard basis vector, $B=B_R(x_0)$, $\operatorname{supp}\zeta$
+denotes the \emph{closed} support of $\zeta$, and every power of a positive real
+is the real power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight
+$(\varepsilon+|h|^2)^{\frac p2-1}$; no such power is rewritten as an integer
+power.  Here $g$ plays the role of $\nabla u$ and $Dg^k$ of $\nabla D_ku$, $W$
+is the weight of (Q1) of the thesis--(Q2) of the thesis, $a_{ij}$ is the coefficient
+field of the differentiated equation (3.2) of the thesis, $\eta>0$ is the
+regularisation level, and $L_\zeta,L_{D\zeta},L_W$ are bounds for $\zeta^2$,
+$|\nabla\zeta|^2$ and $W$ on $\operatorname{supp}\zeta$.  Assume
+\begin{enumerate}
+\item[(H1)] $1<p$, $0<r$, $0<\eta$, $0<\varepsilon$, $0<\gamma_0$,
+  $\gamma_1\le r\gamma_0$, $\gamma_0\le\gamma_1$, $0<\gamma_1$ and $0<R$;
+\item[(H2)] for every $\eta>0$ and every $s$,
+  $(p-1)(|s|+\eta)^{p-2}\le\pi'_\eta(s)$ and
+  $|\pi'_\eta(s)|\le\eta^{p-2}$ --- the only two properties of $\pi'_\eta$ used;
+\item[(H3)] the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $B$ with parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}); the cited
+  regularity result (C1) holds for $A$ on $B$ with those parameters
+  (\noderef{CitedRegularityEpsPos}); $u$ is a weak solution of
+  $\operatorname{div}A(\nabla u)=0$ in $B$ with weak gradient $g$
+  (\noderef{IsWeakSolutionOn}); and $g^j\in W^{1,2}_{\mathrm{loc}}(B)$ with
+  weak gradient $Dg^j$ for every $j$ (\noderef{MemW1pLocOn});
+\item[(H4)] $\zeta$ is $C^\infty$ with compact support and
+  $\operatorname{supp}\zeta\subseteq B$;
+\item[(H5)] $W>0$ everywhere, $a_{ij}(x)=\bigl(dA(g(x))e_j\bigr)_i$ for all
+  $x,i,j$, and, almost everywhere on $B$, both
+  $\gamma_0W|\xi|^2\le\sum_{i,j}a_{ij}\xi_j\xi_i$ for every $\xi$ and
+  $|a_{ij}|\le\gamma_1W$ for all $i,j$;
+\item[(H6)] the support data: $\operatorname{supp}\zeta$ is compact and
+  measurable; $\zeta$ and each $D_i\zeta$ vanish off it; a function vanishing
+  off $\operatorname{supp}\zeta$ and integrable there is integrable on $B$;
+  $W$, each $a_{ij}$, each $(Dg^k)_j$, $\zeta$ and each $D_i\zeta$ are
+  a.e.-measurable there, products and finite sums of a.e.-measurable functions
+  are a.e.-measurable there, and $\|Dg^k\|^2$ is integrable there;
+\item[(H7)] $0\le L_\zeta$ and $\zeta^2\le L_\zeta$; $0\le L_{D\zeta}$ and
+  $|\nabla\zeta|^2\le L_{D\zeta}$; $0\le L_W$ and $W\le L_W$ a.e.\ on
+  $\operatorname{supp}\zeta$;
+\item[(H8)] the elementary inequalities used: $|\sum_if_i|\le nM$ when
+  $|f_i|\le M$ for all $i$; $|a||b|\le\tfrac12(a^2+b^2)$;
+  $\sum_m((Dg^k)_m)^2=\|Dg^k\|^2$ and $|(Dg^k)_j|\le\|Dg^k\|$;
+  $\sum_i\sum_jcf_{ij}=c\sum_i\sum_jf_{ij}$; and
+  $\sum_j|f_j|\le\sqrt{n\sum_jf_j^2}$;
+\item[(H9)] the regularisation data: $0<|g^k|+\eta$ pointwise,
+  $(|g^k|+\eta)^{p-2}\le\eta^{p-2}$ pointwise, $0\le\eta^{p-2}$, both
+  $(|g^k|+\eta)^{p-2}$ and $\pi'_\eta(g^k)$ are a.e.-measurable on
+  $\operatorname{supp}\zeta$, and $W\le2^{2-p}(|g^k|+\eta)^{p-2}$ pointwise.
+\end{enumerate}
+Then for every measurable $T\subseteq B$, every $sg$ with $sg=\pm1$, every
+$v\colon\R^n\to\R$ with $v\ge0$ and every $Z\colon\R^n\to\R^n$ such that,
+almost everywhere on $B$,
+\[
+x\in T\implies Z(x)=\bigl(sg\,\pi'_\eta(g^k(x))\bigr)Dg^k(x),
+\qquad
+x\notin T\implies Z(x)=0\ \text{and}\ v(x)=0,
+\]
+and such that $v\in W^{1,2}_{\mathrm{loc}}(B)$ with weak gradient $Z$
+(\noderef{MemW1pLocOn}),
+\[
+\int_TW\,(|g^k|+\eta)^{p-2}\,\|Dg^k\|^2\,\zeta^2\,dx
+\ \le\ \Bigl(\frac{2nr\,2^{1-\frac p2}}{p-1}\Bigr)^{2}
+  \int_Bv^2\,|\nabla\zeta|^2\,dx .
+\]
+The sign $sg$ enters only through $|sg|=1$, which is why one statement serves
+both the superlevel and the sublevel set of the regularised power; that is what
+"sign-free" means here.
+\end{helper}
+\begin{proof}
+Note first $1\le n$, $0<n$, $0<p$ and $0<p-1$ from (H1), and that $B$ is open.
+Fix $T$, $sg$, $v$ and $Z$ as in the statement, so $|sg|=1$.
+
+\emph{Step 1: the admissible test pair.}  The function $\zeta^2$ is $C^\infty$
+with compact support contained in $\operatorname{supp}\zeta\subseteq B$, since
+$\operatorname{supp}(\zeta^2)\subseteq\operatorname{supp}\zeta$, and
+$D_i(\zeta^2)=2\zeta D_i\zeta$ by the product rule.  Multiplying the
+$W^{1,2}_{\mathrm{loc}}$ function $v$ by it, the product rule for a smooth
+compactly supported factor (\noderef{WeakGradientSmoothMul}) gives
+$v\zeta^2\in W^{1,2}(B)$ with weak gradient
+$\zeta^2Z+v\nabla(\zeta^2)$ (\noderef{MemW1pOn} at the exponent $2$), and
+$v\zeta^2$ has compact support inside $B$.  That is exactly the test class of
+the differentiated equation.
+
+\emph{Step 2: the differentiated equation at this test pair.}
+\noderef{DifferentiatedEquationWeak}, applied with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1$, with $\Omega=B$, with the field
+$(x,z,h)\mapsto A(h)$ and its hypotheses from (H1) and (H3), with the index $k$
+and with the test pair of Step 1, gives
+\[
+\int_B\sum_{i,j}a_{ij}\,(Dg^k)_j\,\bigl(\zeta^2Z+v\nabla(\zeta^2)\bigr)_i\,dx=0 ,
+\]
+i.e., expanding the test field and splitting the integral --- legitimate because
+each of the two integrands vanishes off $\operatorname{supp}\zeta$ and is
+dominated there by a constant multiple of a product of two $L^2$ functions, by
+(H6) and (H7) ---
+\[
+\int_B\zeta^2\sum_{i,j}a_{ij}(Dg^k)_jZ_i\,dx
+=-2\int_B\zeta\,v\sum_{i,j}a_{ij}(Dg^k)_jD_i\zeta\,dx .
+\tag{1}
+\]
+
+\emph{Step 3: the left-hand side from below, by (Q1) of the thesis.}  Almost
+everywhere on $T$ one has $Z=(sg\,\pi'_\eta(g^k))Dg^k$, so
+$\sum_{i,j}a_{ij}(Dg^k)_jZ_i
+=sg\,\pi'_\eta(g^k)\sum_{i,j}a_{ij}(Dg^k)_j(Dg^k)_i$, and off $T$ the integrand
+vanishes because $Z=0$ there.  By (H5) at $\xi=Dg^k$ the inner sum is at least
+$\gamma_0W\|Dg^k\|^2\ge0$, and by (H2) $\pi'_\eta(g^k)\ge(p-1)(|g^k|+\eta)^{p-2}>0$.
+Hence, the weight $\zeta^2$ being nonnegative,
+\[
+\gamma_0(p-1)\int_TW(|g^k|+\eta)^{p-2}\|Dg^k\|^2\zeta^2\,dx
+\ \le\ \Bigl|\int_B\zeta^2\sum_{i,j}a_{ij}(Dg^k)_jZ_i\,dx\Bigr| .
+\tag{2}
+\]
+
+\emph{Step 4: the right-hand side from above, by (Q2) of the thesis.}  Almost
+everywhere, $|a_{ij}|\le\gamma_1W$ by (H5), so two applications of the index
+inequalities of (H8) --- first $|\sum_i f_i|\le n\max_i|f_i|$ and then
+$\sum_j|f_j|\le\sqrt{n\sum_jf_j^2}$ together with $|(Dg^k)_j|\le\|Dg^k\|$ ---
+bound the inner double sum of the right-hand side of (1) by
+$\gamma_1n\,W\,\|Dg^k\|\,|\nabla\zeta|$ pointwise.  Therefore
+\[
+\Bigl|2\int_B\zeta v\sum_{i,j}a_{ij}(Dg^k)_jD_i\zeta\Bigr|
+\le2\gamma_1n\int_BW\|Dg^k\|\,|\zeta|\,v\,|\nabla\zeta|\,dx .
+\]
+Now split the weight as in (D4): by (H9), $W\le2^{2-p}(|g^k|+\eta)^{p-2}$, so
+\[
+W\|Dg^k\||\zeta|
+\ \le\ 2^{1-\frac p2}\sqrt{W(|g^k|+\eta)^{p-2}}\,\|Dg^k\|\,|\zeta|\cdot\sqrt W ,
+\]
+and Cauchy--Schwarz in the integral (Preamble), applied to the pair
+$\sqrt{W(|g^k|+\eta)^{p-2}}\|Dg^k\||\zeta|$ against $v|\nabla\zeta|$, bounds the
+right-hand side by
+\[
+2\gamma_1n\,2^{1-\frac p2}
+\Bigl(\int_TW(|g^k|+\eta)^{p-2}\|Dg^k\|^2\zeta^2\Bigr)^{\frac12}
+\Bigl(\int_Bv^2|\nabla\zeta|^2\Bigr)^{\frac12}.
+\tag{3}
+\]
+Both integrals are finite: each integrand vanishes off $\operatorname{supp}\zeta$
+and is dominated there by a constant multiple of $\|Dg^k\|^2$ or of $1$, using
+(H6) and (H7).
+
+\emph{Step 5: conclusion.}  Write $X$ for the left-hand integral and $Y$ for
+$\int_Bv^2|\nabla\zeta|^2$.  Chaining (2), (1) and (3),
+\[
+\gamma_0(p-1)X\ \le\ 2\gamma_1n\,2^{1-\frac p2}\,X^{\frac12}Y^{\frac12}.
+\]
+If $X=0$ the asserted inequality is trivial, the right-hand side being
+nonnegative.  Otherwise divide by $X^{1/2}>0$ and square:
+\[
+X\ \le\ \Bigl(\frac{2\gamma_1n2^{1-\frac p2}}{\gamma_0(p-1)}\Bigr)^{2}Y
+\ \le\ \Bigl(\frac{2nr2^{1-\frac p2}}{p-1}\Bigr)^{2}Y ,
+\]
+the last step because $\gamma_1/\gamma_0\le r$ by (H1) and $\gamma_0>0$, both
+sides being nonnegative.  That is the assertion.
+\end{proof}

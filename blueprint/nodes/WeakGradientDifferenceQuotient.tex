@@ -1,0 +1,310 @@
+\begin{lemma}[Difference quotients converge to the weak gradient in $L^q_{\mathrm{loc}}$]
+Let $n\ge1$ be an integer and $q\ge1$ real, let $\Omega\subseteq\R^n$ be open,
+let $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pLocOn}), let $K\subseteq\Omega$ be compact and let
+$k\in\{1,\dots,n\}$.  Write $e_k$ for the $k$-th standard basis vector of
+$\R^n$.  Then
+\[
+\lim_{h\to0,\ h\ne0}\ \int_K\Bigl|\frac{f(x+he_k)-f(x)}{h}-g^k(x)\Bigr|^q dx=0 .
+\]
+\end{lemma}
+\begin{proof}
+For $h\ne0$ write
+\[
+\Delta_hf(x)=\frac{f(x+he_k)-f(x)}{h},
+\qquad
+I_h=[\min\{0,h\},\max\{0,h\}],
+\]
+so $|I_h|=|h|$ and $\bigl|\int_0^hF(s)\,ds\bigr|\le\int_{I_h}|F(s)|\,ds$ for
+every $F$ integrable on $I_h$, whichever sign $h$ has.  We must show: for every
+$\sigma>0$ there is $\eta>0$ such that
+$\int_K|\Delta_hf-g^k|^q\,dx\le\sigma$ whenever $0<|h|<\eta$.
+
+\emph{Step 1: geometry.}  If $K=\emptyset$ then every integral in the assertion
+is $0$ and there is nothing to prove, so we may assume $K\ne\emptyset$.  The set
+$K$ is compact, $\R^n\setminus\Omega$ is closed, and they are disjoint, so
+$d=\operatorname{dist}(K,\R^n\setminus\Omega)>0$ (with $d=+\infty$ when
+$\Omega=\R^n$).  Choose $d_0>0$ with $3d_0<d$, and for $s>0$ put
+$K_s'=\{x:\operatorname{dist}(x,K)\le s\}$, which is closed and bounded, hence
+compact, and is contained in $\Omega$ when $s\le3d_0$ (a point outside $\Omega$
+has distance at least $d>3d_0$ from $K$).  Write
+$K_1=K_{d_0}'$, $K_2=K_{2d_0}'$, $K_3=K_{3d_0}'$, so
+$K\subseteq K_1\subseteq K_2\subseteq K_3\subseteq\Omega$.  Note
+\[
+x\in K,\ |s|\le d_0\ \Longrightarrow\ x+se_k\in K_1;
+\qquad
+x\in K_1,\ |s|\le d_0\ \Longrightarrow\ x+se_k\in K_2,
+\tag{1}
+\]
+since $|e_k|=1$ and
+$\operatorname{dist}(x+se_k,K)\le\operatorname{dist}(x,K)+|s|$.
+
+Put $\widehat f=f\,\chi_{K_3}$ and $\widehat{g^{\,i}}=g^i\chi_{K_3}$ for each
+$i$.  By \noderef{MemW1pLocOn} applied to the compact set $K_3\subseteq\Omega$
+we have $f\in L^q(K_3)$ and $|g|\in L^q(K_3)$, and both are almost everywhere
+strongly measurable there; since $|K_3|<\infty$ and $q\ge1$, H\"older on a set
+of finite measure (Preamble) also puts them in $L^1(K_3)$.  So $\widehat f$ and
+each $\widehat{g^{\,i}}$ lie in $L^1(\R^n)\cap L^q(\R^n)$ and have support in
+the compact set $K_3$; in particular each is locally integrable on $\R^n$.
+
+\emph{Step 2: the mollifier.}  For each $\delta>0$ let $\rho_\delta$ be the mollifier at scale $\delta$
+supplied by the Preamble item on a standard mollifier:
+\[
+\rho_\delta\in C^\infty(\R^n),\qquad \rho_\delta\ge0,\qquad
+\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}\ \text{compact},
+\qquad \int_{\R^n}\rho_\delta\,dz=1 .
+\]
+Those four properties are the only ones used below.  In particular no explicit
+formula for $\rho_\delta$ is needed --- the Preamble item supplies the family
+directly at every scale, so $\rho_\delta$ is not obtained here by rescaling a
+single kernel and no change of variables has to be justified.  For $0<\delta<d_0$ set
+\[
+f_\delta=\widehat f*\rho_\delta,\qquad
+(g^i)_\delta=\widehat{g^{\,i}}*\rho_\delta,
+\qquad
+(w*\rho_\delta)(x)=\int_{\R^n}w(y)\rho_\delta(x-y)\,dy .
+\]
+By the Preamble item on convolution with a smooth compactly supported kernel,
+$f_\delta\in C^\infty(\R^n)$ and $D_if_\delta=\widehat f*(D_i\rho_\delta)$, and
+each $(g^i)_\delta\in C^\infty(\R^n)$.
+
+\emph{(2a) Localisation.}  Let $x\in K_2$ and $0<\delta<d_0$.  If
+$|y-x|\le\delta$ then
+$\operatorname{dist}(y,K)\le|y-x|+\operatorname{dist}(x,K)\le\delta+2d_0<3d_0$,
+so $y\in K_3$.  Hence $\overline{B_\delta(x)}\subseteq K_3\subseteq\Omega$, and
+since $\widehat f=f$, $\widehat{g^{\,i}}=g^i$ on $K_3$ and the integrands vanish
+off $\overline{B_\delta(x)}$,
+\[
+f_\delta(x)=\int_\Omega f(y)\rho_\delta(x-y)\,dy,
+\qquad
+(g^i)_\delta(x)=\int_\Omega g^i(y)\rho_\delta(x-y)\,dy .
+\tag{2}
+\]
+
+\emph{(2b) The derivative is the mollified weak derivative.}  Let $x\in K_2$,
+$0<\delta<d_0$ and let $i$ be an index.  Put $\psi(y)=\rho_\delta(x-y)$.  Then
+$\psi\in C^\infty(\R^n)$ with
+$\operatorname{supp}\psi\subseteq\overline{B_\delta(x)}$, compact and contained
+in $\Omega$ by (2a); so $\psi$ lies in the test class of
+\noderef{HasWeakGradientOn} for $\Omega$.  Differentiating in $y$ gives
+$D_i\psi(y)=-(D_i\rho_\delta)(x-y)$, and the defining identity of
+\noderef{HasWeakGradientOn}, which the pair $(f,g)$ satisfies on $\Omega$ by
+\noderef{MemW1pLocOn}, applied to $\psi$ and the index $i$, reads
+\[
+-\int_\Omega f(y)(D_i\rho_\delta)(x-y)\,dy
+=-\int_\Omega g^i(y)\rho_\delta(x-y)\,dy .
+\]
+On the other hand
+$D_if_\delta(x)=\int_{\R^n}\widehat f(y)(D_i\rho_\delta)(x-y)\,dy
+=\int_\Omega f(y)(D_i\rho_\delta)(x-y)\,dy$, the restriction being legitimate
+because the integrand vanishes off $\overline{B_\delta(x)}\subseteq
+K_3\subseteq\Omega$, where $\widehat f=f$.  Comparing with the display and with
+(2),
+\[
+D_if_\delta(x)=(g^i)_\delta(x)\qquad(x\in K_2,\ 0<\delta<d_0,\ \text{all }i).
+\tag{3}
+\]
+
+\emph{(2c) $L^1$ convergence of mollifications.}  We claim that for every
+$w\in L^1(\R^n)$,
+\[
+\|w*\rho_\delta-w\|_{L^1(\R^n)}\longrightarrow0\qquad(\delta\downarrow0).
+\tag{4}
+\]
+First, the contraction property.  The function
+$(x,y)\mapsto|w(y)|\rho_\delta(x-y)$ is nonnegative and measurable on
+$\R^n\times\R^n$, being the product of a measurable function of $y$ with a
+continuous function of $(x,y)$; so Tonelli (Preamble) applies and
+\[
+\|w*\rho_\delta\|_{L^1}
+\le\int_{\R^n}\!\!\int_{\R^n}|w(y)|\rho_\delta(x-y)\,dy\,dx
+=\int_{\R^n}|w(y)|\Bigl(\int_{\R^n}\rho_\delta(x-y)\,dx\Bigr)dy=\|w\|_{L^1},
+\]
+the inner integral being $1$ by translation invariance of Lebesgue measure
+(Preamble) and $\int\rho_\delta=1$.  Now let $\sigma_0>0$.  By the Preamble
+item on density, at exponent $1$, there is a continuous $v$ with compact support
+and $\|w-v\|_{L^1}\le\sigma_0/3$.  By the $L^1$ triangle inequality
+(Minkowski, Preamble) and the contraction property,
+\[
+\|w*\rho_\delta-w\|_{L^1}
+\le\|(w-v)*\rho_\delta\|_{L^1}+\|v*\rho_\delta-v\|_{L^1}+\|v-w\|_{L^1}
+\le2\|w-v\|_{L^1}+\|v*\rho_\delta-v\|_{L^1}.
+\]
+Since $v$ is continuous with compact support it is uniformly continuous, and as
+$\rho_\delta$ is a probability density supported in $\overline{B_\delta(0)}$,
+\[
+|(v*\rho_\delta)(x)-v(x)|
+=\Bigl|\int_{\R^n}\bigl(v(x-z)-v(x)\bigr)\rho_\delta(z)\,dz\Bigr|
+\le\sup_{|z|\le\delta}\ \sup_{x\in\R^n}|v(x-z)-v(x)|\xrightarrow[\delta\downarrow0]{}0 ;
+\]
+and for $\delta\le1$ all the functions $v*\rho_\delta-v$ vanish off the fixed
+compact set $\{x:\operatorname{dist}(x,\operatorname{supp}v)\le1\}$, so this
+uniform convergence forces $\|v*\rho_\delta-v\|_{L^1}\to0$.  Hence
+$\limsup_{\delta\downarrow0}\|w*\rho_\delta-w\|_{L^1}\le2\sigma_0/3<\sigma_0$,
+and as $\sigma_0>0$ was arbitrary, (4) holds.  Applying (4) to
+$w=\widehat f$ and $w=\widehat{g^{\,k}}$, and using
+$\widehat f=f$, $\widehat{g^{\,k}}=g^k$ on $K_3\supseteq K_2$,
+\[
+\int_{K_2}|f_\delta-f|\,dx\longrightarrow0,
+\qquad
+\int_{K_2}|(g^k)_\delta-g^k|\,dx\longrightarrow0
+\qquad(\delta\downarrow0),
+\tag{5}
+\]
+the integral over $K_2$ of a nonnegative function being at most its integral
+over $\R^n$.
+
+\emph{Step 3: the integral representation.}  Fix $h$ with $0<|h|<d_0$.  We claim
+\[
+f(x+he_k)-f(x)=\int_0^hg^k(x+se_k)\,ds
+\qquad\text{for almost every }x\in K_1 .
+\tag{6}
+\]
+
+First, for the mollification.  Let $x\in K_1$ and $0<\delta<d_0$, and consider
+$\Phi(s)=f_\delta(x+se_k)$ for $s\in I_h$.  Since $f_\delta\in C^\infty(\R^n)$
+and $s\mapsto x+se_k$ is affine, $\Phi$ is differentiable at every $s$ with
+$\Phi'(s)=D_kf_\delta(x+se_k)$; by (1) we have $x+se_k\in K_2$ for $|s|\le|h|<d_0$,
+so (3) gives $\Phi'(s)=(g^k)_\delta(x+se_k)$.  This $\Phi'$ is continuous, hence
+interval-integrable on $I_h$, so the fundamental theorem of calculus (Preamble)
+yields
+\[
+f_\delta(x+he_k)-f_\delta(x)=\int_0^h(g^k)_\delta(x+se_k)\,ds
+\qquad(x\in K_1,\ 0<\delta<d_0).
+\tag{7}
+\]
+
+Now let $\delta\downarrow0$ in (7), measuring both sides in $L^1(K_1)$.  Write
+$U_\delta(x)=f_\delta(x+he_k)-f_\delta(x)$ and
+$V_\delta(x)=\int_0^h(g^k)_\delta(x+se_k)\,ds$, and let $U,V$ denote the two
+sides of (6).
+
+For $U$: by the $L^1$ triangle inequality (Minkowski, Preamble),
+\[
+\int_{K_1}|U_\delta-U|\,dx
+\le\int_{K_1}|f_\delta(x+he_k)-f(x+he_k)|\,dx+\int_{K_1}|f_\delta-f|\,dx .
+\]
+In the first integral substitute $y=x+he_k$: translation invariance of Lebesgue
+measure (Preamble) turns it into $\int_{K_1+he_k}|f_\delta-f|\,dy$, and
+$K_1+he_k\subseteq K_2$ by (1), so it is at most $\int_{K_2}|f_\delta-f|$.  Both
+terms therefore tend to $0$ by (5).
+
+For $V$: the function $(x,s)\mapsto|(g^k)_\delta(x+se_k)-g^k(x+se_k)|$ is
+nonnegative and measurable on $\R^n\times\R$.  Indeed
+$(y,s)\mapsto|(g^k)_\delta(y)-g^k(y)|$ is measurable (it does not depend on $s$
+and $(g^k)_\delta$, $g^k$ are measurable), and the shear
+$T(x,s)=(x+se_k,s)$ is a linear automorphism of $\R^n\times\R=\R^{n+1}$ of
+determinant $1$, hence preserves Lebesgue measurability and Lebesgue measure
+(Preamble); so the composition with $T$ is measurable.  Consequently, using
+$\bigl|\int_0^hF\bigr|\le\int_{I_h}|F|$ and then Tonelli (Preamble),
+\[
+\int_{K_1}|V_\delta-V|\,dx
+\le\int_{K_1}\!\!\int_{I_h}\bigl|(g^k)_\delta-g^k\bigr|(x+se_k)\,ds\,dx
+=\int_{I_h}\!\!\int_{K_1}\bigl|(g^k)_\delta-g^k\bigr|(x+se_k)\,dx\,ds .
+\]
+For each fixed $s\in I_h$ the inner integral equals
+$\int_{K_1+se_k}|(g^k)_\delta-g^k|\,dy$ by translation invariance (Preamble),
+and $K_1+se_k\subseteq K_2$ by (1), so it is at most
+$\int_{K_2}|(g^k)_\delta-g^k|$.  Hence
+\[
+\int_{K_1}|V_\delta-V|\,dx\ \le\ |h|\int_{K_2}\bigl|(g^k)_\delta-g^k\bigr|\,dx
+\longrightarrow0
+\]
+by (5).  (The same computation with $(g^k)_\delta$ replaced by $0$ shows
+$\int_{K_1}|V|\le|h|\int_{K_2}|g^k|<\infty$, so $V$ is finite almost everywhere
+on $K_1$ and lies in $L^1(K_1)$; likewise $U\in L^1(K_1)$ because
+$f\in L^1(K_2)$.)
+
+Since $U_\delta=V_\delta$ everywhere on $K_1$ by (7),
+\[
+\int_{K_1}|U-V|\,dx
+\le\int_{K_1}|U-U_\delta|\,dx+\int_{K_1}|V_\delta-V|\,dx
+\longrightarrow0\qquad(\delta\downarrow0),
+\]
+and the left-hand side does not depend on $\delta$, so it is $0$.  As $|U-V|\ge0$
+and is integrable on $K_1$, a nonnegative integrable function with vanishing
+integral vanishes almost everywhere (Preamble), giving (6).
+
+\emph{Step 4: the pointwise estimate.}  Let $0<|h|<d_0$.  Dividing (6) by $h$
+and subtracting $g^k(x)=\frac1h\int_0^hg^k(x)\,ds$, we get for almost every
+$x\in K_1$, hence for almost every $x\in K$,
+\[
+\Delta_hf(x)-g^k(x)=\frac1h\int_0^h\bigl[g^k(x+se_k)-g^k(x)\bigr]ds .
+\]
+Therefore, for almost every $x\in K$,
+\[
+\bigl|\Delta_hf(x)-g^k(x)\bigr|
+\le\frac1{|h|}\int_{I_h}\bigl|g^k(x+se_k)-g^k(x)\bigr|ds
+\le\frac1{|h|}\,|h|^{1-\frac1q}\Bigl(\int_{I_h}\bigl|g^k(x+se_k)-g^k(x)\bigr|^qds\Bigr)^{1/q},
+\]
+the second step being H\"older on the set $I_h$, of finite measure $|h|$, with
+exponent $q\ge1$ (Preamble).  Raising to the power $q$ and simplifying
+$|h|^{-q}|h|^{q-1}=|h|^{-1}$,
+\[
+\bigl|\Delta_hf(x)-g^k(x)\bigr|^q
+\le\frac1{|h|}\int_{I_h}\bigl|g^k(x+se_k)-g^k(x)\bigr|^qds
+\qquad\text{for a.e. }x\in K .
+\tag{8}
+\]
+
+\emph{Step 5: integrating (8).}  The function
+$(x,s)\mapsto|g^k(x+se_k)-g^k(x)|^q$ is nonnegative and measurable on
+$\R^n\times\R$, by the shear argument of Step 3 applied to
+$(y,x)\mapsto|g^k(y)-g^k(x)|^q$ --- more precisely, $(x,s)\mapsto g^k(x)$ is
+measurable and $(x,s)\mapsto g^k(x+se_k)$ is measurable as shown there, and
+$t\mapsto|t|^q$ is continuous.  Integrating (8) over $K$ and applying Tonelli
+(Preamble),
+\[
+\int_K\bigl|\Delta_hf-g^k\bigr|^qdx
+\ \le\ \frac1{|h|}\int_{I_h}\Bigl(\int_K\bigl|g^k(x+se_k)-g^k(x)\bigr|^qdx\Bigr)ds
+\ \le\ \sup_{s\in I_h}\ \omega(s),
+\tag{9}
+\]
+where
+\[
+\omega(s)=\int_K\bigl|g^k(x+se_k)-g^k(x)\bigr|^qdx\qquad(|s|\le d_0),
+\]
+and where the last step used $|I_h|=|h|$.  (All the quantities in (9) are
+integrals of nonnegative measurable functions, hence well-defined elements of
+$[0,\infty]$, and the chain is an inequality there; once the right-hand side is
+seen to be finite, the left-hand integrand is integrable and its Lebesgue
+integral is the displayed one.)
+
+\emph{Step 6: $\omega(s)\to0$ as $s\to0$.}  Put $w=\widehat{g^{\,k}}$, which
+lies in $L^q(\R^n)$ and vanishes off $K_3$ by Step 1.  For $|s|\le d_0$ and
+$x\in K$ we have $x\in K_3$ and $x+se_k\in K_1\subseteq K_3$ by (1), so
+$g^k(x)=w(x)$ and $g^k(x+se_k)=w(x+se_k)$; hence
+\[
+\omega(s)\le\int_{\R^n}\bigl|w(x+se_k)-w(x)\bigr|^qdx
+=\bigl\|w(\cdot+se_k)-w\bigr\|_{L^q(\R^n)}^q .
+\]
+We show $\|w(\cdot+se_k)-w\|_{L^q(\R^n)}\to0$ as $s\to0$.  Let $\sigma_1>0$.  By
+the Preamble item on density, at exponent $q$, there is a continuous $v$ with
+compact support and $\|w-v\|_{L^q(\R^n)}\le\sigma_1/3$.  By the $L^q$ triangle
+inequality (Minkowski, Preamble) and the translation invariance of the $L^q$
+norm (Preamble),
+\[
+\|w(\cdot+se_k)-w\|_{L^q}
+\le\|(w-v)(\cdot+se_k)\|_{L^q}+\|v(\cdot+se_k)-v\|_{L^q}+\|v-w\|_{L^q}
+=2\|w-v\|_{L^q}+\|v(\cdot+se_k)-v\|_{L^q}.
+\]
+Since $v$ is continuous with compact support it is uniformly continuous, so
+$\sup_{x}|v(x+se_k)-v(x)|\to0$ as $s\to0$; and for $|s|\le1$ the function
+$v(\cdot+se_k)-v$ vanishes off the fixed compact set
+$C=\{x:\operatorname{dist}(x,\operatorname{supp}v)\le1\}$, whence
+\[
+\|v(\cdot+se_k)-v\|_{L^q}^q\le|C|\cdot\sup_x|v(x+se_k)-v(x)|^q\longrightarrow0 .
+\]
+Therefore $\limsup_{s\to0}\|w(\cdot+se_k)-w\|_{L^q}\le2\sigma_1/3<\sigma_1$, and
+as $\sigma_1>0$ was arbitrary the limit is $0$.
+
+\emph{Conclusion.}  Let $\sigma>0$.  By Step 6 there is $\eta_0\in(0,d_0]$ with
+$\omega(s)\le\sigma$ for all $|s|\le\eta_0$.  Put $\eta=\eta_0$.  If
+$0<|h|<\eta$ then $I_h\subseteq[-\eta_0,\eta_0]$, so by (9)
+\[
+\int_K\bigl|\Delta_hf-g^k\bigr|^qdx\ \le\ \sup_{s\in I_h}\omega(s)\ \le\ \sigma .
+\]
+Since $\sigma>0$ was arbitrary and the left-hand side is nonnegative, this is
+exactly the assertion
+$\int_K|\Delta_hf-g^k|^q\,dx\to0$ as $h\to0$ with $h\ne0$.
+\end{proof}

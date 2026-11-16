@@ -1,0 +1,123 @@
+\begin{lemma}[The weak-solution identity extends to $W^{1,p}_0$ test functions]
+Let $n\ge1$ be an integer and $p>1$ real, and write $p'=\frac p{p-1}$ for the
+conjugate exponent.  Let $\Omega\subseteq\R^n$ be open, let
+$A\colon\R^n\times\R\times\R^n\to\R^n$, and let $u$, with weak gradient $g$, be a
+weak solution of
+\[
+\operatorname{div}A(x,u,\nabla u)=0\quad\text{in }\Omega
+\]
+in the sense of \noderef{IsWeakSolutionOn} with right-hand side $B\equiv0$.
+Assume
+\[
+\bigl|A(\cdot,u(\cdot),g(\cdot))\bigr|\in L^{p'}(\Omega).
+\]
+Then for every $v\in W^{1,p}_0(\Omega)$ with weak gradient $g_v$
+(\noderef{MemW1pZeroOn}),
+\[
+\int_\Omega\bigl(A(x,u(x),g(x)),\,g_v(x)\bigr)\,dx=0 ,
+\]
+the integrand being the Euclidean inner product
+$\sum_{i=1}^n A^i(x,u(x),g(x))\,g_v^i(x)$.
+\end{lemma}
+\begin{proof}
+Throughout write $a(x)=A(x,u(x),g(x))$, so that the hypothesis is
+$|a|\in L^{p'}(\Omega)$ and the assertion is
+$\int_\Omega(a,g_v)\,dx=0$.
+
+\emph{Step 1: the pairing of $L^{p'}$ with $L^{p}$.}  We record once, for later
+use, the following.  Let $F,H\colon\Omega\to\R^n$ be measurable with
+$|F|\in L^{p'}(\Omega)$ and $|H|\in L^{p}(\Omega)$.  Then
+$x\mapsto(F(x),H(x))$ is integrable on $\Omega$ and
+\[
+\Bigl|\int_\Omega(F,H)\,dx\Bigr|
+\ \le\ \Bigl(\int_\Omega|F|^{p'}dx\Bigr)^{1/p'}
+\Bigl(\int_\Omega|H|^{p}dx\Bigr)^{1/p} .
+\tag{1}
+\]
+Indeed, by Cauchy--Schwarz (Preamble) $|(F(x),H(x))|\le|F(x)|\,|H(x)|$
+pointwise.  Since $\tfrac1{p'}+\tfrac1p=1$ with $p,p'\in(1,\infty)$, H\"older's
+inequality (Preamble) applied to the nonnegative functions $|F|$ and $|H|$ gives
+both that $|F|\,|H|$ is integrable on $\Omega$ and that
+$\int_\Omega|F||H|\,dx\le\bigl(\int_\Omega|F|^{p'}\bigr)^{1/p'}
+\bigl(\int_\Omega|H|^{p}\bigr)^{1/p}$.  Domination (Preamble) then makes
+$(F,H)$ integrable, and the norm inequality for the integral together with
+monotonicity of the integral (Preamble) gives
+$\bigl|\int_\Omega(F,H)\bigr|\le\int_\Omega|(F,H)|\le\int_\Omega|F||H|$, which
+is (1).
+
+\emph{Step 2: the approximating sequence.}  By \noderef{MemW1pZeroOn} the
+membership $v\in W^{1,p}_0(\Omega)$ with weak gradient $g_v$ provides functions
+$\varphi_k\in C^\infty(\R^n)$, $k\in\mathbb N$, each with compact support and
+$\operatorname{supp}\varphi_k\subseteq\Omega$, such that
+\[
+\int_\Omega\Bigl(\sum_{i=1}^n\bigl|g_v^i-D_i\varphi_k\bigr|^2\Bigr)^{p/2}dx
+\ \longrightarrow\ 0
+\qquad(k\to\infty).
+\tag{2}
+\]
+For a vector $w\in\R^n$ one has $|w|=\bigl(\sum_i|w^i|^2\bigr)^{1/2}$, hence
+$\bigl(\sum_i|w^i|^2\bigr)^{p/2}=|w|^{p}$; applying this at
+$w=g_v(x)-\nabla\varphi_k(x)$ turns (2) into
+\[
+\int_\Omega\bigl|g_v-\nabla\varphi_k\bigr|^{p}dx\ \longrightarrow\ 0 .
+\tag{2'}
+\]
+\noderef{MemW1pZeroOn} also gives $v\in W^{1,p}(\Omega)$ with weak gradient
+$g_v$, so $|g_v|\in L^{p}(\Omega)$ (\noderef{MemW1pOn}).
+
+\emph{Step 3: each $\varphi_k$ is an admissible test function.}  Fix $k$.  The
+function $\varphi_k$ is $C^\infty$ with compact support contained in the open
+set $\Omega$, and $1\le n$, $1\le p$; so by
+\noderef{SmoothCompactSupportMemW1p}, $\varphi_k\in W^{1,p}(\Omega)$ with weak
+gradient $\nabla\varphi_k$ (\noderef{MemW1pOn}).  In particular
+$|\nabla\varphi_k|\in L^{p}(\Omega)$.  The pair
+$(\varphi_k,\nabla\varphi_k)$ therefore meets the three requirements of the test
+class of \noderef{IsWeakSolutionOn} --- membership in $W^{1,p}(\Omega)$ with the
+stated weak gradient, compactness of $\operatorname{supp}\varphi_k$, and
+$\operatorname{supp}\varphi_k\subseteq\Omega$ --- and the weak-solution
+hypothesis gives
+\[
+\int_\Omega\Bigl[\bigl(a,\nabla\varphi_k\bigr)+B(x,u,g)\,\varphi_k\Bigr]dx=0 .
+\]
+Here $B\equiv0$, so the second summand vanishes identically and
+\[
+\int_\Omega\bigl(a,\nabla\varphi_k\bigr)dx=0
+\qquad\text{for every }k .
+\tag{3}
+\]
+
+\emph{Step 4: splitting the integral.}  Fix $k$.  Both $|\nabla\varphi_k|$ and
+$|g_v-\nabla\varphi_k|$ lie in $L^{p}(\Omega)$ --- the first by Step 3, the
+second because $L^p(\Omega)$ is closed under differences (Minkowski, Preamble)
+and $|g_v|\in L^p(\Omega)$ by Step 2.  By Step 1 applied twice, with $F=a$ and
+$H=\nabla\varphi_k$ and then with $F=a$ and $H=g_v-\nabla\varphi_k$, both
+$x\mapsto(a,\nabla\varphi_k)$ and $x\mapsto(a,g_v-\nabla\varphi_k)$ are
+integrable on $\Omega$.  Since
+$(a,g_v)=(a,\nabla\varphi_k)+(a,g_v-\nabla\varphi_k)$ pointwise, additivity of
+the integral over integrable summands and (3) give
+\[
+\int_\Omega(a,g_v)\,dx
+=\int_\Omega\bigl(a,\nabla\varphi_k\bigr)dx
++\int_\Omega\bigl(a,g_v-\nabla\varphi_k\bigr)dx
+=\int_\Omega\bigl(a,g_v-\nabla\varphi_k\bigr)dx .
+\tag{4}
+\]
+
+\emph{Step 5: passing to the limit.}  The left-hand side of (4) does not depend
+on $k$.  Applying (1) with $F=a$ and $H=g_v-\nabla\varphi_k$ to the right-hand
+side of (4),
+\[
+\Bigl|\int_\Omega(a,g_v)\,dx\Bigr|
+\ \le\ \Bigl(\int_\Omega|a|^{p'}dx\Bigr)^{1/p'}
+\Bigl(\int_\Omega\bigl|g_v-\nabla\varphi_k\bigr|^{p}dx\Bigr)^{1/p}
+\qquad\text{for every }k .
+\]
+The first factor is a finite constant, by the hypothesis $|a|\in L^{p'}(\Omega)$.
+By $(2')$ the integral inside the second factor tends to $0$, and $t\mapsto
+t^{1/p}$ is continuous at $0$ with value $0$ there because $1/p>0$; so the
+right-hand side tends to $0$ as $k\to\infty$.  A constant that is bounded above
+by the terms of a sequence converging to $0$ is bounded above by $0$, whence
+$\bigl|\int_\Omega(a,g_v)\,dx\bigr|\le0$.  Since an absolute value is
+nonnegative, $\bigl|\int_\Omega(a,g_v)\,dx\bigr|=0$ and therefore
+$\int_\Omega(a,g_v)\,dx=0$, which is the assertion.
+\end{proof}

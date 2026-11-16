@@ -1,0 +1,82 @@
+\begin{helper}[Mean replacement in $L^p$]
+Let $n\ge0$ be an integer (no lower bound on the dimension is needed), let
+$p>1$, let $S\subseteq\R^n$ be measurable with $0<|S|<\infty$, let
+$f\colon\R^n\to\R^n$ belong to $L^p(S)$, and let $c\in\R^n$ be arbitrary.  Write
+\[
+(f)_S=\frac1{|S|}\int_Sf\,dx
+\]
+for the vector mean of $f$ over $S$.  Then
+\[
+\int_S\bigl|f-(f)_S\bigr|^p dx\ \le\ 2^{p}\int_S|f-c|^p\,dx .
+\tag{M}
+\]
+\end{helper}
+\begin{proof}
+Throughout, $|E|$ is Lebesgue measure and $p$-th powers of nonnegative reals are
+real powers.  Since $0<|S|<\infty$, the restricted measure is a finite measure
+and $|S|^{-1}$ is a positive real, so $(f)_S$ is well defined once $f$ is known
+to be integrable on $S$, which it is: $f\in L^p(S)$ and $p\ge1$ on a set of
+finite measure gives $f\in L^1(S)$.  Set $I=\int_S|f-c|^p\,dx$, which is finite
+because $f-c\in L^p(S)$, the constant $c$ lying in $L^p(S)$ as $|S|<\infty$.
+
+\emph{Step 1: two elementary inequalities.}  Since $p\ge1$, convexity of
+$\lambda\mapsto\lambda^{p}$ on $[0,\infty)$ gives
+$\bigl(\frac{X+Y}2\bigr)^{p}\le\frac12(X^{p}+Y^{p})$, i.e.
+\[
+(X+Y)^{p}\le2^{p-1}\bigl(X^{p}+Y^{p}\bigr)\qquad(X,Y\ge0).
+\tag{E1}
+\]
+Second, H\"older's inequality on the finite-measure set $S$ with the conjugate
+pair $\bigl(p,\frac p{p-1}\bigr)$ (Preamble), applied to $|f-c|$ and the
+constant function $1$, gives
+\[
+\int_S|f-c|\,dx\ \le\ \Bigl(\int_S|f-c|^p\,dx\Bigr)^{\frac1p}\,|S|^{1-\frac1p}
+\ =\ I^{\frac1p}\,|S|^{1-\frac1p},
+\tag{E2}
+\]
+the exponent on $|S|$ because $1/\bigl(\frac p{p-1}\bigr)=1-\frac1p$.
+
+\emph{Step 2: the mean of $f$ is close to $c$.}  Because $f$ and the constant
+$c$ are both integrable on $S$ and $\int_Sc\,dx=|S|\,c$,
+\[
+(f)_S-c=\frac1{|S|}\int_Sf\,dx-c=\frac1{|S|}\int_S(f-c)\,dx .
+\]
+By the norm inequality for the Bochner integral over a general measure ---
+Mathlib's \texttt{MeasureTheory.norm\_integral\_le\_integral\_norm}, i.e.\
+$\bigl\|\int_Eh\,d\mu\bigr\|\le\int_E\|h\|\,d\mu$ for a vector-valued $h$ on an
+arbitrary measure space --- and then (E2),
+\[
+\bigl|(f)_S-c\bigr|\ \le\ \frac1{|S|}\int_S|f-c|\,dx
+\ \le\ \frac1{|S|}\,I^{\frac1p}|S|^{1-\frac1p}
+\ =\ |S|^{-\frac1p}I^{\frac1p}.
+\]
+Raising to the power $p>0$, which is monotone on $[0,\infty)$, and using
+$(ab)^p=a^pb^p$ for $a,b\ge0$ together with
+$\bigl(|S|^{-1/p}\bigr)^p=|S|^{-1}$ and $\bigl(I^{1/p}\bigr)^p=I$,
+\[
+\bigl|(f)_S-c\bigr|^{p}\ \le\ \frac I{|S|}.
+\tag{M1}
+\]
+
+\emph{Step 3: the triangle inequality.}  For every $x$, writing
+$f(x)-(f)_S=(f(x)-c)+(c-(f)_S)$ and using the triangle inequality and then (E1)
+with $X=|f(x)-c|$ and $Y=|c-(f)_S|$,
+\[
+\bigl|f(x)-(f)_S\bigr|^{p}
+\le2^{p-1}\Bigl(|f(x)-c|^{p}+\bigl|c-(f)_S\bigr|^{p}\Bigr).
+\]
+Both sides are integrable on $S$: the left-hand side because
+$f-(f)_S\in L^p(S)$, the right-hand side because $f-c\in L^p(S)$ and the
+constant $\bigl|c-(f)_S\bigr|^{p}$ is integrable on a set of finite measure.
+Integrating over $S$ and using $\int_S\bigl|c-(f)_S\bigr|^{p}dx
+=|S|\,\bigl|(f)_S-c\bigr|^{p}$, which is $\le I$ by (M1),
+\[
+\int_S\bigl|f-(f)_S\bigr|^{p}dx
+\ \le\ 2^{p-1}\Bigl(I+|S|\,\bigl|(f)_S-c\bigr|^{p}\Bigr)
+\ \le\ 2^{p-1}(I+I)
+\ =\ 2^{p}I ,
+\]
+the last equality because $2^{p-1}\cdot2=2^{(p-1)+1}=2^{p}$.  This is (M).
+(The constant $2^{p}$ is uniform in $p$; no case distinction at $p=2$ is needed,
+and none is made.)
+\end{proof}

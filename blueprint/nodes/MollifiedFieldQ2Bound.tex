@@ -1,0 +1,190 @@
+\begin{helper}[Condition (Q2) for the mollified field]
+Let $n\ge2$ and let $p\in\R$.  Let $\rho\colon\R^n\to\R$, let
+$\gamma_0,\gamma_1,c_1,C_2,e\in\R$ and let
+$A\colon\R^n\to\R^n$.  Throughout, $|\cdot|$ is the Euclidean norm, $e_j$ is the
+$j$-th standard basis vector of $\R^n$, $\operatorname{supp}$ denotes the
+\emph{closed} support, $D_{h_j}$ is the partial derivative in the $j$-th
+variable of the argument $h$, and every power of a positive real is the real
+power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight $(\varepsilon+|h|^2)^{\frac p2-1}$;
+no such power is rewritten as an integer power.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho$ is $C^\infty$ on $\R^n$, $\rho\ge0$ everywhere, and $\rho$ has
+  compact support;
+\item[(H2)] $0<c_1$, $0<C_2$, and for every $h'\in\R^n$ and every $e'>0$ the
+  scalar kernel
+  \[
+  K(h',e')=\int_{\R^n}\bigl(|h'+\sqrt{e'}\,z|^2\bigr)^{\frac p2-1}\rho(z)\,dz
+  \]
+  satisfies the two-sided bound
+  \[
+  c_1\bigl(e'+|h'|^2\bigr)^{\frac p2-1}\ \le\ K(h',e')\ \le\
+  C_2\bigl(e'+|h'|^2\bigr)^{\frac p2-1}
+  \]
+  (this is the weight sandwich, taken here as a hypothesis);
+\item[(H3)] the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with the parameters
+  $p,\varepsilon=0,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item[(H4)] $0<e$;
+\item[(H5)] the mollified field
+  \[
+  A_e(h)=\int_{\R^n}\rho(z)A\bigl(h+\sqrt e\,z\bigr)dz
+    -\int_{\R^n}\rho(z)A\bigl(\sqrt e\,z\bigr)dz
+  \]
+  is $C^\infty$ on $\R^n$.
+\end{enumerate}
+Then, for almost every $x\in\R^n$ --- and in fact for every $x$ --- and for
+every $z\in\R$, every $h\in\R^n$ and all indices $i,j$ with $e+|h|^2\ne0$,
+\[
+\bigl|D_{h_j}A_e^i(h)\bigr|\ \le\ C_2\gamma_1\bigl(e+|h|^2\bigr)^{\frac p2-1}.
+\]
+That is: $A_e$, which does not depend on $x$ or $z$, satisfies condition
+(Q2) of the thesis of \noderef{EllipticStructureQ12} on $\R^n$ at the nondegenerate
+parameter $\varepsilon=e$ with the constant $\gamma_1^{(e)}=C_2\gamma_1$.  The
+conclusion is stated in the almost-every-$x$ form in which
+\noderef{EllipticStructureQ12} writes (Q1) of the thesis and (Q2) of the thesis --- its
+continuity and $C^1$ clauses are every-$x$ statements, and that distinction is
+load-bearing --- so that a consumer may supply this lemma as that field without
+reshaping it.  The subtracted constant in (H5) is the normalisation
+$A_e(0)=0$ and cancels in every difference $A_e(h_1)-A_e(h_2)$ used below;
+mollification is the route taken here, and it is not the perturbation
+$A(h)+e^{p/2-1}h$, which does not preserve the pair $\gamma_0,\gamma_1$.
+\end{helper}
+\begin{proof}
+Write $u=e_j$, a unit vector, so $u\ne0$.  Fix $h$ and the indices $i,j$; the
+asserted bound does not involve $x$ or $z$, so it suffices to prove it for every
+$h$, and the guard $e+|h|^2\ne0$ is automatic because $e>0$.
+
+\emph{Step 1: (Q2) of the thesis and $C^1$ regularity for $A$ itself.}  By (H3) the
+clause (Q2) of the thesis of \noderef{EllipticStructureQ12} holds for almost every
+$x$; since the field $(x,z,h)\mapsto A(h)$ does not depend on $x$ and Lebesgue
+measure on $\R^n$ is not the zero measure, that almost-everywhere statement has
+a witness, and reading it at one such $x$ and at $z=0$ gives: for all
+$y\ne0$ and all indices $i',j'$,
+\[
+\bigl|D_{h_{j'}}A^{i'}(y)\bigr|\ \le\ \gamma_1\bigl(0+|y|^2\bigr)^{\frac p2-1}
+\tag{Q2$_A$}
+\]
+--- the guard $0+|y|^2\ne0$ of (Q2) of the thesis at $\varepsilon=0$ being exactly
+$y\ne0$.  In particular $\gamma_1\ge0$, by reading (Q2$_A$) at $y=u$ and using
+that $\bigl(|u|^2\bigr)^{p/2-1}=1>0$.  Likewise the clause \texttt{hdiff} of
+(H3) at $\varepsilon=0$ says that $A$ is of class $C^1$ on
+$\{y:0+|y|^2\ne0\}=\R^n\setminus\{0\}$, which is open; hence $A$ is
+differentiable at every $y\ne0$ and $y\mapsto dA(y)$ is continuous there.
+
+\emph{Step 2: the segment increment bound for $A$.}  Let $t\in\R$ and
+$b\in\R^n$ and suppose the \emph{whole} segment misses the origin, i.e.
+$b+\varsigma tu\ne0$ for every $\varsigma\in[0,1]$.  Put
+$\varphi(\varsigma)=A^i(b+\varsigma tu)$.  By Step 1, $\varphi$ is
+differentiable on $[0,1]$ with
+$\varphi'(\varsigma)=t\,D_{h_j}A^i(b+\varsigma tu)$ --- the chain rule for the
+affine path $\varsigma\mapsto b+\varsigma tu$, whose derivative is $tu$, and
+linearity of $dA$ --- and $\varphi'$ is continuous on $[0,1]$, because
+$y\mapsto dA(y)$ is continuous off the origin and the segment stays off it.  A
+continuous function on a compact interval is interval-integrable, so the
+fundamental theorem of calculus (Preamble) applies on $[0,1]$ with no
+exceptional point and gives $\varphi(1)-\varphi(0)=\int_0^1\varphi'$.  By
+(Q2$_A$), $|\varphi'(\varsigma)|\le|t|\gamma_1(|b+\varsigma tu|^2)^{p/2-1}$ on
+$[0,1]$, and that majorant is continuous on $[0,1]$ for the same reason, hence
+interval-integrable.  So, by the norm inequality for the interval integral and
+monotonicity (Preamble),
+\[
+\bigl|A^i(b+tu)-A^i(b)\bigr|
+\ \le\ |t|\,\gamma_1\int_0^1\bigl(|b+\varsigma tu|^2\bigr)^{\frac p2-1}d\varsigma .
+\tag{IA}
+\]
+
+\emph{Step 3: almost every translate misses the origin.}  Let $s\ne0$.  If
+$h+\sqrt e\,z+\varsigma su=0$ for some $\varsigma\in[0,1]$ then
+$z+(\sqrt e)^{-1}h=-(\varsigma s)(\sqrt e)^{-1}u$ lies in the line
+$\R u$, a linear subspace of $\R^n$ of dimension $1$.  Since $n\ge2$ that
+subspace is proper, hence contained in a hyperplane, hence Lebesgue-null; and
+Lebesgue measure is translation invariant (Preamble), so the set of $z$ with
+$z+(\sqrt e)^{-1}h\in\R u$ --- a translate of $\R u$ --- is null as well.  Therefore, for every fixed $s\ne0$,
+\[
+\text{for almost every }z\in\R^n:\qquad
+h+\sqrt e\,z+\varsigma su\ne0\ \text{ for all }\varsigma\in[0,1].
+\tag{N}
+\]
+This is where $n\ge2$ is used, and it is what replaces any discussion of
+exceptional points inside (IA): the segments that would need one are confined to
+a null set of $z$, which no integral against $dz$ sees.
+
+\emph{Step 4: the kernel is integrable.}  For every $h'$ the function
+$z\mapsto(|h'+\sqrt e\,z|^2)^{p/2-1}\rho(z)$ is integrable.  Indeed, were it
+not, its integral would be $0$ by convention, while the lower bound of (H2)
+gives $K(h',e)\ge c_1(e+|h'|^2)^{p/2-1}>0$, using $c_1>0$ and $e>0$; a
+contradiction.  (This is the only place the lower constant $c_1$ is used.)
+
+\emph{Step 5: the increment bound for $A_e$.}  Let $t>0$.  Because the
+normalising constant cancels, for every $h_1,h_2$
+\[
+\bigl(A_e(h_1)-A_e(h_2)\bigr)^i
+=\int_{\R^n}\rho(z)\bigl[A^i(h_1+\sqrt e\,z)-A^i(h_2+\sqrt e\,z)\bigr]dz ,
+\]
+both coordinate integrals existing because $z\mapsto\rho(z)A^i(h_1+\sqrt e\,z)$
+is continuous with compact support (clause \texttt{hcont} of (H3) makes $A$
+continuous, and $\rho$ is continuous with compact support by (H1)).  Apply (IA)
+with $b=h+\sqrt e\,z$, which is legitimate for almost every $z$ by (N) with
+$s=t$, and multiply by $\rho(z)\ge0$:
+\[
+\rho(z)\bigl|A^i(h+tu+\sqrt e\,z)-A^i(h+\sqrt e\,z)\bigr|
+\le\rho(z)\,t\,\gamma_1\int_0^1\bigl(|h+\varsigma tu+\sqrt e\,z|^2\bigr)^{\frac p2-1}d\varsigma
+\]
+for almost every $z$.  The function
+$(z,\varsigma)\mapsto\rho(z)(|h+\varsigma tu+\sqrt e\,z|^2)^{p/2-1}$ is
+measurable on $\R^n\times(0,1]$ --- it is a composition of the continuous map
+$(z,\varsigma)\mapsto h+\varsigma tu+\sqrt e\,z$ with
+$y\mapsto(|y|^2)^{p/2-1}$, Borel on $\R^n$, times the continuous $\rho$ --- and
+it is integrable for the product of Lebesgue measure on $\R^n$ with Lebesgue
+measure restricted to $(0,1]$: by the slice criterion it suffices that each
+slice $z\mapsto\rho(z)(|h+\varsigma tu+\sqrt e\,z|^2)^{p/2-1}$ be integrable,
+which is Step 4, and that $\varsigma\mapsto\int|\cdot|\,dz$ be integrable on
+$(0,1]$, which holds because by the upper bound of (H2) that integral is at most
+$C_2(e+|h+\varsigma tu|^2)^{p/2-1}$, and for $\varsigma\in(0,1]$ one has
+$|\varsigma t|\le t$, so this is at most the constant
+\[
+M(t)=\max\Bigl\{\bigl(e+(|h|+t)^2\bigr)^{\frac p2-1},\
+\bigl(e+(\max\{|h|-t,0\})^2\bigr)^{\frac p2-1}\Bigr\} ,
+\]
+a bound valid because $\max\{|h|-t,0\}\le|h+su|\le|h|+t$ whenever $|s|\le t$,
+and because $\lambda\mapsto\lambda^{p/2-1}$ is monotone on $(0,\infty)$ --- in
+whichever direction the sign of $p/2-1$ dictates, which is why $M(t)$ is the
+maximum of the two endpoint values.  Hence Fubini's theorem (Preamble) applies
+and exchanges the two integrations.  Combining, by the norm inequality for the
+integral and monotonicity (Preamble),
+\[
+\bigl|\bigl(A_e(h+tu)-A_e(h)\bigr)^i\bigr|
+\le t\,\gamma_1\int_0^1\!\!\Bigl(\int_{\R^n}\rho(z)
+   \bigl(|h+\varsigma tu+\sqrt e\,z|^2\bigr)^{\frac p2-1}dz\Bigr)d\varsigma
+\le t\,\gamma_1\,C_2\,M(t),
+\]
+the last step by the upper bound of (H2) applied at $h+\varsigma tu$ for each
+$\varsigma$, followed by the bound $M(t)$ just established and
+$\int_0^1d\varsigma=1$.
+
+\emph{Step 6: the limit $t\to0^+$.}  By (H5) the field $A_e$ is differentiable
+at $h$, so $s\mapsto A_e(h+su)$ is differentiable at $s=0$ with derivative
+$dA_e(h)u$, and therefore
+\[
+\frac{A_e(h+su)-A_e(h)}{s}\ \longrightarrow\ dA_e(h)u
+\qquad(s\to0^+),
+\]
+hence, applying the continuous maps ``$i$-th coordinate'' and $|\cdot|$,
+$\bigl|\bigl(s^{-1}(A_e(h+su)-A_e(h))\bigr)^i\bigr|\to|D_{h_j}A_e^i(h)|$.  By
+Step 5, that quantity is at most $\gamma_1C_2M(s)$ for every $s>0$.  Finally
+$M$ is continuous at $0$ with
+$M(0)=\bigl(e+|h|^2\bigr)^{p/2-1}$: both entries of the maximum are continuous
+there, because $e>0$ makes the bases $e+(|h|+s)^2$ and
+$e+(\max\{|h|-s,0\})^2$ positive and $\lambda\mapsto\lambda^{p/2-1}$ is
+continuous on $(0,\infty)$, and at $s=0$ both entries equal
+$\bigl(e+|h|^2\bigr)^{p/2-1}$.  Both sides of Step 5's quotient bound
+therefore converge as $s\to0^+$, and a weak inequality between two convergent
+functions passes to the limit, so
+\[
+\bigl|D_{h_j}A_e^i(h)\bigr|\ \le\ \gamma_1C_2\bigl(e+|h|^2\bigr)^{\frac p2-1}
+=C_2\gamma_1\bigl(e+|h|^2\bigr)^{\frac p2-1},
+\]
+which is the assertion; as it holds for every $h$ with no reference to $x$, it
+holds in particular for almost every $x$.
+\end{proof}

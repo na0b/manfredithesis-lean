@@ -1,0 +1,69 @@
+\begin{definition}
+Let $n\ge1$ and let $\Omega\subseteq\R^n$.  We say that $\Omega$ is a
+\emph{bounded Lipschitz domain}, written
+$\mathrm{IsBoundedLipschitzDomain}(n,\Omega)$, if
+\begin{enumerate}
+\item $\Omega$ is open;
+\item $\Omega$ is connected and nonempty --- together with (1) this is
+  ``$\Omega$ is a domain'';
+\item $\Omega$ is bounded; and
+\item \emph{(the Lipschitz boundary condition)} for every $x\in\partial\Omega$
+  there are $r>0$, $L\ge0$, a unit vector $\nu\in\R^n$ and a function
+  $\varphi\colon\R^n\to\R$ such that
+  \begin{itemize}
+  \item $\varphi$ is $L$-Lipschitz on $\R^n$;
+  \item $\varphi(y+t\nu)=\varphi(y)$ for every $y\in\R^n$ and every $t\in\R$;
+    and
+  \item for every $y\in B_r(x)$,
+    \[
+    y\in\Omega\quad\Longleftrightarrow\quad \varphi(y-x)<(y-x,\nu),
+    \]
+    where $(\,\cdot\,,\,\cdot\,)$ is the inner product of $\R^n$, so
+    $(y-x,\nu)=\sum_{i=1}^n(y-x)^i\nu^i$.
+  \end{itemize}
+\end{enumerate}
+
+\noindent\textbf{What clause (4) says, and why it is stated this way.}  Fix
+$x\in\partial\Omega$ and the data $r,L,\nu,\varphi$ it provides.  The second
+bullet says that $\varphi$ does not change along the direction $\nu$, so
+$\varphi$ is a function of the component of its argument orthogonal to $\nu$
+alone: writing $y-x=w+s\nu$ with $(w,\nu)=0$ and $s=(y-x,\nu)$, one has
+$\varphi(y-x)=\varphi(w)$, and the third bullet reads
+$y\in\Omega\iff s>\varphi(w)$.  That is exactly the usual condition that, in the
+orthonormal coordinates adapted to $\nu$ at $x$, the set $\Omega$ coincides
+inside $B_r(x)$ with the region strictly above the graph of a Lipschitz function
+of the remaining $n-1$ coordinates.  Stating $\varphi$ on all of $\R^n$ together
+with the invariance $\varphi(y+t\nu)=\varphi(y)$ is equivalent to stating it on
+the hyperplane $\nu^{\perp}$, and it avoids introducing coordinates on that
+hyperplane; the orientation is fixed by taking $\nu$ to point into $\Omega$,
+which costs nothing since $\nu$ is existentially bound and $-\nu$ is available.
+
+\noindent\textbf{Where the paper asks for this.}  Section 4 fixes the convention
+at l.~1130, ``Fix now $\Omega'$ a Lipschitz domain such that
+$\overline{\Omega'}\subset\Omega$'', and Theorems~Theorem~3 of the thesis, Theorem~5 of the thesis and
+Theorem~6 of the thesis each restate it --- l.~1274, l.~1431 and l.~1551, ``Let $\Omega'$ be
+a Lipschitz domain such that $\overline{\Omega'}\subset\Omega$''.  The cited
+result (C5) carries it too, at l.~264: ``if $\Omega'$ is a bounded Lipschitz
+domain, $n<\lambda<n+p$ and $u\in\mathcal L^{p,\lambda}(\Omega')$, then
+\ldots''.  Two things follow, and they pull in opposite directions, which is why
+this predicate is needed on both sides.  A statement of (C5) \emph{without} the
+hypothesis is stronger than the literature, which the Note forbids at l.~258
+(``stated as in the literature and not in a stronger form''); Campanato's
+theorem is false on domains with an outward cusp, where the measure of
+$\Omega'\cap B_\rho(x)$ can decay faster than $\rho^n$.  And a statement of
+Theorem~Theorem~3 of the thesis, Theorem~5 of the thesis or Theorem~6 of the thesis without it claims the
+conclusion for \emph{arbitrary} bounded open $\Omega'$, which is stronger than
+the theorem the paper states; that is a target-faithfulness defect of its own,
+independent of (C5).
+
+\noindent\textbf{Boundedness is listed separately although (3) is implied by
+nothing else here.}  Clause (3) is the ``bounded'' of (C5)'s own wording; the
+paper's \S4 convention gets it instead from $\overline{\Omega'}\subset\Omega$
+with $\Omega'$ a domain only when $\Omega$ is itself bounded, which the paper
+does not assume, so it is stated.  Clauses (1) and (3) duplicate hypotheses that
+the consumers of this predicate already carry by name --- they were introduced
+before this predicate existed, and the many proof sites that discharge
+``$\Omega'$ is open'' and ``$\Omega'$ is bounded'' individually are left as they
+are; the duplication is harmless, being a repeated conjunct, and avoids
+rewriting those sites.
+\end{definition}

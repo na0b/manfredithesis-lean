@@ -1,0 +1,157 @@
+\begin{lemma}[Invariance of the five predicates under modification on a null set]
+Let $n\ge1$ be an integer and $q\ge1$ real, let $\Omega\subseteq\R^n$ be open,
+let $f,f'\colon\R^n\to\R$ and $g\colon\R^n\to\R^n$, and suppose
+\[
+f=f'\qquad\text{almost everywhere on }\Omega .
+\]
+Then each of the following five implications holds, with the \emph{same} field
+$g$ on both sides:
+\begin{enumerate}
+\item if $g$ is the weak gradient of $f$ on $\Omega$
+  (\noderef{HasWeakGradientOn}), then $g$ is the weak gradient of $f'$ on
+  $\Omega$;
+\item if $f\in W^{1,q}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}),
+  then $f'\in W^{1,q}(\Omega)$ with weak gradient $g$;
+\item if $f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}), then $f'\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak
+  gradient $g$;
+\item for all $A\colon\R^n\times\R\times\R^n\to\R^n$ and
+  $B\colon\R^n\times\R\times\R^n\to\R$, if $f$ is a weak solution of
+  (1.1) of the thesis in $\Omega$ at the exponent $q$ with weak gradient $g$
+  (\noderef{IsWeakSolutionOn}), then so is $f'$; and
+\item for every $f^{\sharp}\colon\R^n\times\R\times\R^n\to\R$, if $f$ is a local
+  minimum of $F(\,\cdot\,;E)=\int_Ef^{\sharp}(x,\cdot,\nabla\cdot)\,dx$ in
+  $\Omega$ at the exponent $q$ with weak gradient $g$
+  (\noderef{IsLocalMinimumOn}), then so is $f'$.
+\end{enumerate}
+Here ``at the exponent $q$'' refers to the test class and the local
+integrability that \noderef{IsWeakSolutionOn} and \noderef{IsLocalMinimumOn}
+carry, namely $W^{1,q}_{\mathrm{loc}}$ membership of the function and
+$W^{1,q}(\Omega)$ test pairs of compact support.
+
+The five clauses are one node because they are one fact used in one way.  In
+each of the five predicates the function enters \emph{only} through integrals
+over $\Omega$, or over a compact subset of $\Omega$, or over the support of a
+test function contained in $\Omega$; the integrand is changed only on the null
+set $\Omega\cap\{f\ne f'\}$, and an integral does not see a null set.  No clause
+is a special case of another: (1) is about the identity alone, (2) and (3) add
+the two different integrability packages, and (4) and (5) are about the two
+different nonlinear functionals of the function's \emph{values}, where the
+substitution happens inside $A$, $B$ and $f^{\sharp}$ rather than in a factor.
+
+\medskip
+\emph{What it is for.}  The paper replaces $u$ by its continuous representative
+without comment: having obtained that ``$u$ is locally H\"older continuous''
+(p.~31) it writes $f^0(h)=f(x_0,u(x_0),h)$ (p.~32) and treats $u$ as defined
+pointwise.  Formally a continuous representative obtained from an oscillation
+estimate agrees with $u$ only almost everywhere, so
+every hypothesis carried on $u$ --- the Sobolev membership, the equation, the
+minimum property --- has to be transported to $U$ before the frozen operator and
+the comparison map can be formed.  That transport is this lemma.  Nothing here
+is specific to the operators of the paper: the statement mentions no structure
+condition and no estimate.
+\end{lemma}
+\begin{proof}
+Throughout, ``test function'' means a $\varphi\in C^\infty(\R^n)$ with compact
+support and $\operatorname{supp}\varphi\subseteq\Omega$, which is the test class
+of \noderef{HasWeakGradientOn}, and $N=\Omega\cap\{x:f(x)\ne f'(x)\}$, which is
+a Lebesgue null set: the hypothesis says exactly that $N$ is null for Lebesgue
+measure restricted to $\Omega$, and that measure agrees with Lebesgue measure on
+measurable subsets of $\Omega$.
+
+We use two standard facts about the Bochner integral, both of which hold because
+the integral depends only on the almost-everywhere class of the integrand with
+respect to the measure in question, and neither of which needs an integrability
+hypothesis:
+\begin{itemize}
+\item[(A1)] if $v=v'$ almost everywhere with respect to a measure $\mu$, then
+  $\int v\,d\mu=\int v'\,d\mu$ (in Mathlib,
+  \texttt{MeasureTheory.integral\_congr\_ae}; when neither integral exists both
+  are $0$ by the convention for a non-integrable function, so the identity holds
+  in every case);
+\item[(A2)] if $v=v'$ almost everywhere with respect to $\mu$ and
+  $v\in L^{q}(\mu)$, then $v'\in L^{q}(\mu)$, with the same $L^q$ norm
+  (in Mathlib, \texttt{MeasureTheory.MemLp.ae\_eq}; almost-everywhere strong
+  measurability and the finiteness of the norm are both properties of the
+  almost-everywhere class).
+\end{itemize}
+We also use that almost-everywhere statements pass to measurable subsets: if
+$E'\subseteq E$ are measurable and a property holds almost everywhere on $E$,
+it holds almost everywhere on $E'$, because the measure restricted to $E'$ is
+dominated by the measure restricted to $E$ (Preamble, the transport facts
+recorded with H\"older's inequality, \texttt{Measure.restrict\_mono}).
+
+\emph{Step 1: clause (1).}  Assume $\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$,
+let $\varphi$ be a test function and let $i\in\{1,\dots,n\}$.  The two functions
+$x\mapsto f(x)D_i\varphi(x)$ and $x\mapsto f'(x)D_i\varphi(x)$ agree at every
+point of $\Omega\setminus N$, hence almost everywhere on $\Omega$, so (A1) for
+Lebesgue measure restricted to $\Omega$ gives
+\[
+\int_\Omega f'\,D_i\varphi\,dx=\int_\Omega f\,D_i\varphi\,dx
+=-\int_\Omega g^i\,\varphi\,dx ,
+\]
+the second equality being the hypothesis.  As $\varphi$ and $i$ were arbitrary,
+this is $\mathrm{HasWeakGradientOn}(n,\Omega,f',g)$.
+
+\emph{Step 2: clause (2).}  By \noderef{MemW1pOn} the hypothesis is the
+conjunction of $\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$, of
+$f\in L^q(\Omega)$ and of $|g|\in L^q(\Omega)$.  Step 1 upgrades the first to
+$f'$; (A2), applied to Lebesgue measure restricted to $\Omega$, upgrades the
+second to $f'\in L^q(\Omega)$; and the third does not mention $f$.  By
+\noderef{MemW1pOn} again, $f'\in W^{1,q}(\Omega)$ with weak gradient $g$.
+
+\emph{Step 3: clause (3).}  By \noderef{MemW1pLocOn} the hypothesis is the
+conjunction of $\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$ with: for every
+compact $K\subseteq\Omega$, $f\in L^q(K)$ and $|g|\in L^q(K)$.  Step 1 upgrades
+the identity.  For the local clause, fix a compact $K\subseteq\Omega$; then
+$f=f'$ almost everywhere on $K$, because $K\subseteq\Omega$ and
+almost-everywhere statements pass to measurable subsets, so (A2) gives
+$f'\in L^q(K)$, while $|g|\in L^q(K)$ is unchanged.  By \noderef{MemW1pLocOn},
+$f'\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$.
+
+\emph{Step 4: clause (4).}  Fix $A$ and $B$ and assume $f$ is a weak solution
+with weak gradient $g$.  By \noderef{IsWeakSolutionOn} this is the conjunction of
+$f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$ --- upgraded to
+$f'$ by Step 3 --- and, for each admissible test pair, of the integrability on
+$\Omega$ of the integrand below together with the identity
+\[
+\int_\Omega\Bigl(\sum_{i=1}^n\bigl(A(x,f(x),g(x))\bigr)^i\,(g_\varphi(x))^i
++B(x,f(x),g(x))\,\varphi(x)\Bigr)dx=0
+\]
+for every pair $(\varphi,g_\varphi)$ with $\varphi\in W^{1,q}(\Omega)$ of weak
+gradient $g_\varphi$ (\noderef{MemW1pOn}), $\varphi$ of compact support and
+$\operatorname{supp}\varphi\subseteq\Omega$.  Fix such a pair.  At every point
+of $\Omega\setminus N$ we have $f(x)=f'(x)$, so the integrand formed with $f'$
+equals the integrand formed with $f$ there --- the substitution occurs only in
+the second argument of $A$ and of $B$, and the remaining arguments $x$, $g(x)$,
+$g_\varphi(x)$, $\varphi(x)$ do not involve $f$ --- hence the two integrands
+agree almost everywhere on $\Omega$.  Both clauses transfer on that one
+observation: integrability on $\Omega$ is preserved under altering a function on
+a null set, so the $f'$-integrand is integrable because the $f$-integrand is,
+and (A1) gives the same integral, namely $0$.  As the pair was arbitrary, $f'$
+is a weak solution with weak gradient $g$ by \noderef{IsWeakSolutionOn}.
+
+\emph{Step 5: clause (5).}  Fix $f^{\sharp}$ and assume $f$ is a local minimum
+with weak gradient $g$.  By \noderef{IsLocalMinimumOn} this is the conjunction of
+$f\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$ --- upgraded to
+$f'$ by Step 3 --- and, for each admissible $\varphi$, of the integrability on
+$\operatorname{supp}\varphi$ of \emph{both} integrands below together with the
+inequality
+\[
+\int_{\operatorname{supp}\varphi}f^{\sharp}\bigl(x,f(x),g(x)\bigr)dx
+\ \le\
+\int_{\operatorname{supp}\varphi}f^{\sharp}\bigl(x,f(x)+\varphi(x),g(x)+g_\varphi(x)\bigr)dx
+\]
+for every admissible pair $(\varphi,g_\varphi)$ as in Step 4.  Fix such a pair
+and put $E=\operatorname{supp}\varphi$, a measurable subset of $\Omega$.  Since
+$f=f'$ almost everywhere on $\Omega$, the same holds almost everywhere on $E$.
+Hence the integrand on the left formed with $f'$ agrees almost everywhere on $E$
+with the one formed with $f$, and likewise on the right, where the substitution
+occurs in $f(x)+\varphi(x)$ only.  Both clauses transfer on that one
+observation: integrability on $E$ is preserved under altering a function on a
+null subset of $E$, so each of the two $f'$-integrands is integrable on $E$
+because the corresponding $f$-integrand is; and (A1), applied to Lebesgue
+measure restricted to $E$, leaves both sides unchanged, so the inequality holds
+for $f'$.  As the pair was arbitrary, $f'$ is a local minimum with weak gradient $g$
+by \noderef{IsLocalMinimumOn}.
+\end{proof}

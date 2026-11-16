@@ -1,0 +1,281 @@
+\begin{helper}[The gradients of the mollified approximating solutions converge in $L^p(B_R)$]
+Let $n\ge2$, let $p>1$ and let $r'\in\R$.  Write $p'=p/(p-1)$.  Let $\rho\colon\R^n\to\R$ satisfy
+\begin{enumerate}
+\item[(H1)] $\rho\ge0$ everywhere and $\int_{\R^n}\rho=1$;
+\item[(H2)] $z\mapsto\rho(z)f(z)$ is integrable for every continuous
+  $f\colon\R^n\to\R$, and $z\mapsto\rho(z)F(z)$ is integrable for every
+  continuous $F\colon\R^n\to\R^n$;
+\item[(H3)] $|z|\le1$ for every $z\in\operatorname{supp}\rho$.
+\end{enumerate}
+Let $A\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H4)] $A(0)=0$;
+\item[(H5)] $A$ is continuous on $\R^n$.
+\end{enumerate}
+Let $A_\bullet\colon\R\times\R^n\to\R^n$, written $A_e$, satisfy
+\begin{enumerate}
+\item[(H6)] $A_e(h)=\int_{\R^n}\rho(z)A(h+\sqrt e\,z)\,dz
+  -\int_{\R^n}\rho(z)A(\sqrt e\,z)\,dz$ for all $e\in\R$ and $h\in\R^n$;
+\item[(H7)] $A_e(0)=0$ for every $e\in\R$;
+\item[(H8)] for every $e$ with $0<e\le1$ there are $\gamma_0',\gamma_1'\in\R$
+  with $0<\gamma_0'$, $\gamma_1'\le r'\gamma_0'$ and such that the field
+  $(x,z,h)\mapsto A_e(h)$ satisfies \texttt{Q1} and \texttt{Q2} on $\R^n$ with
+  the parameters $p,e,\gamma_0',\gamma_1'$
+  (\noderef{EllipticStructureQ12}).
+\end{enumerate}
+Let $x_0\in\R^n$, let $R\in\R$, let $u\colon\R^n\to\R$ and let
+$g\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H9)] $0<R$;
+\item[(H10)] $u\in W^{1,p}(B_R(x_0))$ with weak gradient $g$
+  (\noderef{MemW1pOn});
+\item[(H11)] $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ in
+  $B_R(x_0)$ with weak gradient $g$, i.e.\ with the field
+  $(x,z,h)\mapsto A(h)$ and vanishing right-hand side
+  (\noderef{IsWeakSolutionOn}).
+\end{enumerate}
+Let $\Gamma\in\R$ satisfy
+\begin{enumerate}
+\item[(H12)] $\Gamma>0$ and
+  $|A(h)|\le\Gamma\bigl(1+|h|^2\bigr)^{\frac{p-1}2}$ for every $h\in\R^n$;
+\item[(H13)] $|A_e(h)|\le\Gamma\bigl(1+|h|^2\bigr)^{\frac{p-1}2}$ for every
+  $h\in\R^n$ and every $e$ with $0<e\le1$.
+\end{enumerate}
+Let $c_3\in\R$ satisfy
+\begin{enumerate}
+\item[(H14)] $c_3>0$ and, for every $e$ with $0<e\le1$ and all $a,b\in\R^n$,
+  \[
+  c_3\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+  \ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr).
+  \tag{M}
+  \]
+\end{enumerate}
+Finally let $U\colon\mathbb{N}\to(\R^n\to\R)$ and
+$G\colon\mathbb{N}\to(\R^n\to\R^n)$ satisfy, for every $m\in\mathbb{N}$ and
+with $e_m=1/(m+1)$,
+\begin{enumerate}
+\item[(H15)] $U_m$ is a weak solution of
+  $\operatorname{div}A_{e_m}(\nabla U_m)=0$ in $B_R(x_0)$ with weak gradient
+  $G_m$ (\noderef{IsWeakSolutionOn}), and
+  $U_m-u\in W^{1,p}_0(B_R(x_0))$ with weak gradient $G_m-g$
+  (\noderef{MemW1pZeroOn}).
+\end{enumerate}
+Then
+\[
+\int_{B_R(x_0)}|G_m-g|^p\,dx\ \longrightarrow\ 0
+\qquad(m\to\infty).
+\]
+\end{helper}
+\begin{proof}
+Write $B_R=B_R(x_0)$, $e_m=1/(m+1)$, so that $0<e_m\le1$ for every
+$m\in\mathbb{N}$, and
+\[
+Y_m=\int_{B_R}|G_m|^p\,dx,
+\qquad
+K=\int_{B_R}|g|^p\,dx,
+\qquad
+X_m=\Bigl(\int_{B_R}|G_m-g|^p\,dx\Bigr)^{1/p},
+\]
+\[
+I_m=\int_{B_R}\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2-1}|G_m-g|^2\,dx .
+\]
+Since $p>1$ we have $p>0$, $p-1>0$ and $p'=p/(p-1)\in(1,\infty)$ with
+$(p-1)p'=p$.  The conclusion is $X_m^{\,p}\to0$, and since $t\mapsto t^p$ is
+continuous at $0$ with value $0$ it suffices to prove $X_m\to0$.
+
+\emph{Step 0: finiteness, and continuity of the mollified fields.}  By (H15),
+$U_m-u\in W^{1,p}(B_R)$ with weak gradient $G_m-g$, so $|G_m-g|\in L^p(B_R)$;
+with $|g|\in L^p(B_R)$ from (H10) and the $L^p$ triangle inequality (Minkowski,
+Preamble), $|G_m|\in L^p(B_R)$.  Hence $Y_m<\infty$, $K<\infty$ and
+$X_m<\infty$, and $|B_R|<\infty$ because $R>0$ is finite.  Moreover, for every
+$m$ the field $A_{e_m}$ is continuous on $\R^n$: (H8) at $e=e_m$ supplies an
+\noderef{EllipticStructureQ12} bundle for $(x,z,h)\mapsto A_{e_m}(h)$, and the
+continuity clause of that predicate, read at any point $x$ and at $z=0$, is
+exactly continuity of $A_{e_m}$ as a map $\R^n\to\R^n$.  \emph{This is the only
+use made of (H8).}
+
+\emph{Step 1: the two energy identities.}  We claim
+\[
+\int_{B_R}\bigl(A_{e_m}(G_m),\,G_m-g\bigr)dx=0,
+\qquad
+\int_{B_R}\bigl(A(g),\,G_m-g\bigr)dx=0 .
+\tag{E}
+\]
+Both are instances of \noderef{WeakSolutionZeroTest}, which extends the
+weak-solution identity from the compactly supported test pairs of
+\noderef{IsWeakSolutionOn} to the whole of $W^{1,p}_0$ of the domain as soon as
+the coefficient lies in $L^{p'}$ there.  That extension is needed because
+$U_m-u$ is not of compact support.  We check its hypotheses.
+
+\emph{The coefficients lie in $L^{p'}(B_R)$.}  By (H13) and $(p-1)p'=p$,
+\[
+\int_{B_R}|A_{e_m}(G_m)|^{p'}dx
+\le\Gamma^{p'}\int_{B_R}\bigl(1+|G_m|^2\bigr)^{\frac p2}dx
+\le\Gamma^{p'}2^{\frac p2}\bigl(|B_R|+Y_m\bigr)<\infty ,
+\tag{1a}
+\]
+using $(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for $t\ge0$ and $Y_m<\infty$,
+$|B_R|<\infty$ from Step 0; the integrand is measurable because $A_{e_m}$ is
+continuous by Step 0 and $G_m$ is measurable.  The same computation with (H12)
+in place of (H13) and $K$ in place of $Y_m$ gives
+$|A(g)|\in L^{p'}(B_R)$, and the one with (H13) at the argument $g$ gives
+$|A_{e_m}(g)|\in L^{p'}(B_R)$, again with $K$ in place of $Y_m$; the latter is
+used in Step 3.
+
+\emph{The test pair is admissible.}  By (H15), $U_m-u\in W^{1,p}_0(B_R)$ with
+weak gradient $G_m-g$ (\noderef{MemW1pZeroOn}).
+
+Now apply \noderef{WeakSolutionZeroTest} twice, with $1\le n$ (from $n\ge2$),
+$1<p$, the open set $B_R$ and the test pair $(U_m-u,\,G_m-g)$: first to the
+field $(x,z,h)\mapsto A_{e_m}(h)$ and the solution $(U_m,G_m)$ of (H15), whose
+coefficient membership is (1a); then to the field $(x,z,h)\mapsto A(h)$ and the
+solution $(u,g)$ of (H11), whose coefficient membership is the second case of
+(1a).  Both weak-solution hypotheses have vanishing right-hand side, so the
+cited identity is exactly $\int_{B_R}\sum_i(A_\bullet)_i(G_m-g)_i\,dx=0$ in each
+case, which is (E).
+
+\emph{Step 2: a bound on $Y_m$ uniform in $m$.}  The first identity in (E)
+reads $\int_{B_R}(A_{e_m}(G_m),G_m)=\int_{B_R}(A_{e_m}(G_m),g)$.  For the
+left-hand side use (M) with $a=G_m(x)$, $b=0$ and $A_{e_m}(0)=0$ from (H7):
+\[
+\bigl(A_{e_m}(G_m(x)),G_m(x)\bigr)
+\ \ge\ c_3\bigl(e_m+|G_m(x)|^2\bigr)^{\frac p2-1}|G_m(x)|^2 .
+\]
+If $p\ge2$ the exponent is nonnegative, so
+$(e+|h|^2)^{\frac p2-1}\ge(|h|^2)^{\frac p2-1}=|h|^{p-2}$ and the right-hand
+side is at least $c_3|h|^p$ with $h=G_m(x)$.  If $1<p<2$ the exponent is
+negative; then at points where $|h|^2\ge e$ we have $e+|h|^2\le2|h|^2$ and hence
+$(e+|h|^2)^{\frac p2-1}\ge2^{\frac p2-1}|h|^{p-2}$, so the right-hand side is at
+least $c_32^{\frac p2-1}|h|^p$ there, while at the remaining points it is
+nonnegative and $|h|^p<e^{p/2}$.  With $\kappa_p=\min\{1,2^{\frac p2-1}\}>0$,
+integrating and using monotonicity of the integral (Preamble),
+\[
+\int_{B_R}\bigl(A_{e_m}(G_m),G_m\bigr)dx
+\ \ge\ c_3\kappa_p\Bigl(Y_m-e_m^{\frac p2}|B_R|\Bigr).
+\]
+For the right-hand side, Hölder's inequality and the computation of Step 1 give
+\[
+\Bigl|\int_{B_R}\bigl(A_{e_m}(G_m),g\bigr)dx\Bigr|
+\le\Gamma2^{\frac p{2p'}}\bigl(|B_R|+Y_m\bigr)^{1/p'}K^{1/p}
+=:b_0\bigl(|B_R|+Y_m\bigr)^{\frac{p-1}p},
+\]
+with $b_0=\Gamma2^{\frac p{2p'}}K^{1/p}$ independent of $m$.  Putting
+$S=|B_R|+Y_m$ and using $e_m\le1$,
+\[
+c_3\kappa_pS\ \le\ c_3\kappa_p\bigl(|B_R|+e_m^{\frac p2}|B_R|\bigr)+b_0S^{\theta}
+\ \le\ 2c_3\kappa_p|B_R|+b_0S^{\theta},
+\qquad \theta=\frac{p-1}p\in(0,1),
+\]
+that is, $S\le a_0+b_1S^{\theta}$ with $a_0=2|B_R|$ and
+$b_1=b_0/(c_3\kappa_p)$.  If $S>2a_0$ then $S/2\le b_1S^{\theta}$, so
+$S^{1-\theta}\le2b_1$ and $S\le(2b_1)^{1/(1-\theta)}$.  Hence
+\[
+|B_R|+Y_m\ \le\ E:=\max\bigl\{2a_0,\ (2b_1)^{1/(1-\theta)}\bigr\}
+\qquad(m\in\mathbb{N}),
+\tag{2a}
+\]
+a bound independent of $m$.  Consequently, using
+$(s+t+w)^{p/2}\le3^{p/2}(s^{p/2}+t^{p/2}+w^{p/2})$ for $s,t,w\ge0$ and
+$e_m\le1$,
+\[
+\int_{B_R}\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}dx
+\ \le\ 3^{\frac p2}\bigl(|B_R|+Y_m+K\bigr)\ \le\ E_1:=3^{\frac p2}(E+K)
+\qquad(m\in\mathbb{N}).
+\tag{2b}
+\]
+
+\emph{Step 3: the difference estimate.}  Subtracting the two identities of (E),
+\[
+\int_{B_R}\bigl(A_{e_m}(G_m)-A_{e_m}(g),\,G_m-g\bigr)dx
+=\int_{B_R}\bigl(A(g)-A_{e_m}(g),\,G_m-g\bigr)dx ,
+\]
+because the first identity makes $\int(A_{e_m}(G_m),G_m-g)=0$ and the second
+makes $\int(A(g),G_m-g)=0$, so both sides equal
+$-\int(A_{e_m}(g),G_m-g)$; all four integrals are finite by Step 1 and Hölder,
+the bound of Step 1 applying to $A_{e_m}(g)$ as well, with $Y_m$ replaced by
+$K$.  By (M) with $a=G_m(x)$, $b=g(x)$ the left-hand side is at least $c_3I_m$,
+and by Hölder's inequality the right-hand side is at most $\delta_mX_m$, where
+\[
+\delta_m=\Bigl(\int_{B_R}\bigl|A(g)-A_{e_m}(g)\bigr|^{p'}dx\Bigr)^{1/p'} .
+\]
+Hence
+\[
+c_3I_m\ \le\ \delta_mX_m\qquad(m\in\mathbb{N}).
+\tag{3}
+\]
+
+\emph{Step 4: $\delta_m\to0$.}  First, $A_e(h)\to A(h)$ for every fixed $h$ as
+$e\downarrow0$.  Indeed $A$ is continuous on $\R^n$ by (H5), so
+$\sup_{|y-h|\le\sqrt e}|A(y)-A(h)|\to0$ as $e\downarrow0$ by continuity at $h$;
+since $|z|\le1$ on $\operatorname{supp}\rho$ by (H3), $\rho\ge0$ and
+$\int\rho=1$ by (H1), and the integrands are integrable by (H2) --- the maps
+$z\mapsto A(h+\sqrt e\,z)$ and $z\mapsto A(\sqrt e\,z)$ being continuous ---
+this gives
+\[
+\int_{\R^n}\rho(z)A(h+\sqrt e\,z)\,dz\longrightarrow A(h)
+\qquad\text{and}\qquad
+\int_{\R^n}\rho(z)A(\sqrt e\,z)\,dz\longrightarrow A(0)=0
+\]
+by (H4), the error in each case being at most
+$\int\rho(z)\sup_{|y-h|\le\sqrt e}|A(y)-A(h)|\,dz$ over
+$\operatorname{supp}\rho$.  Subtracting and recalling (H6) gives the claim.
+Second, by (H12) and (H13),
+\[
+\bigl|A(g(x))-A_{e}(g(x))\bigr|^{p'}
+\ \le\ (2\Gamma)^{p'}\bigl(1+|g(x)|^2\bigr)^{\frac p2}
+\qquad(0<e\le1),
+\]
+and the majorant is integrable on $B_R$, being at most
+$2^{p/2}(2\Gamma)^{p'}(1+|g|^p)$ with $|B_R|<\infty$ and $|g|\in L^p(B_R)$.  The
+integrands are measurable, $A$ and each $A_{e_m}$ being continuous by (H5) and
+Step 0.  Since $e_m=1/(m+1)\downarrow0$, dominated convergence (Preamble)
+applied to the sequence $x\mapsto|A(g(x))-A_{e_m}(g(x))|^{p'}$ --- which
+converges pointwise to $0$ by the first part --- gives $\delta_m\to0$.
+
+\emph{Step 5: $X_m\le\Psi(\delta_m)$ with $\Psi(\delta)\to0$ as $\delta\to0$.}
+Fix $m$.  If $X_m=0$ the bounds below hold trivially, so assume $X_m>0$.
+
+\emph{Case $p\ge2$.}  Pointwise $|a-b|^2\le2|a|^2+2|b|^2\le2(e+|a|^2+|b|^2)$ for
+$e\ge0$, so $e+|a|^2+|b|^2\ge\frac12|a-b|^2$ and, the exponent $\frac p2-1$
+being nonnegative,
+$\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}\ge2^{1-\frac p2}|a-b|^{p-2}$.  Hence
+$I_m\ge2^{1-\frac p2}X_m^{\,p}$, and (3) gives
+$c_32^{1-\frac p2}X_m^{\,p}\le\delta_mX_m$, i.e.
+\[
+X_m\ \le\ \Bigl(\frac{2^{\frac p2-1}}{c_3}\,\delta_m\Bigr)^{\frac1{p-1}} .
+\]
+
+\emph{Case $1<p<2$.}  Since $e_m>0$, the quantity
+$\Theta(x)=\bigl(e_m+|G_m(x)|^2+|g(x)|^2\bigr)^{\frac p2-1}$ is finite and
+strictly positive, so we may write
+$|G_m-g|^p=\bigl(\Theta|G_m-g|^2\bigr)^{\frac p2}\Theta^{-\frac p2}$ pointwise.
+Hölder's inequality with the conjugate exponents $\frac2p$ and $\frac2{2-p}$
+(Preamble) gives
+\[
+X_m^{\,p}=\int_{B_R}\bigl(\Theta|G_m-g|^2\bigr)^{\frac p2}\Theta^{-\frac p2}dx
+\ \le\ I_m^{\frac p2}
+\Bigl(\int_{B_R}\Theta^{-\frac p{2-p}}dx\Bigr)^{\frac{2-p}2} .
+\]
+Now $-\frac p{2-p}\bigl(\frac p2-1\bigr)=\frac p{2-p}\cdot\frac{2-p}2=\frac p2$,
+so $\Theta^{-\frac p{2-p}}=\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}$ and the
+last integral is at most $E_1$ by (2b).  With (3),
+\[
+X_m^{\,p}\ \le\ \Bigl(\frac{\delta_mX_m}{c_3}\Bigr)^{\frac p2}E_1^{\frac{2-p}2},
+\qquad\text{hence}\qquad
+X_m^{\frac p2}\le\Bigl(\frac{\delta_m}{c_3}\Bigr)^{\frac p2}E_1^{\frac{2-p}2},
+\qquad\text{i.e.}\qquad
+X_m\ \le\ \frac{\delta_m}{c_3}\,E_1^{\frac{2-p}p} .
+\]
+
+\emph{Step 6: conclusion.}  In both cases $X_m$ is bounded by a continuous
+increasing function of $\delta_m$ that vanishes at $\delta_m=0$, and the bound
+is uniform in $m$ --- in the case $p\ge2$ it is
+$\delta\mapsto(2^{p/2-1}\delta/c_3)^{1/(p-1)}$ and in the case $1<p<2$ it is
+$\delta\mapsto\delta E_1^{(2-p)/p}/c_3$, the constants $c_3$ and $E_1$ not
+depending on $m$ by (H14) and (2a).  Since $\delta_m\to0$ by Step 4, this gives
+$X_m\to0$, and therefore
+\[
+\int_{B_R}|G_m-g|^p\,dx=X_m^{\,p}\longrightarrow0 ,
+\]
+which is the assertion.
+\end{proof}

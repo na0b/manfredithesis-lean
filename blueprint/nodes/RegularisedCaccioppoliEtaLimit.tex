@@ -1,0 +1,134 @@
+\begin{helper}[The limit $\eta_j\downarrow0$ in the regularised Caccioppoli estimate, for both signs at once]
+Let $n\in\mathbb{N}$ and let $p\in\R$ with $1<p<2$; in particular $p/2-1<0$ and
+$p-2<0$.  All powers of nonnegative reals are real powers, so
+$0^{p/2-1}=0$ for the negative exponent $p/2-1$.  Let
+$C_2,\varepsilon,\mu\in\R$, let $g\colon\R^n\to\R^n$, let $Dg$ assign to each
+index $i$ a field $Dg^i\colon\R^n\to\R^n$, let $x_0\in\R^n$, let $R\in\R$ and
+let $k$ be an index.  Write
+\[
+w=\varepsilon+|g|^2,
+\qquad
+V_\eta=\tfrac p2\bigl(|g^k|+\eta\bigr)^{\frac p2-1}Dg^k,
+\qquad
+V=\tfrac p2|g^k|^{\frac p2-1}Dg^k,
+\]
+the weight $w^{p/2-1}$ being written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print it.  Assume
+\begin{enumerate}
+\item[(H1)] $0\le C_2$ and $0<\varepsilon$;
+\item[(H2)] $g^k$ and $|g^k|$ are almost everywhere strongly measurable on
+  $B_R(x_0)$.
+\end{enumerate}
+Let $\pi\colon\R\times\R\to\R$, written $\pi_\eta$, and let
+$\eta_\bullet\colon\mathbb{N}\to\R$ satisfy
+\begin{enumerate}
+\item[(H3)] $\pi_\eta$ is $C^1$ for every $\eta>0$;
+\item[(H4)] $\eta_j>0$ for every $j$ and $\eta_j\to0$;
+\item[(H5)] $\pi_{\eta_j}(t)\to|t|^{p-2}t$ as $j\to\infty$, for every
+  $t\in\R$;
+\item[(H6)] $|\pi_\eta(g^k)|\le\mu^{p-1}$ almost everywhere on $B_R(x_0)$, for
+  every $\eta>0$;
+\item[(H7)] for every $\eta$ and every continuous $\zeta$, the function
+  $w^{\frac p2-1}\|V_\eta\|^2\zeta^2$ is almost everywhere strongly measurable
+  on $B_R(x_0)$, and so is $w^{\frac p2-1}\|V\|^2\zeta^2$.
+\end{enumerate}
+Write $\psi_\eta=\pi_\eta(g^k)$ and $\psi=|g^k|^{p-2}g^k$.  Then for every open
+$S\subseteq\R$, every continuous $b\colon\R\to\R$ with $b\ge0$, every $M$ with
+$b(s)\le M$ whenever $|s|\le\mu^{p-1}$, and every $C^\infty$ function
+$\zeta\colon\R^n\to\R$: if
+\begin{enumerate}
+\item[(H8)] for every $j$,
+  $\displaystyle\int_{B_R(x_0)\cap\{\psi_{\eta_j}\in S\}}
+  w^{\frac p2-1}\|V_{\eta_j}\|^2\zeta^2\,dx
+  \le C_2\int_{B_R(x_0)}b(\psi_{\eta_j})^2\sum_i(D_i\zeta)^2\,dx$, and
+\item[(H9)] for every $j$ the integrand
+  $w^{\frac p2-1}\|V_{\eta_j}\|^2\zeta^2$ is integrable on $B_R(x_0)$,
+\end{enumerate}
+then
+\[
+\int_{B_R(x_0)\cap\{\psi\in S\}}w^{\frac p2-1}\|V\|^2\zeta^2\,dx
+\ \le\ C_2\int_{B_R(x_0)}b(\psi)^2\sum_i(D_i\zeta)^2\,dx .
+\]
+\end{helper}
+\begin{proof}
+Write $B_R=B_R(x_0)$, $A(\eta)=B_R\cap\{\psi_\eta\in S\}$ and
+$A=B_R\cap\{\psi\in S\}$.  From $1<p<2$ we get $p>0$ and $p/2-1<0$.  Taking
+$S=(\ell,\infty)$ with $b=(\cdot-\ell)^{+}$ gives the superlevel form
+$A^{+}_\ell$ and $S=(-\infty,\ell)$ with $b=(\ell-\cdot)^{+}$ the sublevel form
+$A^{-}_\ell$; the statement is phrased for an arbitrary open $S$ precisely so
+that the two signs are one argument.
+
+\emph{Step 1: the gradient-square factor is bounded.}  $\zeta$ is $C^\infty$,
+so $x\mapsto\sum_i(D_i\zeta(x))^2$ is continuous, hence bounded on the compact
+$\overline B_R(x_0)$ by some $L_g$, and it is nonnegative everywhere.  Also
+$|B_R|<\infty$, so the constant $L_g$ is integrable on $B_R$.
+
+\emph{Step 2: the pointwise membership, which is what Fatou consumes.}  We
+claim
+\[
+x\in A\ \Longrightarrow\ x\in A(\eta_j)\ \text{for all sufficiently large }j .
+\tag{1}
+\]
+Let $x\in B_R$ with $\psi(x)\in S$ and put $t=g^k(x)$, so $\psi(x)=|t|^{p-2}t$
+and $\psi_{\eta}(x)=\pi_{\eta}(t)$.  By (H5), $\pi_{\eta_j}(t)\to|t|^{p-2}t
+=\psi(x)$, and $S$ is open, so $\pi_{\eta_j}(t)\in S$ for all large $j$, which
+is (1).  \emph{It is worth recording what is NOT true, because it is what a
+monotonicity-based argument would need}: the sets $A(\eta_j)$ do not in general
+increase to $A$.  For the superlevel choice $S=(\ell,\infty)$ and the thesis'
+$\pi_\eta(s)=(|s|+\eta)^{p-2}s$, at a point with $t>0$ one has
+$(t+\eta)^{p-2}\le t^{p-2}$ because $p-2<0$, hence $\psi_\eta(x)\le\psi(x)$, so
+the superlevel sets may shrink.  That costs nothing here: Fatou consumes (1)
+and not any inclusion.
+
+\emph{Step 3: Fatou on the left.}  The integrands
+$\chi_{A(\eta_j)}w^{\frac p2-1}\|V_{\eta_j}\|^2\zeta^2$ are nonnegative and,
+by (H7), almost everywhere strongly measurable on $B_R$.  At almost every
+$x\in A$ the characteristic factor equals $1$ for all large $j$ by (1), and
+$\|V_{\eta_j}(x)\|\to\|V(x)\|$: at a point with $g^k(x)\ne0$ because
+$\eta\mapsto(|g^k(x)|+\eta)^{p/2-1}$ is continuous at $\eta=0$, the base being
+bounded away from $0$; and at a point with $g^k(x)=0$ because then
+$V(x)=0$, the factor $|g^k(x)|^{p/2-1}=0^{p/2-1}=0$ vanishing for the negative
+exponent, so the limit integrand vanishes there outright and \emph{Fatou needs
+no information at such a point}.  Hence
+\[
+\liminf_{j\to\infty}\chi_{A(\eta_j)}w^{\frac p2-1}\|V_{\eta_j}\|^2\zeta^2
+\ \ge\ \chi_{A}w^{\frac p2-1}\|V\|^2\zeta^2
+\qquad\text{almost everywhere on }B_R ,
+\]
+and Fatou's lemma (Preamble) gives
+\[
+\int_{A}w^{\frac p2-1}\|V\|^2\zeta^2\,dx
+\ \le\ \liminf_{j\to\infty}\int_{A(\eta_j)}
+w^{\frac p2-1}\|V_{\eta_j}\|^2\zeta^2\,dx ,
+\tag{2}
+\]
+each integral on the right being a genuine finite integral by (H9).
+
+\emph{Step 4: dominated convergence on the right.}  By (H5),
+$\psi_{\eta_j}\to\psi$ pointwise, and $b$ is continuous, so
+$b(\psi_{\eta_j})^2\to b(\psi)^2$ pointwise; multiplying by the fixed factor
+$\sum_i(D_i\zeta)^2$ preserves that.  The integrands are almost everywhere
+strongly measurable, $b\circ\pi_{\eta_j}\circ g^k$ being a composition of
+continuous maps --- $\pi_{\eta_j}$ is $C^1$ by (H3), hence continuous --- with
+the almost everywhere strongly measurable $g^k$ of (H2), and $\sum_i(D_i\zeta)^2$
+being continuous.  For the domination, (H6) gives
+$|\psi_{\eta_j}|\le\mu^{p-1}$ almost everywhere on $B_R$, so the hypothesis on
+$M$ gives $b(\psi_{\eta_j})\le M$ there, and $b\ge0$, whence
+\[
+0\ \le\ b(\psi_{\eta_j})^2\sum_i(D_i\zeta)^2\ \le\ M^2L_g
+\qquad\text{almost everywhere on }B_R ,
+\]
+a constant, integrable on $B_R$ by Step 1.  Dominated convergence (Preamble)
+therefore gives
+\[
+\int_{B_R}b(\psi_{\eta_j})^2\sum_i(D_i\zeta)^2\,dx
+\ \longrightarrow\ \int_{B_R}b(\psi)^2\sum_i(D_i\zeta)^2\,dx .
+\tag{3}
+\]
+
+\emph{Step 5: conclusion.}  Multiply (3) by $C_2\ge0$, which preserves the
+limit, and combine with (H8) and (2): the right-hand side of (H8) converges to
+$C_2\int_{B_R}b(\psi)^2\sum_i(D_i\zeta)^2$, so the $\liminf$ of its left-hand
+sides is at most that number, and by (2) so is
+$\int_{A}w^{\frac p2-1}\|V\|^2\zeta^2$.  That is the assertion.
+\end{proof}

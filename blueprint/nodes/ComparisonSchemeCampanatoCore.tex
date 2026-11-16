@@ -1,0 +1,509 @@
+\begin{helper}[The abstract comparison scheme: Campanato decay]
+Let $n\ge2$, $p>1$, $0<\alpha\le1$, $\delta'>0$, $c_1,c_3>0$ and
+\[
+0<\tau<p\alpha\theta,\qquad \theta=\frac{\delta'}{n+p\alpha} .
+\]
+Then (A) and (B) below both hold.
+
+\medskip
+\noindent\textbf{(A) The scheme, from a comparison bundle.}  There are
+$\lambda_0\in(0,p)$ and $c_{10},R_2>0$ with $R_2\le1$, depending only on
+$n,p,\alpha,\delta',\tau,c_1,c_3$, with the following property.  (The
+upper bound on $\lambda_0$ is \emph{strict}; this is what the consumers need,
+because Campanato's theorem (C5) is available at the exponent
+$\lambda=n+\lambda_0$ only for $\lambda<n+p$.  The paper's Theorems 4 and 6
+state $0<\lambda_0\le p$, which is weaker and which they keep.)
+
+Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open, let $\Omega'$ be
+open with $\overline{\Omega'}\subseteq\Omega$, let $R_1>0$ and let
+$u\in W^{1,p}(\Omega)$ with weak gradient $g=\nabla u$ (\noderef{MemW1pOn}).
+Write
+\[
+\Lambda(x_0,R)=R^{-n}\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\]
+Assume
+\begin{align}
+\Lambda(x_0,R)&\le c_1R^{-\tau}\qquad (x_0\in\Omega',\ 0<R\le R_1),\tag{4.15}
+\end{align}
+and that for every $x_0\in\Omega'$ and $0<R\le R_1$ with
+$\overline B_R(x_0)\subseteq\Omega$ there is a comparison map
+$v\in W^{1,p}\bigl(B_R(x_0)\bigr)$ with weak gradient $g_v$
+(\noderef{MemW1pOn}) such that
+\begin{align}
+\int_{B_\rho(x_0)}\bigl|g_v-(g_v)_{B_\rho(x_0)}\bigr|^p dx
+&\le c_3\Bigl(\frac\rho R\Bigr)^{p\alpha}\rho^{\,n}\Lambda(x_0,R)
+\qquad(0<\rho\le R/2),\tag{4.16}\\
+\int_{B_R(x_0)}|\nabla u-g_v|^p\,dx&\le R^{\delta'+n}\Lambda(x_0,R).\tag{4.17}
+\end{align}
+Then for every $x_0\in\Omega'$, every $R$ with $0<R\le\min\{R_1,R_2\}$ and
+$\overline B_R(x_0)\subseteq\Omega$, and every $\rho>0$ with
+$2\rho\le R^{1+\theta}$,
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p dx
+\le c_{10}\,\rho^{\,n+\lambda_0}.
+\tag{4.19}
+\]
+Here $(h)_{B_\rho(x_0)}=|B_\rho|^{-1}\int_{B_\rho(x_0)}h\,dx$ is the vector mean.
+
+\noindent\textbf{On the range of $\rho$.}  The conclusion is stated for the
+radii $\rho$ with $2\rho\le R^{1+\theta}$ at an admissible comparison radius $R$,
+and not for all $\rho\le\min\{R_1,R_2\}$, because that is exactly the range the
+hypotheses reach.  The thesis derives (4.19) of the thesis by putting
+$\rho=\frac12R^{1+\theta}$ (p.~45), so the estimate at a given $\rho$ consumes
+the comparison bundle at the \emph{larger} radius $R=(2\rho)^{1/(1+\theta)}$ ---
+larger because $\theta>0$ and $2\rho\le1$ --- and the bundle is available only
+for radii $\le R_1$ whose closed ball lies in $\Omega$.  A conclusion quantified
+over all $\rho\le\min\{R_1,R_2\}$ would assert the decay at radii whose
+associated comparison radius exceeds $R_1$, where the hypotheses say nothing.
+Conversely nothing is lost: as $R'$ runs over $(0,R]$ the number
+$\frac12R'^{\,1+\theta}$ runs over all of $(0,\frac12R^{1+\theta}]$, so every
+$\rho$ in the stated range is of the thesis' special form for exactly one
+$R'\le R$, and the containment $\overline B_R(x_0)\subseteq\Omega$ passes to
+$\overline B_{R'}(x_0)$.  A consumer fixes $R$ from the geometry of its
+subdomain once and then has (4.19) of the thesis for all small $\rho$, which is what
+Campanato's characterisation of the H\"older classes consumes.
+
+\medskip
+\noindent\textbf{(B) The scheme, from the producer-side data.}  Let $r>0$ and
+$0<\alpha_H\le1$, suppose the Sobolev--Poincar\'e inequality on balls holds in
+dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume the cited
+solvability result (C2) (\noderef{CitedDirichletW1p}), the cited regularity
+result (C1) (\noderef{CitedRegularityEpsPos}) and the cited Dirichlet result
+(C3) with H\"older boundary data (\noderef{CitedDirichletHolder}), the last
+three for \emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$, $\gamma_1'>0$ --- and,
+for (C1), for every open $\Omega_0\subseteq\R^n$.  Then there is
+$\alpha_2\in(0,1]$, depending only on $n,p,r$ and $\alpha_H$, such that for all
+$\delta_2>0$ and $\tau_2$ with
+\[
+0<\tau_2<p\alpha_2\theta_2,\qquad \theta_2=\frac{\delta_2}{n+p\alpha_2},
+\]
+there are $\lambda_2\in(0,p)$ and $R_3\in(0,1]$, depending only on
+$n,p,r,\alpha_H,\delta_2,\tau_2$, with the following property: for every
+$c_2>0$ there is $c_{20}>0$ such that the following holds.
+
+Let $0\le\varepsilon\le1$, let $\gamma_0,\gamma_1>0$ with
+$\gamma_1\le r\gamma_0$, let $\Omega\subseteq\R^n$ be open, let $\Omega'$ be
+open with $\overline{\Omega'}\subseteq\Omega$, let $R_1>0$, let
+$\mathcal A\colon\R^n\times\R\to(\R^n\to\R^n)$ be a family of fields, and let
+$u,U\in W^{1,p}(\Omega)$ both have weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}).  Assume
+\begin{itemize}
+\item $\overline B_R(x_0)\subseteq\Omega$ for every $x_0\in\Omega'$ and every
+  $0<R\le R_1$;
+\item for every $x_0\in\Omega'$ the normalised frozen field
+  $h\mapsto\mathcal A(x_0,U(x_0))(h)-\mathcal A(x_0,U(x_0))(0)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item $U\in C^{\alpha_H}\bigl(\overline B_{R_1}(x_0)\bigr)$
+  (\noderef{MemHolderOn}) for every $x_0\in\Omega'$;
+\item the Morrey bound $\Lambda(x_0,R)\le c_2R^{-\tau_2}$ for $x_0\in\Omega'$
+  and $0<R\le R_1$;
+\item the smallness (4.17) of the thesis, quantified over bundles: for every
+  $x_0\in\Omega'$, every $0<R\le R_1$ and every $v,V,g_v$ for which the frozen
+  comparison bundle
+  $\mathrm{FrozenComparisonOn}(n,p,x_0,R,\mathcal A(x_0,U(x_0)),U,U,g,v,V,g_v)$
+  holds (\noderef{FrozenComparisonOn}),
+  \[
+  \int_{B_R(x_0)}|\nabla u-g_v|^p\,dx\le R^{\delta_2+n}\Lambda(x_0,R).
+  \]
+\end{itemize}
+Then for every $x_0\in\Omega'$, every $R$ with $0<R\le\min\{R_1,R_3\}$ and every
+$\rho>0$ with $2\rho\le R^{1+\theta_2}$,
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p dx
+\le c_{20}\,\rho^{\,n+\lambda_2}.
+\]
+
+\medskip
+\noindent\textbf{What (B) adds, and why its exponent is produced rather than
+received.}  Clause (A) asks its consumer for a comparison bundle: a $g_v$
+satisfying (4.16) of the thesis and (4.17) of the thesis at every centre and radius.
+Producing that bundle is the same work in \S4 and in \S5 --- solve the frozen
+Dirichlet problem, then read (4.16) of the thesis off Theorem~Theorem~2 of the thesis and
+Theorem~Theorem~1 of the thesis --- and clause (B) does it once, here, so that
+Theorem~Theorem~4 of the thesis and Theorem~Theorem~6 of the thesis supply only what is genuinely
+theirs: the structure of their own frozen field, the H\"older datum for the
+representative, the Morrey bound, and (4.17) of the thesis, which is their own
+Lemma~Lemma~4.1 of the thesis resp.\ Lemma~Lemma~5.1 of the thesis.  Clause (A) is unchanged and
+Theorems 3 and 5 are untouched.
+
+The exponent $\alpha_2$ is \emph{produced} by (B) and not received, because it
+is Theorem~Theorem~2 of the thesis's oscillation exponent, which that theorem binds in its
+own existential after $n,p$ and the ratio $r$; a consumer cannot name it in
+advance.  That is why $\delta_2$, $\tau_2$ and $c_2$ are bound after it, in the
+order the thesis' own proof of Theorem~Theorem~4 of the thesis uses: first the exponent,
+then ``given $\tau>0$'' and the Morrey constant $c_1$ that Theorem~3 supplies at
+that $\tau$, and only then the admissibility $\tau<p\alpha\theta$.  The
+H\"older exponent $\alpha_H$ of the representative is a separate, \emph{bound}
+parameter, fixed by the consumer at $\alpha_H=\tfrac12$ from part (iii) of
+Theorem~Theorem~3 of the thesis resp.\ Theorem~Theorem~5 of the thesis; it must not be taken from (C4),
+whose exponent depends on $M=\|u\|_{L^\infty}$ while $\lambda_2$ may not.
+
+\medskip
+\noindent\textbf{On the quantifier order of (B).}  $\lambda_2$ is bound before
+$c_2$ and before all the data, so it depends only on $n,p,r,\alpha_H,\delta_2$
+and $\tau_2$ --- which is what Theorem~Theorem~4 of the thesis's remark at l.~1353--1355
+requires of $\lambda_0$ and $\beta=\lambda_0/p$, since $r=\nu_1/\nu_0$ and
+$\delta_2$ is built from $\delta$ and the data, while $c_2$ carries
+$d(\Omega',\partial\Omega)$, $\|u\|_{L^\infty}$ and $\|u\|_{W^{1,p}}$ through
+Theorem~3.  Only the norm $c_{20}$ is allowed to depend on $c_2$, and it does.
+The four cited results are bound before $\alpha_2$; each mentions only $n$ and
+$p$, both already bound, and each is universally quantified over its remaining
+parameters, so none introduces a dependence of $\alpha_2$ or $\lambda_2$ on
+anything outside the lists just given.
+\end{helper}
+\begin{proof}
+Throughout, $B_t=B_t(x_0)$, $|E|$ is Lebesgue measure, $\omega_n=|B_1(0)|$, and
+all non-integer powers are real powers of positive numbers.  Put
+\[
+\theta=\frac{\delta'}{n+p\alpha}>0 .
+\]
+
+\emph{Clause (A).}  Apply \noderef{CampanatoDecayFromBundle} with the parameters
+$n,p,\alpha,\delta',\tau$.  Its parameter hypotheses are exactly the present
+clause's: $n\ge2$, $p>1$, $0<\alpha\le1$, $\delta'>0$, $\tau>0$ and
+$\tau<p\alpha\theta$.  It produces $\lambda_0\in(0,p)$ and $R_2>0$ with
+$R_2\le1$, depending only on $n,p,\alpha,\delta'$ and $\tau$; feeding it the
+present clause's $c_1,c_3>0$ then produces $c_{10}>0$ depending only on
+$n,p,\alpha,\delta',\tau,c_1,c_3$.  These are the three constants clause (A)
+announces, and the dependence lists are the ones its quantifier order
+prescribes --- indeed the cited node binds $\lambda_0$ and $R_2$ before $c_1$
+and $c_3$, which is more than clause (A) asks.
+
+Now let $\varepsilon,\Omega,\Omega',u,g,R_1$ be as in clause (A).  The remaining
+hypotheses of \noderef{CampanatoDecayFromBundle} hold verbatim:
+$0\le\varepsilon\le1$; $\Omega$ open, $\Omega'$ open with
+$\overline{\Omega'}\subseteq\Omega$, and $R_1>0$; $u\in W^{1,p}(\Omega)$ with
+weak gradient $g$ (\noderef{MemW1pOn}); and the Morrey bound
+(4.15) of the thesis.  For the comparison bundle, fix $x_0\in\Omega'$ and
+$0<R\le R_1$ with $\overline B_R(x_0)\subseteq\Omega$: the present clause
+supplies a comparison map $v\in W^{1,p}(B_R(x_0))$ with weak gradient $g_v$
+(\noderef{MemW1pOn}) satisfying (4.16) of the thesis for $0<\rho\le R/2$ and
+(4.17) of the thesis, and the cited node asks for exactly this, except that it
+assumes (4.16) of the thesis only on the smaller range $0<\rho\le R/4$, which is
+implied by the present clause's range because $R/4\le R/2$.  Its conclusion is
+(4.19) of the thesis for every $x_0\in\Omega'$, every $R$ with
+$0<R\le\min\{R_1,R_2\}$ and $\overline B_R(x_0)\subseteq\Omega$, and every
+$\rho>0$ with $2\rho\le R^{1+\theta}$.  That is clause (A).
+
+
+\emph{Step B1: the constants of clause (B).}  Let $r>0$ and $0<\alpha_H\le1$ be
+given, together with the four cited results.  Apply
+\noderef{GradientOscillationEstimate} (Theorem~2) with the parameters $n,p$ and
+$r$ --- its hypotheses $2\le n$, $1<p$, $0<r$ hold, and its hypothesis
+\noderef{CitedSobolevPoincareBall} and its two universal hypotheses, the cited
+solvability result (C2) (\noderef{CitedDirichletW1p}) and the cited regularity
+result (C1) (\noderef{CitedRegularityEpsPos}), are the present clause's.  Let
+$C_2>0$ and $\alpha_2\in(0,1]$ be the constants it produces; they depend only on
+$n,p$ and $r$.  This $\alpha_2$ is the exponent the clause announces.  Apply
+\noderef{GradientSupEstimate} (Theorem~1) with the same $n,p,r$ and the same
+three hypotheses, and let $C_1>0$ be its constant; and apply
+\noderef{FrozenComparisonDecay} with $n,p,r$ and all four cited results, and let
+$c_0>0$ be its constant.  All three depend only on $n,p$ and $r$.  Put
+\[
+\kappa_p=\max\bigl\{2^{\frac p2},\,2^{\,p-1}\bigr\}>0,
+\qquad
+c_3^{\sharp}=4^{\,p}\,\omega_n\,C_2^{\,p}\bigl(2^{\,n}C_1c_0\,\kappa_p\bigr)>0,
+\]
+both depending only on $n,p$ and $r$.  Each factor is used and checked where it
+arises: $\kappa_p$ in the pointwise inequality of (B2b), the factor $2^{\,n}$ in
+the sup bound of (B2b), and $4^{\,p}$ in the step of (B2c) that converts the
+radius $R/4$ of Theorem~Theorem~2 of the thesis's application into the radius $R$ of
+(4.16) of the thesis.  Now let $\delta_2>0$ and
+$0<\tau_2<p\alpha_2\theta_2$ be given, $\theta_2=\delta_2/(n+p\alpha_2)$, and
+let $c_2>0$ be given.
+
+\emph{Step B2: the bundle, produced here.}  Fix data
+$\varepsilon,\gamma_0,\gamma_1,\Omega,\Omega',\mathcal A,u,U,g,R_1$ satisfying
+all the hypotheses of clause (B), and fix $x_0\in\Omega'$ and
+$0<R\le\min\{R_1,1\}$.  (The restriction $R\le1$ costs nothing: Step B3 uses
+the bundle only at radii $\le\min\{R_1,R_3\}$ with $R_3\le1$.)
+Write $A^0=\mathcal A(x_0,U(x_0))$ and $\widetilde A=A^0-A^0(0)$.
+
+\emph{(B2a) The comparison map.}  Apply the second part of
+\noderef{FrozenComparisonDecay} --- the instance of Step B1 --- with the data
+$\varepsilon$, $\alpha_H$, $\gamma_0$, $\gamma_1$, the field $A^0$, the centre
+$x_0$, the radius $R$, the function $U$ and the field $g$.  Its hypotheses
+hold: $0\le\varepsilon\le1$ and $0<\alpha_H\le1$ by hypothesis; $0<\gamma_0$,
+$0<\gamma_1$ and $\gamma_1\le r\gamma_0$ by hypothesis; $0<R$; the field
+$\widetilde A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}), which is the
+second hypothesis of clause (B) at $x_0$; $U\in W^{1,p}(B_R(x_0))$ with weak
+gradient $g$ (\noderef{MemW1pOn}), by the hypothesis
+$U\in W^{1,p}(\Omega)$ together with $B_R(x_0)\subseteq\overline
+B_R(x_0)\subseteq\Omega$ and clause (1) of \noderef{WeakGradientRestrict}; and
+$U\in C^{\alpha_H}(\overline B_R(x_0))$ (\noderef{MemHolderOn}), by the third
+hypothesis of clause (B) at $x_0$ together with
+$\overline B_R(x_0)\subseteq\overline B_{R_1}(x_0)$ and the fact that a function
+of class $C^{\alpha_H}$ on a set is of class $C^{\alpha_H}$ on every subset,
+with the same constant.  It produces $v,V,g_v$ with the frozen comparison bundle
+$\mathrm{FrozenComparisonOn}(n,p,x_0,R,A^0,U,U,g,v,V,g_v)$
+(\noderef{FrozenComparisonOn}) and the decay
+\[
+\int_{B_\rho(x_0)}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+\le c_0\Bigl(\frac\rho R\Bigr)^{n}\int_{B_R(x_0)}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+\qquad(0<\rho\le R).
+\tag{4.11}
+\]
+
+\emph{(B2b) The sup bound, and $\Lambda$.}  Apply \noderef{GradientSupEstimate}
+--- the instance of Step B1 --- with $\varepsilon,\gamma_0,\gamma_1$, the open
+set $B_R(x_0)$, the field $\widetilde A$, the solution $v$ with weak gradient
+$g_v$, the centre $x_0$ and the radius $R/2$.  Its hypotheses hold:
+$0\le\varepsilon$; $0<\gamma_0$; $\gamma_1\le r\gamma_0$; $B_R(x_0)$ is open;
+$0<R/2$; $\widetilde A(0)=0$ by construction; $\widetilde A$ satisfies
+(Q1) of the thesis--(Q2) of the thesis on $B_R(x_0)$, a fortiori from $\R^n$;
+$\overline B_{R/2}(x_0)\subseteq B_R(x_0)$; and $v$ is a weak solution of
+$\operatorname{div}\widetilde A(\nabla v)=0$ in $B_R(x_0)$, which is the one
+hypothesis that is not immediate and which we now prove, the first clause of the
+bundle giving it only for $A^0$.
+
+\emph{The operator shift.}  We claim first that
+\[
+\int_{B_R(x_0)}g_\varphi^{\,i}\,dx=0\qquad(i=1,\dots,n)
+\tag{E3}
+\]
+for every $\varphi\in W^{1,p}(B_R(x_0))$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) having compact support with
+$\operatorname{supp}\varphi\subseteq B_R(x_0)$.  By
+\noderef{WeakGradientZeroExtend} applied with $q=p$, the open set $\R^n$, the
+ball $B_R(x_0)$ and the pair $(\varphi,g_\varphi)$ --- its hypotheses being
+$1\le n$, $1\le p$, the openness of $\R^n$, $B_R(x_0)\subseteq\R^n$, the
+membership just assumed and the compact support condition --- the pair
+$(\varphi,\mathbf1_{B_R(x_0)}g_\varphi)$ satisfies $\varphi\in W^{1,p}(\R^n)$
+with that weak gradient.  Let $\psi=\mathbf1_{\overline B_{R+2}(x_0)}*\rho_1$
+with $\rho_1$ the standard mollifier of the Preamble at scale $1$: it is smooth
+by the Preamble item on convolution with a smooth compactly supported kernel
+(the indicator is locally integrable and $\rho_1$ is smooth with compact
+support); it equals $1$ at every $x$ with $|x-x_0|\le R+1$, because then
+$x-y\in\overline B_{R+2}(x_0)$ for every $y\in\operatorname{supp}\rho_1
+\subseteq\overline B_1(0)$, so that $\psi(x)=\int\rho_1=1$; and it vanishes at
+every $x$ with $|x-x_0|>R+3$, so $\operatorname{supp}\psi\subseteq
+\overline B_{R+3}(x_0)$ is compact.  The defining identity of
+\noderef{HasWeakGradientOn} on $\R^n$, which the pair
+$(\varphi,\mathbf1_{B_R(x_0)}g_\varphi)$ satisfies by \noderef{MemW1pOn},
+applied to the test function $\psi$ and the index $i$, reads
+$\int_{\R^n}\varphi\,D_i\psi\,dx=-\int_{\R^n}\mathbf1_{B_R(x_0)}
+g_\varphi^{\,i}\psi\,dx$.  Its left-hand side vanishes, because $\psi$ is
+constant on the open ball $B_{R+1}(x_0)$, so $D_i\psi=0$ there, while
+$\varphi=0$ off $\operatorname{supp}\varphi\subseteq B_R(x_0)\subseteq
+B_{R+1}(x_0)$; and its right-hand side is $-\int_{B_R(x_0)}g_\varphi^{\,i}dx$,
+because $\psi=1$ on $B_R(x_0)$.  This is (E3).
+
+Now fix an admissible test pair $(\varphi,g_\varphi)$ for
+\noderef{IsWeakSolutionOn} on $B_R(x_0)$, i.e.\ one with
+$\varphi\in W^{1,p}(B_R(x_0))$ of weak gradient $g_\varphi$, compact support and
+$\operatorname{supp}\varphi\subseteq B_R(x_0)$.  Write
+\[
+F=\sum_i\bigl(\widetilde A(g_v)\bigr)^ig_\varphi^{\,i},
+\qquad
+c=\sum_i\bigl(A^0(0)\bigr)^ig_\varphi^{\,i},
+\]
+so that, since $A^0(h)=\widetilde A(h)+A^0(0)$ for every $h$ and the field of
+the present construction does not depend on the function value, the integrand
+of the $A^0$-identity is $F+c$ and that of the $\widetilde A$-identity is $F$,
+the right-hand sides of both identities being $0$.
+
+\emph{$c$ is integrable with integral $0$.}  Each $g_\varphi^{\,i}$ is
+integrable on $B_R(x_0)$: $|g_\varphi^{\,i}|\le|g_\varphi|\in L^p(B_R(x_0))$ by
+\noderef{MemW1pOn} and $|B_R(x_0)|<\infty$, so H\"older's inequality on a set of
+finite measure (Preamble) puts it in $L^1(B_R(x_0))$.  Hence $c$, a finite
+linear combination of the $g_\varphi^{\,i}$ with the constant coefficients
+$(A^0(0))^i$, is integrable on $B_R(x_0)$, and by linearity of the integral on
+integrable functions together with (E3),
+\[
+\int_{B_R(x_0)}c\,dx=\sum_i\bigl(A^0(0)\bigr)^i\int_{B_R(x_0)}g_\varphi^{\,i}\,dx
+=\sum_i\bigl(A^0(0)\bigr)^i\cdot0=0 .
+\]
+
+\emph{The three clauses of \noderef{IsWeakSolutionOn} match, and no
+integrability of $F$ has to be assumed.}  That node asks for three things, and
+each is compared separately.  (i) The membership clause
+$v\in W^{1,p}_{\mathrm{loc}}(B_R(x_0))$ with weak gradient $g_v$
+(\noderef{MemW1pLocOn}) does not mention the operator, so it is the same clause
+for both fields.  (ii) The integrability clause holds for one field exactly when
+it holds for the other: if $F$ is integrable on $B_R(x_0)$ then so is $F+c$,
+being a sum of two integrable functions, and if $F$ is not integrable then
+neither is $F+c$, since otherwise $F=(F+c)-c$ would be a difference of two
+integrable functions.  (iii) The identity clause likewise holds for one exactly
+when it holds for the other.  In the first case linearity of the integral and
+the display above give
+$\int_{B_R(x_0)}(F+c)\,dx=\int_{B_R(x_0)}F\,dx$, so the two integrals vanish
+together.  In the second case neither $F$ nor $F+c$ is integrable, so both
+integrals are $0$ by the convention that the integral of a non-integrable
+function is $0$, and both identities hold --- though in that case the
+integrability clause fails for both fields alike, so neither predicate is
+asserted and (iii) is not needed.  As the admissible test pair was arbitrary,
+all three clauses transfer, and $v$ is a weak solution for $\widetilde A$ in
+$B_R(x_0)$.  Its conclusion is
+\[
+\bigl(\varepsilon+|g_v(x)|^2\bigr)^{\frac p2}
+\le\frac{2^{\,n}C_1}{R^{\,n}}\int_{B_{R/2}(x_0)}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dy
+\qquad\text{for a.e. }x\in B_{R/4}(x_0).
+\]
+By (4.11) of the thesis at $\rho=R/2$, which gives
+$\int_{B_{R/2}(x_0)}(\varepsilon+|g_v|^2)^{p/2}\le c_02^{-n}
+\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{p/2}$, the right-hand side is at most
+$2^{\,n}C_1\cdot c_02^{-n}R^{-n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{p/2}dx
+=C_1c_0R^{-n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{p/2}dx$; the factor $2^{-n}$
+is the one (4.11) of the thesis actually supplies at $\rho=R/2$ and it is kept.
+
+Next, the pointwise comparison of $g_v$ with $\nabla u$.  From
+$|g_v|\le|\nabla u|+|\nabla u-g_v|$ and $(X+Y)^2\le2(X^2+Y^2)$,
+\[
+1+|g_v|^2\le1+2|\nabla u|^2+2|\nabla u-g_v|^2
+\le2\bigl[(1+|\nabla u|^2)+|\nabla u-g_v|^2\bigr],
+\]
+and raising to the power $p/2$ and using
+$(X+Y)^{p/2}\le\max\{1,2^{\frac p2-1}\}(X^{p/2}+Y^{p/2})$ for $X,Y\ge0$ ---
+subadditivity of $t\mapsto t^{p/2}$ when $p\le2$, convexity when $p\ge2$, which
+is (E1) of Step 0 with the exponent $p/2$ in place of $p$ --- gives, with
+$X=1+|\nabla u|^2$ and $Y=|\nabla u-g_v|^2$ so that $Y^{p/2}=|\nabla u-g_v|^p$,
+\[
+(\varepsilon+|g_v|^2)^{\frac p2}\le(1+|g_v|^2)^{\frac p2}
+\le2^{\frac p2}\max\{1,2^{\frac p2-1}\}
+\bigl[(1+|\nabla u|^2)^{\frac p2}+|\nabla u-g_v|^{p}\bigr]
+=\kappa_p\bigl[(1+|\nabla u|^2)^{\frac p2}+|\nabla u-g_v|^{p}\bigr],
+\]
+using $(\varepsilon+t^2)^{p/2}\le(1+t^2)^{p/2}$ for $\varepsilon\le1$ and
+$2^{p/2}\max\{1,2^{p/2-1}\}=\max\{2^{p/2},2^{\,p-1}\}=\kappa_p$.  Integrating
+over $B_R(x_0)$,
+$\int_{B_R}(\varepsilon+|g_v|^2)^{p/2}\le\kappa_p\{\int_{B_R}(1+|\nabla
+u|^2)^{p/2}+\int_{B_R}|\nabla u-g_v|^{p}\}$, and the second term is at most
+$R^{\delta_2+n}\Lambda(x_0,R)=R^{\delta_2}\int_{B_R}(1+|\nabla u|^2)^{p/2}
+\le\int_{B_R}(1+|\nabla u|^2)^{p/2}$ by the fifth hypothesis of clause (B),
+applied to the bundle of (B2a), and $R^{\delta_2}\le1$ because $R\le1$ and
+$\delta_2>0$.  Hence
+$\int_{B_R}(\varepsilon+|g_v|^2)^{p/2}\le2\kappa_pR^{\,n}\Lambda(x_0,R)$, and
+the sup bound becomes, for a.e.\ $x\in B_{R/4}(x_0)$,
+\[
+\bigl(\varepsilon+|g_v(x)|^2\bigr)^{\frac p2}
+\le2C_1c_0\kappa_p\,\Lambda(x_0,R)
+\le S^{p},
+\qquad
+S:=\Bigl(2^{\,n}C_1c_0\kappa_p\,\Lambda(x_0,R)\Bigr)^{1/p},
+\]
+the last inequality because $2\le2^{\,n}$ for $n\ge2$ (here $n\ge2$ by
+hypothesis, and $n\ge1$ would do).
+In particular $|g_v(x)|\le S$ almost everywhere on $B_{R/4}(x_0)$: raising the
+display to the power $1/p>0$, which is monotone on $[0,\infty)$, gives
+$(\varepsilon+|g_v(x)|^2)^{1/2}\le S$, and $|g_v(x)|\le(\varepsilon+|g_v(x)|^2)^{1/2}$
+because $\varepsilon\ge0$.
+
+\emph{(B2c) The oscillation estimate (4.16) of the thesis.}  Apply
+\noderef{GradientOscillationEstimate} --- the instance of Step B1 --- with
+$\varepsilon,\gamma_0,\gamma_1$, the bound $S$ of (B2b), the open set
+$B_R(x_0)$ --- the \emph{same} open set as in (B2b), so that no restriction of
+the weak-solution property to a smaller ball is needed --- the field
+$\widetilde A$, the solution $v$ with gradient $g_v$, the centre $x_0$ and the
+radii $R/4$ and $\rho\le R/4$.  Its hypotheses are exactly those of (B2b) ---
+$0\le\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$, the openness of
+$B_R(x_0)$, (Q1) of the thesis--(Q2) of the thesis for $\widetilde A$ on $B_R(x_0)$ and
+the weak-solution property of $v$ for $\widetilde A$ on $B_R(x_0)$, proved
+there --- together with $0<\rho\le R/4$,
+$\overline B_{R/4}(x_0)\subseteq B_R(x_0)$ and $|g_v|\le S$ almost everywhere on
+$B_{R/4}(x_0)$, which is the last display of (B2b).  Its conclusion is
+$\|g_v(x)-g_v(y)\|\le C_2S(\rho/(R/4))^{\alpha_2}=C_2S(4\rho/R)^{\alpha_2}$ for
+almost every pair $x,y\in B_\rho(x_0)$.  The field $g_v$ is integrable on
+$B_\rho(x_0)$ --- $|g_v|\le S$ a.e.\ there, since
+$B_\rho(x_0)\subseteq B_{R/4}(x_0)$, and $|B_\rho(x_0)|<\infty$ --- so its mean
+$(g_v)_{B_\rho(x_0)}$ is defined, and for almost every $x\in B_\rho(x_0)$
+\[
+\bigl\|g_v(x)-(g_v)_{B_\rho(x_0)}\bigr\|
+=\Bigl\|\frac1{|B_\rho|}\int_{B_\rho}\bigl(g_v(x)-g_v(y)\bigr)dy\Bigr\|
+\le\frac1{|B_\rho|}\int_{B_\rho}\bigl\|g_v(x)-g_v(y)\bigr\|\,dy
+\le C_2S\Bigl(\frac{4\rho}R\Bigr)^{\alpha_2},
+\]
+by the norm inequality for the Bochner integral over a general measure
+(Mathlib's \texttt{MeasureTheory.norm\_integral\_le\_integral\_norm}) and the
+a.e.\ bound just obtained, valid for a.e.\ $y$ at each such $x$.  Raising to the
+power $p$ and integrating over $B_\rho(x_0)$, whose measure is
+$\omega_n\rho^{\,n}$ (Preamble),
+\[
+\int_{B_\rho(x_0)}\bigl|g_v-(g_v)_{B_\rho(x_0)}\bigr|^p dx
+\le\omega_nC_2^{\,p}4^{\,p\alpha_2}S^{p}\Bigl(\frac\rho R\Bigr)^{p\alpha_2}\rho^{\,n}
+\le c_3^{\sharp}\Bigl(\frac\rho R\Bigr)^{p\alpha_2}\rho^{\,n}\Lambda(x_0,R)
+\]
+for $0<\rho\le R/4$, with $c_3^{\sharp}$ of Step B1: the first inequality is
+$S^{p}=2^{\,n}C_1c_0\kappa_p\Lambda(x_0,R)$ from (B2b), and the second is
+$4^{\,p\alpha_2}\le4^{\,p}$, which holds because $0<\alpha_2\le1$ and $4^p\ge1$,
+together with the definition
+$c_3^{\sharp}=4^{\,p}\omega_nC_2^{\,p}(2^{\,n}C_1c_0\kappa_p)$ --- the factor
+$4^{\,p}$ is \emph{inside} $c_3^{\sharp}$, not absorbed by an inequality
+$4^{p\alpha_2}\le1$, which is false.
+
+Together with the fifth hypothesis of clause (B), this is exactly the pair
+(4.16) of the thesis--(4.17) of the thesis that \noderef{CampanatoDecayFromBundle}
+assumes, for the field $g_v$ just produced, at the exponent $\alpha_2$, the
+constant $c_3^{\sharp}$ and the Morrey data $\tau_2,c_2$.  The ranges match
+exactly and no radius conversion is needed: that node assumes (4.16) of the thesis
+on $0<\rho\le R/4$, which is precisely the range produced here, and the
+restriction to $R/4$ is the reason it is stated there on that range rather than
+on the thesis' $\rho\le R/2$.  The $W^{1,p}$ membership that node also assumes
+is the second clause of the bundle
+$\mathrm{FrozenComparisonOn}(n,p,x_0,R,A^0,U,U,g,v,V,g_v)$ obtained in (B2a),
+namely $v\in W^{1,p}(B_R(x_0))$ with weak gradient $g_v$
+(\noderef{FrozenComparisonOn}, \noderef{MemW1pOn}).
+
+\emph{Step B3: the conclusion of clause (B).}  Apply
+\noderef{CampanatoDecayFromBundle} with the parameters
+$n,p,\alpha_2,\delta_2,\tau_2$ in place of $n,p,\alpha,\delta',\tau$.  Its
+parameter hypotheses hold: $n\ge2$ and $p>1$ are the present clause's;
+$0<\alpha_2\le1$ by Step B1; and $\delta_2>0$, $\tau_2>0$ and
+$\tau_2<p\alpha_2\theta_2$ with $\theta_2=\delta_2/(n+p\alpha_2)$ are
+hypotheses of clause (B).  It produces $\lambda_2\in(0,p)$ and $R_3>0$ with
+$R_3\le1$, depending only on $n,p,\alpha_2,\delta_2$ and $\tau_2$.  These are
+the $\lambda_2$ and $R_3$ the clause announces; since $\alpha_2$ is a function
+of $n,p$ and $r$ alone (Step B1), they depend only on $n,p,r,\delta_2$ and
+$\tau_2$, which is what Theorem~Theorem~4 of the thesis's remark at l.~1353--1355 requires.
+They are produced before $c_2$ is given, which is the clause's quantifier
+order; this is available because the cited node binds its $\lambda_0$ and $R_2$
+before its $c_1$ and $c_3$.
+
+Now let $c_2>0$ be given.  Feeding the cited node the constants $c_2$ and
+$c_3^{\sharp}$ --- both positive, $c_3^{\sharp}$ by Step B1 --- produces
+$c_{20}>0$ depending only on $n,p,\alpha_2,\delta_2,\tau_2,c_2$ and
+$c_3^{\sharp}$, hence on $n,p,r,\delta_2,\tau_2$ and $c_2$.  This is the
+$c_{20}$ the clause announces, and it is the only constant allowed to depend on
+$c_2$.
+
+Finally fix the data $\varepsilon,\gamma_0,\gamma_1,\Omega,\Omega',\mathcal
+A,u,U,g,R_1$ of clause (B), and apply the cited node at the radius parameter
+$R_1^{\flat}=\min\{R_1,1\}>0$ in place of $R_1$.  (Its $R_1$ is universally
+quantified, so this is an instantiation and not a restriction; $R_1^{\flat}$ is
+used because Step B2 produces the bundle only for $R\le\min\{R_1,1\}$, and
+nothing is lost because the conclusion will be needed only for
+$R\le R_3\le1$.)  The remaining hypotheses hold: $0\le\varepsilon\le1$;
+$\Omega$ open, $\Omega'$ open with $\overline{\Omega'}\subseteq\Omega$; and
+$u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}), which is a
+hypothesis of clause (B).  The Morrey bound $\Lambda(x_0,R)\le c_2R^{-\tau_2}$
+for $x_0\in\Omega'$ and $0<R\le R_1^{\flat}$ is the fourth hypothesis of clause
+(B), whose range $0<R\le R_1$ contains this one; it is (4.15) of the thesis at the
+substituted constants.  The comparison bundle is what Step B2 produces: for
+every $x_0\in\Omega'$ and every $0<R\le R_1^{\flat}=\min\{R_1,1\}$ with
+$\overline B_R(x_0)\subseteq\Omega$ --- which is exactly the range Step B2 was
+run on --- Step B2 yields $v,V,g_v$ with $v\in W^{1,p}(B_R(x_0))$ and weak
+gradient $g_v$ (the second clause of its bundle), the oscillation estimate
+(4.16) of the thesis at the exponent $\alpha_2$ and the constant $c_3^{\sharp}$ for
+$0<\rho\le R/4$ by (B2c), and the smallness (4.17) of the thesis at $\delta_2$,
+which is the fifth hypothesis of clause (B) applied to that bundle.
+
+Its conclusion is: for every $x_0\in\Omega'$, every $R$ with
+$0<R\le\min\{R_1^{\flat},R_3\}$ and $\overline B_R(x_0)\subseteq\Omega$, and
+every $\rho>0$ with $2\rho\le R^{1+\theta_2}$,
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p dx
+\le c_{20}\,\rho^{\,n+\lambda_2}.
+\]
+Here $\min\{R_1^{\flat},R_3\}=\min\{R_1,1,R_3\}=\min\{R_1,R_3\}$ because
+$R_3\le1$, so the range of $R$ is the one clause (B) claims.
+The containment $\overline B_R(x_0)\subseteq\Omega$ is automatic here from the
+first hypothesis of clause (B), which asserts it for every $x_0\in\Omega'$ and
+every $0<R\le R_1$, and $R\le\min\{R_1,R_3\}\le R_1$.  So the displayed estimate
+holds for every $x_0\in\Omega'$, every $0<R\le\min\{R_1,R_3\}$ and every
+$\rho>0$ with $2\rho\le R^{1+\theta_2}$, which is clause (B).  The exponent
+$\alpha_H$ enters only through the production of the bundle in Step B2 and not
+through any constant, so listing it among the dependences of $\alpha_2$,
+$\lambda_2$ and $R_3$ over-reports rather than under-reports them.
+\end{proof}

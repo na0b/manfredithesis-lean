@@ -1,0 +1,127 @@
+\begin{lemma}[The model density of \S4 inhabits (F1)--(F4) on $1<p<2$]
+Let $n\ge1$ be an integer, let $1<p<2$, let $\varepsilon\ge0$ and let $a\ge0$.
+Then the density
+\[
+f(x,z,h)=\bigl(\varepsilon+|h|^2\bigr)^{p/2}
+\]
+of \S4 --- which does not depend on $x$ or $z$ --- together with the modulus
+$\sigma\equiv0$ satisfies
+\[
+\mathrm{VariationalStructureF123}\bigl(n,p,\varepsilon,\ \lambda=1,\
+\Lambda=1,\ a,\ \nu_0=p(p-1),\ \nu_1=p,\ \Omega=\R^n,\ f,\ \sigma\bigr),
+\]
+and in addition (F4) holds for that $\sigma$ at every $c_\sigma>0$ and every
+$\delta>0$:
+\[
+\sigma(t)\le c_\sigma t^\delta\qquad\text{for all }t\ge0 .
+\]
+
+\noindent\textbf{Why this node exists.}  The Note for the formalization requires
+at l.~258 that a cited result ``must not be vacuous (each must be a true
+statement for the operators to which it is applied)'', and the demand applies a
+fortiori to the structure bundle on which every \S4 statement is conditioned: if
+$\mathrm{VariationalStructureF123}$ were satisfied by no density, then
+Theorem~Theorem~4 of the thesis, \noderef{MinimumGradientHolder} and everything proved from
+them would be vacuously true.  This node discharges that demand for the density
+\S4 is written about.  It is the (F1)--(F3) counterpart of the $\S\S1$--3
+witness for (Q1) of the thesis--(Q2) of the thesis, and its standing use is the same: a
+clause added to the bundle is re-checked against it.
+
+\textbf{On the constants.}  They are admissible exactly where the consumers ask
+for them.  $0<\lambda\le\Lambda$ holds as $1\le1$.  $0<\nu_0<\nu_1$ holds
+because $0<p(p-1)<p$ precisely when $0<p-1<1$, i.e.\ on $1<p<2$; on $p\ge2$ the
+same computation below gives the two constants in the other order, $\nu_0=p$ and
+$\nu_1=p(p-1)$, and the statement is confined to the singular range for that
+reason alone.  $a$ is left free and only required nonnegative, so the witness is
+available at the consumers' $0<a$; the density in fact satisfies (F1) with
+$a=0$, since the two bounds there hold with equality.  $\sigma\equiv0$ is
+admissible because $f$ is independent of $x$ and $z$, so the left-hand side of
+(F3) is identically $0$; a density with genuine $x$-dependence needs a genuine
+$\sigma$, and nothing here claims otherwise.
+\end{lemma}
+\begin{proof}
+Throughout write $w(h)=\varepsilon+|h|^2$ and $f(h)=w(h)^{p/2}$, suppressing the
+constant dependence on $x$ and $z$.  Note $\varepsilon\ge0$ gives
+$|h|^2\le w(h)$, and $1<p<2$ gives $p-2<0$ and $p-1\in(0,1)$.
+
+\emph{Carath\'eodory, measurability.}  For fixed $z$ and $h$ the map
+$x\mapsto f(h)$ is constant, hence Borel measurable.
+
+\emph{Carath\'eodory, joint continuity.}  Fix $x$.  The map
+$(z,h)\mapsto f(h)$ is the composition of the projection $(z,h)\mapsto h$ with
+$f$, so it suffices that $f$ is continuous on $\R^n$.  If $\varepsilon>0$ then
+$w\ge\varepsilon>0$ and $f$ is the composition of the smooth map $h\mapsto w(h)$
+with $t\mapsto t^{p/2}$, which is smooth on $(0,\infty)$.  If $\varepsilon=0$
+then $f(h)=|h|^{p}$, which is continuous on $\R^n\setminus\{0\}$ by the same
+argument and continuous at the origin because $|h|^p\to0=f(0)$ as $h\to0$, using
+$p>0$ and the real-power convention $0^{p}=0$ for $p\ne0$.
+
+\emph{(F1).}  Both inequalities are immediate, with $\lambda=\Lambda=1$:
+\[
+-a+1\cdot w(h)^{p/2}\;\le\;f(h)\;=\;w(h)^{p/2}\;\le\;1\cdot w(h)^{p/2}+a ,
+\]
+since $a\ge0$.  This holds for every $x$, in particular for every $x\in\R^n$.
+
+\emph{(F2), the $C^1$ clause.}  We claim $f\in C^1(\R^n)$.  For
+$h\in D(\varepsilon)=\{w\ne0\}$ this is the chain rule as above, with
+\begin{equation}
+Df(h)\xi=p\,w(h)^{\frac p2-1}(h,\xi),
+\tag{$\ast$}
+\end{equation}
+obtained from $D(|y|^2)\xi=2(h,\xi)$ at $y=h$ and $\frac p2\cdot2=p$.  If
+$\varepsilon>0$ then $D(\varepsilon)=\R^n$ and we are done.  If
+$\varepsilon=0$ the single point $h=0$ remains, where $f(h)=|h|^p$.  There
+\[
+\frac{|f(h)-f(0)-0|}{|h|}=\frac{|h|^p}{|h|}=|h|^{p-1}\xrightarrow[h\to0]{}0
+\]
+because $p-1>0$, so $f$ is differentiable at $0$ with $Df(0)=0$; and
+$\|Df(h)\|=p|h|^{p-1}\to0=\|Df(0)\|$ by $(\ast)$ and Cauchy--Schwarz (the
+supremum over $|\xi|\le1$ of $p|h|^{p-2}(h,\xi)$ is $p|h|^{p-1}$), so $Df$ is
+continuous at $0$ as well.  Hence $f\in C^1(\R^n)$ in every case.
+
+\emph{(F2), the $C^2$ clause.}  On the open set $D(\varepsilon)=\{w\ne0\}$ the
+map $h\mapsto w(h)$ is a polynomial that does not vanish, so
+$h\mapsto w(h)^{\frac p2-1}$ is $C^\infty$ there, and differentiating $(\ast)$
+once more by the product and chain rules gives, for $h\in D(\varepsilon)$ and
+$\zeta\in\R^n$,
+\begin{equation}
+D\bigl(h'\mapsto Df(h')\zeta\bigr)(h)\,\zeta
+= p\,w(h)^{\frac p2-1}|\zeta|^2
+  + p(p-2)\,w(h)^{\frac p2-2}(h,\zeta)^2 .
+\tag{$\ast\ast$}
+\end{equation}
+In particular $f$ is $C^2$ on $D(\varepsilon)$, which is the clause as stated.
+
+\emph{(F2), the two bounds.}  Fix $h\in D(\varepsilon)$ and $\zeta$, and write
+$w=w(h)>0$.  By Cauchy--Schwarz and $|h|^2\le w$,
+\[
+0\;\le\;(h,\zeta)^2\;\le\;|h|^2|\zeta|^2\;\le\;w\,|\zeta|^2 .
+\]
+Since $p(p-2)<0$, the second term of $(\ast\ast)$ is nonpositive, which gives
+the upper bound at once:
+\[
+D\bigl(h'\mapsto Df(h')\zeta\bigr)(h)\,\zeta\;\le\;p\,w^{\frac p2-1}|\zeta|^2
+=\nu_1\,w^{\frac p2-1}|\zeta|^2 .
+\]
+For the lower bound, replacing $(h,\zeta)^2$ by the larger $w|\zeta|^2$ in a
+term with the negative factor $p(p-2)$ decreases the sum, so using
+$w^{\frac p2-2}\cdot w=w^{\frac p2-1}$ (valid since $w>0$),
+\[
+D\bigl(h'\mapsto Df(h')\zeta\bigr)(h)\,\zeta
+\;\ge\;p\,w^{\frac p2-1}|\zeta|^2+p(p-2)\,w^{\frac p2-1}|\zeta|^2
+=p(p-1)\,w^{\frac p2-1}|\zeta|^2=\nu_0\,w^{\frac p2-1}|\zeta|^2 .
+\]
+Both are the required bounds, and both hold for every $x$.
+
+\emph{The modulus clauses.}  $\sigma\equiv0$ is bounded above by $C=0$, is
+continuous, is monotone, and satisfies $\sigma(0)=0$.
+
+\emph{(F3).}  For all $x,x'$, all $z,z'$ and all $h$ the left-hand side is
+$|f(h)-f(h)|=0$, because $f$ does not depend on $x$ or $z$, and the right-hand
+side is $(1+|h|^2)^{p/2}\cdot\sigma(\cdot)=0$ as well.  So (F3) holds with
+equality.
+
+\emph{(F4).}  For $t\ge0$ and $c_\sigma>0$, $\delta>0$ we have
+$\sigma(t)=0\le c_\sigma t^\delta$, since $t^\delta\ge0$ for $t\ge0$ under the
+real-power convention.  This is the second conjunct.
+\end{proof}

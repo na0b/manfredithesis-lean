@@ -1,0 +1,186 @@
+\begin{helper}[The subquadratic signed power lies in $W^{1,2}$ of every inner ball]
+Let $n\in\mathbb{N}$ and let $p\in\R$ with $1<p<2$; in particular
+$p/2-1<0$ and $p-2<0$.  All powers of nonnegative reals below are real powers,
+so that $0^{p/2-1}=0$ for the negative exponent $p/2-1$.
+$\operatorname{supp}$ denotes the closed support.  Let
+$L_c,C_2,\varepsilon,\mu,\lambda\in\R$, let $g\colon\R^n\to\R^n$, let $Dg$
+assign to each index $i$ a field $Dg^i\colon\R^n\to\R^n$, let $x_0\in\R^n$, let
+$R\in\R$ and let $k$ be an index in $\{1,\dots,n\}$.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\varepsilon$, $0<\mu$, $\lambda=\mu/2$, $0<\lambda$ and
+  $0\le C_2$;
+\item[(H2)] $|g^i|\le\mu$ almost everywhere on $B_R(x_0)$, for every index $i$;
+\item[(H3)] (the radial cut-off) for all radii $0<\rho_0<\rho_1$ there is
+  $\zeta\colon\R^n\to\R$ which is $C^\infty$ with compact support,
+  $\operatorname{supp}\zeta\subseteq B_{\rho_1}(x_0)$, $0\le\zeta\le1$,
+  $\zeta=1$ on $\overline B_{\rho_0}(x_0)$ and
+  $\sum_i(D_i\zeta)^2\le L_c/(\rho_1-\rho_0)^2$ everywhere;
+\item[(H4)] $\varepsilon+|g|^2\le(1+4n)\lambda^2$ almost everywhere on
+  $B_R(x_0)$, and $\varepsilon\le\varepsilon+|g|^2$ everywhere;
+\item[(H5)] each $g^i$ is almost everywhere strongly measurable on $B_R(x_0)$,
+  and so is $Dg^k$.
+\end{enumerate}
+Let $\pi,G\colon\R\times\R\to\R$, written $\pi_\eta$ and $G_\eta$, satisfy
+\begin{enumerate}
+\item[(H6)] $G_\eta(s)=\int_0^s\frac p2(|t|+\eta)^{\frac p2-1}dt$ for all
+  $\eta,s$;
+\item[(H7)] $0<|s|+\eta$ for all $s$ and all $\eta>0$;
+\item[(H8)] $G_\eta$ is $C^1$ for every $\eta>0$;
+\item[(H9)] $|\pi_\eta(g^k)|\le\mu^{p-1}$ almost everywhere on $B_R(x_0)$, for
+  every $\eta>0$;
+\item[(H10)] for every $\eta>0$ and every $T$ with $0<T<R$,
+  $v_\eta:=G_\eta(g^k)\in W^{1,2}(B_T(x_0))$ with weak gradient
+  $V_\eta:=\frac p2(|g^k|+\eta)^{\frac p2-1}Dg^k$ (\noderef{MemW1pOn}).
+\end{enumerate}
+Let $e_0\in\R$ and $\eta_\bullet\colon\mathbb{N}\to\R$ satisfy
+\begin{enumerate}
+\item[(H11)] $0<e_0\le1$, $\eta_j=e_0/(j+1)$, $\eta_j>0$ and
+  $\eta_j^2<\varepsilon$ for every $j$, and $\eta_j\to0$.
+\end{enumerate}
+Finally assume the Caccioppoli estimate at the regularisation level:
+\begin{enumerate}
+\item[(H12)] for every $\eta>0$ with $\eta^2<\varepsilon$, every $\ell\in\R$ and
+  every $\zeta$ that is $C^\infty$ with compact support and
+  $\operatorname{supp}\zeta\subseteq B_R(x_0)$: the function
+  $\bigl(\varepsilon+|g|^2\bigr)^{\frac p2-1}\|V_\eta\|^2\zeta^2$ is integrable
+  on $B_R(x_0)$, and, writing
+  $A^{\pm}_\ell(\eta)$ for $B_R(x_0)\cap\{\pm(\pi_\eta(g^k)-\ell)>0\}$,
+  \[
+  \int_{A^{\pm}_\ell(\eta)}
+  \bigl(\varepsilon+|g|^2\bigr)^{\frac p2-1}\|V_\eta\|^2\zeta^2\,dx
+  \ \le\ C_2\int_{B_R(x_0)}
+  \bigl((\pm(\pi_\eta(g^k)-\ell))^{+}\bigr)^2\sum_i(D_i\zeta)^2\,dx .
+  \]
+\end{enumerate}
+Then for every $T$ with $0<T<R$,
+\[
+v:=|g^k|^{\frac p2-1}g^k\ \in\ W^{1,2}\bigl(B_T(x_0)\bigr)
+\quad\text{with weak gradient}\quad
+V:=\tfrac p2|g^k|^{\frac p2-1}Dg^k
+\qquad(\noderef{MemW1pOn}).
+\]
+\end{helper}
+\begin{proof}
+Write $B_\rho=B_\rho(x_0)$ and fix $T$ with $0<T<R$.  From $1<p<2$ we get
+$p>0$, $p/2-1<0$ and $p-2<0$.
+
+\emph{Step 1: the cut-off and the lower bound on the weight.}  Put
+$T'=(T+R)/2$, so $T<T'<R$, and let $\zeta$ be the cut-off of (H3) at
+$\rho_0=T$, $\rho_1=T'$: it is $C^\infty$ with compact support,
+$\operatorname{supp}\zeta\subseteq B_{T'}\subseteq B_R$, $0\le\zeta\le1$,
+$\zeta=1$ on $\overline B_T$ and $\sum_i(D_i\zeta)^2\le L_c/(T'-T)^2$.  By (H4)
+and $p/2-1<0$, the map $t\mapsto t^{p/2-1}$ being decreasing on $(0,\infty)$,
+\[
+\bigl(\varepsilon+|g|^2\bigr)^{\frac p2-1}
+\ \ge\ W_\ast:=\bigl((1+4n)\lambda^2\bigr)^{\frac p2-1}>0
+\qquad\text{almost everywhere on }B_R ,
+\tag{1}
+\]
+the base being positive by (H1).
+
+\emph{Step 2: a bound on $\int_{B_T}\|V_\eta\|^2$ uniform in $\eta$.}  Take
+$\ell_0=-\mu^{p-1}-1$ in (H12), with the $+$ sign and this $\zeta$.  By (H9),
+$\pi_\eta(g^k)\ge-\mu^{p-1}>\ell_0$ almost everywhere on $B_R$, so
+$A^{+}_{\ell_0}(\eta)$ is all of $B_R$ up to a null set and \emph{no splitting
+of $B_R$ by the sign of $g^k$ is needed}; moreover
+$\bigl((\pi_\eta(g^k)-\ell_0)^{+}\bigr)^2\le(\mu^{p-1}+|\ell_0|)^2$ almost
+everywhere there.  Hence the right-hand side of (H12) is at most
+\[
+\mathcal K:=C_2\,(\mu^{p-1}+|\ell_0|)^2\,\frac{L_c}{(T'-T)^2}\,|B_R|<\infty ,
+\]
+using $\sum_i(D_i\zeta)^2\le L_c/(T'-T)^2$ and $|B_R|<\infty$.  On the left,
+$\zeta=1$ on $\overline B_T\supseteq B_T$ and the integrand is nonnegative, so
+by (1) and monotonicity of the integral (Preamble)
+\[
+W_\ast\int_{B_T}\|V_\eta\|^2dx
+\ \le\ \int_{B_R}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2-1}\|V_\eta\|^2\zeta^2dx
+\ \le\ \mathcal K ,
+\qquad\text{so}\qquad
+\int_{B_T}\|V_\eta\|^2dx\ \le\ \frac{\mathcal K}{W_\ast}
+\tag{2}
+\]
+for every $\eta>0$ with $\eta^2<\varepsilon$, the integrability of the middle
+integrand being the first clause of (H12).
+
+\emph{Step 3: one monotone limit, giving both $V\in L^2(B_T)$ and
+$Dg^k=0$ almost everywhere on $\{g^k=0\}$.}  Since $p/2-1<0$, the map
+$\eta\mapsto(|s|+\eta)^{p/2-1}$ is nonincreasing in $\eta$ for each fixed $s$,
+so $\|V_{\eta_j}\|^2$ is nondecreasing in $j$ by (H11), $\eta_j$ being
+nonincreasing.  Put $S(x)=\sup_j\|V_{\eta_j}(x)\|^2\in[0,\infty]$.  By the
+monotone convergence theorem (Preamble) and (2) at $\eta=\eta_j$, which (H11)
+licenses,
+\[
+\int_{B_T}S\,dx=\lim_{j\to\infty}\int_{B_T}\|V_{\eta_j}\|^2dx
+\ \le\ \frac{\mathcal K}{W_\ast}<\infty ,
+\]
+so $S<\infty$ almost everywhere on $B_T$.  \emph{That single finiteness
+statement does both jobs.}  First, at a point where $g^k=0$ and $Dg^k\ne0$ one
+has $\|V_{\eta_j}\|^2=\frac{p^2}4(\eta_j)^{p-2}\|Dg^k\|^2$, and
+$(\eta_j)^{p-2}\to+\infty$ because $\eta_j\downarrow0$ and $p-2<0$; so
+$S=+\infty$ there, and therefore the set of such points is null:
+\[
+Dg^k=0\quad\text{almost everywhere on }\{g^k=0\}.
+\tag{3}
+\]
+Second, $\|V_{\eta_j}\|^2\uparrow\|V\|^2$ almost everywhere on $B_T$: on
+$\{g^k\ne0\}$ because $(|g^k|+\eta_j)^{p/2-1}\uparrow|g^k|^{p/2-1}$, and on
+$\{g^k=0\}$ because both sides vanish almost everywhere there, $V=0$ since
+$0^{p/2-1}=0$ for the negative exponent and $V_{\eta_j}=0$ almost everywhere by
+(3).  Hence $\|V\|^2\le S$ almost everywhere and
+$\int_{B_T}\|V\|^2\le\mathcal K/W_\ast<\infty$, so $V\in L^2(B_T)$;
+measurability of $V$ follows from (H5) with $B_T\subseteq B_R$.
+
+\emph{Step 4: $v\in L^2(B_T)$.}  By (H2), $|g^k|\le\mu$ almost everywhere on
+$B_R$, and $|v|=\bigl||g^k|^{p/2-1}g^k\bigr|\le|g^k|^{p/2}\le\mu^{p/2}$ almost
+everywhere there, the first inequality holding at every real $t$ in the form
+$\bigl||t|^{p/2-1}t\bigr|\le|t|^{p/2}$ --- with equality off $0$ and both sides
+$0$ at $t=0$.  Since $B_T$ has finite measure, a bounded almost everywhere
+measurable function lies in $L^2(B_T)$, and $v$ is measurable by (H5).
+
+\emph{Step 5: the closed form of $G_\eta$ and the pointwise limits.}  By (H6)
+and (H7) the integrand $t\mapsto\frac p2(|t|+\eta)^{p/2-1}$ is continuous, so
+for $s\ge0$ one has $|t|=t$ on $[0,s]$ and the fundamental theorem of calculus
+in interval-integral form (Preamble), with antiderivative $(t+\eta)^{p/2}$,
+gives $G_\eta(s)=(s+\eta)^{p/2}-\eta^{p/2}$; symmetrically
+$G_\eta(s)=-\bigl((|s|+\eta)^{p/2}-\eta^{p/2}\bigr)$ for $s\le0$.  \emph{The
+closed form is what makes the limit elementary}: as $j\to\infty$,
+$(|s|+\eta_j)^{p/2}\to|s|^{p/2}$ by continuity and $\eta_j^{p/2}\to0$ because
+$p/2>0$, so
+\[
+G_{\eta_j}(s)\ \longrightarrow\ |s|^{p/2}\operatorname{sgn}s=|s|^{\frac p2-1}s
+\qquad(s\in\R),
+\]
+that is, $v_{\eta_j}\to v$ pointwise.  Also
+$|G_\eta(s)|\le(|s|+\eta)^{p/2}$, so with (H2) and $\eta_j\le e_0\le1$ from
+(H11), $|v_{\eta_j}|\le(\mu+1)^{p/2}$ almost everywhere on $B_R$.  And
+$V_{\eta_j}\to V$ pointwise almost everywhere on $B_T$ componentwise, by the
+computation of Step 3, with the domination
+$|(V_{\eta_j})_i|\le\|V_{\eta_j}\|\le\|V\|$ almost everywhere there.
+
+\emph{Step 6: dominated convergence in the identity.}  Let $\varphi$ be
+$C^\infty$ with compact support and $\operatorname{supp}\varphi\subseteq B_T$,
+and fix an index $i$.  By (H10) at $\eta=\eta_j$ and the radius $T$,
+\[
+\int_{B_T}v_{\eta_j}\,D_i\varphi\,dx=-\int_{B_T}(V_{\eta_j})_i\,\varphi\,dx
+\qquad(j\in\mathbb{N}),
+\]
+this being the weak-gradient identity of (H10) read at the test function
+$\varphi$ (\noderef{HasWeakGradientOn}).  Let $j\to\infty$.  On the left,
+$v_{\eta_j}\to v$ pointwise by Step 5 and
+$|v_{\eta_j}D_i\varphi|\le(\mu+1)^{p/2}|D_i\varphi|$ almost everywhere, a
+bounded function on the finite-measure set $B_T$ since $D_i\varphi$ is
+continuous with compact support, hence integrable.  On the right,
+$(V_{\eta_j})_i\to V_i$ almost everywhere and
+$|(V_{\eta_j})_i\varphi|\le\|V\|\,|\varphi|$ almost everywhere by Step 5, which
+is integrable on $B_T$ because $\|V\|\in L^2(B_T)$ by Step 3, $\varphi$ is
+bounded and $|B_T|<\infty$, so H\"older on a set of finite measure (Preamble)
+applies.  Dominated convergence (Preamble) therefore passes to the limit on
+both sides and gives
+\[
+\int_{B_T}v\,D_i\varphi\,dx=-\int_{B_T}V_i\,\varphi\,dx .
+\]
+Since $\varphi$ and $i$ were arbitrary, $V$ is the weak gradient of $v$ on
+$B_T$ (\noderef{HasWeakGradientOn}).  Together with $v\in L^2(B_T)$ from
+Step 4 and $V\in L^2(B_T)$ from Step 3, that is $v\in W^{1,2}(B_T)$ with weak
+gradient $V$ (\noderef{MemW1pOn}), which is the assertion.
+\end{proof}

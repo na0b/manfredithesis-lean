@@ -1,0 +1,91 @@
+\begin{helper}[A weighted Caccioppoli inequality above a level yields the De Giorgi level bound]
+Let $n\in\N$, let $s,K,c,L,\gamma,R,\Theta,\kappa_1,\kappa_2,\rho_0,\rho_1\in\R$,
+let $x_0\in\R^n$ and let $w,\zeta\colon\R^n\to\R$.  Throughout,
+$\operatorname{supp}\zeta$ denotes the \emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$, $(F-\ell)^+=\max\{F-\ell,0\}$,
+$|\cdot|$ is the Euclidean norm, and $w^s$ is the real power of $w$ with $s$ an
+arbitrary real of either sign.  Assume
+\begin{enumerate}
+\item[(H1)] $0<c$, $0<K$, $0<L$, $0<R$, $0<\kappa_1$,
+  $\kappa_2\le K\kappa_1$, and $w$ is measurable;
+\item[(H2)] $\gamma=cK^{2|s|}(1+L)$ and $0<K^{2|s|}$;
+\item[(H3)] $\rho_0<\rho_1<R$, $0<\rho_1$ and $0<\rho_1-\rho_0$;
+\item[(H4)] the pinch comparison: $a^s\le K^{|s|}b^s$ whenever $0<a$, $0<b$,
+  $a\le Kb$ and $b\le Ka$;
+\item[(H5)] $\zeta$ is smooth with compact support,
+  $\operatorname{supp}\zeta\subseteq B_{\rho_1}(x_0)$, $0\le\zeta\le1$,
+  $\zeta=1$ on $\overline{B_{\rho_0}(x_0)}$, and
+  $|\nabla\zeta|^2\le L/(\rho_1-\rho_0)^2$ everywhere.
+\end{enumerate}
+Then for every $F\colon\R^n\to\R$, every $\Gamma\colon\R^n\to\R^n$ and every
+$\ell\in\R$ such that $F\in W^{1,2}_{loc}(B_R(x_0))$ with weak gradient
+$\Gamma$ (\noderef{MemW1pLocOn}), $|F|\le\Theta$ a.e.\ on $B_R(x_0)$,
+$\kappa_1\le w\le\kappa_2$ a.e.\ on $B_R(x_0)\cap\{\ell<F\}$, and
+\[
+\int_{B_R\cap\{\ell<F\}}w^s|\Gamma|^2\zeta'^2
+\ \le\ c\int_{B_R}w^s\bigl((F-\ell)^+\bigr)^2|\nabla\zeta'|^2
+\]
+for every smooth compactly supported $\zeta'$ with
+$\operatorname{supp}\zeta'\subseteq B_R(x_0)$, the De Giorgi level bound
+$\mathrm{DGLB}(n,\gamma,F,\Gamma,x_0,\ell,\rho_0,\rho_1)$ holds
+(\noderef{DeGiorgiLevelBound}).
+\end{helper}
+\begin{proof}
+Fix $(F,\Gamma,\ell)$ with the four stated properties.
+
+\emph{Step 1: the level truncation is bounded.}  From $|F|\le\Theta$ a.e.\ on
+$B_R(x_0)$ we get $\Theta\ge0$ and
+$(F-\ell)^+\le\Theta+|\ell|=:\Theta_\ell$ almost everywhere there, hence also on
+$B_{\rho_1}(x_0)\subseteq B_R(x_0)$ by (H3).  Write
+$S=\operatorname*{ess\,sup}_{B_{\rho_1}}\bigl((F-\ell)^+\bigr)^2$, which is
+finite and nonnegative by the previous sentence, and
+$V=\bigl|B_{\rho_1}(x_0)\cap\{\ell<F\}\bigr|$.
+
+\emph{Step 2: the cut-off is admissible.}  By (H5) and (H3),
+$\operatorname{supp}\zeta\subseteq B_{\rho_1}(x_0)\subseteq B_R(x_0)$, so
+$\zeta$ may be inserted into the Caccioppoli hypothesis, giving
+\[
+\int_{B_R\cap\{\ell<F\}}w^s|\Gamma|^2\zeta^2
+\ \le\ c\int_{B_R}w^s\bigl((F-\ell)^+\bigr)^2|\nabla\zeta|^2 .
+\tag{$*$}
+\]
+Both $\zeta$ and $\nabla\zeta$ vanish off $B_{\rho_1}(x_0)$, so each side may be
+computed over $B_{\rho_1}(x_0)$.
+
+\emph{Step 3: removing the weight, in both directions.}  On
+$B_R\cap\{\ell<F\}$ the pinch gives $\kappa_1\le w\le\kappa_2\le K\kappa_1$ by
+(H1), so (H4) applies in both directions to the pair $(w(x),\kappa_1)$:
+\[
+w^s\ \le\ K^{|s|}\kappa_1^{\,s}=:K_c,
+\qquad
+\kappa_1^{\,s}\ \le\ K^{|s|}w^s,\ \text{ i.e. }\ w^{-s}\le K^{|s|}\kappa_1^{-s}=:K_{\mathrm{inv}} ,
+\]
+both constants being positive, with $K_{\mathrm{inv}}K_c=K^{2|s|}$.  Dividing
+the left-hand side of $(*)$ by $K_c$ and bounding the right-hand side by
+$K_c$ times its weight-free version turns $(*)$ into a weight-free inequality at
+the cost of the factor $K^{2|s|}$ --- which is exactly why the constant of (H2)
+carries $K^{2|s|}$ and not $K^{|s|}$.
+
+\emph{Step 4: the two geometric reductions.}  On
+$\overline{B_{\rho_0}(x_0)}$ we have $\zeta=1$ by (H5), and the integrand on the
+left of $(*)$ is nonnegative, so the left-hand side dominates
+$K_c^{-1}\int_{B_{\rho_0}\cap\{\ell<F\}}|\Gamma|^2$.  On the right,
+$|\nabla\zeta|^2\le L/(\rho_1-\rho_0)^2$ by (H5) and
+$\bigl((F-\ell)^+\bigr)^2\le S$ almost everywhere on $B_{\rho_1}(x_0)$ by
+Step 1, so the right-hand side is at most
+$cK_cL(\rho_1-\rho_0)^{-2}\,S\,V$ after restricting the domain to
+$B_{\rho_1}(x_0)$.  Both restrictions are legitimate because $\Gamma$ is square
+integrable on the compact closure $\overline{B_{\rho_1}(x_0)}\subseteq B_R(x_0)$,
+which follows from $F\in W^{1,2}_{loc}(B_R(x_0))$.
+
+\emph{Conclusion.}  Combining Steps 3 and 4,
+\[
+\int_{B_{\rho_0}\cap\{\ell<F\}}|\Gamma|^2
+\ \le\ c\,K^{2|s|}\,\frac{L}{(\rho_1-\rho_0)^2}\,S\,V
+\ \le\ \gamma\,\frac{S\,V}{(\rho_1-\rho_0)^2},
+\]
+the last step by (H2), the factor $1+L$ absorbing both the term just displayed
+and the contribution of the region where the cut-off is already $1$.  That is
+the inequality $\mathrm{DGLB}(n,\gamma,F,\Gamma,x_0,\ell,\rho_0,\rho_1)$
+asserts.
+\end{proof}

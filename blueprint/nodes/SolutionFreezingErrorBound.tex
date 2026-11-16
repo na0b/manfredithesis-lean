@@ -1,0 +1,101 @@
+\begin{lemma}[The freezing error, with Young's inequality]
+Let $n\ge1$ and $p>1$.  Let $\Omega\subseteq\R^n$, let $A$ be a field satisfying
+(Q6) of the thesis on $\Omega$ with modulus $\sigma$
+(\noderef{EllipticStructureQ6}), let $u$ be real valued, let $g$ and $g_v$ be
+vector fields, let $x_0\in\Omega$, let $z_0\in\R$, let $R>0$ with
+$B_R(x_0)\subseteq\Omega$, let $\alpha>0$ and $C_1\ge0$, and suppose
+\[
+|u(x)-z_0|\le C_1R^{\alpha}\qquad\bigl(x\in B_R(x_0)\bigr).
+\]
+Assume $g\in L^p(B_R(x_0))$, $g-g_v\in L^p(B_R(x_0))$ and
+\[
+A(\cdot,u,g)\in L^{p/(p-1)}\bigl(B_R(x_0)\bigr),
+\qquad
+A(x_0,z_0,g)\in L^{p/(p-1)}\bigl(B_R(x_0)\bigr).
+\]
+Then
+\[
+\Bigl|\int_{B_R(x_0)}\bigl(A(x,u(x),g(x))-A(x_0,z_0,g(x)),\,g(x)-g_v(x)\bigr)dx\Bigr|
+\le\sigma\bigl(R+C_1R^{\alpha}\bigr)
+\Bigl\{\frac{p-1}p\int_{B_R(x_0)}\bigl(1+|g|^2\bigr)^{\frac p2}dx
++\frac1p\int_{B_R(x_0)}|g-g_v|^p\,dx\Bigr\}.
+\]
+\end{lemma}
+\begin{proof}
+Write $B_R=B_R(x_0)$ and $\Theta=\sigma(R+C_1R^{\alpha})$.
+
+\emph{Step 1: the pointwise bound.}  Let $x\in B_R$.  Then $x\in\Omega$, since
+$B_R\subseteq\Omega$, and $x_0\in\Omega$ by hypothesis, so clause \texttt{Q6} of
+\noderef{EllipticStructureQ6} applies at the points $x$ and $x_0$, the values
+$z=u(x)$ and $z'=z_0$, and the gradient slot $h=g(x)$:
+\[
+\bigl|A(x,u(x),g(x))-A(x_0,z_0,g(x))\bigr|
+\le\sigma\bigl(\mathrm{dist}(x,x_0)+|u(x)-z_0|\bigr)
+\bigl(1+|g(x)|^2\bigr)^{\frac{p-1}2}.
+\]
+Now $\mathrm{dist}(x,x_0)<R$ because $x\in B_R$, and
+$|u(x)-z_0|\le C_1R^{\alpha}$ by hypothesis, so
+$\mathrm{dist}(x,x_0)+|u(x)-z_0|\le R+C_1R^{\alpha}$; since $\sigma$ is
+nondecreasing (clause \texttt{sigmamono} of \noderef{EllipticStructureQ6}),
+\[
+\bigl|A(x,u(x),g(x))-A(x_0,z_0,g(x))\bigr|
+\le\Theta\bigl(1+|g(x)|^2\bigr)^{\frac{p-1}2}.
+\tag{1}
+\]
+Pairing with $g(x)-g_v(x)$ and using Cauchy--Schwarz pointwise (Preamble),
+\[
+\bigl|\bigl(A(x,u(x),g(x))-A(x_0,z_0,g(x)),\,g(x)-g_v(x)\bigr)\bigr|
+\le\Theta\bigl(1+|g(x)|^2\bigr)^{\frac{p-1}2}|g(x)-g_v(x)| .
+\tag{2}
+\]
+
+\emph{Step 2: Young's inequality.}  Apply Young's inequality at the conjugate
+exponents $\frac p{p-1}$ and $p$, in the form
+$st\le\frac{p-1}ps^{\frac p{p-1}}+\frac1pt^{p}$ for $s,t\ge0$, with
+$s=(1+|g(x)|^2)^{\frac{p-1}2}\ge0$ and $t=|g(x)-g_v(x)|\ge0$.  Since
+$s^{\frac p{p-1}}=(1+|g(x)|^2)^{\frac{p-1}2\cdot\frac p{p-1}}
+=(1+|g(x)|^2)^{\frac p2}$ --- here $p-1>0$, so the exponent arithmetic
+$\frac{p-1}2\cdot\frac p{p-1}=\frac p2$ is valid, and $1+|g(x)|^2>0$, so the
+real power rules apply (pm-0024) --- we get, for every $x\in B_R$,
+\[
+\bigl(1+|g(x)|^2\bigr)^{\frac{p-1}2}|g(x)-g_v(x)|
+\le\frac{p-1}p\bigl(1+|g(x)|^2\bigr)^{\frac p2}+\frac1p|g(x)-g_v(x)|^p .
+\tag{3}
+\]
+\emph{The exponent $\frac{p-1}2$ is the only one for which this lands on
+$(1+|g|^2)^{p/2}$}: for $s=(1+|g|^2)^{\kappa}$ the Young step produces
+$(1+|g|^2)^{\kappa p/(p-1)}$, and $\kappa p/(p-1)=p/2$ forces
+$\kappa=(p-1)/2$.  It is also the exponent (Q6) of the thesis itself carries; the
+source's adjudicated \texttt{MISPRINT} annotation at l.~1493 records that the
+print has $\frac p2-1$ and corrects it to $\frac{p-1}2$ for exactly these two
+reasons.
+
+\emph{Step 3: integrating.}  Both functions on the right of (3) are integrable
+on $B_R$: $(1+|g|^2)^{p/2}$ because $g\in L^p(B_R)$ and
+$|B_R|<\infty$ (Preamble: the volume of a ball), by the elementary bound
+$(1+|g|^2)^{p/2}\le2^{p/2}(1+|g|^p)$ --- proved by splitting on
+$|g|\le1$, where $1+|g|^2\le2$, and $|g|>1$, where $1+|g|^2\le2|g|^2$ and
+$(2|g|^2)^{p/2}=2^{p/2}|g|^p$; and $|g-g_v|^p$ because
+$g-g_v\in L^p(B_R)$.  The integrand on the left of (2) is integrable on $B_R$
+as well: it is the pointwise inner product of
+$A(\cdot,u,g)-A(x_0,z_0,g)$, which lies in $L^{p/(p-1)}(B_R)$ as the difference
+of the two functions assumed to lie there, with $g-g_v\in L^p(B_R)$, so
+H\"older's inequality on $B_R$ at the conjugate exponents $\frac p{p-1}$ and
+$p$ (Preamble) makes it integrable.
+
+Hence, chaining $|\int f|\le\int|f|$ with (2) and then (3), and using
+$\Theta\ge0$ --- which holds because $\sigma$ is nondecreasing with
+$\sigma(0)=0$ (clauses \texttt{sigmamono} and \texttt{sigmazero} of
+\noderef{EllipticStructureQ6}) and $R+C_1R^{\alpha}\ge0$, since $R>0$,
+$C_1\ge0$ and $R^{\alpha}\ge0$ ---
+\begin{align*}
+\Bigl|\int_{B_R}\bigl(A(x,u,g)-A(x_0,z_0,g),g-g_v\bigr)dx\Bigr|
+&\le\int_{B_R}\bigl|\bigl(A(x,u,g)-A(x_0,z_0,g),g-g_v\bigr)\bigr|dx\\
+&\le\Theta\int_{B_R}\bigl(1+|g|^2\bigr)^{\frac{p-1}2}|g-g_v|\,dx\\
+&\le\Theta\Bigl\{\frac{p-1}p\int_{B_R}\bigl(1+|g|^2\bigr)^{\frac p2}dx
++\frac1p\int_{B_R}|g-g_v|^p\,dx\Bigr\},
+\end{align*}
+the second and third steps by monotonicity of the integral applied to the
+pointwise inequalities (2) and (3), whose right-hand sides have just been shown
+integrable.  That is the assertion.
+\end{proof}

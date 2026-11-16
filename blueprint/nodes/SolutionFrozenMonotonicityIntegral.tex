@@ -1,0 +1,83 @@
+\begin{lemma}[\textup{(5.5)}: the frozen monotonicity, integrated over the ball]
+Let $n\ge2$, let $p>1$ and let $r>0$.  Then there is $C>0$ --- depending only on
+$n$, $p$ and $r$ --- such that the following holds.
+
+Let $\varepsilon\ge0$, let $\gamma_0>0$ and $\gamma_1\le r\gamma_0$, let
+$A^0\colon\R^n\to\R^n$, let $x_0\in\R^n$ and $R>0$, and let $g,g_v$ be vector
+fields.  Suppose the field $(x,z,h)\mapsto A^0(h)$ satisfies
+(Q1) of the thesis--(Q2) of the thesis on all of $\R^n$ with the parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}), suppose
+$g,g_v,g-g_v\in L^p(B_R(x_0))$, and suppose
+$x\mapsto\bigl(A^0(g(x))-A^0(g_v(x)),g(x)-g_v(x)\bigr)$ is integrable on
+$B_R(x_0)$.  Then
+\[
+C\gamma_0\int_{B_R(x_0)}
+\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}|g-g_v|^2\,dx
+\ \le\ \int_{B_R(x_0)}\bigl(A^0(g)-A^0(g_v),\,g-g_v\bigr)dx .
+\]
+\end{lemma}
+\begin{proof}
+Write $B_R=B_R(x_0)$.
+
+\emph{Step 1: the constant and the pointwise inequality.}  Apply
+\noderef{StructureMonotonicityBound} with the present $n$, $p$ and $r$; its
+hypotheses are $2\le n$, $1<p$ and $0<r$, all present.  Let $C>0$ be the
+constant it produces; it depends only on $n,p$ and $r$, which is the dependence
+asserted.  Apply its conclusion at the present $\varepsilon,\gamma_0,\gamma_1$,
+the set $\mathrm{univ}$ and the field $(x,z,h)\mapsto A^0(h)$: its remaining
+hypotheses are $0\le\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$ and the
+bundle $\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;
+\mathrm{univ}$ for that field (\noderef{EllipticStructureQ12}), all hypotheses
+of the present lemma.  It gives, for almost every $x\in\R^n$, every $z$ and all
+$a,b\in\R^n$,
+\[
+C\gamma_0\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A^0(a)-A^0(b),\,a-b\bigr).
+\tag{1}
+\]
+\emph{The field is constant in $x$ and in $z$}, so the quantifier ``for almost
+every $x$'' costs nothing here: the inequality (1), once it holds at a single
+point, is a statement about $a$ and $b$ alone.  In particular it holds for
+almost every $x\in B_R$, read at $a=g(x)$ and $b=g_v(x)$:
+\[
+C\gamma_0\bigl(\varepsilon+|g(x)|^2+|g_v(x)|^2\bigr)^{\frac p2-1}|g(x)-g_v(x)|^2
+\ \le\ \bigl(A^0(g(x))-A^0(g_v(x)),\,g(x)-g_v(x)\bigr)
+\tag{2}
+\]
+for almost every $x\in B_R$.
+
+\emph{Step 2: both sides are integrable.}  The right-hand side of (2) is
+integrable on $B_R$ by hypothesis.  The left-hand side is nonnegative --- the
+weight is a real power of the nonnegative number $\varepsilon+|g|^2+|g_v|^2$ and
+is therefore nonnegative (pm-0024), and $|g-g_v|^2\ge0$, and $C\gamma_0>0$ ---
+and by (2) it is dominated almost everywhere on $B_R$ by the right-hand side.
+A nonnegative measurable function dominated almost everywhere by an integrable
+function is integrable, and the left-hand side is measurable, being built from
+the measurable $g$ and $g_v$ by continuous operations ($g,g_v\in L^p(B_R)$ are
+measurable).  Hence
+$x\mapsto(\varepsilon+|g|^2+|g_v|^2)^{\frac p2-1}|g-g_v|^2$ is integrable on
+$B_R$.
+
+\emph{Step 3: integrating.}  Both sides of (2) being integrable on $B_R$,
+monotonicity of the integral applies, and the constant $C\gamma_0$ comes out of
+the integral by linearity:
+\[
+C\gamma_0\int_{B_R}
+\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}|g-g_v|^2\,dx
+=\int_{B_R}C\gamma_0\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}
+|g-g_v|^2\,dx
+\le\int_{B_R}\bigl(A^0(g)-A^0(g_v),\,g-g_v\bigr)dx .
+\]
+That is the assertion.
+
+\emph{What the thesis' half-sentence points at.}  The source obtains this from
+the segment expansion of $A^0$ between $g_v(x)$ and $g(x)$ together with
+(Q1) of the thesis, and then converts the $t$-average of the weight along the segment
+into its value at the endpoints with the words ``use now the claim after
+(4.4) of the thesis'' (l.~1488).  Both of those moves are inside the single citation
+of \noderef{StructureMonotonicityBound} used here: that node is (Q1) of the thesis
+integrated along the segment, and it consumes
+\noderef{MidpointGradientWeightBound} for the endpoint conversion and
+\noderef{SegmentWeightIntegrable} for the integrability of the segment weight,
+without which the inner $t$-integral would be a junk value rather than a number.
+\end{proof}

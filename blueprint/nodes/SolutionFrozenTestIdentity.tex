@@ -1,0 +1,111 @@
+\begin{lemma}[\textup{(5.4)}: testing both weak forms against $w=u-v$]
+Let $n\ge1$ and $p>1$.  Let $\Omega\subseteq\R^n$ be open, let $R>0$ with
+$B_R(x_0)\subseteq\Omega$, let $u$ be a weak solution of
+$\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)$ in $\Omega$ with weak
+gradient $g$ (\noderef{IsWeakSolutionOn}), and let $(v,V,g_v)$ be a frozen
+comparison datum for $(u,U,g)$ on $B_R(x_0)$ at the frozen field
+$A^0=A(x_0,U(x_0),\cdot)$ (\noderef{FrozenComparisonOn}).  Assume
+\[
+A(\cdot,u,g),\ A^0(g),\ A^0(g_v)\in L^{p/(p-1)}\bigl(B_R(x_0)\bigr),
+\qquad
+g-g_v\in L^p\bigl(B_R(x_0)\bigr),
+\qquad
+B(\cdot,u,g)\in L^1\bigl(B_R(x_0)\bigr),
+\]
+let $T\ge0$ and suppose $|u-v|\le T$ almost everywhere on $B_R(x_0)$.  Then
+\[
+\int_{B_R(x_0)}\bigl(A^0(g)-A^0(g_v),\,g-g_v\bigr)dx
+\ \le\
+\Bigl|\int_{B_R(x_0)}\bigl(A(x,u,g)-A^0(g),\,g-g_v\bigr)dx\Bigr|
++\Bigl|\int_{B_R(x_0)}B(x,u,g)\,(u-v)\,dx\Bigr| .
+\]
+\end{lemma}
+\begin{proof}
+Write $B_R=B_R(x_0)$ and $w=u-v$, so $\nabla w=g-g_v$ in the sense that
+$g-g_v$ is the weak gradient of $u-v$.  Note $|B_R|<\infty$ (Preamble: the
+volume of a ball).
+
+\emph{Step 1: the test pair.}  By clause (3) of \noderef{FrozenComparisonOn},
+the pair $(v-u,\,g_v-g)$ belongs to $W^{1,p}_0(B_R)$
+(\noderef{MemW1pZeroOn}).  Also $|v-u|=|u-v|\le T$ almost everywhere on $B_R$,
+by hypothesis, and $T\ge0$.
+
+\emph{Step 2: the equation on $\Omega$, tested against the bounded pair.}
+Apply \noderef{WeakSolutionBoundedZeroTest} with the present $n$ and $p$, the
+open set $\Omega$, the centre $x_0$, the radius $R$, the field $A$, the
+right-hand side $B$, the pair $(u,g)$, the test pair
+$(\varphi,g_\varphi)=(v-u,\,g_v-g)$ and the bound $T$.  Its hypotheses are:
+$1\le n$ and $1<p$; $\Omega$ open; $0<R$; $B_R\subseteq\Omega$; the weak-solution
+property \noderef{IsWeakSolutionOn}, a hypothesis of the present lemma;
+$A(\cdot,u,g)\in L^{p/(p-1)}(B_R)$ and $B(\cdot,u,g)\in L^1(B_R)$, both
+hypotheses; the membership $(v-u,g_v-g)\in W^{1,p}_0(B_R)$ from Step 1; $T\ge0$;
+and the essential bound $|v-u|\le T$ from Step 1.  It gives
+\[
+\int_{B_R}\Bigl(\bigl(A(x,u,g),\,g_v-g\bigr)+B(x,u,g)\,(v-u)\Bigr)dx=0 .
+\tag{1}
+\]
+
+\emph{Step 3: the frozen equation on $B_R$, tested against the same pair.}
+Apply \noderef{WeakSolutionZeroTest} with the present $n$ and $p$, the open set
+$B_R$, the field $(x,z,h)\mapsto A^0(h)$, the pair $(v,g_v)$ in the roles of its
+$(u,g)$, and $(v-u,\,g_v-g)$ in the roles of its $(v,g_v)$.  Its hypotheses are:
+$1\le n$ and $1<p$; $B_R$ open; the weak-solution clause
+\[
+\mathrm{IsWeakSolutionOn}\;n\;p\;B_R\;\bigl((x,z,h)\mapsto A^0(h)\bigr)\;
+\bigl((x,z,h)\mapsto0\bigr)\;v\;g_v ,
+\]
+which is clause (1) of \noderef{FrozenComparisonOn} verbatim --- note that the
+right-hand side there is identically $0$, which is exactly what that node
+requires and is why the frozen half needs no bounded test function;
+$A^0(g_v)\in L^{p/(p-1)}(B_R)$, a hypothesis of the present lemma; and
+$(v-u,g_v-g)\in W^{1,p}_0(B_R)$ from Step 1.  It gives
+\[
+\int_{B_R}\bigl(A^0(g_v),\,g_v-g\bigr)dx=0 .
+\tag{2}
+\]
+
+\emph{Step 4: subtracting, and why the integrals may be split.}  Each of the
+four functions
+\[
+\bigl(A(x,u,g),g_v-g\bigr),\quad
+\bigl(A^0(g),g_v-g\bigr),\quad
+\bigl(A^0(g_v),g_v-g\bigr),\quad
+B(x,u,g)\,(v-u)
+\]
+is integrable on $B_R$.  For the first three this is H\"older's inequality on
+$B_R$ at the conjugate exponents $\frac p{p-1}$ and $p$ (Preamble): each pairs
+a function in $L^{p/(p-1)}(B_R)$, by hypothesis, with
+$g_v-g=-(g-g_v)\in L^p(B_R)$.  For the fourth,
+$|B(x,u,g)(v-u)|\le T\,|B(x,u,g)|$ almost everywhere on $B_R$, and the
+right-hand side is in $L^1(B_R)$ by hypothesis.  Consequently every integral
+written below exists and the integrals may be added and subtracted term by
+term.
+
+Subtract (2) from (1):
+\[
+\int_{B_R}\bigl(A(x,u,g)-A^0(g_v),\,g_v-g\bigr)dx
++\int_{B_R}B(x,u,g)\,(v-u)\,dx=0 ,
+\]
+and replace $g_v-g$ by $-(g-g_v)$ and $v-u$ by $-(u-v)$ throughout, which
+multiplies the whole identity by $-1$:
+\[
+\int_{B_R}\bigl(A(x,u,g)-A^0(g_v),\,g-g_v\bigr)dx
++\int_{B_R}B(x,u,g)\,(u-v)\,dx=0 .
+\tag{3}
+\]
+
+\emph{Step 5: adding and subtracting $A^0(g)$.}  Split the first integral of (3)
+along $A(x,u,g)-A^0(g_v)=\bigl(A(x,u,g)-A^0(g)\bigr)+\bigl(A^0(g)-A^0(g_v)\bigr)$,
+legitimate by the integrability recorded in Step 4:
+\[
+\int_{B_R}\bigl(A^0(g)-A^0(g_v),\,g-g_v\bigr)dx
+=-\int_{B_R}\bigl(A(x,u,g)-A^0(g),\,g-g_v\bigr)dx
+-\int_{B_R}B(x,u,g)\,(u-v)\,dx .
+\]
+Bounding each term on the right by its absolute value, and using
+$-a\le|a|$ twice, gives the assertion.  \emph{This is the thesis'
+(5.4) of the thesis}, with the three displayed quantities its $I_1$, $I_2$ and
+$I_3$; the identity at l.~1466--1469 that it is derived from is (3) above, and
+it carries the $B$-integral, which is why Step 2 must test a \emph{bounded}
+pair while Step 3 need not.
+\end{proof}

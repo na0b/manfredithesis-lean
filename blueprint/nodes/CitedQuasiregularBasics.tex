@@ -1,0 +1,75 @@
+\begin{definition}
+Let $n\ge2$, $K\ge1$, let $\Omega\subseteq\R^n$ be a domain, let
+$F\colon\R^n\to\R^n$, let $G^1,\dots,G^n$ be the component weak gradients of $F$
+and let $\tau\colon\R^n\to\R^{n\times n}$.  The predicate
+$\mathrm{CitedQuasiregularBasics}(n,K,\Omega,F,G,\tau)$ is the cited result (C7)
+of the Note for the formalization ([BI], [R], [GLM]):
+
+\emph{if $F$ is $K$-quasiregular on $\Omega$ (\noderef{IsQuasiregularOn}) with
+distortion matrix $\tau$ (\noderef{IsDistortionMatrix}), then}
+\begin{enumerate}
+\item \emph{$F$ agrees almost everywhere on $\Omega$ with a function that is
+  continuous on $\Omega$: there is $\widetilde F$ with $\widetilde F$ continuous
+  on $\Omega$ and $F=\widetilde F$ almost everywhere on $\Omega$;}
+\item \emph{if $F$ is not almost everywhere constant on $\Omega$ --- that is, if
+  there is no $c$ with $F=c$ almost everywhere on $\Omega$ --- then $J_F>0$
+  almost everywhere on $\Omega$;}
+\item \emph{each component $F^i$ is a weak solution in $\Omega$ of
+\[
+\operatorname{div}\Bigl((\tau(x)\nabla u,\nabla u)^{\frac n2-1}\tau(x)\nabla u\Bigr)=0
+\tag{5.11}
+\]
+(\noderef{IsWeakSolutionOn}); and}
+\item \emph{each component $F^i$ is a local minimum in $\Omega$ of
+\[
+v\longmapsto\int_E(\tau(x)\nabla v,\nabla v)^{\frac n2}\,dx
+\]
+(\noderef{IsLocalMinimumOn}).}
+\end{enumerate}
+Here $J_F(x)=\det DF(x)$ with $DF(x)_{ij}=G^i(x)^j$, and
+$(\tau(x)h,h)=\sum_{a,b}\tau(x)_{ab}h^ah^b$.  The exponent $n/2$ in the
+functional of (4) is the corrected one recorded in the source (the print has
+$n$; the Euler equation of the functional is (5.11) of the thesis, and the functional
+must have the growth (F1) of the thesis of \S4 with $p=n$).
+
+\medskip
+\noindent\textbf{Why clauses (1) and (2) are stated almost everywhere
+invariantly.}  (C7), at paper l.~268, reads ``A $K$-quasiregular mapping $F$ is
+continuous; if $F$ is not constant then $J_F>0$ a.e.''  Here $F$ is the
+$W^{1,n}_{\mathrm{loc}}$ map of \noderef{IsQuasiregularOn}, and a
+$W^{1,n}_{\mathrm{loc}}$ map is determined only up to a null set: every other
+clause of this predicate --- the weak-gradient identities of clause (3), the
+integral inequality of clause (4), the membership clauses inside
+\noderef{IsQuasiregularOn} --- is unchanged if $F$ is redefined on a set of
+measure zero.  Asserting \emph{of the given representative} that it is
+continuous, or that it is not constant at every point, is therefore not an
+assertion about the quasiregular map at all; and in conclusion position it makes
+the predicate unsatisfiable, since from any $F$ for which the other clauses hold
+one may change the value at a single point and destroy continuity while keeping
+everything else.  The faithful reading of ``$F$ is continuous'' for an
+almost-everywhere class is ``$F$ has a continuous representative'', which is
+clause (1) above; and the matching reading of ``$F$ is not constant'' is that no
+constant agrees with $F$ almost everywhere, which is clause (2)'s antecedent.
+The Note at l.~258 requires the cited results to be stated as in the literature
+and not in a stronger form, and the pointwise readings are strictly stronger:
+they silently restrict Theorem~Theorem~7 of the thesis to those representatives that happen
+to be continuous.  The same interface decision was taken for boundary values in
+\noderef{MemW1pZeroOn}'s setting and is the shape
+\noderef{CitedCampanatoEmbedding} already uses, where (C5)'s own wording at
+l.~266 is ``agrees a.e.\ with a function in $C^{0,\alpha}$''.
+
+\noindent\textbf{On the junk-value guard for clauses (3) and (4).}  Those two
+clauses are the only place in the development where
+\noderef{IsWeakSolutionOn} and \noderef{IsLocalMinimumOn} are instantiated
+without an (F1) of the thesis or (Q1) of the thesis--(Q5) of the thesis bundle beside them: the
+density here is $(\tau(x)h,h)^{n/2}$ and the field of (5.11) of the thesis is built
+from $\tau$, which \noderef{IsDistortionMatrix} constrains only almost
+everywhere.  Both of those nodes therefore carry, as part of their definition,
+the requirement that the relevant integrands be Lebesgue integrable before any
+identity or inequality between integrals is asserted; without it the identity of
+(5.11) of the thesis and the inequality of clause (4) could both hold by the junk
+value that Lebesgue integration assigns to a non-integrable function, and the
+predicate would be satisfiable for data for which (C7) is false.  This result is
+used as an
+explicit hypothesis in Theorem~Theorem~7 of the thesis and is never introduced as an axiom.
+\end{definition}

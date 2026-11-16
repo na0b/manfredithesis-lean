@@ -1,0 +1,40 @@
+\begin{definition}
+Let $p>1$, let $\Omega\subseteq\R^n$ and let
+$f\colon\Omega\times\R\times\R^n\to\R$.  For $v\in W^{1,p}_{\mathrm{loc}}(\Omega)$
+with weak gradient $g_v$ and $\overline E\subseteq\Omega$ put
+$F(v;E)=\int_E f(x,v(x),g_v(x))\,dx$.  A function
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$ is a \emph{local
+minimum for $F$ in $\Omega$}, written
+$\mathrm{IsLocalMinimumOn}(n,p,\Omega,f,u,g)$, if for every
+$\varphi\in W^{1,p}(\Omega)$ (with weak gradient $g_\varphi$) having compact
+support contained in $\Omega$, both integrands
+\[
+x\mapsto f(x,u(x),g(x))
+\qquad\text{and}\qquad
+x\mapsto f(x,u(x)+\varphi(x),g(x)+g_\varphi(x))
+\]
+are Lebesgue integrable on $\operatorname{supp}\varphi$ and
+\[
+F(u;\operatorname{supp}\varphi)\;\le\;F(u+\varphi;\operatorname{supp}\varphi).
+\]
+This is the definition of local minimum of \S4; note that $u+\varphi$ has weak
+gradient $g+g_\varphi$.
+
+\noindent\textbf{Why integrability is part of the definition.}  As with
+\noderef{IsWeakSolutionOn}, the thesis' inequality between two integrals
+presupposes that both exist, and a formal reading that assigns the value $0$ to
+the integral of a non-integrable function would otherwise let the inequality hold
+by accident --- for a density whose composite with $(u,\nabla u)$ is not
+measurable, the left side is $0$ and the inequality holds whenever the right side
+is nonnegative.  The Note at l.~258 forbids vacuous cited results, and (C4)(a)
+at l.~263 is stated for local minima.  Under (F1) of the thesis
+(\noderef{VariationalGrowthF1}) the clause costs nothing: its two
+Carath\'eodory clauses make both integrands measurable, and (F1) of the thesis's
+two-sided growth bound together with $g,g_\varphi\in L^p$ on the compact set
+$\operatorname{supp}\varphi\subseteq\Omega$ bounds them by integrable functions.
+It is the instances \emph{without} (F1) of the thesis beside them that need the clause
+--- in this development, the local-minimum clause of
+\noderef{CitedQuasiregularBasics}, whose density
+$(\tau(x)h,h)^{n/2}$ carries no (F1) of the thesis bundle and whose $\tau$ is only
+almost everywhere continuous.
+\end{definition}

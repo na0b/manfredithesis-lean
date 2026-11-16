@@ -1,0 +1,117 @@
+\begin{lemma}[A weak solution on a ball is trapped by the constants that trap its boundary values]
+Let $n\ge2$, let $p>1$, let $\varepsilon\ge0$ and let $0<\gamma_0\le\gamma_1$,
+and suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Let $A\colon\R^n\to\R^n$ be a field of
+the variable $h$ alone whose normalisation, the field
+$(x,z,h)\mapsto A(h)-A(0)$, satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$
+with the parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}).  Let $x_0\in\R^n$ and $R>0$, let
+$v\colon\R^n\to\R$ be a weak solution of $\operatorname{div}A(\nabla v)=0$ in
+$B_R(x_0)$ with weak gradient $g_v$ --- that is, a weak solution for the field
+$(x,z,h)\mapsto A(h)$ and the right-hand side $0$
+(\noderef{IsWeakSolutionOn}) --- and suppose moreover
+$v\in W^{1,p}(B_R(x_0))$ with that same weak gradient (\noderef{MemW1pOn}).
+Let $V\colon\R^n\to\R$ be continuous on $\overline B_R(x_0)$ with $V=v$ at
+every point of $B_R(x_0)$, and let $m,M\in\R$ satisfy
+\[
+m\le V(x)\le M\qquad\bigl(x\in\partial B_R(x_0)\bigr).
+\]
+Then
+\[
+m\le v(x)\le M\qquad\text{for almost every }x\in B_R(x_0).
+\]
+\end{lemma}
+\begin{proof}
+Write $B=B_R(x_0)$ and $\widetilde A(h)=A(h)-A(0)$, so that $\widetilde A(0)=0$
+and the hypothesis is
+$\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;\R^n\;
+\bigl((x,z,h)\mapsto\widetilde A(h)\bigr)$.  Note $1\le n$ from $2\le n$,
+$1\le p$ from $1<p$, that $B$ is open, and that $|B|<\infty$ (Preamble: the
+volume of a ball).
+
+\emph{Step 1: $v$ is a weak solution for the normalised field.}  We claim
+\[
+v\ \text{is a weak solution of}\ \operatorname{div}\widetilde A(\nabla v)=0\
+\text{in}\ B\ \text{with weak gradient}\ g_v
+\qquad(\noderef{IsWeakSolutionOn}).
+\tag{1}
+\]
+The first clause of \noderef{IsWeakSolutionOn} is
+$v\in W^{1,p}_{\mathrm{loc}}(B)$ with weak gradient $g_v$ and does not mention
+the field, so it transfers unchanged from the hypothesis.  For the test clause,
+let $(\varphi,g_\varphi)$ be admissible: $\varphi\in W^{1,p}(B)$ with weak
+gradient $g_\varphi$ (\noderef{MemW1pOn}), $\varphi$ of compact support and
+$\operatorname{supp}\varphi\subseteq B$.  Pointwise,
+\[
+\sum_i\widetilde A(g_v(x))^i\,g_\varphi^{\,i}(x)+0\cdot\varphi(x)
+=\Bigl(\sum_iA(g_v(x))^i\,g_\varphi^{\,i}(x)+0\cdot\varphi(x)\Bigr)
+-\sum_iA(0)^i\,g_\varphi^{\,i}(x),
+\]
+because $\widetilde A(h)^i=A(h)^i-A(0)^i$ for every $i$.  By
+\noderef{WeakGradientCompactSupportIntegral}, applied with $q=p$, the centre
+$x_0$, the radius $R$ and this pair --- its hypotheses are $1\le n$, $1\le p$,
+$0<R$, the membership $\varphi\in W^{1,p}(B)$ with weak gradient $g_\varphi$,
+the compactness of the support of $\varphi$ and the inclusion
+$\operatorname{supp}\varphi\subseteq B$, all of which hold --- each coordinate
+$x\mapsto g_\varphi^{\,i}(x)$ is integrable on $B$ with
+$\int_Bg_\varphi^{\,i}=0$.  Hence $x\mapsto\sum_iA(0)^i\,g_\varphi^{\,i}(x)$ is
+integrable on $B$, being a finite sum of constant multiples of integrable
+functions, and
+\[
+\int_B\sum_iA(0)^i\,g_\varphi^{\,i}
+=\sum_iA(0)^i\int_Bg_\varphi^{\,i}=0 .
+\]
+The bracketed term on the right of the display is integrable on $B$ with
+integral $0$, by the test clause of the hypothesis at the same pair.  So the
+left-hand side is a difference of two integrable functions, hence integrable,
+and its integral is $0-0=0$.  This is the test clause for $\widetilde A$, and
+(1) follows.
+
+\emph{Step 2: the constants are competitors.}  Let $c\in\R$.  By clause (3) of
+\noderef{WeakGradientLinear}, applied with $q=p$ and the open set $B$, the
+constant function $c$ lies in $W^{1,p}_{\mathrm{loc}}(B)$ with weak gradient
+$0$; by clause (4) of the same node, whose extra hypothesis $|B|\ne\infty$
+holds, it lies in $W^{1,p}(B)$ with weak gradient $0$ (\noderef{MemW1pOn}).
+Moreover the constant is a weak solution of
+$\operatorname{div}\widetilde A(\nabla\cdot)=0$ in $B$
+(\noderef{IsWeakSolutionOn}): its first clause is the local membership just
+obtained, and for an admissible test pair $(\varphi,g_\varphi)$ the integrand
+is
+\[
+\sum_i\widetilde A(0)^i\,g_\varphi^{\,i}(x)+0\cdot\varphi(x)=0
+\]
+at every point, because the weak gradient of the constant is $0$ and
+$\widetilde A(0)=A(0)-A(0)=0$; the zero function is integrable with integral
+$0$.  \emph{This is the one place the normalisation $\widetilde A(0)=0$ is used
+for its own sake rather than to meet another node's hypothesis.}
+
+\emph{Step 3: two comparisons.}  Apply \noderef{BallComparisonPrinciple} with
+the present $n,p,\varepsilon$, with $\gamma_0,\gamma_1$ in the roles of its
+$\gamma_0,\gamma_1$, with the field $\widetilde A$, the centre $x_0$ and the
+radius $R$, with the pair $(v,g_v)$ and the extension $V$ in the roles of its
+$(u,g_u)$ and $U$, and with the constant $M$, its zero gradient and the
+constant extension $M$ in the roles of its $(v,g_v)$ and $V$.  Its hypotheses
+are: $2\le n$, $1<p$, $0\le\varepsilon$, $0<\gamma_0$ and $\gamma_0\le\gamma_1$,
+all present; \noderef{CitedSobolevPoincareBall}, a hypothesis of the present
+lemma; $0<R$; the bundle
+$\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;\R^n\;
+\bigl((x,z,h)\mapsto\widetilde A(h)\bigr)$, which is the present hypothesis;
+the two weak-solution properties, for $v$ by (1) and for the constant by
+Step 2; the two $W^{1,p}(B)$ memberships, for $v$ by hypothesis and for the
+constant by Step 2; the continuity of the two extensions on $\overline B$, for
+$V$ by hypothesis and for the constant function because constants are
+continuous; their agreement with the functions on $B$, for $V$ by hypothesis
+and for the constant because both sides are $M$; and the boundary comparison
+$V(x)\le M$ for $x\in\partial B$, which is the right half of the hypothesis on
+$m$ and $M$.  Its conclusion is $v\le M$ almost everywhere on $B$.
+
+Exchanging the two arguments --- the constant $m$, its zero gradient and the
+constant extension $m$ in the roles of its $(u,g_u)$ and $U$, and $(v,g_v)$ and
+$V$ in the roles of its $(v,g_v)$ and $V$ --- the same node applies with the
+same verifications, the boundary comparison now being $m\le V(x)$ for
+$x\in\partial B$, which is the left half of the hypothesis.  Its conclusion is
+$m\le v$ almost everywhere on $B$.
+
+The intersection of two sets of full measure has full measure, so
+$m\le v(x)\le M$ for almost every $x\in B$, which is the assertion.
+\end{proof}

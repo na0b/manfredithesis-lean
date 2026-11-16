@@ -1,0 +1,295 @@
+\begin{lemma}[The differential structure conditions hold at every point]
+Let $n\ge2$ be an integer, let $p>1$, $\varepsilon\ge0$, $\gamma_0>0$ and
+$\gamma_1>0$ be real, let $\Omega\subseteq\R^n$ be open, let
+$A\colon\R^n\times\R\times\R^n\to\R^n$ and let $\sigma\colon\R\to\R$.  Assume
+\begin{itemize}
+\item $A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}); and
+\item $A$ satisfies (Q6) of the thesis on $\Omega$ with modulus $\sigma$
+  (\noderef{EllipticStructureQ6}).
+\end{itemize}
+Then the two differential inequalities of (Q1) of the thesis--(Q2) of the thesis hold at
+\emph{every} point of $\Omega$: for every $x\in\Omega$, every $z\in\R$ and every
+$h\in\R^n$ with $\varepsilon+|h|^2\ne0$,
+\[
+\gamma_0\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|\xi|^2
+\ \le\ \sum_{i,j=1}^nD_{h_j}A^i(x,z,h)\,\xi^i\xi^j
+\qquad\text{for every }\xi\in\R^n ,
+\tag{a}
+\]
+\[
+\bigl|D_{h_j}A^i(x,z,h)\bigr|
+\ \le\ \gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}
+\qquad\text{for all }i,j\in\{1,\dots,n\} .
+\tag{b}
+\]
+Here $D_{h_j}A^i(x,z,h)$ is the $i$-th component of the derivative of
+$h\mapsto A(x,z,h)$ at $h$ in the direction of the $j$-th standard basis vector,
+and the sum in (a) is the value of that derivative at $\xi$ paired with $\xi$,
+exactly as in \noderef{EllipticStructureQ12}.
+
+\medskip
+\noindent\textbf{What this lemma is, and what it is not.}  The paper states
+(Q1) of the thesis and (Q2) of the thesis ``for all $h,\xi\in\R^n$, all $z\in\R$ and
+a.e.\ $x\in\Omega$'' (p.~1), and \noderef{EllipticStructureQ12} transcribes that
+almost-everywhere quantifier faithfully.  This lemma does \emph{not} strengthen
+that hypothesis: it \emph{derives} the pointwise form from it \emph{together
+with} (Q6) of the thesis, which is an additional hypothesis, stated pointwise in $x$
+by the paper, and which \S5 assumes throughout.  So the content of the lemma is
+the implication
+\[
+\text{(Q1) of the thesis--(Q2) of the thesis a.e.}\ +\ \text{(Q6) of the thesis pointwise}
+\ \Longrightarrow\ \text{(Q1) of the thesis--(Q2) of the thesis pointwise},
+\]
+and nothing is claimed about an operator for which (Q6) of the thesis fails.
+
+\noindent\textbf{Why it is needed.}  Section 5 freezes the operator at a point:
+for $x_0\in\Omega'$ and $R\le R_0$ it solves the Dirichlet problem
+(5.2) of the thesis for the field $h\mapsto A(x_0,u(x_0),h)$ (p.~46).  That field is
+the restriction of $A$ to the \emph{single} point $x_0$, so every result applied
+to it --- Lemma~Lemma~3.1 of the thesis and its cited input (C3), and Theorem~1 ---
+requires (Q1) of the thesis--(Q2) of the thesis \emph{at} $x_0$, and the centres $x_0$
+range over all of a subdomain, not over a set of full measure: the comparison
+scheme behind Theorem~5 consumes the comparison data at every centre of an open
+set.  An almost-everywhere hypothesis therefore does not suffice, and this
+lemma is what closes the gap.
+
+\noindent\textbf{The constants are not degraded.}  The conclusion carries the
+same $\gamma_0$ and $\gamma_1$ as the hypothesis, not $\gamma_0$ and $\gamma_1$
+spoiled by a factor involving $\sigma$.  This matters because the consumers
+instantiate the cited results at the paper's constants: the frozen operator of
+\S5 must satisfy (Q1) of the thesis--(Q2) of the thesis with $\gamma_0,\gamma_1$ for
+Theorem~1's constant to be the paper's $c_0=c_0(p,\gamma_1/\gamma_0,n)$.  The
+reason no loss occurs is that $\sigma$ enters only through a limit in which it
+tends to $0$: it is used to transport an inequality from nearby points, never to
+weaken it.
+\end{lemma}
+\begin{proof}
+Write
+\[
+w(y)=\varepsilon+|y|^2\quad(y\in\R^n),
+\qquad
+D=\{y\in\R^n:w(y)\ne0\} .
+\]
+Since $\varepsilon\ge0$, $w\ge0$ everywhere, so $w>0$ on $D$; and $w$ is
+continuous, so $D$, the preimage of the open set $\R\setminus\{0\}$, is open.
+
+\emph{Step 0: the good points, and the pointwise differentiability.}  The clause
+(Q1) of the thesis of \noderef{EllipticStructureQ12} is an almost-everywhere
+statement: there is a Lebesgue null set $N_1$ such that every $x\notin N_1$ with
+$x\in\Omega$ satisfies
+\[
+\gamma_0w(h)^{\frac p2-1}|\xi|^2\le\sum_{i,j}D_{h_j}A^i(x,z,h)\xi^i\xi^j
+\qquad\text{for all }z\in\R,\ h\in D,\ \xi\in\R^n .
+\tag{Q1$_x$}
+\]
+Likewise the clause (Q2) of the thesis gives a null set $N_2$ such that every
+$x\notin N_2$ with $x\in\Omega$ satisfies
+\[
+\bigl|D_{h_j}A^i(x,z,h)\bigr|\le\gamma_1w(h)^{\frac p2-1}
+\qquad\text{for all }z\in\R,\ h\in D,\ i,j .
+\tag{Q2$_x$}
+\]
+Put $N=N_1\cup N_2$, a Lebesgue null set, and
+\[
+G=\Omega\setminus N\qquad(\text{the \emph{good} points}),
+\]
+so every $x\in G$ satisfies both (Q1$_x$) and (Q2$_x$).
+
+We also record what holds at \emph{every} point.  By the clause
+\texttt{hdiff} of \noderef{EllipticStructureQ12}, for every $x\in\Omega$ and
+every $z\in\R$ the map $A(x,z,\cdot)$ is of class $C^1$ on $D$.  As $D$ is open,
+this gives for each $h\in D$ that $A(x,z,\cdot)$ is (Fr\'echet) differentiable at
+$h$, with derivative the linear map $\xi\mapsto D_\xi A(x,z,h)$ whose $i$-th
+component at $\xi=e_j$ is the $D_{h_j}A^i(x,z,h)$ of the statement, and that
+$h\mapsto D_\cdot A(x,z,h)$ is continuous on $D$.
+
+\emph{Step 1: every point of $\Omega$ is a limit of good points.}  Let
+$x_1\in\Omega$.  Since $\Omega$ is open there is $\delta_0>0$ with
+$B_{\delta_0}(x_1)\subseteq\Omega$.  For $k\in\mathbb{N}$ put
+$\delta_k=\min\{\delta_0,\tfrac1{k+1}\}>0$.  The ball $B_{\delta_k}(x_1)$ has
+measure $\omega_n\delta_k^{\,n}>0$, where $\omega_n=|B_1(0)|\in(0,\infty)$ (the
+Preamble item on the volume of a ball), while $N$ is null; so
+$B_{\delta_k}(x_1)\not\subseteq N$ and we may choose
+\[
+x_k\in B_{\delta_k}(x_1)\setminus N\subseteq\Omega\setminus N=G .
+\]
+Then $x_k\in G$ for every $k$ and $|x_k-x_1|<\delta_k\le\frac1{k+1}\to0$, i.e.
+$x_k\to x_1$.
+
+\emph{Step 2: admissible segments and the weight along them.}  Let $h\in D$ and
+$\eta\in\R^n$.  The map $s\mapsto h+s\eta$ is continuous and sends $0$ to
+$h\in D$ with $D$ open, so there is $t_0>0$ --- depending only on $h,\eta$ and
+$\varepsilon$, and in particular not on $x$ --- with
+\[
+h+s\eta\in D\qquad\text{for all }|s|\le t_0 .
+\]
+On $[0,t_0]$ the function $s\mapsto w(h+s\eta)$ is continuous with values in
+$(0,\infty)$, and $u\mapsto u^{\frac p2-1}$ is continuous on $(0,\infty)$, so
+\[
+W_\eta(s)=w(h+s\eta)^{\frac p2-1}
+\]
+is continuous and positive on $[0,t_0]$; being continuous on a compact interval
+it is interval-integrable there.
+
+\emph{Step 3: the integrated form of (Q1) at a good point.}  Let $x\in G$,
+$z\in\R$, $h\in D$ and $\xi\in\R^n$, let $t_0$ be as in Step 2 for
+$\eta=\xi$, and let $0<t\le t_0$.  Define
+\[
+\varphi(s)=\sum_{i=1}^nA^i(x,z,h+s\xi)\,\xi^i\qquad(|s|\le t_0).
+\]
+For such $s$ the point $h+s\xi$ lies in $D$, where $A(x,z,\cdot)$ is
+differentiable (Step 0); composing with the affine map $s\mapsto h+s\xi$, whose
+derivative is the constant vector $\xi$, and then with the fixed linear
+functional $v\mapsto\sum_iv^i\xi^i$, we get that $\varphi$ is differentiable at
+$s$ with
+\[
+\varphi'(s)=\sum_{i,j}D_{h_j}A^i(x,z,h+s\xi)\,\xi^i\xi^j .
+\]
+By Step 0 the derivative map is continuous on $D$, so $\varphi'$ is continuous
+on $[0,t]$ and hence interval-integrable there.  The fundamental theorem of
+calculus in interval-integral form (Preamble) therefore gives
+\[
+\varphi(t)-\varphi(0)=\int_0^t\varphi'(s)\,ds .
+\]
+By (Q1$_x$), applied at the point $h+s\xi\in D$ and the direction $\xi$,
+\[
+\varphi'(s)\ \ge\ \gamma_0|\xi|^2W_\xi(s)\qquad(0\le s\le t),
+\]
+and both sides are interval-integrable on $[0,t]$ (Step 2 for the right-hand
+side), so monotonicity of the interval integral (Preamble) yields
+\[
+\sum_{i=1}^n\bigl(A^i(x,z,h+t\xi)-A^i(x,z,h)\bigr)\xi^i
+\ \ge\ \gamma_0|\xi|^2\int_0^tW_\xi(s)\,ds
+\qquad(x\in G,\ 0<t\le t_0).
+\tag{1}
+\]
+
+\emph{Step 4: the integrated form of (Q2) at a good point.}  Let $x\in G$,
+$z\in\R$, $h\in D$ and $i,j\in\{1,\dots,n\}$, let $e_j$ be the $j$-th standard
+basis vector, let $t_0$ be as in Step 2 for $\eta=e_j$ and let $0<t\le t_0$.
+Define $\psi(s)=A^i(x,z,h+se_j)$ for $|s|\le t_0$.  Exactly as in Step 3,
+$\psi$ is differentiable with
+$\psi'(s)=D_{h_j}A^i(x,z,h+se_j)$, and $\psi'$ is continuous, hence
+interval-integrable, on $[0,t]$.  By (Q2$_x$) at the point $h+se_j\in D$,
+\[
+|\psi'(s)|\le\gamma_1W_{e_j}(s)\qquad(0\le s\le t).
+\]
+The fundamental theorem of calculus (Preamble) gives
+$\psi(t)-\psi(0)=\int_0^t\psi'(s)\,ds$, so by the norm inequality for the
+integral and then monotonicity (Preamble, parts (c) and (b)),
+\[
+\bigl|A^i(x,z,h+te_j)-A^i(x,z,h)\bigr|
+\ \le\ \int_0^t|\psi'(s)|\,ds
+\ \le\ \gamma_1\int_0^tW_{e_j}(s)\,ds
+\qquad(x\in G,\ 0<t\le t_0).
+\tag{2}
+\]
+
+\emph{Step 5: transport to an arbitrary point by (Q6) of the thesis.}  Fix
+$x_1\in\Omega$ and let $(x_k)\subseteq G$ with $x_k\to x_1$ be the sequence of
+Step 1.  The clause (Q6) of the thesis of \noderef{EllipticStructureQ6} holds for
+every pair of points of $\Omega$, in particular for $(x_k,x_1)$, and with
+$z'=z$ it reads
+\[
+\bigl|A(x_k,z,y)-A(x_1,z,y)\bigr|
+\ \le\ \sigma\bigl(|x_k-x_1|\bigr)\bigl(1+|y|^2\bigr)^{\frac{p-1}2}
+\qquad(y\in\R^n).
+\]
+The clauses $\sigma$-continuity and $\sigma(0)=0$ of the same node, together
+with $|x_k-x_1|\to0$, give $\sigma(|x_k-x_1|)\to\sigma(0)=0$; hence, for each
+fixed $y\in\R^n$, the factor $(1+|y|^2)^{(p-1)/2}$ being a finite constant,
+\[
+A(x_k,z,y)\longrightarrow A(x_1,z,y)\qquad(k\to\infty).
+\tag{3}
+\]
+Now fix $z$, $h\in D$, $\xi$ and $0<t\le t_0$ as in Step 3.  Applying $(3)$ at
+the two points $y=h+t\xi$ and $y=h$ and taking the (finite) linear combination
+with the fixed coefficients $\xi^i$, the left-hand side of $(1)$ at $x=x_k$
+converges to the same expression at $x_1$, while the right-hand side of $(1)$
+does not depend on $x$ at all.  A non-strict inequality between convergent
+sequences of reals passes to the limit, so
+\[
+\sum_{i=1}^n\bigl(A^i(x_1,z,h+t\xi)-A^i(x_1,z,h)\bigr)\xi^i
+\ \ge\ \gamma_0|\xi|^2\int_0^tW_\xi(s)\,ds
+\qquad(0<t\le t_0).
+\tag{1$'$}
+\]
+The same argument applied to $(2)$ --- using $(3)$ at $y=h+te_j$ and $y=h$,
+the componentwise bound $|v^i|\le|v|$ to pass from the convergence of the
+vectors to that of their $i$-th components, and the continuity of the absolute
+value --- gives
+\[
+\bigl|A^i(x_1,z,h+te_j)-A^i(x_1,z,h)\bigr|
+\ \le\ \gamma_1\int_0^tW_{e_j}(s)\,ds
+\qquad(0<t\le t_0).
+\tag{2$'$}
+\]
+Note that the sequence here is a sequence of \emph{points} $x_k$ of $\Omega$ and
+that $t$, $h$, $\xi$, $i$, $j$ are held fixed while $k\to\infty$; no limit of
+functions and no almost-everywhere convergence is involved.
+
+\emph{Step 6: the average of the weight.}  Let $h\in D$, $\eta\in\R^n$ and
+$t_0$ as in Step 2.  Then
+\[
+\frac1t\int_0^tW_\eta(s)\,ds\ \longrightarrow\ W_\eta(0)=w(h)^{\frac p2-1}
+\qquad(t\downarrow0).
+\tag{4}
+\]
+Indeed, let $\theta>0$.  By continuity of $W_\eta$ at $0$ (Step 2) there is
+$\delta\in(0,t_0]$ with $|W_\eta(s)-W_\eta(0)|\le\theta$ for $0\le s\le\delta$.
+For $0<t\le\delta$, using $\int_0^tW_\eta(0)\,ds=tW_\eta(0)$, the norm
+inequality for the integral and monotonicity (Preamble),
+\[
+\Bigl|\frac1t\int_0^tW_\eta(s)\,ds-W_\eta(0)\Bigr|
+=\frac1t\Bigl|\int_0^t\bigl(W_\eta(s)-W_\eta(0)\bigr)ds\Bigr|
+\le\frac1t\int_0^t\bigl|W_\eta(s)-W_\eta(0)\bigr|ds\le\theta .
+\]
+
+\emph{Step 7: differentiating back, and the two conclusions.}  Fix $x_1\in\Omega$,
+$z\in\R$ and $h\in D$; recall from Step 0 that $A(x_1,z,\cdot)$ is
+differentiable at $h$.
+
+\emph{(a)}  Let $\xi\in\R^n$.  If $\xi=0$ then both sides of (a) vanish --- the
+derivative is a linear map, so its value at $0$ is $0$, and $|\xi|^2=0$ --- and
+(a) holds.  So let $\xi\ne0$, let $t_0$ be as in Step 2 for $\eta=\xi$ and
+divide $(1')$ by $t>0$:
+\[
+\frac1t\sum_{i=1}^n\bigl(A^i(x_1,z,h+t\xi)-A^i(x_1,z,h)\bigr)\xi^i
+\ \ge\ \gamma_0|\xi|^2\cdot\frac1t\int_0^tW_\xi(s)\,ds
+\qquad(0<t\le t_0).
+\]
+As $t\downarrow0$ the left-hand side converges to
+$\sum_{i,j}D_{h_j}A^i(x_1,z,h)\xi^i\xi^j$: differentiability of
+$A(x_1,z,\cdot)$ at $h$ means precisely that
+$\bigl(A(x_1,z,h+t\xi)-A(x_1,z,h)\bigr)/t\to D_\xi A(x_1,z,h)$ in $\R^n$ as
+$t\to0$, and pairing with the fixed vector $\xi$ is a continuous operation,
+while $\sum_iD_\xi A^i(x_1,z,h)\xi^i=\sum_{i,j}D_{h_j}A^i(x_1,z,h)\xi^i\xi^j$
+by linearity of the derivative in the direction.  The right-hand side converges
+to $\gamma_0|\xi|^2w(h)^{\frac p2-1}$ by $(4)$.  A non-strict inequality between
+two convergent families passes to the limit, so
+\[
+\gamma_0w(h)^{\frac p2-1}|\xi|^2\le\sum_{i,j}D_{h_j}A^i(x_1,z,h)\xi^i\xi^j ,
+\]
+which is (a) at $x_1$, with the constant $\gamma_0$ of the hypothesis.
+
+\emph{(b)}  Let $i,j\in\{1,\dots,n\}$, let $t_0$ be as in Step 2 for
+$\eta=e_j$ and divide $(2')$ by $t>0$:
+\[
+\frac1t\bigl|A^i(x_1,z,h+te_j)-A^i(x_1,z,h)\bigr|
+\ \le\ \gamma_1\cdot\frac1t\int_0^tW_{e_j}(s)\,ds
+\qquad(0<t\le t_0).
+\]
+As $t\downarrow0$ the left-hand side converges to
+$|D_{h_j}A^i(x_1,z,h)|$, by the same difference-quotient convergence as in (a)
+--- now in the direction $e_j$ --- followed by the continuity of
+$v\mapsto|v^i|$ on $\R^n$; and the right-hand side converges to
+$\gamma_1w(h)^{\frac p2-1}$ by $(4)$.  Passing to the limit gives
+\[
+\bigl|D_{h_j}A^i(x_1,z,h)\bigr|\le\gamma_1w(h)^{\frac p2-1},
+\]
+which is (b) at $x_1$, with the constant $\gamma_1$ of the hypothesis.
+
+Since $x_1\in\Omega$, $z\in\R$, $h\in D$ and the remaining data were arbitrary,
+(a) and (b) hold at every point of $\Omega$, and the proof is complete.
+\end{proof}

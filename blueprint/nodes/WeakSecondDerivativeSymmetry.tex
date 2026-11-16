@@ -1,0 +1,115 @@
+\begin{lemma}[Symmetry of the second weak derivatives]
+Let $n\ge1$ be an integer and $q\ge1$ real, let $\Omega\subseteq\R^n$ be open,
+let $u\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pLocOn}), and suppose that for each $i\in\{1,\dots,n\}$ the
+component $g^i$ again lies in $W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak
+gradient $Dg^i$ (\noderef{MemW1pLocOn}).  Then for all
+$j,k\in\{1,\dots,n\}$,
+\[
+(Dg^k)_j=(Dg^j)_k\qquad\text{almost everywhere on }\Omega ,
+\]
+that is, the second weak derivatives $D_jD_ku$ and $D_kD_ju$ of $u$ agree almost
+everywhere on $\Omega$.
+\end{lemma}
+\begin{proof}
+Fix $j,k\in\{1,\dots,n\}$ and put
+\[
+w=(Dg^k)_j-(Dg^j)_k ,
+\]
+a real-valued function on $\R^n$.  We show that $\int_{\R^n}\varphi\,w\,dx=0$
+for every $\varphi\in C^\infty(\R^n)$ with compact support and
+$\operatorname{supp}\varphi\subseteq\Omega$, and that $w$ is locally integrable
+on $\Omega$; the fundamental lemma of the calculus of variations (du
+Bois--Reymond, Preamble) then gives $w=0$ almost everywhere on $\Omega$, which
+is the assertion.
+
+\emph{Step 1: local integrability, and the finiteness of every integral below.}
+Let $K\subseteq\Omega$ be compact.  By \noderef{MemW1pLocOn} applied to $u$ with
+weak gradient $g$ we have $u\in L^q(K)$ and $|g|\in L^q(K)$, both almost
+everywhere strongly measurable there; by \noderef{MemW1pLocOn} applied to the
+component $g^i$ with weak gradient $Dg^i$ we have $g^i\in L^q(K)$ and
+$|Dg^i|\in L^q(K)$ for each $i$.  Since $K$ is compact, $|K|<\infty$, and
+$q\ge1$, so H\"older on a set of finite measure (Preamble) gives
+$L^q(K)\subseteq L^1(K)$; hence $u$, each $g^i$ and each $|Dg^i|$ lie in
+$L^1(K)$.  Each component satisfies $|(Dg^i)_m|\le|Dg^i|$ pointwise, so each
+$(Dg^i)_m$ lies in $L^1(K)$ as well, by domination (Preamble).  Consequently
+$w=(Dg^k)_j-(Dg^j)_k$ is measurable and lies in $L^1(K)$ for every compact
+$K\subseteq\Omega$; since $\Omega$ is open, every point of $\Omega$ has a
+compact neighbourhood contained in $\Omega$, so $w$ is locally integrable on
+$\Omega$.
+
+\emph{Step 2: the test functions.}  Fix $\varphi\in C^\infty(\R^n)$ with compact
+support and $\operatorname{supp}\varphi\subseteq\Omega$, so that $\varphi$
+belongs to the test class of \noderef{HasWeakGradientOn} for $\Omega$.  For each
+index $m$ the partial derivative $D_m\varphi$ is again in $C^\infty(\R^n)$, and
+$\{D_m\varphi\ne0\}\subseteq\operatorname{supp}\varphi$ because $\varphi$
+vanishes identically on the open complement of its support, so
+$\operatorname{supp}D_m\varphi\subseteq\operatorname{supp}\varphi$ is compact
+and contained in $\Omega$.  Hence $D_m\varphi$ is admissible in
+\noderef{HasWeakGradientOn} for $\Omega$ too.  The same applies to the second
+derivatives $D_mD_{m'}\varphi$.  All of $\varphi$, $D_m\varphi$ and
+$D_mD_{m'}\varphi$ are continuous with compact support, hence bounded on
+$\R^n$, and all vanish off the compact set
+$K_0=\operatorname{supp}\varphi\subseteq\Omega$.  By Step 1, every integral
+written below is therefore the integral over $K_0$ of an $L^1(K_0)$ function
+times a bounded function, hence finite (domination, Preamble); and since each
+integrand vanishes off $K_0\subseteq\Omega$, its integral over $\Omega$ and its
+integral over $\R^n$ coincide.
+
+\emph{Step 3: two applications of the weak-gradient identity.}  The defining
+identity of \noderef{HasWeakGradientOn}, which the pair $(g^k,Dg^k)$ satisfies
+on $\Omega$ by \noderef{MemW1pLocOn}, applied to the test function $\varphi$ and
+the index $j$, reads
+\[
+\int_\Omega g^k\,D_j\varphi\,dx=-\int_\Omega (Dg^k)_j\,\varphi\,dx .
+\tag{1}
+\]
+The defining identity of \noderef{HasWeakGradientOn}, which the pair $(u,g)$
+satisfies on $\Omega$ by \noderef{MemW1pLocOn}, applied to the test function
+$D_j\varphi$ --- admissible by Step 2 --- and the index $k$, reads
+\[
+\int_\Omega u\,D_k\bigl(D_j\varphi\bigr)dx=-\int_\Omega g^k\,D_j\varphi\,dx ,
+\tag{2}
+\]
+the right-hand side being $-\int_\Omega g^k\,D_j\varphi$ because the $k$-th
+component of $g$ is $g^k$.  Adding (1) and (2),
+\[
+\int_\Omega (Dg^k)_j\,\varphi\,dx
+=-\int_\Omega g^k\,D_j\varphi\,dx
+=\int_\Omega u\,D_kD_j\varphi\,dx .
+\tag{3}
+\]
+
+\emph{Step 4: the right-hand side of (3) is symmetric in $(j,k)$.}  The function
+$\varphi$ is $C^\infty$, hence differentiable at every point of $\R^n$, and its
+derivative $D\varphi$ is again differentiable at every point.  By the symmetry
+of the second derivative (Clairaut, Preamble), which requires exactly Fr\'echet
+twice differentiability and no more, the bilinear map $D^2\varphi(x)$ is
+symmetric for every $x$:
+$D^2\varphi(x)[v][w]=D^2\varphi(x)[w][v]$ for all $v,w\in\R^n$.  Taking
+$v=e_k$, $w=e_j$ and using $D_m\varphi=D\varphi[e_m]$, so that
+$D_kD_j\varphi(x)=D^2\varphi(x)[e_k][e_j]$ and
+$D_jD_k\varphi(x)=D^2\varphi(x)[e_j][e_k]$, we get
+\[
+D_kD_j\varphi=D_jD_k\varphi\qquad\text{everywhere on }\R^n .
+\]
+Hence the right-hand side of (3) is unchanged when $j$ and $k$ are exchanged.
+Exchanging $j$ and $k$ in (3) and comparing therefore gives
+\[
+\int_\Omega (Dg^k)_j\,\varphi\,dx=\int_\Omega (Dg^j)_k\,\varphi\,dx ,
+\]
+both integrals being finite by Step 2, so that they may be subtracted:
+\[
+\int_{\R^n}\varphi\,w\,dx=\int_\Omega\bigl[(Dg^k)_j-(Dg^j)_k\bigr]\varphi\,dx=0 ,
+\]
+the first equality because the integrand vanishes off
+$\operatorname{supp}\varphi\subseteq\Omega$ (Step 2).
+
+\emph{Conclusion.}  The function $w$ is locally integrable on the open set
+$\Omega$ by Step 1, and $\int_{\R^n}\varphi\,w=0$ for every $\varphi$ that is
+$C^\infty$ with compact support contained in $\Omega$ by Step 4.  The
+fundamental lemma of the calculus of variations (Preamble), whose test class is
+exactly this one, yields $w=0$ almost everywhere on $\Omega$, that is
+$(Dg^k)_j=(Dg^j)_k$ almost everywhere on $\Omega$.  As $j$ and $k$ were
+arbitrary, this is the assertion.
+\end{proof}

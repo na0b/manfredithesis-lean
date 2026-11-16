@@ -1,0 +1,213 @@
+\begin{helper}[The two-sided estimate (7) at the heart of inequality (3.3)]
+Let $n\ge2$ and $p>1$.  Let $\varepsilon,\gamma_0,\gamma_1,t\in\R$, let
+$\Omega\subseteq\R^n$, let $A\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $k$ a field
+$Dg^k\colon\R^n\to\R^n$, and let $\zeta\colon\R^n\to\R$.  Throughout, $D_i$ is
+the derivative in the direction of the $i$-th standard basis vector,
+$(\cdot,\cdot)$ and $|\cdot|$ are the Euclidean inner product and norm, the
+indices $i,j,k$ run over $\{1,\dots,n\}$, $\operatorname{supp}$ denotes the
+\emph{closed} support and $K=\operatorname{supp}\zeta$, and every power of a
+positive real is the real power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight
+$(\varepsilon+|h|^2)^{\frac p2-1}$; no such power is rewritten as an integer
+power.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\varepsilon$, $0<\gamma_0$, $\gamma_0\le\gamma_1$, $0<t$, and
+  $\Omega$ is open and nonempty;
+\item[(H2)] the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}); the cited
+  regularity result (C1) for $\varepsilon>0$ holds for $A$ on $\Omega$ with
+  those parameters (\noderef{CitedRegularityEpsPos}); $u$ is a weak solution of
+  $\operatorname{div}A(\nabla u)=0$ in $\Omega$ with weak gradient $g=\nabla u$
+  (\noderef{IsWeakSolutionOn}); and $g^k\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with
+  weak gradient $Dg^k$ for every $k$ (\noderef{MemW1pLocOn}), so that
+  $(Dg^k)_j=D_jD_ku$;
+\item[(H3)] $\zeta$ is $C^\infty$ on $\R^n$ with compact support and
+  $K\subseteq\Omega$.
+\end{enumerate}
+Let $w\colon\R^n\to\R$ and $Dw\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H4)] $w=\varepsilon+|g|^2$ pointwise, $w>0$ everywhere, and
+  $(Dw)_i=2\sum_kg^k(Dg^k)_i$ pointwise, i.e.\ $Dw$ is the field
+  $D_iw=2\sum_kD_ku\,D_iD_ku$.
+\end{enumerate}
+Let $I,J\in\R$ satisfy
+\begin{enumerate}
+\item[(H5)] $\displaystyle
+  I=\int_\Omega w^{\frac{p+t}2-2}\Bigl(\sum_i(Dw)_i^2\Bigr)\zeta^2\,dx$
+  and $\displaystyle
+  J=\int_\Omega w^{\frac{p+t}2}\Bigl(\sum_i(D_i\zeta)^2\Bigr)dx$,
+  i.e.\ $I=\int_\Omega w^{\frac{p+t}2-2}|Dw|^2\zeta^2$ and
+  $J=\int_\Omega w^{\frac{p+t}2}|\nabla\zeta|^2$.
+\end{enumerate}
+Then
+\[
+\gamma_0\,\frac{1+t}4\,I\ \le\ \gamma_1\,n\,I^{\frac12}J^{\frac12}.
+\]
+\end{helper}
+\begin{proof}
+Write $M^k=Dg^k$, so $(M^k)^j=D_jD_ku$ and $(Dw)_i=2\sum_kg^k(M^k)^i$ by (H4),
+and put
+\[
+a_{ij}(x)=D_{h_j}A^i\bigl(g(x)\bigr),
+\]
+which exists because (Q1) of the thesis includes differentiability of $A$ in $h$
+(\noderef{EllipticStructureQ12}); $Dw$ and $a_{ij}$ are notation for those
+expressions and no differentiability of $w$, nor of $A$ beyond what (H2)
+assumes, is implied by writing them.  The coefficient $a_{ij}$ is paired with
+$(Dg^k)_j=D_jD_ku$ throughout, which is the pairing the differentiated equation
+(3.2) of the thesis is stated with, and that index placement is load-bearing, not
+cosmetic.  Finally put
+\[
+T_1=\int_\Omega\zeta^2w^{\frac t2}\sum_k\sum_{i,j}a_{ij}(M^k)^j(M^k)^i\,dx,
+\quad
+T_2=\frac t4\int_\Omega\zeta^2w^{\frac t2-1}\sum_{i,j}a_{ij}(Dw)_j(Dw)_i\,dx,
+\]
+\[
+T_3=\int_\Omega\zeta\,w^{\frac t2}\sum_{i,j}a_{ij}(Dw)_j\,D_i\zeta\,dx .
+\]
+
+\emph{Step 1: what (C1) supplies, and the elementary properties of $w$.}
+Instantiate \noderef{CitedRegularityEpsPos} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A$: its antecedents are
+$\varepsilon>0$, the structure conditions on $\Omega$
+(\noderef{EllipticStructureQ12}) and the weak-solution property
+(\noderef{IsWeakSolutionOn}), all of which are (H1) and (H2), and among its
+conclusions is a field $g'$ with
+\[
+g'\ \text{continuous on }\Omega,
+\qquad
+g=g'\ \text{ almost everywhere on }\Omega .
+\tag{1}
+\]
+\emph{It does not assert continuity of the given $g$, and cannot: a weak
+gradient is an almost-everywhere class, so continuity is a property of a
+representative.  Every \emph{pointwise} consequence below is therefore drawn for
+the primed quantities built from $g'$, and transported back to the unprimed ones
+across $(1)$, which every integral and every almost-everywhere assertion is
+blind to.}  Accordingly put $w'=\varepsilon+|g'|^2$, obtained from $g'$ by the
+same formula that produces $w$ from $g$.  At every point where $g=g'$ the two
+take the same value, so by $(1)$
+\[
+w=w'\qquad\text{and}\qquad w^\sigma=(w')^\sigma
+\quad\text{almost everywhere on }\Omega,\ \text{for every real }\sigma .
+\tag{1$'$}
+\]
+Next, both $w=\varepsilon+|g|^2$ and $w'=\varepsilon+|g'|^2$ are
+$\ge\varepsilon>0$ everywhere, and $w'$ is continuous on $\Omega$ by $(1)$;
+hence so is every real power $(w')^\sigma$, because
+$\lambda\mapsto\lambda^\sigma$ is continuous on $(0,\infty)$, and therefore each
+$(w')^\sigma$ is bounded on every compact subset of $\Omega$, in particular on
+$K$.  Also $|g|^2=w-\varepsilon\le w$, so by the Cauchy--Schwarz inequality
+(Preamble) in the index $k$,
+\[
+|Dw|^2=4\Bigl|\sum_kg^kM^k\Bigr|^2
+\le4\Bigl(\sum_k(g^k)^2\Bigr)\Bigl(\sum_k|M^k|^2\Bigr)
+\le4\,w\sum_k|M^k|^2 ,
+\qquad\text{i.e.}\qquad
+\sum_k|M^k|^2\ \ge\ \frac{|Dw|^2}{4w} .
+\tag{2}
+\]
+Finally $\zeta$ and each $D_i\zeta$ are continuous with compact support by (H3),
+hence bounded on $\R^n$, and both vanish off $K$; and $\sum_k|M^k|^2\in L^1(K)$,
+because each $M^k\in L^2(\Omega')$ on a neighbourhood $\Omega'$ of the compact
+$K$ inside $\Omega$ by the $W^{1,2}_{\mathrm{loc}}$ membership in (H2)
+(\noderef{MemW1pLocOn}).
+
+\emph{Step 2: $I$ and $J$ are finite.}  The integrand of $I$ vanishes off $K$,
+because $\zeta$ does.  On $K$ it is dominated, using $(1')$ and the boundedness
+of $(w')^{\frac{p+t}2-2}$ and of $\zeta^2$ from Step 1, by a constant multiple
+of $|Dw|^2$, which by $(2)$ is at most $4w\sum_k|M^k|^2$ and hence --- $w=w'$
+almost everywhere and $w'$ bounded on $K$ --- by a constant multiple of
+$\sum_k|M^k|^2\in L^1(K)$.  A bound holding almost everywhere dominates the same
+integral, so the integrand of $I$ is in $L^1(K)$, and being zero off $K$ it is
+in $L^1(\Omega)$; thus $I$ is finite, and $I\ge0$ since its integrand is
+nonnegative.  The integrand of $J$ is treated the same way and more simply: it
+vanishes off $K$ and is dominated there by a constant multiple of $1$, the
+constant coming from the bounds for $(w')^{\frac{p+t}2}$ and $|\nabla\zeta|^2$;
+so $J$ is finite and $J\ge0$.
+
+\emph{Step 3: the identity (5).}  Apply
+\noderef{PowerWeightWeakFormIdentity} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,t,\Omega,A,u,g,Dg,\zeta$, with the present
+$w$ and $Dw$, with the coefficient field $a_{ij}$, with $T_1,T_2,T_3$ as
+defined above, and with the representatives $g',w'$ and the bounds of Step 1.
+Its hypotheses are exactly (H1)--(H4) together with those data, and it gives
+\[
+T_1+T_2=-T_3
+\tag{5}
+\]
+and, in addition, that each of the three integrands of $T_1$, $T_2$ and $T_3$
+is integrable on $\Omega$, and that $T_3$'s is integrable on $K$.  This is the
+weak-form transport of the differentiated equation (3.2) of the thesis to the power
+weight: the chain rule there is for $w^{t/2}$ as a $C^1$ function of the
+\emph{vector} $(g^1,\dots,g^n)$ of weak derivatives, which is why that node and
+not the scalar chain rule is cited, and (3.2) of the thesis is an $L^2$ statement
+whose test class is $W^{1,2}$ with compact support in $\Omega$ --- the exponent
+$2$ there is that test exponent and never a stand-in for $p$.
+
+\emph{Step 4: the lower bound from (Q1) of the thesis.}  Condition (Q1) of the thesis at a
+point $x$ where it holds, with $z=0$, $h=g(x)$ --- whose guard
+$\varepsilon+|h|^2=w(x)>0$ is satisfied --- and an arbitrary $\xi$, reads
+$\gamma_0w^{\frac p2-1}|\xi|^2\le\sum_{i,j}a_{ij}\xi^j\xi^i$, the right-hand
+side being $\sum_i\bigl(dA(g(x))\xi\bigr)_i\xi^i$ written out by linearity of
+$dA(g(x))$ in $\xi$ and the definition of $a_{ij}$.  Taking $\xi=M^k$ and
+summing over $k$, and then taking $\xi=Dw$,
+\[
+\sum_k\sum_{i,j}a_{ij}(M^k)^j(M^k)^i\ \ge\ \gamma_0w^{\frac p2-1}\sum_k|M^k|^2
+\ \ge\ \frac{\gamma_0}4\,w^{\frac p2-2}|Dw|^2 ,
+\qquad
+\sum_{i,j}a_{ij}(Dw)_j(Dw)_i\ \ge\ \gamma_0w^{\frac p2-1}|Dw|^2
+\]
+almost everywhere on $\Omega$, the middle step by $(2)$ --- which is where the
+factor $\tfrac14$ comes from, the remaining power $w^{\frac p2-1}/w$ being
+$w^{\frac p2-2}$.  Multiplying by the nonnegative weights $\zeta^2w^{t/2}$ and
+$\tfrac t4\zeta^2w^{t/2-1}$ (here $t>0$ by (H1)), integrating --- legitimate by
+monotonicity of the integral (Preamble), both sides being integrable by Step 2
+and Step 3 --- and adding the exponents, $\tfrac t2+\tfrac p2-2=\tfrac{p+t}2-2$
+and $\tfrac t2-1+\tfrac p2-1=\tfrac{p+t}2-2$,
+\[
+T_1\ \ge\ \frac{\gamma_0}4\,I,
+\qquad
+T_2\ \ge\ \frac{\gamma_0t}4\,I,
+\qquad\text{so}\qquad
+\gamma_0\,\frac{1+t}4\,I\ \le\ T_1+T_2\ =\ -T_3\ \le\ |T_3| ,
+\tag{6}
+\]
+the equality being $(5)$ and the last step $-\lambda\le|\lambda|$.
+
+\emph{Step 5: the upper bound from (Q2) of the thesis and Cauchy--Schwarz.}  By
+(Q2) of the thesis, almost everywhere on $\Omega$ one has
+$|a_{ij}|\le\gamma_1w^{\frac p2-1}$ for all $i,j$, so almost everywhere on
+$\Omega$
+\[
+\Bigl|\sum_{i,j}a_{ij}(Dw)_j(D_i\zeta)\Bigr|
+\le\gamma_1w^{\frac p2-1}\Bigl(\sum_j|(Dw)_j|\Bigr)\Bigl(\sum_i|D_i\zeta|\Bigr)
+\le\gamma_1n\,w^{\frac p2-1}|Dw|\,|\nabla\zeta| ,
+\]
+the last step by Cauchy--Schwarz (Preamble) applied twice, to
+$(|(Dw)_j|)_j$ against $(1,\dots,1)$ and to $(|D_i\zeta|)_i$ against
+$(1,\dots,1)$, each giving a factor $\sqrt n$.  Hence, by the norm inequality
+for the integral and monotonicity (Preamble), using that $T_3$'s integrand is
+integrable on $K$ by Step 3 and vanishes off $K$,
+\[
+|T_3|\ \le\ \gamma_1n\int_\Omega w^{\frac{p+t}2-1}|Dw|\,|\nabla\zeta|\,|\zeta|\,dx
+\ \le\ \gamma_1n\,I^{\frac12}J^{\frac12},
+\]
+where the first inequality adds the exponents
+$\tfrac t2+\tfrac p2-1=\tfrac{p+t}2-1$ and the second is Cauchy--Schwarz
+(Preamble) for the two factors
+\[
+w^{\frac{p+t}4-1}|Dw|\,|\zeta|
+\quad\text{and}\quad
+w^{\frac{p+t}4}|\nabla\zeta| ,
+\]
+whose product is the integrand --- the exponents adding as
+$\bigl(\tfrac{p+t}4-1\bigr)+\tfrac{p+t}4=\tfrac{p+t}2-1$ --- and whose squares
+integrate to $I$ and $J$, both finite by Step 2.  Combining with $(6)$,
+\[
+\gamma_0\,\frac{1+t}4\,I\ \le\ |T_3|\ \le\ \gamma_1n\,I^{\frac12}J^{\frac12},
+\]
+which is the assertion.
+\end{proof}

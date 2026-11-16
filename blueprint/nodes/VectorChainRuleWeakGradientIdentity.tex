@@ -1,0 +1,99 @@
+\begin{helper}[The weak-gradient identity for a $C^1$ composition with a vector field]
+Let $n,m\in\N$, let $q\in\R$ with $1\le n$ and $1\le q$, let
+$\Omega\subseteq\R^n$, let $G$ assign to each index $j$ a function
+$G_j\colon\R^n\to\R$, let $DG$ assign to each $j$ a field
+$DG^j\colon\R^n\to\R^n$ and let $F\colon\R^m\to\R$.  Throughout,
+$\operatorname{supp}\varphi$ denotes the \emph{closed} support of $\varphi$,
+$\partial_i\varphi(x)=d\varphi(x)[e_i]$ for the standard basis of $\R^n$, and
+the partial derivatives of the outer map are
+$\partial F/\partial y_j(y)=dF(y)[\mathrm{e}_j]$ taken on the plain product
+$\R^m$.  Assume
+\begin{enumerate}
+\item[(H1)] $\Omega$ is open and measurable;
+\item[(H2)] each $G_j$ lies in $W^{1,q}_{loc}(\Omega)$ with weak gradient
+  $DG^j$ (\noderef{MemW1pLocOn});
+\item[(H3)] on every compact $K\subseteq\Omega$ the $G_j$ are uniformly
+  bounded: there is $L$ with $|G_j(x)|\le L$ for all $x\in K$ and all $j$;
+\item[(H4)] $F$ is $C^1$, $F$ and $dF$ are continuous and $F$ is
+  differentiable;
+\item[(H5)] for every $L_b$ there is $C\ge0$ bounding $|F|$ and every
+  $|\partial F/\partial y_j|$ on $\{|y|\le L_b\}$;
+\item[(H6)] the coordinate projections of $\R^n$ are continuous and
+  $|w_k|\le|w|$; the $L^1$ norm is $\int|h|$ for measurable $h$; a continuous
+  linear functional $T$ on $\R^m$ satisfies
+  $T(a)=\sum_jT(\mathrm{e}_j)a_j$; and a function vanishing off
+  $A\subseteq B$ has the same integral over $B$ as over $A$;
+\item[(H7)] differentiating a mollification gives the mollification of the weak
+  gradient, in the form of \texttt{ConvolutionFDerivWeakGradient}: for $f$
+  with weak gradient $G_f$ on $\Omega$, $1_{K_3}f$ locally integrable, $\rho$
+  smooth with $\operatorname{supp}\rho=\overline{B_d(0)}$, and $x$ with
+  $\overline{B_d(x)}\subseteq K_3\cap\Omega$,
+  $\partial_i\bigl((1_{K_3}f)*\rho\bigr)(x)=\bigl((1_{K_3}G_f^{\,i})*\rho\bigr)(x)$.
+\end{enumerate}
+Then $x\mapsto F\bigl(G(x)\bigr)$ has weak gradient
+$x\mapsto\sum_j\bigl(\partial F/\partial y_j(G(x))\bigr)DG^j(x)$ on $\Omega$
+(\noderef{HasWeakGradientOn}).
+
+Per pm-0013 this is the \emph{vector} composition --- $F$ is a function of all
+$m$ components at once --- which is what the scalar chain rule cannot provide.
+The conclusion is the integration-by-parts identity alone; the $L^q$ membership
+of the composite is a separate matter.
+\end{helper}
+\begin{proof}
+Fix a smooth $\varphi$ with compact support, $\operatorname{supp}\varphi\subseteq\Omega$,
+and a coordinate $i$.  The assertion is
+\[
+\int_\Omega F\bigl(G(x)\bigr)\,\partial_i\varphi(x)\,dx
+\ =\ -\int_\Omega\Bigl(\sum_j\frac{\partial F}{\partial y_j}\bigl(G(x)\bigr)DG^j(x)\Bigr)_i\varphi(x)\,dx .
+\tag{$\ast$}
+\]
+
+\emph{Step 1: a compact collar.}  Since $\operatorname{supp}\varphi$ is compact
+and contained in the open $\Omega$ by hypothesis, there is $\delta>0$ with the
+closed $3\delta$-neighbourhood $K$ of $\operatorname{supp}\varphi$ compact and
+contained in $\Omega$.  By (H3) the $G_j$ are uniformly bounded on $K$ by some
+$L$, and by (H2) each $1_KG_j$ is integrable, hence locally integrable.
+
+\emph{Step 2: mollification.}  Let $\rho_d$ be a smooth mollifier with
+$\operatorname{supp}\rho_d=\overline{B_d(0)}$ and unit mass, for
+$0<d<\delta$, and set $G^{(d)}_j=(1_KG_j)*\rho_d$.  Each $G^{(d)}_j$ is smooth,
+and on the $\delta$-neighbourhood of $\operatorname{supp}\varphi$ it converges
+to $G_j$ in $L^q$ and almost everywhere as $d\to0$, by the standard
+approximation of an $L^q$ function by its mollifications
+(\noderef{MollifierLqConvergence}) together with the $L^q$ contraction of
+convolution (\noderef{ConvolutionLqContraction}).  Moreover, by (H7) applied to
+$f=G_j$, $G_f=DG^j$ and any $x$ in that neighbourhood,
+$\partial_iG^{(d)}_j(x)=\bigl((1_KDG^j_i)*\rho_d\bigr)(x)$.
+
+\emph{Step 3: the identity for the mollified data.}  The map
+$x\mapsto F\bigl(G^{(d)}(x)\bigr)$ is $C^1$ by (H4), being a $C^1$ function of
+smooth functions, and the classical chain rule gives
+$\partial_i\bigl(F(G^{(d)})\bigr)=\sum_j\frac{\partial F}{\partial y_j}(G^{(d)})\,\partial_iG^{(d)}_j$,
+where the sum form comes from the linearity hypothesis of (H6) applied to the
+continuous linear functional $dF\bigl(G^{(d)}(x)\bigr)$.  Classical integration
+by parts against $\varphi$, legitimate because both factors are $C^1$ and
+$\varphi$ has compact support in $\Omega$, yields
+\[
+\int F\bigl(G^{(d)}\bigr)\partial_i\varphi
+=-\int\sum_j\frac{\partial F}{\partial y_j}\bigl(G^{(d)}\bigr)\,\partial_iG^{(d)}_j\,\varphi ,
+\]
+and the integrals may be taken over $\Omega$ or over the collar
+interchangeably by the last clause of (H6), since every integrand vanishes off
+$\operatorname{supp}\varphi$.
+
+\emph{Step 4: passing to the limit.}  On the left, $G^{(d)}\to G$ almost
+everywhere on the collar by Step 2 and $F$ is continuous by (H4), so
+$F(G^{(d)})\to F(G)$ almost everywhere; the mollifications inherit the bound
+$L$ of Step 1 up to a constant, so by (H5) the integrands are uniformly
+bounded by a constant multiple of $|\partial_i\varphi|$, which is integrable.
+Dominated convergence (Preamble) gives convergence of the left-hand side.  On
+the right, each coefficient $\frac{\partial F}{\partial y_j}(G^{(d)})$ is
+bounded by the same $C$ of (H5) and converges almost everywhere by continuity
+of $dF$, while $\partial_iG^{(d)}_j=(1_KDG^j_i)*\rho_d\to DG^j_i$ in $L^1$ on
+the collar by Step 2, the $L^1$ norm being $\int|\cdot|$ by (H6); so each term
+converges, the product of a uniformly bounded almost everywhere convergent
+factor with an $L^1$-convergent one (\noderef{VectorChainRuleLimitPassage}).
+Passing to the limit on both sides of Step 3 gives $(\ast)$, and since
+$\varphi$ and $i$ were arbitrary this is exactly the weak-gradient identity
+asserted.
+\end{proof}

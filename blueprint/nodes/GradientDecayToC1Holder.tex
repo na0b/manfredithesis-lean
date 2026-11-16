@@ -1,0 +1,331 @@
+\begin{lemma}[From the gradient's Campanato decay on small balls to $C^{1+\beta}$]
+Let $n\ge2$, $p>1$, $0<\lambda_0<p$, $c_{20}>0$, $0<\rho_0\le1$ and $W\ge0$.
+Then there is a constant $N\ge0$, depending only on
+$n,p,\lambda_0,c_{20},\rho_0$ and $W$, with the following property.
+
+Let $\Omega,\Omega'\subseteq\R^n$ be open with
+$\overline{\Omega'}\subseteq\Omega$, let $\Omega'$ be a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}), and assume the cited Campanato embedding
+(C5) at the exponent $p$ on $\Omega'$ (\noderef{CitedCampanatoEmbedding}).  Let
+$u\in W^{1,p}(\Omega)$ with weak gradient $g=\nabla u$ (\noderef{MemW1pOn})
+satisfy $\int_\Omega|\nabla u|^p\,dx\le W^p$.  Suppose that every ball of
+radius at most $\rho_0$ centred in $\Omega'$ lies in $\Omega$,
+\[
+B_\rho(x_0)\subseteq\Omega
+\qquad\bigl(x_0\in\Omega',\ 0<\rho\le\rho_0\bigr),
+\tag{C}
+\]
+and suppose the decay
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p\,dx
+\le c_{20}\,\rho^{\,n+\lambda_0}
+\qquad\bigl(x_0\in\Omega',\ 0<\rho\le\rho_0\bigr),
+\tag{D}
+\]
+where $(\nabla u)_{B}=|B|^{-1}\int_B\nabla u$ is the mean of the gradient over
+$B$.
+
+\medskip
+\noindent\textbf{On the containment $(C)$.}  The radius $\rho_0$ is bound in the
+head, before $\Omega$ and $\Omega'$, so no relation between $\rho_0$ and
+$d(\Omega',\partial\Omega)$ is available from the other hypotheses; $(C)$ is
+that relation, stated at the only strength the proof uses.  It is also exactly
+what the paper guarantees at this point: Lemma~4.1 produces its radius $R_1$
+``depending only on $n,p,\lambda,\Lambda,a,\nu,M$ and
+$d(\Omega',\partial\Omega)$'' and then integrates over the \emph{full} ball
+$B_R$ for $R\le R_1$ and $x_0\in\Omega'$ (thesis l.~1162--1168), and making the
+radius depend on the separation is how it keeps those balls inside $\Omega$.
+The hypothesis is needed because $(D)$ and the first display of Step 4 integrate
+over the whole ball $B_\rho(x_0)$, while $u$ and $g$ are controlled only on
+$\Omega$: without $(C)$ the integrand of $(D)$ need not be integrable on
+$B_\rho(x_0)$ at all.  It is consumed in exactly one place, the enlargement of
+the domain of integration in Step 4.  Both consumers supply it at once from
+their own separation hypothesis, the radius they pass as $\rho_0$ being at most
+half the radius for which they have already recorded
+$\overline B_R(x_0)\subseteq\Omega$.  Then
+\begin{itemize}
+\item[(i)] $\|D_iu\|_{\mathcal L^{p,\,n+\lambda_0}(\Omega')}\le N$ for every
+  $i=1,\dots,n$ (\noderef{CampanatoBoundOn}); and
+\item[(ii)] there are $w\colon\R^n\to\R$ and $g_w\colon\R^n\to\R^n$ with $u=w$
+  almost everywhere on $\Omega'$, $g=g_w$ almost everywhere on $\Omega'$, and
+  $\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$ at
+  $\beta=\lambda_0/p$ (\noderef{MemC1HolderOn} at the pair of sets
+  $(\Omega',\overline{\Omega'})$) --- that is, $w$ is differentiable at every
+  point of $\Omega'$ with $D_iw=(g_w)_i$ there for every $i$, $g_w$ is
+  continuous on $\overline{\Omega'}$, and
+  $\|g_w(x)-g_w(y)\|\le C\operatorname{dist}(x,y)^{\beta}$ for all
+  $x,y\in\overline{\Omega'}$ and some $C\ge0$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the constant, chosen before the data.}  Put
+\[
+N=2\,\max\Bigl\{c_{20},\ W^p\rho_0^{-(n+\lambda_0)}\Bigr\}^{1/p}\ \ge0 ,
+\]
+a function of $n,p,\lambda_0,c_{20},\rho_0$ and $W$ alone; it is nonnegative
+because both entries of the maximum are nonnegative ($c_{20}>0$, and
+$W^p\ge0$, $\rho_0^{-(n+\lambda_0)}>0$).  Raising to the $p$-th power,
+\[
+N^p=2^{\,p}\max\Bigl\{c_{20},\ W^p\rho_0^{-(n+\lambda_0)}\Bigr\}
+\ \ge\ 2^{\,p}c_{20},
+\qquad
+N^p\ \ge\ 2^{\,p}W^p\rho_0^{-(n+\lambda_0)} .
+\tag{1}
+\]
+Two further consequences, recorded now.  First, $n+\lambda_0>0$, since $n\ge2$
+and $\lambda_0>0$; so $0<\rho_0\le1$ gives $\rho_0^{-(n+\lambda_0)}\ge1$ and
+therefore, by the second half of $(1)$,
+\[
+N^p\ \ge\ 2^{\,p}W^p,\qquad\text{hence}\qquad N\ \ge\ 2W\ \ge\ W
+\tag{2}
+\]
+(taking $p$-th roots, both sides being nonnegative, and using $W\ge0$).
+Second, $\beta=\lambda_0/p$ satisfies $0<\beta<1$, because $0<\lambda_0<p$.
+
+Fix now $\Omega,\Omega',u,g$ satisfying all the hypotheses.  Note
+$\Omega'\subseteq\overline{\Omega'}\subseteq\Omega$.
+
+\emph{Step 2: the components of the gradient lie in $L^p(\Omega')$.}  By
+\noderef{MemW1pOn} the field $g$ lies in $L^p(\Omega)$; since $\Omega'$ is open,
+hence measurable, and $\Omega'\subseteq\Omega$, it lies in $L^p(\Omega')$ as
+well, $L^q$ membership being inherited by measurable subsets (Preamble,
+H\"older's inequality on a set of finite measure, the first of the two transport
+facts recorded there).  Fix $i$.  The function $x\mapsto g(x)_i$ is the
+composition of $g$ with the $i$-th coordinate projection of $\R^n$, which is
+linear and continuous, so it is almost everywhere strongly measurable on
+$\Omega'$; and $|g(x)_i|\le|g(x)|$ pointwise, the modulus of one coordinate of a
+vector of $\R^n$ being at most its Euclidean norm.  Hence
+$|g(\cdot)_i|^p\le|g|^p$ pointwise, and $|g|^p$ is integrable on $\Omega'$
+because $g\in L^p(\Omega')$; so $|g(\cdot)_i|^p$ is integrable on $\Omega'$ by
+the Preamble's domination clause (a), i.e.
+\[
+D_iu=g(\cdot)_i\in L^p(\Omega')
+\tag{3}
+\]
+--- membership in $L^p$ of a set, for the finite exponent $p$, being almost
+everywhere strong measurability together with integrability of the $p$-th power
+of the modulus.  The same argument gives $D_iu\in L^p(S)$ for every measurable
+$S\subseteq\Omega'$.
+
+\emph{Step 3: the mean-replacement bound.}  Let $S\subseteq\R^n$ be measurable
+with $0<|S|<\infty$, let $h\in L^p(S)$ be \emph{real}-valued, let $c\in\R$, and
+write $h_S=|S|^{-1}\int_Sh$.  Then
+\[
+\int_S|h-h_S|^p\,dx\le2^{\,p}\int_S|h-c|^p\,dx .
+\tag{M}
+\]
+Indeed, replacing $h$ by $h-c$ --- which replaces $h_S$ by $h_S-c$, by
+additivity of the integral and $|S|^{-1}\int_Sc=c$, and leaves $h-h_S$
+unchanged --- it is enough to prove this for $c=0$.  By convexity of
+$t\mapsto t^p$ on $[0,\infty)$, $|h-h_S|^p\le2^{p-1}(|h|^p+|h_S|^p)$ pointwise,
+so it suffices to bound $|h_S|$.
+
+\emph{For that, $\bigl|\int_Sh\bigr|\le\int_S|h|$, and it is obtained by
+splitting $h$ into its nonnegative parts rather than from a norm inequality for
+the Bochner integral.}  The Preamble's norm-inequality clause is stated in
+\emph{interval}-integral form and does not apply to an integral over
+$S\subseteq\R^n$; what the Preamble does declare over a general measure space is
+the domination clause and H\"older's inequality for nonnegative functions, and
+those suffice.  First, $h\in L^1(S)$: by the H\"older item's own consequence,
+$L^{p}(S)\subseteq L^1(S)$ because $|S|<\infty$ and $p\ge1$.  Next put
+$h^+=\max\{h,0\}$ and $h^-=\max\{-h,0\}$.  Both are measurable with
+$0\le h^{\pm}\le|h|$, so both are integrable on $S$ by the Preamble's
+domination clause (a), which is stated for an arbitrary measure space.  At every
+point $h=h^+-h^-$ and $|h|=h^++h^-$ --- check the two cases $h\ge0$ and $h<0$
+--- so by additivity of the integral
+\[
+\int_Sh=\int_Sh^+-\int_Sh^- ,
+\qquad
+\int_S|h|=\int_Sh^++\int_Sh^- .
+\]
+Both $\int_Sh^+$ and $\int_Sh^-$ are nonnegative, the integral of a nonnegative
+integrable function over a general measure space being nonnegative --- the fact
+the Preamble's H\"older item already presupposes, since that item is stated for
+$f,g\ge0$ on an arbitrary measure space.  For nonnegative reals $P,Q$ one has
+$|P-Q|\le P+Q$, which gives $\bigl|\int_Sh\bigr|\le\int_S|h|$ exactly.
+
+Combining with H\"older's inequality on the finite-measure set $S$ (Preamble,
+the consequence $\int_S|h|\le|S|^{1-1/p}(\int_S|h|^p)^{1/p}$),
+\[
+|h_S|=\Bigl|\frac1{|S|}\int_Sh\Bigr|\le\frac1{|S|}\int_S|h|
+\le\Bigl(\frac1{|S|}\int_S|h|^p\Bigr)^{1/p} .
+\]
+Hence $|S|\,|h_S|^p\le\int_S|h|^p$, and integrating the pointwise bound over $S$
+gives
+$\int_S|h-h_S|^p\le2^{p-1}\bigl(\int_S|h|^p+\int_S|h|^p\bigr)=2^p\int_S|h|^p$,
+which is (M) at $c=0$.
+
+\emph{Step 4: part \textup{(i)}.}  Fix $i$, let $x_0\in\Omega'$ and
+$0<\rho<\operatorname{diam}\Omega'$, and put $S=\Omega'\cap B_\rho(x_0)$, a
+measurable set with $|S|\le|B_\rho(x_0)|<\infty$.  If $|S|=0$ then the integral
+on the left of the Campanato inequality vanishes, being an integral over a null
+set, while its right-hand side $N^p\rho^{\,n+\lambda_0}$ is nonnegative, and
+there is nothing to prove.  So assume $|S|>0$; then (M) applies on $S$ with
+$h=D_iu$, which lies in $L^p(S)$ by Step 2.
+
+If $\rho\le\rho_0$, apply (M) with
+$c=\bigl((\nabla u)_{B_\rho(x_0)}\bigr)_i$, and then enlarge the domain of
+integration and pass from the component to the vector:
+\[
+\int_S\bigl|D_iu-(D_iu)_S\bigr|^p
+\le2^{\,p}\!\int_S\bigl|D_iu-c\bigr|^p
+\le2^{\,p}\!\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p
+\le2^{\,p}c_{20}\,\rho^{\,n+\lambda_0}
+\le N^p\rho^{\,n+\lambda_0},
+\]
+the second step because $S\subseteq B_\rho(x_0)$ and the integrand is
+nonnegative with
+$|D_iu-c|=\bigl|\bigl(\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr)_i\bigr|
+\le\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|$ pointwise, the third by (D),
+and the last by the first half of $(1)$.
+
+\emph{The second step is where $(C)$ is consumed, and it is the only place.}
+Enlarging the domain of integration from $S$ to $B_\rho(x_0)$ for a nonnegative
+integrand requires that integrand to be integrable on the larger set, and
+$\nabla u$ is controlled only on $\Omega$.  By $(C)$, applied at the present
+$x_0\in\Omega'$ and the present $\rho\le\rho_0$, we have
+$B_\rho(x_0)\subseteq\Omega$; so $\nabla u\in L^p(B_\rho(x_0))$ by
+\noderef{MemW1pOn} and the inheritance of $L^p$ membership by measurable
+subsets (Preamble, H\"older's inequality on a set of finite measure, the first
+of the two transport facts recorded there), hence
+$\nabla u-(\nabla u)_{B_\rho(x_0)}\in L^p(B_\rho(x_0))$ --- the subtracted
+vector being constant and $B_\rho(x_0)$ of finite measure --- and therefore
+$\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p$ is integrable on
+$B_\rho(x_0)$, which is what the enlargement needs.
+
+If instead $\rho>\rho_0$, apply (M) with $c=0$:
+\[
+\int_S\bigl|D_iu-(D_iu)_S\bigr|^p\le2^{\,p}\!\int_S|D_iu|^p
+\le2^{\,p}\!\int_\Omega|\nabla u|^p\le2^{\,p}W^p
+\le2^{\,p}W^p\rho_0^{-(n+\lambda_0)}\rho^{\,n+\lambda_0}
+\le N^p\rho^{\,n+\lambda_0},
+\]
+the second step because $S\subseteq\Omega$ and $|D_iu|^p\le|\nabla u|^p$
+pointwise (Step 2) with $|\nabla u|^p$ integrable on $\Omega$, the third by the
+hypothesis $\int_\Omega|\nabla u|^p\le W^p$, the fourth because
+$\rho_0^{-(n+\lambda_0)}\rho^{\,n+\lambda_0}=(\rho/\rho_0)^{\,n+\lambda_0}\ge1$
+as $\rho>\rho_0>0$ and $n+\lambda_0>0$, and the last by the second half of
+$(1)$.
+
+So in both regimes
+$\int_S|D_iu-(D_iu)_S|^p\le N^p\rho^{\,n+\lambda_0}$, which together with
+$(3)$ is exactly
+$\|D_iu\|_{\mathcal L^{p,\,n+\lambda_0}(\Omega')}\le N$
+(\noderef{CampanatoBoundOn}), the two clauses of that predicate being the
+$L^p(\Omega')$ membership and the displayed bound.  That is (i).
+
+\emph{Step 5: the \textup{(C5)} step.}  Apply the assumed cited Campanato
+embedding (C5) at the exponent $p$ on $\Omega'$
+(\noderef{CitedCampanatoEmbedding}) with $\lambda=n+\lambda_0$ and with the
+\emph{same} $N$ as in (i).  Its Lipschitz antecedent is the hypothesis that
+$\Omega'$ is a bounded Lipschitz domain (\noderef{IsBoundedLipschitzDomain}).
+Read against that node's statement, it binds three guards and then \emph{two}
+hypotheses on the function, and both must be supplied at that one $N$:
+\begin{itemize}
+\item the guards $n<\lambda$ and $\lambda<n+p$, which hold because
+  $0<\lambda_0<p$, and $0\le N$, which Step 1 records;
+\item $\mathcal L^{p,n+\lambda_0}(\Omega')$ with norm at most $N$
+  (\noderef{CampanatoBoundOn}) for the function in question, which for $D_iu$ is
+  exactly (i); and
+\item \emph{the Morrey hypothesis at the exponent $0$}, i.e.\
+  $L^{p,0}(\Omega')$ with norm at most the \emph{same} $N$
+  (\noderef{MorreyBoundOn}).  Unfolding \noderef{MorreyBoundOn} at $\lambda=0$,
+  this asks for $D_iu\in L^p(\Omega')$, which is $(3)$, together with
+  \[
+  \int_{\Omega'\cap B_\rho(x)}|D_iu|^p\,dx\le N^p\rho^{\,0}=N^p
+  \qquad\bigl(x\in\Omega',\ 0<\rho<\operatorname{diam}\Omega'\bigr),
+  \]
+  using $\rho^{\,0}=1$ for $\rho>0$.  This holds because
+  $\int_{\Omega'\cap B_\rho(x)}|D_iu|^p\le\int_\Omega|\nabla u|^p\le W^p\le N^p$
+  --- the first step as in Step 4, the second by hypothesis, and the third by
+  $(2)$ together with $W\ge0$ and the monotonicity of $t\mapsto t^p$ on
+  $[0,\infty)$.  \emph{This is not the same as ``$D_iu\in L^p(\Omega')$'': the
+  node forces one constant to serve both the Campanato and the Morrey bound, so
+  the inequality $W\le N$ of $(2)$ is load bearing and is why $N$ was defined
+  with the factor $2$.}
+\end{itemize}
+The guards and the two hypotheses do not depend on $i$, and that node binds its
+constant before the function, so one constant $N_h\ge0$ serves all $i$.  For
+each $i$ it produces a function $w^{(i)}$ with $D_iu=w^{(i)}$ almost everywhere
+on $\Omega'$, with $w^{(i)}\in C^{\beta}(\overline{\Omega'})$
+(\noderef{MemHolderOn}) at the exponent $(\lambda-n)/p=\lambda_0/p=\beta$, and
+with
+\[
+|w^{(i)}(x)-w^{(i)}(y)|\le N_h\operatorname{dist}(x,y)^{\beta}
+\qquad\bigl(x,y\in\overline{\Omega'}\bigr).
+\]
+
+Put $g_w(x)=\bigl(w^{(1)}(x),\dots,w^{(n)}(x)\bigr)$.  Then:
+\begin{itemize}
+\item $g=g_w$ almost everywhere on $\Omega'$.  For each of the finitely many $i$
+  the set where $D_iu\ne w^{(i)}$ is null, so the union of these $n$ sets is
+  null, and off that union all $n$ coordinates of $g$ and of $g_w$ agree, hence
+  the vectors agree.
+\item $g_w$ is continuous on $\overline{\Omega'}$: each $w^{(i)}$ is continuous
+  there, by the first clause of its \noderef{MemHolderOn} assertion, and a map
+  into $\R^n$ whose $n$ coordinate functions are continuous on a set is
+  continuous on that set.
+\item $\|g_w(x)-g_w(y)\|\le\sqrt n\,N_h\operatorname{dist}(x,y)^{\beta}$ for
+  $x,y\in\overline{\Omega'}$: the Euclidean norm of a vector of $\R^n$ is at
+  most $\sqrt n$ times the largest modulus of its coordinates, and each
+  coordinate of $g_w(x)-g_w(y)$ is $w^{(i)}(x)-w^{(i)}(y)$, of modulus at most
+  $N_h\operatorname{dist}(x,y)^{\beta}$.
+\end{itemize}
+These are the second and third clauses of
+$\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$
+(\noderef{MemC1HolderOn}), with the constant $\sqrt n\,N_h\ge0$, for whatever
+$w$ the next step produces.
+
+\emph{Step 6: the first clause, i.e.\ the differentiable representative.}  What
+remains is a single $w$ with $u=w$ almost everywhere on $\Omega'$ which is
+differentiable at every point of $\Omega'$ with $\nabla w=g_w$ there.
+
+\emph{First, $u\in W^{1,p}_{\mathrm{loc}}(\Omega')$.}  Apply
+\noderef{WeakGradientRestrict} twice; its four conclusions are conditionals
+under one binder block, so reaching $W^{1,p}_{\mathrm{loc}}$ on $\Omega'$ takes
+two instantiations.
+\begin{itemize}
+\item At $n$, $q=p$, the sets $(\Omega,\Omega')$ and the pair $(u,g)$.  Its
+  binders are $1\le n$, from $2\le n$; $1\le p$, from $1<p$;
+  $\mathrm{IsOpen}\,\Omega$ and $\mathrm{IsOpen}\,\Omega'$, both hypotheses
+  here; and $\Omega'\subseteq\Omega$, recorded at the end of Step 1.  Its
+  \emph{first} conclusion turns the hypothesis $u\in W^{1,p}(\Omega)$ with weak
+  gradient $g$ (\noderef{MemW1pOn}) into $u\in W^{1,p}(\Omega')$ with the same
+  weak gradient.
+\item Again at $n$, $q=p$, now the sets $(\Omega',\Omega')$ and the same pair.
+  Its binders are $1\le n$ and $1\le p$ as before, $\mathrm{IsOpen}\,\Omega'$
+  twice, and $\Omega'\subseteq\Omega'$, which is trivial.  Its \emph{third}
+  conclusion turns the membership just obtained into
+  $u\in W^{1,p}_{\mathrm{loc}}(\Omega')$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}).
+\end{itemize}
+
+\emph{Then the representative.}  Apply \noderef{WeakGradientContinuousRep} with
+the present $n$, with $q=p$, with the open set $\Omega'$, with $u$, with $g$ and
+with $g_c=g_w$.  Its hypotheses, each discharged by name:
+\begin{itemize}
+\item $1\le n$, from $2\le n$;
+\item $1\le p$, from $1<p$;
+\item $\mathrm{IsOpen}\,\Omega'$, a hypothesis here;
+\item $u\in W^{1,p}_{\mathrm{loc}}(\Omega')$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}), which is the second bullet above;
+\item $g_w$ continuous on $\Omega'$: Step 5 gives $g_w$ continuous on
+  $\overline{\Omega'}$, and continuity on a set restricts to any subset, with
+  $\Omega'\subseteq\overline{\Omega'}$;
+\item $g=g_w$ almost everywhere on $\Omega'$, which is Step 5.
+\end{itemize}
+It produces a function $w$ with $u=w$ almost everywhere on $\Omega'$ and with
+$w$ differentiable at every point $x\in\Omega'$ and $D_iw(x)=g_w(x)_i$ for every
+$i$.  That is exactly the \emph{first} clause of
+$\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$
+(\noderef{MemC1HolderOn}), read at the pair of sets
+$(\Omega',\overline{\Omega'})$, whose first clause ranges over the first set.
+
+\emph{Assembly.}  Conjoining that first clause with the second and third
+clauses established in Step 5 gives
+$\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$ with
+$\beta=\lambda_0/p$; together with $u=w$ almost everywhere on $\Omega'$ and
+$g=g_w$ almost everywhere on $\Omega'$, this is (ii).  The constant $N$ was
+fixed in Step 1, before $\Omega,\Omega',u$ and $g$, which is what the statement
+asserts of it.
+\end{proof}

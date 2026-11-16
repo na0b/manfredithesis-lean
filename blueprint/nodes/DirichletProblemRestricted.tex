@@ -1,0 +1,383 @@
+\begin{lemma}[Lemma 3.1]
+Let $n\ge2$, $p>1$, $\varepsilon\ge0$, $0<\gamma_0\le\gamma_1$ and
+$0\le\beta<1$, and suppose the Sobolev--Poincar\'e inequality on balls holds in
+dimension $n$ (\noderef{CitedSobolevPoincareBall}).  Let $\Omega\subseteq\R^n$
+be open, let
+$A\colon\R^n\to\R^n$ satisfy (Q1) of the thesis--(Q2) of the thesis with these parameters
+(\noderef{EllipticStructureQ12}) and $A(0)=0$, and assume the cited existence
+and regularity result (C3) (\noderef{CitedDirichletHolder}).  Let
+$\overline B_R(x_0)\subseteq\Omega$ with $R>0$ and let
+$f\in C^\beta(\partial B_R(x_0))$ (\noderef{MemHolderOn}).  Then the problem
+\[
+\begin{cases}
+\operatorname{div}A(\nabla u)=0 & \text{in }B_R,\\
+u=f & \text{on }\partial B_R
+\end{cases}
+\]
+has a solution $u$, unique in $B_R$, with
+$u\in W^{1,p}_{\mathrm{loc}}(B_R)\cap C^1(B_R)$
+(\noderef{IsWeakSolutionOn}, \noderef{MemW1pLocOn}) whose continuous extension
+$U$ to $\overline B_R$ lies in $C^\beta(\overline B_R)$ and satisfies $U=f$ on
+$\partial B_R$.  Moreover
+\[
+\operatorname*{osc}(u,B_R)\;\le\;\operatorname*{osc}(f,\partial B_R).
+\]
+Uniqueness means: any $u'$ satisfying the same list of conditions with the same
+boundary datum $f$ agrees with $u$ on $B_R$.  The boundary condition is encoded,
+as everywhere in this development, by the pointwise agreement of the continuous
+extension with $f$ on the sphere ($\partial B_R$ is Lebesgue-null, so an
+almost-everywhere condition there would be vacuous).  The oscillation bound is
+written out as
+$U(x)-U(y)\le\sup_{\partial B_R}f-\inf_{\partial B_R}f$ for all
+$x,y\in B_R$, which is $\operatorname*{osc}(u,B_R)\le\operatorname*{osc}(f,\partial B_R)$;
+$f$ is continuous on the compact sphere, so its supremum and infimum there are
+finite.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it: it enters through \noderef{BallComparisonPrinciple}, whose
+statement requires it and which this proof invokes for the oscillation bound and
+for uniqueness.  It is a statement about $n$ alone, and $n$ is bound first, so it
+introduces no dependence on any quantity outside the list the paper names and
+carries no numerical content of its own.
+\end{lemma}
+\begin{proof}
+Write $B_r=B_r(x_0)$, $S_r=\partial B_r(x_0)$ and $\overline B_r$ for the closed
+ball, and set
+\[
+M_0=\sup_{S_R}f,\qquad m_0=\inf_{S_R}f .
+\]
+By \noderef{MemHolderOn} the datum $f$ is continuous on $S_R$, and $S_R$ is
+compact and nonempty (as $R>0$ and $n\ge2$), so $M_0$ and $m_0$ are finite and
+attained.
+
+\emph{Step 1: existence and regularity, from (C3).}  Apply
+\noderef{CitedDirichletHolder} with the parameters $n,p,\varepsilon,\gamma_0,
+\gamma_1$ and the field $A$.  Its hypotheses are exactly the ones we have:
+$A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$
+(\noderef{EllipticStructureQ12}), $\varepsilon\ge0$, $A(0)=0$, $R>0$,
+$0\le\beta<1$ and $f\in C^\beta(S_R)$ (\noderef{MemHolderOn}).  It produces
+$u$, $U$ and $g_u$ with
+\begin{enumerate}
+\item $u\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak gradient $g_u$
+  (\noderef{MemW1pLocOn});
+\item $u$ a weak solution of $\operatorname{div}A(\nabla u)=0$ in $B_R$
+  (\noderef{IsWeakSolutionOn});
+\item $u\in C^1(B_R)$;
+\item $U\in C^\beta(\overline B_R)$ (\noderef{MemHolderOn}), $U=u$ on $B_R$, and
+  $U=f$ on $S_R$.
+\end{enumerate}
+These are the first six assertions of the lemma verbatim.  It remains to prove
+the oscillation bound and the uniqueness clause, which (C3) does not supply and
+which the paper's Note explicitly requires to be proved.  Both come from
+\noderef{BallComparisonPrinciple}, and both need the following device, because
+that node requires its two compared functions to lie in $W^{1,p}$ of the ball it
+is applied to, whereas (1) gives $u$ only in $W^{1,p}_{\mathrm{loc}}(B_R)$.
+
+\emph{Step 2: the exhaustion device.}  Fix $0<r<R$.  We record four facts; each
+is an instance of one of the ambient closure properties of the Sobolev
+predicates, applied to the present data.  Note throughout that $p\ge1$, that
+$B_r$ and $B_R$ are open, that $B_r\subseteq B_R$, and that
+$\overline B_r$ is compact with $\overline B_r\subseteq B_R$ because $r<R$.
+
+\emph{(2a) $u\in W^{1,p}(B_r)$ with weak gradient $g_u$, and
+$u\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient $g_u$.}  Apply
+\noderef{WeakGradientRestrict} with $n$, $q=p$, $\Omega=B_R$, $\Omega'=B_r$ and
+the pair $(u,g_u)$.  Its hypotheses are $1\le n$, $1\le p$, openness of $B_R$
+and of $B_r$, and $B_r\subseteq B_R$, all of which hold.  Its clause (4) has the
+further hypotheses that $\overline{B_r}$ be compact and contained in $B_R$,
+which hold as just noted, and the hypothesis
+$u\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak gradient $g_u$, which is (1) of
+Step 1; it concludes $u\in W^{1,p}(B_r)$ with weak gradient $g_u$
+(\noderef{MemW1pOn}).  Its clause (2), from the same hypothesis, concludes
+$u\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient $g_u$
+(\noderef{MemW1pLocOn}); this is the first clause of
+\noderef{IsWeakSolutionOn} on $B_r$, needed in (2b).
+
+\emph{(2b) $u$ is a weak solution in $B_r$.}  The first clause of
+\noderef{IsWeakSolutionOn} on $B_r$ is the second conclusion of (2a).  For the
+integral identity, let $\varphi\in W^{1,p}(B_r)$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) have compact support with
+$\operatorname{supp}\varphi\subseteq B_r$; these are exactly the conditions the
+test class of \noderef{IsWeakSolutionOn} on $B_r$ imposes.  Apply
+\noderef{WeakGradientZeroExtend} with $n$, $q=p$, $\Omega=B_R$, the ball $B_r$
+and the pair $(\varphi,g_\varphi)$: its hypotheses are $1\le n$, $1\le p$,
+openness of $B_R$, $B_r\subseteq B_R$, $\varphi\in W^{1,p}(B_r)$ with weak
+gradient $g_\varphi$, and the compact support condition, all of which hold.  It
+gives
+\[
+\varphi\in W^{1,p}(B_R)\quad\text{with weak gradient}\quad
+G=\mathbf1_{B_r}g_\varphi ,
+\]
+and $\varphi$ has compact support with
+$\operatorname{supp}\varphi\subseteq B_r\subseteq B_R$.  So the pair
+$(\varphi,G)$ lies in the test class of \noderef{IsWeakSolutionOn} on $B_R$,
+and the identity for $u$ on $B_R$ --- which is the hypothesis (2) of Step 1 ---
+gives
+\[
+\int_{B_R}\Bigl[\sum_{i=1}^n A^i\bigl(g_u(x)\bigr)\,G^i(x)+0\cdot\varphi(x)\Bigr]dx=0 .
+\]
+The integrand vanishes off $B_r$: there $G=0$ by construction and $\varphi=0$
+because $\operatorname{supp}\varphi\subseteq B_r$.  An integral over a set
+depends on the integrand only through its product with that set's indicator, and
+those products for $B_R$ and for $B_r$ coincide here, so the integral over $B_R$
+equals the integral over $B_r$; and on $B_r$ we have $G=g_\varphi$.  Hence
+\[
+\int_{B_r}\Bigl[\sum_{i=1}^n A^i\bigl(g_u(x)\bigr)\,g_\varphi^i(x)+0\cdot\varphi(x)\Bigr]dx=0 ,
+\]
+which is the integral identity of \noderef{IsWeakSolutionOn} on $B_r$ for the
+test pair $(\varphi,g_\varphi)$.
+
+\emph{The integrability clause that \noderef{IsWeakSolutionOn} also carries.}
+That node asks, for each admissible test pair, that the integrand be Lebesgue
+integrable on the domain before asserting the identity, so that the identity
+cannot be satisfied by a junk value.  Here it holds, and the $C^1$ regularity
+already in hand is what gives it.  Since $B\equiv0$ the integrand is
+$x\mapsto\sum_iA^i(g_u(x))g_\varphi^i(x)$.  It vanishes almost everywhere off
+$\operatorname{supp}\varphi$: the set $B_r\setminus\operatorname{supp}\varphi$ is
+open and $\varphi$ vanishes identically on it, so its weak gradient
+$g_\varphi$ vanishes almost everywhere there (Preamble: du
+Bois--Reymond, second recorded consequence).  For the bound on $\operatorname{supp}\varphi$ the route has to be
+spelled out, because the $C^1$ datum of Step 1 is an assertion about $u$ and not
+about $g_u$.  Write $\nabla u$ for the \emph{classical} gradient of $u$ on
+$B_R$, so that $(\nabla u)^i(x)=D_iu(x)$ is the derivative of $u$ at $x$ in the
+direction of the $i$-th standard basis vector.
+
+\emph{First, $\nabla u$ is a weak gradient of $u$ on $B_R$.}  Apply
+\noderef{WeakGradientOfC1} with the present $n$, with $q=p$, with the open set
+$B_R$, with the function $u$ and with the field $\nabla u$.  Its hypotheses
+hold: $1\le n$ and $1\le p$, from $2\le n$ and $1<p$; $B_R$ is open; $u$ is
+differentiable at every point of $B_R$ with $D_iu(x)=(\nabla u)^i(x)$ for every
+such $x$ and every $i$, which is assertion (3) of Step 1, $u\in C^1(B_R)$, read
+on the open set $B_R$; and $\nabla u$ is continuous on $B_R$, which is the other
+half of that same assertion.  Its conclusion is
+$u\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak gradient $\nabla u$
+(\noderef{MemW1pLocOn}).
+
+\emph{Second, $g_u$ and $\nabla u$ agree almost everywhere.}  Assertion (1) of
+Step 1 gives $u\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak gradient $g_u$, and
+the previous paragraph gives the same with $\nabla u$ in its place; both are
+therefore weak gradients of the one function $u$ on the one open set $B_R$.  A
+weak gradient is determined almost everywhere on an open set (Preamble: du
+Bois--Reymond, second recorded consequence, whose first sentence is exactly
+this), so
+\[
+g_u=\nabla u\qquad\text{almost everywhere on }B_R .
+\tag{2.1}
+\]
+\emph{This is as much as can be had, and it is all that is needed.}  The field
+$g_u$ is a weak gradient, alterable on a null set without disturbing any
+hypothesis of this lemma, so $g_u$ is \emph{not} continuous and assertion (3)
+does not make it so; what (2.1) supplies is that $g_u$ agrees almost everywhere
+with a field continuous on $B_R$, hence that $g_u$ is \emph{essentially}
+bounded on compact subsets of $B_R$.  The same argument applies verbatim to any
+pair $(u^\flat,g_{u^\flat})$ satisfying assertions (1) and (3), which is how
+Step 6 uses it for $u'$.
+
+Now $\nabla u$ is continuous on $B_R$ and
+$\operatorname{supp}\varphi\subseteq B_r\subseteq B_R$ is compact, so $\nabla u$
+is bounded on $\operatorname{supp}\varphi$ and its image there lies in a compact
+subset $Q\subseteq\R^n$; $A$ is continuous on $\R^n$ by clause \texttt{hcont} of
+\noderef{EllipticStructureQ12}, so $|A|$ is bounded on $Q$, say by $M$.  With
+$(2.1)$ this gives $|A(g_u(x))|\le M$ for almost every
+$x\in\operatorname{supp}\varphi$.  And $x\mapsto A(g_u(x))$ is measurable, by
+that node's Carath\'eodory clauses together with the measurability of $g_u$;
+that half of the argument never needed the $C^1$ datum.
+
+Finally the domination.  The integrand
+$x\mapsto\sum_iA^i(g_u(x))g_\varphi^i(x)$ is measurable on $B_r$, being a finite
+sum of products of measurable functions, and almost everywhere on $B_r$ it
+satisfies
+\[
+\Bigl|\sum_iA^i(g_u(x))g_\varphi^i(x)\Bigr|\ \le\ M\,|g_\varphi(x)| :
+\]
+almost everywhere on $\operatorname{supp}\varphi$ by the bound just obtained
+together with the Cauchy--Schwarz inequality (Preamble), and almost everywhere
+on $B_r\setminus\operatorname{supp}\varphi$ because $g_\varphi$ vanishes almost
+everywhere there, as recorded above, so that both sides vanish.  The dominating
+function is integrable: $g_\varphi\in L^p(B_r)$ and $|B_r|<\infty$ give
+$g_\varphi\in L^1(B_r)$ by H\"older's inequality on a set of finite measure
+(Preamble).  So the integrand is integrable on $B_r$ by the Preamble's
+domination clause~(a), which asks for precisely an almost-everywhere bound by an
+integrable function.  As
+the test pair was arbitrary, $u$ is a weak
+solution of $\operatorname{div}A(\nabla u)=0$ in $B_r$
+(\noderef{IsWeakSolutionOn}).
+
+\emph{(2c) Every constant is a weak solution in $B_r$, and this is where
+$A(0)=0$ is used.}  Let $c\in\R$ and let $\kappa$ denote the constant function
+with value $c$.  The ball $B_r$ is bounded, so $|B_r|<\infty$.  Apply
+\noderef{WeakGradientLinear} with $n$, $q=p$, $\Omega=B_r$ and this $c$: its
+clause (4), whose extra hypothesis $|B_r|<\infty$ holds, gives
+$\kappa\in W^{1,p}(B_r)$ with weak gradient $0$ (\noderef{MemW1pOn}), and its
+clause (3) gives $\kappa\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient $0$
+(\noderef{MemW1pLocOn}), which is the first clause of
+\noderef{IsWeakSolutionOn}.  For the equation, the integral identity of
+\noderef{IsWeakSolutionOn} for $\kappa$ with weak gradient $0$ reads
+\[
+\int_{B_r}\Bigl[\sum_{i=1}^nA^i(0)\,g_\varphi^i+0\cdot\varphi\Bigr]dx=0 ,
+\]
+which holds because $A(0)=0$ makes the integrand identically zero; and the
+integrability clause that \noderef{IsWeakSolutionOn} also carries holds for the
+same reason, the zero function being integrable on $B_r$.  This is the
+only place in the \emph{comparison} argument where $A(0)=0$ is consumed --- it is
+also a hypothesis of \noderef{CitedDirichletHolder}, used in Step 1 --- and it is
+\S3's own normalisation, available because $\operatorname{div}A(0)=0$ for any
+constant field.
+
+\emph{(2d) Adding a constant to a solution gives a solution.}  Let $\tilde u$ be
+a weak solution in $B_r$ with weak gradient $g$ (\noderef{IsWeakSolutionOn}) and
+let $c\in\R$, with $\kappa$ as in (2c).  Apply \noderef{WeakGradientLinear} with
+$n$, $q=p$, $\Omega=B_r$, $a=b=1$, the pair $(f_1,g_1)=(\tilde u,g)$ and the
+pair $(f_2,g_2)=(\kappa,0)$.  Its clause (1) has as hypotheses
+$\tilde u\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient $g$ --- the first
+clause of \noderef{IsWeakSolutionOn} for $\tilde u$ --- and
+$\kappa\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient $0$, which is clause
+(3) of the same node as recorded in (2c); it concludes that
+$\tilde u+c\in W^{1,p}_{\mathrm{loc}}(B_r)$ with weak gradient
+$1\cdot g+1\cdot0=g$.  If moreover $\tilde u\in W^{1,p}(B_r)$ with weak gradient
+$g$, clause (2) of the same node, with the $W^{1,p}$ membership of $\kappa$ from
+(2c), gives $\tilde u+c\in W^{1,p}(B_r)$ with weak gradient $g$.  For the
+equation, the integral identity of \noderef{IsWeakSolutionOn} involves the
+function only through $A(x,\tilde u(x),g(x))=A(g(x))$ and through $B\equiv0$;
+since the operator of \S3 does not depend on the function value, and since
+$\tilde u+c$ has the same weak gradient $g$, the integrand for $\tilde u+c$ is
+literally the same \emph{function} as the integrand for $\tilde u$.  Both
+clauses that \noderef{IsWeakSolutionOn} binds at a test pair therefore transfer
+at once: the integrability of that integrand on $B_r$, and the vanishing of its
+integral.  So $\tilde u+c$ is a weak solution in
+$B_r$ with weak gradient $g$.  (Note that this step does \emph{not} need
+$A(0)=0$.)
+
+\emph{Step 3: the upper bound $u\le M_0$ a.e.\ in $B_R$.}  Let $\eta>0$.  Since
+$U$ is continuous on the compact set $\overline B_R$ it is uniformly continuous
+there, so there is $\delta>0$ such that
+\[
+x,y\in\overline B_R,\ |x-y|<\delta\ \Longrightarrow\ |U(x)-U(y)|<\eta .
+\tag{3.1}
+\]
+Fix any $r$ with $\max\{0,R-\delta\}<r<R$ and put
+\[
+M_r=\max_{S_r}U ,
+\]
+which exists because $U$ is continuous on $\overline B_R\supseteq S_r$ and $S_r$
+is compact and nonempty.  We claim $M_r\le M_0+\eta$.  Let $z\in S_r$ and let
+$z'=x_0+\frac Rr(z-x_0)$ be its radial projection onto $S_R$; then
+$|z'-x_0|=R$, so $z'\in S_R$, and
+\[
+|z-z'|=\Bigl|\frac Rr-1\Bigr|\,|z-x_0|=\frac{R-r}{r}\cdot r=R-r<\delta .
+\]
+Hence by (3.1) and $U=f$ on $S_R$,
+\[
+U(z)\le U(z')+\eta=f(z')+\eta\le M_0+\eta ,
+\]
+and taking the maximum over $z\in S_r$ gives $M_r\le M_0+\eta$ as claimed.
+
+Now apply \noderef{BallComparisonPrinciple} on the ball $B_r$ to the pair
+$(u,\kappa)$, where $\kappa$ is the constant function with value $M_r$.  Its
+hypotheses hold: $n\ge2$, $p>1$, $\varepsilon\ge0$, $0<\gamma_0\le\gamma_1$, the
+Sobolev--Poincar\'e hypothesis \noderef{CitedSobolevPoincareBall} in dimension
+$n$ --- which that node's statement requires and which is a hypothesis of the
+present lemma, for the same dimension $n$ --- and
+\noderef{EllipticStructureQ12} for $A$ on $\R^n$ are hypotheses of the present
+lemma; $r>0$; $u$ and $\kappa$ are weak solutions in $B_r$ by (2b) and (2c) and
+lie in $W^{1,p}(B_r)$ by (2a) and (2c); the continuous extensions to
+$\overline B_r$ may be taken to be $U$ --- continuous on
+$\overline B_r\subseteq\overline B_R$ and equal to $u$ on $B_r$ by (4) of Step 1
+--- and the constant $M_r$ itself, which is continuous and extends $\kappa$; and
+on $S_r$ we have $U\le M_r$ by the definition of $M_r$.  The conclusion is
+\[
+u\le M_r\le M_0+\eta\qquad\text{a.e.\ in }B_r .
+\]
+This holds for every $r\in(\max\{0,R-\delta\},R)$.  Choose a sequence
+$r_j\uparrow R$ inside that interval; then $B_R=\bigcup_jB_{r_j}$, and for each
+$j$ the inequality $u\le M_0+\eta$ holds off a null subset $N_j$ of $B_{r_j}$.
+Since $\bigcup_jN_j$ is null, $u\le M_0+\eta$ a.e.\ in $B_R$.
+
+Finally let $\eta=1/i$ for $i=1,2,\dots$: for each $i$ we get a null set outside
+which $u\le M_0+1/i$, and the union of these null sets is null, so
+\[
+u\le M_0\qquad\text{a.e.\ in }B_R .
+\tag{3.2}
+\]
+
+\emph{Step 4: the lower bound $u\ge m_0$ a.e.\ in $B_R$.}  Symmetrically, let
+$\eta>0$, take $\delta$ from (3.1) and $r\in(\max\{0,R-\delta\},R)$, and put
+$m_r=\min_{S_r}U$.  For $z\in S_r$ with radial projection $z'\in S_R$ we get
+$U(z)\ge U(z')-\eta=f(z')-\eta\ge m_0-\eta$, hence $m_r\ge m_0-\eta$.  Apply
+\noderef{BallComparisonPrinciple} on $B_r$ to the pair $(\kappa',u)$, where
+$\kappa'$ is the constant $m_r$: the hypotheses are verified exactly as in Step 3
+with the two roles exchanged --- in particular its Sobolev--Poincar\'e hypothesis
+\noderef{CitedSobolevPoincareBall} is again supplied by the present lemma's
+hypothesis of the same name --- the boundary comparison being $m_r\le U$ on $S_r$
+by the definition of $m_r$.  The conclusion is $m_r\le u$ a.e.\ in $B_r$, so
+$u\ge m_0-\eta$ a.e.\ in $B_r$, and exhausting in $r$ and then letting
+$\eta\downarrow0$ exactly as in Step 3 gives
+\[
+u\ge m_0\qquad\text{a.e.\ in }B_R .
+\tag{3.3}
+\]
+
+\emph{Step 5: the oscillation bound.}  We must show
+$U(x)-U(y)\le M_0-m_0$ for all $x,y\in B_R$.  By (3.2) and $U=u$ on $B_R$ we
+have $U\le M_0$ almost everywhere on $B_R$.  The function $U$ is continuous on
+$B_R$ and $B_R$ is open, so the inequality upgrades to every point: if
+$U(x_1)>M_0$ for some $x_1\in B_R$, then by continuity $U>M_0$ on a ball around
+$x_1$ contained in $B_R$, a set of positive measure, contradicting
+$U\le M_0$ a.e.  Hence $U\le M_0$ everywhere on $B_R$, and in the same way (3.3)
+gives $U\ge m_0$ everywhere on $B_R$.  Therefore for all $x,y\in B_R$
+\[
+U(x)-U(y)\le M_0-m_0
+=\sup_{\partial B_R}f-\inf_{\partial B_R}f ,
+\]
+which is the seventh assertion, i.e.\
+$\operatorname*{osc}(u,B_R)\le\operatorname*{osc}(f,\partial B_R)$.
+
+\emph{Step 6: uniqueness.}  Let $u'$, $U'$, $g_{u'}$ satisfy the same six
+conditions with the same datum $f$: $u'$ a weak solution in $B_R$
+(\noderef{IsWeakSolutionOn}), $u'\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak
+gradient $g_{u'}$ (\noderef{MemW1pLocOn}), $u'\in C^1(B_R)$,
+$U'\in C^\beta(\overline B_R)$ (\noderef{MemHolderOn}), $U'=u'$ on $B_R$ and
+$U'=f$ on $S_R$.  We show $u'=u$ pointwise on $B_R$.
+
+Let $\eta>0$.  Both $U$ and $U'$ are continuous on the compact $\overline B_R$,
+hence uniformly continuous, so there is $\delta>0$ such that (3.1) holds for $U$
+and the same statement holds for $U'$.  Fix
+$r\in(\max\{0,R-\delta\},R)$.  For $z\in S_r$ with radial projection
+$z'\in S_R$ we have $|z-z'|=R-r<\delta$, and $U(z')=f(z')=U'(z')$, so
+\[
+U(z)-U'(z)=\bigl(U(z)-U(z')\bigr)+\bigl(U'(z')-U'(z)\bigr)<\eta+\eta=2\eta ,
+\]
+that is
+\[
+U\le U'+2\eta\qquad\text{on }S_r .
+\tag{3.4}
+\]
+Now apply \noderef{BallComparisonPrinciple} on $B_r$ to the pair
+$(u,\;u'+2\eta)$.  Its hypotheses hold: $u$ is a weak solution in $B_r$ lying in
+$W^{1,p}(B_r)$ by (2a) and (2b); $u'$ likewise, by the same two arguments
+applied to $u'$, which satisfies the same hypotheses --- including the $C^1$
+regularity that (2b)'s integrability step consumes, so that $(2.1)$ holds for
+the pair $(u',g_{u'})$ by the verbatim repetition noted there; hence $u'+2\eta$ is a
+weak solution in $B_r$ with weak gradient $g_{u'}$ by (2d), and it lies in
+$W^{1,p}(B_r)$ because $u'$ does and constants do by (2c); the continuous
+extensions to $\overline B_r$ are $U$ and $U'+2\eta$, which extend $u$ and
+$u'+2\eta$ from $B_r$; its Sobolev--Poincar\'e hypothesis
+\noderef{CitedSobolevPoincareBall} in dimension $n$ is the present lemma's
+hypothesis of the same name; and the boundary comparison on $S_r$ is (3.4).  The
+conclusion is
+\[
+u\le u'+2\eta\qquad\text{a.e.\ in }B_r .
+\]
+Exhausting in $r$ along a sequence $r_j\uparrow R$ and then letting
+$\eta=1/i\downarrow0$, exactly as at the end of Step 3, gives $u\le u'$ a.e.\ in
+$B_R$.  Exchanging the roles of $u$ and $u'$ --- the hypotheses are symmetric in
+them, and (3.4) holds with $U$ and $U'$ exchanged by the same computation ---
+gives $u'\le u$ a.e.\ in $B_R$.  Hence $u=u'$ almost everywhere in $B_R$.
+
+Finally, $u$ and $u'$ are both continuous on $B_R$, being $C^1$ there, and two
+continuous functions that agree almost everywhere on an open set agree
+everywhere on it: if $u(x_1)\ne u'(x_1)$ for some $x_1\in B_R$ then
+$u\ne u'$ on a ball around $x_1$ inside $B_R$, a set of positive measure.
+Therefore $u'=u$ on $B_R$, which is the uniqueness assertion.
+\end{proof}

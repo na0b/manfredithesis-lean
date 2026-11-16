@@ -1,0 +1,86 @@
+\begin{helper}[The increment bound for the mollified field along a direction]
+Let $n\in\N$, let $p,c_1,C_2,\gamma_1,e\in\R$, let $\rho\colon\R^n\to\R$, let
+$A,A_e\colon\R^n\to\R^n$, let $h,u\in\R^n$, let $i$ be an index and let
+$M\colon\R\to\R$.  Throughout, $v_i$ is the $i$-th coordinate of $v$,
+$|\cdot|$ is the Euclidean norm, and every power of a positive real is the real
+power, written exactly as the structure condition prints the weight.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho\ge0$, $\rho$ is continuous with compact support, $A$ is
+  continuous, $0<C_2$, $0\le\gamma_1$ and $0<e$;
+\item[(H2)] the sandwich: for every $h'$ and every $e'>0$,
+  \[
+  c_1\bigl(e'+|h'|^2\bigr)^{\frac p2-1}
+   \le\int\bigl(|h'+\sqrt{e'}z|^2\bigr)^{\frac p2-1}\rho(z)\,dz
+   \le C_2\bigl(e'+|h'|^2\bigr)^{\frac p2-1};
+  \]
+\item[(H3)] the one-dimensional increment bound: for every $t$ and every
+  $b\in\R^n$ whose segment $b+(\varsigma t)u$, $\varsigma\in[0,1]$, avoids the
+  origin,
+  \[
+  \bigl|A(b+tu)_i-A(b)_i\bigr|
+   \le|t|\gamma_1\int_{(0,1]}\bigl(|b+(\varsigma t)u|^2\bigr)^{\frac p2-1}d\varsigma;
+  \]
+\item[(H4)] $z\mapsto\bigl(|h'+\sqrt e\,z|^2\bigr)^{\frac p2-1}\rho(z)$ is
+  integrable for every $h'$;
+\item[(H5)] for every $s\neq0$, almost every $z$ has
+  $h+\sqrt e\,z+(\varsigma s)u\neq0$ for all $\varsigma\in[0,1]$;
+\item[(H6)] the difference formula
+  $\bigl(A_e(h_1)-A_e(h_2)\bigr)_i
+    =\int\rho(z)\bigl(A(h_1+\sqrt e\,z)_i-A(h_2+\sqrt e\,z)_i\bigr)dz$;
+\item[(H7)] the segment majorant: $\bigl(e+|h+su|^2\bigr)^{\frac p2-1}\le M(t)$
+  whenever $0<t$ and $|s|\le t$.
+\end{enumerate}
+Then for every $t>0$,
+\[
+\bigl|\bigl(A_e(h+tu)-A_e(h)\bigr)_i\bigr|\ \le\ t\,\gamma_1\,C_2\,M(t).
+\]
+Per pm-0024(1) the weight is the printed real power throughout, and no sign
+hypothesis on $\frac p2-1$ is used: (H7) majorises the weight for every
+displacement of size at most $t$, which makes the estimate uniform in that
+sign.
+\end{helper}
+\begin{proof}
+Fix $t>0$.
+
+\emph{Step 1: the coordinate difference as an integral.}  By (H6),
+\[
+\bigl(A_e(h+tu)-A_e(h)\bigr)_i
+=\int_{\R^n}\rho(z)\Bigl(A\bigl(h+tu+\sqrt e\,z\bigr)_i-A\bigl(h+\sqrt e\,z\bigr)_i\Bigr)dz .
+\]
+
+\emph{Step 2: the inner increment.}  Since $t\neq0$, (H5) gives a null set off
+which the segment from $h+\sqrt e\,z$ to $h+tu+\sqrt e\,z$ avoids the origin,
+so (H3) applies at $b=h+\sqrt e\,z$ and yields, for almost every $z$,
+\[
+\Bigl|A\bigl(h+\sqrt e\,z+tu\bigr)_i-A\bigl(h+\sqrt e\,z\bigr)_i\Bigr|
+\ \le\ t\,\gamma_1\int_{(0,1]}\bigl(|h+\sqrt e\,z+(\varsigma t)u|^2\bigr)^{\frac p2-1}d\varsigma,
+\]
+using $|t|=t$ for $t>0$.
+
+\emph{Step 3: the inner integral is at most $C_2M(t)$ after averaging in $z$.}
+For $\varsigma\in(0,1]$ the displacement $s=\varsigma t$ satisfies $|s|\le t$,
+so by (H7) the integrand of the inner integral is bounded, after the shift by
+$\sqrt e\,z$ is absorbed into the sandwich, by the weight that (H2) controls:
+multiplying Step 2 by $\rho(z)\ge0$ from (H1), integrating in $z$, and
+exchanging the order of the two integrations --- legitimate by (H4), which
+makes the double integrand integrable, together with the finiteness of
+$|(0,1]|=1$ (Tonelli, Preamble) --- gives
+\[
+\int\rho(z)\Bigl|A\bigl(h+tu+\sqrt e\,z\bigr)_i-A\bigl(h+\sqrt e\,z\bigr)_i\Bigr|dz
+\ \le\ t\gamma_1\int_{(0,1]}\Bigl(\int\bigl(|h+(\varsigma t)u+\sqrt e\,z|^2\bigr)^{\frac p2-1}\rho(z)dz\Bigr)d\varsigma .
+\]
+By the right half of (H2) applied at $h'=h+(\varsigma t)u$ and $e'=e$, each
+inner integral is at most
+$C_2\bigl(e+|h+(\varsigma t)u|^2\bigr)^{\frac p2-1}$, which by (H7) is at most
+$C_2M(t)$.  Since the outer interval has measure $1$, the right-hand side is at
+most $t\gamma_1C_2M(t)$.
+
+\emph{Conclusion.}  Taking absolute values through the integral of Step 1 (the
+norm inequality for the integral, Preamble) and inserting Step 3,
+\[
+\bigl|\bigl(A_e(h+tu)-A_e(h)\bigr)_i\bigr|
+\ \le\ \int\rho(z)\Bigl|A\bigl(h+tu+\sqrt e\,z\bigr)_i-A\bigl(h+\sqrt e\,z\bigr)_i\Bigr|dz
+\ \le\ t\,\gamma_1\,C_2\,M(t),
+\]
+which is the assertion after rewriting the product as $t(\gamma_1(C_2M(t)))$.
+\end{proof}

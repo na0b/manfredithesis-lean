@@ -1,0 +1,346 @@
+\begin{lemma}[Chain rule for a $C^1$ function of several Sobolev arguments]
+Let $n\ge1$, $m\ge0$ and $q\ge1$, with $n,m$ integers and $q$ real, and let
+$\Omega\subseteq\R^n$ be open.  For each $j\in\{1,\dots,m\}$ let
+$G_j\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $DG_j$
+(\noderef{MemW1pLocOn}).  Assume the family is locally uniformly bounded:
+\[
+\text{for every compact }K\subseteq\Omega\text{ there is }L\in\R\text{ with }
+|G_j(x)|\le L\ \text{ for all }x\in K\text{ and all }j .
+\]
+Let $F\colon\R^m\to\R$ be of class $C^1$, where $\R^m$ carries the supremum
+norm $|y|_\infty=\max_j|y_j|$.  Write $G(x)=(G_1(x),\dots,G_m(x))$ and
+$D_jF(y)=DF(y)[e_j]$ for the $j$-th partial derivative of $F$, $e_j$ being the
+$j$-th standard basis vector of $\R^m$.  Then
+\[
+x\longmapsto F(G(x))\ \in\ W^{1,q}_{\mathrm{loc}}(\Omega)
+\quad\text{with weak gradient}\quad
+x\longmapsto\sum_{j=1}^m D_jF(G(x))\,DG_j(x)
+\]
+(\noderef{MemW1pLocOn}).  For $m=0$ the sum is empty and the asserted weak
+gradient is $0$.
+\end{lemma}
+\begin{proof}
+Throughout put
+\[
+H(x)=F(G(x)),\qquad
+S(x)=\sum_{j=1}^m D_jF(G(x))\,DG_j(x),
+\]
+so that $S^i=\sum_jD_jF(G)\,DG_j^i$ for each $i\in\{1,\dots,n\}$.  By
+\noderef{MemW1pLocOn} the assertion has two halves: the test-function identity
+\[
+\int_\Omega H\,D_i\varphi\,dx=-\int_\Omega S^i\,\varphi\,dx
+\tag{1}
+\]
+for every $\varphi\in C^\infty(\R^n)$ with compact support contained in
+$\Omega$ and every index $i$ --- this is \noderef{HasWeakGradientOn} for the
+pair $(H,S)$ --- and the local integrability statements $H\in L^q(K)$,
+$|S|\in L^q(K)$ for every compact $K\subseteq\Omega$.
+
+For $L\ge0$ write $Q_L=\{y\in\R^m:|y|_\infty\le L\}$, the closed ball of radius
+$L$ of $\R^m$, which is compact because $\R^m$ is finite-dimensional.  Since
+$F$ is $C^1$, both $F$ and $y\mapsto DF(y)$ are continuous, so
+\[
+M_0(L)=\sup_{y\in Q_L}|F(y)|<\infty,
+\qquad
+M_1(L)=\sup_{y\in Q_L}\|DF(y)\|<\infty ,
+\]
+the second supremum being of the operator norm of $DF(y)$; and since
+$|e_j|_\infty=1$ we get $|D_jF(y)|\le M_1(L)$ for every $y\in Q_L$ and every
+$j$.  Both suprema are finite because a continuous real function on a compact
+set is bounded.
+
+\emph{Step 1: local integrability.}  Fix a compact $K\subseteq\Omega$ and let
+$L$ be the bound the hypothesis supplies for $K$, so $G(x)\in Q_L$ for every
+$x\in K$.  By \noderef{MemW1pLocOn} each $G_j$ and each $|DG_j|$ lies in
+$L^q(K)$ and is almost everywhere strongly measurable there; since $F$ and $DF$
+are continuous, $H$ and $S$ are measurable on $K$.  Now
+$|H|=|F(G)|\le M_0(L)$ on $K$, and a bounded measurable function on a set of
+finite measure is in $L^q$: $\int_K|H|^q\le M_0(L)^q|K|<\infty$, using
+$|K|<\infty$ because $K$ is compact.  So $H\in L^q(K)$.  Next, on $K$,
+\[
+|S|\ \le\ \sum_{j=1}^m|D_jF(G)|\,|DG_j|\ \le\ M_1(L)\sum_{j=1}^m|DG_j| ,
+\]
+and the finite sum $\sum_j|DG_j|$ lies in $L^q(K)$ by the $L^q$ triangle
+inequality (Minkowski, Preamble) applied $m-1$ times; monotonicity of the
+integral (Preamble) and the fact that $t\mapsto t^q$ is nondecreasing on
+$[0,\infty)$ then give $\int_K|S|^q\le M_1(L)^q\int_K(\sum_j|DG_j|)^q<\infty$.
+So $|S|\in L^q(K)$.  (For $m=0$ both $H\equiv F(0)$ and $S\equiv0$ and the
+claims are immediate.)
+
+It remains to prove (1).  Fix $\varphi$ and $i$ as above and put
+$K_0=\operatorname{supp}\varphi$, a compact subset of $\Omega$.  Both
+integrands in (1) vanish off $K_0$, and both are in $L^1(K_0)$: $H$ is bounded
+on $K_0$ by Step 1 and $|S|\in L^q(K_0)\subseteq L^1(K_0)$ by H\"older on a set
+of finite measure (Preamble), while $\varphi$ and $D_i\varphi$ are continuous
+with compact support, hence bounded.
+
+\emph{Step 2: geometry.}  If $K_0=\emptyset$ then $\varphi\equiv0$ and both
+sides of (1) vanish, so we may assume $K_0\ne\emptyset$.  The set $K_0$ is
+compact, $\R^n\setminus\Omega$ is closed, and they are disjoint, so
+$d=\operatorname{dist}(K_0,\R^n\setminus\Omega)>0$ (with $d=+\infty$ when
+$\Omega=\R^n$).  Choose $d_0>0$ with $3d_0<d$.  For $s>0$ put
+\[
+K_s'=\{x\in\R^n:\operatorname{dist}(x,K_0)\le s\} .
+\]
+Each $K_s'$ is closed (the distance function to $K_0$ is continuous) and
+bounded (because $K_0$ is bounded), hence compact.  Moreover
+$K_{3d_0}'\subseteq\Omega$: if $x\notin\Omega$ then
+$\operatorname{dist}(x,K_0)\ge d>3d_0$.  Write
+\[
+K_1=K_{d_0}',\qquad K_2=K_{2d_0}',\qquad K_3=K_{3d_0}',
+\qquad W=\{x:\operatorname{dist}(x,K_0)<2d_0\} ,
+\]
+so $K_0\subseteq K_1\subseteq W\subseteq K_2\subseteq K_3\subseteq\Omega$ and
+$W$ is open.  Let $L$ be the bound the hypothesis supplies for the compact set
+$K_3$: $|G_j(x)|\le L$, i.e.\ $G(x)\in Q_L$, for every $x\in K_3$ and every $j$.
+Abbreviate $M_0=M_0(L)$, $M_1=M_1(L)$.
+
+\emph{Step 3: the mollifier and the truncated data.}  For each $\delta>0$ let $\rho_\delta$ be the mollifier at scale $\delta$
+supplied by the Preamble item on a standard mollifier:
+\[
+\rho_\delta\in C^\infty(\R^n),\qquad \rho_\delta\ge0,\qquad
+\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}\ \text{compact},
+\qquad \int_{\R^n}\rho_\delta\,dz=1 .
+\]
+Those four properties are the only ones used below.  In particular no explicit
+formula for $\rho_\delta$ is needed --- the Preamble item supplies the family
+directly at every scale, so $\rho_\delta$ is not obtained here by rescaling a
+single kernel and no change of variables has to be justified.
+
+Define on $\R^n$
+\[
+\widehat G_j=G_j\,\chi_{K_3},\qquad
+\widehat{DG_j^{\,i}}=DG_j^{\,i}\,\chi_{K_3}
+\qquad(j=1,\dots,m,\ i=1,\dots,n).
+\]
+By \noderef{MemW1pLocOn} applied to the compact set $K_3\subseteq\Omega$ we have
+$G_j\in L^q(K_3)$ and $|DG_j|\in L^q(K_3)$; since $|K_3|<\infty$ and $q\ge1$,
+H\"older on a set of finite measure (Preamble) puts them in $L^1(K_3)$.  Hence
+each $\widehat G_j$ and each $\widehat{DG_j^{\,i}}$ lies in $L^1(\R^n)$ and has
+support contained in the compact set $K_3$; in particular each is locally
+integrable on $\R^n$.
+
+For $0<\delta<d_0$ set
+\[
+G_j^\delta=\widehat G_j*\rho_\delta,\qquad
+(DG_j^{\,i})^\delta=\widehat{DG_j^{\,i}}*\rho_\delta ,
+\qquad
+(w*\rho_\delta)(x)=\int_{\R^n}w(y)\rho_\delta(x-y)\,dy .
+\]
+By the Preamble item on convolution with a smooth compactly supported kernel,
+each $G_j^\delta$ and each $(DG_j^{\,i})^\delta$ is of class $C^\infty$ on
+$\R^n$, and
+\[
+D_iG_j^\delta=\widehat G_j*(D_i\rho_\delta) .
+\tag{2}
+\]
+
+\emph{Step 4: three properties of the mollifications on $K_2$.}  Let
+$x\in K_2$ and $0<\delta<d_0$.
+
+\emph{(4a) Localisation.}  If $|y-x|\le\delta$ then
+$\operatorname{dist}(y,K_0)\le|y-x|+\operatorname{dist}(x,K_0)\le\delta+2d_0<3d_0$,
+so $y\in K_3$.  Thus $\overline{B_\delta(x)}\subseteq K_3\subseteq\Omega$, and
+since the integrand of $(w*\rho_\delta)(x)$ vanishes off
+$\overline{B_\delta(x)}$ and $\widehat G_j=G_j$, $\widehat{DG_j^{\,i}}=DG_j^{\,i}$
+on $K_3$,
+\[
+G_j^\delta(x)=\int_\Omega G_j(y)\rho_\delta(x-y)\,dy,
+\qquad
+(DG_j^{\,i})^\delta(x)=\int_\Omega DG_j^{\,i}(y)\rho_\delta(x-y)\,dy .
+\tag{3}
+\]
+
+\emph{(4b) The derivative is the mollified weak derivative.}  Define
+$\psi\colon\R^n\to\R$ by $\psi(y)=\rho_\delta(x-y)$.  Then
+$\psi\in C^\infty(\R^n)$ and
+$\operatorname{supp}\psi\subseteq\overline{B_\delta(x)}$, which is compact and
+contained in $\Omega$ by (4a); so $\psi$ belongs to the test class of
+\noderef{HasWeakGradientOn} for $\Omega$.  Differentiating in $y$,
+$D_i\psi(y)=-(D_i\rho_\delta)(x-y)$.  The defining identity of
+\noderef{HasWeakGradientOn}, which the pair $(G_j,DG_j)$ satisfies on $\Omega$
+by \noderef{MemW1pLocOn}, applied to $\psi$ and the index $i$, reads
+$\int_\Omega G_j\,D_i\psi\,dy=-\int_\Omega DG_j^{\,i}\,\psi\,dy$, that is
+\[
+-\int_\Omega G_j(y)(D_i\rho_\delta)(x-y)\,dy
+=-\int_\Omega DG_j^{\,i}(y)\rho_\delta(x-y)\,dy .
+\]
+On the other hand (2) gives
+$D_iG_j^\delta(x)=\int_{\R^n}\widehat G_j(y)(D_i\rho_\delta)(x-y)\,dy
+=\int_\Omega G_j(y)(D_i\rho_\delta)(x-y)\,dy$, the restriction to $\Omega$ being
+legitimate because the integrand vanishes off
+$\overline{B_\delta(x)}\subseteq K_3\subseteq\Omega$, where
+$\widehat G_j=G_j$.  Comparing with the display and with (3),
+\[
+D_iG_j^\delta(x)=(DG_j^{\,i})^\delta(x)
+\qquad(x\in K_2,\ 0<\delta<d_0,\ \text{all }i,j).
+\tag{4}
+\]
+
+\emph{(4c) The uniform bound.}  By (3), $\rho_\delta\ge0$,
+$\int\rho_\delta=1$ and $|G_j|\le L$ on $K_3\supseteq\overline{B_\delta(x)}$,
+\[
+|G_j^\delta(x)|\le\int_{\R^n}|G_j(y)|\,\rho_\delta(x-y)\,dy
+\le L\int_{\R^n}\rho_\delta(x-y)\,dy=L ,
+\]
+the last integral being $1$ by the translation invariance of Lebesgue measure
+and the reflection $y\mapsto x-y$ (Preamble).  Writing
+$G^\delta(x)=(G_1^\delta(x),\dots,G_m^\delta(x))$, this says
+\[
+G^\delta(x)\in Q_L\qquad(x\in K_2,\ 0<\delta<d_0).
+\tag{5}
+\]
+
+\emph{Step 5: mollifications converge in $L^1$.}  We claim that for every
+$w\in L^1(\R^n)$,
+\[
+\|w*\rho_\delta-w\|_{L^1(\R^n)}\longrightarrow0\qquad(\delta\downarrow0).
+\tag{6}
+\]
+First, the contraction property: by Tonelli (Preamble), $\rho_\delta\ge0$ and
+$\int\rho_\delta=1$,
+\[
+\|w*\rho_\delta\|_{L^1}
+\le\int_{\R^n}\!\!\int_{\R^n}|w(y)|\rho_\delta(x-y)\,dy\,dx
+=\int_{\R^n}|w(y)|\Bigl(\int_{\R^n}\rho_\delta(x-y)\,dx\Bigr)dy=\|w\|_{L^1},
+\]
+the inner integral being $1$ by translation invariance (Preamble).  Now let
+$\sigma>0$.  By the Preamble item on density, applied with exponent $1$, there
+is a continuous $v$ with compact support and $\|w-v\|_{L^1}\le\sigma/3$.  Then
+\[
+\|w*\rho_\delta-w\|_{L^1}
+\le\|(w-v)*\rho_\delta\|_{L^1}+\|v*\rho_\delta-v\|_{L^1}+\|v-w\|_{L^1}
+\le2\|w-v\|_{L^1}+\|v*\rho_\delta-v\|_{L^1},
+\]
+using the contraction property on the first summand and the $L^1$ triangle
+inequality (Minkowski, Preamble).  For the middle term, $v$ is continuous with
+compact support, hence uniformly continuous and bounded, and since
+$\rho_\delta$ is a probability density supported in $\overline{B_\delta(0)}$,
+\[
+|(v*\rho_\delta)(x)-v(x)|
+=\Bigl|\int_{\R^n}\bigl(v(x-z)-v(x)\bigr)\rho_\delta(z)\,dz\Bigr|
+\le\sup_{|z|\le\delta}\ \sup_{x\in\R^n}|v(x-z)-v(x)| ,
+\]
+which tends to $0$ as $\delta\downarrow0$ by uniform continuity; and for
+$\delta\le1$ all the functions $v*\rho_\delta-v$ are supported in the fixed
+compact set $\{x:\operatorname{dist}(x,\operatorname{supp}v)\le1\}$, so the
+uniform convergence gives $\|v*\rho_\delta-v\|_{L^1}\to0$.  Therefore
+$\limsup_{\delta\downarrow0}\|w*\rho_\delta-w\|_{L^1}\le2\sigma/3<\sigma$, and
+as $\sigma>0$ was arbitrary, (6) holds.
+
+Applying (6) to $w=\widehat G_j$ and to $w=\widehat{DG_j^{\,i}}$, which lie in
+$L^1(\R^n)$ by Step 3, and using that these coincide with $G_j$ and
+$DG_j^{\,i}$ on $K_3\supseteq K_2$, we obtain
+\[
+\int_{K_2}|G_j^\delta-G_j|\,dx\longrightarrow0,
+\qquad
+\int_{K_2}|(DG_j^{\,i})^\delta-DG_j^{\,i}|\,dx\longrightarrow0
+\qquad(\delta\downarrow0)
+\tag{7}
+\]
+for all $i,j$, since the integral over $K_2$ is at most the integral over
+$\R^n$ of the same nonnegative function.
+
+\emph{Step 6: choice of a good sequence.}  By (7) and the Preamble item on
+extracting an almost everywhere convergent subsequence from $L^1$ convergence,
+applied successively to $j=1,\dots,m$ (finitely many times), there is a sequence
+$\delta_1>\delta_2>\cdots\downarrow0$ with $\delta_l<d_0$ for all $l$ such that
+\[
+G_j^{\delta_l}\longrightarrow G_j\quad\text{almost everywhere on }K_2,
+\qquad\text{for every }j .
+\tag{8}
+\]
+(At each stage one passes to a subsequence of the previous one; a subsequence of
+an almost everywhere convergent sequence still converges almost everywhere, so
+the final sequence works simultaneously for all $j$.)  Along this sequence
+$G^{\delta_l}(x)\to G(x)$ in $\R^m$ for almost every $x\in K_2$, since
+convergence in $\R^m$ is convergence of each of the finitely many coordinates.
+
+\emph{Step 7: the identity for the mollifications.}  Fix $0<\delta<d_0$ and put
+$H^\delta=F(G^\delta)$, i.e.\ $H^\delta(x)=F(G_1^\delta(x),\dots,G_m^\delta(x))$.
+Each $G_j^\delta$ is $C^\infty$ on $\R^n$ and $F$ is $C^1$, so $H^\delta$ is
+$C^1$ on $\R^n$, and the classical chain rule gives, for every $x\in\R^n$,
+\[
+D_iH^\delta(x)=\sum_{j=1}^mD_jF\bigl(G^\delta(x)\bigr)\,D_iG_j^\delta(x) .
+\]
+Combining with (4), for $x\in K_2$,
+\[
+D_iH^\delta(x)=\sum_{j=1}^mD_jF\bigl(G^\delta(x)\bigr)\,(DG_j^{\,i})^\delta(x) .
+\tag{9}
+\]
+Next, $H^\delta\varphi$ is $C^1$ on $\R^n$ with compact support contained in
+$K_0$, and $D_i(H^\delta\varphi)=(D_iH^\delta)\varphi+H^\delta D_i\varphi$ is
+continuous with compact support.  The integral over $\R^n$ of $D_i$ of a $C^1$
+function with compact support vanishes: integrating first in the $i$-th
+variable --- legitimate by Fubini's theorem (Preamble), the integrand being
+continuous with compact support and hence integrable on $\R^n$ --- the
+one-dimensional integral $\int_\R D_i(H^\delta\varphi)\,dx_i$ is $0$ by the
+fundamental theorem of calculus (Preamble), the function vanishing for $|x_i|$
+large.  Hence
+\[
+\int_{\R^n}H^\delta\,D_i\varphi\,dx=-\int_{\R^n}(D_iH^\delta)\,\varphi\,dx .
+\]
+Both integrands vanish off $K_0\subseteq K_2\cap\Omega$, so by (9) we may
+rewrite this as
+\[
+\int_\Omega H^\delta\,D_i\varphi\,dx
+=-\int_\Omega\Bigl(\sum_{j=1}^mD_jF(G^\delta)\,(DG_j^{\,i})^\delta\Bigr)\varphi\,dx .
+\tag{10}
+\]
+All integrands here are bounded on $K_0$ and vanish off it, hence integrable:
+$|H^\delta|\le M_0$ on $K_2$ by (5), and $(DG_j^{\,i})^\delta$ is continuous.
+
+\emph{Step 8: passing to the limit in (10) along $\delta_l$.}
+
+\emph{Left-hand side.}  By (8) and the continuity of $F$,
+$H^{\delta_l}=F(G^{\delta_l})\to F(G)=H$ almost everywhere on $K_2$, hence on
+$K_0$.  By (5) and the definition of $M_0$ we have $|H^{\delta_l}|\le M_0$ on
+$K_2$; also $|H|\le M_0$ on $K_0$, because $G(x)\in Q_L$ for $x\in K_3\supseteq
+K_0$.  Therefore
+$|H^{\delta_l}D_i\varphi|\le M_0\|D_i\varphi\|_\infty\chi_{K_0}$, which is
+integrable because $|K_0|<\infty$.  Dominated convergence (Preamble) gives
+\[
+\int_\Omega H^{\delta_l}\,D_i\varphi\,dx\longrightarrow\int_\Omega H\,D_i\varphi\,dx .
+\]
+
+\emph{Right-hand side.}  It suffices to treat each of the $m$ summands
+separately, the sum being finite.  Fix $j$ and split
+\[
+D_jF(G^{\delta})\,(DG_j^{\,i})^{\delta}-D_jF(G)\,DG_j^{\,i}
+=D_jF(G^{\delta})\bigl[(DG_j^{\,i})^{\delta}-DG_j^{\,i}\bigr]
++\bigl[D_jF(G^{\delta})-D_jF(G)\bigr]DG_j^{\,i} .
+\]
+For the first summand, $|D_jF(G^{\delta})|\le M_1$ on $K_2$ by (5), so
+\[
+\Bigl|\int_\Omega D_jF(G^{\delta_l})\bigl[(DG_j^{\,i})^{\delta_l}-DG_j^{\,i}\bigr]\varphi\,dx\Bigr|
+\le M_1\|\varphi\|_\infty\int_{K_0}\bigl|(DG_j^{\,i})^{\delta_l}-DG_j^{\,i}\bigr|\,dx
+\longrightarrow0
+\]
+by (7), since $K_0\subseteq K_2$.  For the second summand, $D_jF$ is continuous
+and $G^{\delta_l}\to G$ almost everywhere on $K_0$ by (8), so
+$D_jF(G^{\delta_l})\to D_jF(G)$ almost everywhere on $K_0$; moreover
+\[
+\bigl|\bigl[D_jF(G^{\delta_l})-D_jF(G)\bigr]DG_j^{\,i}\varphi\bigr|
+\le2M_1\|\varphi\|_\infty\,|DG_j^{\,i}|\,\chi_{K_0},
+\]
+which is integrable because $|DG_j^{\,i}|\le|DG_j|\in L^q(K_0)\subseteq
+L^1(K_0)$ by \noderef{MemW1pLocOn} and H\"older on a set of finite measure
+(Preamble).  Dominated convergence (Preamble) gives
+\[
+\int_\Omega\bigl[D_jF(G^{\delta_l})-D_jF(G)\bigr]DG_j^{\,i}\,\varphi\,dx
+\longrightarrow0 .
+\]
+Summing the two estimates over the $m$ values of $j$,
+\[
+\int_\Omega\Bigl(\sum_jD_jF(G^{\delta_l})(DG_j^{\,i})^{\delta_l}\Bigr)\varphi\,dx
+\longrightarrow
+\int_\Omega\Bigl(\sum_jD_jF(G)\,DG_j^{\,i}\Bigr)\varphi\,dx
+=\int_\Omega S^i\varphi\,dx .
+\]
+
+Letting $l\to\infty$ in (10) along $\delta_l$ therefore yields (1).  Since
+$\varphi$ and $i$ were arbitrary, the pair $(H,S)$ satisfies
+\noderef{HasWeakGradientOn} on $\Omega$; together with Step 1 this is exactly
+the assertion $H\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $S$
+(\noderef{MemW1pLocOn}).
+\end{proof}

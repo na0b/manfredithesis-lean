@@ -1,0 +1,99 @@
+\begin{helper}[The Campanato half of the comparison scheme]
+Let $n\in\N$ with $n\ge2$, let $p,c_0,W,M,d,R_1\in\R$ and let
+$\sigma_2\colon\R\to\R$.  Throughout, $|\cdot|$ is the Euclidean norm, $q=n/(n-1)$,
+$\operatorname{supp}$ denotes the \emph{closed} support where it occurs, all
+powers of nonnegative reals are real powers, and the weight
+$(\varepsilon+|g_v|^2)^{p/2}$ is written exactly as the comparison hypothesis
+below prints it.  Assume
+\begin{enumerate}
+\item[(H1)] $1<p$, $0<c_0$, $0\le W$, $0\le M$, $0<d$ and $0<R_1$;
+\item[(H2)] $\sigma_2$ is continuous, monotone, $\sigma_2(0)=0$ and
+  $\sigma_2\ge0$ everywhere;
+\item[(H3)] the Sobolev--Poincaré inequality on balls in $\R^n$ holds
+  (\noderef{CitedSobolevPoincareBall}).
+\end{enumerate}
+Then for every $t$ with $0<t<n$ there is $N\ge0$ with the following property.
+Let $\varepsilon\in\R$, let $\Omega,\Omega'',\Omega'\subseteq\R^n$, let
+$u\colon\R^n\to\R$ and $g\colon\R^n\to\R^n$, and assume
+\begin{enumerate}
+\item[(H4)] $0\le\varepsilon\le1$; $\Omega,\Omega'',\Omega'$ are open, $\Omega'$
+  is nonempty, $\Omega''$ is bounded,
+  $\overline{\Omega'}\subseteq\Omega''$ and $\overline{\Omega''}\subseteq\Omega$;
+  every point of $\Omega'$ is at distance $\ge d$ from the complement of
+  $\Omega''$, and every point of $\Omega''$ at distance $\ge d$ from the
+  complement of $\Omega$;
+\item[(H5)] $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}),
+  $|u|\le M$ almost everywhere on $\Omega$, and
+  $\int_\Omega|u|^p+\int_\Omega|g|^p\le W^p$;
+\item[(H6)] the comparison hypothesis: for every $x_0\in\Omega''$ and every
+  $R$ with $0<R\le R_1$ and $\overline{B_R(x_0)}\subseteq\Omega$ there are
+  $v$ and $g_v$ with $v\in W^{1,p}(B_R(x_0))$ of weak gradient $g_v$
+  (\noderef{MemW1pOn}), with the decay
+  $\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{p/2}
+    \le c_0(\rho/R)^{n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{p/2}$
+  for all $0<\rho\le R$, and with the remainder bound
+  $\int_{B_R(x_0)}|g-g_v|^p\le\sigma_2(R)\int_{B_R(x_0)}(1+|g|^2)^{p/2}$.
+\end{enumerate}
+Then $u$ satisfies the Campanato bound on $\Omega'$ at the exponent
+$n+(1-t/p)q$ with constant $N$, i.e.\
+$\mathrm{CampanatoBoundOn}\;n\;q\;\bigl(n+(1-\tfrac tp)q\bigr)\;\Omega'\;u\;N$
+(\noderef{CampanatoBoundOn}).
+
+The exponent $t$ is quantified inside the conclusion, before the existential
+for $N$, precisely because the consumer needs this bound at two different
+exponents and $N$ is allowed to depend on $t$; the hypotheses (H1)--(H3) that
+produce $N$ sit outside that quantifier, and (H4)--(H6), which do not influence
+$N$, sit inside it, exactly as the scheme requires.
+\end{helper}
+\begin{proof}
+Fix $t$ with $0<t<n$.  Note $0<p$, $1\le n$, $0<n$, $q>1$ and $q>0$ from (H1)
+and $n\ge2$; let $e$ be the first standard basis vector, so $|e|=1$.
+
+\emph{Step 1: the scalar mean-replacement inequality.}  For a measurable
+$S\subseteq\R^n$ with $0<|S|<\infty$, a real $h\in L^q(S)$ and any constant
+$c\in\R$,
+\[
+\int_S\Bigl|h-\frac1{|S|}\int_Sh\Bigr|^{q}
+\ \le\ 2^{q}\int_S|h-c|^{q},
+\tag{M}
+\]
+which is \noderef{MeanReplacementLp} applied to the vector-valued function
+$h\,e$ and the constant $c\,e$, together with $|h e-c e|=|h-c|$, which holds
+because $|e|=1$.
+
+\emph{Step 2: the Morrey bound for the gradient.}  Apply
+\noderef{MorreyBoundFromBundle} with the present $n,p$, with the exponent $t$,
+and with $c_0,W,d,R_1,\sigma_2$: its hypotheses are $n\ge2$, $1<p$, $0<t<n$,
+$0<c_0$, $0\le W$, $0<d$, $0<R_1$ and (H2), all of which are (H1)--(H2).  It
+produces a constant $N_1^t\ge0$ such that, under (H4)--(H6), $|g|$ satisfies the
+Morrey bound on $\Omega'$ at the exponent $n-t$ with constant $N_1^t$
+(\noderef{MorreyBoundOn}).
+
+\emph{Step 3: from the Morrey bound to the Campanato bound.}  Write
+$\omega_n=|B_1(0)|>0$, so that $|B_r(y)|=\omega_nr^{n}$ for every $y$ and every
+$r\ge0$.  Fix $x_1\in\Omega'$ and $\rho>0$ and set $S=\Omega'\cap B_\rho(x_1)$.
+Two regimes:
+\begin{itemize}
+\item \emph{Small radii, $\rho\le d/8$.}  Then $\overline{B_{d/4}(x_1)}\subseteq\Omega$
+  by the separation in (H4), so the ball pair $B_{d/8}(x_1)\subseteq B_{d/4}(x_1)$
+  is admissible for \noderef{MorreyGradientToCampanato}, which converts Step 2's
+  Morrey bound for $|g|$ on that pair into a bound for the mean oscillation of
+  $u$: with (M) of Step 1 and the Sobolev--Poincaré inequality of (H3), the
+  quantity $\int_S|u-u_S|^{q}$ is at most a constant multiple of
+  $\rho^{\,n+(1-t/p)q}$, the constant depending only on
+  $n,p,t,c_0,W,d,R_1,\sigma_2$ through Step 2 and on $\omega_n$.
+\item \emph{Large radii, $\rho>d/8$.}  Here no comparison is needed: by (M)
+  with $c=0$ and $|u|\le M$ of (H5),
+  $\int_S|u-u_S|^{q}\le2^{q}\int_S|u|^{q}\le2^{q}M^{q}|S|$, and
+  $|S|\le\omega_n\rho^{n}\le\omega_n(8/d)^{(1-t/p)q}\rho^{\,n+(1-t/p)q}$ because
+  $\rho>d/8$ and $(1-t/p)q$ may be of either sign --- in the negative case the
+  inequality $\rho^{(1-t/p)q}\ge(d/8)^{(1-t/p)q}$ is used in the direction the
+  sign dictates.  So the same form of bound holds, with a constant built from
+  $M$, $W$, $n$, $q$, $t$, $p$ and $d$.
+\end{itemize}
+Taking $N$ to be the maximum of the two constants makes both regimes satisfy the
+single bound $\int_S|u-u_S|^{q}\le N^{q}\rho^{\,n+(1-t/p)q}$, and $N\ge0$ by
+construction, being a maximum of nonnegative quantities.  Since $x_1\in\Omega'$
+and $\rho>0$ were arbitrary, that is the Campanato bound for $u$ on $\Omega'$ at
+the exponent $n+(1-t/p)q$ with constant $N$, which is the assertion.
+\end{proof}

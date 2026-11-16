@@ -1,0 +1,76 @@
+\begin{helper}[The difference-quotient bound in $L^q$]
+Let $n\in\N$, let $q\in\R$ with $q\ge1$, let $K\subseteq\R^n$ and let $k$ be an
+index in $\{1,\dots,n\}$.  Throughout, $e_k$ is the $k$-th standard basis
+vector, so $x+se_k$ translates $x$ by $s$ in the $k$-th coordinate direction;
+$I_h$ is the interval between $0$ and $h$; all integrals are the
+extended-nonnegative ones, with values in $[0,\infty]$, so no finiteness is
+assumed anywhere and the bound $c$ enters as the extended real
+$\mathrm{ofReal}\,c$.  Let $F_h,G_h,G_h'\colon\R^n\to\R$ with $G_h'$ measurable
+and
+\[
+(x,s)\mapsto G_h(x+se_k)=(x,s)\mapsto G_h'(x+se_k),
+\qquad
+(x,s)\mapsto G_h(x)=(x,s)\mapsto G_h'(x)
+\]
+almost everywhere on $\R^n\times\R$.  Let $h,c\in\R$ with $0<|h|$ and assume
+\begin{enumerate}
+\item[(H1)] for almost every $x\in K$, the function $s\mapsto G_h(x+se_k)$ is
+  interval-integrable on $I_h$ and
+  $F_h(x+he_k)-F_h(x)=\int_0^hG_h(x+se_k)\,ds$;
+\item[(H2)] for every $s$ with $|s|\le|h|$,
+  $\int_K\|G_h(\cdot+se_k)-G_h\|^{q}\le c$.
+\end{enumerate}
+Then
+\[
+\int_K\Bigl\|\frac{F_h(\cdot+he_k)-F_h}{h}-G_h\Bigr\|^{q}\ \le\ c .
+\]
+The three functions are otherwise arbitrary: nothing here knows that they come
+from a weakly differentiable function, which is why the statement stands on its
+own.  $G_h'$ is carried only to make the integrand of the Fubini step genuinely
+measurable on the product.
+\end{helper}
+\begin{proof}
+Write $a=|h|$, so $0<a<\infty$, and note $q>0$.
+
+\emph{Step 1: the pointwise estimate.}  Let $x\in K$ be a point where (H1)
+holds.  Subtracting $G_h(x)$, which is the average of the constant $G_h(x)$
+over $I_h$ against the normalised measure $a^{-1}ds$, and dividing by $h$,
+\[
+\frac{F_h(x+he_k)-F_h(x)}{h}-G_h(x)
+=\frac1h\int_0^h\bigl(G_h(x+se_k)-G_h(x)\bigr)ds .
+\]
+Taking norms, the norm inequality for the interval integral (Preamble) gives
+\[
+\Bigl\|\frac{F_h(x+he_k)-F_h(x)}{h}-G_h(x)\Bigr\|
+\ \le\ \frac1a\int_{I_h}\bigl\|G_h(x+se_k)-G_h(x)\bigr\|\,ds ,
+\]
+and raising to the power $q\ge1$ and applying Jensen's inequality for the
+probability measure $a^{-1}ds$ on $I_h$ --- the map $t\mapsto t^{q}$ being
+convex on $[0,\infty)$ for $q\ge1$ --- yields
+\[
+\Bigl\|\frac{F_h(x+he_k)-F_h(x)}{h}-G_h(x)\Bigr\|^{q}
+\ \le\ \frac1a\int_{I_h}\bigl\|G_h(x+se_k)-G_h(x)\bigr\|^{q}ds
+\tag{1}
+\]
+for almost every $x\in K$.  All three quantities are extended-nonnegative, so
+no integrability is needed to write them.
+
+\emph{Step 2: integrating and exchanging.}  Integrate (1) over $K$ and exchange
+the two integrations.  The exchange is Tonelli's theorem (Preamble): the
+integrand $(x,s)\mapsto\|G_h(x+se_k)-G_h(x)\|^{q}$ is nonnegative, and it is
+jointly measurable on $\R^n\times I_h$ because, by the two hypotheses on
+$G_h'$, it agrees almost everywhere on the product with the corresponding
+expression in $G_h'$, which is measurable: $(y,s)\mapsto G_h'(y)$ is measurable
+and the shear $T(x,s)=(x+se_k,s)$ is a linear automorphism of $\R^{n+1}$ of
+determinant $1$, hence preserves measurability and Lebesgue measure
+(Preamble).  So
+\[
+\int_K\Bigl\|\frac{F_h(\cdot+he_k)-F_h}{h}-G_h\Bigr\|^{q}
+\ \le\ \frac1a\int_{I_h}\Bigl(\int_K\bigl\|G_h(\cdot+se_k)-G_h\bigr\|^{q}\Bigr)ds .
+\]
+
+\emph{Step 3: conclusion.}  For every $s\in I_h$ one has $|s|\le|h|$, so the
+inner integral is at most $c$ by (H2).  Hence the right-hand side is at most
+$a^{-1}\cdot|I_h|\cdot c=c$, since $|I_h|=a$ and $a\ne0,\infty$.  That is the
+assertion.
+\end{proof}

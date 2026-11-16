@@ -1,0 +1,42 @@
+\begin{definition}
+Let $n\ge2$, $p>1$, $\varepsilon\ge0$ and $\mu,\gamma_2,\gamma_3,\gamma_4>0$, let
+$\Omega\subseteq\R^n$, let $A\colon\R^n\times\R\times\R^n\to\R^n$ and
+$B\colon\R^n\times\R\times\R^n\to\R$.  We say that $(A,B)$ satisfies conditions
+(Q3) of the thesis--(Q5) of the thesis on $\Omega$ with these parameters, written
+$\mathrm{EllipticStructureQ345}(n,p,\varepsilon,\mu,\gamma_2,\gamma_3,\gamma_4,\Omega,A,B)$,
+if $B$ satisfies the two Carath\'eodory clauses
+\begin{enumerate}
+\item for every $z\in\R$ and every $h\in\R^n$ the map $x\mapsto B(x,z,h)$ is
+  Borel measurable on $\R^n$; and
+\item for every $x\in\R^n$ the map $(z,h)\mapsto B(x,z,h)$ is continuous on
+  $\R\times\R^n$;
+\end{enumerate}
+and if for a.e.\ $x\in\Omega$, all $z\in\R$ and all $h\in\R^n$,
+\begin{align*}
+(A(x,z,h),h)&\ge\gamma_2(\varepsilon+|h|^2)^{\frac p2}-\mu, \tag{Q3}\\
+|A^i(x,z,h)|&\le\gamma_3(1+|h|^2)^{\frac{p-1}2}\quad(i=1,\dots,n), \tag{Q4}\\
+|B(x,z,h)|&\le\gamma_4(1+|h|^2)^{\frac p2}. \tag{Q5}
+\end{align*}
+Here $(\,\cdot\,,\,\cdot\,)$ is the inner product of $\R^n$, so
+$(A(x,z,h),h)=\sum_{i=1}^nA^i(x,z,h)h^i$.  All non-integer powers are real
+powers of nonnegative reals.
+
+\noindent\textbf{On the two Carath\'eodory clauses, and why they are stated here
+for $B$ only.}  They are the measurability hypothesis the literature attaches to
+the coefficient $B(x,z,h)$ of (1.1) of the thesis, assumed silently by the thesis:
+without them $x\mapsto B(x,u(x),\nabla u(x))$ need not be measurable, the
+integral in (1.2) of the thesis is undefined, and in a formal reading that assigns a
+junk value to the integral of a non-measurable function the weak formulation
+becomes satisfiable by every $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$.  The Note at
+l.~258 requires the cited results to be stated as in the literature and not to be
+vacuous, and (C4)'s sources at l.~263 --- [G, chapter VII, Theorems 2.1--2.2],
+[GG2], [LU, chapter 4] --- assume Carath\'eodory data; so the clauses restore the
+literature's hypothesis.  Joint continuity in $(z,h)$ is what is needed, not
+continuity in $h$ at fixed $z$: nothing in (Q3) of the thesis--(Q5) of the thesis
+constrains the dependence on $z$.  The matching clauses for $A$ are stated in
+\noderef{EllipticStructureQ12}, and every statement in the development that
+assumes (Q3) of the thesis--(Q5) of the thesis assumes (Q1) of the thesis--(Q2) of the thesis
+alongside them --- the paper lists (Q1)--(Q5) as one block for one operator pair
+--- so they are not repeated here.  The same pair, in the same spelling, appears
+in \noderef{VariationalGrowthF1} for the variational density.
+\end{definition}

@@ -1,0 +1,350 @@
+\begin{helper}[Part (i) of the comparison scheme: the Morrey bound on the middle domain]
+Let $n\ge2$, $p>1$, $0<\tau<n$, $c_0>0$, $W\ge0$, $d>0$ and $R_1>0$, and let
+$\sigma_2\colon\R\to\R$ be nonnegative, continuous, increasing with
+$\sigma_2(0)=0$.  Then there is $N_1\ge0$, depending only on these quantities,
+with the following property.
+
+Let $0\le\varepsilon\le1$, let $\Omega,\Omega''\subseteq\R^n$ be open with
+$\Omega''$ bounded and $\overline{\Omega''}\subseteq\Omega$, and with the
+separation
+\[
+d\le|x-y|\qquad\text{for }x\in\Omega'',\ y\notin\Omega .
+\]
+Let $u\in W^{1,p}(\Omega)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}) satisfy
+\[
+\int_\Omega|u|^p\,dx+\int_\Omega|\nabla u|^p\,dx\le W^p .
+\]
+Assume finally that for every $x_0\in\Omega''$ and every $0<R\le R_1$ with
+$\overline B_R(x_0)\subseteq\Omega$ there is a comparison map
+$v\in W^{1,p}\bigl(B_R(x_0)\bigr)$ with weak gradient $g_v$
+(\noderef{MemW1pOn}) such that
+\begin{align}
+\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+&\le c_0\Bigl(\frac\rho R\Bigr)^{n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\qquad(0<\rho\le R),\tag{4.11}\\
+\int_{B_R(x_0)}|\nabla u-g_v|^p\,dx
+&\le\sigma_2(R)\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .\tag{$\star$}
+\end{align}
+Then
+\[
+\|\,|\nabla u|\,\|_{L^{p,n-\tau}(\Omega'')}\le N_1
+\qquad(\noderef{MorreyBoundOn}).
+\]
+
+\noindent\textbf{Why the bound is stated on $\Omega''$ and not on $\Omega'$.}
+The thesis' Theorem 3(i) asserts the Morrey bound on the inner domain
+$\Omega'$, but its proof produces it on the middle domain $\Omega''$ on which
+the comparison bundle lives, and the passage from (i) to (ii) --- Lemma~4.2 at
+a ball $B_{d/4}(x_1)$ centred at a point of $\Omega'$ --- consumes the
+$\Omega''$ form, not the $\Omega'$ form, because that ball need not lie in
+$\Omega'$.  Stating the node on $\Omega''$ therefore records exactly what the
+argument gives and what its two consumers need; the $\Omega'$ form follows in
+one line by restriction, since $\Omega'\subseteq\Omega''$.
+
+\noindent\textbf{On the $W$ datum.}  The hypothesis bounds
+$\int_\Omega|u|^p+\int_\Omega|\nabla u|^p$, i.e.\ the genuine Sobolev norm, and
+not $\int_\Omega(1+|\nabla u|^2)^{p/2}dx$.  The latter integrand is pointwise at
+least $1$, so a bound on it would force $W\ge|\Omega|$ and would be
+unsatisfiable when $|\Omega|=\infty$; since the theorems of \S4 and \S5 that
+build this bundle are stated for an arbitrary open $\Omega$, that would make
+them vacuous on instances such as $\Omega=\R^n$.  The weighted integral is
+still available on each ball, because $(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for
+$t\ge0$ gives
+\[
+\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
+\;\le\;2^{\frac p2}\Bigl(|B_R|+\int_{B_R}|\nabla u|^p\,dx\Bigr)
+\;\le\;2^{\frac p2}\bigl(\omega_nR^{\,n}+W^p\bigr),
+\]
+whose right-hand side involves only $n$, $p$, $R$ and $W$.
+
+\noindent\textbf{On the membership $v\in W^{1,p}(B_R(x_0))$.}  The comparison
+map of \S4 and \S5 is a $W^{1,p}$ solution of a frozen Dirichlet problem, so
+this is what every producer of the bundle has.  It is recorded explicitly
+because (4.11) of the thesis has the \emph{same} integrand on both sides and
+$(\star)$ bounds an integral of $|\nabla u-g_v|^p$: without it a field whose
+$(\varepsilon+|g_v|^2)^{p/2}$ fails to be integrable on the ball would satisfy
+both displays with every integral equal to the junk value, and the hypothesis
+would constrain nothing.
+\end{helper}
+\begin{proof}
+Throughout, $B_t=B_t(x_0)$ and $\overline B_t=\overline B_t(x_0)$ for the ball
+currently in play, $|E|$ is Lebesgue measure, $\omega_n=|B_1(0)|\in(0,\infty)$
+(the Preamble item on the volume of a ball), and all non-integer powers are
+real powers of nonnegative numbers.  Put
+\[
+\kappa=\max\bigl\{1,2^{\frac p2-1}\bigr\},
+\]
+so that $(X+Y)^{p/2}\le\kappa\bigl(X^{p/2}+Y^{p/2}\bigr)$ for all $X,Y\ge0$: for
+$p\le2$ the exponent $p/2$ lies in $(0,1]$ and $\lambda\mapsto\lambda^{p/2}$ is
+subadditive on $[0,\infty)$, while for $p\ge2$ it is the convexity of
+$\lambda\mapsto\lambda^{p/2}$ in the form
+$\bigl(\frac{X+Y}2\bigr)^{p/2}\le\frac12\bigl(X^{p/2}+Y^{p/2}\bigr)$.
+
+
+\emph{Step 0: two elementary comparisons.}  For $a,b\in\R^n$ and $\varepsilon\ge0$,
+\[
+\varepsilon+|a|^2\le2\bigl(\varepsilon+|b|^2\bigr)+2|a-b|^2 ,
+\]
+because $|a|^2\le2|b|^2+2|a-b|^2$ (from $|a|\le|b|+|a-b|$ and
+$(s+u)^2\le2s^2+2u^2$) and $\varepsilon\le2\varepsilon$.  Raising to the power
+$p/2$ and using $\kappa$,
+\[
+\bigl(\varepsilon+|a|^2\bigr)^{\frac p2}
+\le\kappa\,2^{\frac p2}\Bigl[\bigl(\varepsilon+|b|^2\bigr)^{\frac p2}+|a-b|^{p}\Bigr]
+=:c_1\Bigl[\bigl(\varepsilon+|b|^2\bigr)^{\frac p2}+|a-b|^{p}\Bigr],
+\tag{E1}
+\]
+with $c_1=c_1(p)=\kappa2^{p/2}\ge1$, where $\bigl(|a-b|^2\bigr)^{p/2}=|a-b|^p$.
+Interchanging $a$ and $b$ gives the same inequality with the two roles
+exchanged, which is the form used twice below.  Second, for $0\le\varepsilon\le1$,
+\[
+\bigl(1+|a|^2\bigr)^{\frac p2}
+\le\bigl(\bigl(\varepsilon+|a|^2\bigr)+1\bigr)^{\frac p2}
+\le\kappa\Bigl[\bigl(\varepsilon+|a|^2\bigr)^{\frac p2}+1\Bigr],
+\tag{E2}
+\]
+the first step because $1+|a|^2\le1+\varepsilon+|a|^2$.
+
+\emph{Step 1: the constants, chosen before all the data.}  Put
+\[
+c_2=c_0c_1^2,\qquad
+c_3=c_0c_1^2+c_1,\qquad
+c_3'=\kappa\,c_3,\qquad
+A=\max\{c_2,c_3'\} ,
+\]
+all positive and determined by $n$, $p$ and $c_0$ alone.  Apply
+\noderef{CampanatoIterationLemma} with this $A$, with $\alpha=n$ and with
+$\beta=n-\tau$: its hypotheses $0<A$, $0<\alpha$, $0<\beta$ and $\beta<\alpha$
+hold, the last two because $0<\tau<n$.  It supplies
+$\delta_0=\delta_0(A,n,n-\tau)>0$ and $C=C(A,n,n-\tau)>0$.  Since $\sigma_2$ is
+continuous with $\sigma_2(0)=0$, there is $R_2>0$ with
+\[
+\sigma_2(R_2)<\delta_0 ,
+\]
+and we fix one such $R_2$.  Finally put
+\[
+c_4=c_3'\bigl(1+\sigma_2(R_2)\bigr)\,\omega_n\bigl(1+R_2^{\,\tau}\bigr)>0,
+\qquad
+c_5=C>0 .
+\]
+All of $c_1,\kappa,c_2,c_3,c_3',A,\delta_0,C,R_2,c_4,c_5$ depend only on
+$n,p,\tau,c_0$ and $\sigma_2$.  The radius and the constant of the conclusion
+are fixed here, from these and from the remaining parameters $W$, $d$ and
+$R_1$:
+\begin{enumerate}
+\item[(1e)] put
+  \[
+  R_\ast=\min\Bigl\{R_1,\ R_2,\ \frac d{16}\Bigr\}>0,
+  \qquad
+  A_1=c_5R_\ast^{-(n-\tau)}\Bigl\{2^{\frac p2}\bigl(\omega_nR_\ast^{\,n}+W^p\bigr)
+      +c_4R_\ast^{\,n-\tau}\Bigr\},
+  \]
+  \[
+  N_1=\Bigl[\max\bigl\{A_1,\ W^pR_\ast^{-(n-\tau)}\bigr\}\Bigr]^{1/p}\ \ge0 ;
+  \]
+\end{enumerate}
+Every constant named so far is built from $n,p,\tau,c_0,W,d,R_1$ and $\sigma_2$
+alone --- in particular not from $\varepsilon,\Omega,\Omega'',u,g$ --- which is
+the quantifier order the statement prescribes.  Now fix those data satisfying
+all the hypotheses.
+
+\emph{Step 2: the setting for the rest of the proof.}  Let $x_0\in\Omega''$ and
+let $0<\rho\le R\le\min\{R_1,R_2\}$ with $\overline B_R\subseteq\Omega$.  Define
+\[
+\varphi\colon\R\to\R,\qquad
+\varphi(t)=\int_{B_{\min\{t,R\}}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\quad(t>0),\qquad \varphi(t)=0\quad(t\le0),
+\]
+the radius being capped at $R$ so that $\varphi$ is defined, finite and
+nondecreasing on all of $\R$, as the iteration lemma requires.  Indeed:
+$\varphi\ge0$ because the integrand is a real power of a nonnegative number;
+$\varphi$ is nondecreasing because $s\le t$ gives
+$B_{\min\{s,R\}}\subseteq B_{\min\{t,R\}}$ and the integrand is nonnegative; and
+$\varphi$ is finite because for $t\le R$, using $\varepsilon\le1$ and
+$(1+|h|^2)^{p/2}\le2^{p/2}(1+|h|^{p})$,
+\[
+\varphi(t)\le\int_{B_R}\bigl(1+|g|^2\bigr)^{\frac p2}dx
+\le2^{\frac p2}\Bigl(|B_R|+\int_{B_R}|g|^{p}dx\Bigr)
+\le2^{\frac p2}\bigl(\omega_nR^{\,n}+W^{p}\bigr)<\infty ,
+\tag{F}
+\]
+where $\int_{B_R}|g|^p\le\int_\Omega|g|^p\le W^p$, the last step because
+$\int_\Omega|u|^p+\int_\Omega|g|^p\le W^p$ and the first of those two integrals
+is nonnegative, and
+monotonicity of the integral of a nonnegative function over subsets (Preamble),
+legitimate because $B_R\subseteq\overline B_R\subseteq\Omega$.  Note for later that $\varphi(t)=\int_{B_t}(\varepsilon+|g|^2)^{p/2}dx$
+whenever $0<t\le R$.
+
+\emph{Step 3: the passage to (4.12), written out.}  Let $0<\rho'\le R'\le R$.
+Then $R'\le R_1$ and $\overline B_{R'}\subseteq\overline B_R\subseteq\Omega$, so
+the hypothesis of the lemma applies at the radius $R'$ and supplies a field
+$g_v$ satisfying (4.11) and $(\star)$ on $B_{R'}$.  Write $|\nabla w|=|g-g_v|$
+for the remainder, as in the thesis.  All the integrals written below are finite:
+each integrand is nonnegative and dominated on $B_{R'}\subseteq\Omega$ either by
+$(1+|g|^2)^{p/2}$, which is integrable there by $(F)$, or --- in the case of
+$(\varepsilon+|g_v|^2)^{p/2}$ and $|\nabla w|^p$ --- by the right-hand sides of
+(4.11) and $(\star)$, which are finite by $(F)$ and the hypothesis $(\star)$
+itself.
+
+First, by (E1) with $a=g$, $b=g_v$, integrated over $B_{\rho'}$ and then
+enlarging the domain of the second term to $B_{R'}$ (the integrand being
+nonnegative and $\rho'\le R'$),
+\[
+\int_{B_{\rho'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\ \le\ c_1\int_{B_{\rho'}}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
++c_1\int_{B_{R'}}|\nabla w|^{p}dx .
+\tag{3a}
+\]
+Second, (4.11) at the pair $(\rho',R')$ bounds the first term:
+\[
+\int_{B_{\rho'}}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+\ \le\ c_0\Bigl(\frac{\rho'}{R'}\Bigr)^{n}
+\int_{B_{R'}}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx .
+\tag{3b}
+\]
+Third --- and this is the step where the comparison is returned to $u$ --- (E1)
+with the roles interchanged, i.e.\ with $a=g_v$ and $b=g$, integrated over
+$B_{R'}$, gives
+\[
+\int_{B_{R'}}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+\ \le\ c_1\int_{B_{R'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
++c_1\int_{B_{R'}}|\nabla w|^{p}dx .
+\tag{3c}
+\]
+Substituting (3c) into (3b) and then into (3a), and using
+$(\rho'/R')^{n}\le1$ on the term carrying $|\nabla w|^p$,
+\[
+\int_{B_{\rho'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\ \le\ c_0c_1^2\Bigl(\frac{\rho'}{R'}\Bigr)^{n}
+\int_{B_{R'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
++\bigl(c_0c_1^2+c_1\bigr)\int_{B_{R'}}|\nabla w|^{p}dx .
+\tag{3d}
+\]
+Now $(\star)$ is applied --- and this is the second of the two applications the
+thesis means by ``using a second time Lemma 4.1'': the first is the one that
+disposes of the remainder produced by (3a) on the small ball, the second is the
+one that disposes of the remainder produced by (3c) when the $v$-integral over
+$B_{R'}$ is returned to $u$.  Both remainders are the same quantity
+$\int_{B_{R'}}|\nabla w|^p$, so the two applications may be performed at once on
+the combined coefficient $c_3=c_0c_1^2+c_1$:
+\[
+\bigl(c_0c_1^2+c_1\bigr)\int_{B_{R'}}|\nabla w|^{p}dx
+\ \le\ c_3\,\sigma_2(R')\int_{B_{R'}}\bigl(1+|g|^2\bigr)^{\frac p2}dx .
+\]
+With (3d) this is the analogue of (4.12) of the thesis for the pair $(\rho',R')$:
+\[
+\int_{B_{\rho'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\ \le\ c_2\Bigl(\frac{\rho'}{R'}\Bigr)^{n}
+\int_{B_{R'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
++c_3\,\sigma_2(R')\int_{B_{R'}}\bigl(1+|g|^2\bigr)^{\frac p2}dx .
+\tag{4.12$'$}
+\]
+
+\emph{Step 4: the passage to (4.13).}  By (E2) integrated over $B_{R'}$,
+\[
+\int_{B_{R'}}\bigl(1+|g|^2\bigr)^{\frac p2}dx
+\ \le\ \kappa\int_{B_{R'}}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx+\kappa\,|B_{R'}| ,
+\]
+and $|B_{R'}|=\omega_nR'^{\,n}=\omega_nR'^{\,\tau}R'^{\,n-\tau}
+\le\omega_nR_2^{\,\tau}R'^{\,n-\tau}$ because $0<R'\le R\le R_2$ and $\tau>0$.
+Also $\sigma_2(R')\le\sigma_2(R_2)$ because $\sigma_2$ is increasing and
+$R'\le R_2$.  Substituting into (4.12$'$) and recalling $\varphi(\rho')$,
+$\varphi(R')$ from Step 2 --- legitimate because $\rho'\le R'\le R$, so the cap
+is inactive ---
+\[
+\varphi(\rho')
+\ \le\ \Bigl[c_2\Bigl(\frac{\rho'}{R'}\Bigr)^{n}+c_3'\,\sigma_2(R')\Bigr]\varphi(R')
++c_4R'^{\,n-\tau}
+\tag{4.13$'$}
+\]
+for all $0<\rho'\le R'\le R$, where $c_3'=\kappa c_3$ and where the last term is
+bounded as
+$c_3\kappa\,\sigma_2(R')\,|B_{R'}|
+\le c_3'\sigma_2(R_2)\omega_nR_2^{\,\tau}R'^{\,n-\tau}\le c_4R'^{\,n-\tau}$,
+by the definition of $c_4$ in Step 1.
+
+\emph{Step 5: the iteration lemma.}  Apply \noderef{CampanatoIterationLemma} ---
+the same instance as in Step 1, so the $\delta_0$ and $C$ it supplies are those
+fixed there --- with
+\[
+\delta=\sigma_2(R),\qquad B=c_4,\qquad R_0=R,\qquad \varphi \text{ as in Step 2}.
+\]
+Its hypotheses hold: $0\le\delta$ because $\sigma_2\ge0$; $\delta<\delta_0$
+because $\sigma_2$ is increasing, $R\le R_2$ and $\sigma_2(R_2)<\delta_0$;
+$0<B=c_4$ and $0<R_0=R$; $\varphi$ is nonnegative and nondecreasing on $\R$ by
+Step 2; and the recursive inequality
+\[
+\varphi(\rho')\le A\Bigl[\Bigl(\frac{\rho'}{R'}\Bigr)^{n}+\delta\Bigr]\varphi(R')
++BR'^{\,n-\tau}
+\qquad(0<\rho'\le R'\le R_0=R)
+\]
+follows from (4.13$'$), because $A\ge c_2$, $A\ge c_3'$,
+$\sigma_2(R')\le\sigma_2(R)=\delta$ and $\varphi(R')\ge0$.  The conclusion of the
+lemma, at the pair $(\rho,R)$ with $0<\rho\le R=R_0$, is
+\[
+\varphi(\rho)\ \le\ C\Bigl(\frac\rho R\Bigr)^{n-\tau}
+\bigl[\varphi(R)+c_4R^{\,n-\tau}\bigr],
+\]
+which, with $c_5=C$ and with $\varphi(\rho)$, $\varphi(R)$ written back as the
+integrals they are (Step 2, the cap being inactive at $\rho$ and at $R$), is
+(4.14) of the thesis:
+\[
+\int_{B_\rho(x_0)}\bigl(\varepsilon+|\nabla u|^2\bigr)^{\frac p2}dx
+\le c_5\Bigl(\frac\rho R\Bigr)^{n-\tau}
+\Bigl\{\int_{B_R(x_0)}\bigl(\varepsilon+|\nabla u|^2\bigr)^{\frac p2}dx
++c_4R^{\,n-\tau}\Bigr\}.
+\]
+As $x_0$, $\rho$ and $R$ were arbitrary subject to the stated constraints, we
+have proved
+\[
+\int_{B_\rho(x_0)}\bigl(\varepsilon+|\nabla u|^2\bigr)^{\frac p2}dx
+\le c_5\Bigl(\frac\rho R\Bigr)^{n-\tau}
+\Bigl\{\int_{B_R(x_0)}\bigl(\varepsilon+|\nabla u|^2\bigr)^{\frac p2}dx
++c_4R^{\,n-\tau}\Bigr\}
+\tag{4.14}
+\]
+for every $x_0\in\Omega''$ and all $0<\rho\le R\le\min\{R_1,R_2\}$ with
+$\overline B_R(x_0)\subseteq\Omega$.  Steps 6--9 below derive the three
+conclusions from it.  (The thesis reaches the same display through
+(4.13) of the thesis, whose printed right-hand side carries the misprint
+$c_3(\tau_2(R))$ for $c_3\sigma_2(R)$; the version proved here is the corrected
+one, and the additive term $c_4R^{n-\tau}$ is exactly the thesis'.)
+\emph{Step 6: part (i).}  We first prove
+$\|\,|g|\,\|_{L^{p,n-\tau}(\Omega'')}\le N_1$
+(\noderef{MorreyBoundOn}).  The $L^p$ clause holds: $|g|\in L^p(\Omega)$ by
+\noderef{MemW1pOn}, hence $|g|\in L^p(\Omega'')$ by the Preamble
+transport fact for $L^q$ membership under restriction to a subset.  Now let
+$x_1\in\Omega''$ and $0<\rho<\operatorname{diam}\Omega''$.
+Pointwise $|g|^p=(|g|^2)^{p/2}\le(\varepsilon+|g|^2)^{p/2}$, because
+$t\mapsto t^{p/2}$ is nondecreasing on $[0,\infty)$ and $\varepsilon\ge0$, and
+$\Omega''\cap B_\rho(x_1)\subseteq B_\rho(x_1)$; we distinguish two
+cases.
+
+If $\rho\le R_\ast$: by $(4.14)$ with $R=R_\ast$ --- legitimate because
+$R_\ast\le d/16<d$ and $x_1\in\Omega''$, so that every $z$ with
+$|z-x_1|\le R_\ast$ lies in $\Omega$ by the hypothesis that
+$d\le|x-y|$ for every $x\in\Omega''$ and every $y\notin\Omega$ ---
+and by $(F)$ of Step 2 together with
+$|B_{R_\ast}|=\omega_nR_\ast^{\,n}$ and $\int_\Omega|g|^p\le W^p$,
+\[
+\int_{\Omega''\cap B_\rho(x_1)}|g|^p\,dx
+\le\int_{B_\rho(x_1)}(\varepsilon+|g|^2)^{\frac p2}dx
+\le c_5\frac{\rho^{\,n-\tau}}{R_\ast^{\,n-\tau}}
+\Bigl\{2^{\frac p2}\bigl(\omega_nR_\ast^{\,n}+W^p\bigr)+c_4R_\ast^{\,n-\tau}\Bigr\}
+=A_1\rho^{\,n-\tau},
+\]
+with $A_1$ as in (1e); here
+$\int_{B_{R_\ast}}(\varepsilon+|g|^2)^{p/2}\le2^{p/2}(|B_{R_\ast}|+\int_{B_{R_\ast}}|g|^p)
+\le2^{p/2}(\omega_nR_\ast^n+W^p)$ by the pointwise inequality used in $(F)$ of Step 2.
+
+If $\rho>R_\ast$: since $n-\tau>0$ we have
+$\rho^{-(n-\tau)}<R_\ast^{-(n-\tau)}$, so
+\[
+\int_{\Omega''\cap B_\rho(x_1)}|g|^p\,dx\le\int_\Omega|g|^p\,dx\le W^p
+=W^p\rho^{-(n-\tau)}\rho^{\,n-\tau}\le W^pR_\ast^{-(n-\tau)}\rho^{\,n-\tau}.
+\]
+In both cases the left-hand side is at most $N_1^p\rho^{\,n-\tau}$ with $N_1$ as
+in (1e).  So $\|\,|g|\,\|_{L^{p,n-\tau}(\Omega'')}\le N_1$.
+
+\end{proof}

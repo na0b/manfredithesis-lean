@@ -1,0 +1,111 @@
+\begin{lemma}[The standard radial cut-off, with an absolute gradient constant]
+Let $n\ge1$.  Then there is a constant $L=L(n)>0$ --- in fact an absolute one,
+independent of $n$ as well --- with the following property.  For every
+$x_0\in\R^n$ and all radii $0<\rho_0<\rho_1$ there is a function
+$\zeta\colon\R^n\to\R$ such that
+\begin{enumerate}
+\item $\zeta\in C^\infty(\R^n)$ and $\zeta$ has compact support, with
+  $\operatorname{tsupport}\zeta\subseteq B_{\rho_1}(x_0)$;
+\item $0\le\zeta\le1$ everywhere, and $\zeta=1$ at every point of the closed
+  ball $\overline B_{\rho_0}(x_0)$;
+\item at every point of $\R^n$,
+  \[
+  \sum_{i=1}^n(\partial_i\zeta)^2\ \le\ \frac L{(\rho_1-\rho_0)^2} .
+  \]
+\end{enumerate}
+
+The quantifier order is the content: $L$ is chosen before the centre and the two
+radii, so the gradient bound degenerates only through the explicit factor
+$(\rho_1-\rho_0)^{-2}$ and carries no further dependence on the configuration.
+That is what every consumer of a Caccioppoli or De Giorgi estimate needs, since
+the constant of such an estimate must not depend on the pair of radii the
+cut-off interpolates between.  Clause (3) is stated as a bound on the sum of
+squares of the partial derivatives rather than on $|\nabla\zeta|$ because that
+is the form in which the consumers meet it; the two differ only by the identity
+$|\nabla\zeta|^2=\sum_i(\partial_i\zeta)^2$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: a one-dimensional transition function.}  Let $\rho_{1/8}$ be the
+standard mollifier of the Preamble in dimension one at scale $\tfrac18$ ---
+smooth, nonnegative, supported in $[-\tfrac18,\tfrac18]$, of total integral $1$
+--- and put $\psi_\flat=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}$.  Then
+$\psi_\flat\in C^\infty(\R)$ with
+$\psi_\flat'=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}'$ (Preamble: convolution with a
+smooth compactly supported kernel, the indicator being locally integrable).
+
+$0\le\psi_\flat\le1$, because $0\le\mathbf1_{(-\infty,1/2]}\le1$ and
+$\rho_{1/8}\ge0$ has total integral $1$, so the convolution is an average of
+values in $[0,1]$.
+
+$\psi_\flat=1$ on $(-\infty,\tfrac38]$ and $\psi_\flat=0$ on $[\tfrac58,\infty)$.
+Indeed, writing the convolution in the form the Preamble item defines and
+substituting --- legitimately, by the invariance of Lebesgue measure under
+translations and reflections (Preamble) ---
+\[
+\psi_\flat(t)=\int\mathbf1_{(-\infty,1/2]}(t-s)\,\rho_{1/8}(s)\,ds .
+\]
+For $t\le\tfrac38$ every $s$ with $|s|\le\tfrac18$ has $t-s\le\tfrac12$, so the
+indicator is $1$ on the whole support of $\rho_{1/8}$ and the integral is
+$\int\rho_{1/8}=1$.  For $t\ge\tfrac58$ every such $s$ has $t-s\ge\tfrac12$, so
+the indicator vanishes except possibly at the single point $s=t-\tfrac12$, a
+Lebesgue-null set, and the integral is $0$.
+
+Finally $|\psi_\flat'|\le\|\rho_{1/8}'\|_{L^1(\R)}=:\Lambda<\infty$, because
+$\psi_\flat'=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}'$ and
+$|\mathbf1_{(-\infty,1/2]}|\le1$.  The number $\Lambda$ depends on nothing: it
+is a property of the fixed one-dimensional mollifier.  Put
+\[
+L=\Lambda^2+1>0 ,
+\]
+which is therefore an absolute constant, chosen before $x_0,\rho_0,\rho_1$ as
+the statement requires.
+
+\emph{Step 2: the radial cut-off.}  Fix $x_0$ and $0<\rho_0<\rho_1$ and put
+\[
+\zeta(x)=\psi_\flat\Bigl(\frac{|x-x_0|-\rho_0}{\rho_1-\rho_0}\Bigr).
+\]
+We verify the three clauses.
+
+\emph{(1).}  $\zeta$ is smooth.  Away from $x_0$ the map $x\mapsto|x-x_0|$ is
+smooth, so $\zeta$ is a composition of smooth maps there; and on the ball
+$B_{\rho_0}(x_0)$, which is a neighbourhood of $x_0$, every $x$ satisfies
+$|x-x_0|<\rho_0$, hence $(|x-x_0|-\rho_0)/(\rho_1-\rho_0)<0\le\tfrac38$ and
+$\zeta(x)=1$ by Step 1; so $\zeta$ is constant on a neighbourhood of $x_0$ and
+therefore smooth there too.  Smoothness being a local property, $\zeta\in
+C^\infty(\R^n)$.
+
+For the support: if $|x-x_0|\ge\rho_0+\tfrac58(\rho_1-\rho_0)$ then the argument
+of $\psi_\flat$ is at least $\tfrac58$, so $\zeta(x)=0$ by Step 1.  Hence
+$\{\zeta\ne0\}\subseteq\overline B_{\rho_0+\frac58(\rho_1-\rho_0)}(x_0)$, a
+closed set, so $\operatorname{tsupport}\zeta$ --- the closure of
+$\{\zeta\ne0\}$, by the run's convention --- is contained in it as well.  That
+closed ball is compact, so $\zeta$ has compact support; and
+$\rho_0+\tfrac58(\rho_1-\rho_0)<\rho_1$ because $\tfrac58<1$ and
+$\rho_1-\rho_0>0$, so $\operatorname{tsupport}\zeta\subseteq B_{\rho_1}(x_0)$.
+
+\emph{(2).}  $0\le\zeta\le1$ is Step 1 applied at each point.  If
+$|x-x_0|\le\rho_0$ then the argument of $\psi_\flat$ is at most $0\le\tfrac38$,
+so $\zeta(x)=1$.
+
+\emph{(3).}  Fix $x$.  If $x=x_0$, or more generally if
+$|x-x_0|<\rho_0$, then $\zeta$ is constant near $x$ by (1), so every
+$\partial_i\zeta(x)=0$ and the bound is immediate, the right-hand side being
+nonnegative.  Otherwise $x\ne x_0$ and the chain rule applies: writing
+$\tau(x)=(|x-x_0|-\rho_0)/(\rho_1-\rho_0)$,
+\[
+\partial_i\zeta(x)=\psi_\flat'(\tau(x))\cdot
+\frac1{\rho_1-\rho_0}\cdot\frac{(x-x_0)_i}{|x-x_0|} ,
+\]
+because $\partial_i|x-x_0|=(x-x_0)_i/|x-x_0|$ for $x\ne x_0$.  Summing the
+squares and using $\sum_i(x-x_0)_i^2=|x-x_0|^2$,
+\[
+\sum_i(\partial_i\zeta(x))^2
+=\frac{\psi_\flat'(\tau(x))^2}{(\rho_1-\rho_0)^2}\cdot
+\frac{|x-x_0|^2}{|x-x_0|^2}
+=\frac{\psi_\flat'(\tau(x))^2}{(\rho_1-\rho_0)^2}
+\ \le\ \frac{\Lambda^2}{(\rho_1-\rho_0)^2}
+\ \le\ \frac L{(\rho_1-\rho_0)^2} ,
+\]
+the last step because $\Lambda^2\le\Lambda^2+1=L$ and $(\rho_1-\rho_0)^2>0$.
+This is clause (3), and the proof is complete.
+\end{proof}

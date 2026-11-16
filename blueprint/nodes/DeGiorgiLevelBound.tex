@@ -1,0 +1,30 @@
+\begin{definition}
+Let $\gamma>0$, let $f\colon\R^n\to\R$ have weak gradient $g$, let
+$x_0\in\R^n$ and let $\ell,\rho_0,\rho_1\in\R$.  We say that $f$
+\emph{satisfies the De Giorgi level bound} (2.1) of the thesis with constant $\gamma$
+at level $\ell$ and radii $\rho_0,\rho_1$ (all balls concentric at $x_0$),
+written $\mathrm{DeGiorgiLevelBound}(n,\gamma,f,g,x_0,\ell,\rho_0,\rho_1)$, if
+\begin{enumerate}
+\item $(f-\ell)^+$ is essentially bounded on $B_{\rho_1}(x_0)$, i.e.\ there is
+  $C\in\R$ with $(f(x)-\ell)^+\le C$ for a.e.\ $x\in B_{\rho_1}(x_0)$; and
+\item
+\[
+\int_{B_{\rho_0}(x_0)\cap\{f>\ell\}}|g|^2\,dx
+\;\le\;\frac{\gamma}{(\rho_1-\rho_0)^2}\,
+\Bigl(\esssup_{B_{\rho_1}(x_0)}[(f-\ell)^+]\Bigr)^{2}\,
+\bigl|\{x\in B_{\rho_1}(x_0):f(x)>\ell\}\bigr| .
+\]
+\end{enumerate}
+Clause (2) is exactly the paper's inequality
+\[
+\int_{B_{\rho_0}}|\nabla(f-\ell)^+|^2\,dx\le\frac{\gamma}{(\rho_1-\rho_0)^2}
+\max_{B_{\rho_1}}[(f-\ell)^+]^2\,\bigl|\{x\in B_{\rho_1}:f>\ell\}\bigr| ,
+\]
+written out: the weak gradient of $(f-\ell)^+$ equals $g\cdot\chi_{\{f>\ell\}}$
+almost everywhere, so $\int_{B_{\rho_0}}|\nabla(f-\ell)^+|^2$ is the integral of
+$|g|^2$ over $B_{\rho_0}\cap\{f>\ell\}$.  Clause (1) records the essential
+boundedness that the paper's ``max'' convention (p.~6) presupposes and that is
+needed for $\esssup_{B_{\rho_1}}(f-\ell)^+$ to be the essential maximum rather
+than a junk value; it is part of the hypothesis package, exactly as in the
+paper, where $(f-\ell)^+$ is bounded on $B_{\rho_1}$ because $f$ is.
+\end{definition}

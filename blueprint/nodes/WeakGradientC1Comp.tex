@@ -1,0 +1,218 @@
+\begin{lemma}[Chain rule for a $C^1$ composition with bounded derivative]
+Let $n\ge1$, let $q\ge1$ and $L\ge0$ be real, let $\Omega\subseteq\R^n$ be open
+with $|\Omega|<\infty$, let $u\in W^{1,q}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pOn}), and let $F\colon\R\to\R$ be of class $C^1$ with
+$|F'(t)|\le L$ for every $t\in\R$.  Then
+\[
+F\circ u\in W^{1,q}(\Omega)\quad\text{with weak gradient}\quad
+x\longmapsto F'(u(x))\,g(x)
+\]
+(\noderef{MemW1pOn}).
+\end{lemma}
+\begin{proof}
+Recall from \noderef{MemW1pOn} that the assertion to be proved has two halves:
+the test-function identity
+\[
+\int_\Omega F(u)\,D_i\varphi\,dx=-\int_\Omega F'(u)\,g^i\,\varphi\,dx
+\tag{1}
+\]
+for every $\varphi\in C^\infty(\R^n)$ with compact support contained in
+$\Omega$ and every $i\in\{1,\dots,n\}$ (this is \noderef{HasWeakGradientOn} for
+the pair $(F\circ u,\ F'(u)g)$), and the integrability statements
+$F\circ u\in L^q(\Omega)$, $|F'(u)g|\in L^q(\Omega)$.
+
+\emph{Step 0: integrability.}  Since $F$ is $C^1$ with $|F'|\le L$, the mean
+value theorem gives $|F(t)-F(0)|\le L|t|$, hence
+$|F(u)|\le|F(0)|+L|u|$ pointwise.  By \noderef{MemW1pOn} we have
+$u\in L^q(\Omega)$, and the constant $|F(0)|$ lies in $L^q(\Omega)$ because
+$|\Omega|<\infty$; so $F\circ u\in L^q(\Omega)$.  Likewise
+$|F'(u)g|\le L|g|$ pointwise and $|g|\in L^q(\Omega)$, so
+$|F'(u)g|\in L^q(\Omega)$.  Finally $u\in L^q(\Omega)$ with $q\ge1$ and
+$|\Omega|<\infty$ give $u\in L^1(\Omega)$ by H\"older's inequality, and the same
+for each component $g^i$; we use this below.  Extend $u$ and $g^i$ by $0$ off
+$\Omega$ and call the results $\bar u,\bar g^i\in L^1(\R^n)$.
+
+It remains to prove (1).  Fix $\varphi$ and $i$ as above and put
+$K=\operatorname{supp}\varphi$, a compact subset of $\Omega$.
+
+\emph{Step 1: a mollifier adapted to $K$.}  Since $K$ is compact, $\R^n\setminus
+\Omega$ is closed and the two are disjoint, the distance
+$d(K,\R^n\setminus\Omega)$ is positive (it is $+\infty$ if $\Omega=\R^n$).
+Choose $\delta_0>0$ with $3\delta_0<d(K,\R^n\setminus\Omega)$ and set
+\[
+V=\{x\in\R^n:\ d(x,K)<\delta_0\},
+\]
+an open set containing $K$.  For each $\delta>0$ let $\rho_\delta$ be the mollifier at scale $\delta$
+supplied by the Preamble item on a standard mollifier:
+\[
+\rho_\delta\in C^\infty(\R^n),\qquad \rho_\delta\ge0,\qquad
+\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}\ \text{compact},
+\qquad \int_{\R^n}\rho_\delta\,dz=1 .
+\]
+Those four properties are the only ones used below.  In particular no explicit
+formula for $\rho_\delta$ is needed --- the Preamble item supplies the family
+directly at every scale, so $\rho_\delta$ is not obtained here by rescaling a
+single kernel and no change of variables has to be justified.
+
+Define on $\R^n$
+\[
+u_\delta=\bar u*\rho_\delta,\qquad
+(g^i)_\delta=\bar g^i*\rho_\delta ,
+\qquad\text{i.e.}\qquad
+u_\delta(x)=\int_{\R^n}\bar u(y)\rho_\delta(x-y)\,dy .
+\]
+Note that for $x\in V$ and $0<\delta<\delta_0$ we have
+$\overline{B_\delta(x)}\subseteq\Omega$: if $|z-x|\le\delta$ then
+$d(z,K)\le|z-x|+d(x,K)<\delta+\delta_0<2\delta_0<d(K,\R^n\setminus\Omega)$, so
+$z\in\Omega$.  Consequently, for such $x$ the integrand above is supported in
+$\overline{B_\delta(x)}\subseteq\Omega$, where $\bar u=u$, so
+\[
+u_\delta(x)=\int_\Omega u(y)\rho_\delta(x-y)\,dy,
+\qquad
+(g^i)_\delta(x)=\int_\Omega g^i(y)\rho_\delta(x-y)\,dy .
+\tag{2}
+\]
+
+\emph{Step 2: $u_\delta$ is smooth and $D_iu_\delta=(g^i)_\delta$ on $V$.}  This
+is the only place where the hypothesis that $g$ is the weak gradient of $u$
+enters, and it is where the computation is done rather than assumed.
+
+By the Preamble item on convolution with a smooth compactly supported kernel,
+applied to $\bar u\in L^1(\R^n)\subseteq L^1_{\mathrm{loc}}(\R^n)$ and the kernel
+$\rho_\delta$, the convolution is smooth and may be differentiated under the
+integral sign: $u_\delta\in C^\infty(\R^n)$ with
+\[
+D_iu_\delta(x)=\int_{\R^n}\bar u(y)\,(D_i\rho_\delta)(x-y)\,dy
+\qquad(x\in\R^n).
+\tag{3}
+\]
+(The differentiation under the integral sign is justified because
+$D_i\rho_\delta$ is bounded with compact support and $\bar u\in L^1(\R^n)$, so
+the difference quotients are dominated by a fixed integrable function.)
+
+Now fix $x\in V$ and define $\psi\colon\R^n\to\R$ by
+$\psi(y)=\rho_\delta(x-y)$.  Then $\psi\in C^\infty(\R^n)$,
+$\operatorname{supp}\psi\subseteq\overline{B_\delta(x)}$, which is compact and
+contained in $\Omega$ by Step 1; so $\psi$ is an admissible test function in
+\noderef{HasWeakGradientOn}.  Differentiating $\psi$ in the $y$ variable,
+\[
+D_i\psi(y)=-\,(D_i\rho_\delta)(x-y) .
+\]
+The defining identity of \noderef{HasWeakGradientOn}, which $u$ and $g$ satisfy
+on $\Omega$ by \noderef{MemW1pOn}, applied to the test function $\psi$ and the
+index $i$, reads $\int_\Omega u\,D_i\psi\,dy=-\int_\Omega g^i\,\psi\,dy$, that is
+\[
+-\int_\Omega u(y)\,(D_i\rho_\delta)(x-y)\,dy
+=-\int_\Omega g^i(y)\,\rho_\delta(x-y)\,dy .
+\]
+Multiplying by $-1$ and comparing with (3) and (2) --- the integral in (3) may be
+restricted to $\Omega$ because the integrand vanishes off
+$\overline{B_\delta(x)}\subseteq\Omega$ --- we obtain
+\[
+D_iu_\delta(x)=(g^i)_\delta(x)\qquad\text{for every }x\in V,\ 0<\delta<\delta_0 .
+\tag{4}
+\]
+
+\emph{Step 3: the identity for the mollification.}  Fix $0<\delta<\delta_0$.  The
+function $F\circ u_\delta$ is $C^1$ on $\R^n$, being a composition of a $C^1$
+function with a $C^\infty$ one, and by the classical chain rule
+$D_i(F\circ u_\delta)=F'(u_\delta)\,D_iu_\delta$.  Since $\varphi$ is smooth with
+compact support $K\subseteq V$, the classical integration-by-parts formula for a
+$C^1$ function against a compactly supported smooth function gives
+\[
+\int_{\R^n}F(u_\delta)\,D_i\varphi\,dx
+=-\int_{\R^n}D_i\bigl(F(u_\delta)\bigr)\varphi\,dx
+=-\int_{\R^n}F'(u_\delta)\,D_iu_\delta\,\varphi\,dx
+=-\int_{\R^n}F'(u_\delta)\,(g^i)_\delta\,\varphi\,dx ,
+\]
+the last step by (4), all integrands being supported in $K$.  Since
+$K\subseteq\Omega$, each integral may equally be written over $\Omega$:
+\[
+\int_\Omega F(u_\delta)\,D_i\varphi\,dx
+=-\int_\Omega F'(u_\delta)\,(g^i)_\delta\,\varphi\,dx .
+\tag{5}
+\]
+
+\emph{Step 4: mollifications converge in $L^1$.}  We claim
+\[
+\|u_\delta-\bar u\|_{L^1(\R^n)}\longrightarrow0,\qquad
+\|(g^i)_\delta-\bar g^i\|_{L^1(\R^n)}\longrightarrow0
+\qquad(\delta\downarrow0).
+\tag{6}
+\]
+This is the classical convergence of mollifications of an $L^1$ function; we
+record the standard three-term argument, which uses no Sobolev theory.  Let
+$h\in L^1(\R^n)$ and let $\sigma>0$.  First, for any $h$, Fubini's theorem and
+$\rho_\delta\ge0$, $\int\rho_\delta=1$ give the contraction property
+\[
+\|h*\rho_\delta\|_{L^1}\le\int_{\R^n}\!\!\int_{\R^n}|h(y)|\rho_\delta(x-y)\,dy\,dx
+=\int_{\R^n}|h(y)|\Bigl(\int_{\R^n}\rho_\delta(x-y)\,dx\Bigr)dy=\|h\|_{L^1}.
+\]
+Next, choose $v$ continuous with compact support and
+$\|h-v\|_{L^1}<\sigma/3$; such $v$ exists because the continuous compactly
+supported functions are dense in $L^1(\R^n)$.  Then
+\[
+\|h*\rho_\delta-h\|_{L^1}
+\le\|(h-v)*\rho_\delta\|_{L^1}+\|v*\rho_\delta-v\|_{L^1}+\|v-h\|_{L^1}
+\le2\|h-v\|_{L^1}+\|v*\rho_\delta-v\|_{L^1},
+\]
+using the contraction property on the first term.  Finally $v$ is uniformly
+continuous, and
+$|(v*\rho_\delta)(x)-v(x)|=\bigl|\int(v(x-z)-v(x))\rho_\delta(z)dz\bigr|
+\le\sup_{|z|\le\delta}\|v(\cdot-z)-v\|_\infty$ because $\rho_\delta$ is a
+probability density supported in $\overline{B_\delta(0)}$; so
+$v*\rho_\delta\to v$ uniformly, and all these functions are supported in the
+fixed compact set $\{x:d(x,\operatorname{supp}v)\le\delta_0\}$, whence
+$\|v*\rho_\delta-v\|_{L^1}\to0$.  Therefore
+$\limsup_{\delta\downarrow0}\|h*\rho_\delta-h\|_{L^1}\le2\sigma/3<\sigma$, and as
+$\sigma>0$ was arbitrary the limit is $0$.  Applying this to $h=\bar u$ and to
+$h=\bar g^i$, which lie in $L^1(\R^n)$ by Step 0, proves (6).
+
+By (6) and the completeness of $L^1$, we may choose a sequence
+$\delta_j\downarrow0$ with $\delta_j<\delta_0$ along which, in addition,
+\[
+u_{\delta_j}\longrightarrow\bar u\quad\text{almost everywhere on }\R^n
+\tag{7}
+\]
+(a sequence converging in $L^1$ has a subsequence converging almost
+everywhere).
+
+\emph{Step 5: passing to the limit in (5).}  We treat the two sides separately;
+throughout, all integrands are supported in $K$, and $\bar u=u$,
+$\bar g^i=g^i$ on $K\subseteq\Omega$.
+
+Left-hand side.  Using $|F(s)-F(t)|\le L|s-t|$,
+\[
+\Bigl|\int_\Omega\bigl(F(u_{\delta_j})-F(u)\bigr)D_i\varphi\,dx\Bigr|
+\le L\,\|D_i\varphi\|_\infty\int_K|u_{\delta_j}-u|\,dx
+\le L\,\|D_i\varphi\|_\infty\,\|u_{\delta_j}-\bar u\|_{L^1(\R^n)}
+\longrightarrow0
+\]
+by (6).  Hence $\int_\Omega F(u_{\delta_j})D_i\varphi\to\int_\Omega F(u)D_i\varphi$.
+
+Right-hand side.  Split
+\[
+F'(u_{\delta_j})(g^i)_{\delta_j}-F'(u)g^i
+=F'(u_{\delta_j})\bigl[(g^i)_{\delta_j}-g^i\bigr]
++\bigl[F'(u_{\delta_j})-F'(u)\bigr]g^i .
+\]
+For the first term, $|F'|\le L$ gives
+\[
+\Bigl|\int_\Omega F'(u_{\delta_j})\bigl[(g^i)_{\delta_j}-g^i\bigr]\varphi\,dx\Bigr|
+\le L\|\varphi\|_\infty\,\|(g^i)_{\delta_j}-\bar g^i\|_{L^1(\R^n)}\longrightarrow0
+\]
+by (6).  For the second term, $F'$ is continuous and $u_{\delta_j}\to u$ almost
+everywhere on $K$ by (7), so $F'(u_{\delta_j})\to F'(u)$ almost everywhere on
+$K$; moreover
+$\bigl|[F'(u_{\delta_j})-F'(u)]g^i\varphi\bigr|\le2L\|\varphi\|_\infty|g^i|$,
+which is integrable on $K$ by Step 0.  The dominated convergence theorem gives
+\[
+\int_\Omega\bigl[F'(u_{\delta_j})-F'(u)\bigr]g^i\varphi\,dx\longrightarrow0 .
+\]
+Hence $\int_\Omega F'(u_{\delta_j})(g^i)_{\delta_j}\varphi\to\int_\Omega F'(u)g^i\varphi$.
+
+Letting $j\to\infty$ in (5) along $\delta_j$ therefore yields (1).  Together with
+Step 0 this is exactly the assertion
+$F\circ u\in W^{1,q}(\Omega)$ with weak gradient $F'(u)g$
+(\noderef{MemW1pOn}).
+\end{proof}

@@ -1,0 +1,1003 @@
+\begin{lemma}[Lemma 4.1, with the decay rate (4.17) of the thesis]
+Let $n\ge2$, $p>1$, $0<\lambda\le\Lambda$ and $a>0$, let $0<\nu_0<\nu_1$,
+suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}), and assume the cited Dirichlet result (C3)
+with H\"older boundary data (\noderef{CitedDirichletHolder}) in the universal
+form described below.  Then (A) and (B) below both hold.
+
+\medskip
+\noindent\textbf{(A) The estimate of Lemma 4.1.}  Let $M\ge0$, let $d>0$ and
+let $\sigma\colon\R\to\R$.  Then there exist a nonnegative, bounded,
+continuous, increasing function $\sigma_2$ with $\sigma_2(0)=0$ and a number
+$R_1>0$, both depending only on
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,M,d$ and $\sigma$, such that the following
+holds.  Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open, let
+$\Omega'\subseteq\R^n$ be open and bounded with
+$\overline{\Omega'}\subseteq\Omega$ and $d\le d(\Omega',\partial\Omega)$ (i.e.\
+$d\le|x-y|$ for every $x\in\Omega'$ and every $y\notin\Omega$).  Let $f$ satisfy
+(F1) of the thesis--(F3) of the thesis on $\Omega$ with parameters
+$p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$ and modulus $\sigma$
+(\noderef{VariationalStructureF123}), assume the cited H\"older estimates (C4)
+(\noderef{CitedHolderOscillationMinimum}), and let $u\in W^{1,p}(\Omega)$ with weak
+gradient $g=\nabla u$ (\noderef{MemW1pOn}), $|u|\le M$ a.e.\ on $\Omega$, be a
+local minimum for $F$ in $\Omega$ (\noderef{IsLocalMinimumOn}).  Let
+$x_0\in\Omega'$ and $0<R\le R_1$ with $\overline B_R(x_0)\subseteq\Omega$, and
+let $v$ be the comparison map for $u$ on $B_R(x_0)$ with the frozen operator
+$A=\nabla_hf^0$, $f^0(h)=f(x_0,U(x_0),h)$
+(\noderef{FrozenGradientOperator}, \noderef{FrozenComparisonOn}), with weak
+gradient $g_v$, continuous extension $V$ and continuous representative $U$ of
+$u$ on $\overline B_R(x_0)$.  Put $w=u-v$, so $\nabla w=g-g_v$.  Then
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\;\le\;\sigma_2(R)\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\]
+
+\medskip
+\noindent\textbf{(B) The decay rate (4.17) of the thesis.}  Let $0<\alpha\le1$ and
+$\delta>0$.  Then there is $\delta'>0$, depending only on
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,\alpha$ and $\delta$, with the following
+property.  Let $M\ge0$, let $d>0$, let $\sigma\colon\R\to\R$, let $c_\sigma>0$
+and $C_1\ge0$, and suppose the modulus obeys the H\"older condition
+(F4) of the thesis,
+\[
+\sigma(t)\le c_\sigma t^{\delta}\qquad(t\ge0).
+\]
+Then there is $R_1'>0$, depending only on
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,\alpha,\delta,c_\sigma,C_1,M,d$ and
+$\sigma$, such that the following holds.  Let $0\le\varepsilon\le1$, let
+$\Omega\subseteq\R^n$ be open, let $\Omega'\subseteq\R^n$ be open and bounded
+with $\overline{\Omega'}\subseteq\Omega$ and $d\le|x-y|$ for every
+$x\in\Omega'$ and every $y\notin\Omega$.  Let $f$ satisfy
+(F1) of the thesis--(F3) of the thesis on $\Omega$ with parameters
+$p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$ and modulus $\sigma$
+(\noderef{VariationalStructureF123}), assume the cited H\"older estimates (C4)
+(\noderef{CitedHolderOscillationMinimum}), and let $u\in W^{1,p}(\Omega)$ with weak
+gradient $g=\nabla u$ (\noderef{MemW1pOn}), $|u|\le M$ a.e.\ on $\Omega$, be a
+local minimum for $F$ in $\Omega$ (\noderef{IsLocalMinimumOn}).  Let
+$x_0\in\Omega'$ and $0<R\le R_1'$ with $\overline B_R(x_0)\subseteq\Omega$, and
+let $v,V,g_v,U$ be as in (A), i.e.\ let the frozen comparison bundle
+$\mathrm{FrozenComparisonOn}(n,p,x_0,R,\nabla_hf^0,u,U,g,v,V,g_v)$ hold with
+$f^0(h)=f(x_0,U(x_0),h)$.  Suppose in addition that the representative $U$ is
+H\"older continuous of exponent $\alpha$ on the closed ball with constant
+$C_1$:
+\[
+|U(x)-U(y)|\le C_1|x-y|^{\alpha}
+\qquad\bigl(x,y\in\overline B_R(x_0)\bigr).
+\]
+Then
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\;\le\;R^{\delta'}\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\tag{4.17}
+\]
+
+\medskip
+\noindent\textbf{Why (B) is a second clause and not a strengthening of (A), and
+why $\alpha$ and $\delta$ are bound inside it.}  Lemma 4.1 as the thesis states
+it at l.~1162--1167 assumes no rate for the modulus: ``there exists a bounded
+continuous increasing function $\sigma_2(t)$ such that $\sigma_2(0)=0$ and
+$R_1>0$ depending only on $n,p,\lambda,\Lambda,a,\nu,M$ and
+$d(\Omega',\partial\Omega)$''.  Neither $\alpha$ nor $\delta$ occurs there, and
+$\delta$ is the exponent of (F4) of the thesis, which Lemma 4.1 does not assume at
+all.  So $\alpha$ and $\delta$ must not be in scope in (A): they are bound at
+the head of (B) only, and $\sigma_2$ and $R_1$ accordingly depend on exactly the
+quantities the thesis lists (our $\nu_0,\nu_1$ being its $\nu$, and $\sigma$
+being named because the modulus is a parameter of this lemma rather than fixed
+once and for all).  Theorem 3 (\noderef{MinimumMorreyRegularity}) consumes (A)
+and nothing else; Theorem 4 consumes (B).
+
+\medskip
+\noindent\textbf{On the dependence of $\delta'$.}  The thesis records it at
+l.~1359--1361: ``for a certain $\delta'>0$, depending only on
+$\delta,\lambda,\Lambda,\nu_0,\nu_1,n,p$ and $a$''.  That is the list above,
+with $\alpha$ adjoined, $\alpha$ being ours rather than the thesis'
+because we make the H\"older exponent a bound parameter (see the next
+paragraph).  In particular $\delta'$ must not depend on $M$, on $d$, on $\sigma$
+or on $c_\sigma$, and it is accordingly bound before all four.  The radius
+$R_1'$, by contrast, is exactly the thesis' ``radius threshold that does depend
+on $c$'': it is bound after $c_\sigma$ and $C_1$ and may depend on everything.
+This is what Theorem 4's own remark at l.~1353--1355 requires, where $\lambda_0$
+and $\beta=\lambda_0/p$ ``depend exclusively on
+$\lambda,\Lambda,\nu_0,\nu_1,n,p,a$ and $\delta$'' while the \emph{norm} depends
+in addition on $d(\Omega',\partial\Omega)$, $\|u\|_{L^\infty}$ and
+$\|u\|_{W^{1,p}}$.
+
+\medskip
+\noindent\textbf{Why the H\"older exponent $\alpha$ is a parameter and the
+H\"older datum a hypothesis.}  The thesis derives its $\sigma_0,\sigma_1$ (and
+hence the rate) from a bound $\operatorname*{osc}_{B_R}u\le2C_1R^{\alpha}$ in
+which $\alpha$ is the exponent of the cited H\"older estimates (C4).  That
+exponent is \emph{not} available here with the dependence $\delta'$ needs:
+(C4) (\noderef{CitedHolderOscillationMinimum}) binds $M$ before its exponent, so an
+$\alpha$ extracted from (C4) inside this lemma would be a function of $M$ and
+so would $\delta'$.  The paper's own route avoids this, because Theorem 4 is
+stated ``in the situation of Theorem 3'' and Theorem 3's part (iii)
+(\noderef{MinimumMorreyRegularity}) gives $u\in C^\eta$ for \emph{every}
+$\eta<1$: a consumer may therefore fix $\alpha$ --- $\alpha=\tfrac12$ serves ---
+and absorb the resulting constant into $C_1$.  Accordingly $\alpha$ is bound at
+the head of (B), the $C^\alpha$ datum appears only inside (B), and $C_1$ is
+bound with $c_\sigma$, before $R_1'$ and after $\delta'$.  The datum is imposed
+on the continuous representative $U$ and not on $u$: $u$ is a $W^{1,p}$
+function, so a pointwise H\"older bound on it is not what Theorem 3 (iii)
+delivers, whereas \noderef{FrozenComparisonOn} already designates $U$ as the
+continuous representative and this lemma already uses the value $U(x_0)$ in the
+frozen operator.
+
+\medskip
+\noindent\textbf{Two cited results, and why they are at the head.}  The proof
+does \emph{not} instantiate Lemma~Lemma~3.1 of the thesis
+(\noderef{DirichletProblemRestricted}).  The comparison bound it needs is
+obtained in Step (6d) from \noderef{BallComparisonPrinciple}, applied to the
+normalised frozen operator against constants.  That is the paper's own
+disposition and not a convenience: cited result (C3) of the Note ends ``the
+uniqueness and the oscillation bound of Lemma~Lemma~3.1 of the thesis (comparison
+principle) must be proved'', so the comparison principle is deliberately
+\emph{not} among the results this formalization may quote, and
+\noderef{BallComparisonPrinciple} is the node that proves it.  The two cited
+results carried at the head are therefore the following.  First, the
+Sobolev--Poincar\'e inequality on balls (C6)
+(\noderef{CitedSobolevPoincareBall}), because the statement of
+\noderef{BallComparisonPrinciple} takes it as a hypothesis and Step (6d) must
+supply it; (C6) is a statement about $n$ alone, so placing it at the head
+changes no dependence list.  Second, the cited Dirichlet result (C3) with
+H\"older boundary data (\noderef{CitedDirichletHolder}), carried here for
+\emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$.  This
+clause is the \emph{existence and regularity} half of (C3), which is the half
+the Note does leave citable, and it is kept although the proof below does not
+consume it: it is the hypothesis this lemma's consumers need in order to
+discharge \noderef{FrozenComparisonOn}, which they do through
+\noderef{FrozenComparisonDecay}, whose own statement demands exactly this
+universal clause.  The universal shape is forced for a second reason as well:
+the field to which (C3) would be applied is the normalised frozen operator
+$\widetilde A=A^0-A^0(0)$, which is produced inside the proof at a centre and a
+value chosen there, so no single instance can be named in the statement.  Both
+clauses are propositions
+mentioning only $n$ and $p$, both of which are already bound above them, and
+each is universally quantified over its remaining parameters; so placing them at
+the head leaves the dependence lists of $\sigma_2$, $R_1$, $\delta'$ and $R_1'$
+exactly as stated above, and no ``depending only on'' phrase changes.  This is
+the opposite of what would happen if a genuine \emph{parameter} were hoisted:
+$\alpha$ and $\delta$ are real numbers that the constants may be functions of,
+which is why they are bound inside clause (B) and not at the head.
+\end{lemma}
+\begin{proof}
+Throughout, $B_\rho=B_\rho(x_0)$ and $\overline B_\rho=\overline B_\rho(x_0)$.
+Fix the data of the clause being proved.  Since $x_0\in\Omega'$ and
+$\overline{\Omega'}\subseteq\Omega$ we have $x_0\in\Omega$, so every clause of
+\noderef{VariationalStructureF123} that is guarded by ``$x\in\Omega$'' is
+available at $x=x_0$; this is used at each of (1a), (1b) and (6e) below and is
+the only role of $x_0\in\Omega'$ in Steps 1--6.  Since $R>0$ we have
+$x_0\in B_R$, so clause (5) of \noderef{FrozenComparisonOn} gives
+$U(x_0)=u(x_0)$, and therefore
+\[
+f^0(h):=\mathrm{fdens}\;x_0\;(U(x_0))\;h=\mathrm{fdens}\;x_0\;(u(x_0))\;h ,
+\]
+which is the thesis' $f^0$ at l.~1055.  Write
+$A^0=\mathrm{FrozenGradientOperator}\;n\;\mathrm{fdens}\;x_0\;(U(x_0))$
+(\noderef{FrozenGradientOperator}), so that by that definition
+\[
+A^0(h)^i=D_{h_i}f^0(h)\qquad(h\in\R^n,\ 1\le i\le n),
+\]
+and $F^0(\cdot;E)=\int_Ef^0(\nabla\cdot)\,dx$.  Write
+\[
+D=\{h\in\R^n:\varepsilon+|h|^2\ne0\},
+\]
+an open set (the preimage of $\R\setminus\{0\}$ under the continuous
+$h\mapsto\varepsilon+|h|^2$), and put $w=u-v$, so that $\nabla w=g-g_v$ as weak
+gradients on $B_R$.
+
+\medskip
+\noindent\emph{Step 1: what the frozen integrand inherits.}
+
+\textbf{(1a)} By clause \texttt{F1} of \noderef{VariationalStructureF123} at
+$x=x_0$, for every $h$,
+\[
+-a+\lambda(\varepsilon+|h|^2)^{\frac p2}\le f^0(h)\le\Lambda(\varepsilon+|h|^2)^{\frac p2}+a .
+\tag{1.1}
+\]
+
+\textbf{(1b)} By clause \texttt{F2diff} at $x=x_0$, $f^0$ is of class $C^1$ on
+all of $\R^n$; hence $A^0$ is continuous on $\R^n$, each component being
+$h\mapsto Df^0(h)[e_i]$ with $Df^0$ continuous.  By clause \texttt{F2diff2} at
+$x=x_0$, $f^0$ is of class $C^2$ on $D$; so on $D$ the second derivative
+$D^2f^0(h)$ exists, is continuous in $h$, and by clause \texttt{F2}, for every
+$h\in D$ and every $\zeta\in\R^n$,
+\[
+\nu_0(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2
+\le\bigl(D^2f^0(h)\zeta,\zeta\bigr)
+\le\nu_1(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2 .
+\tag{1.2}
+\]
+Here $(D^2f^0(h)\zeta,\zeta)$ denotes the second directional derivative
+$D_\zeta\bigl(h'\mapsto Df^0(h')[\zeta]\bigr)(h)$, which is the quantity
+clause \texttt{F2} bounds.
+
+\textbf{(1c)} Put
+\[
+\widetilde A(h)=A^0(h)-A^0(0),
+\]
+the \emph{normalised} frozen field, so that $\widetilde A(0)=0$ by
+construction.  By \noderef{FrozenOperatorStructureQ12} --- which is stated for
+exactly this normalised field and not for $A^0$ --- the field
+$(x,z,h)\mapsto\widetilde A(h)$ satisfies (Q1) of the thesis--(Q2) of the thesis on
+$\R^n$ (\noderef{EllipticStructureQ12}) with the parameters
+$p,\varepsilon,\gamma_0=\nu_0,\gamma_1=\nu_1$; the hypotheses of that node are
+the present $2\le n$, $1<p$, $0\le\varepsilon$, $\varepsilon\le1$, $0<\lambda$,
+$\lambda\le\Lambda$, $0<a$, $0<\nu_0$ and $\nu_0<\nu_1$, together with the
+openness of $\Omega$, the membership $x_0\in\Omega$ recorded above, and the
+\noderef{VariationalStructureF123} hypothesis of the present lemma, read at the
+point $x_0$ and the value $U(x_0)$.  This is the thesis' (4.2) at l.~1073.
+
+The bounds (Q1) of the thesis--(Q2) of the thesis constrain only
+$\mathrm{fderiv}$ of the field in $h$, which subtracting the constant vector
+$A^0(0)$ leaves unchanged, so (1.2) and the display above are two readings of the
+same information; we use the $\widetilde A$ form wherever a node asks for
+(Q1) of the thesis--(Q2) of the thesis or for $\widetilde A(0)=0$, and the $D^2f^0$ form of
+(1.2) wherever the second derivative of $f^0$ itself is what appears.
+
+\medskip
+\noindent\emph{Step 2: the pointwise segment identity.}
+
+\emph{Claim.}  For every $a_\ast,b_\ast\in\R^n$, write
+$\xi(t)=t\,a_\ast+(1-t)b_\ast$ and $\zeta=a_\ast-b_\ast$, and put
+\[
+Q(t)=\bigl(D^2f^0(\xi(t))\zeta,\zeta\bigr)\ \text{ for }\xi(t)\in D,
+\qquad Q(t)=0\ \text{ for }\xi(t)\notin D .
+\]
+Then $t\mapsto(1-t)Q(t)$ is interval-integrable on $[0,1]$ and
+\[
+f^0(a_\ast)-f^0(b_\ast)
+=\bigl(A^0(b_\ast),\zeta\bigr)
++\int_0^1(1-t)\,Q(t)\,dt .
+\tag{2.1}
+\]
+
+\emph{The exceptional set.}  The set
+\[
+T=\{t\in\R:\xi(t)\notin D\}=\{t:\varepsilon+|\xi(t)|^2=0\}
+\]
+contains at most one point.  Indeed $\varepsilon\ge0$ and $|\xi(t)|^2\ge0$, so
+$t\in T$ exactly when $\varepsilon=0$ and $\xi(t)=0$; if $\zeta=0$ then $\xi$ is
+constant and $T$ is $\R$ or $\emptyset$, and if $\zeta\ne0$ then $\xi$ is an
+injective affine map and $\xi(t)=0$ has at most one solution.  In the
+application made in Step 4 the two endpoints are $g(x)$ and $g_v(x)$ at a point
+$x$, and the case $\zeta=0$ is the case $g(x)=g_v(x)$, in which both sides of
+(2.1) vanish; so ``all but at most one $t$'' is the statement used below, and
+it holds in the only case in which the integrand is not identically zero.
+
+\emph{Proof of the claim.}  We verify the hypotheses of
+\noderef{SegmentSecondOrderIdentity} and apply it with the present
+$n,p,\varepsilon$, with the present $\nu_1$, with $f^0$ in the role of its $f$,
+with $A^0$ in the role of its $A$, with $a_\ast,b_\ast$ in the roles of its
+$a,b$, and with $Q$ in the role of its $q$.  Its hypotheses on the parameters
+are $1<p$, $\varepsilon\ge0$ and $\nu_1\ge0$, all three present, the last
+because $0<\nu_0<\nu_1$.
+
+\emph{The hypotheses on $f^0$ and $A^0$.}  First, $f^0$ is differentiable at
+every point of $\R^n$, being $C^1$ there by (1b).  Second, $A^0$ is continuous,
+by (1b).  Third, $A^0$ represents the differential of $f^0$: by the definition
+of $A^0$ (\noderef{FrozenGradientOperator}) we have
+$A^0(h)^i=Df^0(h)[e_i]$, where $e_i$ is the $i$-th standard basis vector, so by
+linearity of $Df^0(h)$, for every $h$ and every $\zeta'\in\R^n$,
+\[
+Df^0(h)[\zeta']=\sum_i\zeta'^i\,Df^0(h)[e_i]=\sum_iA^0(h)^i\zeta'^i .
+\]
+
+\emph{The hypotheses on $Q$.}  Let $t$ be such that $\xi(t)\in D$.  The set $D$
+is open and $f^0$ is $C^2$ on $D$ by (1b), so $h\mapsto Df^0(h)[\zeta]$ is
+differentiable on $D$ with $D_\zeta\bigl(h\mapsto Df^0(h)[\zeta]\bigr)(h)
+=\bigl(D^2f^0(h)\zeta,\zeta\bigr)$ there, this being the quantity clause
+\texttt{F2} bounds, as recorded in (1b).  The map $\xi$ is affine with constant
+derivative $\zeta$, so by the chain rule the function
+$s\mapsto\bigl(A^0(\xi(s)),\zeta\bigr)=Df^0(\xi(s))[\zeta]$ is differentiable at
+$t$ with
+\[
+\frac{d}{ds}\Big|_{s=t}\bigl(A^0(\xi(s)),\zeta\bigr)
+=\bigl(D^2f^0(\xi(t))\zeta,\zeta\bigr)=Q(t),
+\tag{2.3}
+\]
+which is the cited node's hypothesis (i).  By the upper bound in (1.2), applied
+at $h=\xi(t)\in D$ and at the vector $\zeta$,
+\[
+|Q(t)|\le\nu_1\bigl(\varepsilon+|\xi(t)|^2\bigr)^{\frac p2-1}|\zeta|^2 ,
+\tag{2.4}
+\]
+which is its hypothesis (ii); here the lower bound in (1.2) is nonnegative, so
+the two-sided bound there does give this bound on the absolute value.  Its
+hypothesis (iii), that $Q(t)=0$ when $\xi(t)\notin D$, holds by the definition
+of $Q$.
+
+The cited node therefore gives both assertions of the claim.
+\emph{End of proof of the claim.}
+
+This is the thesis' display at l.~1089, with the two facts the thesis leaves
+implicit made explicit: that the $t$-integrand is integrable even when the
+segment meets the degeneracy set --- which at $\varepsilon=0$ it can, which is
+why \noderef{SegmentSecondOrderIdentity} carries
+\noderef{SegmentWeightIntegrable} beneath it --- and that the integration by
+parts survives the single bad $t$.
+
+\medskip
+\noindent\emph{Step 3: the first-order term vanishes.}
+
+\emph{Claim.}
+\[
+\int_{B_R}\bigl(A^0(g_v(x)),\,g(x)-g_v(x)\bigr)\,dx=0 .
+\tag{3.1}
+\]
+
+\emph{Proof of the claim.}  This is the thesis' half-sentence at
+l.~1097--1098, ``the first integral in the right hand side vanishes since $v$ is
+a solution of (4.1) of the thesis and $w\in W^{1,p}_0(B_R)$'', and it is a
+\emph{limit} of instances of the weak-solution property rather than an instance
+of it: the test class of \noderef{IsWeakSolutionOn} requires a test pair in
+$W^{1,p}(B_R)$ \emph{with compact support in $B_R$}, while clause (3) of
+\noderef{FrozenComparisonOn} puts $v-u$ in $W^{1,p}_0(B_R)$
+(\noderef{MemW1pZeroOn}), which supplies no compact support --- only an
+approximating sequence.  That passage to the limit is
+\noderef{WeakSolutionZeroTest}; what has to be supplied here is its hypothesis
+on the coefficient.
+
+\emph{The $L^{p'}$ datum.}  Let $p'=p/(p-1)$.  Apply
+\noderef{FrozenFieldDualMemLp} with the present $n,p,\varepsilon$, with
+$\gamma_0=\nu_0$ and $\gamma_1=\nu_1$, with $A^0$ in the role of its $A$, with
+$B_R$ in the role of its $S$ and with $g_v$ in the role of its $g_v$.  Its
+hypotheses are: $n\ge2$ and $p>1$, present; $0\le\varepsilon\le1$, present;
+$\nu_0>0$ and $\nu_1>0$, present, the second because $0<\nu_0<\nu_1$; the
+bundle
+\[
+\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\nu_0\;\nu_1\;\R^n\;
+\bigl((x,z,h)\mapsto A^0(h)-A^0(0)\bigr),
+\]
+which is (1c) verbatim --- the cited node is stated for the \emph{normalised}
+field, which is precisely the field (1c) produces, so no transfer from
+$\widetilde A$ to $A^0$ is needed here; $|B_R|<\infty$ (Preamble: the volume of
+a ball); and $g_v\in L^p(B_R)$, which is clause (2) of
+\noderef{FrozenComparisonOn} (\noderef{MemW1pOn}).  It gives
+\[
+A^0\circ g_v\in L^{p'}(B_R).
+\tag{3.2}
+\]
+
+\emph{The limit.}  Apply \noderef{WeakSolutionZeroTest} with the present $n,p$,
+with $B_R$ in the role of its $\Omega$, with the field
+$(x,z,h)\mapsto A^0(h)$ in the role of its $A$, with $v$ and $g_v$ in the roles
+of its $u$ and $g$, and with $v-u$ and $g_v-g$ in the roles of its $v$ and
+$g_v$.  Its hypotheses are the following.  First $1\le n$, which follows from
+$2\le n$, and $1<p$.  Second, $B_R$ is open.  Third, the weak-solution clause
+\[
+\mathrm{IsWeakSolutionOn}\;n\;p\;B_R\;\bigl((x,z,h)\mapsto A^0(h)\bigr)\;
+\bigl((x,z,h)\mapsto0\bigr)\;v\;g_v ,
+\]
+which is clause (1) of \noderef{FrozenComparisonOn} verbatim: that clause
+states exactly this, with the field $(x,z,h)\mapsto A^0(h)$ and the right-hand
+side $0$.  Fourth, the membership of the coefficient in $L^{p'}(B_R)$: the
+coefficient the node names is $x\mapsto A^0(h)$ evaluated at
+$(x,v(x),g_v(x))$, and the field is constant in its first two arguments, so
+this is $x\mapsto A^0(g_v(x))$, which is (3.2).  Fifth,
+$\mathrm{MemW1pZeroOn}\;n\;p\;B_R\;(v-u)\;(g_v-g)$, which is clause (3) of
+\noderef{FrozenComparisonOn}.  Its conclusion is
+\[
+\int_{B_R}\sum_iA^0(g_v(x))^i\,\bigl(g_v(x)-g(x)\bigr)^i\,dx=0 ,
+\]
+which is (3.1) after multiplying by $-1$.  \emph{End of proof of the claim.}
+
+\medskip
+\noindent\emph{Step 4: \textup{(4.4)} and \textup{(4.5)}.}
+
+\textbf{(4a)} Apply Step 2 at $a_\ast=g(x)$, $b_\ast=g_v(x)$ for each $x$, so
+that $\zeta=g(x)-g_v(x)=\nabla w(x)$, and integrate (2.1) over $B_R$.  Each of
+the three terms is integrable on $B_R$: $f^0(g)$ and $f^0(g_v)$ by (1.1)
+together with $g,g_v\in L^p(B_R)$ and $|B_R|<\infty$; the first-order term by
+Step 3's computation, which exhibited $A^0\circ g_v\in L^{p'}(B_R)$ and
+$\nabla w\in L^p(B_R)$; and the second-order term is then the difference of
+integrable functions.  Using (3.1) to kill the first-order term,
+\[
+F^0(u;B_R)-F^0(v;B_R)
+=\int_{B_R}\int_0^1(1-t)\bigl(D^2f^0(t\,g+(1-t)g_v)\nabla w,\nabla w\bigr)\,dt\,dx .
+\tag{4.1}
+\]
+
+\textbf{(4b)} By the lower bound in (1.2), at each $x$ and for every $t$ with
+$t\,g(x)+(1-t)g_v(x)\in D$ --- all but at most one $t$, by Step 2 ---
+\[
+(1-t)\bigl(D^2f^0(t\,g+(1-t)g_v)\nabla w,\nabla w\bigr)
+\ge\nu_0(1-t)\bigl(\varepsilon+|t\,g+(1-t)g_v|^2\bigr)^{\frac p2-1}|\nabla w|^2 ,
+\]
+using $1-t\ge0$ on $[0,1]$.  Both sides are interval-integrable in $t$ (Step 2
+for the left, \noderef{SegmentWeightIntegrable} for the right), and the
+exceptional set is a single point and so null, so monotonicity of the integral
+(Preamble) applies and, with (4.1),
+\[
+F^0(u;B_R)-F^0(v;B_R)
+\ge\nu_0\int_{B_R}\int_0^1(1-t)\bigl(\varepsilon+|t\,g+(1-t)g_v|^2\bigr)^{\frac p2-1}
+|\nabla w|^2\,dt\,dx ,
+\tag{4.2}
+\]
+which is the thesis' (4.4) of the thesis.
+
+\textbf{(4c)} Apply \noderef{MidpointGradientWeightBound} with the present $p$
+--- its only hypothesis is $1<p$ --- and let $C=C(p)>0$ be the constant it
+produces.  Its conclusion, applied at the present $n$ and $\varepsilon$ and at
+$a=g(x)$, $b=g_v(x)$ for each $x$, with the hypotheses $1\le n$ (from $2\le n$)
+and $0\le\varepsilon$, gives
+\[
+C\bigl(\varepsilon+|g(x)|^2+|g_v(x)|^2\bigr)^{\frac p2-1}
+\le\int_0^1(1-t)\bigl(\varepsilon+|t\,g(x)+(1-t)g_v(x)|^2\bigr)^{\frac p2-1}dt .
+\]
+Multiplying by $|\nabla w(x)|^2\ge0$, integrating over $B_R$ and combining with
+(4.2),
+\[
+\int_{B_R}\bigl(\varepsilon+|\nabla u|^2+|\nabla v|^2\bigr)^{\frac p2-1}
+|\nabla w|^2\,dx
+\le\frac1{\nu_0C}\bigl\{F^0(u;B_R)-F^0(v;B_R)\bigr\} ,
+\tag{4.3}
+\]
+which is the thesis' (4.5) of the thesis.  This is the step the thesis calls
+``elementary'' at l.~1102--1105 and whose constant it calls $C(p)$; it is
+\noderef{MidpointGradientWeightBound} and nothing else is used from it.
+
+\medskip
+\noindent\emph{Step 5: minimality against the comparison map.}
+
+\emph{Claim.}
+\[
+\int_{B_R}\mathrm{fdens}\;x\;(u(x))\;(g(x))\,dx
+\ \le\ \int_{B_R}\mathrm{fdens}\;x\;(v(x))\;(g_v(x))\,dx .
+\tag{5.1}
+\]
+
+\emph{Proof of the claim.}  As in Step 3 this is a limit, not an instance: the
+test class of \noderef{IsLocalMinimumOn} is $W^{1,p}(\Omega)$ with compact
+support in $\Omega$, while clause (3) of \noderef{FrozenComparisonOn} puts
+$v-u$ in $W^{1,p}_0(B_R)$ (\noderef{MemW1pZeroOn}), which supplies no compact
+support --- only an approximating sequence.  That passage to the limit is
+\noderef{LocalMinimumZeroTest}, applied with the present
+$n,p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$, with $\Omega$ in the role of
+its $\Omega$, with $B_R$ in the role of its $B$, with $\mathrm{fdens}$ and
+$\sigma$ in the roles of its $f$ and $\sigma$, and with $u,v,g,g_v$ in the
+roles of its $u,v,g,g_v$.  Its hypotheses are the following.
+\begin{itemize}
+\item $n\ge1$, which follows from $n\ge2$; $p>1$; $0\le\varepsilon\le1$; and
+  $0<\lambda\le\Lambda$.  All four are hypotheses of the present lemma.
+\item $\Omega$ is open and $B_R$ is open; $B_R\subseteq\Omega$, because
+  $\overline B_R\subseteq\Omega$ is a hypothesis of the clause being proved and
+  $B_R\subseteq\overline B_R$; and $|B_R|<\infty$ (Preamble: the volume of a
+  ball).
+\item $\mathrm{fdens}$ satisfies (F1) of the thesis--(F3) of the thesis on $\Omega$ with
+  the parameters $p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$ and the modulus
+  $\sigma$ (\noderef{VariationalStructureF123}); this is a hypothesis of the
+  clause being proved.
+\item $u\in L^p(B_R)$ and $g\in L^p(B_R)$.  Both follow from
+  $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}), a
+  hypothesis of the clause, whose second and third clauses put $u$ and $g$ in
+  $L^p(\Omega)$; restricting the measure to the subset $B_R$ preserves $L^p$
+  membership.
+\item $u$ is a local minimum for $F$ in $\Omega$ with weak gradient $g$
+  (\noderef{IsLocalMinimumOn}); this is a hypothesis of the clause being
+  proved.
+\item $v-u$ lies in $W^{1,p}_0(B_R)$ with weak gradient $g_v-g$
+  (\noderef{MemW1pZeroOn}); this is clause (3) of
+  \noderef{FrozenComparisonOn}, which is a hypothesis of the clause being
+  proved.
+\end{itemize}
+Its conclusion is exactly (5.1).  \emph{End of proof of the claim.}
+
+\medskip
+\noindent\emph{Step 6: from \textup{(4.5)} to \textup{(4.8)}.}
+
+\emph{(6o) A split that keeps clause \textup{(A)}'s quantifier order honest.}
+Clause (A) binds $\sigma_2$ and $R_1$ \emph{before} the inner block, and two
+different things it needs live only inside that block.  The first is
+$\mathrm{CitedHolderOscillationMinimum}\;n\;p$, out of which (6c-ii) below
+manufactures $\alpha$ and $d_\ast$, and every one of
+$\sigma_0,\sigma_1,\sigma_2,R_0,R_1$ is a function of those.  The second is
+\emph{the four properties of $\sigma$}: clause (A) binds $\sigma$ as a bare
+function $\R\to\R$ with no property attached, and that $\sigma$ is bounded,
+continuous and increasing with $\sigma(0)=0$ is asserted only by
+(F3) of the thesis, that is only by the hypothesis
+$\mathrm{VariationalStructureF123}\;n\;p\;\varepsilon\;\lambda\;\Lambda\;a\;
+\nu_0\;\nu_1\;\Omega\;\mathrm{fdens}\;\sigma$ inside the block.  Both are
+needed before $\sigma_2$ and $R_1$ are chosen --- the moduli $\sigma_0,\sigma_1$
+of (6e) are built from $\sigma$ and the threshold $R_1$ is chosen by continuity
+of $\sigma_1$ at $0$ --- so both must be decided first.
+
+Both are decidable there, because both are propositions in quantities already
+bound: $\mathrm{CitedHolderOscillationMinimum}\;n\;p$
+(\noderef{CitedHolderOscillationMinimum}) mentions only $n$ and $p$, all its
+remaining parameters being universally quantified inside it, and the four
+properties mention only $\sigma$, which clause (A) binds above $\sigma_2$ and
+$R_1$.  So we decide the conjunction
+\[
+\mathcal P:\quad\bigl(\sigma\ \text{continuous, increasing},\ \sigma(0)=0,\
+\exists C_\sigma\ \forall t\ \sigma(t)\le C_\sigma\bigr)\ \wedge\
+\mathrm{CitedHolderOscillationMinimum}\;n\;p
+\]
+and argue by cases.
+
+If $\mathcal P$ \emph{fails}, the inner implication of clause (A) has a false
+hypothesis and is therefore satisfied by any choice; we take $\sigma_2\equiv0$
+and $R_1=1$.  These meet the five demands the statement makes on them:
+$R_1=1>0$; $\sigma_2$ is bounded (by $0$), continuous, nondecreasing and
+nonnegative on all of $\R$; and $\sigma_2(0)=0$.  To see that the hypothesis is
+indeed false, suppose the inner block's hypotheses hold.  Then
+$\mathrm{CitedHolderOscillationMinimum}\;n\;p$ is one of them, and the four
+properties of $\sigma$ are the four clauses \texttt{sigmacont},
+\texttt{sigmamono}, \texttt{sigmazero} and \texttt{sigmabdd} of
+\noderef{VariationalStructureF123}, which is another; so $\mathcal P$ holds,
+contradicting the branch.  Nothing further is needed in this branch, and no
+dependence list is affected, $0$ and $1$ depending on nothing at all.
+
+If $\mathcal P$ \emph{holds}, we fix it once here and run the rest of Step 6 ---
+in particular (6c-ii) and (6e) --- inside this branch.  All of
+$\alpha,d_\ast,R_0,C_1,\sigma_0,\sigma_1,\sigma_2,R_1$ are then produced under
+it, and their dependence lists are exactly as recorded below: neither half of
+$\mathcal P$ contributes a new quantity, the first being a property of the
+already-bound $\sigma$ and the second a proposition in $n$ and $p$ alone.
+\emph{This is the same device the lemma block uses for
+\noderef{CitedSobolevPoincareBall} and \noderef{CitedDirichletHolder}, and it is
+needed here rather than there}: those two really are at the head, whereas (C4)
+and (F3) are not.  Clause (B) does not need the (C4) half, because it assumes
+the H\"older datum instead of deriving it, and (6c-iii) records that; but it
+\emph{does} need the four properties of $\sigma$, which it binds just as bare as
+clause (A) does, and the corresponding split is made there at the point where
+its radius threshold is chosen.
+
+\textbf{(6c) The H\"older datum for $U$.}  We produce $\alpha\in(0,1]$, $R_0>0$
+and $C_1\ge0$, depending only on the quantities the statement allows, with
+\[
+|U(x)-U(x_0)|\le C_1R^{\alpha}\qquad(x\in\overline B_R,\ 0<R\le R_0).
+\tag{6.3}
+\]
+
+\emph{(6c-ii) In clause \textup{(A)}.}  Apply
+\noderef{MinimumHolderDatumOnBall} with the present
+$n,p,\lambda,\Lambda,a,M$ and $d$.  Its hypotheses on those parameters are
+$n\ge1$, which follows from $n\ge2$; $p>1$; $0<\lambda\le\Lambda$; $a>0$;
+$M\ge0$; and $d>0$ --- all hypotheses of the present lemma --- together with
+\noderef{CitedHolderOscillationMinimum}, which is a hypothesis of the clause
+being proved and is available here because we are inside the branch of (6o) in
+which it holds.  It produces $\alpha\in(0,1]$, $R_0>0$ and $C_1\ge0$ depending
+only on $n,p,\lambda,\Lambda,a,M$ and $d$, and bound \emph{before}
+$\varepsilon$ and before all the data; that is exactly the dependence the
+statement's quantifier order demands of $\sigma_2$ and $R_1$ further down, and
+it is why the cited node binds them where it does.
+
+\emph{The subscript on the cited node's own produced constant is not
+decoration.}  Part (a) of (C4) names it $d$, while $d$ in this lemma is the
+domain distance $d(\Omega',\partial\Omega)$ bound in the statement; the two are
+unrelated, and in particular no inequality between them is available.  The
+cited node resolves this by taking our $d$ as a parameter in its own right and
+writing its (C4) constant $d_\ast$; nothing of that constant escapes into the
+present proof, $\alpha$, $R_0$ and $C_1$ being all that the node returns.
+
+Its remaining hypotheses, at the data of the clause being proved, are the
+following: $0\le\varepsilon\le1$; $\Omega$ open; the separation
+$d\le|x-y|$ for every $x\in\Omega'$ and every $y\notin\Omega$, which is the
+clause's own hypothesis; $x_0\in\Omega'$, also the clause's own;
+$\mathrm{VariationalGrowthF1}\;n\;p\;\varepsilon\;\lambda\;\Lambda\;a\;
+\Omega\;\mathrm{fdens}$ (\noderef{VariationalGrowthF1}), whose three clauses
+\texttt{meas\_x}, \texttt{cont\_zh} and \texttt{F1} are the identically named
+clauses of \noderef{VariationalStructureF123}, a hypothesis of the present
+lemma; $\mathrm{IsLocalMinimumOn}\;n\;p\;\Omega\;\mathrm{fdens}\;u\;g$
+(\noderef{IsLocalMinimumOn}), a hypothesis of the clause; $|u|\le M$ almost
+everywhere on $\Omega$, a hypothesis of the clause; $0<R\le R_0$; that $U$ is
+continuous on $\overline B_R$, which is clause (4) of
+\noderef{FrozenComparisonOn}; and that $U=u$ at every point of $B_R$, which is
+clause (5).  Its conclusion is
+$|U(x)-U(x_0)|\le C_1R^{\alpha}$ for every $x\in\overline B_R$, which is
+(6.3).
+
+\emph{(6c-iii) In clause \textup{(B)}.}  There (6.3) is immediate from the
+clause's own hypothesis $|U(x)-U(y)|\le C_1\,\mathrm{dist}(x,y)^{\alpha}$ on
+$\overline B_R$, taken at $y=x_0$ and bounded by $C_1R^{\alpha}$ since
+$\mathrm{dist}(x,x_0)\le R$ and $\alpha>0$; the $\alpha$ and $C_1$ are then the
+clause's own, and $R_0=1$ serves.
+
+\textbf{(6d) The comparison bound for $v$.}  We claim
+\[
+|v(x)-U(x_0)|\le C_1R^{\alpha}\qquad\text{for a.e.\ }x\in B_R .
+\tag{6.4}
+\]
+This is the thesis' $|u(x_0)-v(x)|\le2C_1R^{\alpha}$ at l.~1137--1139, which the
+thesis deduces from (4.3) of the thesis, $\operatorname*{osc}_{B_R}v\le
+\operatorname*{osc}_{B_R}u$.  We do \emph{not} go through (4.3) of the thesis: that
+statement is a clause of \noderef{DirichletProblemRestricted} about the solution
+\emph{that node produces}, and identifying $v$ with it would require
+$\mathrm{ContDiffOn}\;\R\;1\;v$ on $B_R$ and
+$\mathrm{MemHolderOn}\;n\;\beta\;(\overline B_R)\;V$, which that node's
+uniqueness clause demands and which \noderef{FrozenComparisonOn} does not
+supply --- and which cannot be recovered from
+\noderef{CitedDirichletHolder} either, since that node also states its
+regularity only of \emph{its own} solution, so the identification would be
+circular.  Instead we compare $v$ directly with constants, which is what the
+bound actually needs; that comparison is \noderef{BallSolutionConstantBounds},
+which also absorbs the normalisation $A^0\mapsto A^0-A^0(0)$ that the cited
+comparison principle needs.
+
+Put
+\[
+M_\pm=U(x_0)\pm C_1R^{\alpha}
+\]
+and apply \noderef{BallSolutionConstantBounds} with the present
+$n,p,\varepsilon$, with $\gamma_0=\nu_0$ and $\gamma_1=\nu_1$, with $A^0$ in the
+role of its $A$, with $x_0$ and $R$ in the roles of its $x_0$ and $R$, with
+$v$, $V$ and $g_v$ in the roles of its $v$, $V$ and $g_v$, and with $m=M_-$ and
+$M=M_+$.  Its hypotheses are the following.
+\begin{itemize}
+\item $n\ge2$, $p>1$, $\varepsilon\ge0$, $\nu_0>0$ and $\nu_0\le\nu_1$, the
+  last from $\nu_0<\nu_1$.  All are hypotheses of the present lemma.
+\item The Sobolev--Poincar\'e inequality on balls in dimension $n$
+  (\noderef{CitedSobolevPoincareBall}), a hypothesis of the present lemma.
+\item $R>0$, a hypothesis of the clause being proved.
+\item $\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\nu_0\;\nu_1\;\R^n\;
+  \bigl((x,z,h)\mapsto A^0(h)-A^0(0)\bigr)$.  This is (1c) of Step 1 verbatim:
+  the cited node asks for the bundle on the \emph{normalised} field, which is
+  exactly the field (1c) produces, so no transfer is needed.
+\item $v$ is a weak solution of $\operatorname{div}A^0(\nabla v)=0$ in $B_R$
+  with weak gradient $g_v$, for the field $(x,z,h)\mapsto A^0(h)$ and the
+  right-hand side $0$ (\noderef{IsWeakSolutionOn}); this is clause (1) of
+  \noderef{FrozenComparisonOn}.  And $v\in W^{1,p}(B_R)$ with that same weak
+  gradient (\noderef{MemW1pOn}); this is clause (2).
+\item $V$ is continuous on $\overline B_R$, which is clause (6) of
+  \noderef{FrozenComparisonOn}, and $V=v$ at every point of $B_R$, which is
+  clause (7).
+\item $M_-\le V(x)\le M_+$ for every $x\in\partial B_R$.  By clause (8) of
+  \noderef{FrozenComparisonOn} we have $V=U$ on $\partial B_R$; the sphere is
+  contained in $\overline B_R$, so (6.3) applies there and gives
+  $|U(x)-U(x_0)|\le C_1R^{\alpha}$, that is $M_-\le U(x)\le M_+$.
+\end{itemize}
+Its conclusion is $M_-\le v(x)\le M_+$ for almost every $x\in B_R$, which is
+(6.4).
+
+\emph{Two remarks.}  First, (6.4) is \emph{stronger} than the thesis'
+$2C_1R^{\alpha}$; we keep the thesis' constant below, since $\sigma$ is
+nondecreasing and $C_1R^{\alpha}\le2C_1R^{\alpha}$, so that the coefficients of
+(4.7) come out exactly as printed.  Second, (6.4) is an almost-everywhere
+statement rather than a pointwise one, which is all that is used: it enters only
+through the second of the two freezing errors bounded in (6e), where the
+integrand is modified on a null set.
+
+\textbf{(6e) \textup{(4.7)} and \textup{(4.8)}: the two freezing errors.}
+Apply \noderef{FrozenFreezingErrorBound} with the present $n$ and $p$, with the
+$\alpha$ and $C_1$ produced in (6c), with $K=\frac1{\nu_0C}$, with a bound
+$C_\sigma$ for $\sigma$ and with the present $\sigma$.  Its hypotheses on those
+parameters are: $n\ge1$, which follows from $n\ge2$; $p>1$;
+$0<\alpha\le1$ and $C_1\ge0$, both from (6c); $K>0$, because $\nu_0>0$ and
+$C>0$; and that $\sigma$ is continuous, nondecreasing, satisfies $\sigma(0)=0$
+and is bounded above by $C_\sigma$ --- these four are the clauses
+\texttt{sigmacont}, \texttt{sigmamono}, \texttt{sigmazero} and
+\texttt{sigmabdd} of \noderef{VariationalStructureF123}, a hypothesis of the
+present lemma.  It produces a constant $C_2>0$ and functions
+$\sigma_0,\sigma_1\colon\R\to\R$ with
+\[
+\sigma_0(t)=\frac{\sigma(t+C_1t^{\alpha})+C_2\,\sigma(t+2C_1t^{\alpha})}{\nu_0C},
+\qquad
+\sigma_1(t)=\frac{C_2\,\sigma(t+2C_1t^{\alpha})}{\nu_0C}
+\qquad(t>0),
+\]
+which are nonnegative, bounded above by one common constant, continuous and
+nondecreasing on all of $\R$, with $\sigma_0(0)=\sigma_1(0)=0$, and which are
+functions of $\alpha,C_1,K$ and $\sigma$ alone --- in particular not of
+$\varepsilon$ nor of any of the data, so that they depend only on
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,M,d$ and $\sigma$, which is the dependence
+the statement prescribes for $\sigma_2$ and $R_1$ below.
+
+Its remaining hypotheses, at the data of the clause being proved, with the
+present $\varepsilon$, with $z_0=U(x_0)$, with the centre $x_0$, with any
+$R$ satisfying $0<R\le R_0$, with $\mathrm{fdens}$ in the role of its $f$, with
+$f^0$ in the role of its $f^0$, with $u,v$ and with $g,g_v$, are the following.
+\begin{itemize}
+\item $g\in L^p(B_R)$ and $g_v\in L^p(B_R)$: the first because
+  $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}) puts
+  $g\in L^p(\Omega)$ and $B_R\subseteq\Omega$, the second by clause (2) of
+  \noderef{FrozenComparisonOn}.
+\item The four integrability facts, for $f^0(g)$, $f^0(g_v)$,
+  $\mathrm{fdens}\;x\;(u(x))\;(g(x))$ and
+  $\mathrm{fdens}\;x\;(v(x))\;(g_v(x))$ on $B_R$.  Only the first two are
+  among those established in (4a); the two with $\mathrm{fdens}$ are new here
+  and are supplied now.  All four share one majorant and differ only in their
+  measurability.  The majorant: for every $x\in\Omega$, every $z$ and every
+  $h$, clause \texttt{F1} of \noderef{VariationalStructureF123} gives
+  $-a+\lambda(\varepsilon+|h|^2)^{p/2}\le\mathrm{fdens}\;x\;z\;h\le
+  \Lambda(\varepsilon+|h|^2)^{p/2}+a$, and both weighted terms are nonnegative
+  because $0<\lambda\le\Lambda$, so
+  $|\mathrm{fdens}\;x\;z\;h|\le\Lambda(1+|h|^2)^{p/2}+a$, using
+  $\varepsilon\le1$ and the monotonicity of $t\mapsto t^{p/2}$; the same bound
+  holds for $f^0(h)=\mathrm{fdens}\;x_0\;(U(x_0))\;h$, which is the case
+  $x=x_0$, legitimate because $x_0\in\Omega$ (Step 1).  That majorant is
+  integrable on $B_R$: the constant $1$ lies in $L^p(B_R)$ because
+  $|B_R|<\infty$ (Preamble: the volume of a ball), so $1+|h|\in L^p(B_R)$ for
+  $h\in\{g,g_v\}$ and hence $(1+|h|)^p\in L^1(B_R)$, while
+  $(1+|h|^2)^{p/2}\le(1+|h|)^p$ pointwise because $1+s^2\le(1+s)^2$ for
+  $s\ge0$.  The measurability: for $f^0(g)$ and $f^0(g_v)$, the map $f^0$ is
+  continuous, being $C^1$ by (1b), so the composition with an almost
+  everywhere strongly measurable field is almost everywhere strongly
+  measurable.  For the two with $\mathrm{fdens}$ this is not available, since
+  $\mathrm{fdens}$ is only a Carath\'eodory function, and the argument is the
+  following.  Clause \texttt{measx} of \noderef{VariationalStructureF123}
+  makes $x\mapsto\mathrm{fdens}\;x\;z\;h$ measurable for each fixed $(z,h)$,
+  and clause \texttt{contzh} makes $(z,h)\mapsto\mathrm{fdens}\;x\;z\;h$
+  continuous for each fixed $x$; since $\R\times\R^n$ is a second countable
+  metrisable space, the map $(z,h,x)\mapsto\mathrm{fdens}\;x\;z\;h$ is jointly
+  measurable.  Replacing $u$ and $g$ by strongly measurable representatives,
+  which changes $x\mapsto\mathrm{fdens}\;x\;(u(x))\;(g(x))$ only on a null set,
+  and composing that jointly measurable map with the measurable
+  $x\mapsto(u(x),g(x),x)$, gives the measurability of
+  $x\mapsto\mathrm{fdens}\;x\;(u(x))\;(g(x))$; the same with $(v,g_v)$.  By
+  domination (Preamble) all four are integrable on $B_R$.
+\item The modulus bound: for every $x\in B_R$, every $z\in\R$ and every $h$,
+  \[
+  \bigl|\mathrm{fdens}\;x\;z\;h-f^0(h)\bigr|
+  \le(1+|h|^2)^{\frac p2}\,\sigma\bigl(|x-x_0|+|z-U(x_0)|\bigr).
+  \]
+  This is clause \texttt{F3} of \noderef{VariationalStructureF123} at the two
+  points $x$ and $x_0$ and the two values $z$ and $U(x_0)$ --- legitimate
+  because $x\in B_R\subseteq\Omega$ and $x_0\in\Omega$ (Step 1) --- together
+  with $f^0(h)=\mathrm{fdens}\;x_0\;(U(x_0))\;h$, which is how $f^0$ was
+  defined at the head of the proof.
+\item $|u(x)-U(x_0)|\le C_1R^{\alpha}$ for a.e.\ $x\in B_R$: by clause (5) of
+  \noderef{FrozenComparisonOn} we have $U=u$ at every point of $B_R$, so this
+  is (6.3) restricted to $B_R\subseteq\overline B_R$.  And
+  $|v(x)-U(x_0)|\le C_1R^{\alpha}$ for a.e.\ $x\in B_R$: this is (6.4).
+\item $\int_{B_R}\mathrm{fdens}\;x\;(u(x))\;(g(x))\,dx\le\int_{B_R}
+  \mathrm{fdens}\;x\;(v(x))\;(g_v(x))\,dx$: this is (5.1) of Step 5.
+\item $\int_{B_R}(\varepsilon+|\nabla u|^2+|\nabla v|^2)^{p/2-1}|\nabla w|^2dx
+  \le K\bigl\{F^0(u;B_R)-F^0(v;B_R)\bigr\}$ with $K=\frac1{\nu_0C}$: this is
+  (4.3) of Step 4, since $F^0(u;B_R)=\int_{B_R}f^0(g)$ and
+  $F^0(v;B_R)=\int_{B_R}f^0(g_v)$ and $\nabla w=g-g_v$.
+\end{itemize}
+Its conclusion is
+\[
+\int_{B_R}\bigl(\varepsilon+|\nabla u|^2+|\nabla v|^2\bigr)^{\frac p2-1}
+|\nabla w|^2dx
+\le\sigma_0(R)\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
++\sigma_1(R)\int_{B_R}|\nabla w|^p\,dx
+\tag{4.8}
+\]
+for $0<R\le R_0$, which is the thesis' (4.8) of the thesis and the hypothesis (H)
+that the absorption step below consumes.  Of the cited node's output, the
+absorption step uses only the five properties of $\sigma_0$ and $\sigma_1$
+listed above; the two displayed formulas are used only by clause (B), where the
+same node is applied again with $\alpha_\flat$ in place of $\alpha$.
+
+From (4.8) of the thesis the conclusion follows by the absorption step
+\noderef{WeightedRemainderAbsorption}, which is where the thesis' two-regime
+argument now lives, and which the thesis proves once for both lemmas.  Apply it
+with the parameter $p$ --- its only hypothesis before the constants is $1<p$,
+which is the present one --- and let $b_0>0$ and $c>0$ be the threshold and the
+constant it produces, both depending only on $p$.  We exhibit $R_1$.  Since
+$\sigma_1$ is continuous at $0$ with $\sigma_1(0)=0<b_0$, the set
+$\{t:\sigma_1(t)<b_0\}$ contains a neighbourhood of $0$, hence contains some
+$\eta>0$; put $R_1=\min\{R_0,\eta\}>0$, which is positive because $R_0>0$ and
+$\eta>0$.  Then $\sigma_1(R_1)\le\sigma_1(\eta)\le b_0$ because $\sigma_1$ is
+nondecreasing and $R_1\le\eta$.  \emph{The four properties of $\sigma$ used
+here are available because we are inside the branch of \textup{(6o)} in which
+$\mathcal P$ holds, which is exactly why that split was widened.}  For
+$x_0\in\Omega'$ and $0<R\le R_1$,
+instantiate the node with the dimension $n$, the present $\varepsilon$, with
+$\sigma_0(R)$ in the role of its $a$ and $\sigma_1(R)$ in the role of its $b$,
+with the ball $B_R(x_0)$ in the role of its $B$, and with $G=\nabla u=g$ and
+$G_v=g_v$.  Its hypotheses hold: $0\le\varepsilon\le1$; $0\le\sigma_0(R)$ and
+$0\le\sigma_1(R)\le\sigma_1(R_1)\le b_0$, the middle inequality because
+$\sigma_1$ is increasing and $R\le R_1$; the ball is measurable with
+$|B_R(x_0)|<\infty$; the three memberships
+$|g|,|g_v|,|g-g_v|\in L^p(B_R(x_0))$ hold, the first by \noderef{MemW1pOn} on
+$\Omega$ restricted to the ball, the second by the clause of
+\noderef{FrozenComparisonOn} putting $v\in W^{1,p}(B_R(x_0))$ with weak
+gradient $g_v$ (\noderef{MemW1pOn}), and the third by the first clause of
+\noderef{MemW1pZeroOn} in the clause of \noderef{FrozenComparisonOn} that puts
+$v-u\in W^{1,p}_0(B_R(x_0))$ with weak gradient $g_v-g$; and its hypothesis (H)
+is (4.8) of the thesis.  Its conclusion is
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\ \le\
+c\bigl(\sigma_0(R)+\sigma_0(R)^{\frac p2}+\sigma_1(R)^{\frac p2}\bigr)
+\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx ,
+\]
+so the lemma holds with
+\[
+\sigma_2(t)=c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}+\sigma_1(t)^{\frac p2}\bigr),
+\]
+and we verify its four properties, writing $C_b$ for a common bound of
+$\sigma_0$ and $\sigma_1$, which the cited node of (6e) supplies, and noting
+$C_b\ge\sigma_0(0)=0$.  \emph{Nonnegativity}: $\sigma_0,\sigma_1\ge0$ and
+$c>0$, and a real power of a nonnegative number is nonnegative.
+\emph{Boundedness}: $\sigma_2\le c(C_b+C_b^{p/2}+C_b^{p/2})$, because
+$t\mapsto t^{p/2}$ is nondecreasing on $[0,\infty)$ and $p/2>0$.
+\emph{Continuity}: $\sigma_0$ and $\sigma_1$ are continuous, and
+$t\mapsto t^{p/2}$ is continuous on $\R$ for the exponent $p/2>0$, so each
+summand is continuous and so is the constant multiple.
+\emph{Monotonicity}: for $s\le t$ we get $\sigma_j(s)\le\sigma_j(t)$ and hence
+$\sigma_j(s)^{p/2}\le\sigma_j(t)^{p/2}$, again because $t\mapsto t^{p/2}$ is
+nondecreasing on $[0,\infty)$ and $\sigma_j\ge0$; multiplying by $c>0$
+preserves the inequality.  \emph{Value at $0$}: $\sigma_0(0)=\sigma_1(0)=0$ and
+$0^{p/2}=0$ since $p/2\ne0$, so $\sigma_2(0)=0$.  The
+single formula the thesis displays at the end of its two-regime argument is the
+$1<p<2$ branch only and is false for $p>2$; that is reported and repaired
+inside \noderef{WeightedRemainderAbsorption}, which also adjudicates the
+thesis' own \texttt{CHECK} on
+$|\nabla w|^p\le(\varepsilon+|\nabla u|^2+|\nabla v|^2)^{p/2}$, costing a
+factor $2^{p/2}$.
+
+The quantities $\sigma_2$ and $R_1$ depend only on
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,M,d$ and $\sigma$, because $\sigma_0$,
+$\sigma_1$ and $R_0$ do and because $c$ and $b_0$ depend only on $p$.
+
+That completes clause (A).
+
+What remains is clause (B), the decay rate (4.17) of the thesis.  \emph{Notation for
+this part.}  Clause (B) binds its own H\"older exponent, which the statement
+calls $\alpha$; to keep it visibly distinct from the exponent (6c-ii)
+manufactured out of (C4), we write it $\alpha_\flat$ throughout the rest of the
+proof, so that $0<\alpha_\flat\le1$ and the clause's datum reads
+$|U(x)-U(y)|\le C_1|x-y|^{\alpha_\flat}$ on $\overline B_R$.  This matters
+because the two exponents produce \emph{different} moduli: $\sigma_0,\sigma_1$
+and hence $\sigma_2$ are built from $\alpha$ and $C_1$ in clause (A) and from
+$\alpha_\flat$ and clause (B)'s own $C_1$ here, so they are different functions
+and the thresholds chosen for them are different numbers.
+
+\emph{(B0) The same split, for $\sigma$ alone.}  Clause (B) binds $\sigma$ as a
+bare function $\R\to\R$ at the head of its block, before the threshold $R_1'$,
+and its four properties are again asserted only by (F3) of the thesis inside the
+inner block.  They are needed before $R_1'$ is chosen, for the same two reasons
+as in clause (A): the moduli $\sigma_0^{\flat},\sigma_1^{\flat}$ are built from
+$\sigma$, and the threshold is chosen by continuity of $\sigma_1^{\flat}$ at
+$0$.  So we decide
+\[
+\mathcal P_\sigma:\quad\sigma\ \text{continuous, increasing},\ \sigma(0)=0,\
+\exists C_\sigma\ \forall t\ \sigma(t)\le C_\sigma
+\]
+before choosing $R_1'$, which is legitimate because $\mathcal P_\sigma$
+mentions only the already-bound $\sigma$.  If it fails, the inner implication
+has a false hypothesis --- the four properties are the four clauses
+\texttt{sigmacont}, \texttt{sigmamono}, \texttt{sigmazero} and
+\texttt{sigmabdd} of \noderef{VariationalStructureF123}, which the block
+assumes --- and $R_1'=1$ serves, nothing further being needed and no dependence
+list being affected.  The rest of clause (B) runs inside the branch where
+$\mathcal P_\sigma$ holds.  \emph{The (C4) half of (6o) is not needed here},
+because clause (B) assumes the H\"older datum rather than deriving it; that is
+what (6c-iii) records, and it is the only half of (6o) that clause (B) can do
+without.  Note also that $\delta'$, chosen in (B3) below, needs \emph{neither}
+half: it depends only on $n,p,\lambda,\Lambda,a,\nu_0,\nu_1,\alpha_\flat$ and
+$\delta$, and is bound before $M$, $d$ and $\sigma$ are in scope at all, so the
+split is made at the $R_1'$ choice and not at the $\delta'$ choice.
+
+Clause (B) carries every hypothesis clause (A) carries, with the H\"older datum
+adjoined, so Steps 1--5 and the derivation of
+(4.8) of the thesis in (6e) all run verbatim, with (6c-iii) supplying (6.3) in place
+of (6c-ii) and with $R_0=1$.  Concretely, apply
+\noderef{FrozenFreezingErrorBound} again, this time with $\alpha_\flat$ in the
+role of its $\alpha$ and with clause (B)'s own $C_1$, every other argument
+being the one (6e) supplies; write $C_2$ for the constant it returns and
+\[
+\sigma_0^{\flat}(t)
+=\frac{\sigma(t+C_1t^{\alpha_\flat})+C_2\,\sigma(t+2C_1t^{\alpha_\flat})}{\nu_0C},
+\qquad
+\sigma_1^{\flat}(t)=\frac{C_2\,\sigma(t+2C_1t^{\alpha_\flat})}{\nu_0C}
+\]
+for $t>0$ and $0$ for $t\le0$: these are the two functions that application
+returns, by the two formulas in the cited node's conclusion, and that node also
+returns their nonnegativity, their common bound, their continuity and
+monotonicity on $\R$ and their vanishing at $0$.  So, for $0<R\le1$,
+\[
+\int_{B_R}\bigl(\varepsilon+|\nabla u|^2+|\nabla v|^2\bigr)^{\frac p2-1}
+|\nabla w|^2dx
+\le\sigma_0^{\flat}(R)\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
++\sigma_1^{\flat}(R)\int_{B_R}|\nabla w|^p\,dx ,
+\tag{4.8B}
+\]
+which is (4.8) of the thesis with the two $\flat$ moduli.
+
+\emph{(B1) The two moduli decay at a rate the data fix.}  In (B) the H\"older
+datum is a hypothesis rather than a consequence of (C4), so
+$\operatorname*{osc}_{B_R}u\le C_1(2R)^{\alpha_\flat}$ directly: $U=u$ on
+$B_R(x_0)$ by clause (5) of \noderef{FrozenComparisonOn}, and
+$|U(x)-U(y)|\le C_1|x-y|^{\alpha_\flat}$ on $\overline B_R(x_0)$ with
+$|x-y|\le2R$.  The arguments of $\sigma$ in $\sigma_0^{\flat},\sigma_1^{\flat}$
+are $R+C_1R^{\alpha_\flat}$ and $R+2C_1R^{\alpha_\flat}$, exactly as the thesis
+prints them for the \S5 analogue at l.~1524--1528, so the hypothesis
+(F4) of the thesis of the clause --- $\sigma(t)\le c_\sigma t^{\delta}$ for $t\ge0$
+--- gives, for $0<R\le1$,
+\[
+\sigma\bigl(R+2C_1R^{\alpha_\flat}\bigr)
+\le c_\sigma\bigl(R+2C_1R^{\alpha_\flat}\bigr)^{\delta}
+\le c_\sigma2^{\delta}\bigl(R^{\delta}
++(2C_1)^{\delta}R^{\alpha_\flat\delta}\bigr)
+\le K_0R^{\alpha_\flat\delta} ,
+\]
+using $(x+y)^{\delta}\le2^{\delta}(x^{\delta}+y^{\delta})$ for $x,y\ge0$, then
+$\alpha_\flat\le1$ with $R\le1$ to replace $R^{\delta}$ by
+$R^{\alpha_\flat\delta}$, and the same bound with $C_1$ for $2C_1$ a fortiori;
+so $K_0=c_\sigma2^{\delta}\bigl(1+(2C_1)^{\delta}\bigr)$ serves.  Dividing by
+$\nu_0C$ and adding the two terms of $\sigma_0^{\flat}$, with
+$K_1=(1+C_2)K_0/(\nu_0C)$,
+\[
+\sigma_0^{\flat}(R)\le K_1R^{\alpha_\flat\min\{\delta,1\}},
+\qquad
+\sigma_1^{\flat}(R)\le K_1R^{\alpha_\flat\delta}
+\qquad(0<R\le1) ;
+\]
+the second is the display above divided by $\nu_0C$, and the first is that same
+bound weakened by $R^{\alpha_\flat\delta}\le R^{\alpha_\flat\min\{\delta,1\}}$,
+which holds because $\min\{\delta,1\}\le\delta$ and $R\le1$.  Here $K_0,K_1$ are
+built from
+$n,p,\lambda,\Lambda,a,\nu_0,\nu_1,c_\sigma,C_1,M,d$ and $\sigma$.  Note the
+exponents involve only $\alpha_\flat$ and $\delta$; every dependence on $M$, $d$
+and $c_\sigma$ sits in $K_1$.
+
+\emph{(B2) The absorption, re-run in this branch.}  Apply
+\noderef{WeightedRemainderAbsorption} with the parameter $p$ --- its only
+hypothesis before the constants is $1<p$ --- and let $b_0>0$ and $c>0$ be the
+threshold and the constant it produces, both depending only on $p$.  These are
+the same two numbers clause (A) used, since they depend on $p$ alone; the
+\emph{threshold radius} is not, and must be chosen for
+$\sigma_1^{\flat}$ rather than for clause (A)'s $\sigma_1$.  Choose
+\[
+R_1''\in(0,1]\quad\text{with}\quad\sigma_1^{\flat}(R_1'')\le b_0 ,
+\]
+which is possible because $\sigma_1^{\flat}$ is continuous and nondecreasing on
+$[0,\infty)$ with $\sigma_1^{\flat}(0)=0$ --- all three supplied by the cited
+node of (6e), and available here because we are inside the branch of (B0) in
+which $\mathcal P_\sigma$ holds: continuity at $0$ gives an $\eta>0$
+with $\sigma_1^{\flat}(t)\le b_0$ for $0\le t\le\eta$, and $R_1''=\min\{\eta,1\}$
+serves, positive because $\eta>0$.  For $0<R\le R_1''$ instantiate the node exactly as in clause (A) ---
+the dimension $n$, the present $\varepsilon$, $\sigma_0^{\flat}(R)$ in the role
+of its $a$ and $\sigma_1^{\flat}(R)$ in the role of its $b$, the ball
+$B_R(x_0)$ in the role of its $B$, $G=\nabla u=g$ and $G_v=g_v$ --- the
+hypotheses being discharged by the same citations as there, since clause (B)
+carries the same data: $0\le\varepsilon\le1$; $0\le\sigma_0^{\flat}(R)$ and
+$0\le\sigma_1^{\flat}(R)\le\sigma_1^{\flat}(R_1'')\le b_0$, the middle
+inequality because $\sigma_1^{\flat}$ is nondecreasing and $R\le R_1''$; the
+ball measurable with $|B_R(x_0)|<\infty$; the three memberships
+$|g|,|g_v|,|g-g_v|\in L^p(B_R(x_0))$ by \noderef{MemW1pOn} and by the clauses of
+\noderef{FrozenComparisonOn} and \noderef{MemW1pZeroOn} cited in clause (A);
+and its hypothesis (H), which is (4.8B).  Its conclusion is
+\[
+\int_{B_R(x_0)}|\nabla w|^p\,dx\ \le\ \sigma_2^{\flat}(R)
+\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx
+\qquad(0<R\le R_1''),
+\tag{4.9B}
+\]
+with
+\[
+\sigma_2^{\flat}(t)=c\bigl(\sigma_0^{\flat}(t)+\sigma_0^{\flat}(t)^{\frac p2}
++\sigma_1^{\flat}(t)^{\frac p2}\bigr).
+\]
+
+\emph{The rate survives the absorption.}  Put
+\[
+\gamma=\alpha_\flat\min\{\delta,1\}\min\Bigl\{1,\frac p2\Bigr\}>0 ,
+\]
+which depends only on $p,\alpha_\flat,\delta$.  For $0<R\le1$ each of the three
+terms of $\sigma_2^{\flat}(R)$ is at most a constant times $R^{\gamma}$, by
+(B1): the exponents occurring are $\alpha_\flat\min\{\delta,1\}$,
+$\alpha_\flat\min\{\delta,1\}\frac p2$ and $\alpha_\flat\delta\frac p2$, each of
+which is at least $\gamma$, and $R\le1$ makes $R^{s}$ nonincreasing in $s$.
+Hence
+\[
+\sigma_2^{\flat}(R)\le KR^{\gamma}\qquad(0<R\le1),
+\qquad K=K(n,p,\lambda,\Lambda,a,\nu_0,\nu_1,c_\sigma,C_1,M,d,\sigma)>0 .
+\]
+
+\emph{(B3) The threshold absorbs $K$, which is what frees $\delta'$.}  Put
+\[
+\delta'=\frac\gamma2>0,
+\qquad
+R_1'=\min\bigl\{R_1'',\ 1,\ K^{-2/\gamma}\bigr\}>0 .
+\]
+For $0<R\le R_1'$ one has $KR^{\gamma}\le R^{\gamma/2}$, since
+$R^{\gamma/2}\le(K^{-2/\gamma})^{\gamma/2}=K^{-1}$.  Since $R_1'\le R_1''$, the
+radius $R$ is in the range of (4.9B), and combining the two,
+\[
+\int_{B_R}|\nabla w|^p\,dx\le\sigma_2^{\flat}(R)
+\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
+\le R^{\delta'}\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx ,
+\]
+which is (4.17) of the thesis.  Note that this cites (4.9B), the conclusion of
+the absorption \emph{in this branch}, and not clause (A)'s conclusion: clause
+(A)'s carries $\sigma_2$, built from $\alpha$, which (B1) and (B2) do not
+estimate and which would reintroduce the dependence on $M$ through (C4) that
+clause (B) exists to avoid.  The exponent $\delta'=\gamma/2$ depends only on
+$p,\alpha_\flat$ and $\delta$, and the whole dependence on $c_\sigma$, $C_1$,
+$M$, $d$ and $\sigma$ has been pushed into the threshold $R_1'$ --- which is the
+thesis' ``a radius threshold that does depend on $c$''.
+\end{proof}

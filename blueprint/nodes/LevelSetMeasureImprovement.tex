@@ -1,0 +1,196 @@
+\begin{lemma}[Lemma 2.4]
+Let $n\ge2$, $\gamma>0$, $\lambda_1\in(0,1)$, $0\le c_0<1$ and
+$\theta_1\in(0,1)$, and suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Then there exists
+$\lambda_2=\lambda_2(n,\gamma,\lambda_1,c_0,\theta_1)\in(0,1)$ with the following
+property.  Let $x_0\in\R^n$, $R>0$, let $f\in W^{1,2}(B_R(x_0))$ with weak
+gradient $g$ (\noderef{MemW1pOn}), suppose $f$ is essentially bounded above on
+$B_R(x_0)$ and put $M=\esssup_{B_R(x_0)}f$.  Suppose $k<M$, that the De Giorgi
+level bound (2.1) of the thesis with constant $\gamma$
+(\noderef{DeGiorgiLevelBound}) holds for $\rho_0=\lambda_1R$, $\rho_1=R$ and
+every level $\ell\in[k,M]$, and that
+\[
+\bigl|\{x\in B_{\lambda_1R}(x_0):f(x)>k\}\bigr|\le c_0\,|B_{\lambda_1R}| .
+\]
+Then
+\[
+\bigl|\{x\in B_{\lambda_1R}(x_0):f(x)>\lambda_2k+(1-\lambda_2)M\}\bigr|
+\le\theta_1\,|B_{\lambda_1R}| .
+\]
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constant $\beta(n)$ of \noderef{DeGiorgiLevelSetMeasure} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $\lambda_2$, it introduces no dependence of
+$\lambda_2$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+\end{lemma}
+\begin{proof}
+Write $\omega_n=|B_1|$, so $|B_\sigma|=\omega_n\sigma^n$, let $\beta(n)$ be the
+constant of \noderef{DeGiorgiLevelSetMeasure} --- available because the
+hypothesis \noderef{CitedSobolevPoincareBall} of the present lemma is exactly the
+hypothesis that node's statement requires --- and set
+\[
+C_3=\frac{\beta(n)}{(1-c_0)\,\omega_n},\qquad
+C_4=\frac{2\,C_3\sqrt{\gamma}\,\omega_n^{1/2}}{1-\lambda_1},\qquad
+C_5=\frac{\bigl(C_4^{\,2}\,\omega_n\bigr)^{\frac n{2n-2}}}{\omega_n\lambda_1^{\,n}} .
+\]
+These depend only on $n,\gamma,\lambda_1,c_0$, and $C_3$ is finite because
+$c_0<1$.  Since $\frac n{2n-2}>0$, we may choose an integer
+$s=s(n,\gamma,\lambda_1,c_0,\theta_1)\ge2$ with
+\[
+\frac{C_5}{(s-1)^{\frac n{2n-2}}}\le\theta_1 ,
+\tag{2.10a}
+\]
+and we set
+\[
+\lambda_2=2^{-s}\in(0,1) .
+\]
+Then $\lambda_2$ depends only on $n,\gamma,\lambda_1,c_0,\theta_1$, as required.
+Fix $x_0,R,k,M,f,g$ as in the statement; throughout
+$A^+_{\sigma,\rho}=\{x\in B_\rho(x_0):f(x)>\sigma\}$, and we assume
+$|A^+_{k,\lambda_1R}|\le c_0|B_{\lambda_1R}|$.
+
+\emph{Step 1: the levels and the slabs.}  For $t=1,2,\dots,s$ put
+\[
+k_t=k+\Bigl(1-\frac1{2^{t}}\Bigr)(M-k) ,
+\]
+and for $t=1,\dots,s-1$ put
+\[
+D_t=A^+_{k_t,\lambda_1R}\setminus A^+_{k_{t+1},\lambda_1R} .
+\]
+Since $M>k$ we have $k<k_1=k+\frac12(M-k)$, $k_t$ is strictly increasing in $t$,
+and $k_t<M$ for every $t$.  Moreover
+\[
+k_{t+1}-k_t=\Bigl(\frac1{2^{t}}-\frac1{2^{t+1}}\Bigr)(M-k)=\frac{M-k}{2^{t+1}},
+\qquad
+M-k_t=\frac{M-k}{2^{t}} .
+\tag{2.6a}
+\]
+The sets $D_t$, $t=1,\dots,s-1$, are pairwise disjoint and all contained in
+$A^+_{k_1,\lambda_1R}$: indeed $D_t\subseteq\{x\in B_{\lambda_1R}:k_t<f(x)\le
+k_{t+1}\}$ and the intervals $(k_t,k_{t+1}]$ are pairwise disjoint, while
+$k_t\ge k_1$ gives $D_t\subseteq A^+_{k_t,\lambda_1R}\subseteq A^+_{k_1,\lambda_1R}$.
+Consequently
+\[
+\sum_{t=1}^{s-1}|D_t|\le\bigl|A^+_{k_1,\lambda_1R}\bigr|\le|B_{\lambda_1R}|\le|B_R|
+=\omega_nR^n .
+\tag{2.6b}
+\]
+
+\emph{Step 2: the level-set estimate at each slab.}  Fix $t\in\{1,\dots,s-1\}$
+and apply \noderef{DeGiorgiLevelSetMeasure} on the ball $B_{\lambda_1R}(x_0)$ at
+the levels $k_t\le k_{t+1}$.  Its hypotheses hold: $\lambda_1R>0$;
+$f\in W^{1,1}(B_{\lambda_1R})$ with weak gradient $g$, because
+$f\in W^{1,2}(B_R)$ with weak gradient $g$ (\noderef{MemW1pOn}),
+$B_{\lambda_1R}\subseteq B_R$ has finite measure, so H\"older's inequality turns
+the $L^2$ bounds on $f$ and $|g|$ into $L^1$ bounds, while the weak-gradient
+identity restricts to test functions supported in $B_{\lambda_1R}$ because such a
+test function vanishes off $B_{\lambda_1R}$; and the nondegeneracy hypothesis
+holds as follows, which is where the hypothesis
+$|A^+_{k,\lambda_1R}|\le c_0|B_{\lambda_1R}|$ with $c_0<1$ is consumed.  Since
+$k_t\ge k_1>k$ we have $A^+_{k_t,\lambda_1R}\subseteq A^+_{k,\lambda_1R}$, so
+\[
+\bigl|B_{\lambda_1R}\setminus A^+_{k_t,\lambda_1R}\bigr|
+\ge|B_{\lambda_1R}|-\bigl|A^+_{k,\lambda_1R}\bigr|
+\ge(1-c_0)\,|B_{\lambda_1R}|>0 .
+\tag{2.7a}
+\]
+\noderef{DeGiorgiLevelSetMeasure} therefore gives, using (2.6a) on the left,
+\[
+\frac{M-k}{2^{t+1}}\bigl|A^+_{k_{t+1},\lambda_1R}\bigr|^{1-\frac1n}
+\le\beta(n)\,\frac{(\lambda_1R)^n}
+{\bigl|B_{\lambda_1R}\setminus A^+_{k_t,\lambda_1R}\bigr|}\int_{D_t}|g|\,dx ,
+\tag{2.7}
+\]
+the integral being over
+$A^+_{k_t,\lambda_1R}\setminus A^+_{k_{t+1},\lambda_1R}=D_t$ exactly.  By (2.7a)
+and $|B_{\lambda_1R}|=\omega_n(\lambda_1R)^n$, the fraction is at most
+$\bigl((1-c_0)\omega_n\bigr)^{-1}$, so
+\[
+\frac{M-k}{2^{t+1}}\bigl|A^+_{k_{t+1},\lambda_1R}\bigr|^{1-\frac1n}
+\le C_3\int_{D_t}|g|\,dx
+\le C_3\,|D_t|^{1/2}\Bigl(\int_{D_t}|g|^2dx\Bigr)^{1/2} ,
+\tag{2.8}
+\]
+the last step by the Cauchy--Schwarz inequality on $D_t$.
+
+\emph{Step 3: estimating the gradient integral by (2.1) of the thesis.}  Apply
+\noderef{DeGiorgiLevelBound} with constant $\gamma$ at the level $\ell=k_t$ and
+the radii $\rho_0=\lambda_1R$, $\rho_1=R$; this is exactly the instance the
+hypothesis of the lemma supplies, since $k_t\in[k,M]$ by Step 1.  Its second
+clause reads
+\[
+\int_{B_{\lambda_1R}\cap\{f>k_t\}}|g|^2dx
+\le\frac{\gamma}{(R-\lambda_1R)^2}
+\Bigl(\esssup_{B_R}(f-k_t)^+\Bigr)^{2}\bigl|A^+_{k_t,R}\bigr| .
+\]
+Since $M=\esssup_{B_R}f$ we have $f\le M$ a.e.\ on $B_R$, hence
+$(f-k_t)^+\le M-k_t=\frac{M-k}{2^{t}}$ a.e.\ on $B_R$ by (2.6a) and $k_t<M$, so
+$\esssup_{B_R}(f-k_t)^+\le\frac{M-k}{2^{t}}$; again only the inequality
+$f\le M$ a.e.\ is used, no attained maximum.  Also
+$|A^+_{k_t,R}|\le|B_R|=\omega_nR^n$ and
+$D_t\subseteq A^+_{k_t,\lambda_1R}=B_{\lambda_1R}\cap\{f>k_t\}$, so
+\[
+\int_{D_t}|g|^2dx\le\frac{\gamma}{(1-\lambda_1)^2R^2}
+\Bigl(\frac{M-k}{2^{t}}\Bigr)^{2}\omega_nR^n .
+\]
+Taking square roots and inserting into (2.8),
+\[
+\frac{M-k}{2^{t+1}}\bigl|A^+_{k_{t+1},\lambda_1R}\bigr|^{1-\frac1n}
+\le\frac{C_3\sqrt\gamma\,\omega_n^{1/2}}{(1-\lambda_1)R}\cdot\frac{M-k}{2^{t}}
+\cdot R^{\frac n2}\,|D_t|^{1/2} .
+\]
+Dividing by $\frac{M-k}{2^{t+1}}>0$ and using
+$2^{t+1}/2^{t}=2$ together with the definition of $C_4$,
+\[
+\bigl|A^+_{k_{t+1},\lambda_1R}\bigr|^{\frac{n-1}n}
+\le C_4\,R^{\frac n2-1}\,|D_t|^{1/2} .
+\tag{2.9}
+\]
+
+\emph{Step 4: telescoping.}  For $t=1,\dots,s-1$ we have $k_{t+1}\le k_s$, hence
+$A^+_{k_s,\lambda_1R}\subseteq A^+_{k_{t+1},\lambda_1R}$ and so (2.9) gives
+\[
+\bigl|A^+_{k_s,\lambda_1R}\bigr|^{\frac{n-1}n}\le C_4\,R^{\frac n2-1}\,|D_t|^{1/2}
+\qquad(t=1,\dots,s-1).
+\]
+Square each of these $s-1$ inequalities and add them.  The left-hand side does
+not depend on $t$, so the sum of the left-hand sides is
+$(s-1)\bigl|A^+_{k_s,\lambda_1R}\bigr|^{\frac{2n-2}n}$, and by (2.6b) the sum of
+the right-hand sides is at most $C_4^{\,2}R^{n-2}\omega_nR^n$.  Hence
+\[
+(s-1)\bigl|A^+_{k_s,\lambda_1R}\bigr|^{\frac{2n-2}n}
+\le C_4^{\,2}\,\omega_n\,R^{2n-2} .
+\]
+Raise this to the power $\frac n{2n-2}>0$ after dividing by $s-1>0$:
+\[
+\bigl|A^+_{k_s,\lambda_1R}\bigr|
+\le\frac{\bigl(C_4^{\,2}\omega_n\bigr)^{\frac n{2n-2}}}{(s-1)^{\frac n{2n-2}}}\,
+R^{\,n}
+=\frac{C_5}{(s-1)^{\frac n{2n-2}}}\,|B_{\lambda_1R}| ,
+\tag{2.10}
+\]
+where in the last step we wrote $R^n=|B_{\lambda_1R}|/(\omega_n\lambda_1^n)$ and
+used the definition of $C_5$, and where
+$\bigl(R^{2n-2}\bigr)^{\frac n{2n-2}}=R^{\,n}$.
+
+\emph{Step 5: conclusion.}  By (2.10) and the choice (2.10a) of $s$,
+\[
+\bigl|A^+_{k_s,\lambda_1R}\bigr|\le\theta_1\,|B_{\lambda_1R}| .
+\]
+Finally, by the definition of $k_s$ and $\lambda_2=2^{-s}$,
+\[
+k_s=k+\bigl(1-2^{-s}\bigr)(M-k)=2^{-s}k+\bigl(1-2^{-s}\bigr)M
+=\lambda_2k+(1-\lambda_2)M ,
+\]
+so the previous display is exactly
+\[
+\bigl|\{x\in B_{\lambda_1R}(x_0):f(x)>\lambda_2k+(1-\lambda_2)M\}\bigr|
+\le\theta_1\,|B_{\lambda_1R}| ,
+\]
+which is the assertion, with $\lambda_2=2^{-s}\in(0,1)$ depending only on
+$n,\gamma,\lambda_1,c_0,\theta_1$.
+\end{proof}

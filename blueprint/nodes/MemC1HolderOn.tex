@@ -1,0 +1,53 @@
+\begin{definition}
+Let $0<\beta\le1$, let $\Omega,\Omega_{\mathrm{cl}}\subseteq\R^n$, let
+$u\colon\R^n\to\R$ and let $g\colon\R^n\to\R^n$.  We write
+$u\in C^{1+\beta}(\Omega,\Omega_{\mathrm{cl}})$ \emph{with gradient $g$},
+denoted
+$\mathrm{MemC1HolderOn}(n,\beta,\Omega,\Omega_{\mathrm{cl}},u,g)$, if
+\begin{itemize}
+\item[(a)] $u$ is differentiable at every point of $\Omega$, with
+  $\nabla u=g$ there;
+\item[(b)] $g$ is continuous on $\Omega_{\mathrm{cl}}$; and
+\item[(c)] there is $C\ge0$ with
+  $|g(x)-g(y)|\le C\,|x-y|^{\beta}$ for all
+  $x,y\in\Omega_{\mathrm{cl}}$.
+\end{itemize}
+
+\noindent\textbf{The two sets, and why the class is written on two of them.}
+Taking $\Omega_{\mathrm{cl}}=\Omega$ gives back the one-set reading of the class
+verbatim --- the three clauses then range over the same set --- so this
+definition is a refinement and not a change of meaning on the diagonal.  The
+instance used in \S4 and \S5 is $\Omega_{\mathrm{cl}}=\overline{\Omega}$, and
+that instance \emph{is} the paper's class $C^{1+\beta}=C^{1,\beta}$: the Note's
+Definitions paragraph at l.~278 says that ``$C^{\eta}$ and
+$C^{1+\beta}=C^{1,\beta}$ are the H\"older classes on $\overline{\Omega'}$'',
+which for $C^{1,\beta}$ is a statement about the \emph{gradient's} H\"older
+seminorm, namely clauses (b) and (c) above; while the two conclusions being
+formalised are displayed at l.~1352 and l.~1574 as
+$u\in C^{1+\beta}(\Omega')$, on the \emph{open} $\Omega'$, which is clause~(a).
+The paper writes exactly this split in its own notation at l.~559, where the
+conclusion of Lemma~3.1 --- the cited result (C2) --- is
+$u\in C^{1}(B_R)\cap C^{\beta}(\overline B_R)$: differentiability on the open
+ball, H\"older control on the closed one, as an intersection of two classes over
+two different sets.  Theorem~7's conclusion at l.~1635 is likewise
+$F\in C^{1+\beta}_{\mathrm{loc}}(\Omega)$ on an open set.
+
+\noindent\textbf{Why clause (a) must not be asked on
+$\Omega_{\mathrm{cl}}=\overline{\Omega}$.}  Differentiability at a point is a
+two-sided condition in a full neighbourhood of that point in $\R^n$, so asking
+clause (a) at a boundary point of $\Omega$ constrains $u$ outside
+$\overline{\Omega}$ as well, and on the data the consumers supply it is not
+merely unproven but false.  Let $K\subseteq(-1,1)$ be a nowhere dense closed set
+of positive measure, $S=\{x\in\R^n:x_1\in K\}$, $\Omega=B_2(0)$,
+$\Omega'=B_1(0)\setminus S$ and $u(x)=\bigl|[0,x_1]\cap K\bigr|$.  Then
+$\Omega'$ is open, $u$ is Lipschitz with weak gradient $0$ almost everywhere on
+$\Omega'$, so $g\equiv0$ is a continuous $\beta$-H\"older representative on
+every set, and clause (a) holds on $\Omega'$ with $u$ itself as the
+representative --- at a point with $x_1\notin K$ a whole neighbourhood of $x_1$
+misses the closed set $K$, so $u$ is locally constant there; but $\overline{\Omega'}=\overline B_1(0)$, and a function
+differentiable at every point of $\overline B_1(0)$ with gradient $0$ there is
+constant on the convex set $B_1(0)$, whereas $u$ increases by $|K|>0$ across it.
+So no function agreeing with $u$ almost everywhere can satisfy clause (a) on
+$\overline{\Omega'}$.  The same example rules out
+$\mathrm{interior}\,\overline{\Omega'}$, which here is $B_1(0)$.
+\end{definition}

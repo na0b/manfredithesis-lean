@@ -1,0 +1,127 @@
+\begin{helper}[The uniform energy bound for the mollified approximations]
+Let $n\in\N$, let $p,\Gamma,c_3,R\in\R$, let $A\colon\R^n\to\R^n$, let
+$A_e\colon\R\times\R^n\to\R^n$ (written $A_e(h)$ at parameter $e$), let
+$x_0\in\R^n$, let $u\colon\R^n\to\R$, let $g\colon\R^n\to\R^n$ and let $G$
+assign to each $m\in\N$ a field $G_m\colon\R^n\to\R^n$.  Throughout,
+$B=B_R(x_0)$, $e_m=1/(m+1)$, $Y_m=\int_B|G_m|^p$, $K=\int_B|g|^p$,
+$p'=p/(p-1)$ is the conjugate exponent, $(\cdot,\cdot)$ and $|\cdot|$ are the
+Euclidean inner product and norm, and every power of a nonnegative real is the
+real power, written exactly as the growth and monotonicity conditions print it;
+in particular the weight $(e+|a|^2+|b|^2)^{\frac p2-1}$ below is that real
+power, with a negative exponent when $p<2$.  Assume
+\begin{enumerate}
+\item[(H1)] $A_e(0)=0$ for every parameter $e$; $0<R$; $0<\Gamma$; $0<c_3$;
+  $0<p$, $0<p-1$ and $0<p'$; and $\mathrm{ofReal}\,p\notin\{0,\infty\}$;
+\item[(H2)] $u\in W^{1,p}(B)$ with weak gradient $g$ (\noderef{MemW1pOn});
+\item[(H3)] the growth bound: $|A_e(h)|\le\Gamma(1+|h|^2)^{\frac{p-1}2}$ for
+  every $h$ and every $e\in(0,1]$, together with its $p'$-th power form
+  $|y|^{p'}\le\Gamma^{p'}2^{p/2}(1+|w|^p)$ whenever
+  $|y|\le\Gamma(1+|w|^2)^{\frac{p-1}2}$;
+\item[(H4)] the monotonicity bound: for every $e\in(0,1]$ and all $a,b$,
+  \[
+  c_3\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+    \ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr);
+  \]
+\item[(H5)] $0<e_m\le1$ for every $m$; each $G_m\in L^p(B)$; each
+  $A_{e_m}(G_m)\in L^{p'}(B)$; the weight $e_m+|G_m|^2+|g|^2$ is pointwise
+  positive; and every real power of it is almost-everywhere strongly measurable
+  on $B$;
+\item[(H6)] the duality pairing: for $F\in L^{p'}(B)$ and $H\in L^p(B)$ the
+  function $(F,H)$ is integrable on $B$ and
+  $\bigl|\int_B(F,H)\bigr|\le\bigl(\int_B|F|^{p'}\bigr)^{1/p'}\bigl(\int_B|H|^p\bigr)^{1/p}$;
+\item[(H7)] the two elementary identities $(t^2)^{s/2}=t^s$ and
+  $(t^2)^{\frac p2-1}t^2=t^p$ for $t\ge0$;
+\item[(H8)] the two orthogonality identities (E): for every $m$,
+  $\int_B\bigl(A_{e_m}(G_m),G_m-g\bigr)=0$ and
+  $\int_B\bigl(A(g),G_m-g\bigr)=0$.
+\end{enumerate}
+Then there is $E_1\ge0$ such that for every $m$ the function
+$(e_m+|G_m|^2+|g|^2)^{p/2}$ is integrable on $B$ and
+\[
+\int_B\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}dx\ \le\ E_1 .
+\]
+Per pm-0020 the approximating family here is the mollified one, $A_e$; nothing
+below uses, or is true for, the perturbation $A(h)+e^{p/2-1}h$.
+\end{helper}
+\begin{proof}
+\emph{Step 1: the left-hand side of (E), from below.}  Fix $m$ and write
+$e=e_m$.  The first identity of (H8) says
+$\int_B(A_{e}(G_m),G_m)=\int_B(A_{e}(G_m),g)$.  For the left-hand side apply
+(H4) with $a=G_m(x)$, $b=0$, using $A_{e}(0)=0$ from (H1):
+\[
+\bigl(A_{e}(G_m(x)),G_m(x)\bigr)
+\ \ge\ c_3\bigl(e+|G_m(x)|^2\bigr)^{\frac p2-1}|G_m(x)|^2 .
+\]
+If $p\ge2$ the exponent is nonnegative, so
+$(e+|h|^2)^{\frac p2-1}\ge(|h|^2)^{\frac p2-1}=|h|^{p-2}$ by the first identity
+of (H7), and the right-hand side is at least $c_3|h|^p$ with $h=G_m(x)$, by the
+second.  If $1<p<2$ the exponent is negative; at points where $|h|^2\ge e$ one
+has $e+|h|^2\le2|h|^2$ and hence
+$(e+|h|^2)^{\frac p2-1}\ge2^{\frac p2-1}|h|^{p-2}$, so the right-hand side is at
+least $c_32^{\frac p2-1}|h|^p$ there, while at the remaining points it is
+nonnegative and $|h|^p<e^{p/2}$.  With
+$\kappa_p=\min\{1,2^{\frac p2-1}\}>0$, integrating and using monotonicity of the
+integral (Preamble),
+\[
+\int_B\bigl(A_{e}(G_m),G_m\bigr)dx
+\ \ge\ c_3\kappa_p\Bigl(Y_m-e^{\frac p2}|B|\Bigr).
+\tag{1}
+\]
+
+\emph{Step 2: the right-hand side of (E), from above.}  By (H5) the pair
+$\bigl(A_{e}(G_m),g\bigr)$ is admissible for (H6), whose Hölder estimate gives
+\[
+\Bigl|\int_B\bigl(A_{e}(G_m),g\bigr)dx\Bigr|
+\ \le\ \Bigl(\int_B\bigl|A_{e}(G_m)\bigr|^{p'}\Bigr)^{1/p'}K^{1/p}.
+\]
+The growth bound (H3) at $e\in(0,1]$ and its $p'$-th power form bound the
+integrand of the first factor by
+$\Gamma^{p'}2^{p/2}\bigl(1+|G_m|^p\bigr)$ pointwise, so that factor is at most
+$\bigl(\Gamma^{p'}2^{p/2}(|B|+Y_m)\bigr)^{1/p'}$.  Writing
+$b_0=\Gamma2^{\frac p{2p'}}K^{1/p}$, which does not depend on $m$,
+\[
+\Bigl|\int_B\bigl(A_{e}(G_m),g\bigr)dx\Bigr|
+\ \le\ b_0\bigl(|B|+Y_m\bigr)^{\theta},
+\qquad\theta=\frac{p-1}p\in(0,1).
+\tag{2}
+\]
+
+\emph{Step 3: the uniform bound on $Y_m$.}  Put $S=|B|+Y_m$.  Chaining (1), the
+identity of (H8) and (2), and using $e\le1$ from (H5),
+\[
+c_3\kappa_pS\ \le\ c_3\kappa_p\bigl(|B|+e^{\frac p2}|B|\bigr)+b_0S^{\theta}
+\ \le\ 2c_3\kappa_p|B|+b_0S^{\theta},
+\]
+that is $S\le a_0+b_1S^{\theta}$ with $a_0=2|B|$ and $b_1=b_0/(c_3\kappa_p)$,
+both independent of $m$.  Since $\theta<1$ this bounds $S$: if $S>2a_0$ then
+$S/2\le b_1S^{\theta}$, hence $S^{1-\theta}\le2b_1$ and
+$S\le(2b_1)^{1/(1-\theta)}$.  Therefore
+\[
+|B|+Y_m\ \le\ E:=\max\bigl\{2a_0,\ (2b_1)^{1/(1-\theta)}\bigr\}
+\qquad\text{for every }m .
+\tag{2a}
+\]
+
+\emph{Step 4: from $Y_m$ to the weighted energy.}  For $s,t,w\ge0$ one has
+$(s+t+w)^{p/2}\le3^{p/2}\bigl(s^{p/2}+t^{p/2}+w^{p/2}\bigr)$, by
+$s+t+w\le3\max\{s,t,w\}$ and monotonicity of $\lambda\mapsto\lambda^{p/2}$ on
+$[0,\infty)$.  Applying it pointwise with $s=e_m\le1$, $t=|G_m|^2$,
+$w=|g|^2$, and using the first identity of (H7) to turn $(|G_m|^2)^{p/2}$ into
+$|G_m|^p$ and $(|g|^2)^{p/2}$ into $|g|^p$,
+\[
+\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}
+\ \le\ 3^{\frac p2}\bigl(1+|G_m|^p+|g|^p\bigr)
+\qquad\text{pointwise on }B .
+\]
+The right-hand side is integrable on $B$ --- $|B|<\infty$ because $B$ is a ball,
+and $G_m,g\in L^p(B)$ by (H5) and (H2) --- and the left-hand side is
+almost-everywhere strongly measurable by (H5), so domination (Preamble) gives
+the integrability asserted, and integrating the display and inserting (2a)
+gives
+\[
+\int_B\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}dx
+\ \le\ 3^{\frac p2}\bigl(|B|+Y_m+K\bigr)
+\ \le\ E_1:=3^{\frac p2}(E+K)
+\]
+for every $m$.  Finally $E_1\ge0$, being a product of nonnegative quantities.
+\end{proof}

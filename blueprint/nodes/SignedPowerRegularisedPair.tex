@@ -1,0 +1,77 @@
+\begin{helper}[The regularised signed power and its primitive, for $1<p<2$]
+Let $p\in\R$ with $1<p$, and assume $\tfrac p2-1<0$ and $p-2<0$.  Then there
+exist $D\pi,\pi,G,DG\colon\R\times\R\to\R$ such that, writing
+$\pi_\eta=\pi(\eta,\cdot)$ and similarly for the others,
+\[
+\pi_\eta(s)=\bigl(|s|+\eta\bigr)^{p-2}s,\qquad
+G_\eta(s)=\int_0^s\frac p2\bigl(|t|+\eta\bigr)^{\frac p2-1}dt,\qquad
+DG_\eta(s)=\frac p2\bigl(|s|+\eta\bigr)^{\frac p2-1},
+\]
+and such that for every $\eta>0$:
+\begin{enumerate}
+\item[(i)] $0<|s|+\eta$ for every real $s$;
+\item[(ii)] $(p-1)\bigl(|s|+\eta\bigr)^{p-2}\le D\pi_\eta(s)$ for every $s$;
+\item[(iii)] $|D\pi_\eta(s)|\le\eta^{\,p-2}$ for every $s$;
+\item[(iv)] $D\pi_\eta$ is continuous;
+\item[(v)] $\pi_\eta$ is $C^1$ and $\pi_\eta'=D\pi_\eta$;
+\item[(vi)] $|DG_\eta(s)|\le\tfrac p2\eta^{\frac p2-1}$ for every $s$;
+\item[(vii)] $G_\eta$ is $C^1$ and $G_\eta'=DG_\eta$.
+\end{enumerate}
+Everything here is one-dimensional: no domain, no Sobolev space and no
+reference to the equation occur, and every power of a positive real is the real
+power, with the two exponents $p-2$ and $\tfrac p2-1$ NEGATIVE by hypothesis.
+\end{helper}
+\begin{proof}
+Define
+\[
+D\pi_\eta(s)=\bigl(|s|+\eta\bigr)^{p-2}+(p-2)\bigl(|s|+\eta\bigr)^{p-3}|s|,
+\]
+together with $\pi_\eta$, $G_\eta$ and $DG_\eta$ by the displayed formulas.
+
+\emph{(i).}  $|s|\ge0$ and $\eta>0$ give $|s|+\eta>0$; this is what makes every
+real power below well defined and positive.
+
+\emph{(ii) and (iii).}  Since $p-2<0$, the map $\lambda\mapsto\lambda^{p-2}$ is
+decreasing on $(0,\infty)$, and $|s|\le|s|+\eta$ gives
+$\bigl(|s|+\eta\bigr)^{p-3}|s|\le\bigl(|s|+\eta\bigr)^{p-3}\bigl(|s|+\eta\bigr)
+=\bigl(|s|+\eta\bigr)^{p-2}$.  As $p-2<0$, multiplying that inequality by
+$p-2$ reverses it, so
+\[
+D\pi_\eta(s)\ \ge\ \bigl(|s|+\eta\bigr)^{p-2}+(p-2)\bigl(|s|+\eta\bigr)^{p-2}
+=(p-1)\bigl(|s|+\eta\bigr)^{p-2},
+\]
+which is (ii), and the right-hand side is positive because $p>1$; in
+particular $D\pi_\eta>0$.  For (iii), dropping the nonpositive second term
+gives $D\pi_\eta(s)\le\bigl(|s|+\eta\bigr)^{p-2}$, and
+$\eta\le|s|+\eta$ with $p-2<0$ gives
+$\bigl(|s|+\eta\bigr)^{p-2}\le\eta^{\,p-2}$; combined with positivity this is
+$|D\pi_\eta(s)|\le\eta^{\,p-2}$.
+
+\emph{(iv).}  $s\mapsto|s|+\eta$ is continuous with values in $(0,\infty)$ by
+(i), and $\lambda\mapsto\lambda^{p-2}$, $\lambda\mapsto\lambda^{p-3}$ are
+continuous there, so $D\pi_\eta$ is continuous as a sum of products of
+continuous functions.
+
+\emph{(v).}  We check $\pi_\eta'(s)=D\pi_\eta(s)$ by cases.  If $s<0$ then
+$|t|=-t$ for $t$ in a neighbourhood of $s$, so there $\pi_\eta$ agrees with
+$t\mapsto(-t+\eta)^{p-2}t$, which is differentiable by the chain and product
+rules, with derivative
+$(-s+\eta)^{p-2}+(p-2)(-s+\eta)^{p-3}(-s)=D\pi_\eta(s)$; the case $s>0$ is
+identical with $|t|=t$.  At $s=0$ both expressions reduce to $\eta^{\,p-2}$,
+the terms carrying the factor $|s|$ vanishing, and the two one-sided
+derivatives therefore agree, so $\pi_\eta$ is differentiable at $0$ with
+derivative $\eta^{\,p-2}=D\pi_\eta(0)$.  Hence $\pi_\eta$ is differentiable
+with $\pi_\eta'=D\pi_\eta$, which is continuous by (iv), so $\pi_\eta$ is
+$C^1$.
+
+\emph{(vi).}  As in (iii), $\eta\le|s|+\eta$ and $\tfrac p2-1<0$ give
+$\bigl(|s|+\eta\bigr)^{\frac p2-1}\le\eta^{\frac p2-1}$, and both sides are
+positive, so $|DG_\eta(s)|\le\tfrac p2\eta^{\frac p2-1}$ using $p>1>0$.
+
+\emph{(vii).}  The integrand $t\mapsto\tfrac p2\bigl(|t|+\eta\bigr)^{\frac p2-1}$
+is continuous by the argument of (iv), hence locally integrable, so the
+fundamental theorem of calculus (Preamble) applies to the interval integral
+defining $G_\eta$ and gives $G_\eta$ differentiable at every $s$ with
+$G_\eta'(s)=\tfrac p2\bigl(|s|+\eta\bigr)^{\frac p2-1}=DG_\eta(s)$.  Since
+$DG_\eta$ is continuous, $G_\eta$ is $C^1$.
+\end{proof}

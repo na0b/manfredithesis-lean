@@ -1,0 +1,94 @@
+\begin{lemma}[The two moduli of \textup{(5.9)}]
+Let $p>1$, let $0<\alpha\le1$, let $C_1\ge0$, let $K>0$, let $\gamma_4>0$, let
+$C_\sigma\in\R$, and let $\sigma\colon\R\to\R$ be continuous, nondecreasing,
+with $\sigma(0)=0$ and $\sigma\le C_\sigma$.  Then there are
+$\sigma_0,\sigma_1\colon\R\to\R$ such that
+\[
+\sigma_0(t)=K\Bigl(\frac{p-1}p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
++4\gamma_4C_1t^{\alpha}\Bigr),
+\qquad
+\sigma_1(t)=K\Bigl(\frac1p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)\Bigr)
+\]
+for every $t$ with $0<t\le1$, and such that $\sigma_0$ and $\sigma_1$ are
+nonnegative, bounded above, continuous and nondecreasing on all of $\R$, with
+$\sigma_0(0)=\sigma_1(0)=0$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the construction.}  Let $\theta(t)=\min\{\max\{t,0\},1\}$ be the
+clamp of $t$ to $[0,1]$, and put
+\[
+\sigma_0(t)=K\Bigl(\frac{p-1}p\,\sigma\bigl(\theta(t)+C_1\theta(t)^{\alpha}\bigr)
++4\gamma_4C_1\theta(t)^{\alpha}\Bigr),
+\qquad
+\sigma_1(t)=K\cdot\frac1p\,\sigma\bigl(\theta(t)+C_1\theta(t)^{\alpha}\bigr).
+\]
+Here $\theta(t)\ge0$ always, so $\theta(t)^{\alpha}$ is the real power of a
+nonnegative base and is well defined (pm-0024).  For $0<t\le1$ one has
+$\theta(t)=t$, so the two displayed closed forms hold, which is the first
+assertion.  \emph{The clamp is what makes the remaining assertions true on all
+of $\R$}: below $0$ the functions are constant and equal to their value at $0$,
+and above $1$ they are constant and equal to their value at $1$; only
+$t\le R_1\le1$ is ever used by a consumer, so the clamp changes nothing there.
+
+Throughout, write $\Psi(t)=\theta(t)+C_1\theta(t)^{\alpha}$, so that
+$\sigma_0=K\bigl(\frac{p-1}p\sigma\circ\Psi+4\gamma_4C_1\,\theta^{\alpha}\bigr)$
+and $\sigma_1=\frac Kp\,\sigma\circ\Psi$.  Note $\frac{p-1}p>0$ and
+$\frac1p>0$, since $p>1$.
+
+\emph{Step 2: $\sigma\ge0$, and the values at $0$.}  Since $\sigma$ is
+nondecreasing with $\sigma(0)=0$, we have $\sigma(s)\ge\sigma(0)=0$ for every
+$s\ge0$.  Now $\Psi(t)\ge0$ for every $t$: both $\theta(t)\ge0$ and
+$C_1\theta(t)^{\alpha}\ge0$, the latter because $C_1\ge0$ and a real power of a
+nonnegative base is nonnegative.  Hence $\sigma(\Psi(t))\ge0$ for every $t$.
+
+At $t=0$ we have $\theta(0)=0$ and, since $\alpha>0$, $0^{\alpha}=0$ (pm-0024),
+so $\Psi(0)=0$ and
+\[
+\sigma_0(0)=K\Bigl(\frac{p-1}p\,\sigma(0)+4\gamma_4C_1\cdot0\Bigr)=0,
+\qquad
+\sigma_1(0)=\frac Kp\,\sigma(0)=0 .
+\]
+
+\emph{Step 3: nonnegativity.}  For every $t$, $\sigma(\Psi(t))\ge0$ by Step 2,
+$\theta(t)^{\alpha}\ge0$, and the coefficients $K$, $\frac{p-1}p$, $\frac1p$,
+$4\gamma_4C_1$ are all nonnegative ($K>0$, $p>1$, $\gamma_4>0$, $C_1\ge0$).
+Hence $\sigma_0(t)\ge0$ and $\sigma_1(t)\ge0$.
+
+\emph{Step 4: continuity.}  The clamp $\theta$ is continuous, being the
+composition of the continuous maps $t\mapsto\max\{t,0\}$ and
+$s\mapsto\min\{s,1\}$.  The map $s\mapsto s^{\alpha}$ is continuous on
+$[0,\infty)$, including at $s=0$ with value $0$, because $\alpha>0$; since
+$\theta$ takes values in $[0,1]\subseteq[0,\infty)$, the composition
+$t\mapsto\theta(t)^{\alpha}$ is continuous.  Hence $\Psi$ is continuous, being
+$\theta$ plus $C_1$ times that composition, and $\sigma\circ\Psi$ is continuous
+because $\sigma$ is.  Therefore $\sigma_0$ and $\sigma_1$, being fixed
+nonnegative linear combinations of $\sigma\circ\Psi$ and
+$t\mapsto\theta(t)^{\alpha}$, are continuous on all of $\R$.
+
+\emph{Step 5: monotonicity.}  The clamp $\theta$ is nondecreasing, and
+$s\mapsto s^{\alpha}$ is nondecreasing on $[0,\infty)$ because $\alpha>0$;
+hence $t\mapsto\theta(t)^{\alpha}$ is nondecreasing, and so is
+$\Psi=\theta+C_1\theta^{\alpha}$, since $C_1\ge0$.  As $\sigma$ is
+nondecreasing, $\sigma\circ\Psi$ is nondecreasing.  Both $\sigma_0$ and
+$\sigma_1$ are then nondecreasing, being sums of nondecreasing functions scaled
+by the nonnegative constants of Step 3.
+
+\emph{Step 6: boundedness.}  By Step 5 both functions are nondecreasing, and by
+Step 1 both are constant on $[1,\infty)$ with the value they take at $t=1$.
+Hence for every $t$,
+\[
+\sigma_0(t)\le\sigma_0(1)
+=K\Bigl(\frac{p-1}p\,\sigma\bigl(1+C_1\bigr)+4\gamma_4C_1\Bigr),
+\qquad
+\sigma_1(t)\le\sigma_1(1)=\frac Kp\,\sigma\bigl(1+C_1\bigr),
+\]
+using $\theta(1)=1$ and $1^{\alpha}=1$.  Taking
+$C=\max\{\sigma_0(1),\sigma_1(1)\}$ gives a single constant bounding both.
+(The hypothesis $\sigma\le C_\sigma$ gives the same conclusion with the
+explicit bound $K\bigl(\frac{p-1}pC_\sigma+4\gamma_4C_1\bigr)$, which is the
+form in which a consumer that needs the dependence list reads it: the bound
+involves only $p,K,\gamma_4,C_1$ and $C_\sigma$, and in particular not
+$\alpha$.)
+
+This establishes every assertion.
+\end{proof}

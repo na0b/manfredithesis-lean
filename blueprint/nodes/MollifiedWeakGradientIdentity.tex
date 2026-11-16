@@ -1,0 +1,96 @@
+\begin{helper}[On the inner region, the derivative of a mollification is the mollified weak gradient]
+Let $n\in\N$, let $\Omega\subseteq\R^n$, let $\varphi\colon\R^n\to\R$, let
+$g_\varphi\colon\R^n\to\R^n$, let $\rho\colon\R^n\to\R$, let $d\in\R$, let
+$x\in\R^n$ and let $i$ be an index in $\{1,\dots,n\}$.  Throughout, $|\cdot|$ is
+the Euclidean norm, $D_i$ is the derivative in the direction of the $i$-th
+standard basis vector, $\operatorname{supp}\rho$ denotes the \emph{closed}
+support of $\rho$,
+\[
+(\varphi*\rho)(x)=\int_{\R^n}\varphi(y)\rho(x-y)\,dy
+\]
+is the convolution, and $\mathbf1_\Omega h$ denotes the zero extension of $h$,
+i.e.\ the function equal to $h$ on $\Omega$ and to $0$ off $\Omega$.  Assume
+\begin{enumerate}
+\item[(H1)] $\Omega$ is open;
+\item[(H2)] $g_\varphi$ is a weak gradient of $\varphi$ on $\Omega$
+  (\noderef{HasWeakGradientOn}), and $\varphi$ is locally integrable on all of
+  $\R^n$;
+\item[(H3)] $\rho$ is $C^\infty$ with compact support and
+  $\operatorname{supp}\rho=\overline{B_d(0)}$;
+\item[(H4)] $\overline{B_d(x)}\subseteq\Omega$.
+\end{enumerate}
+Then
+\[
+D_i(\varphi*\rho)(x)\ =\ \bigl(\mathbf1_\Omega(D_i\varphi)\bigr)*\rho\,(x),
+\]
+where the right-hand side means the convolution of
+$y\mapsto\mathbf1_\Omega(y)\,g_\varphi(y)_i$ against $\rho$.
+
+The zero extension on the right is not cosmetic: (H2) controls $g_\varphi$ only
+through an identity against test functions supported in $\Omega$ and says
+nothing about $\varphi$ or $g_\varphi$ off $\Omega$, so the extension by zero is
+what makes the right-hand convolution a well-defined global object.  The local
+integrability of $\varphi$ in (H2), by contrast, is a hypothesis on all of
+$\R^n$ and is what makes the left-hand convolution differentiable at all.
+\end{helper}
+\begin{proof}
+$\Omega$ is measurable, being open.  Write $K=\operatorname{supp}\rho$, so
+$K=\overline{B_d(0)}$ by (H3), and note that $\rho$ and $d\rho$ both vanish
+wherever $d<|z|$: such a $z$ lies outside $K$, where $\rho$ vanishes together
+with all its derivatives, $\rho$ being $C^\infty$ and $K$ closed.
+
+\emph{Step A: differentiating the convolution.}  By (H3) the kernel $\rho$ is
+$C^\infty$ with compact support, hence so is $d\rho$, and by (H2) $\varphi$ is
+locally integrable; therefore the convolution $\varphi*d\rho$ exists and
+$\varphi*\rho$ is differentiable with $D(\varphi*\rho)=\varphi*(d\rho)$
+(Preamble, convolution with a smooth compactly supported kernel --- the
+smoothness statement there is proved by differentiating under the integral
+sign, which is what is used).  Evaluating the derivative at the basis vector
+$e_i$,
+\[
+D_i(\varphi*\rho)(x)=\int_{\R^n}\varphi(y)\,\bigl(d\rho(x-y)e_i\bigr)\,dy .
+\tag{A}
+\]
+
+\emph{Step B: the integrand vanishes off $\Omega$.}  Let $y\notin\Omega$.  Then
+$y\notin\overline{B_d(x)}$ by (H4), i.e.\ $d<|x-y|$, so $\rho(x-y)=0$ and
+$d\rho(x-y)=0$ by the remark above.  Hence the integrand of (A) vanishes off
+$\Omega$, and the integral over $\R^n$ equals the integral over $\Omega$:
+\[
+D_i(\varphi*\rho)(x)=\int_\Omega\varphi(y)\,\bigl(d\rho(x-y)e_i\bigr)\,dy .
+\tag{B}
+\]
+The same argument applies to the right-hand side's integrand, which carries the
+factor $\rho(x-y)$.
+
+\emph{Step C: the weak-gradient identity.}  Put $\psi(y)=\rho(x-y)$.  Then
+$\psi$ is $C^\infty$, being $\rho$ composed with the smooth map
+$y\mapsto x-y$; its closed support is the reflection of $K$ translated by $x$,
+that is $\overline{B_d(x)}$, which is compact and, by (H4), contained in
+$\Omega$.  So $\psi$ is an admissible test function for
+\noderef{HasWeakGradientOn}, and (H2) in the direction $i$ gives
+\[
+\int_\Omega\varphi(y)\,D_i\psi(y)\,dy=-\int_\Omega g_\varphi(y)_i\,\psi(y)\,dy .
+\]
+By the chain rule $D_i\psi(y)=-\,d\rho(x-y)e_i$, the minus sign coming from
+differentiating $y\mapsto x-y$; substituting that on the left and cancelling the
+two signs turns the display into
+\[
+\int_\Omega\varphi(y)\,\bigl(d\rho(x-y)e_i\bigr)\,dy
+=\int_\Omega g_\varphi(y)_i\,\rho(x-y)\,dy .
+\tag{C}
+\]
+
+\emph{Step D: re-extending to $\R^n$.}  On $\Omega$ the integrand of the
+right-hand side of (C) is unchanged by inserting the indicator, since
+$\mathbf1_\Omega(y)=1$ there; and off $\Omega$ the indicator makes it vanish.
+Hence
+\[
+\int_\Omega g_\varphi(y)_i\,\rho(x-y)\,dy
+=\int_{\R^n}\mathbf1_\Omega(y)\,g_\varphi(y)_i\,\rho(x-y)\,dy
+=\bigl(\mathbf1_\Omega(D_i\varphi)\bigr)*\rho\,(x),
+\]
+the first equality by splitting the integral over $\Omega$ and its complement
+and the second by the definition of the convolution.  Chaining this with (B) and
+(C) is the assertion.
+\end{proof}

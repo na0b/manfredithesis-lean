@@ -1,0 +1,79 @@
+\begin{helper}[The dual norms of the mollification error tend to zero]
+Let $n\in\N$, let $p,r',\Gamma,R\in\R$, let $\rho\colon\R^n\to\R$, let
+$A\colon\R^n\to\R^n$, let $A_\bullet$ assign to each parameter $e$ a field
+$A_e\colon\R^n\to\R^n$, let $x_0\in\R^n$, let $u\colon\R^n\to\R$, let
+$g\colon\R^n\to\R^n$ and let $\delta\colon\N\to\R$.  Throughout,
+$B=B_R(x_0)$, $e_m=1/(m+1)$, $p'=p/(p-1)$, $|\cdot|$ is the Euclidean norm,
+$\operatorname{supp}\rho$ denotes the \emph{closed} support of $\rho$, and
+every power of a nonnegative real is the real power, written exactly as the
+growth condition prints it.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho\ge0$ and $\int_{\R^n}\rho=1$;
+\item[(H2)] $z\mapsto\rho(z)f(z)$ is integrable for every continuous scalar $f$,
+  and $z\mapsto\rho(z)F(z)$ is integrable for every continuous vector field $F$;
+\item[(H3)] $|z|\le1$ for every $z\in\operatorname{supp}\rho$;
+\item[(H4)] $A(0)=0$ and $A$ is continuous on $\R^n$;
+\item[(H5)] $A_e(h)=\int\rho(z)A(h+\sqrt e\,z)\,dz-\int\rho(z)A(\sqrt e\,z)\,dz$
+  for every $e$ and $h$;
+\item[(H6)] for every $e\in(0,1]$ the mollified field satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ at the parameter $e$ with some
+  constants of ratio at most $r'$ (\noderef{EllipticStructureQ12});
+\item[(H7)] $u\in W^{1,p}(B)$ with weak gradient $g$ (\noderef{MemW1pOn});
+\item[(H8)] $0<\Gamma$ and the growth bounds
+  $|A(h)|\le\Gamma(1+|h|^2)^{\frac{p-1}2}$ for every $h$, and
+  $|A_e(h)|\le\Gamma(1+|h|^2)^{\frac{p-1}2}$ for every $h$ and every
+  $e\in(0,1]$;
+\item[(H9)] $0<\tfrac{p-1}2$, $0<p$, and $0<e_m\le1$ for every $m$;
+\item[(H10)] $\delta_m=\Bigl(\int_B\bigl|A(g)-A_{e_m}(g)\bigr|^{p'}\Bigr)^{1/p'}$
+  for every $m$.
+\end{enumerate}
+Then $\delta_m\to0$ as $m\to\infty$.
+Per pm-0020 the approximating family here is the mollification (H5), never the
+perturbation $A(h)+e^{p/2-1}h$.
+\end{helper}
+\begin{proof}
+\emph{Step 1: $A_e(h)\to A(h)$ for every fixed $h$ as $e\downarrow0$.}  By
+(H4), $A$ is continuous at $h$, so
+$\sup_{|y-h|\le\sqrt e}|A(y)-A(h)|\to0$ as $e\downarrow0$.  By (H3), $|z|\le1$
+on $\operatorname{supp}\rho$, so for $z$ there we have
+$|(h+\sqrt e\,z)-h|\le\sqrt e$, and $\rho\ge0$ with $\int\rho=1$ by (H1).  The
+integrands $z\mapsto\rho(z)A(h+\sqrt e\,z)$ and $z\mapsto\rho(z)A(\sqrt e\,z)$
+are integrable by (H2), the maps $z\mapsto A(h+\sqrt e\,z)$ and
+$z\mapsto A(\sqrt e\,z)$ being continuous.  Writing
+\[
+\int\rho(z)A(h+\sqrt e\,z)\,dz-A(h)
+=\int\rho(z)\bigl(A(h+\sqrt e\,z)-A(h)\bigr)dz,
+\]
+which uses $\int\rho=1$, and bounding by the norm inequality for the integral
+and monotonicity (Preamble), the error is at most
+$\sup_{|y-h|\le\sqrt e}|A(y)-A(h)|\to0$; the same argument at $h=0$, with
+$A(0)=0$, gives $\int\rho(z)A(\sqrt e\,z)\,dz\to0$.  Subtracting and recalling
+(H5) gives $A_e(h)\to A(h)$.
+
+\emph{Step 2: an $e$-free majorant.}  By (H8) and the triangle inequality, for
+every $x$ and every $e\in(0,1]$,
+\[
+\bigl|A(g(x))-A_e(g(x))\bigr|^{p'}
+\ \le\ (2\Gamma)^{p'}\bigl(1+|g(x)|^2\bigr)^{\frac p2},
+\]
+raising the bound $|A(g)|+|A_e(g)|\le2\Gamma(1+|g|^2)^{(p-1)/2}$ to the power
+$p'$ and using $\tfrac{p-1}2p'=\tfrac p2$.  The majorant is integrable on $B$:
+it is at most $2^{p/2}(2\Gamma)^{p'}\bigl(1+|g|^{p}\bigr)$, because
+$1+|g|^2\le2\max\{1,|g|^2\}$ and $\lambda\mapsto\lambda^{p/2}$ is monotone,
+while $|B|<\infty$ and $|g|\in L^{p}(B)$ by (H7).
+
+\emph{Step 3: dominated convergence.}  The functions
+$x\mapsto|A(g(x))-A_{e_m}(g(x))|^{p'}$ are measurable, $A$ being continuous by
+(H4) and each $A_{e_m}$ being continuous as well --- by (H6) its
+(Q1) of the thesis--(Q2) of the thesis bundle contains the continuity clause.  Since
+$e_m\downarrow0$ by (H9), Step 1 applied at $h=g(x)$ gives pointwise
+convergence to $0$, and Step 2 supplies the $m$-free integrable majorant.
+Dominated convergence (Preamble) therefore gives
+\[
+\int_B\bigl|A(g)-A_{e_m}(g)\bigr|^{p'}\ \longrightarrow\ 0 .
+\]
+
+\emph{Step 4: conclusion.}  The map $t\mapsto t^{1/p'}=t^{(p-1)/p}$ is
+continuous at $0$ with value $0$, the exponent being positive by (H9).
+Composing with Step 3 and using (H10) gives $\delta_m\to0$.
+\end{proof}

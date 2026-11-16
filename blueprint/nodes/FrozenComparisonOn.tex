@@ -1,0 +1,20 @@
+\begin{definition}
+Let $p>1$, let $B_R=B_R(x_0)$ with $R>0$, let $A\colon\R^n\to\R^n$, let $u$ have
+weak gradient $g$ and continuous extension $U$ to $\overline B_R$, and let $v$
+have weak gradient $g_v$ and continuous extension $V$ to $\overline B_R$.  We say
+that $v$ is \emph{the comparison map for $u$ on $B_R$ with operator $A$},
+written $\mathrm{FrozenComparisonOn}(n,p,x_0,R,A,u,U,g,v,V,g_v)$, if
+\begin{enumerate}
+\item $v\in W^{1,p}(B_R)$ (\noderef{MemW1pOn}) is a weak solution of
+  $\operatorname{div}A(\nabla v)=0$ in $B_R$ (\noderef{IsWeakSolutionOn}); and
+\item $v=u$ on $\partial B_R$, encoded as the conjunction of
+  $v-u\in W^{1,p}_0(B_R)$ (\noderef{MemW1pZeroOn}) and the pointwise agreement
+  $V=U$ on the sphere $\partial B_R$, where $U$ and $V$ are continuous on
+  $\overline B_R$ and extend $u$ and $v$ from $B_R$.
+\end{enumerate}
+This is the Dirichlet problem (4.1) of the thesis of \S4 (and (5.2) of the thesis of \S5),
+with the boundary condition written in the form used throughout: $\partial B_R$
+is Lebesgue-null, so ``$v=u$ on $\partial B_R$'' is stated as the pointwise
+agreement of the continuous extensions together with membership of the
+difference in $W^{1,p}_0(B_R)$.  We write $w=u-v$, with weak gradient $g-g_v$.
+\end{definition}

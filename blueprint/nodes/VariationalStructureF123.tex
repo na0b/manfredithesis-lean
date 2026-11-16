@@ -1,0 +1,87 @@
+\begin{definition}
+Let $n\ge2$, $p>1$, $0\le\varepsilon\le1$, $0<\lambda\le\Lambda$, $a>0$,
+$0<\nu_0<\nu_1$, let $\Omega\subseteq\R^n$, let
+$f\colon\R^n\times\R\times\R^n\to\R$ and let $\sigma\colon\R\to\R$.  We say
+that $f$ satisfies the \emph{variational structure conditions}
+(F1) of the thesis--(F3) of the thesis on $\Omega$ with these parameters and modulus
+$\sigma$, written
+$\mathrm{VariationalStructureF123}(n,p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1,\Omega,f,\sigma)$,
+if
+\begin{enumerate}
+\item $f$ is a Carath\'eodory function: $x\mapsto f(x,z,h)$ is measurable for
+  each $(z,h)$ and $(z,h)\mapsto f(x,z,h)$ is continuous for each $x$;
+\item (F1) for all $x\in\Omega$, $z\in\R$, $h\in\R^n$,
+\[
+-a+\lambda(\varepsilon+|h|^2)^{p/2}\le f(x,z,h)\le\Lambda(\varepsilon+|h|^2)^{p/2}+a;
+\]
+\item (F2) for all $x\in\Omega$ and $z\in\R$ the map $h\mapsto f(x,z,h)$ is
+  of class $C^1$ on $\R^n$ and of class $C^2$ on
+  $D(\varepsilon)=\{h\in\R^n:\varepsilon+|h|^2\ne0\}$, and for all
+  $h\in D(\varepsilon)$ and all $\zeta\in\R^n$
+\[
+\nu_0(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2
+\le\sum_{i,j=1}^nD_{h_i}D_{h_j}f(x,z,h)\zeta^i\zeta^j
+\le\nu_1(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2;
+\]
+\item (F3) $\sigma$ is bounded, continuous and increasing with $\sigma(0)=0$,
+  and for all $x,x'\in\Omega$, $z,z'\in\R$, $h\in\R^n$,
+\[
+|f(x,z,h)-f(x',z',h)|\le(1+|h|^2)^{p/2}\,\sigma(|x-x'|+|z-z'|).
+\]
+\end{enumerate}
+In (3) the quadratic form $\sum_{i,j}D_{h_i}D_{h_j}f\,\zeta^i\zeta^j$ is written
+as the second directional derivative
+$D_\zeta(D_\zeta f)(x,z,h)$, which agrees with it by bilinearity of the second
+derivative.  All non-integer powers are real powers ($\mathtt{Real.rpow}$) of
+nonnegative reals; in particular at $\varepsilon=0$, $h=0$ and $1<p<2$ the weight
+$(\varepsilon+|h|^2)^{p/2-1}$ is read as $0$, which is the convention fixed once
+for the whole development.
+\textbf{On the domain of the second derivative.}  The set $D(\varepsilon)$ is
+open, equals $\R^n$ whenever $\varepsilon>0$, and equals $\R^n\setminus\{0\}$
+when $\varepsilon=0$; it is the same set, and the restriction in (F2) is the same
+correction, as in the restricted structure conditions
+(Q1) of the thesis--(Q2) of the thesis, for the same reason and with the same consequences.
+Read on all of $\R^n$, (F2) is contradictory on the range $\varepsilon=0$,
+$1<p<2$: for $h\ne0$ its lower bound forces the second derivative form to be at
+least $\nu_0|h|^{p-2}|\zeta|^2$, which tends to $+\infty$ as $h\to0$, while a
+$C^2$ function on all of $\R^n$ has a second derivative continuous at $0$, so on
+that range nothing would satisfy (F2) and the results of \S4 would be vacuous
+there.  The first-order clause is kept global, for two reasons: the model
+integrand $f(h)=(\varepsilon+|h|^2)^{p/2}$, which at $\varepsilon=0$ is
+$|h|^p$, \emph{is} of class $C^1$ at the origin for every $p>1$, with gradient
+$0$ there; and the Euler field $A=\nabla_hf^0$ of thesis p.~33 must be defined
+and continuous on all of $\R^n$ to be an admissible $A$ for \S3, which is
+exactly what the global $C^1$ clause gives.
+
+With the restriction the conditions are inhabited on the singular range.  Take
+$\varepsilon=0$, $1<p<2$, $f(x,z,h)=|h|^p$, $\lambda=\Lambda=1$, any $a>0$, and
+$\sigma\equiv0$.  Then (1) holds trivially, (F1) holds because
+$-a+|h|^p\le|h|^p\le|h|^p+a$, (F3) holds because $f$ does not depend on $(x,z)$
+and $\sigma\equiv0$ is bounded, continuous, nondecreasing and vanishes at $0$,
+and for (F2): $f$ is $C^1$ on $\R^n$ and $C^\infty$ on $\R^n\setminus\{0\}$, and
+there
+$\sum_{i,j}D_{h_i}D_{h_j}f(h)\zeta^i\zeta^j
+=p\,|h|^{p-2}\bigl(|\zeta|^2+(p-2)(\hat h,\zeta)^2\bigr)$,
+which by $0\le(\hat h,\zeta)^2\le|\zeta|^2$ lies between
+$p(p-1)|h|^{p-2}|\zeta|^2$ and $p|h|^{p-2}|\zeta|^2$; so (F2) holds with
+$\nu_0=p(p-1)$ and $\nu_1=p$, and $0<\nu_0<\nu_1$ because $1<p<2$.  The same
+computation is the one that makes (Q1) of the thesis--(Q2) of the thesis inhabited for
+$A=\nabla_hf=p|h|^{p-2}h$, as it must be, since p.~33 passes from this $f$ to
+that $A$.
+
+\textbf{On ``twice differentiable''.}  Condition (F2) of the thesis opens with
+``$f(x,z,h)$ is twice differentiable in $h$''; clause (F2) above renders this as
+``of class $C^2$ in $h$'' on $D(\varepsilon)$, the same reading, for the same reason, that the
+restricted structure conditions (Q1) of the thesis--(Q2) of the thesis give to
+(Q1) of the thesis's ``differentiable with respect to $h$'' --- and here it is forced
+by the paper itself.  Thesis p.~33
+defines $A(h)=\nabla_hf^0(h)$ with $f^0(h)=f(x_0,u(x_0),h)$ and asserts that
+``the equation in (4.1) of the thesis satisfies the structure conditions of \S3 with
+$\gamma_0=\nu_0$, $\gamma_1=\nu_1$''.  Since those structure conditions require
+$A$ to be of class $C^1$ in $h$ on $D(\varepsilon)$ and continuous on $\R^n$, and
+$A=\nabla_hf^0$ is $C^1$ on a set exactly when $f^0$ is $C^2$ there and is
+continuous exactly when $f^0$ is $C^1$, the assertion on p.~33 is true for every
+integrand the paper admits precisely under the pair of readings used in (F2).
+The symmetry of $D_{h_j}D_{h_i}f$ which p.~33 also invokes needs only Fr\'echet
+twice differentiability and is therefore not affected either way.
+\end{definition}

@@ -1,0 +1,73 @@
+\begin{helper}[Measurability and boundedness data on the support of the cut-off]
+Let $n\in\N$, let $p,\varepsilon\in\R$, let $\Omega\subseteq\R^n$, let
+$A,g\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let $Dg$ assign to each index
+$i$ a field $Dg^i\colon\R^n\to\R^n$, let $\zeta,w,w',W\colon\R^n\to\R$, let $k$
+be an index and let $M$ assign to each $x$ a matrix $(M_{ij}(x))$.  Throughout,
+$\operatorname{supp}\zeta$ denotes the \emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$ with
+$\partial_i\zeta(x)=d\zeta(x)[e_i]$, $|\cdot|$ is the Euclidean norm, and every
+power of a positive real is the real power with an arbitrary real exponent.
+Assume
+\begin{enumerate}
+\item[(H1)] $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ on
+  $\Omega$ with $\nabla u=g$ (\noderef{IsWeakSolutionOn}), and each $g_i$ lies
+  in $W^{1,2}_{loc}(\Omega)$ with weak gradient $Dg^i$
+  (\noderef{MemW1pLocOn});
+\item[(H2)] $\zeta$ is smooth with compact support,
+  $\operatorname{supp}\zeta\subseteq\Omega$, and $\zeta$ and every
+  $\partial_i\zeta$ vanish off $\operatorname{supp}\zeta$;
+\item[(H3)] $w=\varepsilon+|g|^2$ pointwise with $w>0$, and
+  $W=w^{\frac p2-1}$ pointwise;
+\item[(H4)] $W=w'^{\frac p2-1}$ almost everywhere on $\Omega$, and for every
+  real $\sigma$ and every compact $K\subseteq\Omega$ there is $L\ge0$ with
+  $w'^{\sigma}\le L$ on $K$;
+\item[(H5)] $M_{ij}(x)=\partial A_i/\partial h_j\bigl(g(x)\bigr)$ for all
+  $x,i,j$, and $A$ is $C^1$.
+\end{enumerate}
+Then, writing $K=\operatorname{supp}\zeta$: $W$, every $M_{ij}$, every $Dg^k_j$,
+$\zeta$ and every $\partial_i\zeta$ are almost everywhere measurable on $K$;
+products and finite sums of functions measurable on $K$ are measurable on $K$;
+$|Dg^k|^2$ is integrable on $K$; and there are nonnegative reals
+$L_\zeta,L_{\nabla\zeta},L_W$ with $\zeta^2\le L_\zeta$ and
+$|\nabla\zeta|^2\le L_{\nabla\zeta}$ everywhere and $W\le L_W$ almost
+everywhere on $K$.
+\end{helper}
+\begin{proof}
+Write $K=\operatorname{supp}\zeta$, which is compact by (H2) and hence
+measurable, and contained in $\Omega$.
+
+\emph{Step 1: $g$, $w$ and $W$.}  By (H1) the weak solution carries a local
+regularity clause giving $g$ almost everywhere strongly measurable on every
+compact subset of $\Omega$, so on $K$; each coordinate $g_i$ is therefore
+measurable on $K$, hence so is $|g|^2$ and, by (H3), $w=\varepsilon+|g|^2$.
+Since $w>0$ by (H3) and $\lambda\mapsto\lambda^{\frac p2-1}$ is continuous on
+$(0,\infty)$, the composite $W=w^{\frac p2-1}$ is measurable on $K$.
+
+\emph{Step 2: the coefficient entries.}  $A$ is $C^1$ by (H5), so
+$h\mapsto dA(h)$ is continuous; composing with the measurable $g$ and
+evaluating at the fixed pair of basis vectors shows that each
+$x\mapsto M_{ij}(x)=dA(g(x))[e_j]_i$ is measurable on $K$.
+
+\emph{Step 3: the second gradient and its square.}  By (H1) each $g_k$ lies in
+$W^{1,2}_{loc}(\Omega)$ with weak gradient $Dg^k$, so each component $Dg^k_j$
+is measurable on $K$ and $Dg^k\in L^2(K)$, $K$ being a compact subset of
+$\Omega$; hence $|Dg^k|^2$ is integrable on $K$.
+
+\emph{Step 4: the cut-off.}  $\zeta$ is smooth by (H2), so $\zeta$ and each
+$\partial_i\zeta$ are continuous and therefore measurable on $K$.
+
+\emph{Step 5: the closure clauses.}  A product of two functions measurable on
+$K$ is measurable on $K$, and a finite sum of finitely many such is measurable
+on $K$; both are the standard stability properties of measurability
+(Preamble).
+
+\emph{Step 6: the three bounds.}  The functions $\zeta^2$ and
+$|\nabla\zeta|^2$ are continuous by (H2) and vanish off $K$, so each is bounded
+on the compact $K$; taking the maximum of that bound with $0$ gives a
+nonnegative $L_\zeta$, respectively $L_{\nabla\zeta}$, which bounds the
+function everywhere --- off $K$ the function is $0$ by (H2) and the bound is
+nonnegative.  For $W$, apply the hypothesis of (H4) at $\sigma=\frac p2-1$ and
+$K$ to get $L_W\ge0$ with $w'^{\frac p2-1}\le L_W$ on $K$; since
+$W=w'^{\frac p2-1}$ almost everywhere on $\Omega\supseteq K$, also $W\le L_W$
+almost everywhere on $K$.
+\end{proof}

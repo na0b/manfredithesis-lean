@@ -1,0 +1,81 @@
+\begin{helper}[The weak formulation extends to the compactly supported $W^{1,2}$ test class]
+Let $n\in\N$, let $p\in\R$, let $\Omega\subseteq\R^n$, let
+$A\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let $g\colon\R^n\to\R^n$ and let
+$Dg$ assign to each index $j$ a field $Dg^j\colon\R^n\to\R^n$.  Throughout,
+$\operatorname{supp}\psi$ denotes the \emph{closed} support of $\psi$, $w_i$ is
+the $i$-th coordinate of $w\in\R^n$, $|\cdot|$ is the Euclidean norm, and the
+exponent $2$ is read as a natural number in the Sobolev memberships and as an
+extended real where an $L^2$ membership is asserted.  Assume
+\begin{enumerate}
+\item[(H1)] $1<p$, $\Omega$ is open and measurable, and $1\le n$;
+\item[(H2)] $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ on
+  $\Omega$ with $\nabla u=g$ (\noderef{IsWeakSolutionOn});
+\item[(H3)] each coordinate projection $w\mapsto w_i$ is continuous and
+  $|w_j|\le|w|$ for every $w$ and $j$;
+\item[(H4)] for each $i$ the composite $x\mapsto A(g(x))_i$ lies in
+  $W^{1,2}_{loc}(\Omega)$ with weak gradient
+  $x\mapsto\sum_j\bigl(\partial A_i/\partial h_j(g(x))\bigr)Dg^j(x)$
+  (\noderef{MemW1pLocOn});
+\item[(H5)] a function vanishing off $S\subseteq T$ has the same integral over
+  $T$ as over $S$;
+\item[(H6)] Cauchy--Schwarz on every set $S$:
+  $\int_S|FG|\le\bigl(\int_S|F|^2\bigr)^{1/2}\bigl(\int_S|G|^2\bigr)^{1/2}$ for
+  $F,G\in L^2(S)$, and the product of two $L^2(S)$ functions is integrable on
+  $S$;
+\item[(H7)] for every pair $(\psi_0,g_0)$ as below, $g_0=0$ almost everywhere
+  on $\Omega\setminus\operatorname{supp}\psi_0$.
+\end{enumerate}
+Then for every $\psi_0\colon\R^n\to\R$ and every $g_0\colon\R^n\to\R^n$ with
+$\psi_0\in W^{1,2}(\Omega)$ of weak gradient $g_0$ (\noderef{MemW1pOn}),
+$\psi_0$ of compact support and $\operatorname{supp}\psi_0\subseteq\Omega$,
+\[
+\int_\Omega\ \sum_i A\bigl(g(x)\bigr)_i\,(g_0)_i(x)\,dx\ =\ 0 .
+\]
+Per pm-0018 this is the test class the differentiated equation needs: an $L^2$
+statement tested against $W^{1,2}$ functions of compact support, rather than
+against the printed class of the undifferentiated equation.
+\end{helper}
+\begin{proof}
+\emph{Step 1: smooth approximation inside a fixed compact set.}  By
+\noderef{WeakGradientSmoothApprox} applied at exponent $2$ to the pair
+$(\psi_0,g_0)$ --- legitimate by (H1) and the hypotheses on $\psi_0$ --- there
+are a compact $K$ with $\operatorname{supp}\psi_0\subseteq K\subseteq\Omega$ and
+smooth compactly supported $\Psi_m$, each supported in $K$, with
+$\nabla\Psi_m\to g_0$ in $L^2(\Omega)$.
+
+\emph{Step 2: each approximant is an admissible test function.}  A smooth
+compactly supported function lies in $W^{1,2}(\Omega)$ with its classical
+gradient as weak gradient, so (H2) applies to $\Psi_m$ and gives
+\[
+\int_\Omega\ \sum_i A\bigl(g(x)\bigr)_i\,(\nabla\Psi_m)_i(x)\,dx\ =\ 0
+\qquad\text{for every }m .
+\]
+
+\emph{Step 3: the error is controlled by Cauchy--Schwarz.}  By (H4) each
+$A(g)_i$ lies in $W^{1,2}_{loc}(\Omega)$, hence in $L^2(K)$ since $K$ is a
+compact subset of $\Omega$; with (H3) this makes $|A(g)|\in L^2(K)$ and each
+product $A(g)_i\bigl((\nabla\Psi_m)_i-(g_0)_i\bigr)$ integrable on $K$ by
+(H6).  Subtracting Step 2 from the asserted integral and applying (H6)
+coordinatewise,
+\[
+\Bigl|\int_K\sum_iA(g)_i\bigl((g_0)_i-(\nabla\Psi_m)_i\bigr)\Bigr|
+\ \le\ \sum_i\Bigl(\int_K|A(g)_i|^2\Bigr)^{\!1/2}
+  \Bigl(\int_K\bigl|(g_0)_i-(\nabla\Psi_m)_i\bigr|^2\Bigr)^{\!1/2},
+\]
+and each factor on the right involving $\Psi_m$ tends to $0$ as $m\to\infty$ by
+Step 1, since $|(g_0)_j-(\nabla\Psi_m)_j|\le|g_0-\nabla\Psi_m|$ by (H3).
+
+\emph{Step 4: reduction of the domain and the limit.}  Both $g_0$ and every
+$\nabla\Psi_m$ vanish almost everywhere off $K$ --- the former by (H7) together
+with $\operatorname{supp}\psi_0\subseteq K$, the latter because $\Psi_m$ is
+supported in $K$ --- so by (H5) the integrals over $\Omega$ coincide with the
+integrals over $K$.  Combining Steps 2 and 3,
+\[
+\Bigl|\int_K\sum_iA(g)_i\,(g_0)_i\Bigr|
+=\Bigl|\int_K\sum_iA(g)_i\bigl((g_0)_i-(\nabla\Psi_m)_i\bigr)\Bigr|
+\ \longrightarrow\ 0 ,
+\]
+so the left-hand side, which does not depend on $m$, is at most $0$ in
+absolute value.  A nonnegative quantity bounded by $0$ is $0$, so
+$\int_K\sum_iA(g)_i(g_0)_i=0$, and by (H5) the same holds over $\Omega$.
+\end{proof}

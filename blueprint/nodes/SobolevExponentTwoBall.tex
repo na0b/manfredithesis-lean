@@ -1,0 +1,316 @@
+\begin{lemma}[The scale-invariant Sobolev inequality at exponent two on a ball]
+Let $n\ge2$ and suppose the Sobolev--Poincar\'e inequality on balls holds in
+dimension $n$ (\noderef{CitedSobolevPoincareBall}).  Then there are
+$\chi>1$ and $C>0$, depending only on $n$ and on the constant of that
+inequality, such that for every $x_0\in\R^n$, every $\rho>0$ and every
+$\varphi\in W^{1,2}(B_\rho(x_0))$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) having compact support with
+$\operatorname{supp}\varphi\subseteq B_\rho(x_0)$,
+\[
+\Bigl(\frac1{|B_\rho|}\int_{B_\rho}|\varphi|^{2\chi}dx\Bigr)^{\frac1{2\chi}}
+\ \le\ C\,\rho\,
+\Bigl(\frac1{|B_\rho|}\int_{B_\rho}|g_\varphi|^{2}dx\Bigr)^{\frac12},
+\qquad B_\rho=B_\rho(x_0).
+\]
+One may take $\chi=\frac n{n-2}$ when $n\ge3$ and $\chi=2$ when $n=2$.
+
+Both sides are averages, and the single factor $\rho$ makes the inequality
+invariant under the dilations $x\mapsto x_0+\rho y$, which is the form the
+Moser iteration over shrinking concentric balls consumes: no volume factors
+have to be carried from one radius to the next.  The single parameter $\chi$ is
+what lets one statement serve both $n\ge3$, where the Sobolev exponent is
+$2n/(n-2)=2\chi$, and $n=2$, where there is no Sobolev exponent and any
+$\chi>1$ will do.
+
+This is not the cited result (C6).  \noderef{CitedSobolevPoincareBall} is the
+$W^{1,1}\to L^{n/(n-1)}$ Poincar\'e--Sobolev inequality \emph{with the mean
+subtracted}, for arbitrary $W^{1,1}$ functions on a ball; what is asserted here
+is an $L^2\to L^{2\chi}$ inequality with \emph{no} mean, for functions with
+compact support in the ball.  Since the Note for the formalization closes its
+list of citable results with ``Everything else must be proved'', the passage
+from the one to the other is proved below rather than assumed.
+\end{lemma}
+\begin{proof}
+Throughout, $B_\sigma$ abbreviates $B_\sigma(x_0)$, and $\omega_n=|B_1(0)|$, so
+that $|B_\sigma|=\omega_n\sigma^n$ by the Preamble item on the volume of a ball;
+note $0<\omega_n<\infty$, so that $0<|B_\sigma|<\infty$ for every $\sigma>0$ and
+the reciprocals $|B_\rho|^{-1}$ appearing in the statement are the honest ones.
+Let $C_6=C_6(n)>0$ be the constant supplied by
+\noderef{CitedSobolevPoincareBall}.  Set
+\[
+\chi=\frac n{n-2}\ \text{ and }\ \kappa=\frac{2(n-1)}{n-2}\quad(n\ge3),
+\qquad
+\chi=2\ \text{ and }\ \kappa=2\quad(n=2),
+\]
+and in both cases put $q=2\chi$, so $q=\frac{2n}{n-2}$ for $n\ge3$ and $q=4$
+for $n=2$.  Then $\chi>1$: for $n\ge3$ because $n>n-2>0$, and for $n=2$
+trivially.  Also $\kappa>1$ in both cases.
+
+\emph{Step 1: the two exponent identities, for $n\ge3$.}  We record
+\[
+\kappa\cdot\frac n{n-1}=q
+\qquad\text{and}\qquad
+2(\kappa-1)=q
+\qquad\text{and}\qquad
+\frac{n-1}n-\frac12=\frac1q .
+\tag{1}
+\]
+Indeed $\kappa\frac n{n-1}=\frac{2(n-1)}{n-2}\cdot\frac n{n-1}=\frac{2n}{n-2}=q$;
+$2(\kappa-1)=2\bigl(\frac{2(n-1)}{n-2}-1\bigr)
+=2\cdot\frac{2n-2-n+2}{n-2}=\frac{2n}{n-2}=q$; and
+$\frac{n-1}n-\frac12=\frac{2(n-1)-n}{2n}=\frac{n-2}{2n}=\frac1q$.
+
+\emph{Step 2: removing the mean, for a function vanishing on
+$B_{2\rho}\setminus B_\rho$.}  Let $B'=B_{2\rho}$ and let $w\in L^1(B')$ with
+$w=0$ almost everywhere on $B'\setminus B_\rho$; write
+$w_{B'}=|B'|^{-1}\int_{B'}w$ and $s=\frac n{n-1}$.  We claim
+\[
+\Bigl(\int_{B'}|w|^{s}\Bigr)^{1/s}
+\ \le\ c_n\Bigl(\int_{B'}|w-w_{B'}|^{s}\Bigr)^{1/s},
+\qquad c_n=1+\bigl(1-2^{-n}\bigr)^{-1/s} .
+\tag{2}
+\]
+By the Preamble item on the volume of a ball, $|B'|=2^n|B_\rho|$, so
+$|B'\setminus B_\rho|=|B'|-|B_\rho|=(1-2^{-n})|B'|$.  On $B'\setminus B_\rho$ we
+have $|w-w_{B'}|=|w_{B'}|$ almost everywhere, whence
+\[
+\int_{B'}|w-w_{B'}|^{s}
+\ \ge\ \int_{B'\setminus B_\rho}|w_{B'}|^{s}
+=(1-2^{-n})|B'|\,|w_{B'}|^{s},
+\]
+that is $\bigl(\int_{B'}|w-w_{B'}|^{s}\bigr)^{1/s}\ge
+\bigl((1-2^{-n})|B'|\bigr)^{1/s}|w_{B'}|$.  On the other hand the $L^{s}$
+triangle inequality (Minkowski, Preamble) applied to
+$w=(w-w_{B'})+w_{B'}$ gives
+\[
+\Bigl(\int_{B'}|w|^{s}\Bigr)^{1/s}
+\le\Bigl(\int_{B'}|w-w_{B'}|^{s}\Bigr)^{1/s}+|B'|^{1/s}\,|w_{B'}| ,
+\]
+the second term being the $L^{s}(B')$ norm of the constant $w_{B'}$.  Combining
+the two displays and using
+$|B'|^{1/s}\bigl((1-2^{-n})|B'|\bigr)^{-1/s}=(1-2^{-n})^{-1/s}$, which does not
+depend on $\rho$, gives (2).  (Note $w_{B'}$ is finite because $w\in L^1(B')$.)
+
+\emph{Step 3: the inequality for a smooth $\varphi$, case $n\ge3$.}  Let
+$\varphi\in C^\infty(\R^n)$ have compact support with
+$\operatorname{supp}\varphi\subseteq B_\rho$, and write $\nabla\varphi$ for its
+classical gradient.  We prove
+\[
+\Bigl(\int_{B_\rho}|\varphi|^{q}\Bigr)^{1/q}
+\ \le\ C_1\Bigl(\int_{B_\rho}|\nabla\varphi|^2\Bigr)^{1/2},
+\qquad C_1=c_nC_6\kappa .
+\tag{3}
+\]
+Put $B'=B_{2\rho}$, an open set of finite measure containing
+$\operatorname{supp}\varphi$, and let $\Lambda=\sup_{\R^n}|\varphi|<\infty$
+($\varphi$ is continuous with compact support).
+
+\emph{(3a) $\varphi\in W^{1,1}(B')$ with weak gradient $\nabla\varphi$.}  This is
+\noderef{SmoothCompactSupportMemW1p} at the exponent $r=1$: its hypotheses are
+$n\ge1$, $1\le1$, openness of $B'$, smoothness of $\varphi$, compactness of its
+support and $\operatorname{supp}\varphi\subseteq B'$, all of which hold.
+
+\emph{(3b) $\psi=|\varphi|^{\kappa}$ lies in $W^{1,1}(B')$ with weak gradient
+$\kappa|\varphi|^{\kappa-1}\operatorname{sgn}(\varphi)\nabla\varphi$.}  Let
+$F(t)=|t|^{\kappa}$.  Since $\kappa>1$, $F$ is differentiable with
+$F'(t)=\kappa|t|^{\kappa-1}\operatorname{sgn}(t)$, and $F'$ is continuous,
+including at $t=0$ where $|F'(t)|\le\kappa|t|^{\kappa-1}\to0$; so $F$ is of
+class $C^1$.  Its derivative is however unbounded on $\R$, which
+\noderef{WeakGradientC1Comp} does not allow, so replace $F$ by the function
+$\widetilde F$ equal to $F$ on $[-\Lambda,\Lambda]$ and extended affinely
+outside, i.e.\ $\widetilde F(t)=F(\Lambda)+F'(\Lambda)(t-\Lambda)$ for
+$t>\Lambda$ and $\widetilde F(t)=F(-\Lambda)+F'(-\Lambda)(t+\Lambda)$ for
+$t<-\Lambda$.  Then $\widetilde F$ is $C^1$ on $\R$, the value and the
+derivative matching at $\pm\Lambda$ by construction, and
+$|\widetilde F'|\le L:=\kappa\Lambda^{\kappa-1}$ everywhere, because $|F'|$ is
+nondecreasing in $|t|$.  Since $|\varphi|\le\Lambda$ we have
+$\widetilde F\circ\varphi=F\circ\varphi=\psi$ and
+$\widetilde F'\circ\varphi=F'\circ\varphi$.  Now
+\noderef{WeakGradientC1Comp} applies with $q=1$, this $L$, the open set $B'$ of
+finite measure, the pair $(\varphi,\nabla\varphi)$ of (3a) and the function
+$\widetilde F$, and gives $\psi\in W^{1,1}(B')$ with weak gradient
+$x\mapsto\widetilde F'(\varphi(x))\nabla\varphi(x)
+=\kappa|\varphi(x)|^{\kappa-1}\operatorname{sgn}(\varphi(x))\nabla\varphi(x)$.
+In particular, pointwise,
+\[
+|\nabla\psi|=\kappa\,|\varphi|^{\kappa-1}\,|\nabla\varphi| .
+\tag{4}
+\]
+
+\emph{(3c) Applying (C6) on $B'$.}  By (3b) the pair $(\psi,\nabla\psi)$
+satisfies the hypotheses of \noderef{CitedSobolevPoincareBall} on the ball
+$B'=B_{2\rho}(x_0)$, whose radius $2\rho$ is positive; with $s=\frac n{n-1}$ its
+conclusion reads
+\[
+\Bigl(\int_{B'}|\psi-\psi_{B'}|^{s}\Bigr)^{1/s}\le C_6\int_{B'}|\nabla\psi| .
+\]
+The function $\psi=|\varphi|^{\kappa}$ vanishes on $B'\setminus B_\rho$ and lies
+in $L^1(B')$ (it is bounded by $\Lambda^{\kappa}$ and supported in a set of
+finite measure), so Step 2 applies and gives
+$\bigl(\int_{B'}\psi^{s}\bigr)^{1/s}\le c_nC_6\int_{B'}|\nabla\psi|$.
+Inserting (4) and applying H\"older with the conjugate exponents $2$ and $2$ on
+$B'$ (Preamble),
+\[
+\Bigl(\int_{B'}|\varphi|^{\kappa s}\Bigr)^{1/s}
+\le c_nC_6\,\kappa\int_{B'}|\varphi|^{\kappa-1}|\nabla\varphi|
+\le c_nC_6\,\kappa
+\Bigl(\int_{B'}|\varphi|^{2(\kappa-1)}\Bigr)^{1/2}
+\Bigl(\int_{B'}|\nabla\varphi|^{2}\Bigr)^{1/2}.
+\]
+By the first two identities of (1), $\kappa s=q$ and $2(\kappa-1)=q$, so with
+$I=\int_{B'}|\varphi|^{q}$ this says
+\[
+I^{1/s}\ \le\ c_nC_6\kappa\,I^{1/2}\Bigl(\int_{B'}|\nabla\varphi|^2\Bigr)^{1/2}.
+\]
+Now $I<\infty$, because $|\varphi|^q\le\Lambda^q$ and $\varphi$ vanishes off a
+set of finite measure.  If $I=0$ then $|\varphi|^q=0$ almost everywhere on
+$B'$, so the left-hand side of (3) is $0$ and (3) holds, its right-hand side
+being nonnegative.  If $I>0$, divide by $I^{1/2}$ and use the third identity of
+(1), $\frac1s-\frac12=\frac1q$:
+\[
+I^{1/q}\le c_nC_6\kappa\Bigl(\int_{B'}|\nabla\varphi|^2\Bigr)^{1/2}.
+\]
+Finally $\varphi$ and $\nabla\varphi$ vanish off
+$\operatorname{supp}\varphi\subseteq B_\rho$ --- for $\nabla\varphi$ because
+$\varphi$ vanishes identically on the open complement of its support and a
+function constant on an open set has vanishing derivative there --- so each
+integral over $B'$ equals the corresponding integral over $B_\rho$.  This is
+(3).
+
+\emph{Step 4: the inequality for a smooth $\varphi$, case $n=2$.}  Here
+$s=\frac n{n-1}=2$, $\kappa=2$ and $q=4$, and we prove
+\[
+\Bigl(\int_{B_\rho}|\varphi|^{4}\Bigr)^{1/4}
+\ \le\ C_1\,\rho^{1/2}\Bigl(\int_{B_\rho}|\nabla\varphi|^2\Bigr)^{1/2},
+\qquad C_1=\bigl(2c_2^2C_6^2\,\omega_2^{1/2}\bigr)^{1/2}.
+\tag{5}
+\]
+Let $\varphi$, $B'$, $\Lambda$ be as in Step 3; (3a) and (3b) apply verbatim
+with $\kappa=2$ (and there $F(t)=t^2$ is already $C^\infty$, so only the
+truncation to bound $F'$ is needed), giving $\psi=\varphi^2\in W^{1,1}(B')$
+with $|\nabla\psi|=2|\varphi||\nabla\varphi|$.
+
+\emph{(4a) The Ladyzhenskaya step.}  Exactly as in (3c), with $s=2$:
+\[
+\Bigl(\int_{B'}|\varphi|^{4}\Bigr)^{1/2}
+=\Bigl(\int_{B'}\psi^{2}\Bigr)^{1/2}
+\le2c_2C_6\int_{B'}|\varphi||\nabla\varphi|
+\le2c_2C_6\Bigl(\int_{B'}|\varphi|^{2}\Bigr)^{1/2}
+\Bigl(\int_{B'}|\nabla\varphi|^{2}\Bigr)^{1/2},
+\]
+the last step H\"older with exponents $2$ and $2$ (Preamble).
+
+\emph{(4b) A Poincar\'e step.}  Apply \noderef{CitedSobolevPoincareBall} on
+$B'$ to the pair $(\varphi,\nabla\varphi)$ of (3a), again with $s=2$:
+$\bigl(\int_{B'}|\varphi-\varphi_{B'}|^{2}\bigr)^{1/2}\le
+C_6\int_{B'}|\nabla\varphi|$.  The function $\varphi$ vanishes on
+$B'\setminus B_\rho$ and lies in $L^1(B')$, so Step 2 --- whose proof used only
+that $w$ vanishes there, not that it is nonnegative --- gives
+$\bigl(\int_{B'}|\varphi|^{2}\bigr)^{1/2}\le c_2C_6\int_{B'}|\nabla\varphi|$.
+Since $\nabla\varphi$ vanishes off $B_\rho$, H\"older on the finite-measure set
+$B_\rho$ (Preamble) bounds
+$\int_{B'}|\nabla\varphi|=\int_{B_\rho}|\nabla\varphi|
+\le|B_\rho|^{1/2}\bigl(\int_{B_\rho}|\nabla\varphi|^2\bigr)^{1/2}$, and
+$|B_\rho|^{1/2}=(\omega_2\rho^2)^{1/2}=\omega_2^{1/2}\rho$ by the Preamble item
+on the volume of a ball.  Hence
+\[
+\Bigl(\int_{B'}|\varphi|^{2}\Bigr)^{1/2}
+\le c_2C_6\,\omega_2^{1/2}\,\rho\Bigl(\int_{B_\rho}|\nabla\varphi|^2\Bigr)^{1/2}.
+\]
+
+\emph{(4c) Combining.}  Substituting (4b) into (4a), and using that $\varphi$
+and $\nabla\varphi$ vanish off $B_\rho$ so that the integrals over $B'$ are
+integrals over $B_\rho$,
+\[
+\Bigl(\int_{B_\rho}|\varphi|^{4}\Bigr)^{1/2}
+\le2c_2^2C_6^2\,\omega_2^{1/2}\,\rho\int_{B_\rho}|\nabla\varphi|^2 ,
+\]
+and taking square roots gives (5).
+
+\emph{Step 5: from smooth $\varphi$ to the stated class.}  Let now
+$(\varphi,g_\varphi)$ be as in the statement: $\varphi\in W^{1,2}(B_\rho)$ with
+weak gradient $g_\varphi$ (\noderef{MemW1pOn}), compact support,
+$\operatorname{supp}\varphi\subseteq B_\rho$.  Apply
+\noderef{WeakGradientSmoothApprox} with this $n$, the exponent $q=2$, the open
+set $B_\rho$ and the pair $(\varphi,g_\varphi)$; its hypotheses are $1\le n$,
+$1\le2$, openness of $B_\rho$, the $W^{1,2}$ membership, compactness of the
+support and $\operatorname{supp}\varphi\subseteq B_\rho$.  It produces a compact
+$K\subseteq B_\rho$ with $\operatorname{supp}\varphi\subseteq K$ and functions
+$\Phi_m\in C^\infty(\R^n)$, each with compact support contained in $K$, such
+that
+\[
+\int_K|\Phi_m-\varphi|^2\to0
+\qquad\text{and}\qquad
+\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^2\to0
+\quad(m\to\infty)
+\tag{6}
+\]
+for every index $i$.
+
+Each $\Phi_m$ is smooth with compact support contained in
+$K\subseteq B_\rho$, so Step 3 (if $n\ge3$) resp.\ Step 4 (if $n=2$) applies to
+it:
+\[
+\Bigl(\int_{B_\rho}|\Phi_m|^{q}\Bigr)^{1/q}
+\le C_1\rho^{a}\Bigl(\int_{B_\rho}|\nabla\Phi_m|^2\Bigr)^{1/2},
+\qquad a=0\ (n\ge3),\quad a=\tfrac12\ (n=2).
+\tag{7}
+\]
+We pass to the limit in (7).
+
+\emph{Right-hand side.}  All the integrands vanish off $K$, so the integrals
+over $B_\rho$ are integrals over $K$.  By the reverse triangle inequality in
+$\R^n$ and then the $L^2$ triangle inequality (Minkowski, Preamble),
+\[
+\Bigl|\Bigl(\int_K|\nabla\Phi_m|^2\Bigr)^{1/2}
+-\Bigl(\int_K|g_\varphi|^2\Bigr)^{1/2}\Bigr|
+\le\Bigl(\int_K|\nabla\Phi_m-g_\varphi|^2\Bigr)^{1/2}
+\le\sum_{i=1}^n\Bigl(\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^2\Bigr)^{1/2},
+\]
+which tends to $0$ by (6).  Hence the right-hand side of (7) converges to
+$C_1\rho^{a}\bigl(\int_{B_\rho}|g_\varphi|^2\bigr)^{1/2}$.
+
+\emph{Left-hand side.}  By (6) and the Preamble item on extracting an almost
+everywhere convergent subsequence from $L^2$ convergence, there is a
+subsequence $\Phi_{m_l}$ with $\Phi_{m_l}\to\varphi$ almost everywhere on $K$.
+The functions $|\Phi_{m_l}|^{q}$ are nonnegative and measurable and converge
+almost everywhere on $K$ to $|\varphi|^{q}$, so Fatou's lemma (Preamble) gives
+\[
+\int_K|\varphi|^{q}\ \le\ \liminf_{l\to\infty}\int_K|\Phi_{m_l}|^{q} .
+\]
+Again all the integrands vanish off $K$, so these are integrals over $B_\rho$.
+Combining with (7) along the subsequence and with the convergence of the
+right-hand side,
+\[
+\Bigl(\int_{B_\rho}|\varphi|^{q}\Bigr)^{1/q}
+\le C_1\rho^{a}\Bigl(\int_{B_\rho}|g_\varphi|^2\Bigr)^{1/2}.
+\tag{8}
+\]
+(The passage from the bound on $\int|\varphi|^q$ to the bound on its $1/q$-th
+power uses that $t\mapsto t^{1/q}$ is nondecreasing on $[0,\infty)$.)  Note in
+particular that $\int_{B_\rho}|\varphi|^q$ is \emph{finite}: the right-hand side
+of (8) is finite, since $|g_\varphi|\in L^2(B_\rho)$ by \noderef{MemW1pOn}.  So
+the integral on the left of the assertion is a genuine finite integral and not
+the value a divergent one would be assigned.
+
+\emph{Step 6: from (8) to the averaged form.}  Write
+$P=\bigl(\int_{B_\rho}|\varphi|^q\bigr)^{1/q}$ and
+$G=\bigl(\int_{B_\rho}|g_\varphi|^2\bigr)^{1/2}$, both finite and nonnegative.
+The asserted inequality is
+\[
+|B_\rho|^{-1/q}P\ \le\ C\rho\,|B_\rho|^{-1/2}G ,
+\quad\text{i.e.}\quad
+P\ \le\ C\rho\,|B_\rho|^{\frac1q-\frac12}G ,
+\]
+and $|B_\rho|^{\frac1q-\frac12}=(\omega_n\rho^n)^{\frac1q-\frac12}
+=\omega_n^{\frac1q-\frac12}\rho^{\,n(\frac1q-\frac12)}$ by the Preamble item on
+the volume of a ball.  For $n\ge3$, $q=\frac{2n}{n-2}$ gives
+$n\bigl(\frac1q-\frac12\bigr)=n\bigl(\frac{n-2}{2n}-\frac12\bigr)=-1$, so the
+asserted inequality is $P\le C\omega_n^{\frac1q-\frac12}G$ and (8) with $a=0$
+delivers it with $C=C_1\omega_n^{\frac12-\frac1q}$.  For $n=2$, $q=4$ gives
+$n\bigl(\frac1q-\frac12\bigr)=2\bigl(\frac14-\frac12\bigr)=-\tfrac12$, so the
+asserted inequality is $P\le C\omega_2^{-1/4}\rho^{1/2}G$ and (8) with
+$a=\tfrac12$ delivers it with $C=C_1\omega_2^{1/4}$.  In both cases $C>0$,
+being a product of positive numbers, and $C$ depends only on $n$ and $C_6$.
+This completes the proof.
+\end{proof}

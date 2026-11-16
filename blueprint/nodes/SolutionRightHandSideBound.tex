@@ -1,0 +1,95 @@
+\begin{lemma}[\textup{(5.8)}: the right-hand side term]
+Let $n\ge1$, let $p>1$ and let $\gamma_4>0$.  Let $\Omega\subseteq\R^n$, let
+$(A,B)$ satisfy (Q3) of the thesis--(Q5) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\mu,\gamma_2,\gamma_3,\gamma_4$
+(\noderef{EllipticStructureQ345}), let $u,v$ be real valued and $g$ a vector
+field, let $x_0\in\R^n$ and $R>0$ with $B_R(x_0)\subseteq\Omega$, let
+$\alpha>0$ and $C_1\ge0$, and assume
+\[
+g\in L^p\bigl(B_R(x_0)\bigr),
+\qquad
+B(\cdot,u,g)\in L^1\bigl(B_R(x_0)\bigr),
+\qquad
+|u-v|\le4C_1R^{\alpha}\ \text{ a.e. on }B_R(x_0),
+\]
+and assume further that $u$ and $v$ are almost everywhere strongly measurable
+on $B_R(x_0)$.
+Then
+\[
+\Bigl|\int_{B_R(x_0)}B\bigl(x,u(x),g(x)\bigr)\bigl(u(x)-v(x)\bigr)dx\Bigr|
+\ \le\ 4C_1\gamma_4R^{\alpha}
+\int_{B_R(x_0)}\bigl(1+|g|^2\bigr)^{\frac p2}dx .
+\]
+\end{lemma}
+\begin{proof}
+Write $B_R=B_R(x_0)$ and note $|B_R|<\infty$ (Preamble: the volume of a ball).
+
+\emph{Step 1: the growth majorant is integrable.}  By clause \texttt{Q5} of
+\noderef{EllipticStructureQ345}, for almost every $x\in\Omega$, every $z$ and
+every $h$,
+\[
+\bigl|B(x,z,h)\bigr|\le\gamma_4\bigl(1+|h|^2\bigr)^{\frac p2} .
+\]
+Since $B_R\subseteq\Omega$ this holds for almost every $x\in B_R$; read at
+$z=u(x)$ and $h=g(x)$,
+\[
+\bigl|B(x,u(x),g(x))\bigr|\le\gamma_4\bigl(1+|g(x)|^2\bigr)^{\frac p2}
+\qquad\text{a.e. on }B_R .
+\tag{1}
+\]
+The function $(1+|g|^2)^{p/2}$ is integrable on $B_R$: by cases on $|g|\le1$,
+where $1+|g|^2\le2$ so the power is at most $2^{p/2}$, and on $|g|>1$, where
+$1+|g|^2\le2|g|^2$ so the power is at most $2^{p/2}|g|^p$ (pm-0024, the bases
+being positive); hence
+$(1+|g|^2)^{p/2}\le2^{p/2}(1+|g|^p)$, which is integrable on $B_R$ because
+$g\in L^p(B_R)$ and $|B_R|<\infty$.  It is also nonnegative, so its integral is
+a nonnegative real.
+
+\emph{Step 2: the pointwise bound on the integrand.}  Combining the hypothesis
+$|u-v|\le4C_1R^{\alpha}$ almost everywhere on $B_R$ with (1), and noting
+$4C_1R^{\alpha}\ge0$ because $C_1\ge0$ and $R^{\alpha}\ge0$ (pm-0024),
+\[
+\bigl|B(x,u(x),g(x))\bigl(u(x)-v(x)\bigr)\bigr|
+\le4C_1R^{\alpha}\,\gamma_4\bigl(1+|g(x)|^2\bigr)^{\frac p2}
+\qquad\text{a.e. on }B_R .
+\tag{2}
+\]
+
+\emph{Step 3: integrating.}  The integrand
+$x\mapsto B(x,u(x),g(x))(u(x)-v(x))$ is integrable on $B_R$.  It is almost
+everywhere strongly measurable on $B_R$, being the product of two such
+functions: $B(\cdot,u,g)$, which is almost everywhere strongly measurable
+because it lies in $L^1(B_R)$ by hypothesis, and $u-v$, which is almost
+everywhere strongly measurable because $u$ and $v$ are, by hypothesis, and a
+difference of two such functions is again one.  \emph{The measurability of $u$
+and $v$ is a hypothesis and is not derivable from the rest of the list}: the
+$L^1$ hypothesis constrains only the superposition $B(\cdot,u,g)$, the $L^p$
+hypothesis only $g$, and the essential bound on $|u-v|$ carries no regularity
+at all.  By (2) the integrand is dominated almost everywhere by
+$4C_1R^{\alpha}\gamma_4(1+|g|^2)^{p/2}$, which is integrable on $B_R$ by Step
+1; in particular that majorant is itself almost everywhere strongly measurable,
+being a continuous function of $|g|$ and $g\in L^p(B_R)$ being almost
+everywhere strongly measurable.  A function almost everywhere strongly
+measurable and dominated almost everywhere by an integrable function is
+integrable, so the integrand is integrable on $B_R$.  Hence, chaining
+$|\int f|\le\int|f|$ with (2) and taking the constant out,
+\[
+\Bigl|\int_{B_R}B(x,u,g)(u-v)\,dx\Bigr|
+\le\int_{B_R}\bigl|B(x,u,g)(u-v)\bigr|dx
+\le4C_1\gamma_4R^{\alpha}\int_{B_R}\bigl(1+|g|^2\bigr)^{\frac p2}dx ,
+\]
+which is the assertion.
+
+\emph{On the constant.}  The source's printed (5.8) of the thesis carries
+$2C_1\gamma_4$, and its adjudicated \texttt{CHECK} at l.~1514 records why the
+printed chain really needs $4C_1\gamma_4$: the hypothesis
+$\sup|u(x_0)-u(x)|\le C_1R^{\alpha}$ gives
+$\operatorname*{osc}_{B_R}u\le2C_1R^{\alpha}$, so the displayed chain for $|w|$
+through a boundary point yields $4C_1R^{\alpha}$ rather than $2C_1R^{\alpha}$.
+The present statement takes the essential bound on $|u-v|$ as a hypothesis at
+the constant $4C_1R^{\alpha}$ and carries that constant into the conclusion, so
+no step here asserts the printed inequality.  A consumer that can produce the
+sharper essential bound $2C_1R^{\alpha}$ --- comparing $u$ and $v$ through the
+single value $U(x_0)$ rather than through a boundary point --- may of course
+weaken it to $4C_1R^{\alpha}$ and apply this lemma unchanged.
+\end{proof}

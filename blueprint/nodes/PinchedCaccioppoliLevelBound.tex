@@ -1,0 +1,365 @@
+\begin{lemma}[Removing a pinched weight from a Caccioppoli inequality]
+Let $n\ge1$, let $s,K,c\in\R$ with $K\ge1$ and $c>0$.  Then there is a constant
+$\gamma>0$, depending only on $n$, $s$, $K$ and $c$, with the following
+property.
+
+Let $x_0\in\R^n$, let $R,\Theta,\ell,\kappa_1,\kappa_2\in\R$ with $R>0$ and
+$\kappa_1>0$ and $\kappa_2\le K\kappa_1$, write $B_\sigma=B_\sigma(x_0)$, let
+$f\colon\R^n\to\R$, let $G\colon\R^n\to\R^n$ and let $w\colon\R^n\to\R$ be
+measurable.  Assume
+\begin{itemize}
+\item[\textup{(H1)}] $f\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $G$
+  (\noderef{MemW1pLocOn});
+\item[\textup{(H2)}] $|f|\le\Theta$ almost everywhere on $B_R$;
+\end{itemize}
+Then for all radii $0<\rho_0<\rho_1<R$ the following two implications hold.
+\begin{itemize}
+\item[\textup{($+$)}] If, in addition,
+  \begin{itemize}
+  \item[\textup{(H3$^+$)}] $\kappa_1\le w\le\kappa_2$ almost everywhere on
+    $B_R\cap\{f>\ell\}$, and
+  \item[\textup{(H4$^+$)}] for every $\zeta\in C^\infty(\R^n)$ with compact
+    support and $\operatorname{tsupport}\zeta\subseteq B_R$,
+    \[
+    \int_{B_R\cap\{f>\ell\}}w^{\,s}\|G\|^2\zeta^2\,dx
+    \ \le\ c\int_{B_R}w^{\,s}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+    \]
+  \end{itemize}
+  then
+  $\mathrm{DeGiorgiLevelBound}\ n\ \gamma\ f\ G\ x_0\ \ell\ \rho_0\ \rho_1$.
+\item[\textup{($-$)}] If, in addition,
+  \begin{itemize}
+  \item[\textup{(H3$^-$)}] $\kappa_1\le w\le\kappa_2$ almost everywhere on
+    $B_R\cap\{f<\ell\}$, and
+  \item[\textup{(H4$^-$)}] for every such $\zeta$,
+    \[
+    \int_{B_R\cap\{f<\ell\}}w^{\,s}\|G\|^2\zeta^2\,dx
+    \ \le\ c\int_{B_R}w^{\,s}\bigl((\ell-f)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+    \]
+  \end{itemize}
+  then
+  $\mathrm{DeGiorgiLevelBound}\ n\ \gamma\ (-f)\ (-G)\ x_0\ (-\ell)\ \rho_0\
+  \rho_1$.
+\end{itemize}
+Both predicates are to be read through \noderef{DeGiorgiLevelBound}.  Here
+$(t)^+=\max\{t,0\}$,
+$|\nabla\zeta|^2=\sum_i(\partial_i\zeta)^2$, and the two displayed predicates
+are the two instances of the paper's condition (2.1) of the thesis that the De Giorgi
+lemmas of \S2 consume.
+
+\medskip
+\noindent\textbf{What this lemma is for, and why the quantifier order is this
+one.}  The paper uses one computation three times in \S3: a Caccioppoli
+inequality carrying the weight $w^{p/2-1}$, $w=\varepsilon+|\nabla u|^2$, is
+converted into a condition of the form (2.1) of the thesis by cancelling the weight
+against its own two-sided bound and then specialising the test function to the
+standard cut-off.  At thesis l.~884--885 the paper says exactly this: ``If
+$\ell\in[\mu/2,\mu]$ \emph{on the set of integration} in (3.4) of the thesis we have
+that $2\ell\ge|D_ku|\ge\ell$.  Thus one can easily cancel the $w^{p/2-1}$ as we
+did to obtain (3.9) of the thesis for the case $\varepsilon>\lambda^2$.''  The lemma
+is that computation, abstracted in the function as \S2's lemmas are, so that it
+can be stated once and instantiated three times.
+
+The pinch is attached to the \emph{set of integration} and not to the ball,
+because that is the only form two of the three instances have: at
+$\varepsilon\ge\lambda^2$ the paper's $w$ is pinched on all of $B_R$, but for
+levels $\ell\in[\mu/2,\mu]$ it is pinched only where $|D_ku|$ is of order $\mu$.
+A bound valid on the whole ball restricts to the set of integration, so the
+whole-ball instances are special cases and nothing is lost.
+
+$K$ is bound \emph{before} the existential for $\gamma$ and $\kappa_1,\kappa_2$
+\emph{after} it, which is forced: the weight is removed from the left of
+(H4$^\pm$) at the cost $K^{|s|}\kappa_1^{-s}$ and reinstated on the right at the
+cost $K^{|s|}\kappa_1^{\,s}$, and the two powers of $\kappa_1$ cancel exactly,
+so the composite constant is $c\,K^{2|s|}$ times a factor depending only on the
+cut-off.  It therefore carries no trace of $\kappa_1$ or $\kappa_2$ separately,
+which is what lets one $\gamma$ serve instances with wildly different pinch
+levels, and it is what the paper's ``$C(n,p,\gamma_1/\gamma_0)$'' asserts.
+
+The two sign cases are stated as \emph{separate} implications, each carrying its
+own pinch and its own Caccioppoli inequality on the set its own conclusion
+integrates over.  They are genuinely different, because the second predicate
+integrates over $\{-f>-\ell\}=\{f<\ell\}$, which is \emph{disjoint} from
+$\{f>\ell\}$, so (H3$^+$) and (H4$^+$) say nothing about it.  Decoupling them is
+not a stylistic choice but forced by the consumers: in the regime of the paper's
+(3.23) of the thesis, where the weight is pinched only where $|D_ku|$ is of order
+$\mu$, the $+$ pinch is available for levels $\ell\in[\mu/2,\mu]$ and the $-$
+pinch only for $\ell\in[-\mu,-\mu/2]$ --- never both at the same $\ell$ --- so a
+conjunctive form with both pinches as common hypotheses would be unusable there.
+Both halves are nevertheless needed, because Lemma~2.5 of the paper asks for a
+family of (2.1) of the thesis instances for $f$ at high levels and a family for $-f$
+at low ones.  (That lemma is not cited here: the present statement is independent
+of it, and naming it is commentary.)
+
+The bound (H2) is hypothesised rather than derived.  In the paper's concrete
+setting the weight is built from the very function being bounded, so the upper
+pinch $w\le\kappa_2$ does bound $|f|$; once the lemma is abstracted in $f$ that
+link is severed, and indeed $w\equiv1$ satisfies the pinch with
+$\kappa_1=\kappa_2=K=1$ while $f$ is arbitrary.  (H2) is stated on $B_R$ rather
+than on the inner ball because both clauses of
+\noderef{DeGiorgiLevelBound} look at $B_{\rho_1}$ --- the first bounds
+$(f-\ell)^+$ there and the second takes its essential supremum there --- and the
+conclusion is quantified over all $\rho_1<R$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the cut-off, and the constant $\Lambda$.}  Let $\rho_{1/8}$ be the
+standard mollifier of the Preamble in dimension one at scale $\tfrac18$ ---
+smooth, nonnegative, supported in $[-\tfrac18,\tfrac18]$, of total integral $1$
+--- and put $\psi_\flat=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}$.  Then
+$\psi_\flat\in C^\infty(\R)$ with
+$\psi_\flat'=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}'$ (Preamble: convolution with a
+smooth compactly supported kernel, the indicator being locally integrable),
+$0\le\psi_\flat\le1$ --- because $0\le\mathbf1_{(-\infty,1/2]}\le1$ and
+$\rho_{1/8}\ge0$ with $\int\rho_{1/8}=1$, so the convolution is an average of
+values in $[0,1]$ --- and $\psi_\flat=1$ on $(-\infty,\tfrac38]$ and
+$\psi_\flat=0$ on $[\tfrac58,\infty)$.  For the latter two, write the
+convolution in the form the Preamble item defines,
+$(\mathbf1_{(-\infty,1/2]}*\rho_{1/8})(t)
+=\int\mathbf1_{(-\infty,1/2]}(y)\rho_{1/8}(t-y)\,dy$, and substitute
+$y=t-\sigma$, which is legitimate by the translation and reflection invariance
+of Lebesgue measure (Preamble: invariance of Lebesgue measure under
+translations and unimodular linear maps), to get
+$\int\mathbf1_{(-\infty,1/2]}(t-\sigma)\rho_{1/8}(\sigma)\,d\sigma$.  Now for
+$t\le\tfrac38$ every $\sigma$ with $|\sigma|\le\tfrac18$ has
+$t-\sigma\le\tfrac12$, so the indicator is $1$ on the whole support of
+$\rho_{1/8}$ and the integral is $\int\rho_{1/8}=1$; and for $t\ge\tfrac58$
+every such $\sigma$ has $t-\sigma\ge\tfrac12$, so the indicator vanishes except
+possibly at the single point $\sigma=t-\tfrac12$, a Lebesgue-null set, and the
+integral is $0$.  Finally
+$|\psi_\flat'|\le\|\rho_{1/8}'\|_{L^1(\R)}=:\Lambda<\infty$, an absolute
+constant.  Given $0<\rho_0<\rho_1$ put
+\[
+\zeta_{\rho_0,\rho_1}(x)=\psi_\flat\Bigl(\frac{|x-x_0|-\rho_0}{\rho_1-\rho_0}\Bigr).
+\]
+Then $0\le\zeta\le1$; $\zeta=1$ on $\overline B_{\rho_0}$; $\zeta=0$ outside
+$\overline B_{\rho_0+\frac58(\rho_1-\rho_0)}$, so $\operatorname{supp}\zeta$ is
+compact and contained in $B_{\rho_1}$; $\zeta$ is smooth, because
+$x\mapsto|x-x_0|$ is smooth away from $x_0$ and $\zeta$ is constant on the
+neighbourhood $B_{\rho_0}$ of $x_0$; and
+$|\nabla\zeta|\le\Lambda/(\rho_1-\rho_0)$, with $\nabla\zeta$ supported in
+$B_{\rho_1}$.
+
+\emph{Step 2: the pinch.}  If $0<\kappa_1\le w_1\le\kappa_2$,
+$\kappa_1\le w_2\le\kappa_2$ and $\kappa_2\le K\kappa_1$ with $K\ge1$, then for
+\emph{every} real $t$
+\[
+w_1^{\,t}\ \le\ K^{|t|}\,w_2^{\,t} .
+\tag{2.1$'$}
+\]
+Indeed $w_1/w_2\le\kappa_2/\kappa_1\le K$ and $w_2/w_1\le K$; if $t\ge0$ then
+$(w_1/w_2)^t\le K^t=K^{|t|}$ by monotonicity of $\sigma\mapsto\sigma^t$ on
+$(0,\infty)$, and if $t<0$ then $(w_1/w_2)^t=(w_2/w_1)^{-t}\le K^{-t}=K^{|t|}$;
+multiplying by $w_2^{\,t}>0$ gives (2.1$'$).  Two consequences are used, both
+with $w_1$ or $w_2$ equal to the constant $\kappa_1$: for every $v$ with
+$\kappa_1\le v\le\kappa_2$,
+\[
+v^{\,s}\ \le\ K^{|s|}\kappa_1^{\,s}
+\qquad\text{and}\qquad
+\kappa_1^{\,s}\ \le\ K^{|s|}v^{\,s} .
+\tag{2.2$'$}
+\]
+The first is (2.1$'$) with $w_1=v$, $w_2=\kappa_1$, the second with
+$w_1=\kappa_1$, $w_2=v$, both legitimate since $\kappa_1\le\kappa_1\le\kappa_2$.
+Note that no case distinction on the sign of $s$ is needed, which is the point
+of (2.1$'$): the paper's two exponent regimes $p/2-1>0$ and $p/2-1<0$ are
+covered at once, by $|s|$.
+
+\emph{Step 3: the constant.}  Put
+\[
+\gamma=c\,K^{2|s|}\bigl(1+\Lambda^2\bigr) .
+\]
+Then $\gamma>0$, since $c>0$, $K^{2|s|}>0$ and $1+\Lambda^2\ge1$; and $\gamma$
+depends only on $n$, $s$, $K$ and $c$, because $\Lambda$ is an absolute
+constant.  (The factor $1+\Lambda^2$ rather than $\Lambda^2$ only avoids having
+to decide whether $\Lambda>0$; since $\Lambda^2\le1+\Lambda^2$ the estimate
+below is unaffected.)
+
+\emph{Step 4: the $+$ implication.}  Everything below is proved for an
+arbitrary admissible sextuple, and it is worth saying exactly which, because
+Step 5 reuses it under a substitution: \emph{let $\Theta,\ell,\kappa_1,\kappa_2$
+be reals with $\kappa_1>0$ and $\kappa_2\le K\kappa_1$, let $w$ be measurable,
+and let $(F,\Gamma)$ be a pair with $F\in W^{1,2}_{\mathrm{loc}}(B_R)$ of weak
+gradient $\Gamma$ and $|F|\le\Theta$ a.e.\ on $B_R$, satisfying the pinch on
+$B_R\cap\{F>\ell\}$ and the Caccioppoli inequality (H4$^+$) with $F,\Gamma$ in
+place of $f,G$; then
+$\mathrm{DeGiorgiLevelBound}\ n\ \gamma\ F\ \Gamma\ x_0\ \ell\ \rho_0\ \rho_1$
+for all $0<\rho_0<\rho_1<R$.}  Nothing else about $F$, $\Gamma$ or $\ell$ is
+used; in particular neither (H3$^-$) nor (H4$^-$) appears below.  We write the
+argument with $(F,\Gamma)=(f,G)$, which is the $+$ implication of the statement.
+Fix $0<\rho_0<\rho_1<R$, assume (H3$^+$) and (H4$^+$), and put
+$\zeta=\zeta_{\rho_0,\rho_1}$ of Step 1; it is smooth, compactly supported, and
+$\operatorname{tsupport}\zeta\subseteq\overline
+B_{\rho_0+\frac58(\rho_1-\rho_0)}\subseteq B_{\rho_1}\subseteq B_R$, so it is
+admissible in (H4$^\pm$).  Write
+\[
+E=B_R\cap\{f>\ell\},\qquad E_1=B_{\rho_1}\cap\{f>\ell\},\qquad
+E_0=B_{\rho_0}\cap\{f>\ell\},\qquad \Theta_\ell=\Theta+|\ell| .
+\]
+
+\textup{(4a)} \emph{The first clause of \noderef{DeGiorgiLevelBound}.}  It asks
+for a $C$ with $(f-\ell)^+\le C$ almost everywhere on $B_{\rho_1}$.  First,
+$\Theta\ge0$.  This is not free --- $\Theta$ is an arbitrary real in the
+statement --- but it follows from (H2), because $|B_R|=\omega_nR^n>0$ (Preamble:
+the volume of a ball, with $R>0$), so the set on which (H2) asserts
+$|f|\le\Theta$ has positive measure and is in particular nonempty; at any of its
+points $0\le|f|\le\Theta$.  Hence $\Theta_\ell=\Theta+|\ell|\ge0$.  Now by (H2)
+and $B_{\rho_1}\subseteq B_R$ we have $|f|\le\Theta$ a.e.\ on $B_{\rho_1}$, so
+a.e.\ there $f-\ell\le|f|+|\ell|\le\Theta+|\ell|=\Theta_\ell$, and with
+$0\le\Theta_\ell$ this gives $(f-\ell)^+\le\Theta_\ell$.  Take
+$C=\Theta_\ell$.
+
+\textup{(4b)} \emph{Integrability.}  The closed ball $\overline B_{\rho_1}$ is
+compact and contained in $B_R$, because $\rho_1<R$; so by (H1)
+(\noderef{MemW1pLocOn}, whose second clause asserts exactly
+$\|G\|\in L^2$ of every compact subset of $B_R$) the function $\|G\|^2$ is
+integrable on $\overline B_{\rho_1}$, hence on every measurable subset of it.
+Also $|B_{\rho_1}|=\omega_n\rho_1^{\,n}<\infty$ (Preamble: the volume of a
+ball).  Three integrands are therefore integrable on the sets indicated:
+\begin{itemize}
+\item $\|G\|^2\zeta^2$ on $E$, because $0\le\zeta\le1$ and $\zeta=0$ off
+  $B_{\rho_1}$, so $\|G\|^2\zeta^2\le\|G\|^2\mathbf1_{B_{\rho_1}}$, which is
+  integrable; this is the domination criterion of the Preamble
+  (\texttt{MeasureTheory.Integrable.mono'}), the measurability of
+  $\|G\|^2\zeta^2$ coming from that of $G$ --- itself part of (H1), since
+  $L^2$ membership includes almost-everywhere strong measurability --- and the
+  continuity of $\zeta$;
+\item $w^{\,s}\|G\|^2\zeta^2$ on $E$, because by (H3$^+$) and the first half of
+  (2.2$'$) we have $0\le w^{\,s}\le K^{|s|}\kappa_1^{\,s}$ a.e.\ on $E$, so this
+  integrand is dominated a.e.\ on $E$ by
+  $K^{|s|}\kappa_1^{\,s}\|G\|^2\mathbf1_{B_{\rho_1}}$; $w^{\,s}$ is measurable
+  because $w$ is;
+\item $w^{\,s}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2$ and
+  $\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2$ on $B_R$: both vanish off
+  $E_1$, since $((f-\ell)^+)^2=0$ where $f\le\ell$ and $\nabla\zeta=0$ off
+  $B_{\rho_1}$, and on $E_1$ they are bounded a.e.\ by
+  $K^{|s|}\kappa_1^{\,s}\Theta_\ell^2\Lambda^2(\rho_1-\rho_0)^{-2}$ resp.\
+  $\Theta_\ell^2\Lambda^2(\rho_1-\rho_0)^{-2}$, by (H3$^+$), (2.2$'$), (4a) and
+  Step 1; a bounded measurable function supported in a set of finite measure is
+  integrable.
+\end{itemize}
+
+\textup{(4c)} \emph{Removing the weight on the left.}  Almost everywhere on $E$,
+the second half of (2.2$'$) applied with $v=w(x)$ --- legitimate by (H3$^+$) ---
+gives $\kappa_1^{\,s}\le K^{|s|}w^{\,s}$, hence, multiplying by
+$\kappa_1^{-s}\|G\|^2\zeta^2\ge0$,
+\[
+\|G\|^2\zeta^2\ \le\ K^{|s|}\kappa_1^{-s}\,w^{\,s}\|G\|^2\zeta^2 .
+\]
+Both sides are integrable on $E$ by (4b), so integrating the inequality over $E$
+(Mathlib: \texttt{MeasureTheory.integral\_mono\_ae}, for two integrable
+functions ordered almost everywhere) gives
+\[
+\int_E\|G\|^2\zeta^2\,dx\ \le\ K^{|s|}\kappa_1^{-s}\int_Ew^{\,s}\|G\|^2\zeta^2\,dx .
+\]
+
+\textup{(4d)} \emph{Removing the weight on the right.}  Almost everywhere on
+$B_R$,
+\[
+w^{\,s}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2
+\ \le\ K^{|s|}\kappa_1^{\,s}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2 :
+\]
+on $E$ this is the first half of (2.2$'$) with $v=w(x)$, multiplied by
+$((f-\ell)^+)^2|\nabla\zeta|^2\ge0$; and off $\{f>\ell\}$ both sides are $0$,
+because $((f-\ell)^+)^2=0$ there.  Integrating over $B_R$, both sides being
+integrable by (4b),
+\[
+\int_{B_R}w^{\,s}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx
+\ \le\ K^{|s|}\kappa_1^{\,s}\int_{B_R}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx .
+\]
+
+\textup{(4e)} \emph{The chain.}  Combining (4c), (H4$^+$) and (4d), and using
+$\kappa_1^{-s}\kappa_1^{\,s}=1$ and $K^{|s|}K^{|s|}=K^{2|s|}$,
+\[
+\int_E\|G\|^2\zeta^2\,dx
+\ \le\ K^{|s|}\kappa_1^{-s}\cdot c\cdot K^{|s|}\kappa_1^{\,s}
+\int_{B_R}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx
+\ =\ c\,K^{2|s|}\int_{B_R}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx .
+\]
+This is the exact cancellation the statement block announces: no power of
+$\kappa_1$ survives.
+
+\textup{(4f)} \emph{The left-hand side dominates the one the conclusion names.}
+Since $\zeta=1$ on $\overline B_{\rho_0}\supseteq E_0$, the integrand
+$\|G\|^2\zeta^2$ agrees with $\|G\|^2$ on $E_0$; it is nonnegative, integrable
+on $E$ by (4b), and $E_0\subseteq E$.  Hence (Mathlib:
+\texttt{MeasureTheory.setIntegral\_mono\_set}, for a nonnegative function
+integrable on the larger set)
+\[
+\int_{E_0}\|G\|^2\,dx=\int_{E_0}\|G\|^2\zeta^2\,dx\ \le\ \int_E\|G\|^2\zeta^2\,dx .
+\]
+
+\textup{(4g)} \emph{The right-hand side is the one the conclusion names.}  The
+integrand $((f-\ell)^+)^2|\nabla\zeta|^2$ vanishes off $E_1$ and satisfies
+$|\nabla\zeta|^2\le\Lambda^2(\rho_1-\rho_0)^{-2}$, so
+\[
+\int_{B_R}\bigl((f-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx
+\ \le\ \frac{\Lambda^2}{(\rho_1-\rho_0)^2}\int_{E_1}\bigl((f-\ell)^+\bigr)^2\,dx .
+\]
+Write $\mathcal S=\operatorname{ess\,sup}_{B_{\rho_1}}\bigl((f-\ell)^+\bigr)^2$,
+which is finite by (4a) --- it is at most $\Theta_\ell^2$ --- and nonnegative,
+the integrand being nonnegative.  Almost everywhere on $E_1\subseteq B_{\rho_1}$
+we have $((f-\ell)^+)^2\le\mathcal S$, so, integrating against the constant
+$\mathcal S$ over the finite-measure set $E_1$ (Mathlib:
+\texttt{MeasureTheory.setIntegral\_mono\_on} against a constant, and
+\texttt{MeasureTheory.setIntegral\_const}),
+\[
+\int_{E_1}\bigl((f-\ell)^+\bigr)^2\,dx\ \le\ \mathcal S\,|E_1| .
+\]
+
+\textup{(4h)} \emph{Conclusion of the $+$ clause.}  Chaining (4f), (4e) and
+(4g),
+\[
+\int_{B_{\rho_0}\cap\{f>\ell\}}\|G\|^2\,dx
+\ \le\ \frac{c\,K^{2|s|}\Lambda^2}{(\rho_1-\rho_0)^2}\,\mathcal S\,
+\bigl|B_{\rho_1}\cap\{f>\ell\}\bigr|
+\ \le\ \frac{\gamma}{(\rho_1-\rho_0)^2}\,\mathcal S\,
+\bigl|B_{\rho_1}\cap\{f>\ell\}\bigr| ,
+\]
+the last step because $c K^{2|s|}\Lambda^2\le cK^{2|s|}(1+\Lambda^2)=\gamma$ and
+$\mathcal S|E_1|\ge0$.  Together with (4a) this is precisely the pair of clauses
+of $\mathrm{DeGiorgiLevelBound}\ n\ \gamma\ f\ G\ x_0\ \ell\ \rho_0\ \rho_1$
+(\noderef{DeGiorgiLevelBound}): its first clause is (4a) and its second is the
+display just obtained, once $\mathcal S$ is identified with the factor the
+definition names.  Those two are the same number but not the same expression:
+(4g) defined $\mathcal S=\esssup_{B_{\rho_1}}\bigl((f-\ell)^+\bigr)^2$, the
+essential supremum \emph{of the square}, while clause (2) names
+$\bigl(\esssup_{B_{\rho_1}}(f-\ell)^+\bigr)^2$, the square \emph{of the}
+essential supremum.  They agree because $(f-\ell)^+\ge0$ pointwise and
+$t\mapsto t^2$ is nondecreasing on $[0,\infty)$, so the essential supremum
+commutes with it, and because both are finite by (4a); the quantity being
+nonnegative, no sign case arises.
+
+\emph{Step 5: the $-$ implication.}  Fix $0<\rho_0<\rho_1<R$ and assume
+(H3$^-$) and (H4$^-$).  Apply Step 4 with $f$ replaced by $-f$, $G$ by
+$-G$, $\ell$ by $-\ell$, and $w$, $\kappa_1$, $\kappa_2$, $\Theta$ unchanged ---
+that is, with $(F,\Gamma,\ell)=(-f,-G,-\ell)$ in the standalone implication Step
+4 opens with.  Its four hypotheses on the substituted data are available:
+\begin{itemize}
+\item $-f\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $-G$, which is
+  clause (1) of \noderef{WeakGradientLinear} applied with $n$, $q=2$, the open
+  set $\Omega=B_R$ --- openness being that clause's only side condition, and the
+  clause carrying no restriction on $|\Omega|$ --- the coefficients $a=-1$,
+  $b=0$, and both pairs taken to be $(f_1,g_1)=(f_2,g_2)=(f,G)$, whose
+  $W^{1,2}_{\mathrm{loc}}(B_R)$ membership is (H1).  Its conclusion is the
+  membership of the pair
+  $\bigl(x\mapsto(-1)f(x)+0\cdot f(x),\ x\mapsto(-1)G(x)+0\cdot G(x)\bigr)$,
+  which is $(-f,-G)$ pointwise;
+\item $|-f|\le\Theta$ a.e.\ on $B_R$, which is (H2);
+\item the pinch on $B_R\cap\{-f>-\ell\}$: that set equals
+  $B_R\cap\{f<\ell\}$, on which the pinch is (H3$^-$);
+\item the Caccioppoli inequality for $(-f,-G)$ at the level $-\ell$: its
+  left-hand integral is over $B_R\cap\{-f>-\ell\}=B_R\cap\{f<\ell\}$ with
+  integrand $w^{\,s}\|-G\|^2\zeta^2=w^{\,s}\|G\|^2\zeta^2$, and its right-hand
+  integrand carries $((-f-(-\ell))^+)^2=((\ell-f)^+)^2$; so the required
+  inequality is exactly (H4$^-$), which is assumed in this implication.
+\end{itemize}
+Step 4 therefore yields
+$\mathrm{DeGiorgiLevelBound}\ n\ \gamma\ (-f)\ (-G)\ x_0\ (-\ell)\ \rho_0\
+\rho_1$, with the \emph{same} $\gamma$, since $\gamma$ was built from
+$n,s,K,c$ alone and none of those changed.  Note that this is not a relabelling
+of the $+$ implication: the two conclusions integrate over
+$\{f>\ell\}$ and $\{f<\ell\}$, which are disjoint, so neither (H3$^+$),
+(H4$^+$) nor the $+$ conclusion says anything about the other side --- which is
+exactly why the statement keeps the two implications separate.  This completes
+the proof.
+\end{proof}

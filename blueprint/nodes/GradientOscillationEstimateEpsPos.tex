@@ -1,0 +1,667 @@
+\begin{lemma}[Theorem 2 in the nondegenerate case]
+Let $n\ge2$, $p>1$ and $r>0$, suppose the Sobolev--Poincar\'e inequality on
+balls holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume
+the cited regularity result (C1) (\noderef{CitedRegularityEpsPos}) for
+\emph{every} field $A'\colon\R^n\to\R^n$, \emph{every} open set
+$\Omega'\subseteq\R^n$ and all parameters $\varepsilon',\gamma_0',\gamma_1'$
+with $\gamma_0'>0$ and $\gamma_1'>0$.  Then there is a constant
+$\alpha=\alpha(p,r,n)$ with $0<\alpha\le1$ with the following property.  Let
+$\varepsilon>0$, $\gamma_0>0$, $\gamma_1\le r\gamma_0$, let
+$\Omega_0\subseteq\R^n$ be open, let $A$ satisfy (Q1) of the thesis--(Q2) of the thesis
+on $\Omega_0$ with parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), let $u$ be a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $\Omega_0$ (\noderef{IsWeakSolutionOn})
+with weak gradient $g$, let $x_0\in\R^n$ and $R_0>0$ with
+$B_{R_0}(x_0)\subseteq\Omega_0$, and let $T\ge0$ satisfy $\|g\|\le T$ a.e.\ on
+$B_{R_0}(x_0)$.  Then for every $0<\rho\le R_0$ and every $k$,
+\[
+\operatorname*{osc}\bigl(g^k,B_\rho(x_0)\bigr)
+\ \le\ 16\,T\,\Bigl(\frac{\rho}{R_0}\Bigr)^{\alpha},
+\]
+where $g^k=D_ku$ is the $k$-th component of $g$ and
+$\operatorname*{osc}(f,E)=\operatorname{ess\,sup}_Ef-
+\operatorname{ess\,inf}_Ef$ (\noderef{EssOscOn}).
+
+The hypothesis is the \emph{open} ball $B_{R_0}(x_0)\subseteq\Omega_0$ and not
+$\overline B_{R_0}(x_0)\subseteq\Omega_0$: every node used in the proof is
+applied on an open ball contained in $B_{R_0}(x_0)$, so nothing is lost, and the
+weaker hypothesis is what lets a consumer apply the lemma with $\Omega_0$ itself
+an open ball --- which is what the removal of the hypothesis $\varepsilon>0$
+needs, since the approximating solutions it produces live only on a ball.
+
+Both the oscillation and the bound $T$ are essential, as on p.~6 of the paper:
+$g$ is a weak gradient, hence an almost-everywhere class, so no pointwise
+assertion may be made about it.  Quantifying over all essential upper bounds $T$
+is equivalent to using $\esssup_{B_{R_0}}\|g\|$, which is itself such a bound
+whenever it is finite.  The constant $\alpha$ is bound before
+$\varepsilon,\gamma_0,\gamma_1,T,\Omega_0,A,u,g,x_0,R_0,\rho,k$, and the
+structure constants enter only through $\gamma_1\le r\gamma_0$: this is the
+formal content of ``$\alpha$ depends only on $p$, $\gamma_1/\gamma_0$ and $n$''.
+The factor $16$ is absolute.  Note that $\gamma_1>0$ is \emph{not} assumed; it
+is derived from $\gamma_0>0$ and the structure conditions in (S0) below.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of
+the paper's Note for the formalization, carried here as an explicit argument
+because the proof uses it --- it enters through the constants of
+\noderef{OscillationDecayLemma} and \noderef{DegenerateAlternative} --- which is
+what the Note permits for the results the thesis quotes without proof.  Although
+it is bound before the existential for $\alpha$, it introduces no dependence of
+$\alpha$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+
+The cited regularity result (C1) (\noderef{CitedRegularityEpsPos}) is assumed
+for \emph{every} field $A'$, \emph{every} open set $\Omega'$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$.  That
+is the form (C1) has in the paper's Note, which states it for an arbitrary
+operator and an arbitrary solution: ``If $\varepsilon>0$ and
+$A\colon\R^n\to\R^n$ satisfies (Q1) of the thesis and (Q2) of the thesis, then every weak
+solution $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ of (3.1) of the thesis satisfies
+$u\in W^{2,2}_{\mathrm{loc}}(\Omega)$ and $\nabla u\in C(\Omega)$'' (Note for
+the formalization, (C1)).  So the universal clause is the faithful
+transcription, and a clause attached only to the field $A$ and the domain
+$\Omega_0$ of this lemma would be the weakening.  The two positivity side
+conditions and the openness condition are not optional: the structure conditions
+(Q1) of the thesis--(Q2) of the thesis carry positive constants in the thesis
+(``$\gamma_0,\gamma_1>0$''), and (C1) is a statement about weak solutions on an
+open set, so a clause quantified over $\gamma_0'\le0$ or over arbitrary
+$\Omega'$ would assert more than the cited result does --- and since this is a
+hypothesis of the present lemma, asserting more than the literature gives risks
+making the lemma vacuously true.  The remaining antecedents need no guard,
+because \noderef{CitedRegularityEpsPos} carries $\varepsilon>0$,
+(Q1) of the thesis--(Q2) of the thesis and the weak-solution property inside its own
+statement.  Quantifying the set is not decorative: the proof consumes (C1) on
+the balls $B_{R'}\subseteq B_{R_0}$ on which the alternative
+\noderef{DegenerateAlternative} is applied --- that node asks for the predicate
+itself at the ball --- and \noderef{CaccioppoliLevelWeight} takes the family
+$D(\nabla u)$ as a parameter, which the proof must produce from the existential
+inside (C1)'s conclusion.  Like (C6), (C1) carries no numerical content: it
+asserts membership and the existence of a continuous representative of the
+gradient, and names no constant, so although it is bound before the existential
+for $\alpha$ it introduces no dependence of $\alpha$ on anything outside the
+list $p$, $\gamma_1/\gamma_0$, $n$ that the paper names.
+\end{lemma}
+\begin{proof}
+Write $B_\sigma=B_\sigma(x_0)$, $w=\varepsilon+|\nabla u|^2$ and $g^k=D_ku$.
+Constants named $c$, $C$ or $\gamma$ with a subscript are positive and depend
+only on $n$, $p$ and $r$; this is checked at each occurrence.
+$\omega_n=|B_1|$, so $|B_\sigma|=\omega_n\sigma^{\,n}$ (Preamble: the volume of
+a ball).  This is thesis pp.~27--29.
+
+\medskip
+\noindent\emph{Step 0: the constants, chosen before all the data.}
+
+\textbf{(S0) A generic positivity claim for the second structure constant.}
+\emph{Claim.  Let $\Omega_\ast\subseteq\R^n$ be open with $|\Omega_\ast|>0$, let
+$\varepsilon_\ast\ge0$ and $\gamma_{0\ast},\gamma_{1\ast}\in\R$ with
+$\gamma_{0\ast}>0$, and let $A_\ast$ satisfy (Q1) of the thesis--(Q2) of the thesis on
+$\Omega_\ast$ with parameters $p,\varepsilon_\ast,\gamma_{0\ast},\gamma_{1\ast}$
+(\noderef{EllipticStructureQ12}).  Then $\gamma_{0\ast}\le\gamma_{1\ast}$, and in
+particular $\gamma_{1\ast}>0$.}
+
+The claim is a self-contained consequence of
+(Q1) of the thesis--(Q2) of the thesis alone and is stated for an arbitrary set, field
+and parameter triple rather than for the $\Omega_0,A,\varepsilon,\gamma_0,
+\gamma_1$ of the present lemma; exactly one instance is taken below, in (B0),
+at the lemma's own data, and that one instance is then quoted at three later
+places.  The generic form is recorded only so that the instance is visibly
+independent of everything else in the proof.
+
+\emph{Proof of the claim.}  By \noderef{EllipticStructureQ12} the conditions
+(Q1) of the thesis and (Q2) of the thesis hold for almost every $x\in\Omega_\ast$.  Their
+two exceptional sets are null, so their union is null, while
+$|\Omega_\ast|>0$; hence the union cannot contain the whole of $\Omega_\ast$ and
+there is a single $x\in\Omega_\ast$ at which both hold.  Fix such an $x$, take
+$z=0$, $h=e_1$ and $\xi=e_1$.  Then
+$\varepsilon_\ast+|h|^2=\varepsilon_\ast+1\ne0$, which is the side condition
+under which (Q1) of the thesis and (Q2) of the thesis are asserted, and $|\xi|^2=1$, so
+they give
+\[
+\gamma_{0\ast}(\varepsilon_\ast+1)^{\frac p2-1}
+\le\bigl(D_hA_\ast(x,0,h)e_1,e_1\bigr)=\bigl(D_hA_\ast(x,0,h)e_1\bigr)^1
+\le\bigl|\bigl(D_hA_\ast(x,0,h)e_1\bigr)^1\bigr|
+\le\gamma_{1\ast}(\varepsilon_\ast+1)^{\frac p2-1},
+\]
+the middle equality because $\xi=e_1$ has only the first coordinate nonzero, and
+the last inequality being (Q2) of the thesis at $i=j=1$, whose $j$-th coordinate
+vector is exactly the $\xi=e_1$ used in (Q1) of the thesis.  Now
+$\varepsilon_\ast+1>0$, so $(\varepsilon_\ast+1)^{p/2-1}>0$, and dividing gives
+$\gamma_{0\ast}\le\gamma_{1\ast}$; with $\gamma_{0\ast}>0$ this gives
+$\gamma_{1\ast}>0$.  \emph{End of proof of the claim.}
+
+The claim is needed because the carried clause (C1)
+(\noderef{CitedRegularityEpsPos}) is assumed only for positive structure
+constants --- its antecedents are $\gamma_0'>0$ and $\gamma_1'>0$ --- while the
+data available at each consuming site give only $\gamma_{0\ast}>0$ and a ratio
+bound $\gamma_{1\ast}\le r\gamma_{0\ast}$, which permits $\gamma_{1\ast}\le0$.
+
+Note the shape of the instance: it is taken at $h=e_1$, \emph{not} at $h=0$.  The
+weight is $(\varepsilon_\ast+1)^{p/2-1}$, which is positive for every
+$\varepsilon_\ast\ge0$, so the claim covers $\varepsilon_\ast=0$ as well as
+$\varepsilon_\ast>0$ --- which is why it is stated with $\varepsilon_\ast\ge0$,
+even though the only instances taken below have $\varepsilon_\ast>0$.  At $h=0$
+and $\varepsilon_\ast=0$ the weight would be $0^{p/2-1}$, which the run's rpow
+convention makes $0$ for $p\ne2$, and the two conditions would read
+$0\le\cdot\le0$ and yield nothing.
+
+\textbf{(S1)} Apply \noderef{DegenerateAlternative} with $n,p,r$ and the
+Sobolev--Poincar\'e hypothesis \noderef{CitedSobolevPoincareBall} of the present
+lemma, and let $\theta_2,\nu\in(0,1)$ be the constants it produces.  Put
+\[
+\alpha_1=\min\Bigl\{\frac{\log(1/\nu)}{\log2},\,1\Bigr\}\in(0,1],
+\qquad\text{so}\qquad \nu\le2^{-\alpha_1},
+\]
+the implication because $\alpha_1\log2\le\log(1/\nu)$.
+
+\textbf{(S2)} Apply \noderef{CaccioppoliLevelWeight} with $n,p,r$ and let
+$c_4>0$ be its constant.  Put
+\[
+c_p=\min\{\tfrac1{16},\,2^{-1-4/p}\}\in(0,\tfrac1{16}],
+\qquad
+K_p=\frac{\tfrac14+n}{c_p^{\,2}} .
+\]
+Apply \noderef{PinchedCaccioppoliLevelBound} with $n$, the exponent
+$s=p/2-1$, the ratio $K=K_p$ and the Caccioppoli constant $c=c_4$ --- its
+hypotheses are $1\le n$, $K_p\ge1$ and $c_4>0$ --- and let
+\[
+\gamma_\sharp>0
+\]
+be the constant $\gamma$ it produces; it depends only on $n$, $s=p/2-1$, $K_p$
+and $c_4$, hence only on $n,p,r$.
+Here $c_p$ is the constant in part (a) of \noderef{DegenerateAlternative}, and
+$K_p\ge1+4n$ because $4c_p^{\,2}\le4/256<1$ and
+$K_p=(1+4n)/(4c_p^{\,2})$; this is why one $\gamma_\sharp$ covers both pinches
+below.
+\emph{Note that $K_p$ and not $64(1+4n)$ is the right ratio}: $64(1+4n)$ is
+$K_p$ evaluated at $c_p=1/16$, which is the paper's constant in part (a) before
+the correction reported in \noderef{DegenerateAlternative}, and it is correct
+exactly for $p\ge4/3$; for $1<p<4/3$ one has $c_p=2^{-1-4/p}<1/16$ and $K_p$ is
+strictly larger.  $K_p$ is still a function of $n$ and $p$ alone, so no
+dependence list moves.
+
+\textbf{(S3)} Apply \noderef{OscillationDecayLemma} with $n$, the constant
+$\gamma_\sharp$, the ratio $\lambda_1=\tfrac23\in(0,1)$ and
+\noderef{CitedSobolevPoincareBall}, and let $\delta\in(0,1)$ be the constant it
+produces.  Put
+\[
+\alpha_2=\min\Bigl\{\frac{\log(1/\delta)}{\log2},\,1\Bigr\}\in(0,1],
+\qquad
+\alpha=\min\{\alpha_1,\alpha_2\}\in(0,1] .
+\]
+
+All of $\theta_2,\nu,\alpha_1,c_4,c_p,K_p,\gamma_\sharp,\delta,\alpha_2,\alpha$
+are functions of $n$, $p$ and $r$ alone and are fixed before
+$\varepsilon,\gamma_0,\gamma_1,T,\Omega_0,A,u,g,x_0,R_0,\rho,k$, which is the
+quantifier order the statement asserts.  The order of choice is acyclic:
+$\theta_2,\nu,c_4$ first, then $\alpha_1,c_p,K_p,\gamma_\sharp$, then $\delta$,
+then $\alpha_2$ and $\alpha=\min\{\alpha_1,\alpha_2\}$.
+
+Now fix data as in the statement.
+
+\medskip
+\noindent\emph{Step 1: the estimate.}
+
+\textbf{(B0r) Restriction to a ball.}  We record once two passages used at
+several places below.
+
+\emph{The weak-solution property restricts.}  Let $\Omega_\ast$ be open, let
+$B=B_\sigma(x_0)\subseteq\Omega_\ast$ with $\sigma>0$, and suppose $u$ is a weak
+solution of $\operatorname{div}A(\nabla u)=0$ in $\Omega_\ast$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g$.  Then $u$ is a weak
+solution of the same equation in $B$ with weak gradient $g$.  This is
+\noderef{IsWeakSolutionRestrict}, applied with $n$, the exponent $p$, the open
+set $\Omega_\ast$, the centre $x_0$, the radius $\sigma$, the first field in the
+form $(x,z,h)\mapsto A(h)$, the second field identically zero, and the pair
+$(u,g)$; its hypotheses are $1\le n$ and $1\le p$ (from $2\le n$ and $1<p$), the
+openness of $\Omega_\ast$, $0<\sigma$, the inclusion $B\subseteq\Omega_\ast$ and
+the weak-solution property on $\Omega_\ast$, all of which are in hand at each
+use below.
+
+\emph{Likewise (Q1) of the thesis--(Q2) of the thesis restrict}: let $\Omega_\ast$ be any
+set and $B\subseteq\Omega_\ast$.  Each of the \emph{last four} clauses of
+\noderef{EllipticStructureQ12} is an
+assertion of the form ``for (almost) every $x$, if $x\in\Omega_\ast$ then
+\dots'', and replacing $\Omega_\ast$ by a subset only weakens the antecedent;
+the first two, the Carath\'eodory pair, carry no domain guard --- measurability
+of $x\mapsto A(x,z,h)$ is asserted on $\R^n$ and joint continuity of
+$(z,h)\mapsto A(x,z,h)$ at every $x\in\R^n$ --- so they are the same assertion
+for $B$ as for $\Omega_\ast$ and need no restriction at all.  All six therefore
+hold for $B$.
+
+\textbf{(B0) Data on the ball, and the maximal partial derivative.}  By (B0r)
+with $\Omega_\ast=\Omega_0$ and $B=B_{R_0}$, together with clause (2) of
+\noderef{WeakGradientRestrict}, the structure
+(Q1) of the thesis--(Q2) of the thesis, the weak-solution property and
+$u\in W^{1,p}_{\mathrm{loc}}$ are all available on $B_{R_0}$.  Applying
+the present lemma's universal hypothesis (C1)
+(\noderef{CitedRegularityEpsPos}) at $\varepsilon>0$, $\gamma_0,\gamma_1$ and
+the open set $B_{R_0}$ --- legitimate because that clause requires
+$\gamma_0'>0$, which is a datum of the present lemma, and
+$\gamma_1'>0$, which is (S0) applied to the open set $\Omega_\ast=\Omega_0$,
+the field $A_\ast=A$ and the parameters
+$\varepsilon_\ast=\varepsilon,\gamma_{0\ast}=\gamma_0,\gamma_{1\ast}=\gamma_1$
+of the present lemma; its hypotheses hold because $\Omega_0$ is open and
+contains $B_{R_0}$ with $R_0>0$, so $|\Omega_0|\ge\omega_nR_0^{\,n}>0$
+(Preamble: the volume of a ball), because $\gamma_0>0$, and because $A$
+satisfies (Q1) of the thesis--(Q2) of the thesis on $\Omega_0$ ---
+and using the structure and the weak-solution property
+just obtained, we get: a field $g'$ with $g'$ continuous on $B_{R_0}$ and
+$g=g'$ almost everywhere on $B_{R_0}$, together with a family
+$Dg=(Dg^i)_i$ with $g'^i\in W^{1,2}_{\mathrm{loc}}(B_{R_0})$ of weak gradient
+$Dg^i$ for every $i$ (\noderef{MemW1pLocOn}).  \emph{The continuity is of the
+representative $g'$, not of the given $g$}: a weak gradient is determined only
+almost everywhere, so continuity is a property of a representative, and (C1)
+says so.  The $W^{1,2}_{\mathrm{loc}}$ clause is stated for $g'$ and transfers
+to $g$ unchanged, $\mathrm{MemW1pLocOn}$ being invariant under modification on a
+null set (clause (3) of \noderef{AEModificationInvariance}, applied with $q=2$,
+the open set $B_{R_0}$, the pair $(g'^i,g^i)$ and the field $Dg^i$, whose
+hypotheses $1\le n$, $1\le2$, the openness of $B_{R_0}$ and the
+almost-everywhere equality are all in hand).  Fix this family once; by clause
+(2) of \noderef{WeakGradientRestrict} it serves every open subball as well.
+
+For $0<\sigma\le R_0$ put
+\[
+\mu(\sigma)=\max_{1\le k\le n}\operatorname*{ess\,sup}_{B_\sigma}|g^k| .
+\]
+The maximum is over the finitely many $k$, and each inner quantity is an
+essential supremum, which is the paper's own reading: l.~290--291 declares that
+``Max'' in (2.1) of the thesis actually means ``essential max'', a convention the
+paper follows from then on, and l.~293--294 accordingly sets
+$M=\operatorname*{ess\,sup}_{B_R}f$.  Three properties of $\mu$ are used below, and all three come
+from the definition of the essential supremum, exactly as (O) below derives the
+monotonicity of $\operatorname*{osc}$ from the definition of \noderef{EssOscOn}.
+
+First, \emph{$\mu(\sigma)$ is a finite nonnegative real number}, so that none of
+the quantities below is a junk value.  Each ball $B_\sigma$ with $0<\sigma\le R_0$
+has volume $\omega_n\sigma^n>0$ (Preamble: the volume of a ball).  And
+$|g^k|\le\|g\|\le T$ a.e.\ on $B_{R_0}$, the first inequality pointwise because
+$|g^k|$ is one coordinate of the vector $g$; since
+$B_\sigma\subseteq B_{R_0}$, the volume measure restricted to $B_\sigma$ is
+dominated by the one restricted to $B_{R_0}$, so a null set for the latter is null
+for the former and the bound holds a.e.\ on $B_\sigma$ as well.  Hence each
+$|g^k|$ is essentially bounded above on $B_\sigma$ and its essential supremum
+there is a real number at most $T$; it is also $\ge0$, because $|g^k|\ge0$ and an
+essential upper bound on a set of positive measure must be $\ge0$ --- the set
+where $|g^k|$ does not exceed it is of positive measure, hence nonempty.  The
+maximum of the $n$ resulting real numbers is $\mu(\sigma)$, so
+$0\le\mu(\sigma)\le T$.
+
+Second, \emph{$|g^k|\le\mu(\sigma)$ a.e.\ on $B_\sigma$ for every $k$.}  For each
+$k$ the essential supremum is an essential upper bound, i.e.\
+$|g^k|\le\operatorname*{ess\,sup}_{B_\sigma}|g^k|$ a.e.\ on $B_\sigma$, and
+$\operatorname*{ess\,sup}_{B_\sigma}|g^k|\le\mu(\sigma)$ because $\mu(\sigma)$ is
+the maximum over $k$.  The union of the $n$ exceptional null sets is null, so
+off that union the bound holds for all $k$ at once; hence it holds a.e.\ on
+$B_\sigma$ simultaneously for all $k$.
+
+Third, \emph{$\mu(\sigma)$ is the least such number} --- which is what
+\noderef{DegenerateAlternative} requires of its $\mu$.  Let $c\in\R$ satisfy
+$|g^k|\le c$ a.e.\ on $B_\sigma$ for every $k$.  Then for each $k$ the number $c$
+is an essential upper bound of $|g^k|$ on $B_\sigma$, and the essential supremum
+is by definition the \emph{least} essential upper bound, so
+$\operatorname*{ess\,sup}_{B_\sigma}|g^k|\le c$.  Taking the maximum over the
+finitely many $k$ gives $\mu(\sigma)\le c$.
+
+Finally, \emph{$\mu$ is nondecreasing}, and this now follows from the previous
+two.  Let $0<\sigma\le\sigma'\le R_0$, so $B_\sigma\subseteq B_{\sigma'}$.  By the
+second property at radius $\sigma'$, $|g^k|\le\mu(\sigma')$ a.e.\ on
+$B_{\sigma'}$ for every $k$, hence --- by the same domination of restricted
+measures used above --- a.e.\ on $B_\sigma$ for every $k$.  So $\mu(\sigma')$ is
+a number of the kind the third property quantifies over at radius $\sigma$, and
+that property gives $\mu(\sigma)\le\mu(\sigma')$.  In particular
+$\mu(\sigma)\le\mu(R_0)\le T$, the last inequality being the first property at
+$\sigma=R_0$.  No case distinction on $T$ is needed anywhere below: every
+estimate is run on $\mu$ and converted at the very end through
+$0\le\mu(R_0)\le T$, which holds for $T=0$ as well.
+
+\textbf{(B1) The dyadic scales and the alternative.}  Put $R_m=2^{-m}R_0$ and
+$\mu_m=\mu(R_m)$ for $m=0,1,2,\dots$.  For each $m$ apply
+\noderef{DegenerateAlternative} --- the instance of (S1) --- with the data
+$\varepsilon,\gamma_0,\gamma_1$, $\mu_m$, the field $A$, the functions $u,g$,
+the family $Dg$, the centre $x_0$ and the radius $R_m$.  Its hypotheses are
+$0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$, $0<R_m$,
+(Q1) of the thesis--(Q2) of the thesis on $B_{R_m}$, the cited regularity (C1) on
+$B_{R_m}$ --- the present lemma's universal hypothesis at that open set,
+instantiated at $\gamma_0>0$ and at $\gamma_1>0$, the latter by the instance of
+(S0) taken in (B0) ---
+the weak-solution property on $B_{R_m}$ --- by (B0r) with
+$\Omega_\ast=B_{R_0}$ and $B=B_{R_m}$ --- the family
+$g^i\in W^{1,2}_{\mathrm{loc}}(B_{R_m})$, by clause (2) of
+\noderef{WeakGradientRestrict} with $q=2$, the bound $|g^k|\le\mu_m$ a.e.\ on
+$B_{R_m}$ for every $k$ and its minimality.  Write
+\[
+H_m\ :\ \exists k,\ \ \theta_2|B_{R_m}|\le\bigl|B_{R_m}\cap\{g^k>\tfrac{\mu_m}2\}\bigr|
+\ \text{ or }\ \theta_2|B_{R_m}|\le\bigl|B_{R_m}\cap\{g^k<-\tfrac{\mu_m}2\}\bigr| .
+\]
+If $H_m$ fails then part (b) gives $|g^k|\le\nu\mu_m$ a.e.\ on $B_{R_m/2}
+=B_{R_{m+1}}$ for every $k$, hence
+\[
+\mu_{m+1}\le\nu\,\mu_m .
+\tag{3.25}
+\]
+If $H_m$ holds, with witness $k_0$, then part (a) at that $k_0$ gives
+\[
+|g^{k_0}|\ \ge\ c_p\,\mu_m\qquad\text{a.e.\ on }B_{R_{m+1}} .
+\tag{3.26}
+\]
+(The paper states (3.26) of the thesis for $|\nabla u|$; the bridge is the
+componentwise inequality $|g^{k_0}|\le\|\nabla u\|$, so the displayed bound for
+the single maximising component implies the paper's bound for $\|\nabla u\|$,
+and it is the component form that part (a) delivers.)
+
+Two cases.
+
+\textbf{(B2) Case I: $H_m$ fails for every $m$.}  Then (3.25) holds for all $m$,
+so $\mu_m\le\nu^m\mu_0\le2^{-\alpha_1m}\mu(R_0)$ by (S1).  Given
+$0<\rho\le R_0$ choose the integer $m\ge0$ with $R_{m+1}<\rho\le R_m$ (take
+$m=0$ if $\rho=R_0$; such an $m$ exists because $R_m\downarrow0$).  Then
+$2^{-m}=R_m/R_0<2\rho/R_0$, so
+\[
+\mu(\rho)\le\mu_m\le2^{-\alpha_1m}\mu(R_0)
+=\Bigl(\frac{R_m}{R_0}\Bigr)^{\alpha_1}\mu(R_0)
+\le\Bigl(\frac{2\rho}{R_0}\Bigr)^{\alpha_1}\mu(R_0)
+\le2\Bigl(\frac{\rho}{R_0}\Bigr)^{\alpha}\mu(R_0),
+\tag{B.1}
+\]
+using $\alpha_1\le1$ for $2^{\alpha_1}\le2$ and $\alpha\le\alpha_1$ together
+with $\rho/R_0\le1$ for $(\rho/R_0)^{\alpha_1}\le(\rho/R_0)^{\alpha}$.  Since
+$\operatorname*{osc}(g^k,B_\rho)\le2\mu(\rho)$ for every $k$ --- both
+$\operatorname{ess\,sup}$ and $-\operatorname{ess\,inf}$ of $g^k$ on $B_\rho$
+are at most $\mu(\rho)$ --- this gives
+$\operatorname*{osc}(g^k,B_\rho)\le4T(\rho/R_0)^{\alpha}$, which is
+the asserted bound.
+
+\textbf{(B3) Case II: the first $m_0$ with $H_{m_0}$.}  Let $m_0$ be least with
+$H_{m_0}$ true.  Then (3.25) holds for $m=0,\dots,m_0-1$ and (3.26) holds at
+$m_0$ with some witness $k_0$.  In particular
+\[
+\mu_{m}\le\nu^{m}\mu(R_0)\le2^{-\alpha_1m}\mu(R_0)\qquad(0\le m\le m_0),
+\tag{B.2}
+\]
+and $\mu_{m_0}>0$: if $\mu_{m_0}=0$ then $g^k=0$ a.e.\ on $B_{R_{m_0}}$ for
+every $k$, so both sets in $H_{m_0}$ are null while
+$\theta_2|B_{R_{m_0}}|>0$, contradicting $H_{m_0}$.  Put
+\[
+\mathcal B=B_{R_{m_0+1}},\qquad \mu=\mu_{m_0}>0,\qquad \lambda=\frac\mu2>0 .
+\]
+
+\textbf{(B4) The pinch on $\mathcal B$.}  On $\mathcal B$ we have, a.e.,
+$|g^k|\le\mu_{m_0+1}\le\mu$ for every $k$, hence
+$\|\nabla u\|^2=\sum_k(g^k)^2\le n\mu^2$ and so
+\[
+\varepsilon\ \le\ w\ \le\ \varepsilon+n\mu^2
+\qquad\text{a.e.\ on }\mathcal B .
+\tag{B.3}
+\]
+Two sub-cases, and in both $w$ is pinched almost everywhere on \emph{all} of
+$\mathcal B$ between two positive constants whose ratio is at most $K_p$.  (All
+the bounds here and in the block below hold almost everywhere, which is all the
+integral inequalities of the block need; the companion instantiation in
+\noderef{DegenerateAlternative} has them everywhere on the ball because (C1)
+supplies a continuous \emph{representative} $g'$ of the gradient there, but that
+is not used here.)
+\begin{itemize}
+\item If $\varepsilon\ge\lambda^2=\mu^2/4$, then by (B.3)
+  $\varepsilon\le w\le\varepsilon+4n\varepsilon=(1+4n)\varepsilon$, so
+  $\kappa_1=\varepsilon>0$, $\kappa_2=(1+4n)\varepsilon$ and $K=1+4n\le K_p$.
+\item If $\varepsilon<\lambda^2=\mu^2/4$, then by (3.26) and
+  $|g^{k_0}|\le\|\nabla u\|$ we have $w\ge\|\nabla u\|^2\ge c_p^2\mu^2$ a.e.\ on
+  $\mathcal B$, while (B.3) gives $w\le\mu^2/4+n\mu^2=(\tfrac14+n)\mu^2$.  So
+  $\kappa_1=c_p^2\mu^2>0$, $\kappa_2=(\tfrac14+n)\mu^2$ and
+  $K=(\tfrac14+n)/c_p^2=K_p$.
+\end{itemize}
+This is the step at l.~944--945 of the paper, ``Since we also have
+$|\nabla u|\le\sqrt n\,\mu(R_{m_0})$ in $B_{R_{m_0+1}}$ it follows from
+(3.4) of the thesis that (3.9) of the thesis holds in $B_{R_{m_0+1}}$'', with the
+correction of the constant: the lower pinch is $c_p^2\mu^2$, not
+$(1/16)^2\mu^2=\mu^2/256$, because part (a) of
+\noderef{DegenerateAlternative} delivers $c_p\mu$ and not $\mu/16$.
+
+\textbf{(B5) The Caccioppoli inequality and the instances of
+\textup{(2.1)}.}  Apply \noderef{CaccioppoliLevelWeight} --- the instance of
+(S2), at $n,p,r$ with the constant $c_4$.  Its remaining hypotheses are
+$0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$, the openness of
+$\mathcal B$, (Q1) of the thesis--(Q2) of the thesis (\noderef{EllipticStructureQ12}), the
+cited regularity (C1) (\noderef{CitedRegularityEpsPos}) --- the universal clause
+at the open set $\mathcal B$, whose side conditions $\gamma_0'>0$ and
+$\gamma_1'>0$ are the datum and the instance of (S0) taken in (B0) --- the weak
+solution
+property (\noderef{IsWeakSolutionOn}) and
+$g^i\in W^{1,2}_{\mathrm{loc}}(\mathcal B)$ for every $i$
+(\noderef{MemW1pLocOn}), all available on $\mathcal B\subseteq B_{R_0}$ by (B0)
+and (B0r).  Hence for every $k$, every $\ell\in\R$ and every $\zeta$ smooth with
+compact support in $\mathcal B$,
+\[
+\int_{\mathcal B\cap\{g^k>\ell\}}w^{\frac p2-1}\|Dg^k\|^2\zeta^2\,dx
+\ \le\ c_4\int_{\mathcal B}w^{\frac p2-1}\bigl((g^k-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx
+\tag{3.4$^+$}
+\]
+and
+\[
+\int_{\mathcal B\cap\{g^k<\ell\}}w^{\frac p2-1}\|Dg^k\|^2\zeta^2\,dx
+\ \le\ c_4\int_{\mathcal B}w^{\frac p2-1}\bigl((\ell-g^k)^+\bigr)^2|\nabla\zeta|^2\,dx .
+\tag{3.4$^-$}
+\]
+These are the two conclusions of that node verbatim, with
+$\sum_i(\partial_i\zeta)^2=|\nabla\zeta|^2$ and
+$\max(g^k-\ell,0)=(g^k-\ell)^+$.
+
+Now apply \noderef{PinchedCaccioppoliLevelBound} --- the instance of (S2), with
+the constant $\gamma_\sharp$ --- at the centre $x_0$, the radius $R_{m_0+1}$ (so
+that its ball is $\mathcal B$), the bound $\Theta=\mu$, a level $\ell$, the pinch
+constants $\kappa_1,\kappa_2$ of (B4), the function $f=g^k$, the field
+$G=Dg^k$ and a weight $\widetilde w$ fixed as follows.  That node asks for a
+weight measurable on all of $\R^n$, while (B0) gives a \emph{representative}
+$g'$ of the gradient, continuous only on $B_{R_0}$, with $g=g'$ almost
+everywhere there --- (C1) asserts continuity of a representative and not of the
+given $g$, a weak gradient being an almost-everywhere class.  So build the
+weight from $g'$ and not from $g$:
+\[
+\widetilde w(x)=\varepsilon+|g'(x)|^2\ \text{ for }x\in\mathcal B,
+\qquad
+\widetilde w(x)=\varepsilon\ \text{ for }x\notin\mathcal B .
+\]
+Then $\widetilde w$ is measurable on $\R^n$ because
+$\mathcal B$ is open, so $\{\mathcal B,\R^n\setminus\mathcal B\}$ is a
+measurable partition on each piece of which $\widetilde w$ is measurable --- on
+$\mathcal B\subseteq B_{R_0}$ because $g'$ is continuous there, and on the
+complement because $\widetilde w$ is constant --- and $\widetilde w=w$ almost
+everywhere on $\mathcal B$, which is all that is used, as the next sentence
+records.  Every hypothesis and conclusion of that node reads its weight
+only inside its ball, which here is $\mathcal B$: the two pinch hypotheses are
+almost-everywhere statements on subsets of $\mathcal B$, the two Caccioppoli
+hypotheses integrate over $\mathcal B$ and subsets of it, and the conclusions do
+not mention the weight; so (B4) and (3.4$^\pm$), which are statements about $w$
+on $\mathcal B$, are statements about $\widetilde w$ verbatim.  Its hypotheses
+are then: $0<R_{m_0+1}$; $0<\kappa_1$ and $\kappa_2\le K\kappa_1$ with
+$K\le K_p$, which is (B4) --- and increasing $K$ to $K_p$ is legitimate, since
+$\kappa_2\le K\kappa_1\le K_p\kappa_1$; $\widetilde w$ measurable, just shown;
+$g^k\in W^{1,2}_{\mathrm{loc}}(\mathcal B)$ with weak gradient $Dg^k$
+(\noderef{MemW1pLocOn}), by (B0) and clause (2) of
+\noderef{WeakGradientRestrict}; and $|g^k|\le\mu$ a.e.\ on $\mathcal B$, which is
+(B3)--(B4).  Because (B4) pinches $w$ on \emph{all} of $\mathcal B$, both of that
+node's hypotheses (H3$^+$) and (H3$^-$) hold at every level $\ell\in\R$, and
+(H4$^+$), (H4$^-$) are (3.4$^\pm$) above, read with $s=p/2-1$ and $c=c_4$.  Its
+two implications therefore give, for every $k$, every $\ell\in\R$ and all
+$0<\rho_0<\rho_1<R_{m_0+1}$,
+\[
+\mathrm{DeGiorgiLevelBound}\ n\ \gamma_\sharp\ g^k\ Dg^k\ x_0\ \ell\ \rho_0\ \rho_1
+\quad\text{and}\quad
+\mathrm{DeGiorgiLevelBound}\ n\ \gamma_\sharp\ (-g^k)\ (-Dg^k)\ x_0\ (-\ell)\
+\rho_0\ \rho_1
+\]
+(\noderef{DeGiorgiLevelBound}).  This is the paper's (3.9) of the thesis on
+$B_{R_{m_0+1}}$, in the form \S2 consumes it.
+
+\textbf{(B6) The oscillation decay \textup{(3.27)}.}  Let $m\ge m_0+1$ and fix
+$k$.  Put $T_m=\tfrac34R_m$, so that $T_m<R_m\le R_{m_0+1}$ and
+$\lambda_1T_m=\tfrac23\cdot\tfrac34R_m=\tfrac12R_m=R_{m+1}$.  Apply
+\noderef{OscillationDecayLemma} --- the instance of (S3), at $n$,
+$\gamma_\sharp$ and $\lambda_1=\tfrac23$ --- with the centre $x_0$, the radius
+$T_m$, the function $f=g^k$, the field $Dg^k$, and
+$M=\operatorname{ess\,sup}_{B_{T_m}}g^k$,
+$m^\flat=\operatorname{ess\,inf}_{B_{T_m}}g^k$.  Its hypotheses:
+\begin{itemize}
+\item $0<T_m$;
+\item $g^k\in W^{1,2}(B_{T_m})$ with weak gradient $Dg^k$
+  (\noderef{MemW1pOn}), by clause (4) of \noderef{WeakGradientRestrict} applied
+  with $q=2$ and the open sets $B_{R_0}\supseteq B_{T_m}$, whose hypotheses are
+  $g^k\in W^{1,2}_{\mathrm{loc}}(B_{R_0})$ from (B0),
+  $\operatorname{closure}B_{T_m}=\overline B_{T_m}$ compact and
+  $\overline B_{T_m}\subseteq B_{R_0}$, valid because $T_m<R_m\le R_0$;
+\item $|g^k|\le\mu(R_0)$ a.e.\ on $B_{T_m}$, which is the required essential
+  bound;
+\item $M$ and $m^\flat$ are by definition the essential supremum and infimum;
+\item its hypothesis (1): the family of (2.1) of the thesis predicate instances for
+  $g^k$ at the levels $l\in[(m^\flat+M)/2,M]$ and the radii
+  $\rho_0,\rho_1\in[\lambda_1T_m,T_m]=[R_{m+1},T_m]$ with $\rho_0<\rho_1$.  This
+  is the first of the two instances (B5) supplies, which hold for every level
+  $\ell\in\R$ and at any radii $0<\rho_0<\rho_1<R_{m_0+1}$ --- a range that
+  covers $\rho_1\le T_m=\tfrac34R_m\le\tfrac34R_{m_0+1}<R_{m_0+1}$ --- with the
+  constant $\gamma_\sharp$;
+\item its hypothesis (2), which is \emph{not} a predicate but the bare display
+  (2.11) of the thesis, for every $l\in[m^\flat,(m^\flat+M)/2]$ and the same radii.
+  (B5) supplies the \emph{predicate}
+  $\mathrm{DeGiorgiLevelBound}\ n\ \gamma_\sharp\ (-g^k)\ (-Dg^k)\ x_0\ (-l)\
+  \rho_0\ \rho_1$ (\noderef{DeGiorgiLevelBound}), read at the level $l$ so that
+  its own level argument is $-l$, and the conversion from that predicate to the
+  display is the following, which uses only the integrand identity --- the
+  predicate's clause (1) is simply discarded, the display having no such clause.
+  Apply \noderef{WeakGradientPositivePart} with $q=2$, the level $c=-l$ and the
+  open set $B_{T_m}$ --- of finite volume (Preamble: the volume of a ball) ---
+  and the pair $(-g^k,-Dg^k)$.  That pair lies in $W^{1,2}(B_{T_m})$: the second
+  bullet above gives $g^k\in W^{1,2}(B_{T_m})$ with weak gradient $Dg^k$
+  (\noderef{MemW1pOn}), by clause (4) of \noderef{WeakGradientRestrict}, and
+  clause (2) of \noderef{WeakGradientLinear} at $q=2$, the open set $B_{T_m}$,
+  $a=-1$, $b=0$ and $(f_1,g_1)=(f_2,g_2)=(g^k,Dg^k)$ turns it into
+  $-g^k\in W^{1,2}(B_{T_m})$ with weak gradient $-Dg^k$.  The ball $B_{T_m}$, and
+  not $\mathcal B$, is the right set here: (B0) gives membership on $\mathcal B$
+  only in the \emph{local} class $W^{1,2}_{\mathrm{loc}}(\mathcal B)$, whereas
+  \noderef{WeakGradientPositivePart} asks for $W^{1,2}$ of the set itself, and
+  $\overline B_{T_m}\subseteq B_{R_0}$ is what makes clause (4) available.  No
+  generality is lost, because the radii at which the display is needed satisfy
+  $\rho_0<\rho_1\le T_m$, so $B_{\rho_1}\subseteq B_{T_m}$.  The conclusion is
+  $\bigl((-g^k)-(-l)\bigr)^+=(l-g^k)^+\in W^{1,2}(B_{T_m})$ with weak gradient
+  $-Dg^k$ on $\{-l<-g^k\}$ and $0$ elsewhere.  A weak gradient is determined
+  almost everywhere (Preamble: the fundamental lemma of the calculus of
+  variations, second consequence), so the display's $\nabla(l-g^k)^+$ is that
+  field a.e., and pointwise a.e.
+  $|\nabla(l-g^k)^+|^2=\|Dg^k\|^2\chi_{\{g^k<l\}}$, using $\|-Dg^k\|=\|Dg^k\|$
+  and $\{-l<-g^k\}=\{g^k<l\}$.  Hence the display's integral over all of
+  $B_{\rho_0}$ equals the predicate's clause-(2) integral of $\|-Dg^k\|^2$ over
+  $B_{\rho_0}\cap\{-g^k>-l\}$, the integrand vanishing off that set; and the two
+  right-hand sides are the same expression, since
+  $\bigl((-g^k)-(-l)\bigr)^+=(l-g^k)^+$ pointwise and
+  $\{x\in B_{\rho_1}:-g^k(x)>-l\}=\{x\in B_{\rho_1}:g^k(x)<l\}$.  So clause (2)
+  of the predicate \emph{is} the display, and hypothesis (2) follows.
+\end{itemize}
+Its conclusion is
+$\operatorname*{osc}(g^k,B_{\lambda_1T_m})\le\delta\operatorname*{osc}(g^k,B_{T_m})$,
+i.e.\ $\operatorname*{osc}(g^k,B_{R_{m+1}})\le\delta\operatorname*{osc}(g^k,B_{T_m})$.
+We now record, once and for the two further uses below, the monotonicity of the
+oscillation in the set.
+
+\emph{(O) If $0<\sigma\le\sigma'\le R_0$ then
+$\operatorname*{osc}(g^k,B_\sigma)\le\operatorname*{osc}(g^k,B_{\sigma'})$.}
+By \noderef{EssOscOn} the oscillation on a set $E$ is
+$\operatorname{ess\,sup}_Eg^k-\operatorname{ess\,inf}_Eg^k$, both taken with
+respect to the volume measure restricted to $E$, so this is a statement about
+those two quantities and is proved from the definition.  First, $B_\sigma$ and
+$B_{\sigma'}$ have positive volume, $\omega_n\sigma^n$ and $\omega_n\sigma'^n$
+(Preamble: the volume of a ball), and $|g^k|\le\mu(R_0)$ a.e.\ on $B_{R_0}$ by
+(B0), so on each of the two balls $g^k$ is essentially bounded above and below
+and both the essential supremum and the essential infimum are finite real
+numbers --- neither is a junk value.  Next, $B_\sigma\subseteq B_{\sigma'}$, so
+the volume measure restricted to $B_\sigma$ is dominated by the one restricted to
+$B_{\sigma'}$; hence a set that is null for the latter is null for the former,
+and therefore any property that holds almost everywhere on $B_{\sigma'}$ holds
+almost everywhere on $B_\sigma$.  Put
+$S'=\operatorname{ess\,sup}_{B_{\sigma'}}g^k$ and
+$I'=\operatorname{ess\,inf}_{B_{\sigma'}}g^k$.  Then $g^k\le S'$ a.e.\ on
+$B_{\sigma'}$, hence a.e.\ on $B_\sigma$, and the essential supremum over
+$B_\sigma$ is the least number with that property, so
+$\operatorname{ess\,sup}_{B_\sigma}g^k\le S'$.  Dually $g^k\ge I'$ a.e.\ on
+$B_{\sigma'}$, hence a.e.\ on $B_\sigma$, and the essential infimum over
+$B_\sigma$ is the greatest such number, so
+$\operatorname{ess\,inf}_{B_\sigma}g^k\ge I'$.  Subtracting the second
+inequality from the first gives (O).
+
+With $T_m\le R_m$, so that $B_{T_m}\subseteq B_{R_m}$, (O) gives
+\[
+\operatorname*{osc}(g^k,B_{R_{m+1}})\ \le\ \delta\,\operatorname*{osc}(g^k,B_{R_m})
+\qquad(m\ge m_0+1),
+\tag{3.27}
+\]
+with the \emph{same} $\delta$: the passage to the radius $T_m<R_m$ costs nothing,
+because the conclusion of \noderef{OscillationDecayLemma} is a ratio of
+oscillations and $\operatorname*{osc}$ is monotone by (O), unlike the volume ratios
+that the applications of Lemmas 2.3 and 2.4 inside
+\noderef{DegenerateAlternative} have to absorb.
+
+\textbf{(B7) The assembly.}  Fix $k$ and $0<\rho\le R_0$.  Recall
+$\operatorname*{osc}(g^k,B_\sigma)\le2\mu(\sigma)$ for every $\sigma$.  Three
+ranges.
+
+\emph{(i) $R_{m_0}\le\rho\le R_0$.}  Exactly as in (B.1), using (B.2) in place
+of (3.25) for all $m$: choose $m$ with $R_{m+1}<\rho\le R_m$; then $m\le m_0$,
+because $\rho\le R_m$ and $\rho\ge R_{m_0}$ force $R_m\ge R_{m_0}$.  So
+(B.2) applies and
+\[
+\mu(\rho)\le\mu_m\le2^{-\alpha_1m}\mu(R_0)\le2\Bigl(\frac\rho{R_0}\Bigr)^{\alpha}\mu(R_0),
+\tag{3.28}
+\]
+whence $\operatorname*{osc}(g^k,B_\rho)\le4(\rho/R_0)^{\alpha}\mu(R_0)$.
+
+\emph{(ii) $R_{m_0+1}\le\rho\le R_{m_0}$.}  Then
+$\operatorname*{osc}(g^k,B_\rho)\le2\mu(R_{m_0})\le4(R_{m_0}/R_0)^{\alpha}\mu(R_0)$
+by (3.28) at $\rho=R_{m_0}$, and $R_{m_0}=2R_{m_0+1}\le2\rho$, so
+$(R_{m_0}/R_0)^{\alpha}\le2^{\alpha}(\rho/R_0)^{\alpha}\le2(\rho/R_0)^{\alpha}$
+and
+\[
+\operatorname*{osc}(g^k,B_\rho)\ \le\ 8\Bigl(\frac\rho{R_0}\Bigr)^{\alpha}\mu(R_0).
+\tag{3.30}
+\]
+
+\emph{(iii) $0<\rho\le R_{m_0+1}$.}  Choose the integer $m\ge0$ with
+$R_{m+1}<\rho\le R_m$; it exists and is unique because $m\mapsto R_m=2^{-m}R_0$
+is strictly decreasing with $R_0\ge R_{m_0+1}\ge\rho$ and $R_m\to0$.  Then
+$m\ge m_0+1$, because $R_{m+1}<\rho\le R_{m_0+1}$ gives $R_{m+1}<R_{m_0+1}$ and
+hence $m+1>m_0+1$ by that same strict monotonicity.  Iterating (3.27) from
+$m_0+1$ to $m$,
+\[
+\operatorname*{osc}(g^k,B_\rho)\le\operatorname*{osc}(g^k,B_{R_m})
+\le\delta^{\,m-m_0-1}\operatorname*{osc}(g^k,B_{R_{m_0+1}}),
+\]
+the first step by (O), the monotonicity of $\operatorname*{osc}$ established in
+(B6), applied with $\sigma=\rho\le\sigma'=R_m$.  By
+(S3) $\delta\le2^{-\alpha_2}$, so
+$\delta^{\,m-m_0-1}\le2^{-\alpha_2(m-m_0-1)}=(R_m/R_{m_0+1})^{\alpha_2}$, and
+$R_m<2\rho$ gives $(R_m/R_{m_0+1})^{\alpha_2}\le
+2^{\alpha_2}(\rho/R_{m_0+1})^{\alpha_2}\le2(\rho/R_{m_0+1})^{\alpha_2}$.  With
+$\operatorname*{osc}(g^k,B_{R_{m_0+1}})\le2\mu(R_{m_0+1})\le2\mu(R_{m_0})$ and
+(3.28) at $\rho=R_{m_0}$,
+\[
+\operatorname*{osc}(g^k,B_\rho)
+\le2\Bigl(\frac\rho{R_{m_0+1}}\Bigr)^{\alpha_2}\cdot2\cdot
+2\Bigl(\frac{R_{m_0}}{R_0}\Bigr)^{\alpha}\mu(R_0)
+=8\Bigl(\frac\rho{R_{m_0+1}}\Bigr)^{\alpha_2}
+\Bigl(\frac{R_{m_0}}{R_0}\Bigr)^{\alpha}\mu(R_0).
+\]
+Since $\rho\le R_{m_0+1}$ and $\alpha\le\alpha_2$,
+$(\rho/R_{m_0+1})^{\alpha_2}\le(\rho/R_{m_0+1})^{\alpha}
+=(2\rho/R_{m_0})^{\alpha}\le2(\rho/R_{m_0})^{\alpha}$, so the product of the two
+powers is at most $2(\rho/R_{m_0})^{\alpha}(R_{m_0}/R_0)^{\alpha}
+=2(\rho/R_0)^{\alpha}$ and
+\[
+\operatorname*{osc}(g^k,B_\rho)\ \le\ 16\Bigl(\frac\rho{R_0}\Bigr)^{\alpha}\mu(R_0).
+\tag{3.29}
+\]
+This is the paper's $\alpha=\min(\alpha_1,\alpha_2)$ assembly
+(3.28) of the thesis--(3.30) of the thesis; the paper writes $C_1$ in the display at
+l.~962 and $C_2$ in the one that follows, and writes
+``$\lambda_1/\lambda_0$'' at l.~953 where it means $\gamma_1/\gamma_0$.  In all
+three ranges $\operatorname*{osc}(g^k,B_\rho)\le16(\rho/R_0)^{\alpha}\mu(R_0)
+\le16\,T\,(\rho/R_0)^{\alpha}$, which with Case I proves
+the lemma.
+
+\end{proof}

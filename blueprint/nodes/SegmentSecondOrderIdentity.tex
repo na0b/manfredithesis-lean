@@ -1,0 +1,157 @@
+\begin{lemma}[The second-order expansion along a segment, across one degenerate point]
+Let $n\in\N$, let $p>1$, let $\varepsilon\ge0$ and let $\nu_1\ge0$.  Let
+$f\colon\R^n\to\R$ be differentiable at every point and let
+$A\colon\R^n\to\R^n$ be continuous and represent the differential of $f$, i.e.
+\[
+Df(h)[\zeta]=\sum_iA(h)^i\zeta^i\qquad(h,\zeta\in\R^n).
+\]
+Let $a,b\in\R^n$ and write
+\[
+\xi(t)=t\,a+(1-t)\,b,\qquad\zeta=a-b,\qquad
+D=\{h\in\R^n:\varepsilon+|h|^2\ne0\}.
+\]
+Let $q\colon\R\to\R$ be a function such that
+\begin{itemize}
+\item[(i)] for every $t\in\R$ with $\xi(t)\in D$, the real function
+  $s\mapsto\sum_iA(\xi(s))^i\zeta^i$ is differentiable at $t$ with derivative
+  $q(t)$;
+\item[(ii)] for every $t\in\R$ with $\xi(t)\in D$,
+  \[
+  |q(t)|\le\nu_1\bigl(\varepsilon+|\xi(t)|^2\bigr)^{\frac p2-1}|\zeta|^2 ;
+  \]
+\item[(iii)] $q(t)=0$ for every $t\in\R$ with $\xi(t)\notin D$.
+\end{itemize}
+Then $t\mapsto(1-t)q(t)$ is interval-integrable on $[0,1]$ and
+\[
+f(a)-f(b)=\sum_iA(b)^i\zeta^i+\int_0^1(1-t)\,q(t)\,dt .
+\]
+\end{lemma}
+\begin{proof}
+Write $\psi(t)=\sum_iA(\xi(t))^i\zeta^i$ for $t\in\R$ and
+$T=\{t\in\R:\xi(t)\notin D\}$.
+
+\emph{Preliminaries.}  The map $\xi$ is affine: $\xi(t)=b+t\zeta$, whence
+$\xi(0)=b$, $\xi(1)=a$, $\xi$ is continuous, and $\xi$ is differentiable at
+every $t$ with $\xi'(t)=\zeta$.  The map $h\mapsto\sum_ih^i\zeta^i$ is the
+inner product with the fixed vector $\zeta$ and so is continuous; since $A$ is
+continuous by hypothesis, $\psi=\bigl(h\mapsto\sum_ih^i\zeta^i\bigr)\circ
+A\circ\xi$ is continuous on $\R$.  Also $f$ is continuous, being differentiable
+at every point.  Finally, since $\varepsilon\ge0$ and $|\xi(t)|^2\ge0$, the sum
+$\varepsilon+|\xi(t)|^2$ vanishes if and only if both summands do, so
+\[
+t\in T\iff\varepsilon+|\xi(t)|^2=0\iff\bigl(\varepsilon=0\ \text{and}\ \xi(t)=0\bigr).
+\tag{T}
+\]
+
+\emph{The degenerate case $a=b$.}  Here $\zeta=0$, so $\psi\equiv0$,
+$\sum_iA(b)^i\zeta^i=0$ and $f(a)-f(b)=0$.  If $t\notin T$, hypothesis (i)
+asserts that the constant function $s\mapsto0$ is differentiable at $t$ with
+derivative $q(t)$; by uniqueness of the derivative, $q(t)=0$.  If $t\in T$,
+then $q(t)=0$ by (iii).  So $q\equiv0$, the function $t\mapsto(1-t)q(t)$ is
+identically $0$ and therefore interval-integrable on $[0,1]$ with integral $0$,
+and the asserted identity reads $0=0+0$.  \emph{From now on $a\ne b$, i.e.\
+$\zeta\ne0$.}
+
+\emph{$T$ contains at most one point, and is null.}  Let $t,t'\in T$.  By (T),
+$\xi(t)=\xi(t')=0$, so
+$0=\xi(t)-\xi(t')=(b+t\zeta)-(b+t'\zeta)=(t-t')\zeta$; since $\zeta\ne0$ this
+forces $t=t'$.  Hence $T$ is empty or a single point, and in either case it is
+a Lebesgue null subset of $\R$.
+
+\emph{The function $t\mapsto(1-t)q(t)$ is interval-integrable on $[0,1]$.}
+First, measurability.  Let $\psi'$ denote the derivative of $\psi$, set to $0$
+at the points where $\psi$ is not differentiable; $\psi'$ is measurable
+(Preamble: measurability of the derivative, which assumes nothing about
+$\psi$).  By (i), $\psi$ is differentiable at every $t\notin T$ with
+$\psi'(t)=q(t)$, so $q=\psi'$ off the null set $T$; thus $q$ is almost
+everywhere equal to a measurable function, hence almost everywhere strongly
+measurable, and so is $t\mapsto(1-t)q(t)$.  Second, domination.  Put
+\[
+W(t)=\nu_1|\zeta|^2\bigl(\varepsilon+|\xi(t)|^2\bigr)^{\frac p2-1}\qquad(t\in\R),
+\]
+which is nonnegative, because $\nu_1\ge0$, $|\zeta|^2\ge0$ and a real power of
+the nonnegative number $\varepsilon+|\xi(t)|^2$ is nonnegative.  For
+$t\in(0,1]$ we have $0\le1-t<1$, hence $|1-t|\le1$ and
+\[
+\bigl|(1-t)q(t)\bigr|\le|q(t)|\le W(t):
+\]
+if $t\notin T$ this is (ii), and if $t\in T$ then $|q(t)|=0\le W(t)$ by (iii).
+By \noderef{SegmentWeightIntegrable}, applied with the present $n,p,\varepsilon$
+and with the present $a,b$ --- its hypotheses are $1<p$ and $0\le\varepsilon$,
+both present --- the function
+$t\mapsto(\varepsilon+|\xi(t)|^2)^{\frac p2-1}$ is interval-integrable on
+$[0,1]$, and hence so is its constant multiple $W$.  By domination (Preamble),
+$t\mapsto(1-t)q(t)$ is interval-integrable on $[0,1]$.  This is the first
+assertion of the lemma.
+
+\emph{The auxiliary function $K$.}  Put
+\[
+K(t)=f(\xi(t))+(1-t)\psi(t)\qquad(t\in\R).
+\]
+Then $K$ is continuous on $\R$, being built from the continuous $f,\xi,\psi$ by
+composition, multiplication by the continuous $t\mapsto1-t$, and addition.
+Moreover $K$ is differentiable at every $t\notin T$, with
+\[
+K'(t)=(1-t)q(t).
+\tag{K}
+\]
+Indeed, by the chain rule and the hypothesis relating $A$ to $Df$, the function
+$s\mapsto f(\xi(s))$ is differentiable at $t$ with derivative
+\[
+Df(\xi(t))[\xi'(t)]=Df(\xi(t))[\zeta]=\sum_iA(\xi(t))^i\zeta^i=\psi(t);
+\]
+and by the product rule together with (i), the function $s\mapsto(1-s)\psi(s)$
+is differentiable at $t$ with derivative
+$-\psi(t)+(1-t)\psi'(t)=-\psi(t)+(1-t)q(t)$.  Adding the two derivatives gives
+$\psi(t)-\psi(t)+(1-t)q(t)=(1-t)q(t)$, which is (K).
+
+\emph{The fundamental theorem of calculus, past the bad point.}  We claim
+\[
+\int_0^1(1-t)q(t)\,dt=K(1)-K(0).
+\tag{F}
+\]
+Suppose first $T\cap(0,1)=\emptyset$.  Then $K$ is continuous on $[0,1]$ and,
+by (K), differentiable at every point of the open interval $(0,1)$ with
+derivative $(1-t)q(t)$, which is interval-integrable on $[0,1]$ by the previous
+paragraph.  The fundamental theorem of calculus in interval-integral form
+(Preamble), in the variant that requires differentiability only on the open
+interval together with continuity on the closed interval, gives (F).
+
+Otherwise $T\cap(0,1)\ne\emptyset$; since $T$ has at most one point, write
+$T\cap(0,1)=\{t_\ast\}$ with $0<t_\ast<1$, and note $T=\{t_\ast\}$.  For
+$0\le\alpha<\beta\le1$ the function $t\mapsto(1-t)q(t)$ is interval-integrable
+on $[\alpha,\beta]$: the interval integral over $[\alpha,\beta]$ is by
+definition the Lebesgue integral over the measurable set $(\alpha,\beta]$,
+$(\alpha,\beta]\subseteq(0,1]$, and a function integrable on a measurable set is
+integrable on every measurable subset of it, the restricted measure being
+smaller.  Now $K$ is continuous on $[0,t_\ast]$ and differentiable at every
+point of $(0,t_\ast)$ with derivative $(1-t)q(t)$ --- such a point is $<t_\ast$
+and so is not the unique element of $T$ --- so the same Preamble variant gives
+\[
+\int_0^{t_\ast}(1-t)q(t)\,dt=K(t_\ast)-K(0).
+\]
+Likewise $K$ is continuous on $[t_\ast,1]$ and differentiable at every point of
+$(t_\ast,1)$, such a point being $>t_\ast$, so
+\[
+\int_{t_\ast}^{1}(1-t)q(t)\,dt=K(1)-K(t_\ast).
+\]
+Finally $(0,1]$ is the disjoint union of $(0,t_\ast]$ and $(t_\ast,1]$, and the
+integrand is integrable on $(0,1]$, so the Lebesgue integral over $(0,1]$ is the
+sum of the integrals over the two pieces; in the notation of the interval
+integral,
+\[
+\int_0^1(1-t)q(t)\,dt=\int_0^{t_\ast}(1-t)q(t)\,dt+\int_{t_\ast}^1(1-t)q(t)\,dt
+=K(1)-K(0),
+\]
+which is (F).
+
+\emph{Conclusion.}  Since $\xi(1)=a$ and $1-1=0$ we have $K(1)=f(a)$; since
+$\xi(0)=b$ and $1-0=1$ we have
+$K(0)=f(b)+\psi(0)=f(b)+\sum_iA(b)^i\zeta^i$.  Substituting these into (F),
+\[
+\int_0^1(1-t)q(t)\,dt=f(a)-f(b)-\sum_iA(b)^i\zeta^i ,
+\]
+and rearranging gives
+$f(a)-f(b)=\sum_iA(b)^i\zeta^i+\int_0^1(1-t)q(t)\,dt$, the second assertion of
+the lemma.
+\end{proof}

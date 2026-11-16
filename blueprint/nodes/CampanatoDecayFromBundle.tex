@@ -1,0 +1,280 @@
+\begin{helper}[Campanato decay for the gradient from a comparison bundle]
+Let $n\ge2$, $p>1$, $0<\alpha\le1$, $\delta'>0$ and
+\[
+0<\tau<p\alpha\theta,\qquad \theta=\frac{\delta'}{n+p\alpha} .
+\]
+Then there are $\lambda_0\in(0,p)$ and $R_2>0$ with $R_2\le1$, depending only on
+$n,p,\alpha,\delta'$ and $\tau$, with the following property.  (The upper bound
+on $\lambda_0$ is \emph{strict}; this is what the consumers need, because
+Campanato's theorem (C5) is available at the exponent $\lambda=n+\lambda_0$ only
+for $\lambda<n+p$.  The paper's Theorems 4 and 6 state $0<\lambda_0\le p$, which
+is weaker and which they keep.)
+
+Let $c_1,c_3>0$.  Then there is $c_{10}>0$, depending only on
+$n,p,\alpha,\delta',\tau,c_1$ and $c_3$, such that the following holds.
+
+Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open, let $\Omega'$ be
+open with $\overline{\Omega'}\subseteq\Omega$, let $R_1>0$ and let
+$u\in W^{1,p}(\Omega)$ with weak gradient $g=\nabla u$ (\noderef{MemW1pOn}).
+Write
+\[
+\Lambda(x_0,R)=R^{-n}\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .
+\]
+Assume
+\begin{align}
+\Lambda(x_0,R)&\le c_1R^{-\tau}\qquad (x_0\in\Omega',\ 0<R\le R_1),\tag{4.15}
+\end{align}
+and that for every $x_0\in\Omega'$ and every $0<R\le R_1$ with
+$\overline B_R(x_0)\subseteq\Omega$ there is a comparison map
+$v\in W^{1,p}\bigl(B_R(x_0)\bigr)$ with weak gradient $g_v$
+(\noderef{MemW1pOn}) such that
+\begin{align}
+\int_{B_\rho(x_0)}\bigl|g_v-(g_v)_{B_\rho(x_0)}\bigr|^p dx
+&\le c_3\Bigl(\frac\rho R\Bigr)^{p\alpha}\rho^{\,n}\Lambda(x_0,R)
+\qquad(0<\rho\le R/4),\tag{4.16}\\
+\int_{B_R(x_0)}|\nabla u-g_v|^p\,dx&\le R^{\delta'+n}\Lambda(x_0,R).\tag{4.17}
+\end{align}
+Then for every $x_0\in\Omega'$, every $R$ with $0<R\le\min\{R_1,R_2\}$ and
+$\overline B_R(x_0)\subseteq\Omega$, and every $\rho>0$ with
+$2\rho\le R^{1+\theta}$,
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^p dx
+\le c_{10}\,\rho^{\,n+\lambda_0}.
+\tag{4.19}
+\]
+Here $(h)_{B_\rho(x_0)}=|B_\rho|^{-1}\int_{B_\rho(x_0)}h\,dx$ is the vector mean.
+
+\noindent\textbf{On the quantifier order.}  $\lambda_0$ and $R_2$ are bound
+before $c_1$ and $c_3$, and only $c_{10}$ is allowed to depend on them.  This is
+the dependence the proof actually produces --- $\lambda_0=\eta/(1+\theta)$ and
+$R_2=\min\{1,2^{-1/\theta}\}$ are built from $n,p,\alpha,\delta',\tau$ alone ---
+and it is what the consumers need: in Theorem~4's and Theorem~6's route the
+Morrey constant is produced by Theorem~3 at a stage where the decay exponent and
+the radius threshold have already been fixed, so a $\lambda_0$ depending on
+$c_1$ would be useless to them.
+
+\noindent\textbf{On the membership $v\in W^{1,p}(B_R(x_0))$.}  The comparison
+map of \S4 and \S5 is a $W^{1,p}$ solution of a frozen Dirichlet problem, so
+this is what every producer of the bundle actually has; the thesis writes
+(4.16) of the thesis about $\nabla v$ and (4.17) of the thesis about $\nabla w$ with
+$w=u-v$ (thesis p.~43--44).  It is recorded explicitly because the proof below
+\emph{adds} the two integrals bounded by (4.16) of the thesis and (4.17) of the thesis,
+and an inequality bounding an integral does not by itself make the integrand
+integrable.
+
+\noindent\textbf{On the range $\rho\le R/4$ in (4.16) of the thesis.}  The thesis
+states (4.16) of the thesis for $\rho\le R/2$ (p.~44).  It is assumed here on the
+smaller range $\rho\le R/4$, which makes this node's hypothesis \emph{weaker}
+and so its statement stronger, for two reasons.  First, the proof below uses
+(4.16) of the thesis at one pair $(\rho,R')$ only, namely
+$\rho=\frac12R'^{\,1+\theta}$, and the choice of $R_2$ made in the proof puts
+that single $\rho$ below $R'/4$; so nothing on the range $(R/4,R/2]$ is ever
+consumed, by either range convention.  Second, the producers of the bundle in
+\S4 and \S5 deliver exactly the $R/4$ form: they obtain the oscillation
+estimate from Theorem~2 on $B_{R/4}(x_0)$, because the sup bound that
+Theorem~2 consumes is itself produced by Theorem~1 on a half-ball.  Assuming
+the $R/4$ form therefore costs its consumers nothing and saves them a radius
+conversion.
+
+\noindent\textbf{On the range of $\rho$ in the conclusion.}  The conclusion is
+stated for the radii $\rho$ with $2\rho\le R^{1+\theta}$ at an admissible
+comparison radius $R$, and not for all $\rho\le\min\{R_1,R_2\}$, because that is
+exactly the range the hypotheses reach.  The thesis derives (4.19) of the thesis by
+putting $\rho=\frac12R^{1+\theta}$ (p.~45), so the estimate at a given $\rho$
+consumes the comparison bundle at the \emph{larger} radius
+$R=(2\rho)^{1/(1+\theta)}$ --- larger because $\theta>0$ and $2\rho\le1$ --- and
+the bundle is available only for radii $\le R_1$ whose closed ball lies in
+$\Omega$.  A conclusion quantified over all $\rho\le\min\{R_1,R_2\}$ would
+assert the decay at radii whose associated comparison radius exceeds $R_1$,
+where the hypotheses say nothing.  Conversely nothing is lost: as $R'$ runs over
+$(0,R]$ the number $\frac12R'^{\,1+\theta}$ runs over all of
+$(0,\frac12R^{1+\theta}]$, so every $\rho$ in the stated range is of the thesis'
+special form for exactly one $R'\le R$, and the containment
+$\overline B_R(x_0)\subseteq\Omega$ passes to $\overline B_{R'}(x_0)$.  A
+consumer fixes $R$ from the geometry of its subdomain once and then has
+(4.19) of the thesis for all small $\rho$, which is what Campanato's
+characterisation of the H\"older classes consumes.
+\end{helper}
+\begin{proof}
+Throughout, $B_t=B_t(x_0)$, $|E|$ is Lebesgue measure, $\omega_n=|B_1(0)|$, and
+all non-integer powers are real powers of positive numbers.  Put
+\[
+\theta=\frac{\delta'}{n+p\alpha}>0,
+\qquad
+\eta=p\alpha\theta-\tau>0,
+\qquad
+\lambda_0=\frac\eta{1+\theta},
+\]
+so that $n\theta+p\alpha\theta=\delta'$ by the definition of $\theta$, and
+$\eta>0$ is exactly the hypothesis $\tau<p\alpha\theta$; hence $0<\lambda_0$.
+Also $\lambda_0<p$: since $\tau>0$ we have $\eta<p\alpha\theta$, and
+$\alpha\le1$ with $\theta>0$ gives $\alpha\theta\le\theta<1+\theta$, so
+\[
+\lambda_0=\frac\eta{1+\theta}<\frac{p\alpha\theta}{1+\theta}<p ,
+\]
+dividing the inequality $p\alpha\theta<p(1+\theta)$ by $1+\theta>0$.  Put also
+\[
+R_2=\min\bigl\{1,\ 2^{-1/\theta}\bigr\},
+\]
+so that $0<R_2\le1$, since $2^{-1/\theta}>0$.  Both $\lambda_0$ and $R_2$ are
+built from $n,p,\alpha,\delta'$ and $\tau$ alone --- $\theta$ and $\eta$ are,
+and $\lambda_0$ and $R_2$ are functions of those --- so they may be, and are,
+fixed before $c_1$ and $c_3$, which is the quantifier order the statement
+prescribes.
+
+Now let $c_1,c_3>0$ be given and put
+\[
+c_{10}=2^{p}\cdot2^{p-1}c_1\bigl(c_32^{-p\alpha-n}+1\bigr)\cdot2^{\,n+\lambda_0}>0 ,
+\]
+which depends only on $n,p,\alpha,\delta',\tau,c_1,c_3$ and is fixed before
+$\varepsilon,\Omega,\Omega',u,g,R_1$.
+
+\emph{Step 0: an elementary inequality.}  Since $p\ge1$, convexity of
+$\lambda\mapsto\lambda^{p}$ on $[0,\infty)$ gives
+$\bigl(\frac{X+Y}2\bigr)^{p}\le\frac12(X^{p}+Y^{p})$, i.e.
+\[
+(X+Y)^{p}\le2^{p-1}\bigl(X^{p}+Y^{p}\bigr)\qquad(X,Y\ge0),
+\]
+and therefore, by the triangle inequality,
+\[
+|a+b|^{p}\le2^{p-1}\bigl(|a|^{p}+|b|^{p}\bigr)\qquad(a,b\in\R^n).
+\tag{E1}
+\]
+
+\emph{Step 1: the comparison radius attached to $\rho$.}  Let $x_0\in\Omega'$,
+let $0<R\le\min\{R_1,R_2\}$ with $\overline B_R\subseteq\Omega$, and let
+$\rho>0$ with $2\rho\le R^{1+\theta}$.  Put
+\[
+R'=(2\rho)^{\frac1{1+\theta}},\qquad\text{so that}\qquad
+R'^{\,1+\theta}=2\rho,\qquad \rho=\tfrac12R'^{\,1+\theta}.
+\]
+Then $R'>0$, and $R'\le R$ because $2\rho\le R^{1+\theta}$ and
+$\lambda\mapsto\lambda^{1/(1+\theta)}$ is nondecreasing on $[0,\infty)$, the
+exponent $1/(1+\theta)$ being positive, and because
+$(R^{1+\theta})^{1/(1+\theta)}=R$.  Hence
+\[
+0<R'\le R\le\min\{R_1,R_2\}\le R_2\le1,
+\qquad
+\overline B_{R'}\subseteq\overline B_R\subseteq\Omega .
+\]
+Three consequences will be used.  First $R'\le R_1$, so (4.15) of the thesis is
+available at the radius $R'$ and the comparison bundle exists at $R'$: there is
+$v\in W^{1,p}(B_{R'})$ with weak gradient $g_v$ satisfying (4.16) of the thesis and
+(4.17) of the thesis on $B_{R'}$.  Second $R'\le R_2\le2^{-1/\theta}$, so, raising to
+the power $\theta>0$,
+\[
+R'^{\,\theta}\le\bigl(2^{-1/\theta}\bigr)^{\theta}=2^{-1}=\tfrac12 ,
+\]
+whence, from $R'^{\,1+\theta}=R'\cdot R'^{\,\theta}$,
+\[
+\rho=\tfrac12R'\cdot R'^{\,\theta}\le\tfrac12R'\cdot\tfrac12=\tfrac14R' ,
+\]
+so (4.16) of the thesis may be applied at the pair $(\rho,R')$, its range
+$0<\rho\le R'/4$ being met.  Third, $\rho\le R'/4\le R'$, so
+$B_\rho\subseteq B_{R'}$.
+
+This is the step the thesis leaves implicit, and it is where the ``radii not of
+the special form'' difficulty dissolves: the thesis fixes $R$ and produces the
+estimate at the single radius $\frac12R^{1+\theta}$, but the map
+$R'\mapsto\frac12R'^{\,1+\theta}$ is a continuous increasing bijection of
+$(0,R]$ onto $(0,\frac12R^{1+\theta}]$, so solving for $R'$ instead of for
+$\rho$ covers \emph{every} admissible $\rho$ exactly, with no interpolation
+between special radii and hence no appeal to monotonicity in $\rho$.
+
+\emph{Step 2: the estimate (4.18) at the pair $(\rho,R')$.}  Put
+$c=(g_v)_{B_\rho}$ and $\Lambda=\Lambda(x_0,R')$.  By (E1) with
+$a=g_v-c$ and $b=g-g_v$, i.e.\ $g-c=(g_v-c)+(g-g_v)$,
+\[
+|g-c|^{p}\le2^{p-1}\bigl(|g_v-c|^{p}+|g-g_v|^{p}\bigr)
+\]
+pointwise; integrating over $B_\rho$ and enlarging the domain of the second term
+to $B_{R'}$ (the integrand is nonnegative and $B_\rho\subseteq B_{R'}$),
+\[
+\int_{B_\rho}|g-c|^{p}dx
+\ \le\ 2^{p-1}\int_{B_\rho}|g_v-c|^{p}dx+2^{p-1}\int_{B_{R'}}|g-g_v|^{p}dx .
+\]
+Every integral here is finite, and each from a \emph{membership} rather than
+from a bound: $|g|^{p}$ is integrable on $\Omega$ by \noderef{MemW1pOn} and
+$B_{R'}\subseteq\Omega$; $|g_v|^{p}$ is integrable on $B_{R'}$ because
+$v\in W^{1,p}(B_{R'})$ has weak gradient $g_v$ (\noderef{MemW1pOn}), which is a
+hypothesis of this node; the constant $c$ lies in $L^p$ of the bounded set
+$B_\rho$; and hence $|g_v-c|^{p}$ is integrable on $B_\rho$ and $|g-g_v|^{p}$ on
+$B_{R'}$, by (E1) applied to the two summands in each case.  Inserting
+(4.16) of the thesis at $(\rho,R')$ --- legitimate by Step 1 --- and
+(4.17) of the thesis at $R'$,
+\[
+\int_{B_\rho}|g-c|^{p}dx
+\ \le\ 2^{p-1}\Bigl[c_3\Bigl(\frac\rho{R'}\Bigr)^{p\alpha}\rho^{\,n}
++R'^{\,n+\delta'}\Bigr]\Lambda ,
+\]
+and then (4.15) of the thesis at $R'$, i.e.\ $\Lambda\le c_1R'^{-\tau}$, the bracket
+being nonnegative and $\Lambda\ge0$,
+\[
+\int_{B_\rho}|g-c|^{p}dx
+\ \le\ 2^{p-1}c_1\Bigl[c_3\Bigl(\frac\rho{R'}\Bigr)^{p\alpha}\rho^{\,n}R'^{-\tau}
++R'^{\,n+\delta'-\tau}\Bigr],
+\tag{4.18}
+\]
+which is the thesis' (4.18) of the thesis.
+
+\emph{Step 3: the substitution $\rho=\frac12R'^{\,1+\theta}$.}  By Step 1,
+\[
+\frac\rho{R'}=\tfrac12R'^{\,\theta},
+\qquad
+\Bigl(\frac\rho{R'}\Bigr)^{p\alpha}=2^{-p\alpha}R'^{\,p\alpha\theta},
+\qquad
+\rho^{\,n}=2^{-n}R'^{\,n(1+\theta)} ,
+\]
+so the first term in the bracket of (4.18) equals
+$c_32^{-p\alpha-n}R'^{\,p\alpha\theta+n+n\theta-\tau}
+=c_32^{-p\alpha-n}R'^{\,n+n\theta+\eta}$, using $\eta=p\alpha\theta-\tau$; and
+the second equals $R'^{\,n+\delta'-\tau}=R'^{\,n+n\theta+p\alpha\theta-\tau}
+=R'^{\,n+n\theta+\eta}$, using $\delta'=n\theta+p\alpha\theta$.  Hence
+\[
+\int_{B_\rho}|g-c|^{p}dx
+\ \le\ 2^{p-1}c_1\bigl(c_32^{-p\alpha-n}+1\bigr)\,R'^{\,n+n\theta+\eta} .
+\]
+Now $R'^{\,1+\theta}=2\rho$ gives
+$R'^{\,n+n\theta}=\bigl(R'^{\,1+\theta}\bigr)^{n}=(2\rho)^{n}$ and
+$R'^{\,\eta}=\bigl((2\rho)^{\frac1{1+\theta}}\bigr)^{\eta}
+=(2\rho)^{\frac\eta{1+\theta}}=(2\rho)^{\lambda_0}$, so
+\[
+R'^{\,n+n\theta+\eta}=(2\rho)^{\,n+\lambda_0}
+=2^{\,n+\lambda_0}\rho^{\,n+\lambda_0},
+\]
+an equality, not an estimate: because $\lambda_0$ is defined to be
+$\eta/(1+\theta)$ exactly and is not truncated at $p$, no appeal to $\rho\le1$
+is needed here, and none is made.  Combining,
+\[
+\int_{B_\rho}|g-c|^{p}dx
+\ \le\ 2^{p-1}c_1\bigl(c_32^{-p\alpha-n}+1\bigr)2^{\,n+\lambda_0}
+\,\rho^{\,n+\lambda_0}
+\ =\ 2^{-p}c_{10}\,\rho^{\,n+\lambda_0},
+\]
+by the definition of $c_{10}$ in the preamble to this proof.  This is the thesis'
+chain
+$\int|g-c|^p\le c_8R'^{\,n+n\theta+\eta}\le c_9\rho^{\,n}\rho^{\eta/(1+\theta)}
+\le c_{10}\rho^{\,n+\lambda_0}$.
+
+\emph{Step 4: from the mean of $g_v$ to the mean of $\nabla u$.}  The ball
+$B_\rho$ is measurable with $0<|B_\rho|=\omega_n\rho^{\,n}<\infty$, the field
+$g$ belongs to $L^p(B_\rho)$ because $|g|^p$ is integrable on $\Omega$
+(\noderef{MemW1pOn}) and $B_\rho\subseteq B_{R'}\subseteq\Omega$, and
+$c\in\R^n$; so \noderef{MeanReplacementLp} applies with $S=B_\rho$, $f=g$ and
+this $c$, and gives
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^{p}dx
+\ \le\ 2^{p}\int_{B_\rho}|g-c|^{p}dx .
+\]
+With Step 3,
+\[
+\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^{p}dx
+\ \le\ 2^{p}\cdot2^{-p}c_{10}\,\rho^{\,n+\lambda_0}
+\ =\ c_{10}\,\rho^{\,n+\lambda_0}.
+\]
+This is (4.19) of the thesis.  Since $x_0$, $R$ and $\rho$ were arbitrary subject to
+the stated constraints, the assertion follows.  (The hypothesis
+$0\le\varepsilon\le1$ is not needed in this node's argument, and is retained
+only because the bundle it is applied to is the one the theorems of \S4 and \S5
+produce under that normalisation.)
+\end{proof}

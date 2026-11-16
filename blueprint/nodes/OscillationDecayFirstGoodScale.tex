@@ -1,0 +1,153 @@
+\begin{helper}[Case II of the oscillation decay: the first scale at which the pinch holds]
+Let $n\in\N$ and let
+$p,r,c_4,c_\flat,K_\flat,\gamma_\sharp,\delta,\nu,\alpha_2,\alpha,\varepsilon,\gamma_0,\gamma_1,T\in\R$.
+Let $\Omega_0\subseteq\R^n$, let $A\colon\R^n\to\R^n$, $u\colon\R^n\to\R$,
+$g,g'\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$, let $x_0\in\R^n$, let $R_0,\rho\in\R$, let $k$ be an
+index, and let $\mu\colon\R\to\R$, $R_\bullet\colon\N\to\R$ and
+$H\colon\N\to\mathrm{Prop}$.  Throughout, $B_\sigma(x_0)$ is the open ball,
+$\operatorname{supp}$ denotes the \emph{closed} support wherever it occurs,
+$\operatorname*{osc}$ is the essential oscillation
+(\noderef{EssOscOn}), $\mathrm{DGLB}$ abbreviates the De Giorgi level bound
+(\noderef{DeGiorgiLevelBound}), and every power of a positive real is the real
+power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight
+$(\varepsilon+|h|^2)^{\frac p2-1}$.  Assume
+\begin{enumerate}
+\item[(H1)] $n\ge2$, $1\le n$, $2\le n$ as a real, $1<p$, $0<r$;
+  $0<c_4$; $0<c_\flat\le\tfrac1{16}$ and
+  $K_\flat=(\tfrac14+n)/c_\flat^{\,2}$; $0<\gamma_\sharp$;
+  $\delta\in(0,1)$; $0<\alpha_2\le1$ with $\delta\le2^{-\alpha_2}$; and
+  $0<\alpha\le\alpha_2$ with $\alpha\le1$;
+\item[(H2)] $0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$,
+  $0<\gamma_1$, $0\le T$, $0<R_0$, $0<\rho\le R_0$;
+\item[(H3)] the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\Omega_0$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}),
+  $B_{R_0}(x_0)\subseteq\Omega_0$, the cited regularity result (C1) is
+  available for every parameter set and open set
+  (\noderef{CitedRegularityEpsPos}), and the structure bundle restricts to
+  subsets;
+\item[(H4)] the Caccioppoli inequality at level $l$ with constant $c_4$
+  (the conclusion of \noderef{CaccioppoliLevelWeight}), the pinched level
+  bound with constant $\gamma_\sharp$ at exponent $\tfrac p2-1$, ratio
+  $K_\flat$ and constant $c_4$ (the conclusion of
+  \noderef{PinchedCaccioppoliLevelBound}), and the oscillation decay lemma with
+  constant $\delta$ at $\gamma_\sharp$ and $\lambda_1=\tfrac23$ (the conclusion
+  of \noderef{OscillationDecayLemma});
+\item[(H5)] the measure-theoretic toolkit: the almost-everywhere filter on each
+  ball is non-trivial, the two coboundedness facts for an a.e.-bounded
+  function, $|v_i|\le\|v\|$ for coordinates, and $g^i\in
+  W^{1,2}_{\mathrm{loc}}(B_{R_0}(x_0))$ with weak gradient $Dg^i$
+  (\noderef{MemW1pLocOn});
+\item[(H6)] the gauge facts: $|g^k|\le T$ a.e.\ on each $B_\sigma(x_0)$ with
+  $\sigma\le R_0$; $|g^k|\le\mu(\sigma)$ a.e.\ there; $0\le\mu(\sigma)$;
+  $\mu(\sigma)\le T$; and $\mu$ is monotone in $\sigma$ on $(0,R_0]$;
+\item[(H7)] the dyadic radii: $R_\bullet=(m\mapsto R_0/2^m)$, with
+  $0<R_m\le R_0$, $R_{m+1}=R_m/2$, $B_{R_m}(x_0)\subseteq B_{R_0}(x_0)$, and
+  $u$ a weak solution on each $B_{R_m}(x_0)$ with
+  $g^i\in W^{1,2}_{\mathrm{loc}}$ there;
+\item[(H8)] the five facts about the predicate $H$ that the branch consumes:
+  (3.26) at any $m$ with $H_m$, producing a witness coordinate $k_0$; the
+  comparison $\operatorname*{osc}(g^k,B_\sigma)\le2\mu(\sigma)$; the existence
+  of a dyadic bracket $R_{m+1}<\rho'\le R_m$ for every $\rho'\in(0,R_0]$; the
+  decay step, which turns $\mu(R_m)\le\nu^m\mu(R_0)$ into
+  $\mu(\rho')\le2(\rho'/R_0)^{\alpha}\mu(R_0)$ for $\rho'$ in that bracket; the
+  chain $\mu(R_m)\le\nu^m\mu(R_0)$ whenever $H_j$ fails for all $j<m$; and the
+  final implication from $\mu(\rho)\le2(\rho/R_0)^{\alpha}\mu(R_0)$ to the
+  asserted oscillation bound;
+\item[(H9)] $g'$ is continuous on $B_{R_0}(x_0)$ and $g=g'$ almost everywhere
+  there; and $H$ holds at some scale, i.e.\ $\neg\,\forall m,\ \neg H_m$.
+\end{enumerate}
+Then
+\[
+\operatorname*{osc}\bigl(g^k,B_\rho(x_0)\bigr)\ \le\ 16\,T\,
+  \Bigl(\frac{\rho}{R_0}\Bigr)^{\alpha}.
+\]
+The predicate $H$ is left opaque on purpose: the branch uses only (H8), never
+the definition of $H$, so the lemma is stated for an arbitrary
+$H\colon\N\to\mathrm{Prop}$ with those properties.  That is also why $\nu$
+appears only inside (H8) and needs no property of its own here.
+\end{helper}
+\begin{proof}
+\emph{(B3) The first good scale.}  By (H9) the set $\{m:H_m\}$ is nonempty, so
+it has a least element $m_0$; then $H_{m_0}$ holds and $H_j$ fails for every
+$j<m_0$.  The chain of (H8) applied at $m_0$ therefore gives
+$\mu(R_{m_0})\le\nu^{m_0}\mu(R_0)$, and the same at every $m\le m_0$.
+
+\emph{(B4) The pinch at the scale $m_0$.}  Write $\mathcal B=B_{R_{m_0+1}}(x_0)$
+and $\mu_\ast=\mu(R_{m_0})$.  On $\mathcal B$ we have $|g^j|\le\mu_\ast$ almost
+everywhere for every coordinate $j$, by (H6) and the monotonicity of $\mu$
+together with $R_{m_0+1}\le R_{m_0}$; hence
+$\|g\|^2=\sum_j(g^j)^2\le n\mu_\ast^2$ there, using the coordinate bound of
+(H5), and so the weight satisfies
+$\varepsilon\le\varepsilon+\|g\|^2\le\varepsilon+n\mu_\ast^2$ almost everywhere
+on $\mathcal B$.  That two-sided pinch, with ratio bounded by $K_\flat$ by the
+choice of $c_\flat$ and $K_\flat$ in (H1), is exactly the hypothesis the
+pinched level bound of (H4) consumes: fed with the Caccioppoli inequality of
+(H4) at the relevant level, it produces, for the witness coordinate $k_0$ of
+(3.26) and for any levels and radii in the admissible ranges, the De Giorgi
+level bounds $\mathrm{DGLB}(n,\gamma_\sharp,g^{k_0},Dg^{k_0},x_0,l,\rho_0,\rho_1)$
+and its reflected form for $-g^{k_0}$.
+
+\emph{(B6) The oscillation decay.}  Let $m\ge m_0+1$ and put
+$T_m=\tfrac34R_m$, so $T_m<R_m$ and $\tfrac23T_m=\tfrac12R_m=R_{m+1}$.  Apply
+the oscillation decay lemma of (H4) at the centre $x_0$, the radius $T_m$, the
+function $g^{k}$ and the field $Dg^{k}$, with $M$ and $m^\flat$ the essential
+supremum and infimum of $g^k$ on $B_{T_m}(x_0)$.  Its hypotheses are $0<T_m$;
+the membership $g^k\in W^{1,2}(B_{T_m}(x_0))$ with weak gradient $Dg^k$, which
+follows from the local membership of (H5) and (H7) by restriction
+(\noderef{WeakGradientRestrict}) because $\overline{B_{T_m}(x_0)}$ is compact
+and contained in $B_{R_0}(x_0)$, valid since $T_m<R_m\le R_0$; the essential
+bound $|g^k|\le\mu(R_0)$ from (H6); and the two families of level bounds, which
+are (B4).  It yields
+\[
+\operatorname*{osc}\bigl(g^k,B_{R_{m+1}}(x_0)\bigr)
+\ \le\ \delta\,\operatorname*{osc}\bigl(g^k,B_{T_m}(x_0)\bigr)
+\ \le\ \delta\,\operatorname*{osc}\bigl(g^k,B_{R_m}(x_0)\bigr),
+\tag{3.27}
+\]
+the second step by monotonicity of the oscillation in the ball, which holds
+because $T_m\le R_m$.
+
+\emph{(B7) The assembly, in three ranges of $\rho$.}  Note
+$\mu(R_0)\le T$ and $0\le\mu(R_0)$ by (H6), $(\rho/R_0)^{\alpha}\ge0$, and
+$2^{\alpha}\le2$ because $\alpha\le1$.
+
+\emph{(i) $R_{m_0}\le\rho\le R_0$.}  Take the dyadic bracket
+$R_{m+1}<\rho\le R_m$ of (H8); then $m\le m_0$, since $\rho\ge R_{m_0}$ and
+$\rho\le R_m$ force $R_m\ge R_{m_0}$ and the radii are strictly decreasing.  So
+the chain of (B3) applies at $m$ and the decay step of (H8) gives
+$\mu(\rho)\le2(\rho/R_0)^{\alpha}\mu(R_0)$, and the final implication of (H8)
+turns that into the assertion.
+
+\emph{(ii) $R_{m_0+1}\le\rho<R_{m_0}$.}  By the comparison of (H8) and the
+monotonicity of the oscillation,
+$\operatorname*{osc}(g^k,B_\rho)\le\operatorname*{osc}(g^k,B_{R_{m_0}})
+\le2\mu(R_{m_0})$, and case (i) at $\rho=R_{m_0}$ gives
+$\mu(R_{m_0})\le2(R_{m_0}/R_0)^{\alpha}\mu(R_0)$.  Since
+$R_{m_0}=2R_{m_0+1}\le2\rho$ by (H7), one has
+$(R_{m_0}/R_0)^{\alpha}\le2^{\alpha}(\rho/R_0)^{\alpha}\le2(\rho/R_0)^{\alpha}$.
+Chaining and using $\mu(R_0)\le T$,
+$\operatorname*{osc}(g^k,B_\rho)\le8(\rho/R_0)^{\alpha}T\le16T(\rho/R_0)^{\alpha}$.
+
+\emph{(iii) $0<\rho<R_{m_0+1}$.}  Take the bracket $R_{m+1}<\rho\le R_m$ again;
+now $m\ge m_0+1$, because $R_{m+1}<\rho\le R_{m_0+1}$ and the radii are
+strictly decreasing.  Iterating (3.27) from $m_0+1$ up to $m$,
+\[
+\operatorname*{osc}(g^k,B_\rho)\le\operatorname*{osc}(g^k,B_{R_m})
+\le\delta^{\,m-m_0-1}\operatorname*{osc}(g^k,B_{R_{m_0+1}}),
+\]
+the first step by monotonicity.  By (H1) $\delta\le2^{-\alpha_2}$, so
+$\delta^{\,m-m_0-1}\le(R_m/R_{m_0+1})^{\alpha_2}$, and $R_m<2\rho$ gives
+$(R_m/R_{m_0+1})^{\alpha_2}\le2(\rho/R_{m_0+1})^{\alpha_2}$.  Since
+$\alpha\le\alpha_2$ and $\rho/R_{m_0+1}\le1$, the exponent may be lowered from
+$\alpha_2$ to $\alpha$, and combining with case (ii) at $\rho=R_{m_0+1}$ --- which
+bounds $\operatorname*{osc}(g^k,B_{R_{m_0+1}})$ by
+$8(R_{m_0+1}/R_0)^{\alpha}T$ --- gives
+$\operatorname*{osc}(g^k,B_\rho)\le16T(\rho/R_0)^{\alpha}$ after the two factors
+of $(\cdot/R_0)^\alpha$ are recombined.
+
+The three ranges cover $(0,R_0]$, so the asserted bound holds for the given
+$\rho$.
+\end{proof}

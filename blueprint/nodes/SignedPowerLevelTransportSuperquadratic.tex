@@ -1,0 +1,107 @@
+\begin{helper}[The common core of the two sides of the level transport for $p\ge2$]
+Let $n\in\N$ and let
+$p,L,c_4,C_a,\varepsilon,\lambda,\rho,\sigma,\rho_0,W_2,R\in\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$, let $k$ be an index, let $\zeta\colon\R^n\to\R$ and
+let $x_0\in\R^n$.  Throughout, $\operatorname{supp}\zeta$ denotes the
+\emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$, $|\cdot|$ is the Euclidean
+norm, and every power of a nonnegative real is the real power, written exactly
+as the structure conditions print the weight
+$(\varepsilon+|g|^2)^{\frac p2-1}$.  Assume
+\begin{enumerate}
+\item[(H1)] $0<c_4$, $0<\varepsilon$, $0<\lambda$, $0<L$, $0<\rho$,
+  $0<\sigma$, $0<(\sigma\rho)^2$, and
+  $C_a=\tfrac94p^2c_4(1+4n)^{\frac p2-1}L$ with $C_a\le\max\{1,C_a\}$;
+\item[(H2)] $\varepsilon\le\varepsilon+|g|^2$ pointwise; the pointwise identity
+  $\bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2
+    =\tfrac{p^2}4|g^k|^{p-2}\|Dg^k\|^2$; and the comparison
+  $|g^k|^{p-2}\le(\varepsilon+|g|^2)^{\frac p2-1}$ pointwise, which is where
+  $p\ge2$ enters;
+\item[(H3)] $\rho\le R$, $\rho_0<\rho$ and $\rho-\rho_0=\sigma\rho$;
+\item[(H4)] the cut-off: $\operatorname{supp}\zeta\subseteq B_\rho(x_0)$,
+  $\zeta=1$ on $\overline{B_{\rho_0}(x_0)}$,
+  $|\nabla\zeta|^2\le L/(\rho-\rho_0)^2$ everywhere, and $|\nabla\zeta|^2=0$
+  off $\operatorname{supp}\zeta$;
+\item[(H5)] $0<W_2$, the weight satisfies
+  $(\varepsilon+|g|^2)^{\frac p2-1}\le W_2$ a.e.\ on $B_R(x_0)$, and
+  $W_2=(1+4n)^{\frac p2-1}\lambda^{p-2}$;
+\item[(H6)] for every $S$ the weighted integrand
+  $(\varepsilon+|g|^2)^{\frac p2-1}\|Dg^k\|^2\zeta^2$ is integrable on $S$;
+\item[(H7)] the power identities $(\lambda^{p/2})^2=\lambda^{p}$ and
+  $\lambda^{p-2}\lambda^2=\lambda^{p}$;
+\item[(H8)] for every $S$ the right-hand side
+  $\max\{1,C_a\}(\lambda^{p/2})^2(\sigma\rho)^{-2}|B_\rho(x_0)\cap S|$ is
+  nonnegative.
+\end{enumerate}
+Then for every $S\subseteq\R^n$ and every $d\colon\R^n\to\R$ such that
+\[
+\int_{B_R\cap S}(\varepsilon+|g|^2)^{\frac p2-1}\|Dg^k\|^2\zeta^2
+\ \le\ c_4\int_{B_R}(\varepsilon+|g|^2)^{\frac p2-1}d^2|\nabla\zeta|^2,
+\]
+with $d\ge0$ everywhere, $d\le3\lambda$ a.e.\ on $B_R(x_0)$ and $d=0$ off $S$,
+one has
+\[
+\int_{B_{\rho_0}\cap S}\bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2
+\ \le\ \max\{1,C_a\}\,\frac{(\lambda^{p/2})^2}{(\sigma\rho)^2}\,
+  \bigl|B_\rho(x_0)\cap S\bigr| .
+\]
+The constant carries the absolute constant $L$ of
+\texttt{StandardRadialCutoff}; no derivative bound $\Lambda$ occurs, the
+inline cut-off having been replaced by that node.
+\end{helper}
+\begin{proof}
+Fix $S$ and $d$ with the four stated properties, and write
+$V=\bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2\ge0$.
+
+\emph{Step 1: the degenerate case.}  If $V$ is not integrable on
+$B_{\rho_0}\cap S$ then the left-hand side is $0$ by convention, and the
+right-hand side is nonnegative by (H8), so the inequality holds.  Assume from
+now on that it is integrable.
+
+\emph{Step 2: inserting the cut-off and the weight.}  On $B_{\rho_0}(x_0)$ we
+have $\zeta=1$ by (H4), so $\zeta^2=1$ there, and the integrand is nonnegative;
+hence, using $B_{\rho_0}\subseteq B_R$ from (H3) and monotonicity of the
+integral (Preamble),
+\[
+\int_{B_{\rho_0}\cap S}V=\int_{B_{\rho_0}\cap S}V\zeta^2
+\ \le\ \int_{B_R\cap S}V\zeta^2 .
+\]
+By the identity of (H2), $V=\tfrac{p^2}4|g^k|^{p-2}\|Dg^k\|^2$, and by the
+comparison of (H2), $|g^k|^{p-2}\le(\varepsilon+|g|^2)^{\frac p2-1}$; so
+\[
+\int_{B_R\cap S}V\zeta^2
+\ \le\ \frac{p^2}4\int_{B_R\cap S}(\varepsilon+|g|^2)^{\frac p2-1}\|Dg^k\|^2\zeta^2 ,
+\]
+all integrals being finite by (H6).
+
+\emph{Step 3: the Caccioppoli hypothesis and the annulus.}  The hypothesis on
+$(S,d)$ bounds the weighted integral by
+$c_4\int_{B_R}(\varepsilon+|g|^2)^{\frac p2-1}d^2|\nabla\zeta|^2$.  In that
+integral $d$ vanishes off $S$ and $|\nabla\zeta|^2$ vanishes off
+$\operatorname{supp}\zeta\subseteq B_\rho(x_0)$ by (H4), so the integrand
+vanishes off $B_\rho\cap S$, and there the weight is at most $W_2$ by (H5),
+$d^2\le9\lambda^2$ by the uniform bound on $d$, and
+$|\nabla\zeta|^2\le L/(\rho-\rho_0)^2=L/(\sigma\rho)^2$ by (H4) and (H3).
+Hence
+\[
+\int_{B_R}(\varepsilon+|g|^2)^{\frac p2-1}d^2|\nabla\zeta|^2
+\ \le\ W_2\cdot9\lambda^2\cdot\frac{L}{(\sigma\rho)^2}\,
+  \bigl|B_\rho\cap S\bigr| .
+\]
+
+\emph{Step 4: collecting the constants.}  Chaining Steps 2 and 3,
+\[
+\int_{B_{\rho_0}\cap S}V
+\ \le\ \frac{p^2}4\,c_4\,W_2\,9\lambda^2\,\frac{L}{(\sigma\rho)^2}\bigl|B_\rho\cap S\bigr| .
+\]
+By (H5), $W_2=(1+4n)^{\frac p2-1}\lambda^{p-2}$, so the constant is
+\[
+\frac94p^2c_4(1+4n)^{\frac p2-1}L\cdot\frac{\lambda^{p-2}\lambda^2}{(\sigma\rho)^2}
+=C_a\frac{\lambda^{p}}{(\sigma\rho)^2}
+=C_a\frac{(\lambda^{p/2})^2}{(\sigma\rho)^2},
+\]
+using the two identities of (H7) and the definition of $C_a$ in (H1).  Finally
+$C_a\le\max\{1,C_a\}$ by (H1) and the remaining factor is nonnegative by (H8),
+so the constant may be enlarged, which is the assertion.
+\end{proof}

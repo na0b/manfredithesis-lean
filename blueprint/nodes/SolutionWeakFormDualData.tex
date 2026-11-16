@@ -1,0 +1,86 @@
+\begin{lemma}[The dual Lebesgue data of the weak form]
+Let $n\ge2$, let $p>1$, let $0\le\varepsilon\le1$ and let
+$\gamma_0,\gamma_1,\gamma_3,\gamma_4>0$.  Let $\Omega\subseteq\R^n$, let $A$
+satisfy (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}), let $(A,B)$
+satisfy (Q3) of the thesis--(Q5) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\mu,\gamma_2,\gamma_3,\gamma_4$
+(\noderef{EllipticStructureQ345}), let $u$ be real valued and $g$ a vector
+field, and let $S\subseteq\Omega$ be measurable with $|S|<\infty$ and
+$u,g\in L^p(S)$.  Then
+\[
+A(\cdot,u,g)\in L^{p/(p-1)}(S)
+\qquad\text{and}\qquad
+B(\cdot,u,g)\in L^1(S).
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1: both superpositions are strongly measurable on $S$.}  Since
+$u,g\in L^p(S)$, each has a strongly measurable representative, and replacing
+$u$ and $g$ by such representatives changes $x\mapsto A(x,u(x),g(x))$ and
+$x\mapsto B(x,u(x),g(x))$ only on a null set, so we may assume $u$ and $g$
+strongly measurable.  The two Carath\'eodory clauses \texttt{meas\_x} and
+\texttt{cont\_zh} of \noderef{EllipticStructureQ12} say that
+$x\mapsto A(x,z,h)$ is measurable for each fixed $(z,h)$ and that
+$(z,h)\mapsto A(x,z,h)$ is continuous for each fixed $x$; since
+$\R\times\R^n$ is a second countable metrisable space, the map
+$(z,h,x)\mapsto A(x,z,h)$ is jointly measurable.  Composing it with the
+measurable $x\mapsto(u(x),g(x),x)$ gives strong measurability of
+$x\mapsto A(x,u(x),g(x))$ on $S$.  The clauses \texttt{measB\_x} and
+\texttt{contB\_zh} of \noderef{EllipticStructureQ345} say exactly the same of
+$B$, so the identical argument gives strong measurability of
+$x\mapsto B(x,u(x),g(x))$ on $S$.
+
+\emph{Step 2: the elementary bound used twice.}  For $0\le\varepsilon\le1$ and
+every $h$,
+\[
+\bigl(1+|h|^2\bigr)^{\frac{p-1}2}\le2^{\frac{p-1}2}\bigl(1+|h|^{p-1}\bigr),
+\qquad
+\bigl(1+|h|^2\bigr)^{\frac p2}\le2^{\frac p2}\bigl(1+|h|^{p}\bigr),
+\]
+each proved by splitting on $|h|\le1$, where $1+|h|^2\le2$ and the left side is
+at most $2^{\cdot}$, and on $|h|>1$, where $1+|h|^2\le2|h|^2$ and
+$(2|h|^2)^{s}=2^{s}|h|^{2s}$ at $s=\frac{p-1}2$ and $s=\frac p2$
+respectively (pm-0024, the bases being positive).
+
+\emph{Step 3: the field lies in $L^{p/(p-1)}(S)$.}  By clause \texttt{Q4} of
+\noderef{EllipticStructureQ345}, for almost every $x\in\Omega$, every $z$, every
+$h$ and every index $i$,
+$|A^i(x,z,h)|\le\gamma_3(1+|h|^2)^{\frac{p-1}2}$.  The Euclidean norm of a
+vector is at most $\sqrt n$ times the largest modulus of its components, so
+\[
+\bigl|A(x,z,h)\bigr|\le\sqrt n\,\gamma_3\bigl(1+|h|^2\bigr)^{\frac{p-1}2}
+\qquad\text{for a.e. }x\in\Omega,\text{ every }z,\text{ every }h .
+\]
+Since $S\subseteq\Omega$, this holds for almost every $x\in S$; read at
+$z=u(x)$ and $h=g(x)$ and combined with Step 2,
+\[
+\bigl|A(x,u(x),g(x))\bigr|
+\le\sqrt n\,\gamma_32^{\frac{p-1}2}\bigl(1+|g(x)|^{p-1}\bigr)
+\qquad\text{a.e. on }S .
+\]
+Raise to the power $\frac p{p-1}>0$.  The right-hand side raised to that power
+is a constant multiple of $1+|g|^{p}$, because
+$(p-1)\cdot\frac p{p-1}=p$ and $(a+b)^{q}\le2^{q}(a^{q}+b^{q})$ for
+$a,b\ge0$, $q\ge1$; and $1+|g|^p$ is integrable on $S$ because $g\in L^p(S)$
+and $|S|<\infty$.  With the measurability from Step 1 this gives
+$A(\cdot,u,g)\in L^{p/(p-1)}(S)$.
+
+\emph{Step 4: the right-hand side lies in $L^1(S)$.}  By clause \texttt{Q5} of
+\noderef{EllipticStructureQ345}, for almost every $x\in\Omega$, every $z$ and
+every $h$, $|B(x,z,h)|\le\gamma_4(1+|h|^2)^{\frac p2}$.  Again $S\subseteq\Omega$,
+so at $z=u(x)$ and $h=g(x)$, and with Step 2,
+\[
+\bigl|B(x,u(x),g(x))\bigr|\le\gamma_42^{\frac p2}\bigl(1+|g(x)|^{p}\bigr)
+\qquad\text{a.e. on }S ,
+\]
+and the right-hand side is integrable on $S$ because $g\in L^p(S)$ and
+$|S|<\infty$.  With the measurability from Step 1 this gives
+$B(\cdot,u,g)\in L^1(S)$.
+
+\emph{Neither conclusion uses the normalisation $A(0)=0$}, which is not
+available for the unfrozen field: \noderef{EllipticStructureQ12} constrains $A$
+only through its derivative in $h$ and says nothing about the value at $h=0$.
+That value is supplied by \texttt{Q4} above, read at $h=0$, where
+$(1+|0|^2)^{(p-1)/2}=1$ and each component has modulus at most $\gamma_3$.
+\end{proof}

@@ -1,0 +1,193 @@
+\begin{helper}[The sign-free core of the weighted Caccioppoli estimate at a level]
+Let $n\ge2$, let $p>1$ and let $r>0$.  Let $\varepsilon,\gamma_0,\gamma_1\in\R$,
+let $\Omega\subseteq\R^n$, let $A\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$, let $\zeta\colon\R^n\to\R$ and let $k$ be an index in
+$\{1,\dots,n\}$.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$ and
+  $\gamma_0\le\gamma_1$;
+\item[(H2)] $\Omega$ is open and nonempty;
+\item[(H3)] the field $(x,z,h)\mapsto A(h)$ satisfies (Q1) of the thesis and
+  (Q2) of the thesis on $\Omega$ with the parameters
+  $p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item[(H4)] the cited regularity result (C1) holds for $A$ on $\Omega$ with
+  those parameters (\noderef{CitedRegularityEpsPos});
+\item[(H5)] $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ in
+  $\Omega$ with weak gradient $g$ (\noderef{IsWeakSolutionOn});
+\item[(H6)] $g^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Dg^i$,
+  for every index $i$ (\noderef{MemW1pLocOn});
+\item[(H7)] $\zeta$ is $C^\infty$ with compact support and
+  $\operatorname{supp}\zeta\subseteq\Omega$, where $\operatorname{supp}$ denotes
+  the closed support.
+\end{enumerate}
+Let $W\colon\R^n\to\R$ satisfy
+\begin{enumerate}
+\item[(H8)] $W=\bigl(\varepsilon+|g|^2\bigr)^{\frac p2-1}$ pointwise, the power
+  being the real power of the structure conditions, written exactly as
+  (Q1) of the thesis--(Q2) of the thesis print it.  ($W$ enters as a function argument
+  together with this defining equation, so that a consumer may pass its own
+  copy.)
+\end{enumerate}
+Finally let $T\subseteq\R^n$, let $\sigma\in\R$, let $v\colon\R^n\to\R$ and let
+$Z\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H9)] $\sigma=1$ or $\sigma=-1$;
+\item[(H10)] $T$ is measurable and $T\subseteq\Omega$;
+\item[(H11)] $v\ge0$ everywhere;
+\item[(H12)] for almost every $x\in\Omega$: if $x\in T$ then
+  $Z(x)=\sigma\,Dg^k(x)$, and if $x\notin T$ then $Z(x)=0$ and $v(x)=0$;
+\item[(H13)] $v\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Z$
+  (\noderef{MemW1pLocOn}).
+\end{enumerate}
+Then
+\[
+\int_T W\,|Dg^k|^2\zeta^2\,dx
+\ \le\ 4n^2r^2\int_\Omega W\,v^2\sum_{i=1}^n(D_i\zeta)^2\,dx .
+\]
+\end{helper}
+\begin{proof}
+Write $K=\operatorname{supp}\zeta$, which is compact by (H7), and
+\[
+X=\int_TW|Dg^k|^2\zeta^2\,dx,
+\qquad
+Y=\int_\Omega W\,v^2\sum_i(D_i\zeta)^2\,dx ,
+\]
+both integrands being nonnegative, so that $X,Y\in[0,\infty]$; finiteness is
+established in Step 3.  From (H1), $\gamma_1>0$, and $W>0$ everywhere, the base
+$\varepsilon+|g|^2$ being at least $\varepsilon>0$.  Put
+$M_{ij}=D_{h_j}A^i(g(\cdot))$ for the coefficient matrix.
+
+\emph{Step 0: the structure conditions at every point, and $A\in C^1$.}  Fix a
+point $x_\ast\in\Omega$, available by (H2), and read clause (4) of (H3) --- for
+every $x\in\Omega$ and every $z$ the map $h\mapsto A(x,z,h)$ is of class $C^1$
+on $D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$ --- at $x_\ast$ and $z=0$.
+Since $\varepsilon>0$ \emph{strictly} by (H1), $D(\varepsilon)=\R^n$, so $A$ is
+of class $C^1$ on all of $\R^n$, the symbols $D_{h_j}A^i$ are genuine partial
+derivatives and $D_hA$ is continuous.  \emph{The strictness of
+$\varepsilon>0$ is what makes this citation available}: at $\varepsilon=0$
+clause (4) gives nothing at $h=0$, and for $1<p<2$ the admissible field
+$A(h)=|h|^{p-2}h$ is not differentiable there.  Reading (Q1) of the thesis and
+(Q2) of the thesis of (H3) the same way, and expanding
+$(D_hA(g)\xi)_i=\sum_jM_{ij}\xi_j$ by linearity of $D_hA(g)$ in its direction
+argument, we obtain for almost every $x\in\Omega$
+\[
+\gamma_0W|\xi|^2\le\sum_{i,j}M_{ij}\xi_j\xi_i\ \ (\xi\in\R^n),
+\qquad
+|M_{ij}|\le\gamma_1W\ \ (i,j) .
+\tag{1}
+\]
+
+\emph{Step 1: the test pair.}  Put
+\[
+\varphi=v\,\zeta^2,
+\qquad
+g_\varphi=\zeta^2Z+2v\,\zeta\,\nabla\zeta .
+\]
+Since $\zeta$ is $C^\infty$ with compact support in $\Omega$, so is $\zeta^2$,
+with $\nabla(\zeta^2)=2\zeta\nabla\zeta$ and
+$\operatorname{supp}(\zeta^2)\subseteq K$.  By (H13) and the product rule for a
+smooth compactly supported factor (\noderef{WeakGradientSmoothMul}, clause (2),
+at $q=2$ and $\Omega$), $\varphi\in W^{1,2}(\Omega)$ with weak gradient
+$g_\varphi$ (\noderef{MemW1pOn}), $\varphi$ has compact support and
+$\operatorname{supp}\varphi\subseteq K\subseteq\Omega$.
+
+\emph{Step 2: substitution into the differentiated equation.}  Apply
+\noderef{DifferentiatedEquationWeak} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,Dg$, the index $k$ and the pair
+$(\varphi,g_\varphi)$ of Step 1.  Its hypotheses are $2\le n$, $1<p$,
+$0<\varepsilon$, $0<\gamma_0$, $\gamma_0\le\gamma_1$ --- all of (H1) --- the
+openness of $\Omega$, (H3), (H4), (H5) and (H6), together with the admissibility
+of $(\varphi,g_\varphi)$, which is Step 1.  Its conclusion is
+\[
+\int_\Omega\sum_{i,j}M_{ij}\,(Dg^k)_j\,(g_\varphi)_i\,dx=0 .
+\tag{2}
+\]
+
+\emph{Step 3: the two terms of (2), their measurability and their finiteness.}
+Write $T_1$ and $T_2$ for the integrals obtained from (2) by replacing
+$g_\varphi$ by its two summands $\zeta^2Z$ and $2v\zeta\nabla\zeta$.  Both
+integrands vanish off $K$, because $\zeta$ does.  Measurability first: by (H4)
+there is a field $g'$ continuous on $\Omega$ with $g=g'$ almost everywhere
+there, so each $M_{ij}$ agrees almost everywhere on $\Omega$ with the
+continuous $D_{h_j}A^i(g'(\cdot))$ --- using Step 0's continuity of $D_hA$ ---
+and is therefore almost everywhere strongly measurable; the same two sentences
+apply to $W$, whose $g'$-version $(\varepsilon+|g'|^2)^{p/2-1}$ is continuous on
+$\Omega$, the base being continuous and bounded below by $\varepsilon>0$ and
+$t\mapsto t^{p/2-1}$ continuous on $(0,\infty)$.  The field $Dg^k$ is almost
+everywhere strongly measurable on $\Omega$, being a weak gradient (H6); $v$ and
+$Z$ are, by (H13); and $\zeta$, $\nabla\zeta$ are continuous.  Every integrand
+below is a finite sum of products of these, hence almost everywhere strongly
+measurable on $\Omega$.
+
+For the domination, by (1) and $|Z|\le|Dg^k|$ almost everywhere --- which
+follows from (H12) and $|\sigma|=1$, $Z$ being $\sigma Dg^k$ on $T$ and $0$ off
+it --- together with $\sum_j|a_j|\le\sqrt n\,|a|$ (Cauchy--Schwarz, Preamble)
+applied twice and the elementary $2st\le s^2+t^2$,
+\[
+\Bigl|\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j Z_i\Bigr|
+\le n\gamma_1M_W\bigl(\sup\zeta^2\bigr)|Dg^k|^2 ,
+\]
+\[
+\Bigl|2v\,\zeta\sum_{i,j}M_{ij}(Dg^k)_jD_i\zeta\Bigr|
+\le n\gamma_1M_W\bigl(\sup2|\zeta||\nabla\zeta|\bigr)
+\bigl(|Dg^k|^2+v^2\bigr) ,
+\]
+where $M_W$ is a bound for $W$ on the compact $K$, available because $W$ agrees
+almost everywhere on $\Omega$ with a function continuous on $\Omega$ and
+$K\subseteq\Omega$ is compact.  The functions $|Dg^k|^2$ and $v^2$ are
+integrable on $K$ by (H6) and (H13) together with H\"older on a set of finite
+measure (Preamble), and $\zeta$, $\nabla\zeta$ are continuous with compact
+support, hence bounded.  So $T_1$ and $T_2$ are finite by domination
+(Preamble), (2) splits as $T_1+T_2=0$, i.e.\ $T_1=-T_2$, and the same bounds
+give $X<\infty$ and $Y<\infty$.
+
+\emph{Step 4: the lower bound for $\sigma T_1$.}  By (H12) the integrand of
+$T_1$ vanishes almost everywhere off $T$, where $Z=0$, and equals
+$\sigma\,\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i$ almost everywhere on $T$,
+where $Z=\sigma Dg^k$.  Multiplying by $\sigma$ and using $\sigma^2=1$, which
+holds by (H9), the first inequality of (1) at $\xi=Dg^k(x)$ gives
+\[
+\sigma T_1
+=\int_T\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i\,dx
+\ \ge\ \gamma_0\int_TW|Dg^k|^2\zeta^2\,dx=\gamma_0X ,
+\]
+monotonicity of the integral (Preamble) applying because both integrands are
+integrable by Step 3.
+
+\emph{Step 5: the upper bound for $|T_2|$.}  The integrand of $T_2$ vanishes
+almost everywhere off $T$, because $v$ does by (H12).  By the norm inequality
+for the integral and the second inequality of (1) with two Cauchy--Schwarz
+steps in the indices,
+\[
+|T_2|\le2n\gamma_1\int_TW\,v\,|\zeta|\,|Dg^k|\,|\nabla\zeta|\,dx .
+\]
+Apply the Cauchy--Schwarz inequality (Preamble) on $T$ with respect to the
+measure $W\,dx$, to the two factors $|\zeta||Dg^k|$ and $v|\nabla\zeta|$:
+\[
+|T_2|\ \le\ 2n\gamma_1
+\Bigl(\int_TW|Dg^k|^2\zeta^2dx\Bigr)^{1/2}
+\Bigl(\int_TW\,v^2|\nabla\zeta|^2dx\Bigr)^{1/2}
+\ \le\ 2n\gamma_1X^{1/2}Y^{1/2},
+\]
+the last step because the first integral is $X$ and the second is at most $Y$,
+the integrand being nonnegative, $T\subseteq\Omega$ by (H10) and
+$|\nabla\zeta|^2=\sum_i(D_i\zeta)^2$.
+
+\emph{Step 6: conclusion.}  Combining Steps 4 and 5 with $T_1=-T_2$, and noting
+$\sigma T_1=|\sigma T_1|=|T_2|$ because $\sigma T_1\ge\gamma_0X\ge0$ and
+$|\sigma|=1$,
+\[
+\gamma_0X\ \le\ 2n\gamma_1X^{1/2}Y^{1/2} .
+\tag{3}
+\]
+If $X=0$ the assertion holds outright, its right-hand side being nonnegative.
+If $X>0$ then, $X$ being finite by Step 3, divide (3) by $X^{1/2}>0$ to get
+$\gamma_0X^{1/2}\le2n\gamma_1Y^{1/2}$, square, and divide by $\gamma_0^2>0$:
+\[
+X\ \le\ 4n^2\Bigl(\frac{\gamma_1}{\gamma_0}\Bigr)^2Y\ \le\ 4n^2r^2Y ,
+\]
+the second inequality because $0<\gamma_1/\gamma_0\le r$ by (H1) --- which gives
+both $\gamma_0\le\gamma_1$ and $\gamma_1\le r\gamma_0$ --- so that
+$(\gamma_1/\gamma_0)^2\le r^2$, and because $Y\ge0$.  That is the assertion.
+\end{proof}

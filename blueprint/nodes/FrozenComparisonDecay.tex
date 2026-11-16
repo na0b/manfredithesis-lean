@@ -1,0 +1,340 @@
+\begin{lemma}[The frozen comparison map and the decay (4.11)]
+Let $n\ge2$, $p>1$ and $r>0$, suppose the Sobolev--Poincar\'e inequality on
+balls holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume
+the cited solvability result (C2) (\noderef{CitedDirichletW1p}), the cited
+regularity result (C1) (\noderef{CitedRegularityEpsPos}) and the cited
+Dirichlet result (C3) with H\"older boundary data
+(\noderef{CitedDirichletHolder}) in the universal forms described below.  Then
+there is $c_0>0$, depending only on $n$, $p$ and $r$, with the following
+property.
+
+Let $0\le\varepsilon\le1$, let $0<\alpha\le1$, let $\gamma_0>0$ and
+$\gamma_1>0$ with $\gamma_1\le r\gamma_0$, let
+$A_0\colon\R^n\to\R^n$ be a field whose normalisation
+$\widetilde A=A_0-A_0(0)$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with
+the parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), let $x_0\in\R^n$ and $R>0$, and let
+$u\in W^{1,p}(B_R(x_0))$ with weak gradient $g$ (\noderef{MemW1pOn}) satisfy
+$u\in C^\alpha\bigl(\overline B_R(x_0)\bigr)$ (\noderef{MemHolderOn}).  Then
+there are functions $v,V$ and a vector field $g_v$ such that
+\begin{itemize}
+\item[(a)] the frozen comparison bundle
+  $\mathrm{FrozenComparisonOn}(n,p,x_0,R,A_0,u,u,g,v,V,g_v)$ holds
+  (\noderef{FrozenComparisonOn}) --- so $v$ is a weak solution of
+  $\operatorname{div}A_0(\nabla v)=0$ in $B_R(x_0)$ with
+  $v\in W^{1,p}(B_R(x_0))$ of weak gradient $g_v$, the difference $v-u$ lies in
+  $W^{1,p}_0(B_R(x_0))$ with weak gradient $g_v-g$, and $V$ is a continuous
+  extension of $v$ to $\overline B_R(x_0)$ with $V=u$ on $\partial B_R(x_0)$;
+  and
+\item[(b)] the gradient of the comparison map decays at the rate $n$:
+  \[
+  \int_{B_\rho(x_0)}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+  \ \le\ c_0\Bigl(\frac\rho R\Bigr)^{n}
+  \int_{B_R(x_0)}\bigl(\varepsilon+|g_v|^2\bigr)^{\frac p2}dx
+  \qquad(0<\rho\le R).
+  \tag{4.11}
+  \]
+\end{itemize}
+
+\noindent\textbf{What this node is.}  The thesis' \S4 compares $u$ on each
+small ball with the solution $v$ of the \emph{frozen} equation
+(4.1) of the thesis--(4.2) of the thesis, whose operator is $\nabla_hf$ (resp.\ $A$)
+evaluated at a fixed point and a fixed value, and then uses exactly two
+properties of that comparison: the boundary agreement, which is the bundle (a),
+and the decay (4.11) of the thesis of $|\nabla v|$, which the thesis obtains from
+Theorem~1.  Both are independent of which of the two settings of \S4 and \S5
+produced the frozen operator --- the setting enters only through the
+verification that $\widetilde A$ satisfies (Q1) of the thesis--(Q2) of the thesis, which
+is a hypothesis here --- so both are proved once, in this node, and the
+constant $c_0$ of (4.11) of the thesis is produced here as well.
+
+\noindent\textbf{Why the normalisation is a hypothesis about
+$A_0-A_0(0)$ and the conclusion is about $A_0$.}  The thesis' frozen operator
+is $A_0=\nabla_hf(x_0,u(x_0),\cdot)$ (resp.\ $A(x_0,u(x_0),\cdot)$), which need
+not vanish at the origin, whereas \noderef{CitedDirichletHolder} and
+\noderef{GradientSupEstimate} are stated for fields with $A(0)=0$ --- that
+normalisation being harmless in the thesis, which never writes the frozen
+operator's value at $0$.  Subtracting the constant vector $A_0(0)$ changes
+neither the structure conditions nor the class of weak solutions on a ball, the
+second because the weak formulation tests against gradients of compactly
+supported functions and those have vanishing mean on the ball; the proof below
+carries out that reduction, which is why the hypothesis is placed on
+$\widetilde A$ and the conclusion on $A_0$ itself.
+
+\noindent\textbf{The three cited results.}  The cited regularity result (C1)
+(\noderef{CitedRegularityEpsPos}), the cited solvability result (C2)
+(\noderef{CitedDirichletW1p}) and the cited Dirichlet result (C3) with
+H\"older boundary data (\noderef{CitedDirichletHolder}) are assumed here for
+\emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$ ---
+and, for (C1), for every open $\Omega_0\subseteq\R^n$ as well --- which are the
+forms these three results have in the paper's Note for the formalization, where
+they ``may be taken as explicit hypotheses \ldots\ where they are used''.  The
+universal shape is forced rather than convenient: the field to which all three
+are applied is $\widetilde A$, which is bound after the existential for $c_0$,
+so no single instance can be named before it.  None of the three introduces a
+dependence of $c_0$ on anything outside $n,p,r$: each mentions only $n$ and
+$p$, both already bound, and each is universally quantified over its remaining
+parameters.  The same applies to (C6) (\noderef{CitedSobolevPoincareBall}),
+which is a statement about $n$ alone and which enters only through
+\noderef{GradientSupEstimate}.
+\end{lemma}
+\begin{proof}
+Write $\omega_n=|B_1(0)|\in(0,\infty)$ (the Preamble item on the volume of a
+ball) and $\widetilde A=A_0-A_0(0)$.
+
+\emph{Step 1: the constant $c_0$, chosen before all the data.}  Apply
+\noderef{GradientSupEstimate} (Theorem~1) with the parameters $n,p$ and $r$:
+its hypotheses $2\le n$, $1<p$, $0<r$ hold, its hypothesis
+\noderef{CitedSobolevPoincareBall} is the present node's, and its two universal
+hypotheses --- the cited solvability result (C2) (\noderef{CitedDirichletW1p})
+and the cited regularity result (C1) (\noderef{CitedRegularityEpsPos}), each
+for every field and all parameters with positive structure constants --- are
+the present node's (C2) and (C1) clauses verbatim.  Let $C_1>0$ be the
+constant it produces; $C_1$ depends only on $n,p$ and $r$.  Put
+\[
+c_0=\max\{\omega_n2^nC_1,\ 4^n\}>0 ,
+\]
+which depends only on $n,p$ and $r$, as the statement requires.  Now fix
+$\varepsilon,\alpha,\gamma_0,\gamma_1,A_0,x_0,R,u,g$ satisfying all the
+hypotheses.
+
+\emph{Step 2: the normalised field.}  The field $\widetilde A$ satisfies
+\[
+\widetilde A(0)=A_0(0)-A_0(0)=0 ,
+\]
+and it satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with the parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ by hypothesis
+(\noderef{EllipticStructureQ12}).  That predicate has \emph{six} clauses, and it
+descends to every subset of $\R^n$ --- in particular to $B_R(x_0)$, with the
+same parameters --- but for two different reasons, which are worth separating
+because only the second is a monotonicity argument.
+
+The first two clauses, Carath\'eodory measurability in the point and
+Carath\'eodory joint continuity in $(z,h)$, are \emph{not} conditions at the
+points of the domain and are not guarded by it at all: the first asserts that
+for every $z$ and every $h$ the map $x\mapsto\widetilde A(x,z,h)$ is Borel
+measurable on $\R^n$, and the second that for every $x\in\R^n$ the map
+$(z,h)\mapsto\widetilde A(x,z,h)$ is continuous.  Neither mentions the domain,
+so each is literally the same assertion whichever domain the predicate is read
+with, and both carry over to $B_R(x_0)$ unchanged rather than by restriction.
+
+The remaining four clauses are conditions imposed at the points of the domain
+--- continuity in $h$ and $C^1$ regularity on $D(\varepsilon)$ at \emph{every}
+point of it, (Q1) of the thesis and (Q2) of the thesis at \emph{almost every} point of it,
+the latter two in the form ``for almost every $x$, if $x$ lies in the domain
+then \dots''.  Each is therefore weakened when the domain shrinks: a ``for every
+$x\in\Omega$'' clause restricts to a subset immediately, and in a ``for almost
+every $x$, if $x\in\Omega$ then \dots'' clause replacing $\Omega$ by a subset
+only makes the antecedent harder to satisfy, so the same exceptional null set
+serves.  Since $B_R(x_0)\subseteq\R^n$, all four descend.
+
+\emph{Step 3: the two equations have the same weak solutions.}  Let
+$\varphi\in W^{1,p}(B_R(x_0))$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) have compact support with
+$\operatorname{supp}\varphi\subseteq B_R(x_0)$.  Then
+\[
+\int_{B_R(x_0)}g_\varphi^{\,i}\,dx=0\qquad(i=1,\dots,n).
+\tag{1}
+\]
+Indeed, by \noderef{WeakGradientZeroExtend} applied with $q=p$, the open set
+$\R^n$, the ball $B_R(x_0)$ and the pair $(\varphi,g_\varphi)$ --- its
+hypotheses are $1\le n$, $1\le p$, openness of $\R^n$,
+$B_R(x_0)\subseteq\R^n$, the membership just assumed, and the compact support
+condition --- the pair $(\varphi,\mathbf1_{B_R(x_0)}g_\varphi)$ satisfies
+$\varphi\in W^{1,p}(\R^n)$ with that weak gradient.  Let $\psi$ be a smooth
+function with compact support that equals $1$ on a neighbourhood of
+$\overline B_R(x_0)$: take $\psi=\mathbf1_{\overline B_{R+2}(x_0)}*\rho_1$ with
+$\rho_1$ the standard mollifier of the Preamble at scale $1$.  It is smooth by
+the Preamble item on convolution with a smooth compactly supported kernel (the
+indicator is locally integrable and $\rho_1$ is smooth with compact support);
+it equals $1$ at every $x$ with $|x-x_0|\le R+1$, because then
+$x-y\in\overline B_{R+2}(x_0)$ for every $y$ in
+$\operatorname{supp}\rho_1\subseteq\overline B_1(0)$, so that
+$\psi(x)=\int\rho_1=1$; and it vanishes at every $x$ with $|x-x_0|>R+3$,
+because then $x-y\notin\overline B_{R+2}(x_0)$ for every such $y$, so that
+$\operatorname{supp}\psi\subseteq\overline B_{R+3}(x_0)$ is compact.  In
+particular $\psi$ is identically $1$ on the open ball $B_{R+1}(x_0)$, which
+contains $\overline B_R(x_0)$.  The defining identity of
+\noderef{HasWeakGradientOn} on $\R^n$, which the pair
+$(\varphi,\mathbf1_{B_R(x_0)}g_\varphi)$ satisfies by \noderef{MemW1pOn},
+applied to the test function $\psi$ and the index $i$, reads
+\[
+\int_{\R^n}\varphi\,D_i\psi\,dx
+=-\int_{\R^n}\mathbf1_{B_R(x_0)}g_\varphi^{\,i}\,\psi\,dx .
+\]
+The left-hand side vanishes: $\psi$ is constant on the open ball
+$B_{R+1}(x_0)$, so $D_i\psi=0$ there, and
+$\operatorname{supp}\varphi\subseteq B_R(x_0)\subseteq B_{R+1}(x_0)$, while
+$\varphi=0$ off $\operatorname{supp}\varphi$; hence the integrand
+$\varphi\,D_i\psi$ vanishes at every point of $\R^n$.  The right-hand side
+equals $-\int_{B_R(x_0)}g_\varphi^{\,i}\,dx$, because $\psi=1$ on $B_R(x_0)$.
+This is $(1)$.
+
+Consequently, for a pair $(v,g_v)$ the two statements
+\[
+\text{$v$ is a weak solution of }\operatorname{div}A_0(\nabla v)=0
+\quad\text{and}\quad
+\text{$v$ is a weak solution of }\operatorname{div}\widetilde A(\nabla v)=0
+\]
+in $B_R(x_0)$ (\noderef{IsWeakSolutionOn}, with vanishing right-hand side) are
+equivalent.  The two predicates have the same first clause, namely
+$v\in W^{1,p}_{\mathrm{loc}}(B_R(x_0))$ with weak gradient $g_v$
+(\noderef{MemW1pLocOn}), because that clause does not mention the operator.  It
+remains to compare the test identities.  Fix an admissible test pair
+$(\varphi,g_\varphi)$, i.e.\ one with $\varphi\in W^{1,p}(B_R(x_0))$ of weak
+gradient $g_\varphi$, compact support and
+$\operatorname{supp}\varphi\subseteq B_R(x_0)$, and write
+\[
+F=\sum_i\bigl(\widetilde A(g_v)\bigr)^ig_\varphi^{\,i},
+\qquad
+c=\sum_i\bigl(A_0(0)\bigr)^ig_\varphi^{\,i},
+\]
+so that the integrand of the $A_0$-identity is $F+c$ and that of the
+$\widetilde A$-identity is $F$, the right-hand sides of both equations being
+$0$; indeed $A_0(h)=\widetilde A(h)+A_0(0)$ for every $h$, so the two
+integrands differ exactly by $c$ at every point.  The function $c$ is a finite
+linear combination, with the constant coefficients $(A_0(0))^i$, of the
+functions $g_\varphi^{\,i}$, each of which is integrable on $B_R(x_0)$ ---
+indeed $|g_\varphi^{\,i}|\le|g_\varphi|\in L^p(B_R(x_0))$ by
+\noderef{MemW1pOn} and $|B_R(x_0)|<\infty$, so H\"older's inequality on a set
+of finite measure (Preamble) puts it in $L^1(B_R(x_0))$ --- so $c$ is
+integrable on $B_R(x_0)$ and, by the linearity of the integral on integrable
+functions and $(1)$,
+\[
+\int_{B_R(x_0)}c\,dx=\sum_i\bigl(A_0(0)\bigr)^i\int_{B_R(x_0)}g_\varphi^{\,i}\,dx=0 .
+\]
+Now $\int_{B_R(x_0)}(F+c)\,dx=\int_{B_R(x_0)}F\,dx$ in both of the two
+possible cases, and no integrability of $F$ needs to be assumed.  If $F$ is
+integrable on $B_R(x_0)$, then so is $F+c$, and linearity together with the
+display above gives the equality.  If $F$ is not integrable on $B_R(x_0)$,
+then neither is $F+c$ --- otherwise $F=(F+c)-c$ would be a difference of two
+integrable functions --- and the integral of a function that is not integrable
+is $0$, so both sides are $0$.  The same two cases settle the integrability
+clause that \noderef{IsWeakSolutionOn} binds alongside each test identity: in
+the first case $F$ and $F+c$ are both integrable on $B_R(x_0)$, in the second
+neither is, so that clause too holds for one field exactly when it holds for the
+other.  Hence all three clauses --- the membership clause above, the
+integrability clause and the test identity --- hold or fail together for every
+admissible test pair, and the two statements are equivalent.
+
+\emph{Step 4: the comparison map.}  The present node's (C3) clause, applied at
+the parameters $\varepsilon,\gamma_0,\gamma_1$ and the field $\widetilde A$ ---
+the guards $0<\gamma_0$ and $0<\gamma_1$ hold --- gives the cited Dirichlet
+result
+$\mathrm{CitedDirichletHolder}(n,p,\varepsilon,\gamma_0,\gamma_1,\widetilde A)$
+(\noderef{CitedDirichletHolder}).  Its own hypotheses are met: $\widetilde A$
+satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with those parameters
+(Step 2), $0\le\varepsilon$, and $\widetilde A(0)=0$.  Apply it with the centre
+$x_0$, the radius $R$, the exponent $\beta=\alpha/2$ and the boundary datum
+$f_b=u$ (only the values of the datum on $\partial B_R(x_0)$ enter, since that
+is the set on which the node's H\"older hypothesis and its boundary identity
+are posed).  The exponent is admissible: $0\le\beta$ and $\beta<1$, because
+$0<\alpha\le1$ gives $0<\beta\le\frac12$.  The datum is admissible, i.e.
+$f_b\in C^\beta(\partial B_R(x_0))$ (\noderef{MemHolderOn}): by hypothesis
+$u\in C^\alpha(\overline B_R(x_0))$, so $u$ is continuous on
+$\overline B_R(x_0)$, hence on the sphere, and there is $C_\alpha\ge0$ with
+$|u(x)-u(y)|\le C_\alpha|x-y|^\alpha$ for all
+$x,y\in\overline B_R(x_0)$; for $x,y\in\partial B_R(x_0)$, which is contained
+in $\overline B_R(x_0)$, this gives
+\[
+|u(x)-u(y)|\le C_\alpha|x-y|^{\alpha}
+=C_\alpha|x-y|^{\beta}|x-y|^{\alpha-\beta}
+\le C_\alpha(2R)^{\alpha-\beta}|x-y|^{\beta}
+\]
+by $|x-y|\le2R$ and $\alpha-\beta=\alpha/2>0$; for $x=y$ all three quantities
+vanish, because $\beta>0$.  The constant $C_\alpha(2R)^{\alpha-\beta}$ is the
+one the H\"older predicate requires, and it is nonnegative.  The node produces
+$v,V,g_v$ with
+\begin{enumerate}
+\item[(a$'$)] $v\in W^{1,p}_{\mathrm{loc}}(B_R(x_0))$ with weak gradient $g_v$
+  (\noderef{MemW1pLocOn});
+\item[(b$'$)] $v$ a weak solution of $\operatorname{div}\widetilde A(\nabla v)=0$
+  in $B_R(x_0)$ (\noderef{IsWeakSolutionOn});
+\item[(c$'$)] $v$ of class $C^1$ on $B_R(x_0)$;
+\item[(d$'$)] $V\in C^\beta(\overline B_R(x_0))$ (\noderef{MemHolderOn}),
+  $V=v$ on $B_R(x_0)$ and $V=f_b$ on $\partial B_R(x_0)$;
+\item[(e$'$)] for every pair $(b,g_b)$ with $b\in W^{1,p}(B_R(x_0))$ of weak
+  gradient $g_b$, $b$ continuous on $\overline B_R(x_0)$ and $b=f_b$ on
+  $\partial B_R(x_0)$: $v-b\in W^{1,p}_0(B_R(x_0))$ with weak gradient
+  $g_v-g_b$ (\noderef{MemW1pZeroOn}).
+\end{enumerate}
+Apply (e$'$) with $b=u$ and $g_b=g$.  Its hypotheses hold:
+$u\in W^{1,p}(B_R(x_0))$ with weak gradient $g$ is a hypothesis of the present
+node; $u$ is continuous on $\overline B_R(x_0)$, the first clause of
+$u\in C^\alpha(\overline B_R(x_0))$; and $u=f_b$ on the sphere by the
+definition of $f_b$.  So
+\[
+v-u\in W^{1,p}_0\bigl(B_R(x_0)\bigr)\ \text{with weak gradient}\ g_v-g .
+\tag{2}
+\]
+The first clause of \noderef{MemW1pZeroOn} in $(2)$ gives
+$v-u\in W^{1,p}(B_R(x_0))$ with weak gradient $g_v-g$; adding $u$, which lies
+in $W^{1,p}(B_R(x_0))$ with weak gradient $g$, by clause (2) of
+\noderef{WeakGradientLinear} with $a=b=1$ on the open set $B_R(x_0)$, we obtain
+\[
+v\in W^{1,p}\bigl(B_R(x_0)\bigr)\ \text{with weak gradient}\ g_v
+\tag{3}
+\]
+(\noderef{MemW1pOn}), the two functions $(v-u)+u$ and $v$, and the two fields
+$(g_v-g)+g$ and $g_v$, being equal at every point.
+
+Therefore the bundle
+$\mathrm{FrozenComparisonOn}(n,p,x_0,R,A_0,u,u,g,v,V,g_v)$
+(\noderef{FrozenComparisonOn}) holds, which is conclusion (a): its first clause
+is (b$'$) together with Step 3, which converts the equation for $\widetilde A$
+into the equation for $A_0$; its second is $(3)$; its third is $(2)$; its
+fourth is the continuity of $u$ on $\overline B_R(x_0)$; its fifth is the
+identity $u=u$ on $B_R(x_0)$; its sixth is the continuity of $V$ on
+$\overline B_R(x_0)$, which is the first clause of (d$'$); and its seventh and
+eighth are the two identities in (d$'$), the last because $f_b=u$.
+
+\emph{Step 5: the decay (4.11) of the thesis.}  First,
+$(\varepsilon+|g_v|^2)^{p/2}$ is integrable on $B_R(x_0)$: for $t\ge0$ and
+$\varepsilon\le1$ one has
+$(\varepsilon+t^2)^{\frac p2}\le(1+t^2)^{\frac p2}\le2^{\frac p2}(1+t^p)$,
+because $1+t^2\le2\max\{1,t^2\}$ and $\max\{1,t^p\}\le1+t^p$; and
+$1+|g_v|^p$ is integrable on $B_R(x_0)$ since $|B_R(x_0)|<\infty$ and
+$|g_v|\in L^p(B_R(x_0))$ by $(3)$ and \noderef{MemW1pOn}.
+
+Apply \noderef{GradientSupEstimate} (Theorem~1) --- whose constant $C_1$ was
+fixed in Step 1 for the parameters $n,p,r$ --- with
+$\varepsilon,\gamma_0,\gamma_1$, the open set $B_R(x_0)$, the field
+$\widetilde A$, the solution $v$ with weak gradient $g_v$, the centre $x_0$ and
+the radius $R/2$.  Its hypotheses hold: $0\le\varepsilon$; $0<\gamma_0$;
+$\gamma_1\le r\gamma_0$; $B_R(x_0)$ is open; $0<R/2$; $\widetilde A(0)=0$
+(Step 2); $\widetilde A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $B_R(x_0)$
+with the parameters $p,\varepsilon,\gamma_0,\gamma_1$ (Step 2); $v$ is a weak
+solution of $\operatorname{div}\widetilde A(\nabla v)=0$ in $B_R(x_0)$
+(Step 4(b$'$)); and $\overline B_{R/2}(x_0)\subseteq B_R(x_0)$, because
+$R/2<R$.  Its conclusion is
+\[
+(\varepsilon+|g_v(x)|^2)^{\frac p2}
+\le\frac{C_1}{(R/2)^n}\int_{B_{R/2}(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dy
+\qquad\text{for a.e. }x\in B_{R/4}(x_0).
+\tag{4}
+\]
+Let $0<\rho\le R$.  If $\rho\le R/4$ then, integrating $(4)$ over
+$B_\rho(x_0)\subseteq B_{R/4}(x_0)$ and using
+$|B_\rho(x_0)|=\omega_n\rho^n$ (Preamble) and the monotonicity of the integral
+of the nonnegative integrand under $B_{R/2}(x_0)\subseteq B_R(x_0)$,
+\[
+\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\le\omega_n\rho^n\frac{2^nC_1}{R^n}\int_{B_{R}(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+=\omega_n2^nC_1\Bigl(\frac\rho R\Bigr)^n\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx .
+\]
+If $R/4<\rho\le R$ then $(\rho/R)^n>4^{-n}$, so monotonicity of the integral
+alone gives
+\[
+\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\le\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\le4^n\Bigl(\frac\rho R\Bigr)^n\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx .
+\]
+With $c_0=\max\{\omega_n2^nC_1,4^n\}$ of Step 1 both cases give
+\[
+\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\le c_0\Bigl(\frac\rho R\Bigr)^{n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\qquad(0<\rho\le R),
+\]
+which is conclusion (b).  This completes the proof.
+\end{proof}

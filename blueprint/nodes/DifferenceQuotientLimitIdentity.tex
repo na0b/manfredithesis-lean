@@ -1,0 +1,128 @@
+\begin{helper}[Passing to the limit $h\to0$ in the difference-quotient identity]
+Let $n\in\mathbb{N}$ with $n\ge1$, let $\Omega\subseteq\R^n$ be open, let
+$A\colon\R^n\to\R^n$, let $g\colon\R^n\to\R^n$, let $Dg$ assign to each index
+$j$ a field $Dg^j\colon\R^n\to\R^n$, let $k$ be an index in $\{1,\dots,n\}$ and
+let $e_k$ be the $k$-th coordinate vector.  Write
+\[
+\Phi^i=A^i\circ g,
+\qquad
+V^i=\sum_{j=1}^n\bigl(D_hA(g)e_j\bigr)_i\,Dg^j ,
+\]
+so that $(V^i)_k=\sum_jD_{h_j}A^i(g)\,(Dg^j)_k$; \emph{the coefficient is
+paired with $(Dg^j)_k=D_kD_ju$, and that index placement is load-bearing, not
+cosmetic}.  $\operatorname{supp}$ denotes the \emph{closed} support.  The
+identity below is an $L^2$ statement: its test class is $W^{1,2}$ with compact
+support in $\Omega$, and the exponent $2$ throughout is that test exponent,
+never a stand-in for $p$.
+
+Let $\varphi\colon\R^n\to\R$ and $g_\varphi\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H1)] $\varphi\in W^{1,2}(\Omega)$ with weak gradient $g_\varphi$
+  (\noderef{MemW1pOn}), $\varphi$ of compact support and
+  $\operatorname{supp}\varphi\subseteq\Omega$;
+\item[(H2)] $\Phi^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient
+  $V^i$, for every index $i$ (\noderef{MemW1pLocOn});
+\item[(H3)] for all measurable $S\subseteq T\subseteq\R^n$ and every
+  $w\colon\R^n\to\R$ vanishing off $S$: $\int_Tw\,dx=\int_Sw\,dx$;
+\item[(H4)] (Cauchy--Schwarz) for every $S\subseteq\R^n$ and all
+  $F,G\in L^2(S)$:
+  $\int_S|FG|\le\bigl(\int_S|F|^2\bigr)^{1/2}\bigl(\int_S|G|^2\bigr)^{1/2}$;
+\item[(H5)] for every $S\subseteq\R^n$ and all $F,G\in L^2(S)$, the product
+  $FG$ is integrable on $S$.
+\end{enumerate}
+Let $\delta\in\R$ with $\delta>0$ and assume
+\begin{enumerate}
+\item[(H6)] $\mathbf1_{\operatorname{supp}\varphi}\,g_\varphi=g_\varphi$ almost
+  everywhere on $\Omega$;
+\item[(H7)] each $y\mapsto A(g(y))_i$ is almost everywhere strongly measurable
+  on $\operatorname{supp}\varphi$, and so is
+  $y\mapsto A(g(y+he_k))_i$ for every $h$ with $|h|\le\delta$ and every $i$.
+\end{enumerate}
+Let $M\in\R$ and assume
+\begin{enumerate}
+\item[(H8)] $|A(g(y))_i|\le M$ for almost every
+  $y\in\operatorname{supp}\varphi$ and every $i$, and likewise
+  $|A(g(y+he_k))_i|\le M$ for every $h$ with $|h|\le\delta$;
+\item[(H9)] (the exact identity at the increment $h$) for every $h$ with
+  $0<|h|\le\delta$,
+  \[
+  \int_{\operatorname{supp}\varphi}\sum_{i=1}^n
+  \frac{A(g(y+he_k))_i-A(g(y))_i}{h}\,(g_\varphi)_i(y)\,dy=0 .
+  \]
+\end{enumerate}
+Then
+\[
+\int_\Omega\sum_{i=1}^n(V^i)_k\,(g_\varphi)_i\,dx=0 .
+\]
+\end{helper}
+\begin{proof}
+Write $K_0=\operatorname{supp}\varphi$, which is compact by (H1), hence closed,
+measurable and of finite measure, and $K_0\subseteq\Omega$.
+
+\emph{Step 1: the difference quotients converge in $L^2(K_0)$.}  Fix an index
+$i$.  By (H2), $\Phi^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient
+$V^i$, and $K_0$ is a compact subset of the open $\Omega$, so
+\noderef{WeakGradientDifferenceQuotient} applies with $q=2$, the open set
+$\Omega$, the function $\Phi^i$, its weak gradient $V^i$, the compact set $K_0$
+and the direction $k$; its hypotheses $1\le n$, $1\le2$, the openness of
+$\Omega$, the local membership and the compact inclusion all hold.  It gives
+\[
+\int_{K_0}\Bigl|\frac{\Phi^i(y+he_k)-\Phi^i(y)}{h}-(V^i)_k(y)\Bigr|^2dy
+\ \longrightarrow\ 0
+\qquad(h\to0,\ h\ne0).
+\tag{1}
+\]
+
+\emph{Step 2: the two $L^2$ factors on $K_0$.}  First,
+$(g_\varphi)_i\in L^2(K_0)$: by (H1) at the exponent $2$ we have
+$|g_\varphi|\in L^2(\Omega)$, hence on the subset $K_0$, and
+$|(g_\varphi)_i|\le|g_\varphi|$ pointwise.  Second, each difference quotient
+lies in $L^2(K_0)$: it is almost everywhere strongly measurable by (H7), being
+a constant multiple of a difference of two such functions, and bounded in
+absolute value by $2M/|h|$ almost everywhere on $K_0$ by (H8), a constant on a
+set of finite measure.  And $(V^i)_k\in L^2(K_0)$ by (H2) together with
+$|(V^i)_k|\le|V^i|$.  By (H5) every product appearing below is integrable on
+$K_0$.
+
+\emph{Step 3: the pairing converges.}  By (H4) applied on $K_0$ to the two
+factors of Step 2, for every $h$ with $0<|h|\le\delta$,
+\[
+\Bigl|\int_{K_0}\sum_{i=1}^n\Bigl[\frac{\Phi^i(\cdot+he_k)-\Phi^i}{h}
+-(V^i)_k\Bigr](g_\varphi)_i\,dy\Bigr|
+\le\sum_{i=1}^n\Bigl\|\frac{\Phi^i(\cdot+he_k)-\Phi^i}{h}
+-(V^i)_k\Bigr\|_{L^2(K_0)}\bigl\|(g_\varphi)_i\bigr\|_{L^2(K_0)},
+\]
+the sum over $i$ being finite so that the norm inequality for the integral and
+the triangle inequality may be applied term by term.  Each of the $n$ summands
+tends to $0$ as $h\to0$ by (1), the second factor being a fixed finite number
+by Step 2.  Hence
+\[
+\int_{K_0}\sum_{i=1}^n\frac{\Phi^i(\cdot+he_k)-\Phi^i}{h}(g_\varphi)_i\,dy
+\ \longrightarrow\
+\int_{K_0}\sum_{i=1}^n(V^i)_k\,(g_\varphi)_i\,dy
+\qquad(h\to0).
+\tag{2}
+\]
+
+\emph{Step 4: the limit is zero.}  The left-hand side of (2) is exactly the
+left-hand side of (H9), since
+$\Phi^i(y+he_k)-\Phi^i(y)=A(g(y+he_k))_i-A(g(y))_i$, so it equals $0$ for
+every $h$ with $0<|h|\le\delta$.  A function that is constantly $0$ on a
+punctured neighbourhood of $0$ has limit $0$ there, and limits in $\R$ are
+unique, so
+\[
+\int_{K_0}\sum_{i=1}^n(V^i)_k\,(g_\varphi)_i\,dy=0 .
+\]
+
+\emph{Step 5: from $K_0$ to $\Omega$.}  By (H6), $g_\varphi$ agrees almost
+everywhere on $\Omega$ with $\mathbf1_{K_0}g_\varphi$, which vanishes off
+$K_0$; two integrands agreeing almost everywhere have the same integral, so
+\[
+\int_\Omega\sum_{i=1}^n(V^i)_k\,(g_\varphi)_i\,dx
+=\int_\Omega\sum_{i=1}^n(V^i)_k\,\bigl(\mathbf1_{K_0}g_\varphi\bigr)_i\,dx ,
+\]
+and the latter integrand vanishes off $K_0$, so by (H3) with $S=K_0$,
+$T=\Omega$ --- legitimate since $K_0$ is measurable and $K_0\subseteq\Omega$ ---
+it equals $\int_{K_0}\sum_i(V^i)_k(g_\varphi)_i\,dy$, which is $0$ by Step 4.
+That is the assertion.
+\end{proof}

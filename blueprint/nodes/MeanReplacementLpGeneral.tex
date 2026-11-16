@@ -1,0 +1,75 @@
+\begin{helper}[The mean-replacement inequality, for an arbitrary Banach codomain]
+Let $E$ be a real Banach space, let $n\in\N$, let $p\in\R$ with $1<p$, let
+$s\subseteq\R^n$, let $f\colon\R^n\to E$ and let $c\in E$.  Throughout,
+$|s|=\mathrm{vol}(s)$ denotes the Lebesgue measure of $s$ and $\|\cdot\|$ the
+norm of $E$; every power with exponent $p$ is the real power of a nonnegative
+real, and the exponent in the constant $2^p$ is the same real $p$; the mean of
+$f$ over $s$ is $|s|^{-1}\!\int_sf$, the scalar multiple of the Bochner
+integral by the real reciprocal of the measure.  Assume
+\begin{enumerate}
+\item[(H1)] $0<|s|$ and $|s|\neq\infty$;
+\item[(H2)] $f\in L^p(s)$ for the exponent $p$, i.e.\ $f$ is $p$-integrable
+  for the measure restricted to $s$.
+\end{enumerate}
+Then
+\[
+\int_s\Bigl\|f(x)-|s|^{-1}\!\int_sf\Bigr\|^p\,dx
+\ \le\ 2^p\int_s\bigl\|f(x)-c\bigr\|^p\,dx .
+\]
+No measurability hypothesis on $s$ is assumed: the integrals are taken for the
+measure restricted to $s$, and the argument never needs $s$ to be measurable,
+which is what lets a consumer apply the inequality to a set presented only
+through $0<|s|$ and $|s|\neq\infty$.  The two cases the consumers use are
+$E=\R$ and $E=\R^n$; the proof uses nothing beyond completeness of $E$, so it
+is stated once in that generality.
+\end{helper}
+\begin{proof}
+Write $V=|s|$, which is a positive finite real by (H1), $h=f-c$,
+$m=V^{-1}\!\int_sf$, and $I=\int_s\|h\|^p$.  The measure restricted to $s$ is
+finite by (H1), so constant functions are $p$-integrable on $s$; with (H2) and
+the closure of $L^p$ under subtraction, $h\in L^p(s)$, and since $p>1$ both $f$
+and $h$ are integrable on $s$.
+
+\emph{Step 1: the two-term power-mean inequality.}  For all $X,Y\ge0$,
+\[
+(X+Y)^p\ \le\ 2^{p-1}\bigl(X^p+Y^p\bigr).
+\tag{E1}
+\]
+This is the standard convexity inequality for the real power with exponent
+$p\ge1$ (Preamble), transported from the nonnegative reals.
+
+\emph{Step 2: splitting off the constant.}  Pointwise,
+$\|f(x)-m\|\le\|f(x)-c\|+\|c-m\|$ by the triangle inequality, so (E1) applied
+with $X=\|f(x)-c\|$ and $Y=\|c-m\|$ gives
+$\|f(x)-m\|^p\le2^{p-1}\bigl(\|h(x)\|^p+\|c-m\|^p\bigr)$.  Both sides are
+integrable on $s$ --- the left because $f-m\in L^p(s)$, the right because
+$h\in L^p(s)$ and the constant is integrable on a finite-measure set --- so
+integrating and using $\int_s\|c-m\|^p=V\|c-m\|^p$,
+\[
+\int_s\|f-m\|^p\ \le\ 2^{p-1}\Bigl(I+V\,\|c-m\|^p\Bigr).
+\tag{E2}
+\]
+
+\emph{Step 3: the mean is within $I$ of $c$.}  Since
+$m-c=V^{-1}\!\int_s(f-c)=V^{-1}\!\int_sh$, the norm inequality for the Bochner
+integral (Preamble) gives $\|m-c\|\le V^{-1}\!\int_s\|h\|$.  The measure
+$V^{-1}\,\mathrm{vol}|_s$ is a probability measure, and $t\mapsto t^p$ is convex
+on $[0,\infty)$ because $p>1$, so Jensen's inequality (Preamble) gives
+\[
+\Bigl(V^{-1}\!\int_s\|h\|\Bigr)^{p}\ \le\ V^{-1}\!\int_s\|h\|^{p}
+\ =\ V^{-1}I .
+\]
+Raising the previous display to the power $p$ --- legitimate because both sides
+are nonnegative and the real power is monotone --- and multiplying by $V$,
+\[
+V\,\|c-m\|^p\ \le\ I .
+\tag{E3}
+\]
+
+\emph{Conclusion.}  Inserting (E3) into (E2),
+\[
+\int_s\|f-m\|^p\ \le\ 2^{p-1}\bigl(I+I\bigr)\ =\ 2^{p}\,I
+\ =\ 2^p\int_s\|f-c\|^p ,
+\]
+using $2^{p-1}\cdot2=2^p$ for the real powers, which is the assertion.
+\end{proof}

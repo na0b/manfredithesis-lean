@@ -1,0 +1,69 @@
+\begin{definition}
+Let $n\ge2$ and $p>1$.  The predicate
+$\mathrm{CitedHolderOscillationMinimum}(n,p)$ is part~(a) of the cited result
+(C4) of the Note for the formalization (De
+Giorgi--Ladyzhenskaya--Ural'tseva H\"older estimates;
+[G, chapter VII, Theorems 2.1--2.2], [GG2], [LU, chapter 4]):
+
+\emph{for all $0<\lambda\le\Lambda$, $a>0$ and
+$M\ge0$ there are $\alpha\in(0,1]$ and $d>0$ such that, for every
+$\varepsilon\in[0,1]$: if $\Omega$ is open, $f$ satisfies (F1) of the thesis on
+$\Omega$ with these parameters (\noderef{VariationalGrowthF1}), $u$ is a local
+minimum for $F$ in $\Omega$ (\noderef{IsLocalMinimumOn}) with $|u|\le M$ a.e.\ on
+$\Omega$, and $\overline B_R(x_0)\subseteq\Omega$, then for $0<\rho\le R$}
+\[
+\operatorname*{osc}_{B_\rho}u\;\le\;4^\alpha\max\Bigl\{\operatorname*{osc}_{B_R}u,\;dR\Bigr\}\Bigl(\frac\rho R\Bigr)^\alpha .
+\]
+
+This is the estimate displayed on thesis p.~31.  The constants $\alpha$ and $d$
+are bound after $n,p$, the structure constants and $M=\|u\|_{L^\infty}$, and
+before $\varepsilon$, $\Omega$, the integrand and $u$.  That is exactly the
+dependence the Note allows: at l.~263 it says the constants ``may be allowed to
+depend also on $M=\|u\|_{L^\infty}$'', naming $M$ and nothing else, so
+$\varepsilon$ is not among the quantities $\alpha$ and $d$ may depend on and
+one pair of constants must serve the whole range $0\le\varepsilon\le1$.
+
+\medskip
+\noindent\textbf{Why this is a predicate of its own and not a field of a
+two-part bundle.}  The Note at l.~263 itself labels the two halves of (C4) as
+``(a) A bounded local minimum \ldots'' and ``(b) a bounded weak solution
+\ldots'', and they share no parameter beyond $n$ and $p$: (a) is a statement
+about a variational integrand under (F1) of the thesis, (b) one about an operator
+pair under (Q1) of the thesis--(Q5) of the thesis.  Carrying them as two fields of one
+structure has a cost that is invisible in the mathematics and decisive in the
+formalisation: a consumer of (a) must then assume the conjunction, so if (b)
+were false as a $\mathrm{Prop}$ --- which it is if the operator pair is allowed
+to be non-Carath\'eodory, the defect repaired in
+\noderef{EllipticStructureQ12} and \noderef{EllipticStructureQ345} --- then
+every statement assuming the bundle would be vacuously true, including the four
+that use only (a).  Splitting the two confines any such failure to the half that
+has it.  The part (b) predicate is \noderef{CitedHolderOscillationSolution}.
+
+\medskip
+\noindent\textbf{Why $\varepsilon$ is bound after the two constants, and not
+before.}  This is not a strengthening beyond the literature; it is what the
+literature states and what \S4 needs.  The De Giorgi estimates are proved from
+the growth condition (F1) of the thesis (resp.\ (Q1) of the thesis--(Q5) of the thesis),
+whose weight is sandwiched uniformly over the range in question:
+\[
+|h|^{p}\;\le\;\bigl(\varepsilon+|h|^{2}\bigr)^{\frac p2}\;\le\;\bigl(1+|h|^{2}\bigr)^{\frac p2}
+\qquad(0\le\varepsilon\le1),
+\]
+so the constants the iteration produces depend on the two ends of that
+sandwich, not on where $\varepsilon$ sits inside it.  The ordering is also
+forced by the use: Lemma~Lemma~4.1 of the thesis's own list of what $\sigma_2$ and $R_1$
+depend on (thesis l.~1163--1164) is $n,p,\lambda,\Lambda,a,\nu,M$ and
+$d(\Omega',\partial\Omega)$, with no $\varepsilon$, while $\sigma_0$ and
+$\sigma_1$ carry $\sigma(R+C_1R^{\alpha})$ and $C_1R^{\alpha}$ and so make
+$\sigma_2$ inherit $R^{\alpha}$.  With $\varepsilon$ bound before the
+existential, $\alpha$ would be a function $\alpha(\varepsilon)$ and a single
+$\sigma_2$ would have to dominate $R^{\alpha(\varepsilon)}$ for every
+$\varepsilon$; since $R^{\alpha}\to1$ as $\alpha\downarrow0$ for each fixed
+$R\in(0,1)$, the pointwise supremum of that family is identically $1$ on
+$(0,1)$, which no function with $\sigma_2(0)=0$ and $\sigma_2$ increasing can
+dominate.  So the earlier ordering made Lemma~Lemma~4.1 of the thesis unprovable rather
+than merely harder.  All
+oscillations are essential oscillations (\noderef{EssOscOn}); the hypothesis
+$|u|\le M$ a.e.\ makes them well defined.  This result is used as an explicit
+hypothesis and is never introduced as an axiom.
+\end{definition}

@@ -1,0 +1,67 @@
+\begin{definition}
+Let $n\ge2$, $p>1$, $\varepsilon,\gamma_0,\gamma_1\in\R$, let
+$\Omega\subseteq\R^n$ be open and let $A\colon\R^n\to\R^n$.  The predicate
+$\mathrm{CitedRegularityEpsPos}(n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A)$ is the
+cited result (C1) of the paper's Note for the formalization
+([LU, chapter 4], [DB], [GT, chapter 15]):
+
+\emph{if $\varepsilon>0$ and $A$ satisfies (Q1) of the thesis and (Q2) of the thesis with
+parameters $p,\varepsilon,\gamma_0,\gamma_1$ on $\Omega$
+(\noderef{EllipticStructureQ12}), then every weak solution
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ of $\operatorname{div}A(\nabla u)=0$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g$ satisfies
+$u\in W^{2,2}_{\mathrm{loc}}(\Omega)$ and $\nabla u\in C(\Omega)$.}
+
+Written out, the conclusion is: $u$ lies in $W^{1,2}_{\mathrm{loc}}(\Omega)$
+with weak gradient $g$ (\noderef{MemW1pLocOn}); and there is a field $g'$ with
+\begin{enumerate}
+\item $g'$ continuous on $\Omega$;
+\item $g=g'$ almost everywhere on $\Omega$; and
+\item each component $g'^i$ in $W^{1,2}_{\mathrm{loc}}(\Omega)$ with some weak
+  gradient (\noderef{MemW1pLocOn}).
+\end{enumerate}
+The conclusion $\nabla u\in C(\Omega)$ gives in
+particular $\nabla u\in L^\infty_{\mathrm{loc}}(\Omega)$ in the same sense, that
+of the continuous representative.
+
+\medskip
+\noindent\textbf{Why ``$\nabla u\in C(\Omega)$'' is a continuous
+representative and not continuity of the given $g$.}  A weak gradient is
+determined only almost everywhere: every other clause in sight --- the
+weak-solution identity of \noderef{IsWeakSolutionOn}, the weak-gradient identity
+and the $L^q$ clauses of \noderef{MemW1pLocOn} --- is unchanged when $g$ is
+redefined on a set of measure zero.  Continuity of $g$ is not.  So a version of
+this cited result that asserted $\mathrm{ContinuousOn}\;g\;\Omega$ for the
+\emph{given} $g$ would be a false $\mathrm{Prop}$: from any weak solution one
+redefines $g$ at a single point of $\Omega$, every other clause survives, and
+that one fails --- so no $A$ admitting a weak solution would satisfy the
+predicate, and every statement assuming it universally would be vacuously true.
+The Note at l.~258 forbids exactly this: the cited results ``must not be vacuous
+(each must be a true statement for the operators to which it is applied)''.
+Clauses (1)--(3) above are the faithful reading of the Note's own wording at
+l.~260, ``$\nabla u\in C(\Omega)$'': for an almost-everywhere class, lying in
+$C(\Omega)$ means having a representative in $C(\Omega)$.  Clause~(3) is stated
+for $g'$ rather than for $g$; this is no change of content, since
+$\mathrm{MemW1pLocOn}$ is itself invariant under modification on a null set, and
+it keeps every clause about $g'$ in one place.  The same interface decision was
+taken for boundary values (pm-0004) and is the shape
+\noderef{CitedCampanatoEmbedding} already uses, (C5)'s own wording at l.~266
+being ``agrees a.e.\ with a function in $C^{0,\alpha}$''.  As the Note records,
+the thesis says ``$C^2$'' at this point, which under (Q1) of the thesis--(Q2) of the thesis
+alone is stronger than the literature; the statement above is the weaker one
+from the literature, so that the arguments of \S3 must be run with the
+differentiated equation holding only in the weak sense.  This result is used as
+an explicit hypothesis where it is needed and is never introduced as an axiom.
+
+Under the reading of (Q1) of the thesis fixed in \noderef{EllipticStructureQ12} ---
+``$A$ is differentiable with respect to $h$'' formalized as ``$A$ is of class
+$C^1$ in $h$ on the set where the weight of (Q1) of the thesis is finite'', which at
+the $\varepsilon>0$ of the present statement is all of $\R^n$ --- the statement
+above is exactly the literature statement:
+[LU, chapter 4], [DB] and [GT, chapter 15] prove it for operators with a
+continuous $D_hA$.  Under the merely-differentiable reading this predicate would
+assert the same conclusion for a strictly wider class of operators than the
+literature covers, which the Note forbids for a cited result; the $C^1$ clause
+of \noderef{EllipticStructureQ12} is what keeps it non-vacuous and not stronger
+than its sources.
+\end{definition}

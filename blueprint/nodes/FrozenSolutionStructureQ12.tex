@@ -1,0 +1,88 @@
+\begin{lemma}[The frozen, normalised field of the equation satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$]
+Let $n\ge2$, let $p>1$, let $\varepsilon\ge0$ and let $\gamma_0,\gamma_1>0$.
+Let $\Omega\subseteq\R^n$ be open, let $A$ be a field satisfying
+(Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}) and
+(Q6) of the thesis on $\Omega$ with modulus $\sigma$
+(\noderef{EllipticStructureQ6}), and let $x_1\in\Omega$ and $z_1\in\R$.  Put
+$A^0(h)=A(x_1,z_1,h)$ and
+$\widetilde A(h)=A^0(h)-A^0(0)$.  Then \emph{both} of the fields
+$(x,z,h)\mapsto A^0(h)$ and $(x,z,h)\mapsto\widetilde A(h)$ satisfy
+(Q1) of the thesis--(Q2) of the thesis on all of $\R^n$ with the same parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}).
+\end{lemma}
+\begin{proof}
+Write $A^0(h)=A(x_1,z_1,h)$, so $\widetilde A=A^0-A^0(0)$ and
+$\widetilde A(0)=0$.
+
+\emph{Step 1: \textup{(Q1)} and \textup{(Q2)} at the single point $x_1$.}  Apply
+\noderef{StructureQ12AtEveryPoint} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1$ --- its hypotheses are $2\le n$, $1<p$,
+$0\le\varepsilon$, $0<\gamma_0$ and $0<\gamma_1$, all present --- the open set
+$\Omega$, the field $A$ and the modulus $\sigma$, together with the
+\noderef{EllipticStructureQ12} and \noderef{EllipticStructureQ6} hypotheses of
+the present lemma.  Its two conclusions hold at \emph{every} $x\in\Omega$, in
+particular at $x=x_1$: for all $z$, all $h$ with $\varepsilon+|h|^2\ne0$ and all
+$\xi$,
+\[
+\gamma_0\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|\xi|^2
+\le\sum_{i,j}D_{h_j}A^i(x_1,z,h)\xi^i\xi^j ,
+\qquad
+\bigl|D_{h_j}A^i(x_1,z,h)\bigr|
+\le\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}.
+\tag{1}
+\]
+\emph{This is the step for which that node exists.}  The (Q1) and (Q2) clauses
+of \noderef{EllipticStructureQ12} are \emph{almost-everywhere} in $x$
+(pm-0034), so they say nothing at the single point $x_1$, which is null, until
+they are upgraded; and freezing at one point is exactly what is being done here.
+The upgrade consumes (Q6) of the thesis, which is why that bundle is a hypothesis.
+
+\emph{Step 2: subtracting the constant changes no derivative.}  For every $h$
+the maps $h\mapsto A^0(h)$ and $h\mapsto\widetilde A(h)$ differ by the constant
+vector $A^0(0)$, so wherever either is differentiable both are and
+$D_h\widetilde A(h)=D_hA^0(h)=D_{h}A(x_1,z_1,h)$.  Hence (1) holds verbatim with
+$\widetilde A$ in place of $A(x_1,z_1,\cdot)$.
+
+\emph{Step 3: the six clauses.}  \noderef{EllipticStructureQ12} has \emph{six}
+clauses and all six are discharged, in its own order, for the field
+$(x,z,h)\mapsto\widetilde A(h)$ on $\mathrm{univ}$.  \emph{Every clause below
+holds verbatim for $(x,z,h)\mapsto A^0(h)$ as well}, and that is the first
+assertion: the only use made of the subtraction is that it changes neither
+continuity, nor $C^1$ regularity, nor the derivative, so each argument applies
+to $A^0$ unchanged (and for clauses (5) and (6) Step 2 records that the
+derivatives coincide).
+
+Clause (1), Carath\'eodory measurability in the point: for fixed $z$ and $h$ the
+map $x\mapsto\widetilde A(h)$ is \emph{constant}, the field not depending on its
+first argument, and a constant map is Borel measurable.
+
+Clause (2), Carath\'eodory joint continuity in $(z,h)$: for fixed $x$ the map
+$(z,h)\mapsto\widetilde A(h)$ does not depend on $z$ either, so it is the
+composition of $h\mapsto\widetilde A(h)$ with the continuous projection
+$(z,h)\mapsto h$; the former is continuous by clause (3) immediately below, and
+a composition of continuous maps is continuous.
+
+Clause (3), \texttt{hcont}: $h\mapsto A(x_1,z_1,h)$ is continuous, being the
+clause of the same name in the present lemma's \noderef{EllipticStructureQ12}
+hypothesis read at $x_1\in\Omega$ and $z=z_1$ --- that clause is a ``for every
+$x\in\Omega$'' clause, and $x_1\in\Omega$ --- and subtracting the constant
+$A^0(0)$ preserves continuity.  It then holds at every $x$ because the field is
+constant in $x$.
+
+Clause (4), \texttt{hdiff}: $h\mapsto A(x_1,z_1,h)$ is of class $C^1$ on
+$\{h:\varepsilon+|h|^2\ne0\}$, again the clause of the same name read at $x_1$
+and $z_1$, and subtracting a constant preserves $C^1$ regularity on that set.
+It then holds at every $x$ for the same reason.
+
+Clauses (5) and (6), (Q1) of the thesis and (Q2) of the thesis: these are (1) at $z=z_1$,
+transported to $\widetilde A$ by Step 2.  They are required for almost every
+$x$, and they hold for \emph{every} $x$ because the field is constant in $x$,
+so the almost-everywhere quantifier is satisfied trivially.
+
+This is the paper's own normalisation at l.~542, ``since
+$\operatorname{div}A(0)=0$ we may assume without loss of generality that
+$A(0)=0$'', and the two Carath\'eodory clauses ride along under it unchanged,
+subtracting a constant vector altering neither measurability in $x$ nor
+continuity in $(z,h)$.
+\end{proof}

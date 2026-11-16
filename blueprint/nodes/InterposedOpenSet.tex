@@ -1,0 +1,57 @@
+\begin{lemma}[The interposed open set]
+Let $n\in\N$, let $\Omega,\Omega'\subseteq\R^n$ with $\Omega$ open and $\Omega'$
+nonempty and bounded, and suppose $\overline{\Omega'}\subseteq\Omega$.  Then
+there are a set $\Omega''\subseteq\R^n$ and a real $d$ such that $\Omega''$ is
+open, nonempty and bounded,
+\[
+\overline{\Omega'}\subseteq\Omega'',\qquad
+\overline{\Omega''}\subseteq\Omega,\qquad
+\overline{\Omega''}\ \text{is compact},
+\]
+and $d>0$ with $d\le\operatorname{dist}(x,y)$ whenever $x\in\Omega'$ and
+$y\notin\Omega''$.
+\end{lemma}
+\begin{proof}
+$\overline{\Omega'}$ is bounded and closed, hence compact, and
+$\overline{\Omega'}\subseteq\Omega$ with $\Omega$ open.  Put
+\[
+d_0=\begin{cases}
+\operatorname{dist}(\overline{\Omega'},\R^n\setminus\Omega) & \text{if }\Omega\ne\R^n\\
+1 & \text{if }\Omega=\R^n,
+\end{cases}
+\qquad
+\Omega''=\{y:\operatorname{dist}(y,\overline{\Omega'})<d_0/2\}.
+\]
+Then $d_0>0$: in the second case trivially, and in the first because
+$\R^n\setminus\Omega$ is closed and nonempty, $\overline{\Omega'}$ is compact and
+the two are disjoint, so the distance between them is attained and positive.
+$\Omega''$ is open, being the preimage of $[0,d_0/2)$ under the continuous
+function $y\mapsto\operatorname{dist}(y,\overline{\Omega'})$; it is nonempty and
+bounded, since $\overline{\Omega'}$ is nonempty and bounded and $\Omega''$ is
+contained in the $d_0/2$-neighbourhood of it; and
+$\overline{\Omega'}\subseteq\Omega''$ because
+$\operatorname{dist}(y,\overline{\Omega'})=0<d_0/2$ for $y\in\overline{\Omega'}$.
+Moreover
+\[
+\overline{\Omega''}\subseteq\{y:\operatorname{dist}(y,\overline{\Omega'})\le d_0/2\}
+\subseteq\Omega,
+\]
+the first inclusion because the right-hand set is closed and contains
+$\Omega''$, and the second because a point at distance at most $d_0/2<d_0$ from
+$\overline{\Omega'}$ cannot lie in $\R^n\setminus\Omega$ when $\Omega\ne\R^n$,
+by the definition of $d_0$ --- and trivially when $\Omega=\R^n$.  Finally
+$\overline{\Omega''}$ is compact, being closed and bounded.
+
+For the separation constant put
+\[
+d=\operatorname{dist}\bigl(\overline{\Omega'},\R^n\setminus\Omega''\bigr)
+\quad\text{if }\Omega''\ne\R^n,\qquad d=1\ \text{otherwise}.
+\]
+As above, $d>0$, because $\overline{\Omega'}$ is compact,
+$\R^n\setminus\Omega''$ is closed, and the two are disjoint by
+$\overline{\Omega'}\subseteq\Omega''$.  By construction, if $x\in\Omega'$ and
+$y\notin\Omega''$ then $x\in\overline{\Omega'}$ and
+$y\in\R^n\setminus\Omega''$, so $d\le\operatorname{dist}(x,y)$.
+($\Omega''=\R^n$ is in fact impossible, $\Omega''$ being bounded, but the case
+split costs nothing.)
+\end{proof}

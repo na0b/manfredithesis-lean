@@ -1,0 +1,143 @@
+\begin{helper}[The limit passage in the mollified approximation for the chain rule of a $C^1$ function of several arguments]
+Let $n,m\in\mathbb{N}$, let $F\colon\R^m\to\R$ be of class $C^1$, where $\R^m$
+carries the supremum norm $|y|_\infty=\max_j|y_j|$, let
+$\varphi\colon\R^n\to\R$ be $C^\infty$ with compact support, and let $i$ be an
+index in $\{1,\dots,n\}$.  Write $K=\operatorname{supp}\varphi$ for the closed
+support of $\varphi$, and for $y\in\R^m$ write $D_jF(y)=dF_y(e_j)$ for the
+$j$-th partial derivative of $F$, $e_j$ being the $j$-th standard basis vector
+of $\R^m$.  Let $L,C\in\R$ with $C\ge0$ and
+\begin{enumerate}
+\item[(H1)] $|F(y)|\le C$ for every $y\in\R^m$ with $|y|_\infty\le L$;
+\item[(H2)] $|D_jF(y)|\le C$ for every $y\in\R^m$ with $|y|_\infty\le L$ and
+  every $j$.
+\end{enumerate}
+Let $G_1,\dots,G_m\colon\R^n\to\R$ and $DG^i_1,\dots,DG^i_m\colon\R^n\to\R$
+satisfy
+\begin{enumerate}
+\item[(H3)] $x\mapsto(G_1(x),\dots,G_m(x))$ is almost everywhere strongly
+  measurable on $K$;
+\item[(H4)] $DG^i_j$ is integrable on $K$, for every $j$;
+\item[(H5)] $|(G_1(x),\dots,G_m(x))|_\infty\le L$ for every $x\in K$.
+\end{enumerate}
+Let $U_l=(U_{l,1},\dots,U_{l,m})$ and $W_l=(W_{l,1},\dots,W_{l,m})$,
+$l\in\mathbb{N}$, be families of functions $\R^n\to\R$ with
+\begin{enumerate}
+\item[(H6)] every $U_{l,j}$ and every $W_{l,j}$ continuous;
+\item[(H7)] $|(U_{l,1}(x),\dots,U_{l,m}(x))|_\infty\le L$ for every $l$ and
+  every $x\in K$;
+\item[(H8)] $\displaystyle\int_K\bigl|W_{l,j}-DG^i_j\bigr|\,dx\to0$ as
+  $l\to\infty$, for every $j$;
+\item[(H9)] $(U_{l,1}(x),\dots,U_{l,m}(x))\to(G_1(x),\dots,G_m(x))$ as
+  $l\to\infty$, for almost every $x\in K$;
+\item[(H10)] for every $l$,
+  \[
+  \int_K F\bigl(U_l(x)\bigr)\,D_i\varphi(x)\,dx
+  =-\int_K\Bigl(\sum_{j=1}^m D_jF\bigl(U_l(x)\bigr)\,W_{l,j}(x)\Bigr)\varphi(x)\,dx .
+  \]
+\end{enumerate}
+Then
+\[
+\int_K F\bigl(G(x)\bigr)\,D_i\varphi(x)\,dx
+=-\int_K\Bigl(\sum_{j=1}^m D_jF\bigl(G(x)\bigr)\,DG^i_j(x)\Bigr)\varphi(x)\,dx ,
+\]
+where $G(x)=(G_1(x),\dots,G_m(x))$.
+\end{helper}
+\begin{proof}
+Both $F$ and $dF$ are continuous, $F$ being $C^1$, so $y\mapsto D_jF(y)$ is
+continuous for every $j$.  Since $\varphi$ is $C^\infty$ with compact support,
+$\varphi$ and $D_i\varphi$ are continuous with compact support, hence bounded;
+write $\|\varphi\|_\infty$ and $\|D_i\varphi\|_\infty$ for their suprema.  The
+set $K=\operatorname{supp}\varphi$ is compact, hence closed, measurable and of
+finite measure.  All the integrals below are over $K$.
+
+The statement is obtained by letting $l\to\infty$ on both sides of (H10).  We
+treat the two sides separately.
+
+\emph{The left-hand side.}  By (H9) and the continuity of $F$,
+$F(U_l(x))\to F(G(x))$ for almost every $x\in K$, hence
+$F(U_l(x))D_i\varphi(x)\to F(G(x))D_i\varphi(x)$ almost everywhere on $K$.  By
+(H7) and (H1), $|F(U_l(x))|\le C$ for every $l$ and every $x\in K$, so
+\[
+\bigl|F(U_l(x))\,D_i\varphi(x)\bigr|\ \le\ C\,\|D_i\varphi\|_\infty
+\qquad(x\in K),
+\]
+and the constant majorant is integrable on $K$ because $|K|<\infty$.  The
+integrands are measurable: $U_l$ is continuous by (H6) and $F$, $D_i\varphi$
+are continuous, while the limit $F(G)D_i\varphi$ is almost everywhere strongly
+measurable by (H3) and continuity of $F$.  Dominated convergence (Preamble)
+therefore gives
+\[
+\int_K F\bigl(U_l\bigr)\,D_i\varphi\,dx\ \longrightarrow\
+\int_K F\bigl(G\bigr)\,D_i\varphi\,dx .
+\tag{1}
+\]
+Note also, by (H5) and (H1), that $|F(G(x))|\le C$ on $K$, so the limit
+integral is finite.
+
+\emph{The right-hand side.}  The sum over $j$ is finite, so it suffices to show,
+for each fixed $j$,
+\[
+\int_K D_jF\bigl(U_l\bigr)\,W_{l,j}\,\varphi\,dx\ \longrightarrow\
+\int_K D_jF\bigl(G\bigr)\,DG^i_j\,\varphi\,dx ,
+\tag{2}
+\]
+and then to add the $m$ limits.  Fix $j$ and split the difference of the two
+integrands as
+\[
+D_jF(U_l)\,W_{l,j}\,\varphi-D_jF(G)\,DG^i_j\,\varphi
+=D_jF(U_l)\bigl[W_{l,j}-DG^i_j\bigr]\varphi
++\bigl[D_jF(U_l)-D_jF(G)\bigr]DG^i_j\,\varphi .
+\]
+Both summands are integrable on $K$: the first because $D_jF(U_l)$ and
+$\varphi$ are bounded on $K$ --- by (H7), (H2) and the boundedness of $\varphi$
+--- and $W_{l,j}-DG^i_j$ is integrable on $K$ by (H4) together with the
+integrability of $W_{l,j}$ on $K$, which holds because $W_{l,j}$ is continuous
+by (H6) and $|K|<\infty$; the second for the same boundedness reasons together
+with (H4).  Hence the two may be estimated separately.
+
+\emph{First summand.}  By (H7) and (H2), $|D_jF(U_l(x))|\le C$ for every $l$
+and every $x\in K$, so
+\[
+\Bigl|\int_K D_jF\bigl(U_l\bigr)\bigl[W_{l,j}-DG^i_j\bigr]\varphi\,dx\Bigr|
+\ \le\ C\,\|\varphi\|_\infty\int_K\bigl|W_{l,j}-DG^i_j\bigr|\,dx
+\ \longrightarrow\ 0
+\]
+by (H8), using the norm inequality and monotonicity of the integral (Preamble).
+
+\emph{Second summand.}  By (H9) and the continuity of $D_jF$,
+$D_jF(U_l(x))\to D_jF(G(x))$ for almost every $x\in K$, so the integrand tends
+to $0$ almost everywhere on $K$.  Moreover, by (H7), (H5) and (H2),
+$|D_jF(U_l(x))|\le C$ and $|D_jF(G(x))|\le C$ on $K$, whence
+\[
+\bigl|\bigl[D_jF(U_l(x))-D_jF(G(x))\bigr]DG^i_j(x)\,\varphi(x)\bigr|
+\ \le\ 2C\,\|\varphi\|_\infty\,\bigl|DG^i_j(x)\bigr|
+\qquad(x\in K),
+\]
+and the majorant is integrable on $K$ by (H4).  The integrands are measurable,
+$U_l$ being continuous and $D_jF$ continuous, and $D_jF(G)$ being almost
+everywhere strongly measurable by (H3).  Dominated convergence (Preamble)
+therefore gives
+\[
+\int_K\bigl[D_jF\bigl(U_l\bigr)-D_jF\bigl(G\bigr)\bigr]DG^i_j\,\varphi\,dx
+\ \longrightarrow\ 0 .
+\]
+Adding the two estimates gives (2), and summing (2) over the $m$ values of $j$
+gives
+\[
+\int_K\Bigl(\sum_jD_jF\bigl(U_l\bigr)W_{l,j}\Bigr)\varphi\,dx
+\ \longrightarrow\
+\int_K\Bigl(\sum_jD_jF\bigl(G\bigr)DG^i_j\Bigr)\varphi\,dx ,
+\tag{3}
+\]
+where the interchange of the finite sum with the integral is legitimate on both
+sides because each summand is integrable on $K$, as shown above.
+
+\emph{Conclusion.}  By (H10) the left-hand side of (1) equals the negative of
+the left-hand side of (3) for every $l$.  Limits in $\R$ are unique, so the
+limits agree:
+\[
+\int_K F\bigl(G\bigr)\,D_i\varphi\,dx
+=-\int_K\Bigl(\sum_jD_jF\bigl(G\bigr)DG^i_j\Bigr)\varphi\,dx ,
+\]
+which is the assertion.
+\end{proof}

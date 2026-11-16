@@ -1,0 +1,20 @@
+\begin{definition}
+Let $n\ge2$, $K\ge1$, let $\Omega\subseteq\R^n$ be a domain, let
+$F\colon\R^n\to\R^n$ and let $G^1,\dots,G^n\colon\R^n\to\R^n$.  We say that $F$
+is \emph{$K$-quasiregular on $\Omega$ with component gradients $G$}, written
+$\mathrm{IsQuasiregularOn}(n,K,\Omega,F,G)$, if
+\begin{enumerate}
+\item each component $F^i$ lies in $W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak
+  gradient $G^i$ (\noderef{MemW1pLocOn}); and
+\item writing $DF(x)$ for the formal differential, i.e.\ the matrix
+  $DF(x)_{ij}=G^i(x)^j$, and $J_F(x)=\det DF(x)$ for the formal Jacobian
+  determinant, we have for a.e.\ $x\in\Omega$ and all $\xi\in\R^n$
+\[
+|DF(x)\xi|^n\;\le\;K\,J_F(x)\,|\xi|^n .
+\]
+\end{enumerate}
+Clause (2) is (5.10) of the thesis, $|DF(x)|^n\le KJ_F(x)$, written without the
+operator supremum: since $|DF(x)|=\sup\{|DF(x)h|:|h|=1\}$ and both sides are
+homogeneous of degree $n$ in $\xi$, the displayed family of inequalities over
+all $\xi$ is equivalent to $|DF(x)|^n\le KJ_F(x)$.
+\end{definition}

@@ -1,0 +1,72 @@
+\begin{helper}[Differentiating a mollification gives the mollification of the weak gradient]
+Let $n\in\N$ and let $\Omega\subseteq\R^n$ be measurable, and suppose that a
+function vanishing off $A\subseteq B$ has the same integral over $B$ as over
+$A$.  Throughout, $\operatorname{supp}\rho$ denotes the \emph{closed} support
+of $\rho$, $\partial_iv(x)=dv(x)[e_i]$, $1_Kf=K$-indicator of $f$, and
+$u*\rho$ is the convolution against Lebesgue measure with scalar multiplication
+as the pairing.  Let $K_3\subseteq\R^n$, let $f\colon\R^n\to\R$, let
+$G_f\colon\R^n\to\R^n$, let $\rho\colon\R^n\to\R$, let $d\in\R$ and let
+$x\in\R^n$.  Assume
+\begin{enumerate}
+\item[(H1)] $f$ has weak gradient $G_f$ on $\Omega$
+  (\noderef{HasWeakGradientOn});
+\item[(H2)] $1_{K_3}f$ is locally integrable;
+\item[(H3)] $\rho$ is smooth with compact support and
+  $\operatorname{supp}\rho=\overline{B_d(0)}$;
+\item[(H4)] $\overline{B_d(x)}\subseteq K_3$ and
+  $\overline{B_d(x)}\subseteq\Omega$.
+\end{enumerate}
+Then for every coordinate $i$,
+\[
+\partial_i\bigl((1_{K_3}f)*\rho\bigr)(x)
+\ =\ \bigl((1_{K_3}G_f^{\,i})*\rho\bigr)(x).
+\]
+Nothing here refers to a Sobolev exponent, to a composition or to an outer
+function: it is a statement about one weakly differentiable function and one
+mollifier.
+\end{helper}
+\begin{proof}
+\emph{Step 1: differentiation under the convolution.}  By (H3), $\rho$ is
+smooth with compact support, so $\partial_i\rho$ is continuous with compact
+support; together with the local integrability of $1_{K_3}f$ from (H2) this
+makes both convolutions $(1_{K_3}f)*\rho$ and $(1_{K_3}f)*\partial_i\rho$ exist,
+and differentiation passes under the integral sign (Preamble), giving
+\[
+\partial_i\bigl((1_{K_3}f)*\rho\bigr)(x)
+=\bigl((1_{K_3}f)*\partial_i\rho\bigr)(x)
+=\int_{\R^n}(1_{K_3}f)(y)\,\partial_i\rho(x-y)\,dy .
+\]
+
+\emph{Step 2: the shifted mollifier is an admissible test function.}  Fix $x$
+as in (H4) and put $\varphi(y)=\rho(x-y)$.  Then $\varphi$ is smooth, and
+$\operatorname{supp}\varphi=x-\operatorname{supp}\rho=\overline{B_d(x)}$ by
+(H3), which is contained in $\Omega$ by (H4); so $\varphi$ is a smooth
+compactly supported test function on $\Omega$.  Moreover
+$\partial_{y_i}\varphi(y)=-\partial_i\rho(x-y)$ by the chain rule.
+
+\emph{Step 3: the weak-gradient identity.}  Applying (H1) to $\varphi$,
+\[
+\int_{\Omega}f(y)\,\partial_{y_i}\varphi(y)\,dy
+\ =\ -\int_{\Omega}G_f^{\,i}(y)\,\varphi(y)\,dy ,
+\]
+that is, $-\int f(y)\partial_i\rho(x-y)dy=-\int G_f^{\,i}(y)\rho(x-y)dy$, and
+the two minus signs cancel:
+$\int f(y)\partial_i\rho(x-y)dy=\int G_f^{\,i}(y)\rho(x-y)dy$.
+
+\emph{Step 4: inserting and removing the indicator.}  Every integrand above
+vanishes off $\overline{B_d(x)}$, because $\varphi$ and each
+$\partial_{y_i}\varphi$ do, and $\overline{B_d(x)}\subseteq K_3$ by (H4).  The
+hypothesis on integrals of functions vanishing off a subset therefore lets the
+domain be cut down to $\overline{B_d(x)}$ and the factor $1_{K_3}$ inserted or
+deleted freely on both sides; in particular
+$\int(1_{K_3}f)(y)\partial_i\rho(x-y)dy=\int f(y)\partial_i\rho(x-y)dy$ and
+$\int G_f^{\,i}(y)\rho(x-y)dy=\int(1_{K_3}G_f^{\,i})(y)\rho(x-y)dy$.
+
+\emph{Conclusion.}  Chaining Steps 1, 3 and 4,
+\[
+\partial_i\bigl((1_{K_3}f)*\rho\bigr)(x)
+=\int(1_{K_3}G_f^{\,i})(y)\,\rho(x-y)\,dy
+=\bigl((1_{K_3}G_f^{\,i})*\rho\bigr)(x),
+\]
+which is the assertion.
+\end{proof}

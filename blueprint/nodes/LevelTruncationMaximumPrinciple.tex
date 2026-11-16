@@ -1,0 +1,211 @@
+\begin{lemma}[Lemma 2.3]
+Let $n\ge2$, $\gamma>0$ and $\lambda_0,\lambda_1\in(0,1)$, and suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Then there exists
+$\theta_0=\theta_0(n,\gamma,\lambda_0,\lambda_1)>0$ with the following property.
+Let $x_0\in\R^n$, let $R>0$, let $f\in W^{1,2}(B_R(x_0))$ with weak gradient $g$
+(\noderef{MemW1pOn}), suppose $f$ is essentially bounded above on $B_R(x_0)$ and
+put $M=\esssup_{B_R(x_0)}f$.  Suppose $k<M$ and that the De Giorgi level bound
+(2.1) of the thesis with constant $\gamma$ (\noderef{DeGiorgiLevelBound}) holds for
+every level $\ell\in[k,\lambda_0k+(1-\lambda_0)M]$ and all radii
+$\rho_0,\rho_1\in[\lambda_1R,R]$ with $\rho_0<\rho_1$.  If
+\[
+\bigl|\{x\in B_R(x_0):f(x)>k\}\bigr|\;\le\;\theta_0\,|B_R| ,
+\]
+then
+\[
+f\le\lambda_0k+(1-\lambda_0)M\qquad\text{a.e.\ in }B_{\lambda_1R}(x_0).
+\]
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constant $\beta(n)$ of \noderef{DeGiorgiLevelSetMeasure} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $\theta_0$, it introduces no dependence of
+$\theta_0$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+\end{lemma}
+\begin{proof}
+Write $\omega_n=|B_1|$, so $|B_\sigma|=\omega_n\sigma^n$, let $\beta(n)$ be the
+constant of \noderef{DeGiorgiLevelSetMeasure} --- available because the
+hypothesis \noderef{CitedSobolevPoincareBall} of the present lemma is exactly the
+hypothesis that node's statement requires --- and set
+\[
+q=\tfrac n{n-1},\quad \varepsilon=\tfrac1{n-1},\quad
+b=\bigl[(1-\lambda_0)(1-\lambda_1)\bigr]^{\frac n{1-n}},\quad
+C_1=\frac{2\beta(n)\sqrt\gamma}{\omega_n\lambda_1^{\,n+1}},\quad
+C_2=\frac{C_1}{\lambda_0(1-\lambda_0)(1-\lambda_1)},\quad
+c=C_2^{\,q} .
+\]
+All of these depend only on $n,\gamma,\lambda_0,\lambda_1$.  Note $\varepsilon>0$
+and $q=1+\varepsilon$ because $n\ge2$, and $b>1$ because
+$(1-\lambda_0)(1-\lambda_1)\in(0,1)$ while $\frac n{1-n}<0$.  Define
+\[
+\theta_1=\frac{\lambda_1^{\,n}}2,\qquad
+\theta_2=\frac{c^{-1/\varepsilon}\,b^{-1/\varepsilon^2}}{\omega_n},\qquad
+\theta_0=\min\{\theta_1,\theta_2\} .
+\]
+Then $\theta_0>0$ and $\theta_0$ depends only on $n,\gamma,\lambda_0,\lambda_1$;
+note $\theta_1=|B_{\lambda_1R}|/(2|B_R|)$ for every $R>0$, which is why it carries
+no $R$.  Fix $x_0,R,k,M,f,g$ as in the statement and assume
+$|A^+_{k,R}|\le\theta_0|B_R|$, where throughout
+$A^+_{\sigma,\rho}=\{x\in B_\rho(x_0):f(x)>\sigma\}$.
+
+\emph{Step 1: the two sequences.}  For $h=0,1,2,\dots$ put
+\[
+r_h=\lambda_1R+(1-\lambda_1)^{h+1}R,\qquad
+k_h=k+(1-\lambda_0)(M-k)-(1-\lambda_0)^{h+1}(M-k).
+\]
+Then $r_0=\lambda_1R+(1-\lambda_1)R=R$; $r_h$ is strictly decreasing with
+$r_h\downarrow\lambda_1R$, so $\lambda_1R<r_h\le R$ for every $h$; and
+\[
+r_h-r_{h+1}=(1-\lambda_1)^{h+1}R-(1-\lambda_1)^{h+2}R=\lambda_1(1-\lambda_1)^{h+1}R .
+\]
+Also $k_0=k$; $k_h$ is strictly increasing with
+$k_h\uparrow k+(1-\lambda_0)(M-k)=\lambda_0k+(1-\lambda_0)M$, so
+$k\le k_h<\lambda_0k+(1-\lambda_0)M$ for every $h$; and
+\[
+k_{h+1}-k_h=(1-\lambda_0)^{h+1}(M-k)-(1-\lambda_0)^{h+2}(M-k)
+=\lambda_0(1-\lambda_0)^{h+1}(M-k) ,
+\]
+which is positive since $M>k$.  Finally put
+\[
+\nu_h=\frac{|A^+_{k_h,r_h}|}{R^n}\ \ge 0 .
+\]
+
+\emph{Step 2: the level-set estimate at stage $h$.}  Fix $h$.  We apply
+\noderef{DeGiorgiLevelSetMeasure} on the ball $B_{r_{h+1}}(x_0)$ at the levels
+$k_h\le k_{h+1}$.  Its hypotheses hold: $r_{h+1}>0$; $f\in W^{1,1}(B_{r_{h+1}})$
+with weak gradient $g$, because $f\in W^{1,2}(B_R)$ with weak gradient $g$
+(\noderef{MemW1pOn}), $B_{r_{h+1}}\subseteq B_R$ has finite measure, so
+H\"older's inequality turns the $L^2$ bounds on $f$ and $|g|$ into $L^1$ bounds,
+while the weak-gradient identity restricts to test functions supported in
+$B_{r_{h+1}}$ because such a test function vanishes off $B_{r_{h+1}}$; and the
+nondegeneracy hypothesis holds by the following computation, which is where
+$\theta_0\le\theta_1$ is consumed.  Since $k_h\ge k$ and $r_{h+1}\le R$ we have
+$A^+_{k_h,r_{h+1}}\subseteq A^+_{k,R}$, so
+\[
+|A^+_{k_h,r_{h+1}}|\le|A^+_{k,R}|\le\theta_0|B_R|\le\theta_1|B_R|
+=\tfrac12|B_{\lambda_1R}| ,
+\]
+and since $B_{\lambda_1R}\subseteq B_{r_{h+1}}$,
+\[
+\bigl|B_{r_{h+1}}\setminus A^+_{k_h,r_{h+1}}\bigr|
+\ge\bigl|B_{\lambda_1R}\bigr|-\bigl|A^+_{k_h,r_{h+1}}\bigr|
+\ge\tfrac12\bigl|B_{\lambda_1R}\bigr|>0 .
+\tag{2.2a}
+\]
+\noderef{DeGiorgiLevelSetMeasure} therefore gives
+\[
+(k_{h+1}-k_h)\,\bigl|A^+_{k_{h+1},r_{h+1}}\bigr|^{1-\frac1n}
+\le\beta(n)\,\frac{r_{h+1}^{\,n}}{\bigl|B_{r_{h+1}}\setminus A^+_{k_h,r_{h+1}}\bigr|}
+\int_{A^+_{k_h,r_{h+1}}\setminus A^+_{k_{h+1},r_{h+1}}}|g|\,dx .
+\tag{2.2}
+\]
+Using (2.2a), $r_{h+1}\le R$, $|B_{\lambda_1R}|=\omega_n\lambda_1^nR^n$ and
+enlarging the domain of integration to $A^+_{k_h,r_{h+1}}$,
+\[
+\lambda_0(1-\lambda_0)^{h+1}(M-k)\,\bigl|A^+_{k_{h+1},r_{h+1}}\bigr|^{1-\frac1n}
+\le\frac{2\beta(n)}{\omega_n\lambda_1^{\,n}}\int_{A^+_{k_h,r_{h+1}}}|g|\,dx .
+\tag{2.3}
+\]
+
+\emph{Step 3: estimating the gradient integral by (2.1) of the thesis.}  Apply
+\noderef{DeGiorgiLevelBound} with constant $\gamma$ at the level $\ell=k_h$ and
+the radii $\rho_0=r_{h+1}$, $\rho_1=r_h$.  This is permitted by the hypothesis of
+the lemma: $k_h\in[k,\lambda_0k+(1-\lambda_0)M]$ by Step 1, and
+$r_{h+1},r_h\in[\lambda_1R,R]$ with $r_{h+1}<r_h$, also by Step 1.  Its second
+clause reads
+\[
+\int_{B_{r_{h+1}}\cap\{f>k_h\}}|g|^2dx
+\le\frac{\gamma}{(r_h-r_{h+1})^2}
+\Bigl(\esssup_{B_{r_h}}(f-k_h)^+\Bigr)^{2}\bigl|A^+_{k_h,r_h}\bigr| .
+\]
+Now $B_{r_h}\subseteq B_R$ and $M=\esssup_{B_R}f$, so $f\le M$ a.e.\ on
+$B_{r_h}$; hence $(f-k_h)^+\le(M-k_h)^+=M-k_h\le M-k$ a.e.\ on $B_{r_h}$ (using
+$k\le k_h<M$), and therefore
+$\esssup_{B_{r_h}}(f-k_h)^+\le M-k$.  Note this uses the essential-boundedness
+hypothesis on $f$ only through the inequality $f\le M$ a.e.; no supremum is
+assumed attained.  With $r_h-r_{h+1}=\lambda_1(1-\lambda_1)^{h+1}R$ we get
+\[
+\int_{A^+_{k_h,r_{h+1}}}|g|^2dx
+\le\frac{\gamma\,(M-k)^2}{\lambda_1^2(1-\lambda_1)^{2h+2}R^2}\bigl|A^+_{k_h,r_h}\bigr| .
+\]
+By the Cauchy--Schwarz inequality on $A^+_{k_h,r_{h+1}}$, and then
+$|A^+_{k_h,r_{h+1}}|\le|A^+_{k_h,r_h}|$ (valid since $r_{h+1}<r_h$),
+\[
+\int_{A^+_{k_h,r_{h+1}}}|g|\,dx
+\le\bigl|A^+_{k_h,r_{h+1}}\bigr|^{1/2}
+\Bigl(\int_{A^+_{k_h,r_{h+1}}}|g|^2dx\Bigr)^{1/2}
+\le\frac{\sqrt\gamma\,(M-k)}{\lambda_1(1-\lambda_1)^{h+1}R}\bigl|A^+_{k_h,r_h}\bigr| .
+\]
+Substituting into (2.3),
+\[
+\lambda_0(1-\lambda_0)^{h+1}(M-k)\,\bigl|A^+_{k_{h+1},r_{h+1}}\bigr|^{1-\frac1n}
+\le\frac{2\beta(n)\sqrt\gamma}{\omega_n\lambda_1^{\,n+1}}\,
+\frac{M-k}{(1-\lambda_1)^{h+1}R}\bigl|A^+_{k_h,r_h}\bigr| ,
+\tag{2.4}
+\]
+which is (2.4) of the thesis of the paper in the form we need.
+
+\emph{Step 4: the recursion.}  Divide (2.4) by
+$\lambda_0(1-\lambda_0)^{h+1}(M-k)>0$:
+\[
+\bigl|A^+_{k_{h+1},r_{h+1}}\bigr|^{1-\frac1n}
+\le\frac{C_1}{\lambda_0(1-\lambda_0)^{h+1}(1-\lambda_1)^{h+1}}
+\cdot\frac{\bigl|A^+_{k_h,r_h}\bigr|}{R}
+\le\frac{C_2}{\bigl[(1-\lambda_0)(1-\lambda_1)\bigr]^{h}}
+\cdot\frac{\bigl|A^+_{k_h,r_h}\bigr|}{R} ,
+\tag{2.5}
+\]
+by the definitions of $C_1$ and $C_2$.  Raise (2.5) to the power
+$q=\frac n{n-1}>0$ and divide by $R^n$.  Writing
+$|A^+_{k_h,r_h}|=R^n\nu_h$ and $|A^+_{k_{h+1},r_{h+1}}|=R^n\nu_{h+1}$, the
+left-hand side becomes
+$R^{n}\nu_{h+1}\big/R^{n}=\nu_{h+1}$ after division, because
+$\bigl(|A^+_{k_{h+1},r_{h+1}}|^{1-\frac1n}\bigr)^{q}=|A^+_{k_{h+1},r_{h+1}}|$,
+and the right-hand side becomes
+\[
+\frac{C_2^{\,q}}{\bigl[(1-\lambda_0)(1-\lambda_1)\bigr]^{hq}}
+\cdot\frac{\bigl(R^n\nu_h\bigr)^{q}}{R^{q}\,R^n}
+=c\,b^{\,h}\,\nu_h^{\,q},
+\]
+since the power of $R$ is $nq-q-n=\frac{n^2}{n-1}-\frac n{n-1}-n
+=\frac{n(n-1)}{n-1}-n=0$, and
+$\bigl[(1-\lambda_0)(1-\lambda_1)\bigr]^{-hq}=b^{\,h}$ by the definition of $b$.
+As $q=1+\varepsilon$ we have obtained
+\[
+\nu_{h+1}\le c\,b^{\,h}\,\nu_h^{\,1+\varepsilon}\qquad(h=0,1,2,\dots),
+\tag{2.6}
+\]
+the recursion in the $b^{\,h}$ form.
+
+\emph{Step 5: the De Giorgi iteration.}  We check the hypotheses of
+\noderef{DeGiorgiSequenceLemma} for the sequence $(\nu_h)$ with the constants
+$c,\varepsilon,b$ above: $c>0$, $\varepsilon>0$, $b>1$, $\nu_h\ge0$ for all $h$,
+and (2.6) is the required recursion.  It remains to verify the threshold
+condition $\nu_0\le c^{-1/\varepsilon}b^{-1/\varepsilon^2}$, and this is where
+$\theta_0\le\theta_2$ is consumed:
+\[
+\nu_0=\frac{\bigl|A^+_{k_0,r_0}\bigr|}{R^n}=\frac{\bigl|A^+_{k,R}\bigr|}{R^n}
+\le\frac{\theta_0|B_R|}{R^n}=\theta_0\,\omega_n\le\theta_2\,\omega_n
+=c^{-1/\varepsilon}b^{-1/\varepsilon^2} ,
+\]
+using $k_0=k$, $r_0=R$ from Step 1 and $|B_R|=\omega_nR^n$.  Hence
+\noderef{DeGiorgiSequenceLemma} applies and gives
+$\lim_{h\to\infty}\nu_h=0$.
+
+\emph{Step 6: conclusion.}  Put $k_\infty=\lambda_0k+(1-\lambda_0)M$.  For every
+$h$ we have $k_h\le k_\infty$ and $\lambda_1R\le r_h$, hence
+\[
+\bigl\{x\in B_{\lambda_1R}:f(x)>k_\infty\bigr\}
+\subseteq\bigl\{x\in B_{r_h}:f(x)>k_h\bigr\}=A^+_{k_h,r_h} ,
+\]
+so $\bigl|\{x\in B_{\lambda_1R}:f>k_\infty\}\bigr|\le|A^+_{k_h,r_h}|=R^n\nu_h$.
+Letting $h\to\infty$ and using Step 5, the left-hand side is $\le0$, hence
+\[
+\bigl|\{x\in B_{\lambda_1R}(x_0):f(x)>\lambda_0k+(1-\lambda_0)M\}\bigr|=0 ,
+\]
+that is, $f\le\lambda_0k+(1-\lambda_0)M$ almost everywhere in
+$B_{\lambda_1R}(x_0)$, which is the assertion.
+\end{proof}

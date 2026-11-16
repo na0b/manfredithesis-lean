@@ -1,0 +1,75 @@
+\begin{helper}[The supremum of the regularised gradient fields, and the vanishing of $Dg^k$ on $\{g^k=0\}$]
+Let $n\in\N$, let $p,\varepsilon,e_0,T,W,K\in\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$, let $x_0\in\R^n$, let $k$ be an index and let
+$(\eta_j)_{j\in\N}$ be a sequence of reals.  Write
+\[
+V_\eta(x)=\Bigl(\tfrac p2\bigl(|g^k(x)|+\eta\bigr)^{\frac p2-1}\Bigr)Dg^k(x),
+\qquad
+V_0(x)=\Bigl(\tfrac p2|g^k(x)|^{\frac p2-1}\Bigr)Dg^k(x),
+\]
+and $B=B_T(x_0)$.  Throughout, $|\cdot|$ is the Euclidean norm, every power of
+a nonnegative real is the real power, and the supremum and integral in the
+first and third conclusions are taken in $[0,+\infty]$, $\int^-$ denoting the
+lower Lebesgue integral, so that both are meaningful before any finiteness is
+known.  Assume
+\begin{enumerate}
+\item[(H1)] $0<p$, $p<2$ and $\frac p2-1<0$;
+\item[(H2)] $0<|s|+\eta$ for every real $s$ and every $\eta>0$;
+\item[(H3)] $0<e_0$, $\eta_j=e_0/(j+1)$ for every $j$, $\eta_j>0$,
+  $\eta_j^2<\varepsilon$, and $\eta_j\to0$;
+\item[(H4)] $\|V_\eta\|^2$ is integrable on $B$ for every $\eta>0$;
+\item[(H5)] $\int_B\|V_\eta\|^2\le W^{-1}K$ for every $\eta>0$ with
+  $\eta^2<\varepsilon$.
+\end{enumerate}
+Then
+\[
+\int^-_B\ \sup_{j\in\N}\ \|V_{\eta_j}\|^2\ \le\ W^{-1}K,
+\tag{i}
+\]
+\[
+Dg^k(x)=0\quad\text{for a.e.\ }x\in B\text{ with }g^k(x)=0,
+\tag{ii}
+\]
+\[
+\|V_0(x)\|^2\ \le\ \sup_{j\in\N}\ \|V_{\eta_j}(x)\|^2
+\qquad\text{for every }x .
+\tag{iii}
+\]
+\end{helper}
+\begin{proof}
+\emph{Monotonicity.}  Since $\frac p2-1<0$ by (H1) and $|g^k(x)|+\eta$ is
+increasing in $\eta$, the quantity $(|g^k(x)|+\eta)^{\frac p2-1}$ is
+DECREASING in $\eta$; all the bases are positive by (H2), so the real power is
+monotone in the required direction.  Hence $\|V_\eta(x)\|^2$ decreases as
+$\eta$ increases, and because $\eta_j=e_0/(j+1)$ is decreasing in $j$ by (H3),
+the sequence $j\mapsto\|V_{\eta_j}(x)\|^2$ is nondecreasing for every $x$.
+
+\emph{(i).}  Each $\|V_{\eta_j}\|^2$ is measurable on $B$ by (H4), and
+$\eta_j>0$ with $\eta_j^2<\varepsilon$ by (H3), so (H5) gives
+$\int_B\|V_{\eta_j}\|^2\le W^{-1}K$ for every $j$.  By the monotonicity just
+proved, the supremum over $j$ is the increasing limit, so monotone convergence
+(Preamble) gives
+$\int^-_B\sup_j\|V_{\eta_j}\|^2=\lim_j\int^-_B\|V_{\eta_j}\|^2\le W^{-1}K$,
+the passage between the lower integral and the Bochner integral of a
+nonnegative integrable function being the usual one (Preamble).
+
+\emph{(ii).}  By (i) the function $S=\sup_j\|V_{\eta_j}\|^2$ has finite
+integral on $B$, hence $S<+\infty$ almost everywhere on $B$.  Fix $x\in B$ with
+$g^k(x)=0$ and $Dg^k(x)\neq0$.  Then $|g^k(x)|+\eta_j=\eta_j$, so
+\[
+\|V_{\eta_j}(x)\|^2=\Bigl(\tfrac p2\Bigr)^2\eta_j^{\,p-2}\,\|Dg^k(x)\|^2 ,
+\]
+using $\bigl(\eta_j^{\frac p2-1}\bigr)^2=\eta_j^{\,p-2}$.  Here $p-2<0$ by
+(H1) and $\eta_j\to0$ with $\eta_j>0$ by (H3), so
+$\eta_j^{\,p-2}\to+\infty$ and therefore $S(x)=+\infty$.  Thus every such $x$
+lies in the null set where $S=+\infty$, which is (ii).
+
+\emph{(iii).}  Fix $x$.  As $j\to\infty$ we have $\eta_j\to0$, so
+$|g^k(x)|+\eta_j\to|g^k(x)|$ and, by continuity of $t\mapsto t^{\frac p2-1}$
+away from the relevant degeneracy together with continuity of the scalar
+multiplication and of the norm, $\|V_{\eta_j}(x)\|^2\to\|V_0(x)\|^2$.  By the
+monotonicity proved above the sequence is nondecreasing, so its limit is its
+supremum, and a limit of a nondecreasing sequence is at most that supremum;
+hence $\|V_0(x)\|^2\le\sup_j\|V_{\eta_j}(x)\|^2$, which is (iii).
+\end{proof}

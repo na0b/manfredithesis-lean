@@ -1,0 +1,87 @@
+\begin{helper}[The $L^p$ distances of the mollified gradients tend to zero]
+Let $n\in\N$, let $p,c_3,E_1,R\in\R$, let $x_0\in\R^n$, let
+$g\colon\R^n\to\R^n$, let $G$ assign to each $m\in\N$ a field
+$G_m\colon\R^n\to\R^n$, and let $X,I,\delta\colon\N\to\R$.  Throughout,
+$B=B_R(x_0)$, $e_m=1/(m+1)$, $(\cdot,\cdot)$ and $|\cdot|$ are the Euclidean
+inner product and norm, and every power of a nonnegative real is the real
+power, written exactly as the structure conditions print it --- in particular
+the weight $(e_m+|G_m|^2+|g|^2)^{\frac p2-1}$, whose exponent is negative when
+$p<2$, is never normalised away.  Assume
+\begin{enumerate}
+\item[(H1)] $0<c_3$, $0<p$, $0<p-1$ and $0\le E_1$;
+\item[(H2)] $|x+y|^2\le2|x|^2+2|y|^2$ for all $x,y$, and $0<e_m$ for every $m$;
+\item[(H3)] $I_m=\int_B(e_m+|G_m|^2+|g|^2)^{\frac p2-1}|G_m-g|^2$ for every $m$,
+  and $\int_B|G_m-g|^p=X_m^{\,p}$ with $X_m\ge0$ and $\delta_m\ge0$;
+\item[(H4)] $0<e_m+|G_m(x)|^2+|g(x)|^2$ for every $m$ and $x$, and
+  $|G_m-g|^p$ is integrable on $B$;
+\item[(H5)] the two elementary identities $(t^2)^{s/2}=t^s$ and
+  $(t^2)^{\frac p2-1}t^2=t^p$ for $t\ge0$;
+\item[(H6)] $(e_m+|G_m|^2+|g|^2)^{p/2}$ is integrable on $B$ with
+  $\int_B(e_m+|G_m|^2+|g|^2)^{p/2}\le E_1$ for every $m$;
+\item[(H7)] for every $m$, the integrand of $I_m$ is integrable on $B$ and
+  $c_3I_m\le\delta_mX_m$;
+\item[(H8)] $\delta_m\to0$.
+\end{enumerate}
+Then $X_m\to0$.
+\end{helper}
+\begin{proof}
+The argument splits on the sign of $\tfrac p2-1$, and both cases end in the
+same squeeze.
+
+\emph{Case $p\ge2$.}  Here $\tfrac p2-1\ge0$.  By (H2),
+$|G_m-g|^2\le2\bigl(e_m+|G_m|^2+|g|^2\bigr)$ pointwise, so raising to the
+nonnegative power $\tfrac p2-1$ and dividing,
+\[
+\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2-1}
+\ \ge\ 2^{-(\frac p2-1)}\bigl(|G_m-g|^2\bigr)^{\frac p2-1}.
+\]
+Multiplying by $|G_m-g|^2\ge0$ and using the second identity of (H5),
+$\bigl(|G_m-g|^2\bigr)^{\frac p2-1}|G_m-g|^2=|G_m-g|^{p}$, so integrating over
+$B$ --- both sides integrable by (H4) and (H7) --- and using (H3) gives
+$I_m\ge2^{-(\frac p2-1)}X_m^{\,p}$.  Combining with (H7),
+\[
+c_32^{-(\frac p2-1)}X_m^{\,p}\ \le\ c_3I_m\ \le\ \delta_mX_m ,
+\]
+so $X_m^{\,p-1}\le2^{\frac p2-1}\delta_m/c_3$ whenever $X_m>0$, and hence
+\[
+X_m\ \le\ \Bigl(\frac{2^{\frac p2-1}\delta_m}{c_3}\Bigr)^{\frac1{p-1}}
+\]
+for every $m$ --- the case $X_m=0$ being trivial since the right-hand side is
+nonnegative.  As $\delta_m\to0$ by (H8) and $t\mapsto t^{1/(p-1)}$ is
+continuous at $0$ with value $0$ (here $p-1>0$ is used), the right-hand side
+tends to $0$.
+
+\emph{Case $1<p<2$.}  Now $\tfrac p2-1<0$ and the pointwise bound above is
+unavailable.  Put $\Theta_m=(e_m+|G_m|^2+|g|^2)^{\frac p2-1}$, which is
+positive by (H4), and write, pointwise,
+\[
+|G_m-g|^{p}
+=\Bigl(\Theta_m|G_m-g|^2\Bigr)^{\frac p2}
+ \bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac{(2-p)p}{4}} ,
+\]
+an identity, not an inequality: the exponents of the weight are
+$(\tfrac p2-1)\tfrac p2$ and $\tfrac{(2-p)p}4$, which sum to $0$, and the
+exponent of $|G_m-g|$ is $2\cdot\tfrac p2=p$ by the first identity of (H5).
+Hölder's inequality (Preamble) with the conjugate pair
+$\bigl(\tfrac2p,\tfrac2{2-p}\bigr)$ --- both $>1$ because $0<p<2$ --- then
+gives
+\[
+X_m^{\,p}=\int_B|G_m-g|^{p}
+\ \le\ I_m^{\frac p2}
+  \Bigl(\int_B\bigl(e_m+|G_m|^2+|g|^2\bigr)^{\frac p2}\Bigr)^{\frac{2-p}2}
+\ \le\ I_m^{\frac p2}E_1^{\frac{2-p}2},
+\]
+using (H3) on the left and (H6) on the right.  Feeding $I_m\le\delta_mX_m/c_3$
+from (H7) into this and cancelling $X_m^{\,p/2}$ --- legitimate when $X_m>0$,
+and trivial otherwise ---
+\[
+X_m^{\frac p2}\ \le\ \Bigl(\frac{\delta_m}{c_3}\Bigr)^{\frac p2}E_1^{\frac{2-p}2},
+\qquad\text{hence}\qquad
+X_m\ \le\ \frac{\delta_m}{c_3}\,E_1^{\frac{2-p}p},
+\]
+which again tends to $0$ as $\delta_m\to0$.
+
+\emph{Conclusion.}  In both cases $0\le X_m\le\Psi(\delta_m)$ with
+$\Psi(\delta_m)\to0$, so $X_m\to0$ by squeezing between the constant null
+sequence and $\Psi(\delta_m)$ (Preamble).
+\end{proof}

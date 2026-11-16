@@ -1,0 +1,494 @@
+\begin{helper}[The differentiated equation (3.2)]
+Let $n\ge2$, $p>1$, $\varepsilon>0$ and $0<\gamma_0\le\gamma_1$.  Let
+$\Omega\subseteq\R^n$ be open, let $A\colon\R^n\to\R^n$ satisfy
+(Q1) of the thesis--(Q2) of the thesis on $\Omega$ with these parameters
+(\noderef{EllipticStructureQ12}), and assume the cited regularity result (C1)
+for $\varepsilon>0$ (\noderef{CitedRegularityEpsPos}).  Let $u$ be a weak
+solution of $\operatorname{div}A(\nabla u)=0$ in $\Omega$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g=\nabla u$, and let
+$Dg^k$ be the weak gradient of the $k$-th component $g^k=D_ku$, so that
+$u\in W^{2,2}_{\mathrm{loc}}(\Omega)$ with second derivatives
+$D_jD_ku=(Dg^k)^j$ (\noderef{MemW1pLocOn}).  Then for every
+$k\in\{1,\dots,n\}$ and every $\varphi\in W^{1,2}(\Omega)$ with weak gradient
+$g_\varphi$ (\noderef{MemW1pOn} at the exponent $2$) and with compact support
+contained in $\Omega$,
+\[
+\int_\Omega\Bigl\{\sum_{i,j=1}^nD_{h_j}A^i(\nabla u)\,D_jD_ku\,D_i\varphi\Bigr\}dx=0 .
+\]
+
+\textbf{On the test class.}  The thesis prints (3.2) of the thesis ``for all
+$\varphi\in W^{1,p}(\Omega)$ with $\operatorname{supp}\varphi$ compact,
+$\operatorname{supp}\varphi\subset\Omega$'' (p.~16), copying the test class of
+(1.2) of the thesis.  The class above is $W^{1,2}$ with compact support, which for
+$p>2$ is strictly \emph{larger}, so the statement above is stronger than the
+printed one.  That strengthening is forced by the paper itself, in the following
+precise sense.
+
+The thesis prints the $W^{1,p}$ class immediately after assuming
+$u\in C^2$ (p.~16), and the Note for the formalization deletes that assumption,
+leaving $u\in W^{2,2}_{\mathrm{loc}}\cap C^1$.  Under the weaker regularity the
+printed class no longer contains the test functions the thesis itself
+substitutes into (3.2) of the thesis twenty lines later: with $w=\varepsilon+|\nabla
+u|^2$ and $\zeta\in C_0^\infty(\Omega)$, the gradients of
+$\varphi=D_ku\,w^{t/2}\zeta^2$ (p.~16, giving (3.3) of the thesis) and of
+$\varphi^{\pm}=\pm(D_ku-\ell)^{\pm}\zeta^2$ (p.~16, giving (3.4) of the thesis)
+contain $\nabla(D_ku)$, which the Note's regularity places in
+$L^2_{\mathrm{loc}}(\Omega)$ and in nothing better; so for $p>2$ those two
+functions lie in $W^{1,2}$ with compact support but not in $W^{1,p}$.  A node
+carrying the printed class would therefore exclude the paper's own
+substitutions and could not support the paper's use of (3.2) of the thesis.  For
+$1<p<2$ the $W^{1,p}$ requirement would instead be redundant, since compact
+support together with $L^2$ gives $L^p$ by H\"older on a set of finite measure;
+so the clause binds exactly on the range where it cannot be discharged, and
+Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis are needed for $p>2$.
+
+Nothing is lost at the other end: Step 4 of the proof below shows that
+(1.2) of the thesis itself extends from its printed $W^{1,p}$ test class to every
+$\varphi\in W^{1,2}(\Omega)$ with compact support in $\Omega$, so the enlarged
+class is available to the equation being differentiated as well.  The
+exponent $2$ is exactly right for the display: the factor $D_jD_ku$ lies in
+$L^2_{\mathrm{loc}}(\Omega)$, and the coefficient $D_{h_j}A^i(\nabla u)$ is
+locally bounded because $\varepsilon>0$ and $\nabla u$ is continuous, so the
+integrand is locally integrable as soon as $D_i\varphi\in L^2_{\mathrm{loc}}$.
+\end{helper}
+\begin{proof}
+Write $e_k$ for the $k$-th standard basis vector of $\R^n$ and
+$\Phi^i=A^i\circ g$ for the $i$-th component of the composite
+$x\mapsto A(\nabla u(x))$.  Fix $k$, $\varphi$ and $g_\varphi$ as in the
+statement and put $K_0=\operatorname{supp}\varphi$, a compact subset of
+$\Omega$.
+
+If $\Omega=\emptyset$ the asserted integral is an integral over the empty set
+and vanishes, so assume $\Omega\ne\emptyset$ and fix once and for all a point
+$x_\ast\in\Omega$.  By the differentiability clause of \noderef{EllipticStructureQ12} applied at
+$x_\ast$ and $z=0$, the map $A$ is of class $C^1$ on
+$D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$, which is all of $\R^n$ here
+because $\varepsilon>0$; so $A$ is of class $C^1$ on $\R^n$.  This is the only
+use of that clause and it is used in Step 2.  Conditions (Q1) of the thesis and
+(Q2) of the thesis themselves are not used directly anywhere below: they enter only
+as the structure hypothesis that \noderef{CitedRegularityEpsPos} requires in
+order to yield Step 1, which is exactly how the cited result is stated.
+
+\emph{Step 1: what (C1) supplies.}  Apply
+\noderef{CitedRegularityEpsPos} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A$: its hypotheses are $\varepsilon>0$,
+\noderef{EllipticStructureQ12} for the field $(x,z,h)\mapsto A(h)$ on $\Omega$,
+and that $u$ with weak gradient $g$ is a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $\Omega$ (\noderef{IsWeakSolutionOn}) --- all
+three are hypotheses of the present lemma.  Its conclusion gives
+\begin{enumerate}
+\item $u\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn});
+\item a field $g'$ with $g'$ continuous on $\Omega$ and $g=g'$ almost everywhere
+  on $\Omega$.
+\end{enumerate}
+\emph{Item (2) does not assert continuity of the given $g$, and cannot: a weak
+gradient is an almost-everywhere class, so continuity is a property of a
+representative.  Every \emph{pointwise} consequence drawn below is therefore
+drawn for $g'$, and transported back to $g$ across $g=g'$ a.e.\ wherever the
+quantity it feeds is an integral or an almost-everywhere assertion, both of
+which are blind to a null set.}
+
+From (2) we get the local boundedness of the family of components \emph{of
+$g'$}: if $K\subseteq\Omega$ is compact then $g'$ restricted to $K$ is
+continuous, so $x\mapsto|g'(x)|$ attains a finite maximum $L$ on $K$ (a
+continuous real function on a compact set is bounded), and
+$|g'^j(x)|\le|g'(x)|\le L$ for every $x\in K$ and every $j$.  (If
+$K=\emptyset$ any $L$ serves.)  The corresponding assertion for the given $g$ is
+unavailable, and it is not needed: the only hypothesis in this proof that asks
+for a bound at \emph{every} point of a compact set is the locally uniformly
+bounded clause of \noderef{WeakGradientVectorComp} in Step 2, and Step 2 is fed
+$g'$.
+
+We also record, for use in Step 2, that each $g'^j$ lies in
+$W^{1,2}_{\mathrm{loc}}(\Omega)$ with the \emph{same} weak gradient $Dg^j$ that
+the lemma's hypothesis gives for $g^j$.  By \noderef{MemW1pLocOn} this is two
+assertions, and each is an integral one.  First the identity of
+\noderef{HasWeakGradientOn}: for every $\psi$ in that node's test class and every
+index $i$, $\int_\Omega g^j\,D_i\psi\,dx=-\int_\Omega(Dg^j)_i\,\psi\,dx$;
+since $g^j=g'^j$ almost everywhere on $\Omega$ the two left-hand integrands
+agree almost everywhere, so the integrals are equal and
+$\int_\Omega g'^j\,D_i\psi\,dx=-\int_\Omega(Dg^j)_i\,\psi\,dx$.  Second the
+$L^2$ clauses: for compact $K\subseteq\Omega$, $g'^j=g^j$ almost everywhere on
+$K$ and $Dg^j$ is unchanged, so $g'^j\in L^2(K)$ and $Dg^j\in L^2(K)$ follow
+from the same statements for $g^j$.  Hence
+\[
+g'^j\in W^{1,2}_{\mathrm{loc}}(\Omega)\ \text{ with weak gradient }\ Dg^j
+\qquad(j=1,\dots,n).
+\tag{0}
+\]
+
+\emph{Step 2: the composite $A^i\circ\nabla u$ is in $W^{1,2}_{\mathrm{loc}}$.}
+Fix $i$.  Identify $\R^m$ with $m=n$ and $\R^n$ in the usual way and let
+$F=F^i\colon\R^n\to\R$ be the $i$-th component of $A$, i.e.\
+$F(y)=A^i(y)$.  Then $F$ is of class $C^1$: $A$ is $C^1$ by the paragraph
+above, the identification of $\R^n$ with the Euclidean space carrying $A$'s
+argument is a linear homeomorphism and hence $C^\infty$, and the $i$-th
+coordinate functional is linear and continuous, hence $C^\infty$; so
+$F$ is a composition of $C^1$ and $C^\infty$ maps.
+
+Now apply \noderef{WeakGradientVectorComp} with $m=n$, $q=2$, the open set
+$\Omega$, the family $G_j=g'^j$, the fields $DG_j=Dg^j$, and this $F$.  Its
+hypotheses hold: $1\le n$ and $1\le2$; $\Omega$ is open; for every $j$ we have
+$g'^j\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Dg^j$
+(\noderef{MemW1pLocOn}), which is $(0)$ of Step 1; the family $\{g'^j\}$ is
+locally uniformly bounded by Step 1; and $F$ is $C^1$.  Its conclusion is
+\[
+\Phi'^i=F(g'^1,\dots,g'^n)\in W^{1,2}_{\mathrm{loc}}(\Omega)
+\quad\text{with weak gradient}\quad
+V'^i(x)=\sum_{j=1}^nD_jF\bigl(g'(x)\bigr)\,Dg^j(x) .
+\]
+Transport this back to $g$.  Both $\Phi^i=F(g^1,\dots,g^n)=A^i(g(\cdot))$ and
+$V^i(x)=\sum_jD_jF(g(x))\,Dg^j(x)$ are obtained from $g$ by the same formulas
+that produce $\Phi'^i$ and $V'^i$ from $g'$, so each pair agrees at every point
+where $g=g'$, hence almost everywhere on $\Omega$ by Step 1.  Repeating the
+unfolding of $(0)$ verbatim with $(\Phi'^i,V'^i)$ in place of $(g^j,Dg^j)$ ---
+both sides of the \noderef{HasWeakGradientOn} identity and both $L^2$ clauses of
+\noderef{MemW1pLocOn} are integrals, so each is unchanged when its integrand is
+altered on a null set --- the membership passes to the unprimed pair:
+\[
+\Phi^i=F(g^1,\dots,g^n)\in W^{1,2}_{\mathrm{loc}}(\Omega)
+\quad\text{with weak gradient}\quad
+V^i(x)=\sum_{j=1}^nD_jF\bigl(g(x)\bigr)\,Dg^j(x) ,
+\tag{1}
+\]
+and since $D_jF(y)$ is the $j$-th partial derivative of the $i$-th component of
+$A$, that is $D_jF(g(x))=D_{h_j}A^i(\nabla u(x))$, the $k$-th component of
+$V^i$ is
+\[
+(V^i)_k(x)=\sum_{j=1}^nD_{h_j}A^i(\nabla u(x))\,(Dg^j)_k(x) .
+\tag{2}
+\]
+This is the step the $C^1$ clause buys: with bare differentiability of $A$ the
+hypothesis ``$F$ is $C^1$'' of \noderef{WeakGradientVectorComp} is unavailable.
+
+\emph{Step 3: a weak gradient vanishes off the support.}  We record the
+following, for an arbitrary pair, because it is used twice below.  Let
+$\psi_0\in W^{1,2}(\Omega)$ have weak gradient $g_0$ (\noderef{MemW1pOn} at the
+exponent $2$) and compact support with
+$L=\operatorname{supp}\psi_0\subseteq\Omega$.  Then
+\[
+g_0=0\qquad\text{almost everywhere on }\Omega\setminus L .
+\tag{3}
+\]
+Indeed, $U=\Omega\setminus L$ is open, being the intersection of the open
+$\Omega$ with the complement of the closed $L$.  Let $\psi\in C^\infty(\R^n)$
+have compact support with $\operatorname{supp}\psi\subseteq U$, and fix an index
+$i$.  Then $\psi$ is also admissible for $\Omega$, and the defining identity of
+\noderef{HasWeakGradientOn} for the pair $(\psi_0,g_0)$ on $\Omega$, available
+from \noderef{MemW1pOn}, gives
+$\int_\Omega\psi_0\,D_i\psi=-\int_\Omega(g_0)_i\,\psi$.  The left-hand side is
+$0$: the integrand vanishes off $\operatorname{supp}\psi$, and on
+$\operatorname{supp}\psi\subseteq U$ we have $\psi_0=0$, because $\psi_0$
+vanishes at every point outside $L=\operatorname{supp}\psi_0$.  Hence
+$\int_{\R^n}\psi\,(g_0)_i=0$ for every such $\psi$, the integral over $\Omega$
+and over $\R^n$ agreeing because the integrand vanishes off
+$\operatorname{supp}\psi\subseteq U\subseteq\Omega$.  Moreover $(g_0)_i$ is
+locally integrable on $U$: for compact $K'\subseteq U\subseteq\Omega$ we have
+$|g_0|\in L^2(K')$ by \noderef{MemW1pOn} at exponent $2$, hence
+$|g_0|\in L^1(K')$ by H\"older on a set of finite measure (Preamble), and
+$|(g_0)_i|\le|g_0|$.  The fundamental lemma of the calculus of variations
+(Preamble), whose test class is exactly the one just used, therefore gives
+$(g_0)_i=0$ almost everywhere on $U$.  As $i$ was arbitrary, (3) follows.
+
+\emph{Step 4: (1.2) of the thesis extends to the $W^{1,2}$ test class with compact
+support.}  We claim that for every pair $(\psi_0,g_0)$ as in Step 3, that is
+every $\psi_0\in W^{1,2}(\Omega)$ with weak gradient $g_0$
+(\noderef{MemW1pOn}) and compact support
+$L=\operatorname{supp}\psi_0\subseteq\Omega$,
+\[
+\int_\Omega\sum_{i=1}^n\Phi^i\,(g_0)_i\,dx=0 .
+\tag{4}
+\]
+This is the only place where the enlarged test class of the present statement is
+earned, and it is the reason the $W^{1,p}$ hypothesis is not needed.
+
+If $L=\emptyset$ then $\psi_0$ vanishes identically, so $g_0=0$ almost
+everywhere on $\Omega$ by (3) and (4) is immediate.  Assume $L\ne\emptyset$.
+Apply \noderef{WeakGradientSmoothApprox} with this $n$, the exponent $q=2$, the
+open set $\Omega$ and the pair $(\psi_0,g_0)$: its hypotheses are $1\le n$
+(from $n\ge2$), $1\le2$, openness of $\Omega$, $\psi_0\in W^{1,2}(\Omega)$ with
+weak gradient $g_0$, compactness of the support and
+$\operatorname{supp}\psi_0\subseteq\Omega$, all of which hold.  It produces a
+compact $K\subseteq\Omega$ with $L\subseteq K$ and functions
+$\Psi_m\in C^\infty(\R^n)$, each with compact support contained in $K$, such
+that
+\[
+\int_K|\Psi_m-\psi_0|^2dx\longrightarrow0
+\qquad\text{and}\qquad
+\int_K\bigl|D_i\Psi_m-(g_0)_i\bigr|^2dx\longrightarrow0
+\quad(m\to\infty)
+\tag{5}
+\]
+for every index $i$.
+
+Each $\Psi_m$ is admissible in (1.2) of the thesis.  Indeed
+\noderef{SmoothCompactSupportMemW1p} applies with the exponent $r=p$ --- its
+hypotheses are $1\le n$, $1\le p$ (from $p>1$), openness of $\Omega$,
+smoothness of $\Psi_m$, compactness of its support and
+$\operatorname{supp}\Psi_m\subseteq K\subseteq\Omega$ --- and gives
+$\Psi_m\in W^{1,p}(\Omega)$ with weak gradient the classical gradient
+$\nabla\Psi_m$ (\noderef{MemW1pOn}).  So the weak formulation of
+\noderef{IsWeakSolutionOn}, whose test class is ``$W^{1,p}(\Omega)$ with weak
+gradient, compact support, support inside $\Omega$'' and whose inhomogeneity is
+$B\equiv0$, gives
+\[
+\int_\Omega\sum_{i=1}^n\Phi^i\,(D_i\Psi_m)\,dx=0\qquad\text{for every }m .
+\tag{6}
+\]
+
+Now pass to the limit.  First, $\Phi$ is bounded almost everywhere on $K$, and
+that is all the estimate below uses.  By Step 1 the map $g'$ is continuous on
+$\Omega$, so $|g'|$ attains a finite maximum $R_K$ on the compact
+$K\subseteq\Omega$; the closed ball $\{y:|y|\le R_K\}$ is compact and $A$ is
+continuous, being $C^1$, so $|A|$ is bounded on it, and therefore
+$\Phi'^i=A^i(g'(\cdot))$ satisfies
+$\sup_{x\in K}\max_i|\Phi'^i(x)|<\infty$.  Since $g=g'$ almost everywhere on
+$\Omega$ we have $\Phi^i=\Phi'^i$ almost everywhere on $\Omega$, so there is a
+finite $M$ with
+\[
+\max_{1\le i\le n}|\Phi^i(x)|\le M\qquad\text{for almost every }x\in K ,
+\]
+which dominates exactly as an everywhere bound would in the integral estimate
+below.  Each $\Phi^i$ is also measurable on $K$: $\Phi'^i$ is continuous there,
+being the composition of the continuous $A^i$ with the continuous $g'$, and
+$\Phi^i=\Phi'^i$ almost everywhere, so $\Phi^i$ is almost everywhere equal on
+$K$ to a continuous function.  Second, both integrals in (6) and (4) are
+integrals over $K$: each $D_i\Psi_m$ vanishes off $\operatorname{supp}\Psi_m
+\subseteq K$, because $\Psi_m$ vanishes identically on the open complement of
+its support and a function constant on an open set has vanishing derivative
+there; and $(g_0)_i=0$ almost everywhere on $\Omega\setminus K$ by (3),
+since $\Omega\setminus K\subseteq\Omega\setminus L$.  Third, all the integrals
+below are finite: $\Phi^i$ is bounded on $K$, each $D_i\Psi_m$ is continuous
+hence bounded, and $(g_0)_i\in L^2(K)\subseteq L^1(K)$ by H\"older on a set of
+finite measure (Preamble), $|K|<\infty$.  Therefore
+\[
+\Bigl|\int_K\sum_{i=1}^n\Phi^i\bigl[D_i\Psi_m-(g_0)_i\bigr]dx\Bigr|
+\le M\sum_{i=1}^n\int_K\bigl|D_i\Psi_m-(g_0)_i\bigr|dx
+\le M\sum_{i=1}^n|K|^{1/2}\Bigl(\int_K\bigl|D_i\Psi_m-(g_0)_i\bigr|^2dx\Bigr)^{1/2},
+\]
+the second inequality being H\"older on the finite-measure set $K$ with the
+conjugate exponents $2$ and $2$ (Preamble).  By (5) each of the $n$ summands
+tends to $0$, so the left-hand side does.  Combining with (6), whose left-hand
+side is $0$ for every $m$ and equals $\int_K\sum_i\Phi^iD_i\Psi_m$, we get
+$\int_K\sum_i\Phi^i(g_0)_i=0$, hence (4).  This proves the claim.
+
+\emph{Step 5: geometry and the cut-off.}  If $K_0=\emptyset$ then $\varphi$
+vanishes identically, so $g_\varphi=0$ almost everywhere on $\Omega$ by (3),
+the asserted integrand vanishes almost everywhere, and the integral is $0$.
+Assume therefore $K_0\ne\emptyset$.  The set $K_0$ is compact,
+$\R^n\setminus\Omega$ is closed, and the two are disjoint, so
+$d=\operatorname{dist}(K_0,\R^n\setminus\Omega)>0$ (with $d=+\infty$ when
+$\Omega=\R^n$).  Fix $\delta>0$ with $4\delta<d$ and for $s>0$ put
+$K_s=\{x:\operatorname{dist}(x,K_0)\le s\}$, which is closed and bounded, hence
+compact, and satisfies $K_s\subseteq\Omega$ for $s\le3\delta$.  By (3) applied
+to $(\varphi,g_\varphi)$, whose support is $K_0$, we have $g_\varphi=0$ almost
+everywhere on $\Omega\setminus K_0$; put
+\[
+\widehat g_\varphi=g_\varphi\,\chi_{K_0},
+\]
+so that $\widehat g_\varphi=g_\varphi$ almost everywhere on $\Omega$ and
+$\widehat g_\varphi$ vanishes everywhere off $K_0$.
+
+\emph{The cut-off.}  Fix
+$\rho\in C^\infty(\R^n)$ with $\rho\ge0$,
+$\operatorname{supp}\rho\subseteq\overline{B_1(0)}$ and $\int_{\R^n}\rho=1$ (the
+standard choice $\rho(z)=c\exp(1/(|z|^2-1))$ for $|z|<1$ and $0$ otherwise), and
+put $\rho_\delta(z)=\delta^{-n}\rho(z/\delta)$, so that $\rho_\delta\in
+C^\infty$, $\rho_\delta\ge0$,
+$\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}$ and
+$\int\rho_\delta=1$.  Define
+\[
+\chi=\chi_{K_{2\delta}}*\rho_\delta,
+\qquad
+\chi(x)=\int_{\R^n}\chi_{K_{2\delta}}(y)\rho_\delta(x-y)\,dy .
+\]
+Then: $\chi\in C^\infty(\R^n)$, by the Preamble item on convolution with a
+smooth compactly supported kernel, $\chi_{K_{2\delta}}$ being bounded with
+compact support and hence locally integrable.  $0\le\chi\le1$, because
+$\rho_\delta\ge0$ integrates to $1$ and $0\le\chi_{K_{2\delta}}\le1$.
+$\chi=1$ on the open set $\{x:\operatorname{dist}(x,K_0)<\delta\}$: for such
+$x$ and $|x-y|\le\delta$ one has
+$\operatorname{dist}(y,K_0)\le|x-y|+\operatorname{dist}(x,K_0)<2\delta$, so
+$y\in K_{2\delta}$ and the integrand is $\rho_\delta(x-y)$, whose integral is
+$1$.  Consequently $\chi$ is constant on that open set and all its partial
+derivatives vanish there.  Finally $\chi=0$ off $K_{3\delta}$: if
+$\operatorname{dist}(x,K_0)>3\delta$ and $|x-y|\le\delta$ then
+$\operatorname{dist}(y,K_0)>2\delta$, so $y\notin K_{2\delta}$ and the
+integrand vanishes.  Hence $\operatorname{supp}\chi\subseteq
+K_{3\delta}\subseteq\Omega$ is compact.
+
+\emph{Step 6: the translated test function and the exact difference identity.}
+Fix $h$ with $0<|h|\le\delta$ and set
+\[
+\varphi_h=\varphi(\cdot-he_k),
+\qquad
+G_h=\widehat g_\varphi(\cdot-he_k).
+\]
+We claim $(\varphi_h,G_h)$ satisfies the hypotheses of Step 4, i.e.\ that
+$\varphi_h\in W^{1,2}(\Omega)$ with weak gradient $G_h$
+(\noderef{MemW1pOn}), $\varphi_h$ has compact support and
+$\operatorname{supp}\varphi_h\subseteq\Omega$.
+
+\emph{Support.}  $\varphi_h$ vanishes off $K_0+he_k$, which is compact, and
+$\operatorname{dist}(x+he_k,K_0)\le|h|\le\delta$ gives
+$K_0+he_k\subseteq K_\delta\subseteq\Omega$.  Likewise $G_h$ vanishes off
+$K_0+he_k$.
+
+\emph{The $L^2$ memberships.}  The functions $\varphi$ and $g_\varphi$ are
+almost everywhere strongly measurable on $\Omega$ by \noderef{MemW1pOn}, and
+translation preserves Lebesgue measurability (Preamble), so $\varphi_h$ and
+$G_h$ are measurable.  By translation invariance of Lebesgue measure
+(Preamble) and because the integrands vanish off $K_0+he_k\subseteq\Omega$ resp.\
+$K_0\subseteq\Omega$,
+\[
+\int_\Omega|\varphi_h|^2\,dx=\int_{\R^n}|\varphi(x-he_k)|^2\,dx
+=\int_{\R^n}|\varphi|^2\,dy=\int_\Omega|\varphi|^2\,dy<\infty,
+\]
+the last integral finite by \noderef{MemW1pOn} at exponent $2$; and the same
+computation with $|\widehat g_\varphi|\le|g_\varphi|$ in place of $\varphi$ gives
+$\int_\Omega|G_h|^2<\infty$.
+
+\emph{The weak-gradient identity.}  Let $\psi\in C^\infty(\R^n)$ have compact
+support with $\operatorname{supp}\psi\subseteq\Omega$ and fix an index $i$.  Put
+$\widehat\psi=\psi(\cdot+he_k)$, again $C^\infty$ with compact support, and note
+$D_i\widehat\psi=(D_i\psi)(\cdot+he_k)$.  Then
+\[
+\int_\Omega\varphi_h\,D_i\psi\,dx
+=\int_{\R^n}\varphi(x-he_k)(D_i\psi)(x)\,dx
+=\int_{\R^n}\varphi(y)\,(D_i\psi)(y+he_k)\,dy
+=\int_{\R^n}\varphi\,D_i\widehat\psi\,dy ,
+\]
+the first equality because the integrand vanishes off $K_0+he_k\subseteq\Omega$
+and the second by translation invariance (Preamble).  Next,
+$\varphi$ vanishes off $K_0$, and on the open set
+$\{\operatorname{dist}(\cdot,K_0)<\delta\}\supseteq K_0$ we have $\chi=1$ and
+$D_i\chi=0$ by Step 5, so there
+$D_i(\chi\widehat\psi)=\chi D_i\widehat\psi+\widehat\psi D_i\chi
+=D_i\widehat\psi$; hence the two integrands $\varphi D_i\widehat\psi$ and
+$\varphi D_i(\chi\widehat\psi)$ agree everywhere and
+\[
+\int_{\R^n}\varphi\,D_i\widehat\psi
+=\int_{\R^n}\varphi\,D_i\bigl(\chi\widehat\psi\bigr)
+=\int_\Omega\varphi\,D_i\bigl(\chi\widehat\psi\bigr) ,
+\]
+the last equality because the integrand vanishes off $K_0\subseteq\Omega$.  The
+function $\chi\widehat\psi$ is $C^\infty$, has compact support contained in
+$\operatorname{supp}\chi$, and $\operatorname{supp}(\chi\widehat\psi)\subseteq
+\operatorname{supp}\chi\subseteq\Omega$, so it is admissible in
+\noderef{HasWeakGradientOn} for $\Omega$.  Applying the defining identity for
+$(\varphi,g_\varphi)$, available from \noderef{MemW1pOn},
+\[
+\int_\Omega\varphi\,D_i\bigl(\chi\widehat\psi\bigr)
+=-\int_\Omega(g_\varphi)_i\,\chi\widehat\psi
+=-\int_\Omega(\widehat g_\varphi)_i\,\widehat\psi ,
+\]
+the last equality because $g_\varphi=\widehat g_\varphi$ almost everywhere on
+$\Omega$ by Step 5, $\widehat g_\varphi$ vanishes off $K_0$, and $\chi=1$ on
+$K_0$.  Undoing the translation exactly as above,
+\[
+-\int_\Omega(\widehat g_\varphi)_i\,\widehat\psi
+=-\int_{\R^n}(\widehat g_\varphi)_i(y)\,\psi(y+he_k)\,dy
+=-\int_{\R^n}(G_h)_i(x)\,\psi(x)\,dx
+=-\int_\Omega(G_h)_i\,\psi ,
+\]
+using translation invariance again and that the integrands vanish off
+$K_0\subseteq\Omega$ resp.\ $K_0+he_k\subseteq\Omega$.  Chaining the four
+displays gives
+$\int_\Omega\varphi_h D_i\psi=-\int_\Omega(G_h)_i\psi$ for every admissible
+$\psi$ and every $i$, which is \noderef{HasWeakGradientOn} for
+$(\varphi_h,G_h)$ on $\Omega$.  Together with the $L^2$ memberships this proves
+the claim.
+
+Now apply (4) of Step 4 twice: to the pair $(\varphi,g_\varphi)$, which lies in
+$W^{1,2}(\Omega)$ with weak gradient $g_\varphi$ and compact support
+$K_0\subseteq\Omega$ by hypothesis, and to the pair $(\varphi_h,G_h)$ just
+shown to satisfy the same hypotheses with support $K_0+he_k\subseteq\Omega$.
+This gives
+\[
+\int_\Omega\sum_{i=1}^n\Phi^i(x)\,(g_\varphi)_i(x)\,dx=0,
+\qquad
+\int_\Omega\sum_{i=1}^n\Phi^i(x)\,(G_h)_i(x)\,dx=0 .
+\]
+In the first integral replace $g_\varphi$ by $\widehat g_\varphi$ (they agree
+almost everywhere on $\Omega$ by Step 5) and restrict to $K_0$, off which
+$\widehat g_\varphi$ vanishes; in the second substitute $x=y+he_k$ by
+translation invariance (Preamble) and restrict to $K_0$, off which $G_h(y+he_k)
+=\widehat g_\varphi(y)$ vanishes.  We obtain
+\[
+\int_{K_0}\sum_i\Phi^i(y)\,(\widehat g_\varphi)_i(y)\,dy=0,
+\qquad
+\int_{K_0}\sum_i\Phi^i(y+he_k)\,(\widehat g_\varphi)_i(y)\,dy=0 .
+\]
+Both integrals are finite: $K_\delta\subseteq\Omega$ is compact, so $g'$ is
+bounded on $K_\delta$ by Step 1 and $A$ is continuous, whence each $\Phi'^i$ is
+bounded on $K_\delta$, and $\Phi^i=\Phi'^i$ almost everywhere gives the same
+bound for $\Phi^i$ almost everywhere on $K_\delta$, which is what the
+integrals need; and $(\widehat g_\varphi)_i\in L^1(K_0)$ because
+$|g_\varphi|\in L^2(K_0)\subseteq L^1(K_0)$ by H\"older on a set of finite
+measure (Preamble).  For
+$y\in K_0$ we have $y+he_k\in K_\delta$, so the second integrand is bounded as
+well.  Subtracting and dividing by $h\ne0$,
+\[
+\int_{K_0}\sum_{i=1}^n\frac{\Phi^i(y+he_k)-\Phi^i(y)}{h}\,(\widehat
+g_\varphi)_i(y)\,dy=0
+\qquad(0<|h|\le\delta).
+\tag{7}
+\]
+
+\emph{Step 7: passing to the limit $h\to0$.}  Fix $i$.  By Step 2 we have
+$\Phi^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $V^i$, and
+$K_0\subseteq\Omega$ is compact, so
+\noderef{WeakGradientDifferenceQuotient} applies with $q=2$, the open set
+$\Omega$, the function $\Phi^i$, its weak gradient $V^i$, the compact set $K_0$
+and the index $k$, giving
+\[
+\int_{K_0}\Bigl|\frac{\Phi^i(y+he_k)-\Phi^i(y)}{h}-(V^i)_k(y)\Bigr|^2dy
+\longrightarrow0\qquad(h\to0,\ h\ne0).
+\]
+Also $(\widehat g_\varphi)_i\in L^2(K_0)$: indeed $|g_\varphi|\in L^2(\Omega)$ by
+\noderef{MemW1pOn} at exponent $2$, and $|(\widehat g_\varphi)_i|\le|g_\varphi|$.
+Hence by the Cauchy--Schwarz inequality for the integral, which is H\"older with
+the conjugate exponents $2$ and $2$ on $K_0$ (Preamble),
+\[
+\Bigl|\int_{K_0}\sum_i\Bigl[\frac{\Phi^i(\cdot+he_k)-\Phi^i}{h}-(V^i)_k\Bigr]
+(\widehat g_\varphi)_i\Bigr|
+\le\sum_i\Bigl\|\frac{\Phi^i(\cdot+he_k)-\Phi^i}{h}-(V^i)_k\Bigr\|_{L^2(K_0)}
+\bigl\|(\widehat g_\varphi)_i\bigr\|_{L^2(K_0)},
+\]
+a finite sum of products each of which tends to $0$.  Combining with (7), whose
+left-hand side is $0$ for every $h$ with $0<|h|\le\delta$, and letting $h\to0$
+along such $h$,
+\[
+\int_{K_0}\sum_{i=1}^n(V^i)_k\,(\widehat g_\varphi)_i\,dy=0 .
+\]
+The integrand vanishes off $K_0$ and $\widehat g_\varphi=g_\varphi$ almost
+everywhere on $\Omega$, so this says
+\[
+\int_\Omega\sum_{i=1}^n(V^i)_k\,(g_\varphi)_i\,dx=0 .
+\tag{8}
+\]
+
+\emph{Step 8: restoring the thesis' index order.}  By Step 1 we have
+$u\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$, and by hypothesis
+each $g^i\in W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Dg^i$
+(\noderef{MemW1pLocOn}); $\Omega$ is open, $1\le n$ and $1\le2$.  So
+\noderef{WeakSecondDerivativeSymmetry} applies at $q=2$ and gives, for each pair
+$(j,k)$,
+\[
+(Dg^k)_j=(Dg^j)_k\qquad\text{almost everywhere on }\Omega .
+\]
+There are finitely many pairs $(j,k)$, so the union of the corresponding null
+sets is null and all $n^2$ identities hold simultaneously almost everywhere on
+$\Omega$.  Substituting into (2), for almost every $x\in\Omega$
+\[
+\sum_{i=1}^n(V^i)_k(x)\,(g_\varphi)_i(x)
+=\sum_{i=1}^n\sum_{j=1}^nD_{h_j}A^i(\nabla u(x))\,(Dg^k)_j(x)\,(g_\varphi)_i(x) ,
+\]
+and two integrands agreeing almost everywhere have the same integral.  With (8)
+this is exactly the assertion
+\[
+\int_\Omega\Bigl\{\sum_{i,j=1}^nD_{h_j}A^i(\nabla u)\,D_jD_ku\,D_i\varphi\Bigr\}dx=0 ,
+\]
+since $D_jD_ku=(Dg^k)_j$ and $D_i\varphi=(g_\varphi)_i$.
+\end{proof}

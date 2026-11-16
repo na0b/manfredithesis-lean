@@ -1,0 +1,181 @@
+\begin{lemma}[Zero extension of a compactly supported Sobolev function]
+Let $n\ge1$ and $q\ge1$, let $\Omega\subseteq\R^n$ be open, let
+$x_0\in\R^n$, let $r\in\R$ and write $B_r=B_r(x_0)$ with
+$B_r\subseteq\Omega$.  Let $\varphi\colon\R^n\to\R$ and
+$g_\varphi\colon\R^n\to\R^n$ be such that
+$\varphi\in W^{1,q}(B_r)$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}), and suppose $\varphi$ has compact support with
+$\operatorname{supp}\varphi\subseteq B_r$.  Then
+\[
+\varphi\in W^{1,q}(\Omega)\quad\text{with weak gradient}\quad
+\mathbf1_{B_r}\,g_\varphi ,
+\]
+the field equal to $g_\varphi$ on $B_r$ and to $0$ off $B_r$.
+
+The weak gradient in the conclusion is the \emph{zero extension} of
+$g_\varphi$, and this is not a cosmetic choice: the hypothesis says nothing
+whatever about the values of $g_\varphi$ off $B_r$, so the conclusion cannot be
+stated with $g_\varphi$ itself.  With the zero extension the conclusion is
+sharp, because on $B_r$ the two fields agree and off $B_r$ the function
+$\varphi$ vanishes identically, so its weak gradient there must vanish almost
+everywhere as well.
+
+No hypothesis $r>0$ is needed: if $r\le0$ then $B_r=\emptyset$, the support
+condition forces $\varphi\equiv0$, and the conclusion still holds, as the proof
+notes.  The compact support hypothesis cannot be dropped --- without it the
+extension of $\varphi$ by $0$ acquires a jump across $\partial B_r$ and has no
+weak gradient in $L^q$ --- and it is exactly what the consumers have: they
+extend test functions, not solutions.
+
+The statement is abstract in $\varphi$: no operator, no solution, neither
+structure condition.  It is stated for the project's own predicates because,
+by the standing dividing line, facts about \noderef{HasWeakGradientOn} and
+\noderef{MemW1pOn} are nodes rather than Preamble background.
+\end{lemma}
+\begin{proof}
+Write $K=\operatorname{supp}\varphi$, a compact subset of $B_r$, and
+$G=\mathbf1_{B_r}g_\varphi$.  A test function for an open set $U$ means a
+function in $C^\infty(\R^n)$ with compact support contained in $U$, the test
+class of \noderef{HasWeakGradientOn}, and $D_i$ is the derivative in the
+direction of the $i$-th standard basis vector.  Note at the outset that
+$\varphi$ vanishes off $K$, hence off $B_r$.
+
+\emph{Step 1: the two $L^q$ clauses.}  By the second and third clauses of
+\noderef{MemW1pOn} on $B_r$, $\varphi\in L^q(B_r)$ and
+$|g_\varphi|\in L^q(B_r)$.  Since $\varphi$ vanishes off $B_r$ we have
+$\mathbf1_{B_r}\varphi=\varphi$, so by the Preamble's transport fact
+``$f\in L^q(E)$ if and only if $\mathbf1_Ef\in L^q(\R^n)$'' (with
+$E=B_r$, which is measurable) we get $\varphi\in L^q(\R^n)$, and then
+$\varphi\in L^q(\Omega)$ by restriction to the subset $\Omega\subseteq\R^n$
+(Preamble, same item).  For the field, the same transport fact applied to
+$|g_\varphi|\in L^q(B_r)$ gives $|G|=\mathbf1_{B_r}|g_\varphi|\in L^q(\R^n)$ and
+hence $|G|\in L^q(\Omega)$.  ($G$ is measurable, being the product of the
+measurable $g_\varphi$ with the indicator of a measurable set.)
+
+\emph{Step 2: $g_\varphi$ vanishes almost everywhere on $B_r\setminus K$.}  Put
+$V=B_r\setminus K$, an open set, being the intersection of the open $B_r$ with
+the complement of the closed $K$.  Fix $i\in\{1,\dots,n\}$ and let $\theta$ be a
+test function for $V$.  Since $V\subseteq B_r$, $\theta$ is a test function for
+$B_r$, so the defining identity of \noderef{HasWeakGradientOn} on $B_r$ gives
+\[
+\int_{B_r}\varphi\,D_i\theta\,dx=-\int_{B_r}g_\varphi^i\,\theta\,dx .
+\]
+The left-hand integrand vanishes identically: off $\operatorname{supp}\theta$
+because $\theta$, and hence $D_i\theta$, vanishes there; and on
+$\operatorname{supp}\theta\subseteq V$ because $V$ is disjoint from $K$ and
+$\varphi$ vanishes off $K$.  Hence
+\[
+\int_{B_r}g_\varphi^i\,\theta\,dx=0 .
+\]
+Moreover $g_\varphi^i\theta$ vanishes off
+$\operatorname{supp}\theta\subseteq V\subseteq B_r$, so the integral of
+$\theta\,g_\varphi^i$ over $\R^n$ equals the integral just shown to vanish ---
+again because an integral over a set depends on the integrand only through its
+product with that set's indicator, and the three indicators of
+$\operatorname{supp}\theta$, $B_r$ and $\R^n$ agree against this integrand.  So
+\[
+\int_{\R^n}\theta\,g_\varphi^i\,dx=0
+\qquad\text{for every test function }\theta\text{ for }V .
+\]
+The component $g_\varphi^i$ is locally integrable on $V$: $V$ is open, so every
+point of $V$ has a closed ball neighbourhood $K''\subseteq V$, which is compact;
+$K''\subseteq B_r$, so $|g_\varphi|\in L^q(B_r)$ gives $g_\varphi^i\in L^q(K'')$
+by restriction to a subset (Preamble), and $|K''|<\infty$ with $q\ge1$ gives
+$g_\varphi^i\in L^1(K'')$ by H\"older on a set of finite measure (Preamble).
+The fundamental lemma of the calculus of variations (du Bois--Reymond,
+Preamble), applied on the open set $V$ to the locally integrable function
+$g_\varphi^i$, now gives $g_\varphi^i=0$ almost everywhere on $V$.  As $i$ was
+arbitrary,
+\[
+g_\varphi=0\quad\text{almost everywhere on }V=B_r\setminus K .
+\tag{1}
+\]
+
+\emph{Step 3: the degenerate case.}  If $K=\emptyset$ then $\varphi\equiv0$, and
+$(1)$ --- whose proof nowhere used $K\ne\emptyset$ --- gives $g_\varphi=0$ almost
+everywhere on $B_r$, hence $G=0$ almost everywhere on $\R^n$.  For any test
+function $\psi$ for $\Omega$ and any $i$ both sides of the identity
+$\int_\Omega\varphi D_i\psi=-\int_\Omega G^i\psi$ are then $0$, so
+$\mathrm{HasWeakGradientOn}(n,\Omega,\varphi,G)$ holds and, with Step 1, the
+lemma follows.  (This covers $r\le0$, where $B_r=\emptyset$ forces
+$K=\emptyset$.)  Assume from now on $K\ne\emptyset$.
+
+\emph{Step 4: a cut-off that is $1$ near $K$ and supported in $B_r$.}  The set
+$K$ is compact, $B_r$ is open and $K\subseteq B_r$, and $\R^n\setminus B_r$ is
+nonempty and closed ($B_r$ is bounded and $\R^n$ is not), so
+\[
+d=\operatorname{dist}\bigl(K,\R^n\setminus B_r\bigr)>0 ,
+\]
+the distance between a nonempty compact set and a disjoint nonempty closed set
+being positive.  Fix $\delta>0$ with $4\delta<d$ and write
+$K_s=\{x:\operatorname{dist}(x,K)\le s\}$ for $s>0$; then $K_{3\delta}$ is
+compact (closed and bounded) and $K_{3\delta}\subseteq B_r$, since
+$\operatorname{dist}(x,K)\le3\delta<d$ puts $x$ in $B_r$.  Let $\rho_\delta$ be
+the standard mollifier of the Preamble at scale $\delta$ and set
+\[
+\chi=\mathbf1_{K_{2\delta}}*\rho_\delta .
+\]
+By the Preamble item on convolution with a smooth compactly supported kernel
+(the indicator being locally integrable), $\chi\in C^\infty(\R^n)$, and
+$0\le\chi\le1$ because $\rho_\delta\ge0$ has integral $1$.  If
+$\operatorname{dist}(x,K)\le\delta$ then for every $y$ with $|y|\le\delta$ we
+have $\operatorname{dist}(x-y,K)\le2\delta$, so the integrand defining
+$\chi(x)$ is $\rho_\delta(y)$ throughout the support of $\rho_\delta$ and
+$\chi(x)=1$; thus
+\[
+\chi\equiv1\ \text{ on the open set }W=\{x:\operatorname{dist}(x,K)<\delta\}
+\supseteq K ,
+\qquad\text{so } D_i\chi\equiv0\ \text{ on } W .
+\]
+If $\operatorname{dist}(x,K)>3\delta$ then for every $y$ with $|y|\le\delta$ we
+have $\operatorname{dist}(x-y,K)>2\delta$, so the integrand vanishes and
+$\chi(x)=0$; thus $\{\chi\ne0\}\subseteq K_{3\delta}$, and as $K_{3\delta}$ is
+closed, $\operatorname{supp}\chi\subseteq K_{3\delta}\subseteq B_r$ is compact.
+
+\emph{Step 5: the weak-gradient identity on $\Omega$.}  Let $\psi$ be a test
+function for $\Omega$ and let $i\in\{1,\dots,n\}$.  The product $\chi\psi$ is
+$C^\infty$, and $\{\chi\psi\ne0\}\subseteq\operatorname{supp}\chi$, so
+$\operatorname{supp}(\chi\psi)\subseteq\operatorname{supp}\chi\subseteq B_r$ is
+compact: $\chi\psi$ is a test function for $B_r$.  The defining identity of
+\noderef{HasWeakGradientOn} on $B_r$ therefore gives
+\[
+\int_{B_r}\varphi\,D_i(\chi\psi)\,dx=-\int_{B_r}g_\varphi^i\,\chi\psi\,dx .
+\tag{2}
+\]
+We identify the two sides.
+
+\emph{The left-hand side.}  Both factors being smooth, the product rule gives
+$D_i(\chi\psi)=\chi\,D_i\psi+\psi\,D_i\chi$ at every point, so
+\[
+\varphi\,D_i(\chi\psi)=\varphi\,\chi\,D_i\psi+\varphi\,\psi\,D_i\chi .
+\]
+At a point of $K$ we have $\chi=1$ and $D_i\chi=0$, by Step 4 and
+$K\subseteq W$; at a point off $K$ we have $\varphi=0$.  Hence
+$\varphi\,D_i(\chi\psi)=\varphi\,D_i\psi$ at every point of $\R^n$, and so the
+left-hand side of $(2)$ equals $\int_{B_r}\varphi\,D_i\psi\,dx$.  That integrand
+vanishes off $K\subseteq B_r\subseteq\Omega$, so --- the indicators of $B_r$ and
+of $\Omega$ agreeing against it --- it equals
+$\int_\Omega\varphi\,D_i\psi\,dx$.
+
+\emph{The right-hand side.}  On $K$ we have $\chi=1$, and on
+$V=B_r\setminus K$ we have $g_\varphi=0$ almost everywhere by $(1)$; hence
+$g_\varphi^i\,\chi\psi=g_\varphi^i\,\psi$ almost everywhere on $B_r$.  Both are
+integrable on $B_r$: $|B_r|<\infty$ and $q\ge1$ give
+$g_\varphi^i\in L^1(B_r)$ by H\"older on a set of finite measure (Preamble),
+while $\psi$ and $\chi\psi$ are bounded, so each product is dominated by a
+constant multiple of $|g_\varphi^i|\in L^1(B_r)$ (Preamble item on domination).
+Two integrable functions that agree almost everywhere have the same integral, so
+the right-hand side of $(2)$ equals $-\int_{B_r}g_\varphi^i\,\psi\,dx$.  Finally
+$G^i\psi$ vanishes off $B_r$ and equals $g_\varphi^i\psi$ on $B_r$, so by the
+indicator argument once more
+$\int_{B_r}g_\varphi^i\psi\,dx=\int_\Omega G^i\psi\,dx$.
+
+Combining the two identifications with $(2)$,
+\[
+\int_\Omega\varphi\,D_i\psi\,dx=-\int_\Omega G^i\,\psi\,dx .
+\]
+As $\psi$ and $i$ were arbitrary, this is
+$\mathrm{HasWeakGradientOn}(n,\Omega,\varphi,G)$.  With Step 1 and
+\noderef{MemW1pOn}, $\varphi\in W^{1,q}(\Omega)$ with weak gradient $G$, which is
+the assertion.
+\end{proof}

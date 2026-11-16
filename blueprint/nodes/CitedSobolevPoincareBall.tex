@@ -1,0 +1,20 @@
+\begin{definition}
+Let $n\ge2$.  The predicate $\mathrm{CitedSobolevPoincareBall}(n)$ is the cited
+result (C6) of the Note for the formalization (Sobolev--Poincar\'e inequality on
+balls):
+
+\emph{there is a constant $C=C(n)>0$ such that for every ball $B_\rho(x_0)$ and
+every $g\in W^{1,1}(B_\rho(x_0))$ with weak gradient $\nabla g$
+(\noderef{MemW1pOn}),}
+\[
+\|g-g_{B_\rho}\|_{L^{n/(n-1)}(B_\rho)}\;\le\;C\int_{B_\rho}|\nabla g|\,dx ,
+\qquad
+g_{B_\rho}=\frac{1}{|B_\rho|}\int_{B_\rho}g\,dx .
+\]
+The left-hand side is written out as
+$\bigl(\int_{B_\rho}|g-g_{B_\rho}|^{n/(n-1)}dx\bigr)^{(n-1)/n}$.  The constant is
+bound before the ball and the function, so it genuinely depends only on $n$.
+This is used as an explicit hypothesis in Lemmas~Lemma~2.2 of the thesis and
+Lemma~4.2 of the thesis, where the paper derives them from it, and is never introduced as
+an axiom.
+\end{definition}

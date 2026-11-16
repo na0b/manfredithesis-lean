@@ -1,0 +1,110 @@
+\begin{helper}[The Ladyzhenskaya inequality on a ball in dimension two]
+Let $n\in\N$ with $2=n$, let $\omega\in\R$ and assume the plumbing below.
+Throughout, $B_\rho(x_0)$ is the open ball, $\operatorname{supp}\Phi$ denotes
+the \emph{closed} support of $\Phi$, the gradient of a smooth $\Phi$ is the
+$\R^n$-valued field $\nabla\Phi(x)=\bigl(D_i\Phi(x)\bigr)_i$ assembled from the
+partial derivatives (which is how the parent and its consumers write it, and
+whose norm is the Euclidean one), all exponents are real so that
+$|\Phi|^{4}=|\Phi|^{2\cdot2}$ and the outer powers $1/4$, $1/2$ are real
+powers, and $\|\cdot\|_{L^r}$ on a set means
+$\bigl(\int|\cdot|^{r}\bigr)^{1/r}$ there.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\omega$ and $|B_r(y)|=\omega r^{n}$ for every $y$ and every
+  $r\ge0$;
+\item[(H2)] the two dictionary identities converting an $\mathrm{eLpNorm}$ into
+  an explicit integral, for a scalar and for a vector field: for $r>0$, a set
+  $S$ and $v\in L^r(S)$,
+  $\bigl(\mathrm{eLpNorm}\,v\,r\,(\mathrm{vol}|_S)\bigr)
+   =\bigl(\int_S|v|^{r}\bigr)^{1/r}$, and likewise with $\|v\|$ in place of
+  $|v|$ for a vector field;
+\item[(H3)] $\|d\Phi(x)\|\le\|\nabla\Phi(x)\|$ for every smooth $\Phi$ and
+  every $x$, comparing the operator norm of the Fréchet derivative with the
+  norm of the assembled gradient;
+\item[(H4)] the two restriction identities: if $v$ vanishes off $B_\rho(x_0)$
+  then its $\mathrm{eLpNorm}$ over $\R^n$ equals its $\mathrm{eLpNorm}$ over
+  $B_\rho(x_0)$, for a scalar and for a vector field;
+\item[(H5)] $\|v\|^{(2:\R)}=\|v\|^{2}$ for every $v$, and
+  $\mathrm{ofReal}\,2=(2:\mathbb{N}_{\ge0})$ as extended reals;
+\item[(H6)] for every smooth compactly supported $\Phi$, the assembled gradient
+  $\nabla\Phi$ is continuous, has compact support, and vanishes off
+  $\operatorname{supp}\Phi$.
+\end{enumerate}
+Then there is $C_1>0$ such that for every $x_0$, every $\rho>0$ and every
+$\Phi$ which is $C^\infty$ with compact support and
+$\operatorname{supp}\Phi\subseteq B_\rho(x_0)$,
+\[
+\Bigl(\int_{B_\rho(x_0)}|\Phi|^{4}\Bigr)^{1/4}
+\ \le\ C_1\,\rho^{1/2}
+  \Bigl(\int_{B_\rho(x_0)}\|\nabla\Phi\|^{2}\Bigr)^{1/2}.
+\]
+In dimension $2$ there is no Sobolev exponent --- $n/(n-2)$ is undefined --- so
+the inequality is stated at the fixed exponent $4$ with the scaling factor
+$\rho^{1/2}$, which is why this case is built by hand rather than read off a
+single embedding, and why its statement is not an instance of the $n\ge3$ one.
+\end{helper}
+\begin{proof}
+Write $B=B_\rho(x_0)$ and let $c$ be the constant of Mathlib's Sobolev
+inequality for the exponent pair $(1,2)$ on $\R^n$ --- the borderline
+Gagliardo--Nirenberg--Sobolev inequality
+$\|v\|_{L^{n/(n-1)}(\R^n)}\le c\,\|dv\|_{L^1(\R^n)}$ for $v$ smooth with
+compact support, whose Sobolev conjugate of $1$ is $n/(n-1)=2$ because $n=2$.
+Note $c\ge0$.  Fix $x_0$, $\rho>0$ and $\Phi$ as in the statement; by (H6) the
+field $\nabla\Phi$ is continuous with compact support, and by the support
+hypothesis both $\Phi$ and $\nabla\Phi$ vanish off $B$, so every integral below
+over $\R^n$ is an integral over $B$ by (H4).  Also $|B|<\infty$.
+
+\emph{Step 1: a Poincaré-type bound for $\Phi$.}  Apply the Sobolev inequality
+to $\Phi$ itself: $\|\Phi\|_{L^2(\R^n)}\le c\,\|d\Phi\|_{L^1(\R^n)}$.  By (H3)
+the right-hand side is at most $c\int_{\R^n}\|\nabla\Phi\|$, which by (H4) is
+$c\int_B\|\nabla\Phi\|$, and Hölder's inequality on the finite-measure set $B$
+with exponents $2$ and $2$ (Preamble) bounds that by
+$c\,|B|^{1/2}\bigl(\int_B\|\nabla\Phi\|^{2}\bigr)^{1/2}$.  Translating the
+left-hand side with the dictionary (H2) and using $|B|=\omega\rho^{2}$ from
+(H1), so that $|B|^{1/2}=\omega^{1/2}\rho$,
+\[
+\Bigl(\int_B|\Phi|^{2}\Bigr)^{1/2}
+\ \le\ c\,\omega^{1/2}\,\rho\Bigl(\int_B\|\nabla\Phi\|^{2}\Bigr)^{1/2}.
+\tag{1}
+\]
+
+\emph{Step 2: the Ladyzhenskaya step.}  Apply the same Sobolev inequality to
+$\Phi^{2}$, which is $C^\infty$ with compact support and vanishes off $B$.  Its
+derivative is $d(\Phi^2)=2\Phi\,d\Phi$, so by (H3)
+$\|d(\Phi^2)(x)\|\le2|\Phi(x)|\,\|\nabla\Phi(x)\|$ pointwise, and
+\[
+\Bigl(\int_B|\Phi|^{4}\Bigr)^{1/2}
+=\bigl\|\Phi^{2}\bigr\|_{L^{2}(B)}
+\le c\int_B\bigl\|d(\Phi^{2})\bigr\|
+\le2c\int_B|\Phi|\,\|\nabla\Phi\|
+\le2c\Bigl(\int_B|\Phi|^{2}\Bigr)^{1/2}
+   \Bigl(\int_B\|\nabla\Phi\|^{2}\Bigr)^{1/2},
+\tag{2}
+\]
+the first equality by the dictionary (H2) at $r=2$ applied to $\Phi^2$ --- note
+$(\Phi^2)^2=|\Phi|^4$ --- and the last step Hölder with exponents $2$ and $2$
+(Preamble).
+
+\emph{Step 3: combining.}  Substituting (1) into (2),
+\[
+\Bigl(\int_B|\Phi|^{4}\Bigr)^{1/2}
+\ \le\ 2c^{2}\omega^{1/2}\,\rho\int_B\|\nabla\Phi\|^{2},
+\]
+and raising to the power $1/2$ --- monotone on $[0,\infty)$ --- gives
+\[
+\Bigl(\int_B|\Phi|^{4}\Bigr)^{1/4}
+\ \le\ \bigl(2c^{2}\omega^{1/2}\bigr)^{1/2}\rho^{1/2}
+  \Bigl(\int_B\|\nabla\Phi\|^{2}\Bigr)^{1/2}.
+\]
+Taking $C_1=\sqrt2\,c\,\omega^{1/4}+1$ --- the $+1$ only to make $C_1>0$ even
+in the degenerate case $c=0$, which costs nothing since the right-hand side is
+nonnegative --- gives the assertion with a constant depending on $n$ and
+$\omega$ alone.
+
+\emph{A remark on the route.}  The manuscript proves (4b) by citing the
+tablet's Poincaré inequality on balls; the proof above instead derives (1) from
+the same borderline Sobolev inequality that (2) uses, at the exponent pair
+$(1,2)$, which in dimension $2$ is available precisely because the Sobolev
+conjugate of $1$ is $2$.  That is why this node needs no Poincaré hypothesis
+and cites no further node: both halves come from one inequality, applied to
+$\Phi$ and to $\Phi^{2}$.
+\end{proof}

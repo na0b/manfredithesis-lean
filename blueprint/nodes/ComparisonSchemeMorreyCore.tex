@@ -1,0 +1,373 @@
+\begin{helper}[The abstract comparison scheme: Morrey, Campanato and H\"older]
+Let $n\ge2$, $p>1$, $0<\tau<n$, $c_0>0$, $W\ge0$, $M\ge0$, $d>0$ and $R_1>0$,
+let $\sigma_2\colon\R\to\R$ be nonnegative, continuous, increasing with
+$\sigma_2(0)=0$, and suppose the Sobolev--Poincar\'e inequality on balls holds in
+dimension $n$ (\noderef{CitedSobolevPoincareBall}).  Write
+$q=\frac n{n-1}$ and $\theta=n+(1-\frac\tau p)\frac n{n-1}$.  Then there are
+$N_1,N_2\ge0$, depending only on these quantities, with the following property.
+
+Let $0\le\varepsilon\le1$, let $\Omega,\Omega'',\Omega'\subseteq\R^n$ be open
+with $\Omega'$ nonempty and a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}) --- which is what the cited Campanato
+embedding (C5) assumed below now requires of it --- $\Omega''$ bounded,
+$\overline{\Omega'}\subseteq\Omega''$ and $\overline{\Omega''}\subseteq\Omega$,
+and with the two separations
+\[
+d\le|x-y|\quad\text{for }x\in\Omega',\ y\notin\Omega'' ,
+\qquad
+d\le|x-y|\quad\text{for }x\in\Omega'',\ y\notin\Omega .
+\]
+Assume the cited Campanato embedding (C5) on $\Omega'$ at the exponent $q$
+(\noderef{CitedCampanatoEmbedding}).  Let $u\in W^{1,p}(\Omega)$ with weak
+gradient $g=\nabla u$ (\noderef{MemW1pOn}) satisfy $|u|\le M$ almost everywhere
+on $\Omega$ and
+\[
+\int_\Omega|u|^p\,dx+\int_\Omega|\nabla u|^p\,dx\le W^p .
+\]
+Assume finally that for every $x_0\in\Omega''$ and every $0<R\le R_1$ with
+$\overline B_R(x_0)\subseteq\Omega$ there is a comparison map
+$v\in W^{1,p}\bigl(B_R(x_0)\bigr)$ with weak gradient $g_v$
+(\noderef{MemW1pOn}) such that
+\begin{align}
+\int_{B_\rho(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+&\le c_0\Bigl(\frac\rho R\Bigr)^{n}\int_{B_R(x_0)}(\varepsilon+|g_v|^2)^{\frac p2}dx
+\qquad(0<\rho\le R),\tag{4.11}\\
+\int_{B_R(x_0)}|\nabla u-g_v|^p\,dx
+&\le\sigma_2(R)\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx .\tag{$\star$}
+\end{align}
+Then
+\begin{itemize}
+\item[(i)] $\|\,|\nabla u|\,\|_{L^{p,n-\tau}(\Omega')}\le N_1$
+  (\noderef{MorreyBoundOn});
+\item[(ii)] $\|u\|_{\mathcal L^{q,\theta}(\Omega')}\le N_2$
+  (\noderef{CampanatoBoundOn});
+\item[(iii)] for each $0\le\eta<1$ there is a function $w$ with $u=w$ almost
+  everywhere on $\Omega'$ and $w\in C^\eta(\overline{\Omega'})$
+  (\noderef{MemHolderOn}).
+\end{itemize}
+
+\noindent\textbf{What this node is, and why it carries all three conclusions.}
+The thesis proves Theorems 3 and 4 and then disposes of Theorems 5 and 6 in one
+sentence: ``In proving Theorems 3 and 4 the only specific properties of $u$, $v$
+and $w$ we needed were contained in Lemma 4.1 and \S3.  Therefore, since we have
+Lemma 5.1, the same proofs of Theorems 3 and 4 give Theorems 5 and 6 below''
+(p.~50).  This node is that sentence made formal: the comparison maps enter only
+through the two displayed estimates (4.11) of the thesis and $(\star)$, and the
+function $u$ only through its Sobolev membership, its $L^\infty$ bound and the
+$W^{1,p}$ datum, so everything the two settings share --- the Morrey decay
+(4.14) of the thesis obtained by iteration, its passage to the Morrey bound (i), the
+passage from (i) to the Campanato bound (ii), and the passage from (ii) to the
+H\"older representative (iii) --- is proved once, here.  What the two theorems
+do \emph{not} share, and therefore keep, is exactly what the thesis' sentence
+names: the construction of the comparison map $v$ from their own structure
+conditions, (F1) of the thesis--(F3) of the thesis in one case and
+(Q1) of the thesis--(Q6) of the thesis in the other, together with the frozen operator,
+the continuous representative and the two constants $c_0$ and $\sigma_2$ that
+Theorem~1 and Lemma~4.1 (respectively Lemma~5.1) supply.
+
+The comparison bundle is \emph{$\tau$-free}: neither (4.11) of the thesis nor
+$(\star)$ mentions $\tau$.  That is what allows (iii) to be proved here, since
+its proof re-runs the argument of (i) and (ii) at a second exponent
+$t\in(0,n)$ depending on $\eta$, with the same bundle.
+
+\noindent\textbf{On the $W$ datum.}  The hypothesis bounds
+$\int_\Omega|u|^p+\int_\Omega|\nabla u|^p$, i.e.\ the genuine Sobolev norm, and
+not $\int_\Omega(1+|\nabla u|^2)^{p/2}dx$.  The latter integrand is pointwise at
+least $1$, so a bound on it would force $W\ge|\Omega|$ and would be
+unsatisfiable when $|\Omega|=\infty$; since the theorems of \S4 and \S5 that
+build this bundle are stated for an arbitrary open $\Omega$, that would make
+them vacuous on instances such as $\Omega=\R^n$, and it would also let the
+constants degrade with $|\Omega|$.  The weighted integral is still available on
+each ball, because $(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for $t\ge0$ gives
+\[
+\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
+\;\le\;2^{\frac p2}\Bigl(|B_R|+\int_{B_R}|\nabla u|^p\,dx\Bigr)
+\;\le\;2^{\frac p2}\bigl(\omega_nR^{\,n}+W^p\bigr),
+\]
+whose right-hand side involves only $n$, $p$, $R$ and $W$.
+\end{helper}
+\begin{proof}
+Throughout, $B_t=B_t(x_0)$ and $\overline B_t=\overline B_t(x_0)$ for the ball
+currently in play, $|E|$ is Lebesgue measure, $\omega_n=|B_1(0)|\in(0,\infty)$
+(the Preamble item on the volume of a ball), and all non-integer powers are real
+powers of nonnegative numbers.  We also write
+\[
+q=\frac n{n-1},\qquad
+\theta=n+q\Bigl(1-\frac\tau p\Bigr)
+=n+\Bigl(1-\frac\tau p\Bigr)\frac n{n-1},
+\]
+so that $q>1$ and $\theta$ is the Campanato exponent of conclusion (ii), and we
+record once the only inequality about $\theta$ that is used:
+\[
+\theta>0 .
+\tag{0}
+\]
+Indeed $n+q=\frac{n^2}{n-1}$ and $\frac{n+q}q=\frac nq+1=n$, so
+$\theta=n+q-\frac{q\tau}p>0$ is equivalent to $\tau<p\,\frac{n+q}q=pn$, which
+holds because $\tau<n$ and $p>1$.
+
+The step numbers below are those of the thesis' proof.  Steps 2--5 there are
+the passage (4.12)--(4.13)--(4.14) from the comparison bundle to the Morrey
+bound for $\nabla u$; that passage has been extracted verbatim into
+\noderef{MorreyBoundFromBundle} and is used here only through its conclusion,
+so no step of that range recurs below.
+
+\emph{Step 1: the constants, chosen before all the data.}  Apply
+\noderef{MorreyBoundFromBundle} with the parameters $n,p,\tau,c_0,W,d,R_1$ and
+the function $\sigma_2$.  Its hypotheses on those parameters are exactly the
+present node's: $n\ge2$, $p>1$, $0<\tau<n$, $c_0>0$, $W\ge0$, $d>0$, $R_1>0$,
+and $\sigma_2$ nonnegative, continuous, increasing with $\sigma_2(0)=0$.  Let
+$N_1\ge0$ be the constant it produces; it depends only on
+$n,p,\tau,c_0,W,d,R_1$ and $\sigma_2$, which is the quantifier order the
+present statement prescribes for it.  Now put
+$N_\flat=\max\bigl\{N_1,\ M\omega_n^{1/q}(d/4)^{n/q}\bigr\}$ and
+  apply \noderef{MorreyGradientToCampanato} (Lemma~4.2) with the parameters
+  $n,p,\tau$, with $N_\flat$ in the role of its $N$ and with $d/8$ in the role
+  of its $d$: its hypotheses $2\le n$, $1<p$, $0<\tau\le n$, $0\le N_\flat$,
+  $0<d/8$ hold, and its hypothesis \noderef{CitedSobolevPoincareBall} is the
+  present node's.  Let $N'\ge0$ be the constant it produces; it depends only on
+  $n,p,\tau,N_\flat$ and $d$.  Finally put
+  \[
+  N_2=2\max\Bigl\{N',\
+  \bigl[M^{(q-p)^{+}}W^{\min\{p,q\}}(d/8)^{-\theta}\bigr]^{1/q},\
+  \bigl[W^q\omega_n^{(1-q/p)^{+}}(d/8)^{\,n(1-q/p)^{+}-\theta}\bigr]^{1/q}\Bigr\}
+  \ \ge0 ,
+  \]
+  where $t^{+}=\max\{t,0\}$.
+
+Every constant named so far is built from $n,p,\tau,c_0,W,M,d,R_1$ and
+$\sigma_2$ alone --- in particular not from
+$\varepsilon,\Omega,\Omega'',\Omega',u,g$ --- which is the quantifier order the
+statement prescribes.  Now fix those data satisfying all the hypotheses.
+
+\emph{Step 6: part (i).}  Apply \noderef{MorreyBoundFromBundle} again, now to
+the data just fixed, at the constant $N_1$ of Step 1.  Its remaining hypotheses
+are the present node's: $0\le\varepsilon\le1$; $\Omega$ and $\Omega''$ open
+with $\Omega''$ bounded and $\overline{\Omega''}\subseteq\Omega$; the
+separation $d\le|x-y|$ for $x\in\Omega''$ and $y\notin\Omega$;
+$u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}); the
+$W$ datum $\int_\Omega|u|^p+\int_\Omega|\nabla u|^p\le W^p$; and the comparison
+bundle, which is the present node's final hypothesis verbatim --- the cited
+node asks for exactly the pair (4.11) of the thesis, $(\star)$ at a comparison map
+$v\in W^{1,p}(B_R(x_0))$ with weak gradient $g_v$, on the same range of
+$(x_0,R)$.  Its conclusion is
+\[
+\|\,|g|\,\|_{L^{p,n-\tau}(\Omega'')}\le N_1
+\qquad(\noderef{MorreyBoundOn}).
+\tag{6}
+\]
+
+Part (i) follows by restriction: $|g|\in L^p(\Omega')$ because $\Omega'\subseteq\Omega''$
+and $|g|\in L^p(\Omega'')$ by the $L^p$ clause of (6), and for
+$x_1\in\Omega'\subseteq\Omega''$ and
+$0<\rho<\operatorname{diam}\Omega'\le\operatorname{diam}\Omega''$
+(the inequality because $\Omega'\subseteq\overline{\Omega'}\subseteq\Omega''$)
+we get
+$\int_{\Omega'\cap B_\rho(x_1)}|g|^p\le
+\int_{\Omega''\cap B_\rho(x_1)}|g|^p\le N_1^p\rho^{\,n-\tau}$.
+This is $\|\,|\nabla u|\,\|_{L^{p,n-\tau}(\Omega')}\le N_1$, i.e.\ (i).
+
+\emph{Step 7: a mean-replacement inequality.}  Let $S\subseteq\R^n$ be
+measurable with $0<|S|<\infty$, let $h\in L^q(S)$ be real-valued and let
+$c\in\R$.  Writing $h_S=|S|^{-1}\int_Sh$ for the mean,
+\[
+\int_S|h-h_S|^q\,dx\ \le\ 2^q\int_S|h-c|^q\,dx .
+\tag{M}
+\]
+This is \noderef{MeanReplacementLp} applied to the vector-valued function
+$f=h\,e$, where $e\in\R^n$ is a fixed unit vector, at the exponent $q$ and at
+the constant vector $c\,e$.  Its hypotheses hold: $q>1$ because $n\ge2$ gives
+$q=\frac n{n-1}>1$; $S$ is measurable with $0<|S|<\infty$; and $f\in L^q(S)$
+because $|f|=|h|$ pointwise and $h\in L^q(S)$.  Its conclusion transfers to
+$(M)$ because the map $t\mapsto t\,e$ is linear and isometric, so
+$\int_Sf=\bigl(\int_Sh\bigr)e$ and hence $f_S=h_S\,e$, while
+$|f-f_S|=|h-h_S|$ and $|f-c\,e|=|h-c|$ pointwise.
+
+\emph{Step 8: part (ii).}  We prove
+$\|u\|_{\mathcal L^{q,\theta}(\Omega')}\le N_2$ (\noderef{CampanatoBoundOn}).
+The $L^q$ clause holds: $|u|\le M$ almost everywhere on $\Omega$ and
+$|\Omega'|<\infty$ --- the set $\Omega'$ is bounded, being contained in
+$\overline{\Omega'}\subseteq\Omega''$ with $\Omega''$ bounded, and a bounded
+measurable set has finite Lebesgue measure --- so
+$\int_{\Omega'}|u|^q\le M^q|\Omega'|<\infty$ by monotonicity of the integral
+(Preamble), and $u$ is almost everywhere strongly measurable on $\Omega'$
+because it is so on $\Omega$ by \noderef{MemW1pOn}.
+
+Fix $x_1\in\Omega'$ and $0<\rho<\operatorname{diam}\Omega'$, write
+$S=\Omega'\cap B_\rho(x_1)$ --- a set of positive measure, since $\Omega'$ is
+open and $x_1\in\Omega'$, and of finite measure --- and let $u_S$ be the mean of
+$u$ over $S$.  There are two regimes.
+
+\emph{Small radii: $\rho\le d/8$.}  Apply \noderef{MorreyGradientToCampanato}
+(Lemma~4.2) with the constants of Step 1 and with the data
+$\Omega$, $B_{d/4}(x_1)$ in the role of its $\Omega'$ and $B_{d/8}(x_1)$ in the
+role of its $\Omega''$, the function $u$ and the field $g$.  Its hypotheses
+hold:
+\begin{itemize}
+\item $\Omega$, $B_{d/4}(x_1)$ and $B_{d/8}(x_1)$ are open, the middle one
+  bounded; $\overline B_{d/4}(x_1)\subseteq\Omega''$, because a point $z$ with
+  $|z-x_1|\le\frac d4$ and $z\notin\Omega''$ would contradict the hypothesis
+  $d\le|x-y|$ for $x\in\Omega'$, $y\notin\Omega''$ taken at the pair
+  $(x_1,z)$, since $x_1\in\Omega'$ and $\frac d4<d$; then
+  $\Omega''\subseteq\overline{\Omega''}\subseteq\Omega$; and
+  $\overline B_{d/8}(x_1)\subseteq B_{d/4}(x_1)$ because $\frac d8<\frac d4$;
+\item the separation: if $y\in B_{d/8}(x_1)$ and $z\notin B_{d/4}(x_1)$ then
+  $|y-z|\ge|z-x_1|-|x_1-y|>\frac d4-\frac d8=\frac d8$, which is the required
+  lower bound $d/8$;
+\item $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+  (\noderef{MemW1pLocOn}), by clause (3) of \noderef{WeakGradientRestrict}
+  applied on $\Omega$ to the hypothesis $u\in W^{1,p}(\Omega)$;
+\item $\|\,|g|\,\|_{L^{p,n-\tau}(B_{d/4}(x_1))}\le N_\flat$: the $L^p$ clause is
+  the restriction of $|g|\in L^p(\Omega)$, and for $y\in B_{d/4}(x_1)$ and
+  $0<\rho'<\operatorname{diam}B_{d/4}(x_1)=d/2$ we have
+  $B_{d/4}(x_1)\subseteq\Omega''$ and
+  $\rho'<d/2\le\operatorname{diam}\Omega''$, the latter because $\Omega''$
+  contains the ball $B_{d/4}(x_1)$ of diameter $d/2$, so $(6)$ of Step 6
+  gives $\int_{B_{d/4}(x_1)\cap B_{\rho'}(y)}|g|^p
+  \le\int_{\Omega''\cap B_{\rho'}(y)}|g|^p\le N_1^p\rho'^{\,n-\tau}
+  \le N_\flat^p\rho'^{\,n-\tau}$;
+\item $\|u\|_{L^q(B_{d/4}(x_1))}\le N_\flat$ in the sense of the case
+  $\lambda=0$ of \noderef{MorreyBoundOn}: $u\in L^q$ of that ball as in the
+  first paragraph of this step, and for every centre and every $\rho'>0$,
+  \[
+  \int_{B_{d/4}(x_1)\cap B_{\rho'}(y)}|u|^q\,dx
+  \le M^q\bigl|B_{d/4}(x_1)\bigr|=M^q\omega_n(d/4)^n\le N_\flat^{\,q},
+  \]
+  by $|u|\le M$ almost everywhere, monotonicity of the integral and the
+  definition of $N_\flat$ in Step 1.
+\end{itemize}
+Its conclusion is $\|u\|_{\mathcal L^{q,\theta}(B_{d/8}(x_1))}\le N'$, whose
+exponent $n+\frac n{n-1}(1-\frac\tau p)$ is the $\theta$ of the present proof.
+Taking in it the centre $x_1\in B_{d/8}(x_1)$ and the radius
+$\rho\le d/8<\operatorname{diam}B_{d/8}(x_1)=d/4$, and noting
+$B_{d/8}(x_1)\cap B_\rho(x_1)=B_\rho(x_1)$, we obtain
+\[
+\int_{B_\rho(x_1)}\bigl|u-u_{B_\rho(x_1)}\bigr|^q\,dx\le N'^{\,q}\rho^{\,\theta},
+\]
+where $u_{B_\rho(x_1)}$ is the mean of $u$ over $B_\rho(x_1)$.  Now $(M)$ with
+$S=\Omega'\cap B_\rho(x_1)$ and $c=u_{B_\rho(x_1)}$, followed by
+$S\subseteq B_\rho(x_1)$ and monotonicity of the integral, gives
+\[
+\int_S|u-u_S|^q\,dx\le2^q\int_S\bigl|u-u_{B_\rho(x_1)}\bigr|^q\,dx
+\le2^q\int_{B_\rho(x_1)}\bigl|u-u_{B_\rho(x_1)}\bigr|^q\,dx
+\le2^qN'^{\,q}\rho^{\,\theta}\le N_2^{\,q}\rho^{\,\theta},
+\]
+by the definition of $N_2$ in Step 1.
+
+\emph{Large radii: $\rho>d/8$.}  Here we use $(M)$ with $c=0$:
+$\int_S|u-u_S|^q\le2^q\int_S|u|^q$, and we bound $\int_S|u|^q$ in the two
+possible regimes of the exponents.
+\begin{itemize}
+\item If $q\ge p$: $|u|^q=|u|^p|u|^{q-p}\le M^{q-p}|u|^p$ almost everywhere on
+  $\Omega$, so $\int_S|u|^q\le M^{q-p}\int_\Omega|u|^p\le M^{q-p}W^p$ by
+  monotonicity of the integral and the hypothesis
+  $\int_\Omega|u|^p+\int_\Omega|g|^p\le W^p$.  Since $\theta>0$ by $(0)$ and
+  $\rho>d/8$, we get $1\le(8\rho/d)^{\theta}$, hence
+  \[
+  \int_S|u-u_S|^q\le2^qM^{q-p}W^p\le2^qM^{q-p}W^p(d/8)^{-\theta}\rho^{\,\theta}
+  \le N_2^{\,q}\rho^{\,\theta}.
+  \]
+\item If $q<p$: by H\"older's inequality on the set $S$ of finite measure, with
+  the exponents $p/q>1$ and its conjugate (Preamble),
+  \[
+  \int_S|u|^q\,dx\le\Bigl(\int_S|u|^p\,dx\Bigr)^{q/p}|S|^{1-q/p}
+  \le W^q\bigl(\omega_n\rho^n\bigr)^{1-q/p},
+  \]
+  using $|S|\le|B_\rho(x_1)|=\omega_n\rho^n$.  The exponent of $\rho$ on the
+  right is $n(1-q/p)$, and
+  \[
+  n\Bigl(1-\frac qp\Bigr)-\theta
+  =n-\frac{nq}p-n-q+\frac{q\tau}p
+  =-q\Bigl(1+\frac{n}{p}-\frac\tau p\Bigr)
+  =-\frac qp\bigl(p+n-\tau\bigr)<0 ,
+  \]
+  because $\tau<n<p+n$.  Hence $\rho^{n(1-q/p)-\theta}\le(d/8)^{n(1-q/p)-\theta}$
+  for $\rho>d/8$, and
+  \[
+  \int_S|u-u_S|^q\le2^qW^q\omega_n^{1-q/p}(d/8)^{\,n(1-q/p)-\theta}\rho^{\,\theta}
+  \le N_2^{\,q}\rho^{\,\theta}
+  \]
+  by the definition of $N_2$ in Step 1.
+\end{itemize}
+In both regimes and for all admissible $(x_1,\rho)$ the Campanato bound with
+constant $N_2$ holds, which is (ii).
+
+\emph{Step 9: part (iii).}  Let $0\le\eta<1$ and put
+\[
+t=\frac{\min\{n,p\}(1-\eta)}2 .
+\]
+Then $0<t<\min\{n,p\}$, so $t\in(0,n)$ --- indeed
+$0<t\le\min\{n,p\}/2\le n/2<n$, with room to spare, the worst case being the
+included endpoint $\eta=0$ --- and $t<p$.  Steps 1--8 used the parameter $\tau$
+only through the hypothesis $0<\tau<n$: it enters
+\noderef{MorreyBoundFromBundle}, whose $\tau$ is a parameter bound before its
+constant $N_1$ and before all the data, the constants $N_\flat,N',N_2$ of
+Step 1, and the exponents $n-\tau$ and $\theta$ of the conclusions, and
+nowhere else.  In particular the comparison bundle, which is the one hypothesis
+that is not a bound on $u$ or a property of the three sets, does not mention
+$\tau$ at all, and the data
+$\varepsilon,\Omega,\Omega'',\Omega',u,g$ and that bundle are now fixed.
+Running Steps 1--8 again with $t$ in place of $\tau$, the same data and the same
+bundle, therefore produces a constant $N_2(t)\ge0$ with
+\[
+\|u\|_{\mathcal L^{q,\theta(t)}(\Omega')}\le N_2(t),
+\qquad \theta(t)=n+q\Bigl(1-\frac tp\Bigr).
+\]
+Because $0<t<p$ we have $0<1-\frac tp<1$ and hence
+\[
+n<\theta(t)<n+q .
+\]
+Put $N=\max\{N_2(t),N_3\}$, where $N_3\ge0$ is chosen so that
+$\|u\|_{L^q(\Omega')}\le N_3$ in the sense of the case $\lambda=0$ of
+\noderef{MorreyBoundOn}; such an $N_3$ exists, for instance
+$N_3=M\bigl|\Omega'\bigr|^{1/q}$, since $|u|\le M$ almost everywhere and
+$\int_{\Omega'\cap B_{\rho}(y)}|u|^q\le M^q|\Omega'|$ for every centre and
+radius, and $u\in L^q(\Omega')$ by Step 8.  (Here $N_3$ is allowed to depend on
+$\Omega'$: part (iii) asserts no bound on any norm, only the existence of a
+H\"older representative, so no constant of the conclusion depends on it.)
+Enlarging a Morrey or Campanato bound preserves it, so both
+$\|u\|_{\mathcal L^{q,\theta(t)}(\Omega')}\le N$ and
+$\|u\|_{L^{q}(\Omega')}\le N$ hold.
+
+Apply the cited Campanato embedding (C5)
+$\mathrm{CitedCampanatoEmbedding}(n,q,\Omega')$
+(\noderef{CitedCampanatoEmbedding}), a hypothesis of the present node.  Its
+first antecedent is that $\Omega'$ be a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}), which is also a hypothesis of the present
+node; discharge it with that, and read the predicate at the
+exponent $\theta(t)$ --- admissible because $n<\theta(t)<n+q$ --- and at the
+constant $N\ge0$.  It produces a constant $N_h\ge0$ and, applied to $u$ with the
+two bounds just recorded, a function $w_0$ with
+\[
+u=w_0\ \text{a.e. on }\Omega',
+\qquad
+w_0\in C^{\eta'}\bigl(\overline{\Omega'}\bigr)\ (\noderef{MemHolderOn}),
+\qquad
+|w_0(x)-w_0(y)|\le N_h|x-y|^{\eta'}
+\]
+for $x,y\in\overline{\Omega'}$, where
+$\eta'=\frac{\theta(t)-n}q=1-\frac tp$.  By the choice of $t$,
+\[
+\eta'=1-\frac tp\ge1-\frac{1-\eta}2=\frac{1+\eta}2\ge\eta ,
+\]
+the last step because $\eta\le1$.
+
+It remains to lower the exponent from $\eta'$ to $\eta$, which is where the
+boundedness of $\Omega'$ enters.  Put
+$\Delta=\operatorname{diam}\overline{\Omega'}<\infty$ and
+$C_3=N_h\max\{1,\Delta^{\eta'-\eta}\}$.  For $x,y\in\overline{\Omega'}$ with
+$x\ne y$ we have $0<|x-y|\le\Delta$ and therefore
+\[
+|w_0(x)-w_0(y)|\le N_h|x-y|^{\eta'}
+=N_h|x-y|^{\eta}|x-y|^{\eta'-\eta}\le C_3|x-y|^{\eta},
+\]
+using $\eta'-\eta\ge0$ and the monotonicity of $t\mapsto t^{\eta'-\eta}$ on
+$[0,\infty)$; and for $x=y$ both sides vanish when $\eta>0$, while for $\eta=0$
+the right-hand side is $C_3\ge0$ and the left-hand side is $0$.  Together with
+the continuity of $w_0$ on $\overline{\Omega'}$, which is the first clause of
+\noderef{MemHolderOn} at the exponent $\eta'$ and does not involve the exponent,
+this gives $w_0\in C^{\eta}(\overline{\Omega'})$ (\noderef{MemHolderOn}).  With
+$u=w_0$ almost everywhere on $\Omega'$, the function $w=w_0$ witnesses (iii) for
+the given $\eta$.  As $\eta\in[0,1)$ was arbitrary, (iii) holds, and the proof
+is complete.
+\end{proof}

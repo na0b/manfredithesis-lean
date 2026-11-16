@@ -1,0 +1,120 @@
+\begin{lemma}[Weak solutions restrict to a sub-ball]
+Let $n\ge1$ and $p\ge1$, let $\Omega\subseteq\R^n$ be open, let $x_0\in\R^n$ and
+$\sigma>0$ with $B_\sigma(x_0)\subseteq\Omega$, let
+$A\colon\R^n\times\R\times\R^n\to\R^n$ and
+$B\colon\R^n\times\R\times\R^n\to\R$, and suppose $u$ is a weak solution of
+\[
+\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)
+\]
+in $\Omega$ with weak gradient $g$ (\noderef{IsWeakSolutionOn}).  Then $u$ is a
+weak solution of the same equation in $B_\sigma(x_0)$, with the same weak
+gradient $g$ (\noderef{IsWeakSolutionOn}).
+
+The content is not a triviality about restricting a pointwise condition.
+\noderef{IsWeakSolutionOn} is a conjunction of a local membership clause and, for
+\emph{each} admissible test pair at the set, an integrability assertion together
+with the vanishing of an integral; and the test class \emph{grows} as the set
+shrinks, since a test function with closed support inside the ball need not be a
+test function for $\Omega$ until it is extended.  So the identity on the ball is
+not an instance of the identity on $\Omega$: it has to be re-derived, test pair
+by test pair, from the extension of each ball-test pair by zero.  This is the
+missing member of the weak-gradient interface family, beside
+\noderef{WeakGradientRestrict} (which restricts only the membership clause) and
+\noderef{WeakGradientZeroExtend} (which extends a single test pair).
+
+The statement is for the general fields $A$ and $B$ of \noderef{IsWeakSolutionOn},
+not for the special case $B\equiv0$ of \S3, because nothing in the argument uses
+the shape of either field; and it is stated for a ball rather than for a general
+open subset because that is the form in which it is used --- and because
+\noderef{WeakGradientZeroExtend}, which the proof consumes, is itself stated for
+a ball.  The hypothesis $\sigma>0$ is recorded because it is what every use has available
+and because it is what makes $B_\sigma(x_0)$ a nonempty open set, on which the
+conclusion has content.
+\end{lemma}
+\begin{proof}
+Write $B_\sigma=B_\sigma(x_0)$ for the open ball and $\mathbf1_{B_\sigma}g_\varphi$
+for the extension of a field $g_\varphi$ by zero off $B_\sigma$, i.e.\ the field
+equal to $g_\varphi$ on $B_\sigma$ and to $0$ elsewhere.
+
+\noderef{IsWeakSolutionOn} asserts \emph{three} things, and each is checked in
+turn: the membership clause, and, for each admissible test pair at the set, the
+integrability of the integrand on that set together with the vanishing of its
+integral.
+
+\emph{First, the membership clause.}  It is $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$
+with weak gradient $g$, which restricts to $B_\sigma$ by clause (2) of
+\noderef{WeakGradientRestrict} (with $q=p$ and the open sets
+$\Omega\supseteq B_\sigma$ --- its hypotheses $1\le n$, $1\le p$, the openness of
+$\Omega$, the openness of the ball $B_\sigma$ and the inclusion
+$B_\sigma\subseteq\Omega$ are all in hand).
+
+\emph{Second, the identity.}  Let $(\varphi,g_\varphi)$ satisfy
+$\varphi\in W^{1,p}(B_\sigma)$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}), $\varphi$ of compact support and
+$\operatorname{tsupport}\varphi\subseteq B_\sigma$.  By
+\noderef{WeakGradientZeroExtend}, with $q=p$, the open set $\Omega$, the centre
+$x_0$, the radius $\sigma$ and this pair --- its hypotheses are $1\le n$,
+$1\le p$, the openness of $\Omega$, $B_\sigma\subseteq\Omega$, the membership
+just assumed and the support condition --- the pair
+$(\varphi,\mathbf1_{B_\sigma}g_\varphi)$ satisfies
+$\varphi\in W^{1,p}(\Omega)$ with that weak gradient
+(\noderef{MemW1pOn}); $\varphi$ still has compact support, and
+$\operatorname{tsupport}\varphi\subseteq B_\sigma\subseteq\Omega$.  So
+$(\varphi,\mathbf1_{B_\sigma}g_\varphi)$ is an admissible test pair for
+$\Omega$, and the $\Omega$-clause of \noderef{IsWeakSolutionOn} applies to it.
+Write
+\[
+F(x)=\sum_i\bigl(A(x,u(x),g(x))\bigr)_i
+      \bigl(\mathbf1_{B_\sigma}g_\varphi(x)\bigr)_i
+      +B(x,u(x),g(x))\,\varphi(x)
+\]
+for the $\Omega$-integrand of that pair and
+\[
+F_\flat(x)=\sum_i\bigl(A(x,u(x),g(x))\bigr)_i\bigl(g_\varphi(x)\bigr)_i
+      +B(x,u(x),g(x))\,\varphi(x)
+\]
+for the $B_\sigma$-integrand of the original pair.  Two pointwise facts are used
+below and are recorded now.
+
+\emph{(i) $F=F_\flat$ on $B_\sigma$.}  At $x\in B_\sigma$ one has
+$\mathbf1_{B_\sigma}g_\varphi(x)=g_\varphi(x)$, and the two expressions agree
+term by term.
+
+\emph{(ii) $F=0$ on $\Omega\setminus B_\sigma$.}  At such an $x$ one has
+$\mathbf1_{B_\sigma}g_\varphi(x)=0$, so every summand of the first sum vanishes;
+and $x\notin B_\sigma\supseteq\operatorname{tsupport}\varphi$, so
+$x\notin\operatorname{tsupport}\varphi$ and hence $\varphi(x)=0$, which kills the
+second term.  So $F(x)=0$.
+
+The $\Omega$-clause asserts two things about this pair: that $F$ is integrable on
+$\Omega$, and that $\int_\Omega F\,dx=0$.  Now $\Omega$ is measurable, being
+open; $B_\sigma$ is measurable, being open; and
+$\Omega=B_\sigma\cup(\Omega\setminus B_\sigma)$ is a disjoint union of two
+measurable sets, because $B_\sigma\subseteq\Omega$.  Since $F$ is integrable on
+$\Omega$, the integral is additive over that decomposition:
+\[
+0=\int_\Omega F\,dx=\int_{B_\sigma}F\,dx+\int_{\Omega\setminus B_\sigma}F\,dx .
+\]
+The second term is $0$, because by (ii) its integrand vanishes at every point of
+$\Omega\setminus B_\sigma$.  Hence $\int_{B_\sigma}F\,dx=0$.  Finally $F$ and
+$F_\flat$ agree at every point of $B_\sigma$ by (i), and a set integral depends
+on the integrand only through its values on the set, so
+$\int_{B_\sigma}F_\flat\,dx=\int_{B_\sigma}F\,dx=0$.  That is the identity for
+$B_\sigma$ at the pair $(\varphi,g_\varphi)$.
+
+\emph{Third, the integrability clause at the ball.}  The same
+$\Omega$-clause of \noderef{IsWeakSolutionOn}, applied to the pair
+$(\varphi,\mathbf1_{B_\sigma}g_\varphi)$ --- admissible there by the previous
+paragraph --- asserts not only the vanishing of that integral but also that $F$
+is integrable on $\Omega$.  The ball $B_\sigma$ is a measurable subset of
+$\Omega$, and the restriction of an integrable function to a measurable subset is
+integrable (Preamble: $L^q$ membership of a set is inherited by measurable
+subsets, applied with $q=1$), so $F$ is integrable on $B_\sigma$.  By (i), $F$ and $F_\flat$ agree at every point of
+$B_\sigma$, and $B_\sigma$ is measurable, so $F_\flat$ is integrable on
+$B_\sigma$ as well.  That is the clause required.
+
+As the test pair $(\varphi,g_\varphi)$ was arbitrary, the second and third
+clauses hold at $B_\sigma$ for every admissible pair; with the first clause, $u$
+is a weak solution of $\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)$ in
+$B_\sigma$ with weak gradient $g$ (\noderef{IsWeakSolutionOn}).
+\end{proof}

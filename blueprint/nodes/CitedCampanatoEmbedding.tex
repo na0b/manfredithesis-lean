@@ -1,0 +1,46 @@
+\begin{definition}
+Let $n\ge2$, $q\ge1$ and let $\Omega'\subseteq\R^n$.  The predicate
+$\mathrm{CitedCampanatoEmbedding}(n,q,\Omega')$ is the
+cited result (C5) of the Note for the formalization (Campanato's theorem,
+[G, chapter III]), in the only direction of (4.10) of the thesis that the paper uses:
+
+\emph{if $\Omega'$ is a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}), then for every $\lambda$ with $n<\lambda<n+q$ and every $N\ge0$ there is
+$N_h\ge0$, depending only on $N$, $\lambda$, $q$ and $\Omega'$, such that every
+$u$ with $\|u\|_{\mathcal L^{q,\lambda}(\Omega')}\le N$
+(\noderef{CampanatoBoundOn}) and $\|u\|_{L^q(\Omega')}\le N$
+(\noderef{MorreyBoundOn} with $\lambda=0$) agrees almost everywhere on $\Omega'$
+with a function $w\in C^{0,\alpha}(\overline{\Omega'})$,
+$\alpha=(\lambda-n)/q$ (\noderef{MemHolderOn}), whose H\"older seminorm on
+$\overline{\Omega'}$ is at most $N_h$.}
+
+The quantifier order encodes the dependence stated in the literature: the
+H\"older bound is chosen as a function of $\lambda$, $q$, $\Omega'$ and the two
+norms $\|u\|_{\mathcal L^{q,\lambda}(\Omega')}$, $\|u\|_{L^q(\Omega')}$ only,
+before $u$ itself.
+
+\textbf{On ``Lipschitz domain'', which is an antecedent of the statement and
+not a side condition on the parameter.}  (C5) is stated in the paper at l.~264
+as ``\emph{if} $\Omega'$ \emph{is a bounded Lipschitz domain}, $n<\lambda<n+p$
+and $u\in\mathcal L^{p,\lambda}(\Omega')$, then \ldots''.  That hypothesis is
+part of the cited result and is carried here as the first antecedent, through
+\noderef{IsBoundedLipschitzDomain}.  Without it the predicate would assert
+Campanato's theorem for \emph{arbitrary} $\Omega'$, which is stronger than the
+literature and is forbidden by the Note at l.~258 (``stated as in the literature
+and not in a stronger form''); the theorem is false on domains with an outward
+cusp, where $|\Omega'\cap B_\rho(x)|$ can decay faster than $\rho^n$ and the
+Campanato seminorm no longer controls oscillation.  Conversely the predicate is
+not vacuous: for a bounded Lipschitz domain the conclusion is
+[G, chapter III], and the hypothesis itself is satisfiable --- every open ball of
+positive radius satisfies it (\noderef{BallIsLipschitzDomain}), which is also
+what the proofs of \S4 and \S5 need in order to apply (C5) at the balls they
+construct.
+
+The remaining content of the paper's ``Lipschitz domain with
+$\overline{\Omega'}\subseteq\Omega$'' is carried alongside, by the consumers:
+$\Omega'$ open, nonempty, bounded, with $\overline{\Omega'}\subseteq\Omega$.
+Those clauses predate this predicate and overlap clauses (1)--(3) of
+\noderef{IsBoundedLipschitzDomain}; the overlap is a repeated conjunct and is
+left in place so that the proof sites discharging them by name continue to
+read correctly.
+\end{definition}

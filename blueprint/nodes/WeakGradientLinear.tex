@@ -1,0 +1,138 @@
+\begin{lemma}[Linearity of the weak gradient, and the constants]
+Let $n\ge1$ and $q\ge1$, let $\Omega\subseteq\R^n$ be open, let
+$f_1,f_2\colon\R^n\to\R$ and $g_1,g_2\colon\R^n\to\R^n$, and let
+$a,b,c\in\R$.  Then:
+\begin{enumerate}
+\item if $f_1\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g_1$ and
+  $f_2\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g_2$
+  (\noderef{MemW1pLocOn}), then
+  $af_1+bf_2\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient
+  $ag_1+bg_2$;
+\item if $f_1\in W^{1,q}(\Omega)$ with weak gradient $g_1$ and
+  $f_2\in W^{1,q}(\Omega)$ with weak gradient $g_2$ (\noderef{MemW1pOn}), then
+  $af_1+bf_2\in W^{1,q}(\Omega)$ with weak gradient $ag_1+bg_2$;
+\item the constant function $x\mapsto c$ lies in
+  $W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $0$; and
+\item if $|\Omega|<\infty$, the constant function $x\mapsto c$ lies in
+  $W^{1,q}(\Omega)$ with weak gradient $0$.
+\end{enumerate}
+
+The four clauses are one node because they are one fact used in one way: every
+consumer that forms a difference $u-v$, a translate $u+c$ or a linear
+combination of two Sobolev functions needs the corresponding clause, and the
+proofs of the four share their only substantial step, the splitting of the
+defining integral identity.  Clause (4) needs $|\Omega|<\infty$ and clauses
+(1)--(3) do not: a constant $c\ne0$ has $\int_\Omega|c|^q=\infty$ when
+$|\Omega|=\infty$, so it is not in $L^q(\Omega)$, whereas on a compact subset of
+$\Omega$ --- which is all clause (3) asks about --- the measure is automatically
+finite.  Clause (2) needs no finiteness hypothesis either, because the
+$L^q(\Omega)$ membership of the combination comes from that of $f_1$ and $f_2$
+and not from the measure of $\Omega$.
+
+Nothing here is specific to the operators of the paper: the statement mentions
+no $A$, no solution and neither structure condition.  It is the ambient
+linearity of distributional differentiation, stated for the project's own
+predicates because, by the standing dividing line, facts about
+\noderef{HasWeakGradientOn}, \noderef{MemW1pOn} and \noderef{MemW1pLocOn} are
+nodes and not Preamble background.
+\end{lemma}
+\begin{proof}
+Throughout, ``test function'' means a function $\varphi\in C^\infty(\R^n)$ with
+compact support and $\operatorname{supp}\varphi\subseteq\Omega$, which is
+verbatim the test class of \noderef{HasWeakGradientOn}, and $D_i$ denotes the
+partial derivative in the direction of the $i$-th standard basis vector.
+
+\emph{Step 1: the four integrals in play are finite.}  Let $\varphi$ be a test
+function, let $i\in\{1,\dots,n\}$, and put $K=\operatorname{supp}\varphi$, a
+compact subset of $\Omega$.  Suppose first that $f_1,f_2$ satisfy the hypothesis
+of clause (1).  By the local clause of \noderef{MemW1pLocOn} applied to the
+compact set $K\subseteq\Omega$,
+\[
+f_1,f_2\in L^q(K),\qquad |g_1|,|g_2|\in L^q(K),
+\]
+and in particular each component $g_k^i$ is in $L^q(K)$, since
+$|g_k^i|\le|g_k|$ pointwise.  As $K$ is compact its measure is finite, so
+H\"older on a set of finite measure (Preamble) gives
+$L^q(K)\subseteq L^1(K)$ and hence
+\[
+f_1,f_2,g_1^i,g_2^i\in L^1(K).
+\]
+The functions $\varphi$ and $D_i\varphi$ are continuous with compact support,
+hence bounded on $\R^n$, say by $\Lambda$.  Each of the four functions
+$f_kD_i\varphi$ and $g_k^i\varphi$ is measurable, vanishes off $K$ (because
+$\varphi$ and $D_i\varphi$ do: $\varphi$ vanishes on the open complement of $K$,
+so all its derivatives vanish there too), and is dominated on $K$ by
+$\Lambda|f_k|$ respectively $\Lambda|g_k^i|$, which are in $L^1(K)$.  By the
+Preamble item on domination, all four are integrable over $\Omega$.
+
+\emph{Step 2: the weak-gradient identity for the combination.}  By
+\noderef{HasWeakGradientOn}, which is the first clause of
+\noderef{MemW1pLocOn}, we have for $k=1,2$
+\[
+\int_\Omega f_k\,D_i\varphi\,dx=-\int_\Omega g_k^i\,\varphi\,dx .
+\]
+Multiply the identity for $k=1$ by $a$ and the one for $k=2$ by $b$ and add.
+Every integral occurring is finite by Step 1, so additivity and homogeneity of
+the integral apply on both sides and give
+\[
+\int_\Omega\bigl(af_1+bf_2\bigr)D_i\varphi\,dx
+=-\int_\Omega\bigl(ag_1^i+bg_2^i\bigr)\varphi\,dx
+=-\int_\Omega\bigl(ag_1+bg_2\bigr)^i\varphi\,dx ,
+\]
+the last step because the $i$-th component of $ag_1+bg_2$ is $ag_1^i+bg_2^i$.
+As $\varphi$ and $i$ were arbitrary, this is exactly the defining identity of
+\noderef{HasWeakGradientOn} for the pair $(af_1+bf_2,\ ag_1+bg_2)$ on $\Omega$.
+
+\emph{Step 3: the $L^q$ clauses, and clauses (1) and (2).}  Let
+$K'\subseteq\Omega$ be compact.  By the local clause of \noderef{MemW1pLocOn},
+$f_1,f_2\in L^q(K')$ and $|g_1|,|g_2|\in L^q(K')$.  By the Preamble item on the
+$L^q$ triangle inequality, which also records closure under multiplication by a
+real scalar and holds for functions valued in a real Banach space as well as for
+real-valued ones, $af_1+bf_2\in L^q(K')$ and $|ag_1+bg_2|\in L^q(K')$.  Together
+with Step 2 this is clause (1) (\noderef{MemW1pLocOn}).
+
+For clause (2) the argument is the same with one change.  The hypothesis is now
+$f_1,f_2\in L^q(\Omega)$ and $|g_1|,|g_2|\in L^q(\Omega)$ (the second and third
+clauses of \noderef{MemW1pOn}).  Step 1 needs $f_k,g_k^i\in L^1(K)$ for the
+compact $K=\operatorname{supp}\varphi\subseteq\Omega$; this follows from
+$L^q(\Omega)$ membership by restriction to the subset $K$ (Preamble, the
+transport facts recorded with H\"older) and then H\"older on $K$, whose measure
+is finite.  Step 2 is then unchanged.  The $L^q(\Omega)$ membership of
+$af_1+bf_2$ and of $|ag_1+bg_2|$ is again the $L^q$ triangle inequality with
+scalars (Preamble), now on $\Omega$ itself.  This is clause (2)
+(\noderef{MemW1pOn}).
+
+\emph{Step 4: the constant function has weak gradient $0$.}  Let $\kappa$ denote
+the function constantly equal to $c$, let $\varphi$ be a test function and let
+$i\in\{1,\dots,n\}$.  Apply the Preamble item on integration by parts in a
+direction with $v=e_i$, with $f\equiv1$ the constant function $1$ and with
+$g=\varphi$.  Its hypotheses hold: $f$ is differentiable at every point, with
+$D_if\equiv0$; $\varphi$ is $C^\infty$, so differentiable at every point; and
+the three functions $D_if\cdot\varphi=0$, $f\cdot D_i\varphi=D_i\varphi$ and
+$f\varphi=\varphi$ are integrable on $\R^n$, each being continuous with compact
+support or identically $0$.  The conclusion is
+\[
+\int_{\R^n}D_i\varphi\,dx=\int_{\R^n}f\,D_i\varphi\,dx
+=-\int_{\R^n}D_if\cdot\varphi\,dx=0 .
+\]
+Since $D_i\varphi$ vanishes off $\operatorname{supp}\varphi\subseteq\Omega$, the
+integral over $\R^n$ equals the integral over $\Omega$: the two integrands
+$\mathbf1_{\R^n}D_i\varphi$ and $\mathbf1_\Omega D_i\varphi$ are the same
+function.  Hence
+\[
+\int_\Omega\kappa\,D_i\varphi\,dx=c\int_\Omega D_i\varphi\,dx=0
+=-\int_\Omega 0\cdot\varphi\,dx ,
+\]
+where the first equality is homogeneity of the integral, legitimate because
+$D_i\varphi$ is integrable over $\Omega$ (continuous with compact support).
+This is the defining identity of \noderef{HasWeakGradientOn} for the pair
+$(\kappa,0)$ on $\Omega$.
+
+\emph{Step 5: clauses (3) and (4).}  For clause (3), let $K'\subseteq\Omega$ be
+compact; then $|K'|<\infty$, so the constant $\kappa$ lies in $L^q(K')$ and so
+does the zero field (Preamble: a constant function lies in $L^q$ of a finite
+measure).  With Step 4 this is clause (3) (\noderef{MemW1pLocOn}).  For clause
+(4), the hypothesis $|\Omega|<\infty$ gives $\kappa\in L^q(\Omega)$ and
+$0\in L^q(\Omega)$ by the same Preamble item, and Step 4 supplies the
+weak-gradient identity; this is clause (4) (\noderef{MemW1pOn}).
+\end{proof}

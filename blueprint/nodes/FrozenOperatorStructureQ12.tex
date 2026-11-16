@@ -1,0 +1,134 @@
+\begin{lemma}[The frozen operator satisfies (Q1)--(Q2)]
+Let $n\ge2$, $p>1$, $0\le\varepsilon\le1$, $0<\lambda\le\Lambda$, $a>0$ and
+$0<\nu_0<\nu_1$.  Let $\Omega\subseteq\R^n$ be open, let $f$ satisfy
+(F1) of the thesis, (F2) of the thesis and (F3) of the thesis on $\Omega$ with parameters
+$p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$ and modulus $\sigma$
+(\noderef{VariationalStructureF123}), let $x_1\in\Omega$ and let $z_1\in\R$.
+Write $f^0(h)=f(x_1,z_1,h)$ and $A^0=\nabla_hf^0$
+(\noderef{FrozenGradientOperator}).  Then the normalised frozen operator
+\[
+\widetilde A=A^0-A^0(0)
+\]
+satisfies (Q1) of the thesis--(Q2) of the thesis on all of $\R^n$ with the parameters
+$p,\varepsilon$ and the structure constants $\gamma_0=\nu_0$,
+$\gamma_1=\nu_1$ (\noderef{EllipticStructureQ12}), the field being read as the
+field $(x,z,h)\mapsto\widetilde A(h)$, constant in the point and in the value.
+
+\noindent\textbf{What this node is, and why it is a node.}  It is the step by
+which \S4 and \S5 hand their variational data to the nodes of \S3.  Every
+statement of \S3 that \S4 applies to a comparison map --- Lemma~Lemma~3.1 of the thesis,
+Theorem~Theorem~1 of the thesis and Theorem~Theorem~2 of the thesis --- is stated for a field satisfying
+(Q1) of the thesis--(Q2) of the thesis, and the field to which \S4 applies them is the
+frozen operator of the density, normalised as the thesis prescribes at l.~542
+(``Since $\operatorname{div}A(0)=0$ we may assume without loss of generality
+that $A(0)=0$ and that $A$ satisfies conditions (Q1) of the thesis and
+(Q2) of the thesis'').  That the frozen operator \emph{does} satisfy
+(Q1) of the thesis--(Q2) of the thesis, with the constants $\nu_0,\nu_1$ of (F2) of the thesis
+and not merely with some constants, is exactly what the thesis means by its
+sentence at l.~1626 about the \S5 functional being ``of the type considered in
+\S4''.  In \S5 the corresponding step needs no node, because there the data are
+already given as (Q1) of the thesis--(Q2) of the thesis and only the a.e.\ quantifier has
+to be upgraded.
+
+\noindent\textbf{On the constants and the normalisation.}  No constant is
+produced: $\gamma_0$ and $\gamma_1$ are the $\nu_0$ and $\nu_1$ of
+(F2) of the thesis themselves, undegraded, so no quantifier-order question arises.
+The normalisation $\widetilde A(0)=0$ is a definitional tautology and is
+therefore not stated as a clause; what matters is that it costs nothing in the
+structure conditions, since (Q1) of the thesis and (Q2) of the thesis constrain only the
+derivative of the field and the derivative is unchanged by subtracting a
+constant vector.  The restriction $\varepsilon\le1$ is the range in which \S4
+and \S5 work, carried here for uniformity with the statements that consume this
+node; the proof does not use the upper bound, and \S3 itself drops it (thesis
+l.~543--545, ``in this section the restriction $\varepsilon\le1$ plays no
+role'').
+\end{lemma}
+\begin{proof}
+Write
+\[
+f^0(h)=f(x_1,z_1,h),\qquad
+A^0=\nabla_hf^0\quad(\noderef{FrozenGradientOperator}),\qquad
+\widetilde A=A^0-A^0(0),
+\]
+so that the field whose structure is asserted is $\widetilde A$, viewed as a
+field on $\R^n$ that is constant in the point and in the value.  We verify the
+six clauses of (Q1) of the thesis--(Q2) of the thesis for it on all of $\R^n$ with the
+parameters $p,\varepsilon,\gamma_0=\nu_0,\gamma_1=\nu_1$
+(\noderef{EllipticStructureQ12}).  Note first that subtracting the constant vector
+$A^0(0)$ changes neither continuity, nor differentiability, nor any derivative
+of the field, so it suffices to treat $A^0$; and that $A^0$ does not depend on
+the point of $\R^n$, so the clauses that are required at every point of the
+domain, or at almost every point, follow from the single computation below.
+Write $w(h)=\varepsilon+|h|^2$ and $D=\{h:w(h)\ne0\}$, an open set.
+\begin{itemize}
+\item \emph{Carath\'eodory measurability in the point.}  For fixed $z$ and $h$
+  the map $x\mapsto\widetilde A(x,z,h)$ is \emph{constant}, with value
+  $A^0(h)-A^0(0)$, since $\widetilde A$ does not depend on its first argument;
+  a constant function is Lebesgue measurable.
+\item \emph{Carath\'eodory joint continuity in $(z,h)$.}  For fixed $x$ the map
+  $(z,h)\mapsto\widetilde A(x,z,h)=A^0(h)-A^0(0)$ does not depend on $z$ either,
+  so it is the composition of $h\mapsto A^0(h)-A^0(0)$ with the continuous
+  projection $(z,h)\mapsto h$; and $A^0$ is continuous by the next clause.  A
+  composition of continuous maps is continuous, so the joint map is continuous
+  on $\R\times\R^n$.
+\item \emph{Continuity.}  By (F2) of the thesis
+  (\noderef{VariationalStructureF123}, clause \texttt{F2\_diff}, applied at the
+  point $x_1\in\Omega$, which is a hypothesis, and at the value $z_1$) the function $f^0$ is of class $C^1$ on $\R^n$, so
+  $h\mapsto\nabla_hf^0(h)=A^0(h)$ is continuous.
+\item \emph{$C^1$ on $D$.}  By clause \texttt{F2\_diff2} of the same node,
+  $f^0$ is of class $C^2$ on $D$; hence its gradient $A^0$ is of class $C^1$
+  there.
+\item \emph{(Q1) of the thesis.}  Fix $h\in D$ and $\xi\in\R^n$.  The $i$-th
+  component of $A^0$ is $A^{0,i}(h)=D_{h_i}f^0(h)$, so the derivative of $A^0$
+  at $h$ in the direction $\xi$ has $i$-th component $D_\xi D_{h_i}f^0(h)$, and
+  therefore
+  \[
+  \sum_{i=1}^n\bigl(D_\xi A^0(h)\bigr)^i\xi^i
+  =\sum_{i=1}^n\xi^iD_\xi D_{h_i}f^0(h)
+  =D_\xi\Bigl(\sum_{i=1}^n\xi^iD_{h_i}f^0\Bigr)(h)
+  =D_\xi\bigl(D_\xi f^0\bigr)(h),
+  \tag{1}
+  \]
+  the middle equality because $\xi$ is a constant vector and differentiation in
+  a fixed direction is linear.  The right-hand side is exactly the quantity
+  that (F2) of the thesis estimates, and its lower bound there is
+  $\nu_0w(h)^{\frac p2-1}|\xi|^2$, which is (Q1) of the thesis with
+  $\gamma_0=\nu_0$.
+\item \emph{(Q2) of the thesis.}  For $h\in D$ define the bilinear form
+  $B(\zeta,\xi)=D_\xi(D_\zeta f^0)(h)$ on $\R^n\times\R^n$; it is bilinear
+  because $f^0$ is twice differentiable at $h$ (clause \texttt{F2\_diff2} and
+  openness of $D$).  By the symmetry of the second derivative (Clairaut,
+  Preamble), whose hypothesis is exactly twice differentiability at the point,
+  $B$ is symmetric.  By (F2) of the thesis and $(1)$,
+  \[
+  \nu_0w(h)^{\frac p2-1}|\zeta|^2\le B(\zeta,\zeta)\le
+  \nu_1w(h)^{\frac p2-1}|\zeta|^2
+  \qquad(\zeta\in\R^n),
+  \tag{2}
+  \]
+  so $B$ is nonnegative.  For a symmetric nonnegative bilinear form,
+  $|B(\zeta,\xi)|\le B(\zeta,\zeta)^{1/2}B(\xi,\xi)^{1/2}$: the quadratic
+  polynomial $t\mapsto B(\zeta+t\xi,\zeta+t\xi)
+  =B(\zeta,\zeta)+2tB(\zeta,\xi)+t^2B(\xi,\xi)$ is nonnegative for every real
+  $t$, so its discriminant $4B(\zeta,\xi)^2-4B(\zeta,\zeta)B(\xi,\xi)$ is at
+  most $0$ when $B(\xi,\xi)>0$, and when $B(\xi,\xi)=0$ the same nonnegativity
+  for large $|t|$ of the affine function $B(\zeta,\zeta)+2tB(\zeta,\xi)$ forces
+  $B(\zeta,\xi)=0$.  Taking $\zeta=e_i$ and $\xi=e_j$ the two standard basis
+  vectors, which have $|e_i|=|e_j|=1$, and using the upper bound in $(2)$ twice,
+  \[
+  \bigl|\bigl(D_{e_j}A^0(h)\bigr)^i\bigr|=|B(e_i,e_j)|
+  \le B(e_i,e_i)^{1/2}B(e_j,e_j)^{1/2}
+  \le\bigl(\nu_1w(h)^{\frac p2-1}\bigr)^{1/2}\bigl(\nu_1w(h)^{\frac p2-1}\bigr)^{1/2}
+  =\nu_1w(h)^{\frac p2-1},
+  \]
+  the first equality by the component computation of the previous item --- there
+  $(D_{e_j}A^0(h))^i=D_{e_j}D_{h_i}f^0(h)=B(e_i,e_j)$ --- and the last step
+  because $w(h)^{\frac p2-1}\ge0$ and $\nu_1>0$.  This is (Q2) of the thesis with
+  $\gamma_1=\nu_1$.
+\end{itemize}
+Since the last four clauses hold for every point of $\R^n$ and in particular almost
+everywhere, $\widetilde A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ ---
+and a fortiori on every subset of $\R^n$ --- with the parameters
+$p,\varepsilon,\nu_0,\nu_1$, which is the conclusion.
+
+\end{proof}

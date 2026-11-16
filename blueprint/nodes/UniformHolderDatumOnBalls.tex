@@ -1,0 +1,226 @@
+\begin{lemma}[A H\"older datum at the fixed exponent $\tfrac12$, uniform in the centre]
+Let $n\ge2$, $p>1$, $0<\tau\le p/2$, $d>0$, $M\ge0$ and $N_2\ge0$, and write
+\[
+q=\frac n{n-1}\ (>1),\qquad
+\lambda^\natural=n+\Bigl(1-\frac\tau p\Bigr)q .
+\]
+Assume the cited Campanato embedding (C5) at the exponent $q$ on the single ball
+$B_{d/4}(0)$ (\noderef{CitedCampanatoEmbedding}).  Then there is a constant
+$C_1\ge0$, depending only on $n,p,\tau,d,M$ and $N_2$, with the following
+property.
+
+Let $\Omega\subseteq\R^n$ be open, let $\Omega'\subseteq\R^n$ be a set with
+$d\le\operatorname{dist}(x,y)$ for every $x\in\Omega'$ and every
+$y\notin\Omega$, and let $u,U\colon\R^n\to\R$ satisfy
+\begin{itemize}
+\item[(a)] $|u|\le M$ almost everywhere on $\Omega$;
+\item[(b)] $U=u$ almost everywhere on $\Omega$;
+\item[(c)] $U$ is continuous on $B_{d/4}(y_0)$ for every $y_0\in\Omega'$;
+\item[(d)] $\|u\|_{\mathcal L^{q,\lambda^\natural}(B_{d/4}(y_0))}\le N_2$ for
+  every $y_0\in\Omega'$ (\noderef{CampanatoBoundOn}).
+\end{itemize}
+Then for every $x_0\in\Omega'$ and every $R$ with $0<R\le d/16$ one has
+$U\in C^{1/2}\bigl(\overline B_R(x_0)\bigr)$ (\noderef{MemHolderOn}) and
+\[
+|U(x)-U(y)|\le C_1\operatorname{dist}(x,y)^{1/2}
+\qquad\bigl(x,y\in\overline B_R(x_0)\bigr),
+\]
+with the \emph{same} $C_1$ for every centre $x_0$ and every such radius $R$.
+\end{lemma}
+\begin{proof}
+Throughout, $\omega_n=|B_1(0)|\in(0,\infty)$ is the volume of the unit ball
+(Preamble, the volume of a ball), so that $|B_\rho(z)|=\omega_n\rho^{\,n}$ for
+every centre $z$ and every $\rho\ge0$.
+
+\emph{Step 1: the constants, chosen before the data.}  Put
+\[
+s=\frac{\lambda^\natural-n}q=1-\frac\tau p .
+\]
+Since $0<\tau\le p/2$ and $p>1$ we have $0<\tau/p\le\tfrac12$, hence
+\[
+\tfrac12\le s<1 ,
+\]
+and in particular $s-\tfrac12\ge0$.  Also $n\ge2$ gives $n-1\ge1>0$, so
+$q=n/(n-1)>1$ is well defined and positive.
+
+The ball $B_{d/4}(0)$ is a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}): this is \noderef{BallIsLipschitzDomain},
+applied with the present $n$ --- its hypothesis $1\le n$ follows from $2\le n$
+--- at the centre $0$ and the radius $d/4$, whose positivity follows from
+$d>0$.  That discharges the Lipschitz antecedent with which the assumed
+predicate $\mathrm{CitedCampanatoEmbedding}\;n\;q\;B_{d/4}(0)$
+(\noderef{CitedCampanatoEmbedding}) opens.  Read the predicate at the exponent
+$\lambda^\natural$ and at the constant
+\[
+N^\natural=\max\Bigl\{N_2,\ M\bigl(\omega_n(d/4)^n\bigr)^{1/q}\Bigr\}\ \ge0 .
+\]
+Its three guards hold: $n<\lambda^\natural$, because
+$\bigl(1-\tfrac\tau p\bigr)q=sq>0$ as $s\ge\tfrac12>0$ and $q>0$;
+$\lambda^\natural<n+q$, because $sq<q$ as $s<1$ and $q>0$; and
+$0\le N^\natural$, because $N_2\ge0$.  It produces a constant $N_h\ge0$, and
+that constant is a function of $n,q,d,\lambda^\natural$ and $N^\natural$ alone,
+hence of $n,p,\tau,d,M$ and $N_2$ alone, because $q$ is a function of $n$,
+$\lambda^\natural$ a function of $n,p,\tau$, $\omega_n$ a function of $n$ and
+$N^\natural$ a function of $n,q,d,M$ and $N_2$.  Put
+\[
+C_1=N_h\max\{1,d\}^{\,s-\frac12}\ \ge0 ,
+\]
+which is likewise a function of $n,p,\tau,d,M$ and $N_2$ alone, and which is
+nonnegative because $N_h\ge0$ and $\max\{1,d\}^{\,s-1/2}>0$.
+
+\emph{No further choice is made below}: everything that follows is proved for
+the data, with this one $C_1$.  Fix now $\Omega,\Omega',u,U$ as in the statement,
+and fix a point $y_0\in\Omega'$.  Write $B^{y_0}=B_{d/4}(y_0)$.
+
+\emph{Step 2: the ball $\overline{B^{y_0}}$ lies in $\Omega$.}  Let
+$z\in\overline B_{d/4}(y_0)$, so $\operatorname{dist}(z,y_0)\le d/4$, and
+suppose $z\notin\Omega$.  Then the separation hypothesis, applied at
+$x=y_0\in\Omega'$ and $y=z\notin\Omega$, gives
+$d\le\operatorname{dist}(y_0,z)\le d/4$, hence $d\le d/4$ and so
+$\tfrac34d\le0$, contradicting $d>0$.  Therefore
+$\overline B_{d/4}(y_0)\subseteq\Omega$, and a fortiori
+$B^{y_0}\subseteq\Omega$.
+
+\emph{Step 3: the translate, and the two function hypotheses of \textup{(C5)} at
+the one constant $N^\natural$.}  Write $u_{y_0}(z)=u(z+y_0)$.  Lebesgue measure
+and the metric on $\R^n$ are invariant under the translation
+$z\mapsto z+y_0$ (Preamble, invariance of Lebesgue measure under translations;
+and $\|(z+y_0)-(z'+y_0)\|=\|z-z'\|$), and
+\[
+B_{d/4}(0)+y_0=B^{y_0},\qquad B_\rho(x)+y_0=B_\rho(x+y_0)
+\qquad(x\in\R^n,\ \rho>0),
+\]
+because $\|z-x\|<\rho$ iff $\|(z+y_0)-(x+y_0)\|<\rho$.  Consequently, for every
+measurable $S\subseteq B_{d/4}(0)$ the Preamble identities $|S+y_0|=|S|$ and
+$\int_{S+y_0}w=\int_Sw(\cdot+y_0)$ carry every integral, every measure and
+every mean value of $u$ over $B^{y_0}\cap B_\rho(x+y_0)$ to the corresponding
+one of $u_{y_0}$ over $B_{d/4}(0)\cap B_\rho(x)$, and the invariance of the
+metric gives
+$\operatorname{diam}B_{d/4}(0)=\operatorname{diam}B^{y_0}$.  Also
+$|u_{y_0}|\le M$ almost everywhere on $B_{d/4}(0)$: the set
+$\{z\in B_{d/4}(0):|u(z+y_0)|>M\}$ is the translate by $-y_0$ of
+$\{z\in B^{y_0}:|u(z)|>M\}$, which is contained in
+$\{z\in\Omega:|u(z)|>M\}$ by Step 2 and is therefore null by hypothesis (a); and
+a translate of a null set is null by the same Preamble item.  Hence:
+\begin{itemize}
+\item $\mathrm{CampanatoBoundOn}\;n\;q\;\lambda^\natural\;B_{d/4}(0)\;u_{y_0}\;
+  N^\natural$ (\noderef{CampanatoBoundOn}).  Its $L^q$ clause transports
+  directly from hypothesis (d) at the centre $y_0$, being $N$-free: $u\in
+  L^q(B^{y_0})$ gives $u_{y_0}\in L^q(B_{d/4}(0))$ by the Preamble's
+  translation identity for $L^q$ seminorms.  Its inequality clause: let
+  $x\in B_{d/4}(0)$ and $0<\rho<\operatorname{diam}B_{d/4}(0)$.  Then
+  $x+y_0\in B^{y_0}$ and $\rho<\operatorname{diam}B^{y_0}$, so hypothesis (d) at
+  the centre $y_0$ applies at the point $x+y_0$ and the radius $\rho$ and gives
+  \[
+  \int_{B^{y_0}\cap B_\rho(x+y_0)}\Bigl|u-\frac1{|B^{y_0}\cap
+  B_\rho(x+y_0)|}\int_{B^{y_0}\cap B_\rho(x+y_0)}u\Bigr|^q
+  \le N_2^{\,q}\rho^{\,\lambda^\natural},
+  \]
+  and the left-hand side equals the corresponding integral for $u_{y_0}$ over
+  $B_{d/4}(0)\cap B_\rho(x)$ by the transport just described.  Finally
+  $N_2^{\,q}\rho^{\lambda^\natural}\le(N^\natural)^q\rho^{\lambda^\natural}$,
+  because $0\le N_2\le N^\natural$, $q>0$ and $\rho^{\lambda^\natural}\ge0$.
+\item $\mathrm{MorreyBoundOn}\;n\;q\;0\;B_{d/4}(0)\;u_{y_0}\;N^\natural$
+  (\noderef{MorreyBoundOn}).  Both clauses come from
+  $|u_{y_0}|\le M$ a.e.\ on $B_{d/4}(0)$.  The $L^q$ clause holds because a
+  function bounded almost everywhere on a set of finite measure lies in $L^q$ of
+  that set, and $|B_{d/4}(0)|=\omega_n(d/4)^n<\infty$.  For the inequality
+  clause let $x\in B_{d/4}(0)$ and $0<\rho<\operatorname{diam}B_{d/4}(0)$; then
+  \[
+  \int_{B_{d/4}(0)\cap B_\rho(x)}|u_{y_0}|^q
+  \le M^q\bigl|B_{d/4}(0)\bigr|=M^q\omega_n(d/4)^n
+  \le(N^\natural)^q=(N^\natural)^q\rho^{\,0},
+  \]
+  the first step by monotonicity of the integral over
+  $B_{d/4}(0)\cap B_\rho(x)\subseteq B_{d/4}(0)$ for the nonnegative integrand
+  $|u_{y_0}|^q\le M^q$ a.e., the third because
+  $N^\natural\ge M(\omega_n(d/4)^n)^{1/q}\ge0$ and $t\mapsto t^q$ is
+  nondecreasing on $[0,\infty)$, and the last because $\rho^{\,0}=1$ for
+  $\rho>0$.
+\end{itemize}
+
+\emph{Step 4: what \textup{(C5)} returns, and its transport back.}  All three
+terms of its conclusion are used.  The predicate binds $N_h$ \emph{before} the
+function it is read at, so the $N_h$ of Step 1 --- drawn once, at the ball
+$B_{d/4}(0)$, the exponent $\lambda^\natural$ and the constant $N^\natural$, all
+three of which are independent of $y_0$ --- serves every $y_0\in\Omega'$.
+Applied to the function $u_{y_0}$, for which the two hypotheses were just
+verified at the constant $N^\natural$, it gives a function $w^0$ with
+\begin{itemize}
+\item $u_{y_0}=w^0$ almost everywhere on $B_{d/4}(0)$;
+\item $w^0\in C^{s}\bigl(\overline{B_{d/4}(0)}\bigr)$ (\noderef{MemHolderOn}),
+  the exponent being $(\lambda^\natural-n)/q=s$, so in particular $w^0$ is
+  continuous on the closure of $B_{d/4}(0)$; and
+\item $|w^0(x)-w^0(y)|\le N_h\operatorname{dist}(x,y)^{s}$ for all
+  $x,y$ in the closure of $B_{d/4}(0)$, with the $N_h$ of Step 1.
+\end{itemize}
+Put $w_{y_0}(z)=w^0(z-y_0)$.  Then $u=w_{y_0}$ almost everywhere on $B^{y_0}$,
+because $\{z\in B^{y_0}:u(z)\ne w_{y_0}(z)\}$ is the translate by $y_0$ of
+$\{z\in B_{d/4}(0):u_{y_0}(z)\ne w^0(z)\}$ and a translate of a null set is
+null.  Moreover $z\mapsto z-y_0$ is a homeomorphism of $\R^n$ carrying
+$B^{y_0}$ onto $B_{d/4}(0)$, hence carrying the closure of $B^{y_0}$ into the
+closure of $B_{d/4}(0)$, so $w_{y_0}$ is continuous on the closure of
+$B^{y_0}$; and, since that map is an isometry,
+\[
+|w_{y_0}(x)-w_{y_0}(y)|\le N_h\operatorname{dist}(x,y)^{s}
+\]
+for all $x,y$ in the closure of $B^{y_0}$.
+
+\emph{Step 5: $U=w_{y_0}$ pointwise on $B^{y_0}$.}  By hypothesis (c), $U$ is
+continuous on the open set $B^{y_0}$; and $w_{y_0}$ is continuous on the closure
+of $B^{y_0}$, hence on $B^{y_0}$.  By hypothesis (b) and Step 2, $U=u$ almost
+everywhere on $B^{y_0}$, and by Step 4, $u=w_{y_0}$ almost everywhere there; so
+$U=w_{y_0}$ almost everywhere on $B^{y_0}$.  The set
+\[
+E=\{x\in B^{y_0}:U(x)\ne w_{y_0}(x)\}
+\]
+is the preimage of $\R\setminus\{0\}$ under the function $U-w_{y_0}$, which is
+continuous on the open set $B^{y_0}$, so $E$ is open in $B^{y_0}$ and hence open
+in $\R^n$; and $E$ is Lebesgue-null by the previous sentence.  If $E$ were
+nonempty it would contain some $B_\rho(z)$ with $\rho>0$, whose measure
+$\omega_n\rho^{\,n}$ is positive, contradicting $|E|=0$.  So $E=\emptyset$, i.e.
+\[
+U=w_{y_0}\quad\text{pointwise on }B^{y_0}.
+\]
+
+\emph{Step 6: the conclusion, at the fixed exponent $\tfrac12$.}  Let
+$x_0\in\Omega'$ and $0<R\le d/16$, and apply Steps 2--5 at $y_0=x_0$.  Since
+$R\le d/16<d/4$ we have
+\[
+\overline B_R(x_0)\subseteq B_{d/4}(x_0)=B^{x_0},
+\]
+so by Step 5, $U=w_{x_0}$ pointwise on $\overline B_R(x_0)$, and
+$\overline B_R(x_0)$ is contained in the closure of $B^{x_0}$.  Two consequences.
+
+First, $U$ is continuous on $\overline B_R(x_0)$: by hypothesis (c) at the
+centre $x_0$, $U$ is continuous on $B^{x_0}$, and continuity on a set restricts
+to every subset of it.
+
+Second, let $x,y\in\overline B_R(x_0)$ and put
+$t=\operatorname{dist}(x,y)$.  If $t=0$ then $x=y$ and both sides of the
+asserted inequality are $0$, the right-hand side because $0^{1/2}=0$ under the
+real-power convention the Preamble records ($0^{r}=0$ for $r\ne0$).  If $t>0$
+then, $x$ and $y$ lying in the closure of $B^{x_0}$, Step 4 gives
+$|U(x)-U(y)|=|w_{x_0}(x)-w_{x_0}(y)|\le N_ht^{\,s}$; and
+\[
+t=\operatorname{dist}(x,y)\le\operatorname{dist}(x,x_0)+
+\operatorname{dist}(x_0,y)\le2R\le\frac d8\le d\le\max\{1,d\},
+\]
+so, $r\mapsto r^{\,s-1/2}$ being nondecreasing on $(0,\infty)$ for the
+nonnegative exponent $s-\tfrac12$,
+\[
+t^{\,s}=t^{1/2}\,t^{\,s-\frac12}\le t^{1/2}\max\{1,d\}^{\,s-\frac12}.
+\]
+Multiplying by $N_h\ge0$,
+\[
+|U(x)-U(y)|\le N_h\max\{1,d\}^{\,s-\frac12}\,t^{1/2}
+=C_1\operatorname{dist}(x,y)^{1/2},
+\]
+which is the displayed inequality.  Together with the continuity of $U$ on
+$\overline B_R(x_0)$ and $C_1\ge0$, it is also exactly
+$U\in C^{1/2}(\overline B_R(x_0))$ (\noderef{MemHolderOn}), whose two clauses
+are continuity on the set and the existence of a nonnegative constant for which
+the two-point bound holds.  The constant $C_1$ was fixed in Step 1, before
+$\Omega,\Omega',u,U$ and before $x_0$ and $R$, so it is one constant for every
+centre and every admissible radius, as asserted.
+\end{proof}

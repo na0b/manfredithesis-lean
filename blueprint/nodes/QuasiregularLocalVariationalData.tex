@@ -1,0 +1,241 @@
+\begin{lemma}[The local variational data of a quasiregular map]
+Let $n\ge2$, $K\ge1$, $0<\lambda\le\Lambda$, and let $\nu_0,\nu_1$ satisfy
+\[
+0<\nu_0\le\frac nK,\qquad n(n-1)K^{\,n-1}\le\nu_1 .
+\]
+Let $\Omega,\Omega'\subseteq\R^n$ be open with $\Omega'$ nonempty and bounded and
+$\overline{\Omega'}\subseteq\Omega$.  Let $F\colon\R^n\to\R^n$ be
+$K$-quasiregular on $\Omega$ with component gradients $G$
+(\noderef{IsQuasiregularOn}), let $\tau$ be its distortion matrix
+(\noderef{IsDistortionMatrix}), assume the cited result (C7)
+(\noderef{CitedQuasiregularBasics}) at $n,K$ for the data $F,G,\tau$ on
+\emph{every} open $\Omega_0\subseteq\Omega$, and assume that there is no
+$c\in\R^n$ with $F=c$ almost everywhere on $\Omega$.  Let
+$\tau'\colon\R^n\to\R^{n\times n}$ satisfy $\tau=\tau'$ almost everywhere on
+$\Omega$ with every entry $x\mapsto\tau'(x)_{jk}$ continuous on $\Omega$, and
+assume that for almost every $x\in\Omega$ the matrix $\tau(x)$ is symmetric with
+$\det\tau(x)=1$ and
+\[
+K^{-\frac2n}|\xi|^2\le(\tau(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2\quad
+(\xi\in\R^n),
+\qquad
+\lambda|h|^{\,n}\le(\tau(x)h,h)^{\frac n2}\le\Lambda|h|^{\,n}\quad(h\in\R^n),
+\]
+where $(Sv,w)=\sum_a\sum_bS_{ab}v_aw_b$.  Fix $i\in\{1,\dots,n\}$ and write
+$u=F^i$, $g=G^i$.
+
+Then there exist an open set $\Omega''\subseteq\R^n$, an integrand
+$f^0\colon\R^n\times\R\times\R^n\to\R$, a function $\sigma\colon\R\to\R$ and
+reals $M,W_n,d$ such that
+\begin{itemize}
+\item[(a)] $\overline{\Omega'}\subseteq\Omega''$,
+  $\overline{\Omega''}\subseteq\Omega$, and
+  $d\le\operatorname{dist}(x,y)$ for every $x\in\Omega'$ and every
+  $y\notin\Omega''$;
+\item[(b)] $0<d$, $0\le M$ and $0\le W_n$;
+\item[(c)] $f^0$ satisfies (F1) of the thesis--(F3) of the thesis on $\Omega''$ with the
+  parameters $p=n$, $\varepsilon=0$, $\lambda,\Lambda$, $a=1$, $\nu_0,\nu_1$ and
+  the modulus $\sigma$ (\noderef{VariationalStructureF123});
+\item[(d)] $u\in W^{1,n}(\Omega'')$ with weak gradient $g$
+  (\noderef{MemW1pOn}), $|u|\le M$ almost everywhere on $\Omega''$, and
+  $\int_{\Omega''}|u|^n\,dx+\int_{\Omega''}\|g\|^n\,dx\le W_n^{\,n}$;
+\item[(e)] $u$ is a local minimum for $f^0$ in $\Omega''$ with weak gradient $g$
+  (\noderef{IsLocalMinimumOn}); and
+\item[(f)] for all $\delta,C$ with $0<\delta<1$ and $C\ge0$, if
+  $|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\operatorname{dist}(x,y)^\delta$ for all
+  $x,y\in\Omega$ and all $j,k$, then there is $c_\sigma>0$ with
+  $\sigma(t)\le c_\sigma t^\delta$ for every $t\ge0$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Write $p=n$ and $\varepsilon=0$ throughout, so $1<p$ because $n\ge2$.  Note
+$K>0$ from $K\ge1$, and put
+\[
+c_{n,K}=\frac{n^2}2K^{\frac{(n-1)(n-2)}n}>0 .
+\]
+
+\textbf{(3a) The interposed set $\Omega''$ and the constant $d$.}  Apply
+\noderef{InterposedOpenSet} with $n$ and the sets $\Omega,\Omega'$; its
+hypotheses are that $\Omega$ is open, $\Omega'$ is nonempty and bounded and
+$\overline{\Omega'}\subseteq\Omega$, all of which are hypotheses of the present
+lemma.  It supplies $\Omega''$ and $d$ with
+\[
+\overline{\Omega'}\subseteq\Omega'',\qquad
+\overline{\Omega''}\subseteq\Omega,\qquad
+\Omega''\ \text{open, nonempty, bounded},\qquad
+\overline{\Omega''}\ \text{compact},
+\tag{3.3}
+\]
+and $d>0$ with $d\le\operatorname{dist}(x,y)$ for $x\in\Omega'$,
+$y\notin\Omega''$.  In particular
+$\Omega''\subseteq\overline{\Omega''}\subseteq\Omega$.  This is (a), (b) and
+(d).
+
+\textbf{(3b) The pointwise two-sided bounds for $\tau'$ on all of $\Omega$.}
+Apply \noderef{MatrixFieldAEToEverywhere} with $n$, $K$, $\lambda$, $\Lambda$,
+the open set $\Omega$ and the fields $\tau,\tau'$; its hypotheses are $n\ge2$ and
+$K\ge1$, both hypotheses of the present lemma, together with the
+almost-everywhere equality $\tau=\tau'$ on $\Omega$, the continuity of the
+entries of $\tau'$ on $\Omega$ and the almost-everywhere two-sided hypothesis on
+$\tau$, all of which are hypotheses here as well.  It gives, for \emph{every}
+$x\in\Omega$,
+\[
+K^{-\frac2n}|\xi|^2\le(\tau'(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2
+\qquad(\xi\in\R^n),
+\tag{3.4}
+\]
+\[
+\tau'(x)\ \text{is symmetric},\quad \det\tau'(x)=1,\quad
+\lambda|h|^{\,n}\le(\tau'(x)h,h)^{\frac n2}\le\Lambda|h|^{\,n}\quad(h\in\R^n).
+\tag{3.5}
+\]
+
+\textbf{(3c) The integrand.}  Define $\tau''(x)=\tau'(x)$ for $x\in\Omega''$ and
+$\tau''(x)=I$ otherwise, and
+\[
+f^0(x,z,h)=\bigl(\tau''(x)h,h\bigr)^{\frac n2},\qquad
+q(x,h)=\bigl(\tau''(x)h,h\bigr).
+\]
+The integrand does not depend on $z$.  On $\Omega''$ it is the integrand of
+(C7)'s local-minimum clause with $\tau$ replaced by $\tau'$; the value off
+$\Omega''$ is irrelevant to every use below and is fixed only so that the two
+clauses of \noderef{VariationalStructureF123} that carry no ``$x\in\Omega''$''
+guard can be verified.  Note $q(x,h)\ge0$ for every $x$: on $\Omega''$ by (3.4),
+since $\Omega''\subseteq\Omega$ by (3.3), and off $\Omega''$ because
+$q(x,h)=|h|^2$.
+
+\textbf{(3d) The local data on $\Omega''$: $M$, $W_n$, the Sobolev membership
+and the local minimum.}  Apply \noderef{QuasiregularFrozenLocalData} with $n$,
+$K$, the open sets $\Omega,\Omega''$, the data $F,G,\tau,\tau'$, the integrand
+$f^0$ of (3c) and the index $i$.  Its hypotheses are $n\ge2$, $K\ge1$, the
+openness of $\Omega$ and $\Omega''$, $\overline{\Omega''}\subseteq\Omega$ and
+$\overline{\Omega''}$ compact --- the last two by (3.3) --- the present
+\noderef{IsQuasiregularOn}, \noderef{IsDistortionMatrix} and (C7) hypotheses,
+the non-constancy hypothesis, the almost-everywhere equality $\tau=\tau'$ on
+$\Omega$, and that $f^0(x,z,h)=(\tau'(x)h,h)^{n/2}$ for $x\in\Omega''$, which
+holds because $\tau''=\tau'$ on $\Omega''$ by (3c).  It supplies
+$M,W_n\ge0$ with
+\[
+u\in W^{1,n}(\Omega'')\ \text{with weak gradient}\ g,\qquad
+|u|\le M\ \text{almost everywhere on }\Omega'',
+\tag{3.9}
+\]
+\[
+\int_{\Omega''}|u|^{\,n}+\int_{\Omega''}\|g\|^{\,n}\le W_n^{\,n},
+\qquad
+\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g ,
+\tag{3.8}
+\]
+where $u=F^i$ and $g=G^i$.  These are (b), (d) and (e), and together with (3.3)
+they complete (a).
+
+\textbf{(3f) The modulus of continuity and $\sigma$.}  Apply
+\noderef{UniformModulusFromCompact} with $n$, the compact set
+$A=\overline{\Omega''}$ of (3.3) and the field $\tau'$; the continuity of each
+entry on $A$ follows from its continuity on $\Omega$ and
+$\overline{\Omega''}\subseteq\Omega$.  It supplies $\sigma_0\colon\R\to\R$,
+nonnegative, continuous, nondecreasing, bounded, with $\sigma_0(0)=0$ and
+\[
+|\tau'(x)_{jk}-\tau'(y)_{jk}|\le\sigma_0\bigl(\operatorname{dist}(x,y)\bigr)
+\qquad(x,y\in\overline{\Omega''},\ \text{all }j,k),
+\tag{3.6}
+\]
+together with the rate clause used in (3j).  Put $\sigma=c_{n,K}\,\sigma_0$.
+Since $c_{n,K}>0$, $\sigma$ is nonnegative, continuous, nondecreasing and
+bounded with $\sigma(0)=0$, which are the four $\sigma$-clauses of
+\noderef{VariationalStructureF123}.
+
+\textbf{(3g) and (3h) The derivatives of the integrand, (F2) of the thesis, and the
+oscillation bound.}  Fix $x\in\Omega''$ and apply
+\noderef{FrozenQuadraticFormStructure} with $n$, $K$, $\nu_0$, $\nu_1$ and the
+matrix $T=\tau'(x)$.  Its hypotheses are $n\ge2$, $K\ge1$,
+$0<\nu_0\le n/K$ and $n(n-1)K^{\,n-1}\le\nu_1$ --- hypotheses of the present
+lemma --- and the symmetry of $\tau'(x)$ with the two-sided bounds (3.4), both
+available at every $x\in\Omega$ by (3b).  Since $\tau''=\tau'$ on $\Omega''$ and
+$f^0$ is $z$-free, $f^0(x,z,\cdot)=(\tau'(x)\cdot,\cdot)^{n/2}$ there, and the
+node gives at once that $f^0(x,z,\cdot)$ is $C^1$ on $\R^n$ (clause
+\textup{F2diff}), $C^2$ on $\{h:\varepsilon+|h|^2\ne0\}$ (clause
+\textup{F2diff2} at $\varepsilon=0$), and that for all $h,\zeta$ with
+$\varepsilon+|h|^2\ne0$,
+\[
+\nu_0(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2
+\le D^2_hf^0(x,z,h)[\zeta,\zeta]
+\le\nu_1(\varepsilon+|h|^2)^{\frac p2-1}|\zeta|^2 ,
+\]
+which is clause (F2) of the thesis at $\varepsilon=0$, $p=n$.
+
+For the oscillation, let $x,y\in\Omega''$, $z,z'\in\R$ and $h\in\R^n$, and apply
+the last clause of the same node at $T=\tau'(x)$ with $T'=\tau'(y)$ and
+$w=\sigma_0(\operatorname{dist}(x,y))$.  Its two hypotheses hold: $(\tau'(y)\xi,\xi)$
+is nonnegative and at most $K^{2(n-1)/n}|\xi|^2$ by (3.4) at $y\in\Omega$, and
+$|\tau'(x)_{ab}-\tau'(y)_{ab}|\le w$ by (3.6), since
+$x,y\in\Omega''\subseteq\overline{\Omega''}$.  Hence
+\[
+\bigl|f^0(x,z,h)-f^0(y,z',h)\bigr|
+\le c_{n,K}\,\sigma_0\bigl(\operatorname{dist}(x,y)\bigr)\,|h|^{\,n}
+\le(1+|h|^2)^{\frac n2}\,\sigma\bigl(\operatorname{dist}(x,y)+|z-z'|\bigr)
+\tag{3.10}
+\]
+for all such $x,y,z,z',h$: the integrand is $z$-free, so the left-hand side does
+not change when $z,z'$ vary; $\sigma_0$ is nondecreasing and $|z-z'|\ge0$, so
+$\sigma_0(\operatorname{dist}(x,y))\le\sigma_0(\operatorname{dist}(x,y)+|z-z'|)$;
+and $|h|^{\,n}=(|h|^2)^{n/2}\le(1+|h|^2)^{n/2}$.  This is clause
+(F3) of the thesis.
+
+\textbf{(3i) The structure predicate, which is (c).}  We can now assemble
+$\mathrm{VariationalStructureF123}\ n\ n\ 0\ \lambda\ \Lambda\ 1\ \nu_0\ \nu_1\
+\Omega''\ f^0\ \sigma$ (\noderef{VariationalStructureF123}), clause by clause.
+\begin{itemize}
+\item \emph{measx}: for fixed $z,h$, the map $x\mapsto f^0(x,z,h)$ is measurable
+  on all of $\R^n$.  Indeed $x\mapsto q(x,h)$ is the function that equals the
+  continuous $x\mapsto(\tau'(x)h,h)$ on the open, hence measurable, set
+  $\Omega''$ --- continuous there because the entries of $\tau'$ are continuous
+  on $\Omega\supseteq\Omega''$ --- and the constant $|h|^2$ on its complement,
+  so it is measurable, being piecewise continuous along a measurable
+  decomposition; composing with the continuous, hence measurable,
+  $t\mapsto t^{n/2}$ gives the claim.  This is the clause for which $\tau''$,
+  rather than $\tau'$, had to be defined on all of $\R^n$ in (3c).
+\item \emph{contzh}: for every $x\in\R^n$ the map
+  $(z,h)\mapsto f^0(x,z,h)$ is continuous.  It is independent of $z$, and in $h$
+  it is $h\mapsto q(x,h)^{n/2}$ with $q(x,\cdot)$ a continuous (indeed
+  polynomial) function and $t\mapsto t^{n/2}$ continuous on $\R$, the exponent
+  $n/2$ being nonnegative.  This clause too is unguarded, and holds off
+  $\Omega''$ because there $f^0(x,z,h)=|h|^{\,n}$.
+\item (F1) of the thesis: for $x\in\Omega''$ and all $z,h$ we must have
+  $-a+\lambda(\varepsilon+|h|^2)^{p/2}\le f^0(x,z,h)
+  \le\Lambda(\varepsilon+|h|^2)^{p/2}+a$.  At $\varepsilon=0$, $p=n$ we have
+  $(\varepsilon+|h|^2)^{p/2}=(|h|^2)^{n/2}=|h|^{\,n}$ --- including at $h=0$,
+  where both sides are $0$ because the exponent $n/2$ is nonzero, so the
+  real-power convention produces no junk value here --- and (3.5) gives
+  $\lambda|h|^{\,n}\le f^0(x,z,h)\le\Lambda|h|^{\,n}$ since $\tau''=\tau'$ on
+  $\Omega''$.  With $a=1$ the required inequalities follow, because
+  $-1+\lambda|h|^{\,n}\le\lambda|h|^{\,n}$ and
+  $\Lambda|h|^{\,n}\le\Lambda|h|^{\,n}+1$.
+\item \textup{F2diff}, \textup{F2diff2}, (F2) of the thesis: these are the three
+  statements obtained in (3h), for each $x\in\Omega''$ and every $z$ (the
+  integrand being $z$-free).
+\item \emph{sigmabdd}, \emph{sigmacont}, \emph{sigmamono}, \emph{sigmazero}:
+  proved in (3f), for every real $t$, which is the form in which they are
+  asserted.
+\item (F3) of the thesis: this is (3.10), for all $x,y\in\Omega''$, all $z,z'$ and all
+  $h$.
+\end{itemize}
+
+\textbf{(3j) The H\"older rate, which is (f).}  Let $0<\delta<1$ and $C\ge0$ and
+suppose $|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\operatorname{dist}(x,y)^\delta$ for
+all $x,y\in\Omega$ and all $j,k$.  Then the same bound holds for all
+$x,y\in\overline{\Omega''}$, by $\overline{\Omega''}\subseteq\Omega$ from (3.3),
+so the rate clause of \noderef{UniformModulusFromCompact} obtained in (3f)
+applies with this $\delta$ and $C$ --- its guards being $0<\delta$, $\delta\le1$,
+which follows from $\delta<1$, and $C\ge0$ --- and yields
+$\sigma_0(t)\le2Ct^\delta$ for every $t\ge0$.  Therefore
+\[
+\sigma(t)=c_{n,K}\sigma_0(t)\le2c_{n,K}Ct^\delta\le c_\sigma t^\delta
+\qquad\text{for all }t\ge0,
+\qquad
+c_\sigma=2c_{n,K}C+c_{n,K}>0 ,
+\]
+the extra summand $c_{n,K}>0$ being added so that $c_\sigma>0$ even when $C=0$,
+which the hypothesis allows; the inequality is unaffected, since $t^\delta\ge0$
+for $t\ge0$.  That is (f), and the proof is complete.
+\end{proof}

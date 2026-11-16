@@ -1,0 +1,107 @@
+\begin{lemma}[The frozen field composed with an $L^p$ gradient lies in $L^{p'}$]
+Let $n\ge2$, let $p>1$, let $0\le\varepsilon\le1$ and let $\gamma_0>0$,
+$\gamma_1>0$.  Let $A\colon\R^n\to\R^n$ be a field of the variable $h$ alone and
+suppose that its normalisation, the field
+$(x,z,h)\mapsto A(h)-A(0)$, satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$
+with the parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}).  Let $S\subseteq\R^n$ be a set of finite
+Lebesgue measure and let $g_v\colon\R^n\to\R^n$ belong to $L^{p}(S)$.  Then
+\[
+A\circ g_v\in L^{p'}(S),\qquad p'=\frac p{p-1} .
+\]
+\end{lemma}
+\begin{proof}
+Write $\widetilde A(h)=A(h)-A(0)$ for the normalised field, so that the
+hypothesis is
+$\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;\R^n\;
+\bigl((x,z,h)\mapsto\widetilde A(h)\bigr)$, and note $\widetilde A(0)=0$.
+
+\emph{Step A: $A$ is continuous.}  The clause \texttt{hcont} of
+\noderef{EllipticStructureQ12} says that for every $x$ in the set --- here all
+of $\R^n$ --- and every $z$, the map $h\mapsto\widetilde A(h)$ is continuous.
+Hence $A=\widetilde A+A(0)$ is continuous, being the sum of a continuous map and
+a constant.
+
+\emph{Step B: a growth bound for $\widetilde A$, free of $x$.}  Apply
+\noderef{StructureGrowthBound} with the present $n,p$ --- its hypotheses are
+$2\le n$ and $1<p$ --- and let $c>0$ be the constant it produces.  Apply its
+conclusion with the present $\varepsilon$, with $\gamma_0,\gamma_1$ in the roles
+of its $\gamma_0,\gamma_1$, with $\R^n$ in the role of its $\Omega$ and with the
+field $(x,z,h)\mapsto\widetilde A(h)$; its guards $0\le\varepsilon$,
+$0<\gamma_0$, $0<\gamma_1$ hold and its remaining hypothesis is the present
+one.  It gives: for almost every $x\in\R^n$, for every $z\in\R$ and every
+$h\in\R^n$,
+\[
+|\widetilde A(h)|\le|\widetilde A(0)|
++c\,\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|h|
+=c\,\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|h| ,
+\tag{B}
+\]
+the equality because $\widetilde A(0)=A(0)-A(0)=0$.  Neither side of (B)
+mentions $x$ or $z$, so the ``almost every $x$'' may be removed: the set of
+$x$ for which the displayed implication holds has null complement, and it is
+nonempty, since otherwise its complement would be all of $\R^n$, which is not
+null because it contains the unit ball, of positive volume (Preamble: the
+volume of a ball).  Evaluating at one such $x$ and at $z=0$ gives (B) for every
+$h\in\R^n$.
+
+\emph{Step C: the weight bound.}  For every $h\in\R^n$,
+\[
+\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|h|\le\bigl(1+|h|^2\bigr)^{\frac{p-1}2} .
+\tag{C}
+\]
+If $p\ge2$ the exponent $\frac p2-1$ is nonnegative and
+$0\le\varepsilon+|h|^2\le1+|h|^2$ because $\varepsilon\le1$, so
+$(\varepsilon+|h|^2)^{p/2-1}\le(1+|h|^2)^{p/2-1}$; also
+$|h|=(|h|^2)^{1/2}\le(1+|h|^2)^{1/2}$; multiplying the two and adding the
+exponents gives (C).  If $1<p<2$ the exponent is negative.  For $h=0$ the left
+side is $(\varepsilon)^{p/2-1}\cdot0=0$ and the right side is $1$, so (C) holds.
+For $h\ne0$ we have $0<|h|^2\le\varepsilon+|h|^2$, and $t\mapsto t^{p/2-1}$ is
+nonincreasing on $(0,\infty)$ for a nonpositive exponent, so
+$(\varepsilon+|h|^2)^{p/2-1}\le(|h|^2)^{p/2-1}$; and
+$(|h|^2)^{p/2-1}|h|=(|h|^2)^{(p-1)/2}$, because
+$(|h|^2)^{p/2-1}|h|=|h|^{p-2}|h|=|h|^{p-1}$ with $|h|>0$; finally
+$(|h|^2)^{(p-1)/2}\le(1+|h|^2)^{(p-1)/2}$ since $\frac{p-1}2>0$.  This is (C).
+
+\emph{Step D: the pointwise majorant.}  Since $1+|h|^2\le(1+|h|)^2$ and
+$\frac{p-1}2>0$,
+\[
+\bigl(1+|h|^2\bigr)^{\frac{p-1}2}\le\bigl((1+|h|)^2\bigr)^{\frac{p-1}2}
+=(1+|h|)^{p-1} .
+\]
+Combining this with (C) and (B) and with
+$|A(h)|\le|\widetilde A(h)|+|A(0)|$,
+\[
+|A(h)|\le c\,\gamma_1(1+|h|)^{p-1}+|A(0)|\qquad(h\in\R^n).
+\tag{D}
+\]
+
+\emph{Step E: the majorant lies in $L^{p'}(S)$.}  Put
+$F=1+|g_v|$ on $S$.  The constant function $1$ lies in $L^p(S)$ because $S$ has
+finite measure, and $|g_v|\in L^p(S)$ because $g_v\in L^p(S)$; so $F\in L^p(S)$
+by the $L^p$ triangle inequality (Minkowski, Preamble).  Since $F\ge0$ and
+$(p-1)p'=p$, the function $F^{p-1}$ satisfies
+$\int_S\bigl(F^{p-1}\bigr)^{p'}=\int_SF^{p}<\infty$, so $F^{p-1}\in L^{p'}(S)$;
+here $p'=p/(p-1)$ is finite and positive because $p>1$.  The constant function
+$|A(0)|$ lies in $L^{p'}(S)$ because $S$ has finite measure.  Hence
+\[
+G=c\,\gamma_1F^{p-1}+|A(0)|
+\]
+lies in $L^{p'}(S)$, again by Minkowski, and $G\ge0$.
+
+\emph{Step F: conclusion.}  The map $A\circ g_v$ is almost everywhere strongly
+measurable on $S$, being the composition of the continuous $A$ of Step A with
+the almost everywhere strongly measurable $g_v$ (which is part of
+$g_v\in L^p(S)$).  By (D) applied at $h=g_v(x)$,
+\[
+|A(g_v(x))|\le c\,\gamma_1\bigl(1+|g_v(x)|\bigr)^{p-1}+|A(0)|=G(x)
+\]
+for every $x\in S$.  Raising to the power $p'>0$, which preserves the order of
+nonnegative reals, and integrating over $S$ by monotonicity of the integral
+(Preamble),
+\[
+\int_S|A\circ g_v|^{p'}\le\int_SG^{p'}<\infty .
+\]
+Together with the measurability just noted this says $A\circ g_v\in L^{p'}(S)$,
+which is the assertion.
+\end{proof}

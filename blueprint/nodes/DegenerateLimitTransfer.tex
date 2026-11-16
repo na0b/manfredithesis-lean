@@ -1,0 +1,880 @@
+\begin{helper}[Approximation of the degenerate case]
+Let $n\ge2$, $p>1$ and $r>0$.  Then there is $r'=r'(n,p,r)>0$ with the following
+property.  Let $\gamma_0>0$ and $\gamma_1\le r\gamma_0$, let
+$A\colon\R^n\to\R^n$ satisfy $A(0)=0$ and (Q1) of the thesis--(Q2) of the thesis with
+$\varepsilon=0$ and constants $\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), and assume the cited solvability result (C2)
+(\noderef{CitedDirichletW1p}) \emph{for every} field
+$A'\colon\R^n\to\R^n$ and all parameters $\varepsilon,\gamma_0',\gamma_1'$ with
+$\gamma_0'>0$ and $\gamma_1'>0$.  Let
+$B_R=B_R(x_0)$, $R>0$, let $u\in W^{1,p}(B_R)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}), and let $u$
+be a weak solution of $\operatorname{div}A(\nabla u)=0$ in $B_R$
+(\noderef{IsWeakSolutionOn}) with the same weak gradient $g$.  Then there exist
+a sequence $e_m>0$ with $e_m\to0$, vector fields $A_{e_m}$ and functions
+$u_m$ with weak gradients $g_m$ such that
+\begin{enumerate}
+\item for every $m$, $A_{e_m}(0)=0$ and there are constants
+  $\gamma_0^{(m)}>0$ and $\gamma_1^{(m)}\le r'\gamma_0^{(m)}$ for which
+  $A_{e_m}$ satisfies (Q1) of the thesis--(Q2) of the thesis with parameter
+  $\varepsilon=e_m$ and those constants (\noderef{EllipticStructureQ12});
+\item $u_m$ is a weak solution of $\operatorname{div}A_{e_m}(\nabla u_m)=0$ in
+  $B_R$, for every $m$ (\noderef{IsWeakSolutionOn});
+\item $u_m-u\in W^{1,p}_0(B_R)$ for every $m$
+  (\noderef{MemW1pZeroOn}), i.e.\ $u_m$ has the same boundary values as $u$;
+\item $\int_{B_R}|g_m-g|^p\,dx\to0$ as $m\to\infty$; and
+\item $g_m(x)\to g(x)$ as $m\to\infty$, for almost every $x\in B_R$.
+\end{enumerate}
+
+\textbf{On the two quantifiers.}  Clause (1) asks only that the \emph{ratio} of
+the approximating structure constants be bounded, by a number $r'$ chosen before
+the family, and not that the constants themselves be $\gamma_0,\gamma_1$.  The
+stronger form is false for the natural perturbation: for $p=6$ and
+$A(h)=|h|^4h$, which satisfies (Q1) of the thesis--(Q2) of the thesis at
+$\varepsilon=0$ with $\gamma_0=1$ and $\gamma_1=5$ because
+$(D A(h)\xi,\xi)=|h|^4|\xi|^2+4|h|^2(h,\xi)^2$, the field
+$A_e(h)=A(h)+e^{\frac p2-1}h=A(h)+e^2h$ has, at $|h|^2=e$ and $\xi\perp h$ with
+$|\xi|=1$,
+\[
+(DA_e(h)\xi,\xi)=e^2+e^2=2e^2,
+\qquad
+\gamma_0\bigl(e+|h|^2\bigr)^{\frac p2-1}|\xi|^2=(2e)^2=4e^2 ,
+\]
+so (Q1) of the thesis fails at $\gamma_0=1$; the largest admissible constant there is
+$\tfrac12$.  The bounded-ratio form is what the consumers need, because the
+constants of Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis depend only on $n$, $p$ and
+$\gamma_1/\gamma_0$, and both consumers bind their structure constants through
+an inequality $\gamma_1\le r\gamma_0$: they instantiate that bound at $r'$.
+
+Clauses (4) and (5) are stated along a \emph{sequence} $e_m\to0$ and not for the
+whole family $(A_e)_{e>0}$.  That is the strongest form available: convergence
+in $L^p$ yields almost everywhere convergence only along a sequence, by passage
+to a subsequence, and never for a family indexed by a continuum.
+
+\textbf{On the form of the (C2) hypothesis.}  The cited result is assumed for
+every field and every parameter, not only for the given $A$ at
+$\varepsilon=0$, because the solutions $u_m$ whose existence is asserted solve
+the equation of the \emph{regularized} field $A_{e_m}$, and those fields are
+produced inside the conclusion, so no hypothesis attached to a single named
+field could reach them.  This is the form (C2) has in the paper, which states it
+for an arbitrary operator: ``If $A$ satisfies (Q1) of the thesis--(Q2) of the thesis with
+some $\varepsilon\ge0$ and $A(0)=0$, $B$ is a ball and $g\in W^{1,p}(B)$, then
+there is a weak solution $v$ of (3.1) of the thesis in $B$ with
+$v-g\in W^{1,p}_0(B)$'' (Note for the formalization, (C2)).  So the universally
+quantified clause is the faithful transcription and the earlier
+single-instance one was the weakening.  The quantifier is restricted to
+$\gamma_0'>0$ and $\gamma_1'>0$, and those side conditions are not optional: the
+structure conditions carry positive constants in the thesis
+(``$\gamma_0,\gamma_1>0$''), so a clause quantified over $\gamma_0'\le0$ or
+$\gamma_1'\le0$ would assert more than the cited result does --- and since this
+is a \emph{hypothesis} of the present node, assuming more than the literature
+gives risks making the node vacuously true.  The remaining antecedents need no
+guard, because the predicate \noderef{CitedDirichletW1p} already carries
+(Q1) of the thesis--(Q2) of the thesis, $\varepsilon\ge0$ and $A'(0)=0$ inside its own
+statement.
+
+\textbf{On the hypothesis $u\in W^{1,p}(B_R)$.}  The membership of $u$ in
+$W^{1,p}$ of the \emph{whole} ball, and not merely in
+$W^{1,p}_{\mathrm{loc}}(B_R)$, is a restoration of what the cited result the
+conclusion rests on actually requires, not a strengthening of this node.  The
+cited solvability result (C2) reads: ``If $A$ satisfies
+(Q1) of the thesis--(Q2) of the thesis with some $\varepsilon\ge0$ and $A(0)=0$, $B$ is a
+ball and $g\in W^{1,p}(B)$, then there is a weak solution $v$ of
+(3.1) of the thesis in $B$ with $v-g\in W^{1,p}_0(B)$'' (Note for the formalization,
+(C2)); the boundary datum is required to lie in $W^{1,p}$ of the ball.  The
+conclusion of the present node applies (C2) with the boundary datum $u$ --- that
+is how the approximating solutions $u_m$ are produced and how
+$u_m-u\in W^{1,p}_0(B_R)$ is asserted in clause (3) --- so without this
+hypothesis clauses (2)--(5) would assert more than (C2) licenses.  The local
+membership that \noderef{IsWeakSolutionOn} carries does not supply it: a
+$W^{1,p}_{\mathrm{loc}}(B_R)$ function need not be in $L^p(B_R)$, because $B_R$
+is not compactly contained in itself.  Nor does the hypothesis narrow the node's
+use: both consumers apply it on a ball whose \emph{closed} ball lies inside the
+solution's domain, and for such a ball the local membership on the domain does
+give the global one on the ball.
+
+\textbf{Why a bounded ratio is enough.}  The paper itself records that ``it is
+enough to prove Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis when $\varepsilon>0$,
+since our constants are independent of $\varepsilon$'', and recovers
+$\varepsilon=0$ ``by an approximation argument as done in [DB, section~2]''
+(thesis p.~16, the remark after Theorem~Theorem~2 of the thesis).  Since those constants
+depend on the structure only through $\gamma_1/\gamma_0$, a bound on that ratio
+holding uniformly along the sequence is exactly what the reduction consumes, and
+the identical-constants clause was never needed.  Both consumers
+use exactly the sequence form.
+\end{helper}
+\begin{proof}
+This is the approximation argument of [DB, section 2], which the paper's Note
+for the formalization requires to be proved.  The proof constructs the
+approximating family and its structure constants (clause (1)), produces the
+regularized solutions from the cited result (C2) (clauses (2) and (3)), proves
+the convergence of their gradients in $L^p(B_R)$ (clause (4)), and extracts the
+subsequence along which the gradients also converge almost everywhere (clause
+(5)).
+
+\emph{Reading the structure conditions pointwise.}  This is recorded first
+because every later paragraph uses it, including the construction of the family.
+Both (Q1) of the thesis and (Q2) of the thesis of \noderef{EllipticStructureQ12} are
+almost-everywhere statements in $x$, and the fields appearing here do not depend
+on $x$: the hypothesis of the theorem is
+$\mathrm{EllipticStructureQ12}(n,p,0,\gamma_0,\gamma_1,\R^n,(x,z,h)\mapsto A(h))$,
+and the same shape will be produced for $A_e$.  For such a field the property
+quantified over $x$ does not involve $x$, so the exceptional set is either empty
+or all of $\R^n$; the latter is impossible because $\R^n$ is not Lebesgue null,
+containing a ball of positive volume $\omega_n\rho^n>0$ (Preamble: the volume of
+a ball).  Hence for an $x$-independent field (Q1) of the thesis and (Q2) of the thesis
+hold \emph{for every} $x$, i.e.\ as statements about the field of $h$ alone, and
+we use them in that form throughout, for $A$ from here on and for $A_e$ as soon
+as it has been shown to satisfy the bundle.  The same remark applies to the two
+cited nodes used below, \noderef{StructureMonotonicityBound} and
+\noderef{StructureGrowthBound}, whose conclusions are likewise ``for a.e.\ $x$''
+with $x$-free right-hand sides.  There is no circularity: the argument uses only
+that the field does not depend on $x$ and that $\R^n$ is not null.
+
+\emph{The approximating family.}  Fix once and for all the mollifier
+$\rho=\rho_1$ of the Preamble, with the two further properties recorded there:
+$\rho\in C^\infty(\R^n)$, $\rho\ge0$, $\operatorname{supp}\rho\subseteq\overline{B_1(0)}$,
+$\int\rho=1$, $\rho\equiv\kappa>0$ on $\overline{B_{7/8}(0)}$ and
+$\|\rho\|_\infty<\infty$.  For $e>0$ put
+\[
+A_e(h)=\int_{\R^n}A(h+\sqrt e\,z)\,\rho(z)\,dz
+-\int_{\R^n}A(\sqrt e\,z)\,\rho(z)\,dz ,
+\]
+that is, $A$ mollified at scale $\sqrt e$ and renormalised so that $A_e(0)=0$.
+The subtracted vector is a constant, so it cancels in every difference
+$A_e(a)-A_e(b)$ and does not affect the derivative.
+
+\emph{$A_e$ is a convolution, hence $C^\infty$.}  Put
+\[
+\sigma(w)=e^{-n/2}\rho\Bigl(-\frac w{\sqrt e}\Bigr).
+\]
+Then $\sigma\in C^\infty(\R^n)$ with
+$\operatorname{supp}\sigma\subseteq\overline{B_{\sqrt e}(0)}$ compact, both
+because $\rho$ has those properties and $w\mapsto-w/\sqrt e$ is a smooth
+diffeomorphism.  For every $h$, the change of variables $w=-\sqrt e\,z$ --- a
+unimodular linear map composed with a dilation, so $dw=e^{n/2}dz$ (Preamble:
+invariance of Lebesgue measure under translations and unimodular linear maps,
+together with the scaling in the volume-of-a-ball item) --- gives
+\[
+(A*\sigma)(h)=\int_{\R^n}A(h-w)\,\sigma(w)\,dw
+=\int_{\R^n}A(h+\sqrt e\,z)\,e^{-n/2}\rho(z)\,e^{n/2}\,dz
+=\int_{\R^n}A(h+\sqrt e\,z)\,\rho(z)\,dz .
+\]
+Hence $A_e=A*\sigma-(A*\sigma)(0)$, componentwise.  Now $A$ is continuous on all
+of $\R^n$ by clause \texttt{hcont} of \noderef{EllipticStructureQ12}, so each
+$A^i$ is locally bounded and therefore in $L^1_{\mathrm{loc}}(\R^n)$ (a
+continuous function on a compact set is bounded there, and a bounded measurable
+function on a set of finite measure is integrable --- Preamble, clause (a) of the
+domination item, against the constant majorant).  The Preamble item on
+convolution with a smooth compactly supported kernel therefore applies to each
+component with $w=A^i$ and the kernel $\sigma$, and gives
+\[
+A_e\in C^\infty(\R^n),
+\qquad
+D_j A_e^i=A^i*(D_j\sigma)\qquad(i,j=1,\dots,n).
+\]
+\emph{This is the only route to the smoothness of $A_e$ used here.}  The formula
+$DA_e(h)=\int DA(h+\sqrt e\,z)\rho(z)\,dz$ --- differentiation under the integral
+sign --- is \emph{not} used and is not available when $1<p<2$: the only
+pointwise majorant for $|DA|$ that (Q2) of the thesis supplies at $\varepsilon=0$ is a
+constant multiple of $|h'|^{p-2}$, and a majorant dominating the $h$-derivative
+uniformly for $h$ near $0$ would have to be $+\infty$ on a set of positive
+measure.  What replaces it is the increment route of the next two paragraphs,
+which differentiates nothing under an integral sign.  Finally
+$A_e\to A$ locally uniformly as $e\downarrow0$, because $A$ is continuous and
+$\int\rho=1$.
+
+Both structure conditions for $A_e$ now rest on one two-sided estimate for the
+scalar kernel --- its upper half for (Q2) of the thesis, its lower half for
+(Q1) of the thesis when $p\ge2$, the case $1<p<2$ of (Q1) of the thesis needing only the
+trivial bound $|h+\sqrt e\,z|^2\le2(e+|h|^2)$ ---
+\[
+K(h,e)=\int_{\R^n}\bigl(|h+\sqrt e\,z|^2\bigr)^{\frac p2-1}\rho(z)\,dz ,
+\]
+the \emph{weight sandwich}: there are constants $0<c_1\le C_2<\infty$ depending
+only on $n$ and $p$ with
+\[
+c_1\bigl(e+|h|^2\bigr)^{\frac p2-1}\ \le\ K(h,e)\ \le\ C_2\bigl(e+|h|^2\bigr)^{\frac p2-1}
+\qquad(h\in\R^n,\ e>0).
+\]
+Granting it, the two structure conditions for $A_e$ are obtained from
+\emph{two-point increments} of $A$, with no derivative of $A$ ever integrated.
+
+\emph{\textup{(Q1)} for $A_e$, from the monotonicity of $A$.}  Apply
+\noderef{StructureMonotonicityBound} with the parameters $n,p$ and with the
+present $r$ in the role of its $r$ --- legitimate since $2\le n$, $1<p$ and
+$r>0$ --- and let $C_M>0$ be the constant it produces, depending only on
+$n,p,r$.  Apply its conclusion to $\varepsilon=0$, the constants
+$\gamma_0>0$ and $\gamma_1\le r\gamma_0$, the set $\R^n$ and the field
+$(x,z,h)\mapsto A(h)$, whose \noderef{EllipticStructureQ12} hypothesis is the
+hypothesis of the theorem; read at every point as above, it gives
+\[
+C_M\gamma_0\bigl(|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A(a)-A(b),\,a-b\bigr)
+\qquad(a,b\in\R^n).
+\tag{MA}
+\]
+Note that (MA) carries no derivative and excludes no point: it holds for
+\emph{all} $a,b$, the degenerate case $a=b$ reading $0\le0$.
+
+Fix $h,\xi\in\R^n$ with $\xi\ne0$ (for $\xi=0$ both sides of (Q1) of the thesis
+vanish) and let $0<t\le1$.  Apply (MA) at
+\[
+a=h+t\xi+\sqrt e\,z,\qquad b=h-t\xi+\sqrt e\,z ,
+\]
+so that $a-b=2t\xi$ and, by the parallelogram law
+$|u+v|^2+|u-v|^2=2|u|^2+2|v|^2$ with $u=h+\sqrt e\,z$ and $v=t\xi$,
+\[
+|a|^2+|b|^2=2|h+\sqrt e\,z|^2+2t^2|\xi|^2 .
+\]
+Thus, for every $z$,
+\[
+4C_M\gamma_0t^2|\xi|^2
+\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}
+\ \le\ 2t\bigl(A(a)-A(b),\,\xi\bigr),
+\]
+and the base $2|h+\sqrt e\,z|^2+2t^2|\xi|^2$ is strictly positive because
+$t\ne0$ and $\xi\ne0$, so no reading of $0^{p/2-1}$ is involved.  Both sides are
+continuous in $z$ --- the left because its base is positive, the right because
+$A$ is continuous on $\R^n$ --- and both are bounded on the compact
+$\operatorname{supp}\rho\subseteq\overline{B_1(0)}$, since for $|z|\le1$ the two
+points $a,b$ lie in the compact ball
+$\overline{B_{|h|+t|\xi|+\sqrt e}(0)}$ on which $A$ is bounded, being
+continuous.  So both sides are integrable against $\rho(z)\,dz$ (Preamble,
+clause (a) of the domination item, against a constant majorant on a set of
+finite measure); integrating and using
+\[
+\int_{\R^n}\bigl[A(h+t\xi+\sqrt e\,z)-A(h-t\xi+\sqrt e\,z)\bigr]\rho(z)\,dz
+=A_e(h+t\xi)-A_e(h-t\xi)
+\]
+--- the two renormalising constants cancel --- and dividing by $2t>0$ gives
+\[
+C_M\gamma_0|\xi|^2L(t)
+\ \le\ \frac{\bigl(A_e(h+t\xi)-A_e(h-t\xi),\,\xi\bigr)}{2t},
+\qquad
+L(t)=\int_{\R^n}\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}\rho(z)\,dz .
+\tag{Q1-t}
+\]
+As $t\downarrow0$ the right-hand side of (Q1-t) tends to
+$(DA_e(h)\xi,\xi)$: $A_e$ is differentiable at $h$ by the convolution paragraph,
+so $\bigl(A_e(h\pm t\xi)-A_e(h)\bigr)/t\to\pm DA_e(h)\xi$, and the symmetric
+difference quotient is the half-sum of the two.  For the left-hand side we
+bound $L(t)$ below, in each of the two sign cases for $q=\tfrac p2-1$, by a
+quantity whose limit is explicit; no interchange of limit and integral is
+needed.
+\begin{itemize}
+\item If $p\ge2$, then $q\ge0$ and
+  $2|h+\sqrt e\,z|^2+2t^2|\xi|^2\ge2|h+\sqrt e\,z|^2$, so
+  $L(t)\ge2^qK(h,e)\ge2^qc_1(e+|h|^2)^q$ by the sandwich, a bound independent
+  of $t$.
+\item If $1<p<2$, then $q<0$ and for $|z|\le1$ one has
+  $|h+\sqrt e\,z|^2\le2|h|^2+2e=2W$ with $W=e+|h|^2$, so the base is at most
+  $4W+2t^2|\xi|^2$ and, the exponent being negative,
+  $L(t)\ge\bigl(4W+2t^2|\xi|^2\bigr)^q\int\rho=\bigl(4W+2t^2|\xi|^2\bigr)^q$,
+  whose limit as $t\downarrow0$ is $4^qW^q$, since $W\ge e>0$.
+\end{itemize}
+Writing $c_4=2^qc_1$ when $p\ge2$ and $c_4=4^q$ when $1<p<2$ --- positive in
+both cases and depending only on $n$ and $p$ --- and letting $t\downarrow0$ in
+(Q1-t),
+\[
+C_M c_4\,\gamma_0\bigl(e+|h|^2\bigr)^{\frac p2-1}|\xi|^2
+\ \le\ \bigl(DA_e(h)\xi,\xi\bigr)
+=\sum_{i,j}D_{h_j}A_e^i(h)\,\xi^i\xi^j ,
+\]
+which is (Q1) of the thesis for $A_e$ at $\varepsilon=e$ with
+$\gamma_0^{(e)}=c_0\gamma_0$, where $c_0:=C_Mc_4>0$.  The guard
+$e+|h|^2\ne0$ of \noderef{EllipticStructureQ12} is automatic for $e>0$.
+
+\emph{The two Carath\'eodory clauses for $A_e$, and for $A$.}  Both fields are
+read as fields on $\R^n\times\R\times\R^n$ that do not depend on the point or on
+the value: $(x,z,h)\mapsto A_e(h)$ and $(x,z,h)\mapsto A(h)$.  For fixed $z,h$
+the map $x\mapsto A_e(h)$ is therefore constant, hence Lebesgue measurable,
+which is the measurability clause of \noderef{EllipticStructureQ12}; and for
+fixed $x$ the map $(z,h)\mapsto A_e(h)$ is the composition of $A_e$ with the
+continuous projection $(z,h)\mapsto h$, so it is continuous on $\R\times\R^n$ as
+soon as $A_e$ is, which the display above records ($A_e\in C^\infty(\R^n)$).
+That is the joint-continuity clause.  The same two hold for $A$ itself, with
+continuity of $A$ supplied by clause \texttt{hcont} of its own
+\noderef{EllipticStructureQ12} hypothesis --- and indeed the hypothesis bundle
+for $A$ already carries both Carath\'eodory clauses, so nothing has to be
+re-derived for it; they are recorded here only because the \emph{conclusion}
+asserts a \noderef{EllipticStructureQ12} bundle for $A_e$ and every clause of
+that bundle must be produced.
+
+\emph{\textup{(Q2)} for $A_e$, from segment increments of $A$.}  Fix
+$h\in\R^n$ and indices $i,j$, and let $t\ne0$.  First, an increment bound for
+$A$ itself.  Fix $b\in\R^n$ and put $\varphi(\varsigma)=A^i(b+\varsigma t e_j)$
+for $\varsigma\in[0,1]$.  Then $\varphi$ is continuous on $[0,1]$, because $A$
+is continuous on $\R^n$ (clause \texttt{hcont}).  The set
+$T=\{\varsigma\in\R:b+\varsigma te_j=0\}$ has at most one element, the map
+$\varsigma\mapsto b+\varsigma te_j$ being injective for $t\ne0$.  Off $T$ the
+field $A$ is of class $C^1$ (clause \texttt{hdiff} of
+\noderef{EllipticStructureQ12} at $\varepsilon=0$, whose domain
+$D(0)=\{h':0+|h'|^2\ne0\}$ is $\R^n\setminus\{0\}$), so $\varphi$ is
+differentiable there with
+$\varphi'(\varsigma)=t\,D_{h_j}A^i(b+\varsigma te_j)$, and (Q2) of the thesis read at
+every point gives
+\[
+|\varphi'(\varsigma)|\ \le\ |t|\,\gamma_1\bigl(|b+\varsigma te_j|^2\bigr)^{\frac p2-1}
+\qquad(\varsigma\in[0,1]\setminus T).
+\]
+That majorant is interval-integrable on $[0,1]$ by
+\noderef{SegmentWeightIntegrable}, applied with the present $n,p$, with
+$\varepsilon=0$ and with the two endpoints $b+te_j$ and $b$: its conclusion is
+the interval integrability on $[0,1]$ of
+$\varsigma\mapsto\bigl(0+|\varsigma(b+te_j)+(1-\varsigma)b|^2\bigr)^{p/2-1}$,
+and $\varsigma(b+te_j)+(1-\varsigma)b=b+\varsigma te_j$.  Its hypotheses are
+$1<p$ and $0\le\varepsilon$, both present.  Hence, by the fundamental theorem of
+calculus in interval-integral form (Preamble) applied on $[0,1]$ with the single
+exceptional point of $T$ --- if $T\cap[0,1]=\emptyset$ the theorem applies
+directly; otherwise write $T\cap[0,1]=\{\varsigma_\ast\}$, apply the theorem on
+$[0,\varsigma']$ and $[\varsigma'',1]$ for
+$\varsigma'<\varsigma_\ast<\varsigma''$ and let
+$\varsigma'\uparrow\varsigma_\ast$, $\varsigma''\downarrow\varsigma_\ast$, both
+$\varphi$ and the integral of $\varphi'$ being continuous at $\varsigma_\ast$,
+the latter because its integrand is interval-integrable --- we get
+\[
+\bigl|A^i(b+te_j)-A^i(b)\bigr|
+=\bigl|\varphi(1)-\varphi(0)\bigr|
+\ \le\ |t|\,\gamma_1\int_0^1\bigl(|b+\varsigma te_j|^2\bigr)^{\frac p2-1}d\varsigma .
+\tag{IA}
+\]
+Now take $b=h+\sqrt e\,z$ in (IA).  Because the two renormalising constants
+cancel in the difference,
+\[
+A_e^i(h+te_j)-A_e^i(h)
+=\int_{\R^n}\bigl[A^i(h+te_j+\sqrt e\,z)-A^i(h+\sqrt e\,z)\bigr]\rho(z)\,dz ,
+\]
+the integrand being continuous in $z$ and bounded on the compact
+$\operatorname{supp}\rho$ (as $A$ is continuous on the compact ball
+$\overline{B_{|h|+|t|+\sqrt e}(0)}$), hence integrable against $\rho$.  The norm
+inequality for the integral (Preamble) and then (IA) pointwise in $z$ give
+\[
+\bigl|A_e^i(h+te_j)-A_e^i(h)\bigr|
+\ \le\ |t|\,\gamma_1\int_{\R^n}\!\!\int_0^1
+\bigl(|h+\varsigma te_j+\sqrt e\,z|^2\bigr)^{\frac p2-1}d\varsigma\,\rho(z)\,dz ,
+\]
+the right-hand side being for the moment a nonnegative integral with values in
+$[0,\infty]$.  Its integrand is nonnegative and jointly measurable in
+$(z,\varsigma)$: the map $y\mapsto\bigl(|y|^2\bigr)^{p/2-1}$ is continuous on
+$\R^n\setminus\{0\}$ and takes the value $0^{p/2-1}$ at the origin, hence is
+Borel measurable (Preamble: measurability of superlevel sets and of countable
+operations on them), and $(z,\varsigma)\mapsto h+\varsigma te_j+\sqrt e\,z$ is
+continuous.  So Tonelli (Preamble) exchanges the two integrations, and the inner
+integral becomes $K(h+\varsigma te_j,e)$, which the sandwich bounds by
+$C_2\bigl(e+|h+\varsigma te_j|^2\bigr)^{p/2-1}$ --- in particular the
+right-hand side is finite.  Therefore
+\[
+\frac{\bigl|A_e^i(h+te_j)-A_e^i(h)\bigr|}{|t|}
+\ \le\ C_2\gamma_1\int_0^1\bigl(e+|h+\varsigma te_j|^2\bigr)^{\frac p2-1}d\varsigma .
+\]
+Let $t\to0$.  Because $e>0$, the function
+$b\mapsto\bigl(e+|b|^2\bigr)^{p/2-1}$ is continuous on $\R^n$, hence uniformly
+continuous on the compact ball $\overline{B_1(h)}$, which contains
+$h+\varsigma te_j$ for all $\varsigma\in[0,1]$ and $|t|\le1$; so the integrand
+converges to $\bigl(e+|h|^2\bigr)^{p/2-1}$ uniformly in $\varsigma$ and the
+integral converges to that value.  The left-hand side converges to
+$\bigl|D_{h_j}A_e^i(h)\bigr|$, $A_e$ being differentiable at $h$.  Hence
+\[
+\bigl|D_{h_j}A_e^i(h)\bigr|
+\ \le\ C_2\gamma_1\bigl(e+|h|^2\bigr)^{\frac p2-1},
+\]
+which is (Q2) of the thesis for $A_e$ at $\varepsilon=e$ with
+$\gamma_1^{(e)}=C_2\gamma_1$.  Together with the smoothness of $A_e$, which
+supplies clauses \texttt{hcont} and \texttt{hdiff} of
+\noderef{EllipticStructureQ12} on all of $\R^n$, this completes the bundle for
+$A_e$ at $\varepsilon=e$ with the constants
+$\gamma_0^{(e)}=c_0\gamma_0$ and $\gamma_1^{(e)}=C_2\gamma_1$.  Their ratio
+\[
+\frac{\gamma_1^{(e)}}{\gamma_0^{(e)}}
+=\frac{C_2}{c_0}\cdot\frac{\gamma_1}{\gamma_0}\ \le\ \frac{C_2}{c_0}\,r=:r'
+\]
+does not depend on $e$, which is clause (1) with the $r'$ of the statement.
+
+\emph{Proof of the sandwich.}  Write $q=\tfrac p2-1$ and $W=e+|h|^2$.  For
+$|z|\le1$ one has $|h+\sqrt e\,z|^2\le2|h|^2+2e\le2W$, which settles the two
+cases where the sign of $q$ is convenient: for $p\ge2$ ($q\ge0$) it gives
+$K\le2^qW^q$ pointwise in $z$ and hence after integration against $\rho$, since
+$\int\rho=1$; and for $1<p<2$ ($q<0$) it gives $K\ge2^qW^q$ the same way.
+\emph{One point must be discarded in the second case.}  For $q<0$ the step from
+$x\le y$ to $x^q\ge y^q$ needs $x>0$, and $x=|h+\sqrt e\,z|^2$ vanishes at the
+single $z=-h/\sqrt e$, where pm-0024's convention makes $x^q=0^q=0$, which is
+\emph{not} $\ge(2W)^q>0$.  That $z$ is one point of $\R^n$, hence a Lebesgue
+null set, so the pointwise inequality holds almost everywhere and the integrated
+inequality $K\ge2^qW^q$ is unaffected (Preamble, clause (a) of the domination
+item and the monotonicity of the integral over a fixed set, both insensitive to
+a null set).  In the case $p\ge2$ no point need be discarded: there
+$0^q=0\le(2W)^q$ for $q>0$, and at $p=2$ both sides are $1$.  The two remaining
+cases are the ones that do the work.
+
+\emph{The lower bound for $p\ge2$.}  Here the integrand must be kept away from
+$0$, so $|h+\sqrt e\,z|$ has to be bounded below on a set of positive
+$\rho$-measure; it cannot be bounded below for every $z$, since $h+\sqrt e\,z$
+vanishes at one $z$.  Let $u$ be a unit vector with $(u,h)\ge0$ and put
+$Z=B_{1/8}(\tfrac34u)\subseteq B_{7/8}(0)$.  For $z\in Z$ write $z=\tfrac34u+w$
+with $|w|\le\tfrac18$; from
+\[
+\Bigl|\frac h{\sqrt e}+\tfrac34u\Bigr|^2
+=\frac{|h|^2}e+\frac32\frac{(u,h)}{\sqrt e}+\frac9{16}\ \ge\ \frac9{16}
+\]
+we get $\bigl|\tfrac h{\sqrt e}+z\bigr|\ge\tfrac34-\tfrac18=\tfrac58$, i.e.
+\[
+|h+\sqrt e\,z|\ \ge\ \tfrac58\sqrt e\quad(z\in Z),
+\qquad
+\int_Z\rho\ \ge\ \kappa\,\bigl|B_{1/8}(0)\bigr|=:m>0 ,
+\]
+and the mass bound is uniform in $u$ exactly because $\rho\ge\kappa>0$ on
+$\overline{B_{7/8}(0)}$, which contains every such $Z$.  Now split.  If
+$|h|\le2\sqrt e$ then $W\le5e$, so on $Z$ one has
+$|h+\sqrt e\,z|^2\ge\tfrac{25}{64}e\ge\tfrac5{64}W$ and hence
+$K\ge m\bigl(\tfrac5{64}\bigr)^qW^q$.  If $|h|>2\sqrt e$ then
+$|h+\sqrt e\,z|\ge|h|-\sqrt e\ge\tfrac12|h|$ for \emph{every} $|z|\le1$, while
+$W\le\tfrac54|h|^2$, so $|h+\sqrt e\,z|^2\ge\tfrac14|h|^2\ge\tfrac15W$ and
+$K\ge\bigl(\tfrac15\bigr)^qW^q$.  Since $m\le1$ and $\tfrac5{64}<\tfrac15$, the
+constant $c_1=m\bigl(\tfrac5{64}\bigr)^q$ serves in both cases.
+
+\emph{The upper bound for $1<p<2$.}  Here the integrand is singular where
+$h+\sqrt e\,z$ vanishes, and what is needed is that the singularity is
+integrable against $\rho$ \emph{uniformly} in $h$ and $e$.  Scaling, with
+$a=h/\sqrt e$,
+\[
+K(h,e)=e^{\frac{p-2}2}I(a),
+\qquad
+I(a)=\int_{\R^n}\rho(z)\,|a+z|^{p-2}\,dz .
+\]
+If $|a|\le2$ then $|a+z|\le3$ on $\operatorname{supp}\rho$, so, substituting
+$w=a+z$ (Preamble: invariance of Lebesgue measure under translations) and
+bounding $\rho$ by $\|\rho\|_\infty$,
+\[
+I(a)\ \le\ \|\rho\|_\infty\int_{\{|w|\le3\}}|w|^{p-2}\,dw ,
+\]
+and that integral is finite with a bound depending only on $n$ and $p$.
+\emph{We do not use the polar-coordinate closed form} $n\omega_n\,3^{n+p-2}/(n+p-2)$,
+which no node states and which the Preamble does not declare; dyadic annuli and
+the declared volume-of-a-ball item suffice, and only finiteness is needed.
+
+Write $s=p-2$, so $s<0$ and $n+s=n+p-2>0$, since $n\ge2$ and $p>1$.  The value
+of the integrand at $w=0$ is $0^{s}=0$ by pm-0024's convention, so the origin
+contributes nothing and we may integrate over $\{0<|w|\le3\}$ instead.  For each
+integer $k\ge0$ put
+\[
+A_k=\bigl\{w:3\cdot2^{-(k+1)}<|w|\le3\cdot2^{-k}\bigr\} ,
+\]
+a disjoint family whose union is exactly $\{0<|w|\le3\}$: given $w$ with
+$0<|w|\le3$ there is exactly one $k\ge0$ with
+$3\cdot2^{-(k+1)}<|w|\le3\cdot2^{-k}$.  On $A_k$ the exponent being negative
+gives $|w|^{s}\le\bigl(3\cdot2^{-(k+1)}\bigr)^{s}$, and
+$A_k\subseteq B_{3\cdot2^{-k}+\eta}(0)$ for every $\eta>0$, so
+$|A_k|\le\omega_n\bigl(3\cdot2^{-k}+\eta\bigr)^n$ (Preamble: the volume of a
+ball); letting $\eta\downarrow0$ gives
+$|A_k|\le\omega_n\bigl(3\cdot2^{-k}\bigr)^n$, with no need to measure the
+bounding sphere.
+Hence
+\[
+\int_{A_k}|w|^{s}\,dw
+\ \le\ \omega_n3^{n}2^{-kn}\cdot3^{s}2^{-(k+1)s}
+=\omega_n3^{\,n+s}2^{-s}\bigl(2^{-(n+s)}\bigr)^{k} .
+\]
+Since $n+s>0$ we have $2^{-(n+s)}<1$, so these terms are a convergent geometric
+series with sum
+\[
+S:=\omega_n3^{\,n+s}2^{-s}\bigl(1-2^{-(n+s)}\bigr)^{-1}<\infty .
+\]
+To conclude, put $f=|w|^{s}\mathbf1_{\{0<|w|\le3\}}$ and, for each integer $K\ge0$,
+$f_K=|w|^{s}\mathbf1_{E_K}$ with $E_K=\bigcup_{k\le K}A_k
+=\{3\cdot2^{-(K+1)}<|w|\le3\}$.  Each $f_K$ is nonnegative and measurable,
+$f_K\le f_{K+1}$, and $f_K\to f$ pointwise, since every $w$ with $0<|w|\le3$
+lies in $E_K$ for all large $K$.  By finite additivity of the integral over the
+disjoint $A_0,\dots,A_K$, $\int f_K\le\sum_{k=0}^{K}\omega_n3^{n+s}2^{-s}
+\bigl(2^{-(n+s)}\bigr)^{k}\le S$ for every $K$; and Fatou's lemma (Preamble),
+applied to the sequence $(f_K)$ whose pointwise limit --- and hence pointwise
+$\liminf$ --- is $f$, gives
+\[
+\int_{\{0<|w|\le3\}}|w|^{s}\,dw=\int f\ \le\ \liminf_K\int f_K\ \le\ S .
+\]
+So $I(a)\le\|\rho\|_\infty S<\infty$ when $|a|\le2$.  This, with
+$\|\rho\|_\infty$ and $\omega_n$, is where the dimension enters, and the
+condition $n+p-2>0$ is exactly what makes the geometric ratio less than $1$.  If $|a|\ge2$ then $|a+z|\ge|a|-1\ge\tfrac12|a|$ on
+$\operatorname{supp}\rho$, so $I(a)\le2^{2-p}|a|^{p-2}$.  As $1+|a|\le\tfrac32|a|$
+in the second case and $1+|a|\le3$ in the first, both give
+$I(a)\le C(n,p)\,(1+|a|)^{p-2}$, whence
+\[
+K(h,e)\ \le\ C\,e^{\frac{p-2}2}\Bigl(1+\frac{|h|}{\sqrt e}\Bigr)^{p-2}
+=C\,\bigl(\sqrt e+|h|\bigr)^{p-2}\ \le\ C\,W^{\frac{p-2}2}=C\,W^q ,
+\]
+the last step because $(\sqrt e+|h|)^2\ge e+|h|^2=W$ and $p-2<0$.  This proves
+the sandwich and with it clause (1), for every $p>1$ at once.
+
+\emph{Two remarks on the family.}  First, the sandwich constants depend on the
+dimension --- through $\|\rho\|_\infty$, $\kappa$, $|B_{1/8}(0)|$ and the
+volume constant $\omega_n=|B_1(0)|$ of the Preamble --- so the number it
+produces is
+$r'=r'(n,p,\gamma_1/\gamma_0)$ and not a function of $p$ and the ratio alone;
+this is why the statement records the dependence as $r'(n,p,r)$ and binds $r'$
+after $n$.  Nothing is lost by this: both consumers bind $n$ first and their own
+constants already depend on $n$.  Second, the additive family
+$A_e(h)=A(h)+c\gamma_0e^{p/2-1}h$, to which the counterexample in the statement
+block refers, also serves for $p\ge2$, but not for $1<p<2$, where the exponent
+$\tfrac p2-1$ is negative; mollification is a single family for every $p>1$ and
+is what is used here.
+
+\emph{What the hypotheses contain when $1<p<2$.}  One fact about the class being
+approximated should be recorded, because the $1<p<2$ case is the one this node
+exists for.  Read with differentiability demanded on all of $\R^n$, the
+structure conditions at $\varepsilon=0$ would be met by nothing at all when
+$1<p<2$: (Q1) of the thesis forces $|DA(h)|\ge\gamma_0|h|^{p-2}\to\infty$ as
+$h\to0$, while $C^1$ on all of $\R^n$ makes $DA$ continuous at $0$, and no field
+does both --- an argument that uses only $h\ne0$ and is therefore independent of
+how $0^{p/2-1}$ is read.  That is why \noderef{EllipticStructureQ12} asks for
+continuity on $\R^n$ together with $C^1$ regularity and
+(Q1) of the thesis--(Q2) of the thesis on $D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$
+only, which at $\varepsilon=0$ is $\R^n\setminus\{0\}$; with that reading the
+model field $A(h)=|h|^{p-2}h$ --- the one this whole section is about --- lies in
+the class, with $\gamma_0=p-1$ and $\gamma_1=3-p$.  The proof above is written to
+use exactly what that reading supplies: (Q1) of the thesis--(Q2) of the thesis at points
+$h\ne0$, the continuity of $A$ on all of $\R^n$, and the local integrability of
+$|DA|$.  For the two regularized problems nothing is lost either way, since
+$D(e)=\R^n$ for every $e>0$.
+
+\medskip
+We now prove clauses (2)--(5).  The argument is in nine steps: the structure
+conditions are first read pointwise and the regularized solutions produced from
+(C2) (Steps 1--3), then the two energy identities are established by
+approximating the test function $u_e-u$ (Step 4), then the gradients are bounded
+uniformly (Step 5) and their difference estimated (Steps 6--8), and finally the
+sequence of the conclusion is chosen (Step 9).
+
+\emph{Step 1: the structure constants are positive.}  The promotion of
+(Q1) of the thesis and (Q2) of the thesis from ``for a.e.\ $x$'' to ``for every $x$'' was
+carried out at the head of this proof, before the family was constructed,
+because the construction already needs it; it applies verbatim to $A_e$, whose
+\noderef{EllipticStructureQ12} bundle at $\varepsilon=e$ was established there
+and which likewise does not depend on $x$.  We use both clauses as statements
+about the fields of $h$ alone from here on.
+
+In particular $\gamma_1>0$: take $h=e_1$, so that $0+|h|^2=1\ne0$, and
+$\xi=e_1$ in (Q1) of the thesis and $i=j=1$ in (Q2) of the thesis, obtaining
+\[
+\gamma_0=\gamma_0\cdot1^{\frac p2-1}|e_1|^2
+\ \le\ \sum_{i,j}D_{h_j}A^i(e_1)e_1^ie_1^j=D_{h_1}A^1(e_1)
+\ \le\ \bigl|D_{h_1}A^1(e_1)\bigr|\ \le\ \gamma_1\cdot1^{\frac p2-1}=\gamma_1 ,
+\]
+so $0<\gamma_0\le\gamma_1$.  The same argument applied to $A_e$ gives
+$0<c_0\gamma_0\le C_2\gamma_1$; both structure constants of $A_e$ are therefore
+positive, which is what the cited results require.
+
+\emph{Step 2: two quantitative consequences of the structure conditions.}  Apply
+\noderef{StructureMonotonicityBound} with the parameters $n,p$ and with $r'$ in
+the role of its $r$ --- legitimate since $2\le n$, $1<p$ and $r'>0$ --- and let
+$C_M'>0$ be the constant it produces.  (This is a second application of that
+node; the first, with the present $r$ and the field $A$, produced the $C_M$ of
+the family paragraph.  The two constants are different numbers and both depend
+only on $n,p$ and the respective ratio bound.)  Applied to the field
+$(x,z,h)\mapsto A_e(h)$ on $\R^n$ with $\varepsilon=e$ and the constants
+$c_0\gamma_0>0$, $C_2\gamma_1\le r'c_0\gamma_0$ of clause (1), and read at every
+point as in Step 1, it gives
+\[
+C_M'c_0\gamma_0\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A_e(a)-A_e(b),\,a-b\bigr)
+\qquad(a,b\in\R^n,\ e>0).
+\tag{M}
+\]
+Write $c_3=C_M'c_0\gamma_0>0$.
+
+Apply \noderef{StructureGrowthBound} with the parameters $n,p$ --- its
+hypotheses are $2\le n$ and $1<p$ --- and let $c_G>0$ be the constant it
+produces.  Its conclusion, like that of \noderef{StructureMonotonicityBound}, is
+stated ``for a.e.\ $x$'' with an $x$-free right-hand side, so it is read at
+every point exactly as at the head of this proof.  Applied to $A_e$ (with
+$\varepsilon=e$, $c_0\gamma_0>0$, $C_2\gamma_1>0$) and to $A$ (with
+$\varepsilon=0$, $\gamma_0>0$, $\gamma_1>0$), and using $A_e(0)=0$ and $A(0)=0$,
+it gives
+\[
+|A_e(h)|\le c_GC_2\gamma_1\bigl(e+|h|^2\bigr)^{\frac p2-1}|h| ,
+\qquad
+|A(h)|\le c_G\gamma_1\bigl(|h|^2\bigr)^{\frac p2-1}|h|=c_G\gamma_1|h|^{p-1} .
+\]
+We record the consequence used repeatedly: for $0<e\le1$ and every $h$,
+\[
+|A_e(h)|\ \le\ \Gamma\bigl(1+|h|^2\bigr)^{\frac{p-1}2},
+\qquad
+|A(h)|\ \le\ \Gamma\bigl(1+|h|^2\bigr)^{\frac{p-1}2},
+\qquad
+\Gamma:=c_G\gamma_1\max\{1,C_2\} .
+\tag{G}
+\]
+Indeed, if $p\ge2$ then $(e+|h|^2)^{\frac p2-1}\le(1+|h|^2)^{\frac p2-1}$ for
+$e\le1$ and $|h|\le(1+|h|^2)^{1/2}$, so the product is at most
+$(1+|h|^2)^{\frac{p-1}2}$; if $1<p<2$ the exponent is negative, so
+$(e+|h|^2)^{\frac p2-1}\le(|h|^2)^{\frac p2-1}=|h|^{p-2}$ for $h\ne0$, giving
+$|A_e(h)|\le c_GC_2\gamma_1|h|^{p-1}\le c_GC_2\gamma_1(1+|h|^2)^{\frac{p-1}2}$,
+while at $h=0$ the left-hand side is $0$.  The bound for $A$ is the displayed one
+together with $|h|^{p-1}\le(1+|h|^2)^{\frac{p-1}2}$.
+
+\emph{Step 3: clauses (2) and (3).}  Fix $e$ with $0<e\le1$.  The hypothesis of
+the present theorem assumes the cited solvability result (C2)
+(\noderef{CitedDirichletW1p}) for \emph{every} field and all parameters with
+positive structure constants; instantiate it at $\varepsilon=e$, at the
+constants $c_0\gamma_0>0$ and $C_2\gamma_1>0$ of Step 1, and at the field $A_e$.
+The hypotheses of (C2) itself hold: $A_e$ satisfies
+(Q1) of the thesis--(Q2) of the thesis on $\R^n$ with those parameters by clause (1),
+$0\le e$, and $A_e(0)=0$ by construction.  Applied on the ball $B_R(x_0)$, with
+$R>0$, and with the boundary datum the pair $(u,g)$, which satisfies
+$u\in W^{1,p}(B_R(x_0))$ with weak gradient $g$ (\noderef{MemW1pOn}) by
+hypothesis, it produces $u_e$ and $g_e$ with
+\[
+u_e\ \text{a weak solution of }\operatorname{div}A_e(\nabla u_e)=0\ \text{in }B_R(x_0)
+\ (\noderef{IsWeakSolutionOn}),
+\tag{2$_e$}
+\]
+\[
+u_e-u\in W^{1,p}_0\bigl(B_R(x_0)\bigr)\ \text{with weak gradient }g_e-g
+\ (\noderef{MemW1pZeroOn}).
+\tag{3$_e$}
+\]
+These are clauses (2) and (3) at the index in question.  \emph{The
+integrability clause of \noderef{IsWeakSolutionOn} comes with
+$(2_e)$ and is not re-derived here}: that clause is part of the predicate the
+cited result (C2) (\noderef{CitedDirichletW1p}) asserts of the solution it
+produces, so it is handed over together with the integral identity, for every
+admissible test pair, at no cost to this proof.  Note that
+$(3_e)$ contains, as its first clause, $u_e-u\in W^{1,p}(B_R(x_0))$ with weak
+gradient $g_e-g$; in particular $|g_e-g|\in L^p(B_R(x_0))$ and hence, with
+$|g|\in L^p(B_R(x_0))$ and the $L^p$ triangle inequality (Minkowski, Preamble),
+$|g_e|\in L^p(B_R(x_0))$.  Write
+\[
+Y_e=\int_{B_R(x_0)}|g_e|^p\,dx<\infty,
+\qquad
+K=\int_{B_R(x_0)}|g|^p\,dx<\infty,
+\qquad
+X_e=\Bigl(\int_{B_R(x_0)}|g_e-g|^p\,dx\Bigr)^{1/p}.
+\]
+
+\emph{Step 4: the two energy identities.}  We claim
+\[
+\int_{B_R(x_0)}\bigl(A_e(g_e),\,g_e-g\bigr)dx=0,
+\qquad
+\int_{B_R(x_0)}\bigl(A(g),\,g_e-g\bigr)dx=0 .
+\tag{E}
+\]
+The test class of \noderef{IsWeakSolutionOn} consists of pairs $(\varphi,g_\varphi)$
+with $\varphi\in W^{1,p}(B_R(x_0))$ of weak gradient $g_\varphi$, $\varphi$ of
+compact support and $\operatorname{supp}\varphi\subseteq B_R(x_0)$; the function
+$u_e-u$ is not of compact support, so we approximate.  By
+\noderef{MemW1pZeroOn} the membership $(3_e)$ provides functions
+$\varphi_k\in C^\infty(\R^n)$, $k\in\mathbb{N}$, each with compact support and
+$\operatorname{supp}\varphi_k\subseteq B_R(x_0)$, such that
+\[
+\int_{B_R(x_0)}\bigl|(u_e-u)-\varphi_k\bigr|^p\,dx\to0,
+\qquad
+\int_{B_R(x_0)}\bigl|(g_e-g)-\nabla\varphi_k\bigr|^p\,dx\to0
+\tag{4a}
+\]
+as $k\to\infty$ (the second integral is the one written in that node with the
+sum over the components under the power $p/2$, which is
+$|(g_e-g)-\nabla\varphi_k|^p$).  Each pair $(\varphi_k,\nabla\varphi_k)$ is
+admissible: $\varphi_k\in W^{1,p}(B_R(x_0))$ with weak gradient
+$\nabla\varphi_k$ by \noderef{SmoothCompactSupportMemW1p}, whose hypotheses
+$1\le n$, $1\le p$, openness of $B_R(x_0)$, smoothness of $\varphi_k$ and
+compactness of its support inside the ball all hold.  So $(2_e)$ and the
+hypothesis that $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ in
+$B_R(x_0)$ give, for every $k$,
+\[
+\int_{B_R(x_0)}\bigl(A_e(g_e),\nabla\varphi_k\bigr)dx=0,
+\qquad
+\int_{B_R(x_0)}\bigl(A(g),\nabla\varphi_k\bigr)dx=0 ,
+\]
+the vanishing right-hand side of the equations making the $B$-term absent.
+Now let $k\to\infty$.  By (G) and $(p-1)p'=p$, where $p'=p/(p-1)$,
+\[
+\int_{B_R(x_0)}|A_e(g_e)|^{p'}dx
+\le\Gamma^{p'}\int_{B_R(x_0)}\bigl(1+|g_e|^2\bigr)^{\frac p2}dx
+\le\Gamma^{p'}2^{\frac p2}\bigl(|B_R|+Y_e\bigr)<\infty ,
+\]
+using $(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for $t\ge0$; so $|A_e(g_e)|\in L^{p'}$,
+and likewise $|A(g)|\in L^{p'}$ with $Y_e$ replaced by $K$.  Hölder's
+inequality (Preamble) therefore gives
+\[
+\Bigl|\int_{B_R(x_0)}\bigl(A_e(g_e),\nabla\varphi_k-(g_e-g)\bigr)dx\Bigr|
+\le\bigl\|\,|A_e(g_e)|\,\bigr\|_{L^{p'}}
+\bigl\|\,|\nabla\varphi_k-(g_e-g)|\,\bigr\|_{L^{p}}\longrightarrow0
+\]
+by $(4a)$, and the same with $A(g)$ in place of $A_e(g_e)$.  Hence both
+integrals in (E) are limits of integrals that vanish for every $k$, which proves
+(E).
+
+\emph{Step 5: a bound on $Y_e$ uniform in $e$.}  The first identity in (E) reads
+$\int(A_e(g_e),g_e)=\int(A_e(g_e),g)$.  For the left-hand side use (M) with
+$a=g_e(x)$, $b=0$ and $A_e(0)=0$:
+\[
+\bigl(A_e(g_e(x)),g_e(x)\bigr)\ \ge\ c_3\bigl(e+|g_e(x)|^2\bigr)^{\frac p2-1}|g_e(x)|^2 .
+\]
+If $p\ge2$ the exponent is nonnegative, so
+$(e+|h|^2)^{\frac p2-1}\ge(|h|^2)^{\frac p2-1}=|h|^{p-2}$ and the right-hand
+side is at least $c_3|h|^p$ with $h=g_e(x)$.  If $1<p<2$ the exponent is
+negative; then at points where $|h|^2\ge e$ we have $e+|h|^2\le2|h|^2$ and hence
+$(e+|h|^2)^{\frac p2-1}\ge2^{\frac p2-1}|h|^{p-2}$, so the right-hand side is at
+least $c_32^{\frac p2-1}|h|^p$ there, while at the remaining points it is
+nonnegative and $|h|^p<e^{p/2}$.  With $\kappa_p=\min\{1,2^{\frac p2-1}\}>0$,
+integrating and using monotonicity of the integral (Preamble),
+\[
+\int_{B_R(x_0)}\bigl(A_e(g_e),g_e\bigr)dx
+\ \ge\ c_3\kappa_p\Bigl(Y_e-e^{\frac p2}|B_R|\Bigr).
+\]
+For the right-hand side, Hölder's inequality and the computation of Step 4 give
+\[
+\Bigl|\int_{B_R(x_0)}\bigl(A_e(g_e),g\bigr)dx\Bigr|
+\le\Gamma2^{\frac p{2p'}}\bigl(|B_R|+Y_e\bigr)^{1/p'}K^{1/p}
+=:b_0\bigl(|B_R|+Y_e\bigr)^{\frac{p-1}p},
+\]
+with $b_0=\Gamma2^{\frac p{2p'}}K^{1/p}$ independent of $e$.  Putting
+$S=|B_R|+Y_e$ and using $e\le1$,
+\[
+c_3\kappa_pS\ \le\ c_3\kappa_p\bigl(|B_R|+e^{\frac p2}|B_R|\bigr)+b_0S^{\theta}
+\ \le\ 2c_3\kappa_p|B_R|+b_0S^{\theta},
+\qquad \theta=\frac{p-1}p\in(0,1),
+\]
+that is, $S\le a_0+b_1S^{\theta}$ with $a_0=2|B_R|$ and
+$b_1=b_0/(c_3\kappa_p)$.  If $S>2a_0$ then $S/2\le b_1S^{\theta}$, so
+$S^{1-\theta}\le2b_1$ and $S\le(2b_1)^{1/(1-\theta)}$.  Hence
+\[
+|B_R|+Y_e\ \le\ E:=\max\bigl\{2a_0,\ (2b_1)^{1/(1-\theta)}\bigr\}
+\qquad(0<e\le1),
+\tag{5a}
+\]
+a bound independent of $e$.  Consequently, using
+$(s+t+w)^{p/2}\le3^{p/2}(s^{p/2}+t^{p/2}+w^{p/2})$ for $s,t,w\ge0$,
+\[
+\int_{B_R(x_0)}\bigl(e+|g_e|^2+|g|^2\bigr)^{\frac p2}dx
+\ \le\ 3^{\frac p2}\bigl(|B_R|+Y_e+K\bigr)\ \le\ E_1:=3^{\frac p2}(E+K)
+\qquad(0<e\le1).
+\tag{5b}
+\]
+
+\emph{Step 6: the difference estimate.}  Subtracting the two identities of (E),
+\[
+\int_{B_R(x_0)}\bigl(A_e(g_e)-A_e(g),\,g_e-g\bigr)dx
+=\int_{B_R(x_0)}\bigl(A(g)-A_e(g),\,g_e-g\bigr)dx ,
+\]
+because the first identity makes $\int(A_e(g_e),g_e-g)=0$ and the second makes
+$\int(A(g),g_e-g)=0$, so both sides equal $-\int(A_e(g),g_e-g)$; all four
+integrals are finite by Step 4 and Hölder.  By (M) with $a=g_e(x)$, $b=g(x)$ the
+left-hand side is at least $c_3I_e$, where
+\[
+I_e=\int_{B_R(x_0)}\bigl(e+|g_e|^2+|g|^2\bigr)^{\frac p2-1}|g_e-g|^2\,dx\ \ge\ 0 ,
+\]
+and by Hölder's inequality the right-hand side is at most $\delta_eX_e$, where
+\[
+\delta_e=\Bigl(\int_{B_R(x_0)}\bigl|A(g)-A_e(g)\bigr|^{p'}dx\Bigr)^{1/p'} .
+\]
+Hence
+\[
+c_3I_e\ \le\ \delta_eX_e\qquad(0<e\le1).
+\tag{6}
+\]
+
+\emph{Step 7: $\delta_e\to0$ along any sequence $e\downarrow0$.}  First,
+$A_e(h)\to A(h)$ for every fixed $h$ as $e\downarrow0$: $A$ is continuous on
+$\R^n$ (the clause \texttt{hcont} of \noderef{EllipticStructureQ12}, which is
+pointwise in $x$ and therefore a statement about $A$), so
+$\sup_{|y-h|\le\sqrt e}|A(y)-A(h)|\to0$ as $e\downarrow0$ by continuity at $h$;
+since $\operatorname{supp}\rho\subseteq\overline{B_1(0)}$ and $\int\rho=1$, this
+gives $\int A(h+\sqrt e\,z)\rho(z)dz\to A(h)$ and, at $h=0$,
+$\int A(\sqrt e\,z)\rho(z)dz\to A(0)=0$; subtracting the two and recalling the
+definition of $A_e$ gives the claim.  Second, by (G),
+\[
+\bigl|A(g(x))-A_e(g(x))\bigr|^{p'}\ \le\ (2\Gamma)^{p'}\bigl(1+|g(x)|^2\bigr)^{\frac p2}
+\qquad(0<e\le1),
+\]
+and the majorant is integrable on $B_R(x_0)$, being at most
+$2^{p/2}(2\Gamma)^{p'}(1+|g|^p)$ with $|B_R|<\infty$ and $|g|\in L^p$.  So for
+any sequence $e_m\downarrow0$ in $(0,1]$, dominated convergence (Preamble)
+applied to the sequence of functions $x\mapsto|A(g(x))-A_{e_m}(g(x))|^{p'}$ ---
+which converges pointwise to $0$ by the first part --- gives
+$\delta_{e_m}\to0$.
+
+\emph{Step 8: $X_e\le\Psi(\delta_e)$ with $\Psi(\delta)\to0$ as $\delta\to0$.}
+If $X_e=0$ there is nothing to prove, so assume $X_e>0$.
+
+\emph{Case $p\ge2$.}  Pointwise $|a-b|^2\le2|a|^2+2|b|^2\le2(e+|a|^2+|b|^2)$,
+so $e+|a|^2+|b|^2\ge\frac12|a-b|^2$ and, the exponent $\frac p2-1$ being
+nonnegative,
+$\bigl(e+|a|^2+|b|^2\bigr)^{\frac p2-1}\ge2^{1-\frac p2}|a-b|^{p-2}$.  Hence
+$I_e\ge2^{1-\frac p2}X_e^{\,p}$, and $(6)$ gives
+$c_32^{1-\frac p2}X_e^{\,p}\le\delta_eX_e$, i.e.
+\[
+X_e\ \le\ \Bigl(\frac{2^{\frac p2-1}}{c_3}\,\delta_e\Bigr)^{\frac1{p-1}} .
+\]
+
+\emph{Case $1<p<2$.}  Since $e>0$, the quantity
+$\Theta(x)=\bigl(e+|g_e(x)|^2+|g(x)|^2\bigr)^{\frac p2-1}$ is finite and
+strictly positive, so we may write
+$|g_e-g|^p=\bigl(\Theta|g_e-g|^2\bigr)^{\frac p2}\Theta^{-\frac p2}$ pointwise.
+Hölder's inequality with the conjugate exponents $\frac2p$ and $\frac2{2-p}$
+(Preamble) gives
+\[
+X_e^{\,p}=\int_{B_R(x_0)}\bigl(\Theta|g_e-g|^2\bigr)^{\frac p2}\Theta^{-\frac p2}dx
+\ \le\ I_e^{\frac p2}
+\Bigl(\int_{B_R(x_0)}\Theta^{-\frac p{2-p}}dx\Bigr)^{\frac{2-p}2} .
+\]
+Now $-\frac p{2-p}\bigl(\frac p2-1\bigr)=\frac p{2-p}\cdot\frac{2-p}2=\frac p2$,
+so $\Theta^{-\frac p{2-p}}=\bigl(e+|g_e|^2+|g|^2\bigr)^{\frac p2}$ and the last
+integral is at most $E_1$ by $(5b)$.  With $(6)$,
+\[
+X_e^{\,p}\ \le\ \Bigl(\frac{\delta_eX_e}{c_3}\Bigr)^{\frac p2}E_1^{\frac{2-p}2},
+\qquad\text{hence}\qquad
+X_e^{\frac p2}\le\Bigl(\frac{\delta_e}{c_3}\Bigr)^{\frac p2}E_1^{\frac{2-p}2},
+\qquad\text{i.e.}\qquad
+X_e\ \le\ \frac{\delta_e}{c_3}\,E_1^{\frac{2-p}p} .
+\]
+In both cases $X_e$ is bounded by a continuous increasing function of
+$\delta_e$ that vanishes at $\delta_e=0$, and the bound is uniform in
+$e\in(0,1]$.
+
+\emph{Step 9: clauses (4) and (5), and the choice of the sequence.}  Put
+$\tilde e_m=\frac1{m+1}\in(0,1]$ for $m\in\mathbb{N}$, so
+$\tilde e_m\downarrow0$, and let $A_{\tilde e_m}$ be the corresponding members of
+the family and $u_{\tilde e_m},g_{\tilde e_m}$ the solutions furnished by Step 3.
+By Steps 7 and 8,
+\[
+\int_{B_R(x_0)}\bigl|g_{\tilde e_m}-g\bigr|^p\,dx=X_{\tilde e_m}^{\,p}
+\longrightarrow0\qquad(m\to\infty).
+\tag{9a}
+\]
+By the Preamble item on extracting an almost everywhere convergent subsequence
+out of $L^q$ convergence, applied at the exponent $p$ on the measure space
+$B_R(x_0)$ to the functions $g_{\tilde e_m}-g$, there is a strictly increasing
+sequence of indices $m_0<m_1<\cdots$ such that
+\[
+g_{\tilde e_{m_j}}(x)\longrightarrow g(x)\qquad\text{for almost every }x\in B_R(x_0).
+\tag{9b}
+\]
+Define the data of the conclusion to be that subsequence:
+\[
+e_j=\tilde e_{m_j},\qquad A^{(j)}=A_{\tilde e_{m_j}},\qquad
+u^{(j)}=u_{\tilde e_{m_j}},\qquad g^{(j)}=g_{\tilde e_{m_j}}
+\qquad(j\in\mathbb{N}).
+\]
+All five clauses now hold: $e_j>0$ and $e_j\to0$, because a subsequence of a
+sequence tending to $0$ tends to $0$; clause (1) holds at every index, by the
+first part of this proof applied at $e=e_j$; clauses (2) and (3) hold at every
+index by Step 3; clause (4) holds because a subsequence of the null sequence
+$(9a)$ is null; and clause (5) is $(9b)$.
+
+This is the point at which the sequential form of the statement is essential.
+What $L^p$ convergence supplies is almost everywhere convergence along
+\emph{some} subsequence, and nothing more: for a family indexed by a continuum
+of parameters $e$ there is no almost everywhere convergence as $e\downarrow0$ to
+be had from $(9a)$.  The conclusion is therefore stated, and is proved here, for
+one sequence that the proof itself chooses --- the subsequence extracted in
+$(9b)$ --- and the consumers use it in that form.
+
+\emph{How the limit is used.}  Because the ratios
+$\gamma_1^{(m)}/\gamma_0^{(m)}$ are bounded by the single number $r'$, any
+estimate for the nondegenerate problems whose constant depends only on $n$, $p$
+and that ratio holds for every $m$ with one and the same constant, and therefore
+passes to the limit and holds for $u$ with $\varepsilon=0$.  This is how
+Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis are reduced to the case $\varepsilon>0$:
+each consumer instantiates its own ratio hypothesis $\gamma_1\le r\gamma_0$ at
+$r'$.
+\end{proof}

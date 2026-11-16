@@ -1,0 +1,343 @@
+\begin{lemma}[Lemma 2.5]
+Let $n\ge2$, $\gamma>0$ and $\lambda_1\in(0,1)$, and suppose the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Then there exists
+$\delta=\delta(n,\gamma,\lambda_1)\in(0,1)$ with the following property.  Let
+$x_0\in\R^n$, $R>0$, let $f\in W^{1,2}(B_R(x_0))$ with weak gradient $g$
+(\noderef{MemW1pOn}), suppose $f$ is essentially bounded on $B_R(x_0)$ and put
+$M=\esssup_{B_R(x_0)}f$, $m=\essinf_{B_R(x_0)}f$.  Suppose that
+\begin{enumerate}
+\item the De Giorgi level bound (2.1) of the thesis with constant $\gamma$
+  (\noderef{DeGiorgiLevelBound}) holds for $f$ at every level
+  $\ell\in\bigl[\frac{m+M}2,M\bigr]$ and all radii
+  $\rho_0,\rho_1\in[\lambda_1R,R]$ with $\rho_0<\rho_1$; and
+\item condition (2.11) of the thesis,
+\[
+\int_{B_{\rho_0}}|\nabla(\ell-f)^+|^2dx\le\frac{\gamma}{(\rho_1-\rho_0)^2}
+\max_{B_{\rho_1}}[(\ell-f)^+]^2\bigl|\{x\in B_{\rho_1}:f(x)<\ell\}\bigr| ,
+\]
+holds for every $\ell\in\bigl[m,\frac{m+M}2\bigr]$ and all
+$\rho_0,\rho_1\in[\lambda_1R,R]$ with $\rho_0<\rho_1$.
+\end{enumerate}
+Then
+\[
+\operatorname*{osc}(f,B_{\lambda_1R}(x_0))\le\delta\,\operatorname*{osc}(f,B_R(x_0)) .
+\]
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constants $\theta_0$ of \noderef{LevelTruncationMaximumPrinciple} and $\lambda_2$ of \noderef{LevelSetMeasureImprovement} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $\delta$, it introduces no dependence of
+$\delta$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+\end{lemma}
+\begin{proof}
+\emph{Step 0: the choice of $\delta$.}  Since $\lambda_1\in(0,1)$ we have
+$\sqrt{\lambda_1}\in(\lambda_1,1)$, so $\sqrt{\lambda_1}\in(0,1)$.  Let
+$\theta_0=\theta_0\bigl(n,\gamma,\tfrac12,\sqrt{\lambda_1}\bigr)>0$ be the
+constant furnished by \noderef{LevelTruncationMaximumPrinciple} --- whose
+statement requires the hypothesis \noderef{CitedSobolevPoincareBall}, supplied
+here by the identical hypothesis of the present lemma, and likewise for
+\noderef{LevelSetMeasureImprovement} below --- for the
+parameters $n$, $\gamma$, $\lambda_0=\tfrac12$ and $\sqrt{\lambda_1}$, put
+\[
+\theta_1=\min\bigl\{\theta_0,\tfrac12\bigr\}\in(0,1),
+\]
+and let $\lambda_2=\lambda_2\bigl(n,\gamma,\sqrt{\lambda_1},\tfrac12,\theta_1\bigr)
+\in(0,1)$ be the constant furnished by \noderef{LevelSetMeasureImprovement} for
+the parameters $n$, $\gamma$, $\sqrt{\lambda_1}$, $c_0=\tfrac12$ and $\theta_1$.
+Define
+\[
+\delta=1-\frac{\lambda_2}4 .
+\]
+Since $\lambda_2\in(0,1)$ we have $\frac{\lambda_2}4\in(0,\tfrac14)$, hence
+$\delta\in(\tfrac34,1)\subseteq(0,1)$ as the conclusion requires.  All four of
+$\theta_0,\theta_1,\lambda_2,\delta$ were constructed from $n,\gamma,\lambda_1$
+alone, before any of $x_0,R,m,M,f,g$, so $\delta=\delta(n,\gamma,\lambda_1)$.
+
+Now fix $x_0,R,m,M,f,g$ satisfying the hypotheses.  Write
+$A^+_{\sigma,\rho}(v)=\{x\in B_\rho(x_0):v(x)>\sigma\}$ for a function $v$, and
+abbreviate $\operatorname*{osc}(v,S)=\esssup_Sv-\essinf_Sv$.
+
+\emph{Step 1: the hypothesis package, and two symmetries.}  We record three
+facts.  The first, (1b), is used at three later places and is proved once here:
+hypothesis (2) of the lemma is a bare \emph{display}, while hypothesis (1) is the
+two-clause predicate \noderef{DeGiorgiLevelBound}, and the identification of the
+one with the other at the reflected pair is the paper's ``it is clear now'' at
+l.~496--497.  It is clear in the paper because there (2.1) is also a bare display
+and ``max means essential max'' is a convention announced at l.~290--291; here
+that convention has been promoted into clause (1) of the predicate --- it has to
+be, since $\esssup$ of a function that is not essentially bounded above is a junk
+value --- and the promotion is exactly what turns the paper's one-line remark
+into a step owing a derivation.
+
+\emph{(1a) Translation.}  Let $c\in\R$ and put $\tilde f=f-c$.  Then
+$\esssup_S\tilde f=\esssup_Sf-c$ and $\essinf_S\tilde f=\essinf_Sf-c$ for every
+$S$ of positive measure, so $\operatorname*{osc}(\tilde f,S)=\operatorname*{osc}(f,S)$;
+in particular the conclusion for $\tilde f$ and the conclusion for $f$ are the
+same inequality.  Also $\tilde f\in W^{1,2}(B_R)$ with weak gradient $g$: this is
+clause (2) of \noderef{WeakGradientLinear} on the open set $B_R$ with $q=2$,
+$a=b=1$, $f_1=f$, $g_1=g$, and $f_2$ the constant function $x\mapsto-c$ with
+$g_2=0$, whose own $W^{1,2}(B_R)$ membership is clause (4) of the same node
+(applicable because $|B_R|<\infty$); the combination $af_1+bf_2$ is $f-c=\tilde f$
+and its weak gradient $ag_1+bg_2$ is $g+0=g$.  And $\tilde f$
+is essentially bounded on $B_R$ iff $f$ is.  Finally, for every
+$\ell,\rho_0,\rho_1$, the De Giorgi level bound
+(\noderef{DeGiorgiLevelBound}) with constant $\gamma$ holds for $(f,g)$ at level
+$\ell$ and radii $\rho_0,\rho_1$ if and only if it holds for $(\tilde f,g)$ at
+level $\ell-c$ and the same radii: indeed
+$\tilde f-(\ell-c)=f-\ell$, so the truncations $(\tilde f-(\ell-c))^+$ and
+$(f-\ell)^+$ coincide, the level sets
+$\{\tilde f>\ell-c\}$ and $\{f>\ell\}$ coincide, and the weak gradient is
+unchanged; every ingredient of that predicate --- the essential boundedness of
+the truncation, the integral of $|g|^2$ over
+$B_{\rho_0}\cap\{\,\cdot>\text{level}\}$, the essential supremum of the squared
+truncation over $B_{\rho_1}$, and the measure of
+$B_{\rho_1}\cap\{\,\cdot>\text{level}\}$ --- is therefore literally the same
+number for the two.
+
+\emph{(1b) The display (2.11) of the thesis at a level $\ell$ is the level bound for
+$(-f,-g)$ at the level $-\ell$.}  Fix $\ell\in\R$ and radii
+$\rho_0,\rho_1\in[\lambda_1R,R]$ with $\rho_0<\rho_1$; in particular
+$\rho_1\le R$, so $B_{\rho_1}\subseteq B_R$.  By (1a)'s computation --- or
+directly by clause (2) of \noderef{WeakGradientLinear} on $B_R$ with $q=2$,
+$a=-1$, $b=0$ and both pairs $(f,g)$ --- the pair $(-f,-g)$ satisfies
+$-f\in W^{1,2}(B_R)$ with weak gradient $-g$ (\noderef{MemW1pOn}).  We claim
+that the two clauses of
+$\mathrm{DeGiorgiLevelBound}(n,\gamma,-f,-g,x_0,-\ell,\rho_0,\rho_1)$
+(\noderef{DeGiorgiLevelBound}) hold if and only if the display of hypothesis (2)
+holds at $\ell,\rho_0,\rho_1$, and that the two are in fact the \emph{same}
+inequality once clause (1) is in hand.
+
+\emph{Clause (1) is free, from the lemma's own hypothesis.}  The lemma assumes
+$f$ essentially bounded on $B_R$; fix $C\ge0$ with $|f|\le C$ almost everywhere
+on $B_R$.  The clause asks for an essential bound on
+$\bigl((-f)-(-\ell)\bigr)^+=(\ell-f)^+$ over $B_{\rho_1}$, and
+$B_{\rho_1}\subseteq B_R$, so almost everywhere on $B_{\rho_1}$ either
+$\ell-f\le0$, in which case $(\ell-f)^+=0\le|\ell|+C$, or $\ell-f>0$, in which
+case $(\ell-f)^+=\ell-f\le|\ell|+|f|\le|\ell|+C$.  So $|\ell|+C$ serves, and
+clause (1) holds.  This is precisely the argument the definition node points at:
+\noderef{DeGiorgiLevelBound} says of its clause (1) that ``it is part of the
+hypothesis package, exactly as in the paper, where $(f-\ell)^+$ is bounded on
+$B_{\rho_1}$ because $f$ is''.  The same computation with $f$ and $\ell$ in place
+of $-f$ and $-\ell$ gives clause (1) for the unreflected pair, which is what the
+other two sites below need.
+
+\emph{Clause (2) is the display, term by term.}  Three identifications, none of
+them an inequality.
+\begin{itemize}
+\item \emph{The integrand.}  Apply \noderef{WeakGradientPositivePart} with
+  $q=2$, the level $c=-\ell$, the open set $B_R$ --- whose volume is finite
+  (Preamble: the volume of a ball) --- and the pair $(-f,-g)$: it gives
+  $\bigl((-f)-(-\ell)\bigr)^+=(\ell-f)^+\in W^{1,2}(B_R)$ with weak gradient
+  $x\mapsto-g(x)$ on $\{-\ell<-f\}$ and $0$ elsewhere.  A weak gradient is
+  determined almost everywhere (Preamble: the fundamental lemma of the calculus
+  of variations, second consequence), so the $\nabla(\ell-f)^+$ of the display
+  \emph{is} that field almost everywhere, and pointwise almost everywhere
+  \[
+  \bigl|\nabla(\ell-f)^+\bigr|^2=\|{-g}\|^2\chi_{\{-\ell<-f\}}
+  =\|g\|^2\chi_{\{f<\ell\}} ,
+  \]
+  using $\|-g\|=\|g\|$ and $\{-\ell<-f\}=\{f<\ell\}$.  Hence the display's
+  integral over all of $B_{\rho_0}$ equals the predicate's integral of
+  $\|-g\|^2$ over $B_{\rho_0}\cap\{-f>-\ell\}$: the integrand vanishes off that
+  set, which is $B_{\rho_0}\cap\{f<\ell\}$.
+\item \emph{The essential-supremum factor.}  $\bigl((-f)-(-\ell)\bigr)^+
+  =(\ell-f)^+$ pointwise, so
+  $\bigl(\esssup_{B_{\rho_1}}((-f)-(-\ell))^+\bigr)^2$ and
+  $\max_{B_{\rho_1}}[(\ell-f)^+]^2$ are the same number --- the essential
+  supremum being the paper's ``max'' by the convention at l.~290--291, and being
+  finite by clause (1) just proved, which is what stops it being a junk value.
+\item \emph{The measure factor.}  $\{x\in B_{\rho_1}:-f(x)>-\ell\}
+  =\{x\in B_{\rho_1}:f(x)<\ell\}$, so the two measures are the measure of one
+  and the same set.
+\end{itemize}
+Both sides of clause (2) are therefore literally the two sides of the display, so
+each implies the other.  Together with clause (1) this proves the claim.  Read in
+the other direction --- with $f$, $\ell$ in place of $-f$, $-\ell$ --- the same
+three identifications show that the predicate for $(f,g)$ at level $\ell$ is the
+display (2.1) of the thesis at $\ell$, which is the form hypothesis (1) is quoted in.
+
+\emph{(1c) Reflection.}  Put $\hat f=-f$.  Then $\hat f\in W^{1,2}(B_R)$ with weak
+gradient $-g$, again by clause (2) of \noderef{WeakGradientLinear} on $B_R$ with
+$q=2$, this time with $a=-1$, $b=0$ and both pairs taken to be
+$(f_1,g_1)=(f_2,g_2)=(f,g)$: the combination is $-f+0\cdot f=\hat f$ and its weak
+gradient is $(-1)\cdot g+0\cdot g=-g$.  Then
+$\esssup_S\hat f=-\essinf_Sf$ and $\essinf_S\hat f=-\esssup_Sf$, so
+$\operatorname*{osc}(\hat f,S)=\operatorname*{osc}(f,S)$, and $\hat f$ is
+essentially bounded on $B_R$ with $\esssup_{B_R}\hat f=-m$,
+$\essinf_{B_R}\hat f=-M$.  Moreover the hypothesis package is invariant under
+$f\mapsto\hat f$: by (1b), hypothesis (2) of the lemma at a level $\ell$ is
+exactly the level bound with constant $\gamma$ for
+$(-f,-g)=(\hat f,-g)$ at level $-\ell$, so hypothesis (2) gives that bound for
+every $\ell\in[m,\frac{m+M}2]$, i.e.\ at every level in
+$[-\frac{m+M}2,-m]=[\frac{\hat m+\hat M}2,\hat M]$ where $\hat M=-m$ and
+$\hat m=-M$; so hypothesis (2) for $f$ is hypothesis (1) for $\hat f$.
+Symmetrically, hypothesis (1) for $f$ is the level bound for $(f,g)=
+(-\hat f,-(-g))$ at every level in $[\frac{m+M}2,M]=[-\frac{\hat m+\hat M}2,-\hat m]$,
+and (1b) read at the pair $(\hat f,-g)$ and the level $-\ell$ --- for which
+$(-\hat f,-(-g))=(f,g)$ and $-(-\ell)=\ell$ --- turns that level bound into the
+display (2.11) of the thesis for $\hat f$ at the level $-\ell$; so it is hypothesis
+(2) for $\hat f$.  Clause (1) of each of these predicates is supplied by the
+computation in (1b), applied with the essential bound $C$ for $f$, which is also
+one for $\hat f$.  Hence $\hat f$ satisfies both
+hypotheses with the same $\gamma$, $\lambda_1$, $x_0$ and $R$.
+
+\emph{Step 2: reduction to $m=-M$, and the case $M=0$.}  By (1a) applied with
+$c=\frac{m+M}2$ we may replace $f$ by $f-\frac{m+M}2$: the conclusion is
+unchanged, and the hypotheses are preserved.  For hypothesis (1) this is (1a)
+directly, since that hypothesis is the predicate.  For hypothesis (2) it is
+(1b) first and then (1a): by (1b), hypothesis (2) at a level $\ell$ is the level
+bound for the pair $(-f,-g)$ at level $-\ell$, and (1a) applied to that pair with
+$c'=-\frac{m+M}2$ --- replacing $-f$ by $-f+\frac{m+M}2=-(f-\frac{m+M}2)$ and
+shifting its level from $-\ell$ to $-\ell-c'=-\bigl(\ell-\frac{m+M}2\bigr)$ ---
+gives the level bound for the reflected translate at the translated level, which
+by (1b) read backwards is hypothesis (2) for $f-\frac{m+M}2$ at the level
+$\ell-\frac{m+M}2$.  So both hypotheses survive, with the level ranges
+$[\frac{m+M}2,M]$ and $[m,\frac{m+M}2]$ translated to
+$[0,\frac{M-m}2]$ and $[-\frac{M-m}2,0]$ respectively, which are exactly the
+ranges $[\frac{m'+M'}2,M']$ and $[m',\frac{m'+M'}2]$ for the new
+$M'=\frac{M-m}2$ and $m'=-\frac{M-m}2$.  So we may and do assume
+\[
+m=-M,\qquad\text{hence}\qquad M\ge0
+\]
+(the latter because $m\le M$, i.e.\ $-M\le M$), and then
+$\frac{m+M}2=0$, so hypothesis (1) holds at every level in $[0,M]$ and
+hypothesis (2) at every level in $[-M,0]$, and
+$\operatorname*{osc}(f,B_R)=M-(-M)=2M$.
+
+If $M=0$ then $m=M=0$, so $\operatorname*{osc}(f,B_R)=0$ and, since
+$B_{\lambda_1R}\subseteq B_R$ gives
+$\essinf_{B_R}f\le\essinf_{B_{\lambda_1R}}f\le\esssup_{B_{\lambda_1R}}f
+\le\esssup_{B_R}f$, also $\operatorname*{osc}(f,B_{\lambda_1R})=0$; the conclusion
+$0\le\delta\cdot0$ holds.  Assume from now on $M>0$.
+
+\emph{Step 3: reduction to $|A^+_{0,\sqrt{\lambda_1}R}(f)|\le\frac12
+|B_{\sqrt{\lambda_1}R}|$.}  The sets $A^+_{0,\sqrt{\lambda_1}R}(f)=
+\{x\in B_{\sqrt{\lambda_1}R}:f(x)>0\}$ and
+$A^+_{0,\sqrt{\lambda_1}R}(-f)=\{x\in B_{\sqrt{\lambda_1}R}:f(x)<0\}$ are
+disjoint subsets of $B_{\sqrt{\lambda_1}R}$, so their measures sum to at most
+$|B_{\sqrt{\lambda_1}R}|$ and therefore at least one of them is at most
+$\frac12|B_{\sqrt{\lambda_1}R}|$.  If it is the first, proceed.  If it is the
+second, replace $f$ by $\hat f=-f$: by (1c) --- whose invariance of the
+hypothesis package rests on (1b) at both levels --- this preserves both
+hypotheses, the
+value of $M$ (for $\hat f$ one has $\esssup_{B_R}\hat f=-m=M$ and
+$\essinf_{B_R}\hat f=-M$, so $\hat f$ again satisfies $\hat m=-\hat M$ with
+$\hat M=M$), and the conclusion, while making the required inequality hold.  So
+we may and do assume
+\[
+\bigl|A^+_{0,\sqrt{\lambda_1}R}(f)\bigr|\le\tfrac12\bigl|B_{\sqrt{\lambda_1}R}\bigr| .
+\]
+
+\emph{Step 4: improving the measure of a level set, via Lemma 2.4.}  We apply
+\noderef{LevelSetMeasureImprovement} with parameters $n$, $\gamma$,
+$\sqrt{\lambda_1}$ in place of its $\lambda_1$, $c_0=\frac12$ and $\theta_1$, on
+the ball $B_R(x_0)$, at the level $k=0$.  Its hypotheses hold:
+$f\in W^{1,2}(B_R)$ with weak gradient $g$ and $f$ essentially bounded above on
+$B_R$ with $M=\esssup_{B_R}f$ are hypotheses of the present lemma;
+$k=0<M$ by Step 2; the level bound with constant $\gamma$ at
+$\rho_0=\sqrt{\lambda_1}R$, $\rho_1=R$ and every level $\ell\in[0,M]$ is
+supplied by hypothesis (1), because $\sqrt{\lambda_1}R\in[\lambda_1R,R]$ and
+$\sqrt{\lambda_1}R<R$ (as $\lambda_1<\sqrt{\lambda_1}<1$); and
+$\bigl|A^+_{0,\sqrt{\lambda_1}R}\bigr|\le\frac12\bigl|B_{\sqrt{\lambda_1}R}\bigr|$
+is Step 3.  Since the $\lambda_2$ of Step 0 is the constant that
+\noderef{LevelSetMeasureImprovement} produces for exactly these parameters, its
+conclusion with $k=0$, namely
+$\lambda_2\cdot0+(1-\lambda_2)M=(1-\lambda_2)M$, reads
+\[
+\bigl|\{x\in B_{\sqrt{\lambda_1}R}(x_0):f(x)>(1-\lambda_2)M\}\bigr|
+\le\theta_1\bigl|B_{\sqrt{\lambda_1}R}\bigr| .
+\tag{A}
+\]
+
+\emph{Step 5: the two cases.}  Since $f$ is essentially bounded on $B_R$ and
+$B_{\sqrt{\lambda_1}R}\subseteq B_R$ has positive measure, $f$ is essentially
+bounded on $B_{\sqrt{\lambda_1}R}$; put
+\[
+M'=\esssup_{B_{\sqrt{\lambda_1}R}}f ,\qquad\text{so}\qquad M'\le M
+\]
+by monotonicity of the essential supremum under
+$B_{\sqrt{\lambda_1}R}\subseteq B_R$.  Exactly one of the following holds.
+
+\emph{Case 1: $(1-\lambda_2)M<M'$.}  We apply
+\noderef{LevelTruncationMaximumPrinciple} with parameters $n$, $\gamma$,
+$\lambda_0=\frac12$ and $\sqrt{\lambda_1}$ in place of its $\lambda_1$, on the
+ball $B_{\sqrt{\lambda_1}R}(x_0)$ --- that is, with its $R$ equal to
+$\sqrt{\lambda_1}R$ --- at the level $k=(1-\lambda_2)M$.  Its hypotheses hold:
+$\sqrt{\lambda_1}R>0$; $f\in W^{1,2}(B_{\sqrt{\lambda_1}R})$ with weak gradient
+$g$ --- the hypothesis of the present lemma gives
+$f\in W^{1,2}(B_R)$ with weak gradient $g$ (\noderef{MemW1pOn}), and clause (1) of
+\noderef{WeakGradientRestrict}, applied with $q=2$, $\Omega=B_R(x_0)$ and
+$\Omega'=B_{\sqrt{\lambda_1}R}(x_0)$ --- both open, and
+$B_{\sqrt{\lambda_1}R}\subseteq B_R$ because $\sqrt{\lambda_1}<1$ --- transports it
+to the smaller ball with the same weak gradient; $f$ is essentially bounded above on
+$B_{\sqrt{\lambda_1}R}$ with
+essential supremum $M'$, just established; $k=(1-\lambda_2)M<M'$, which is the
+case assumption; the level bound with constant $\gamma$ holds at every level
+$\ell\in[k,\frac12k+\frac12M']$ and all radii
+$\rho_0,\rho_1\in[\sqrt{\lambda_1}\cdot\sqrt{\lambda_1}R,\sqrt{\lambda_1}R]
+=[\lambda_1R,\sqrt{\lambda_1}R]$ with $\rho_0<\rho_1$, because those radii lie in
+$[\lambda_1R,R]$ and those levels lie in $[0,M]$ --- the lower end because
+$k=(1-\lambda_2)M\ge0$ (as $\lambda_2\le1$ and $M\ge0$) and the upper because
+$\frac12k+\frac12M'\le\frac12M+\frac12M=M$ (as $k\le M$ and $M'\le M$) --- so
+hypothesis (1) supplies them; and the measure hypothesis
+$|\{x\in B_{\sqrt{\lambda_1}R}:f>k\}|\le\theta_0|B_{\sqrt{\lambda_1}R}|$ follows
+from (A) together with $\theta_1\le\theta_0$.  Its conclusion, with
+$\lambda_0=\frac12$ and its $\lambda_1$ equal to $\sqrt{\lambda_1}$, is that
+\[
+f\le\tfrac12(1-\lambda_2)M+\tfrac12M'
+\qquad\text{a.e.\ in }B_{\sqrt{\lambda_1}\cdot\sqrt{\lambda_1}R}(x_0)
+=B_{\lambda_1R}(x_0) .
+\]
+Since $M'\le M$, the right-hand side is at most
+$\frac12(1-\lambda_2)M+\frac12M=M-\frac{\lambda_2}2M$, so
+\[
+f\le\Bigl(1-\frac{\lambda_2}2\Bigr)M\qquad\text{a.e.\ in }B_{\lambda_1R}(x_0) .
+\tag{B}
+\]
+Note that only $M'\le M$ was needed here.
+
+\emph{Case 2: $(1-\lambda_2)M\ge M'$.}  Here
+\noderef{LevelTruncationMaximumPrinciple} is not needed at all.  By the
+definition of $M'$ we have $f\le M'$ a.e.\ in $B_{\sqrt{\lambda_1}R}$, hence a
+fortiori a.e.\ in $B_{\lambda_1R}\subseteq B_{\sqrt{\lambda_1}R}$ (the inclusion
+because $\lambda_1<\sqrt{\lambda_1}$).  Therefore, a.e.\ in $B_{\lambda_1R}$,
+\[
+f\le M'\le(1-\lambda_2)M\le\Bigl(1-\frac{\lambda_2}2\Bigr)M ,
+\]
+the last step because $(1-\frac{\lambda_2}2)M-(1-\lambda_2)M
+=\frac{\lambda_2}2M\ge0$, using only $\lambda_2\ge0$ and $M\ge0$.  So (B) holds
+in this case too.
+
+\emph{Step 6: from the one-sided bound to the oscillation.}  By (B),
+\[
+\esssup_{B_{\lambda_1R}}f\le\Bigl(1-\frac{\lambda_2}2\Bigr)M .
+\]
+For the lower bound we use nothing new: $B_{\lambda_1R}\subseteq B_R$ gives
+\[
+\essinf_{B_{\lambda_1R}}f\ge\essinf_{B_R}f=m=-M .
+\]
+Hence
+\[
+\operatorname*{osc}(f,B_{\lambda_1R})
+=\esssup_{B_{\lambda_1R}}f-\essinf_{B_{\lambda_1R}}f
+\le\Bigl(1-\frac{\lambda_2}2\Bigr)M-(-M)
+=\Bigl(2-\frac{\lambda_2}2\Bigr)M
+=\Bigl(1-\frac{\lambda_2}4\Bigr)\cdot2M ,
+\]
+the last equality being the identity
+$2-\frac{\lambda_2}2=2\bigl(1-\frac{\lambda_2}4\bigr)$.  Since
+$\operatorname*{osc}(f,B_R)=2M$ by Step 2, this is
+\[
+\operatorname*{osc}(f,B_{\lambda_1R}(x_0))
+\le\Bigl(1-\frac{\lambda_2}4\Bigr)\operatorname*{osc}(f,B_R(x_0))
+=\delta\,\operatorname*{osc}(f,B_R(x_0)) ,
+\]
+which is the assertion.  The halving of the rate is worth noting: the gain
+$\frac{\lambda_2}2M$ was obtained on the upper bound only, while the lower bound
+$-M$ was carried over unchanged, so the improvement is measured against the full
+oscillation $2M$ rather than against $M$.  That is exactly why
+$\delta=1-\frac{\lambda_2}4$ and not $1-\frac{\lambda_2}2$.
+\end{proof}

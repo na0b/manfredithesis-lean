@@ -1,0 +1,19 @@
+\begin{definition}
+Let $\Omega\subseteq\R^n$, let $G^1,\dots,G^n\colon\R^n\to\R^n$ be the component
+weak gradients of a mapping $F$ (so that $DF(x)_{ij}=G^i(x)^j$ is the formal
+differential and $J_F(x)=\det DF(x)$), and let
+$\tau\colon\R^n\to\R^{n\times n}$.  We say that $\tau$ is \emph{the distortion
+matrix} of $F$ on $\Omega$, written $\mathrm{IsDistortionMatrix}(n,\Omega,G,\tau)$,
+if for every $x\in\Omega$
+\[
+\tau^{-1}(x)=
+\begin{cases}
+J_F(x)^{-\frac2n}\,D^tF(x)\,DF(x) & \text{if }J_F(x)>0,\\
+I & \text{otherwise.}
+\end{cases}
+\]
+In the first case the condition is written multiplicatively and without matrix
+inversion, as
+$\tau(x)\,\bigl(D^tF(x)DF(x)\bigr)=J_F(x)^{2/n}I$, which is equivalent to it.
+This is the distortion matrix of thesis p.~52.
+\end{definition}

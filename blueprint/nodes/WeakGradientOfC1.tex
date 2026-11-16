@@ -1,0 +1,139 @@
+\begin{lemma}[A classically differentiable function lies in $W^{1,q}_{\mathrm{loc}}$ with its classical gradient]
+Let $n\ge1$ be an integer and let $q\ge1$ be real.  Let
+$\Omega\subseteq\R^n$ be open, let $u\colon\R^n\to\R$ and let
+$g\colon\R^n\to\R^n$.  Assume
+\begin{enumerate}
+\item $u$ is differentiable at every point $x\in\Omega$, and for every such $x$
+  and every $i\in\{1,\dots,n\}$,
+  \[
+  D_iu(x)\;=\;g^i(x),
+  \]
+  where $D_iu(x)=Du(x)[e_i]$ is the derivative of $u$ at $x$ in the direction of
+  the $i$-th standard basis vector;
+\item $g$ is continuous on $\Omega$.
+\end{enumerate}
+Then $u\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pLocOn}).
+
+\noindent\textbf{On the hypothesis shape.}  No regularity of $u$ or $g$ off
+$\Omega$ is assumed, and none is needed: both clauses of
+\noderef{MemW1pLocOn} are statements about $\Omega$ and about compact subsets of
+$\Omega$.  Clause (1) is exactly the first clause of the tablet's
+$C^{1,\beta}$ predicate, and clause (2) is the continuity that the tablet's
+continuous-representative lemma supplies for the field it produces, so the $C^1$ representative of \S4 and \S5
+feeds this lemma without reshaping.  Clause (2) is not implied by clause (1) --
+a differentiable function need not have continuous derivative -- and it is what
+makes the three integrands below continuous.  Continuity of $u$ on $\Omega$ is
+\emph{not} assumed separately: it follows from clause (1), since a function
+differentiable at a point is continuous there.
+\end{lemma}
+\begin{proof}
+Write $e_i$ for the $i$-th standard basis vector of $\R^n$ and
+$D_ih(x)=Dh(x)[e_i]$ throughout.  By \noderef{MemW1pLocOn} there are two things
+to prove: the weak-gradient identity of \noderef{HasWeakGradientOn} for the pair
+$(u,g)$ on $\Omega$, and, for every compact $K\subseteq\Omega$, that $u$ and $g$
+lie in $L^q(K)$.
+
+\emph{Step 0: $u$ is continuous on $\Omega$, and $g^i$ is continuous on
+$\Omega$ for each $i$.}  By clause (1) $u$ is differentiable at each $x\in\Omega$,
+hence continuous at each $x\in\Omega$, so $u$ is continuous on $\Omega$.  By
+clause (2) $g$ is continuous on $\Omega$, and each coordinate map
+$h\mapsto h^i$ on $\R^n$ is continuous (it is linear on a finite-dimensional
+space), so $g^i=(\,\cdot\,)^i\circ g$ is continuous on $\Omega$ for each $i$.
+Finally, by clause (1), the function $x\mapsto D_iu(x)$ agrees with $g^i$ at
+every point of $\Omega$, so it too is continuous on $\Omega$.
+
+\emph{Step 1: the three integrands are continuous on all of $\R^n$ and
+compactly supported.}  Fix $\varphi\in C^\infty(\R^n)$ with compact support and
+$\operatorname{supp}\varphi\subseteq\Omega$, and fix an index $i$; by
+\noderef{HasWeakGradientOn} these are exactly the test data, and
+$\operatorname{supp}$ is the closed support throughout.  Put
+\[
+P_1(x)=D_iu(x)\,\varphi(x),\qquad
+P_2(x)=u(x)\,D_i\varphi(x),\qquad
+P_3(x)=u(x)\,\varphi(x).
+\]
+Let $U=\R^n\setminus\operatorname{supp}\varphi$, which is open because
+$\operatorname{supp}\varphi$ is closed.  Since
+$\operatorname{supp}\varphi\subseteq\Omega$ we have $\Omega\cup U=\R^n$, and
+both sets are open.
+
+On $\Omega$: $u$, $x\mapsto D_iu(x)$, $\varphi$ and $D_i\varphi$ are all
+continuous --- the first two by Step 0, the last two because
+$\varphi\in C^\infty(\R^n)$ --- so $P_1,P_2,P_3$ are continuous on $\Omega$ as
+products of continuous functions.
+
+On $U$: $\varphi$ vanishes identically on the open set $U$, hence so does its
+derivative, so $D_i\varphi$ vanishes on $U$ as well.  Therefore
+$P_1\equiv P_2\equiv P_3\equiv0$ on $U$, and each is continuous there.  (In
+particular $P_1$ is unambiguous on $U$ whatever value is assigned to $D_iu$ at a
+point where $u$ is not differentiable, because the factor $\varphi$ is $0$
+there; the same remark applies to the integrals below.)
+
+Continuity is a local property and $\Omega\cup U=\R^n$, so $P_1,P_2,P_3$ are
+continuous on $\R^n$.  Moreover
+$\{x:P_k(x)\ne0\}\subseteq\{x:\varphi(x)\ne0\}\cup\{x:D_i\varphi(x)\ne0\}
+\subseteq\operatorname{supp}\varphi$ for each $k$ --- for $k=1,3$ because the
+factor $\varphi$ must be nonzero, for $k=2$ because the factor $D_i\varphi$
+must be, and $D_i\varphi$ vanishes off $\operatorname{supp}\varphi$ by the
+previous paragraph --- and $\operatorname{supp}\varphi$ is closed, so
+$\operatorname{supp}P_k\subseteq\operatorname{supp}\varphi$, which is compact.
+Each $P_k$ is thus continuous with compact support, hence Lebesgue integrable on
+$\R^n$.
+
+\emph{Step 2: integration by parts.}  Apply the Preamble's integration by parts
+in a direction with $f=u$, $g=\varphi$ and $v=e_i$, so that $D_v=D_i$.  Its
+hypotheses hold:
+\begin{itemize}
+\item $f=u$ is differentiable at every point of $\operatorname{supp}\varphi$,
+  because $\operatorname{supp}\varphi\subseteq\Omega$ and clause (1) gives
+  differentiability at every point of $\Omega$;
+\item $g=\varphi$ is differentiable at every point of $\operatorname{supp}u$,
+  because $\varphi\in C^\infty(\R^n)$ is differentiable at every point of
+  $\R^n$;
+\item the three functions $x\mapsto D_iu(x)\varphi(x)$,
+  $x\mapsto u(x)D_i\varphi(x)$ and $x\mapsto u(x)\varphi(x)$ --- that is,
+  $P_1$, $P_2$ and $P_3$ --- are Lebesgue integrable on $\R^n$, by Step 1.
+\end{itemize}
+The conclusion is
+\begin{equation}
+\int_{\R^n}u\,D_i\varphi\,dx\;=\;-\int_{\R^n}D_iu\,\varphi\,dx .
+\tag{1}
+\end{equation}
+
+\emph{Step 3: passing from $\R^n$ to $\Omega$.}  Both integrands in (1) vanish
+off $\operatorname{supp}\varphi\subseteq\Omega$, by Step 1; so each integral
+over $\R^n$ equals the corresponding integral over $\Omega$, and
+\[
+\int_\Omega u\,D_i\varphi\,dx\;=\;-\int_\Omega D_iu\,\varphi\,dx .
+\]
+On $\Omega$ clause (1) gives $D_iu=g^i$ pointwise, so the right-hand integrand
+equals $g^i\varphi$ there and
+\[
+\int_\Omega u\,D_i\varphi\,dx\;=\;-\int_\Omega g^i\,\varphi\,dx .
+\]
+Since $\varphi$ and $i$ were an arbitrary test function and index, this is
+precisely the defining identity of \noderef{HasWeakGradientOn} for $(u,g)$ on
+$\Omega$.
+
+\emph{Step 4: the local $L^q$ bounds.}  Let $K\subseteq\Omega$ be compact.  By
+Step 0, $u$ and each $g^i$ are continuous on $\Omega$, hence on $K$; a
+continuous real function on a compact set is bounded, so there is $M\ge0$ with
+\[
+|u(x)|\le M\quad\text{and}\quad |g(x)|\le M\qquad(x\in K),
+\]
+the second after taking $M$ larger than each of the $n$ coordinate bounds and
+using $|g|\le\sum_i|g^i|$.  Also $K$ is compact, hence bounded, hence of finite
+Lebesgue measure, $|K|<\infty$.  Finally $u$ and $g$ are continuous on $K$ and
+$K$ is a Borel set, so their restrictions to $K$ are Borel measurable.  Hence
+\[
+\int_K|u|^q\,dx\le M^q|K|<\infty,\qquad
+\int_K|g|^q\,dx\le M^q|K|<\infty,
+\]
+so $u\in L^q(K)$ and $g\in L^q(K)$, using $q\ge1$ so that the exponent is
+admissible.  As $K$ was an arbitrary compact subset of $\Omega$, the second
+clause of \noderef{MemW1pLocOn} holds.
+
+Steps 3 and 4 together are the two clauses of \noderef{MemW1pLocOn}, so
+$u\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$.
+\end{proof}

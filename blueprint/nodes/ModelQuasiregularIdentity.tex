@@ -1,0 +1,116 @@
+\begin{lemma}[The identity map inhabits the quasiregularity data of \S5 at $K=1$]
+Let $n\ge2$ be an integer and let $\Omega\subseteq\R^n$ be open.  Put
+\[
+F(x)=x,\qquad G^i(x)=e_i\quad(i=1,\dots,n),\qquad \tau(x)=I,
+\]
+where $e_i$ is the $i$-th standard basis vector and $I$ is the $n\times n$
+identity matrix.  Then
+\begin{enumerate}
+\item $F$ is $1$-quasiregular on $\Omega$ with $G^i$ the weak gradient of the
+  $i$-th component of $F$ (\noderef{IsQuasiregularOn} at $K=1$); and
+\item $\tau$ is the distortion matrix of $(F,G)$ on $\Omega$
+  (\noderef{IsDistortionMatrix}).
+\end{enumerate}
+
+\noindent\textbf{Why this node exists.}  The Note for the formalization requires
+at l.~258 that a cited result ``must not be vacuous (each must be a true
+statement for the operators to which it is applied)'', and the demand carries to
+the data hypotheses the \S5 statements are conditioned on: Theorem~Theorem~7 of the thesis
+assumes \noderef{IsQuasiregularOn} together with \noderef{IsDistortionMatrix},
+and if no pair $(F,G,\tau)$ satisfied them the theorem and everything proved from
+it would be vacuously true.  The identity map is the paper's own trivial
+instance.  The thesis defines $K$-quasiregularity at l.~1582 as
+$F\in W^{1,n}_{\mathrm{loc}}(\Omega)$ together with
+\[
+|DF(x)|^n\le K\,J_F(x)\quad\text{for a.e. }x\in\Omega,
+\tag{5.10}
+\]
+and for $F=\mathrm{id}$ one has $DF=I$, so $|DF(x)|=1$ and $J_F(x)=1$ and
+(5.10) of the thesis holds with equality at $K=1$, which is the least admissible
+value since Theorem~Theorem~7 of the thesis assumes $K\ge1$.  This node is the companion of the
+model-field and model-density witnesses for the
+\S5 data, and like them it is re-checked mechanically whenever the predicates it
+inhabits are edited.
+
+\textbf{What it does not claim.}  It says nothing about the cited result (C7).
+(C7) is a \emph{cited} statement: per the Note's closed list it is imported, not
+proved here, so ``non-vacuity'' for it can only mean that its hypotheses are
+inhabited --- which is exactly what clauses (1) and (2) above supply, since
+(C7)'s hypotheses are $K$-quasiregularity of $F$ and that $\tau$ is its
+distortion matrix.  Nor does it claim $F$ is nonconstant-dependent: the identity
+map is not constant, so the nonconstancy hypothesis that
+Theorem~Theorem~7 of the thesis and the distortion-matrix properties lemma carry is also
+available for this witness, but it is not part of either predicate and so is not
+asserted here.
+\end{lemma}
+\begin{proof}
+Throughout, $e_i=$ the $i$-th standard basis vector, so that its $j$-th
+coordinate is $e_i^j=\delta_{ij}$, and the matrix whose $(i,j)$ entry is
+$G^i(x)^j=\delta_{ij}$ is the identity matrix $I$, independently of $x$.
+
+\emph{Part 1(a): each component of $F$ lies in $W^{1,n}_{\mathrm{loc}}(\Omega)$
+with weak gradient $e_i$.}  Fix $i$ and let $u(x)=F(x)^i=x^i$, the $i$-th
+coordinate function, and let $g(x)=e_i$ for all $x$.  We verify the hypotheses of
+\noderef{WeakGradientOfC1} with $q=n$:
+\begin{itemize}
+\item $n\ge1$ and $q=n\ge2\ge1$, using $n\ge2$;
+\item $\Omega$ is open, by hypothesis;
+\item $u$ is a linear functional on the finite-dimensional space $\R^n$, hence
+  differentiable at every point of $\R^n$ --- in particular at every point of
+  $\Omega$ --- with $Du(x)=u$ for every $x$; therefore, for every $x$ and every
+  index $j$,
+  \[
+  D_ju(x)=Du(x)[e_j]=u(e_j)=e_j^i=\delta_{ij}=e_i^j=g(x)^j ,
+  \]
+  which is the required identity $D_ju(x)=g^j(x)$ for all $x\in\Omega$ and all
+  $j$;
+\item $g$ is constant, hence continuous on $\Omega$.
+\end{itemize}
+So \noderef{WeakGradientOfC1} gives
+$u\in W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$, i.e.\ the $i$-th
+component of $F$ lies in $W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak gradient
+$G^i$.  As $i$ was arbitrary, the first clause of \noderef{IsQuasiregularOn}
+holds.
+
+\emph{Part 1(b): the pointwise distortion inequality at $K=1$.}  Let
+$x\in\Omega$ be arbitrary and let $\xi\in\R^n$.  Since $G^i(x)^j=\delta_{ij}$,
+\[
+\sum_{j=1}^nG^i(x)^j\xi^j=\sum_{j=1}^n\delta_{ij}\xi^j=\xi^i ,
+\]
+so, using $\sum_i(\xi^i)^2=|\xi|^2$ for the Euclidean norm,
+\[
+\Bigl(\sum_{i=1}^n\Bigl(\sum_{j=1}^nG^i(x)^j\xi^j\Bigr)^{\!2}\Bigr)^{\!n/2}
+=\bigl(|\xi|^2\bigr)^{n/2}=|\xi|^{\,n},
+\]
+the last equality because $|\xi|\ge0$ and $(t^2)^{n/2}=t^n$ for $t\ge0$.  The
+matrix $\bigl(G^i(x)^j\bigr)_{i,j}$ is $I$, whose determinant is $1$.  Hence the
+right-hand side of the inequality in \noderef{IsQuasiregularOn} at $K=1$ is
+\[
+1\cdot\det\bigl(G^i(x)^j\bigr)_{i,j}\cdot|\xi|^{\,n}=1\cdot1\cdot|\xi|^{\,n}
+=|\xi|^{\,n},
+\]
+so the inequality holds with equality.  Since $x\in\Omega$ and $\xi$ were
+arbitrary, it holds at \emph{every} point of $\Omega$ and for every $\xi$, hence
+for almost every $x$ with $x\in\Omega$, which is the second clause of
+\noderef{IsQuasiregularOn}.  This proves (1).
+
+\emph{Part 2: $\tau=I$ is the distortion matrix.}  Let $x\in\Omega$.  By the
+first paragraph the matrix $M=\bigl(G^i(x)^j\bigr)_{i,j}$ is $I$, so
+$\det M=1$.  \noderef{IsDistortionMatrix} asks for two implications at $x$.
+
+For the first, its hypothesis $\det M>0$ holds, since $\det M=1>0$, and we must
+check
+\[
+\tau(x)\,\bigl(M^{\mathsf T}M\bigr)=(\det M)^{2/n}\,I .
+\]
+Here $M=I$ gives $M^{\mathsf T}=I$ and $M^{\mathsf T}M=I$, and $\tau(x)=I$, so
+the left-hand side is $I\cdot I=I$.  The right-hand side is
+$1^{2/n}\,I=1\cdot I=I$, because $1^t=1$ for every real $t$.  The two sides agree.
+
+For the second implication, its hypothesis is $\neg(\det M>0)$, which is false
+because $\det M=1>0$; so the implication holds vacuously.  (Had it been invoked,
+its conclusion $\tau(x)=I$ is true here as well.)
+
+As $x\in\Omega$ was arbitrary, $\tau$ is the distortion matrix of $(F,G)$ on
+$\Omega$, which is (2).
+\end{proof}

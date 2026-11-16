@@ -1,0 +1,380 @@
+\begin{lemma}
+Let $n\ge1$ and $q\ge1$, let $\Omega\subseteq\R^n$ be open, let
+$u\colon\R^n\to\R$ and let $g,g_c\colon\R^n\to\R^n$.  Assume
+$u\in W^{1,q}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pLocOn}), that $g_c$ is continuous on $\Omega$, and that
+$g=g_c$ almost everywhere on $\Omega$.  Then there is $w\colon\R^n\to\R$ with
+\begin{itemize}
+\item[(a)] $u=w$ almost everywhere on $\Omega$; and
+\item[(b)] $w$ is differentiable at every point $x\in\Omega$, with
+  $D_iw(x)=g_c(x)_i$ for $i=1,\dots,n$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Throughout, $\rho_\delta$ denotes the standard mollifier of the Preamble at
+scale $\delta>0$: it is of class $C^\infty$, nonnegative, has
+$\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}$ compact, and has
+$\int_{\R^n}\rho_\delta=1$.  For a locally integrable $v$ we write
+$(v*\rho_\delta)(x)=\int_{\R^n}v(y)\rho_\delta(x-y)\,dy$.  We also write
+$\iota(a)$ for the linear functional $\xi\mapsto(a,\xi)$ on $\R^n$ attached to a
+vector $a\in\R^n$; thus $\iota(a)(e_i)=a_i$, and $\|\iota(a)\|=|a|$, which in
+Mathlib is \texttt{innerSL\_apply\_norm}.  A function $F$ is differentiable at
+$x$ with $\nabla F(x)=a$ exactly when $F$ has Fr\'echet derivative $\iota(a)$ at
+$x$; the point of recording $\|\iota(a)\|=|a|$ is that uniform convergence of
+\emph{vector fields} is then literally uniform convergence of the corresponding
+\emph{functionals}, so the two differentiation theorems quoted in Step~5, which
+are stated for derivatives as functionals, may be fed with convergence of
+gradients as vectors.
+
+\medskip
+\noindent\emph{Step 0: three facts about the integral over a general measure
+space, each from a declared Preamble item.}  The Preamble states its
+monotonicity and norm-inequality clauses for the \emph{interval} integral only,
+so they are not available for integrals over subsets of $\R^n$; the following
+three are, and they are all that is needed below.  Let $(X,\mu)$ be a measure
+space.
+\begin{itemize}
+\item[($\mathrm I_1$)] \emph{Nonnegativity.}  If $F\ge0$ is integrable then
+  $\int F\,d\mu\ge0$.  This is the fact the Preamble's H\"older item already
+  presupposes, that item being stated for $f,g\ge0$ on an arbitrary measure
+  space and asserting an inequality between integrals of nonnegative functions.
+\item[($\mathrm I_2$)] \emph{Monotonicity.}  If $F\le G$ are integrable then
+  $\int F\le\int G$: apply ($\mathrm I_1$) to $G-F\ge0$, which is integrable as a
+  difference of integrable functions, and use additivity of the integral.
+\item[($\mathrm I_3$)] \emph{The absolute-value bound.}  If $F$ is
+  real-valued and integrable then $\bigl|\int F\bigr|\le\int|F|$.  Put
+  $F^+=\max\{F,0\}$ and $F^-=\max\{-F,0\}$; both are measurable with
+  $0\le F^{\pm}\le|F|$, hence integrable by the Preamble's domination clause~(a),
+  which is stated for an arbitrary measure space.  Pointwise $F=F^+-F^-$ and
+  $|F|=F^++F^-$ --- check the cases $F\ge0$ and $F<0$ --- so by additivity
+  $\int F=P-Q$ and $\int|F|=P+Q$ with $P=\int F^+\ge0$ and $Q=\int F^-\ge0$ by
+  ($\mathrm I_1$); and $|P-Q|\le P+Q$ for nonnegative reals.
+\end{itemize}
+These three are used, and nothing stronger, wherever an inequality between
+integrals over $\R^n$ or over a subset of it appears below.
+
+\medskip
+\noindent\emph{Step 1: a countable cover of $\Omega$ by balls with compact
+closure well inside $\Omega$.}  For each $x\in\Omega$, openness of $\Omega$
+gives $s>0$ with $B_s(x)\subseteq\Omega$; put $r(x)=s/3>0$, so that
+\[
+\overline{B_{2r(x)}(x)}\subseteq B_{3r(x)}(x)=B_s(x)\subseteq\Omega .
+\]
+The balls $B_{r(x)}(x)$, $x\in\Omega$, are open and cover $\Omega$, since each
+contains its own centre.  As $\R^n$ is second countable, every family of open
+sets contains a countable subfamily with the same union --- $\R^n$ is
+hereditarily Lindel\"of; in Mathlib this is
+\texttt{TopologicalSpace.isOpen\_iUnion\_countable}.  Fix such a subfamily and
+enumerate it as $B_k=B_{r_k}(z_k)$, $k\in I$ with $I\subseteq\mathbb N$, so that
+\[
+\Omega=\bigcup_{k\in I}B_k ,
+\qquad
+\overline{B_{2r_k}(z_k)}\subseteq\Omega
+\qquad(k\in I).
+\tag{1}
+\]
+Write $K_k=\overline{B_{2r_k}(z_k)}$; it is closed and bounded, hence compact,
+and $K_k\subseteq\Omega$.
+
+\medskip
+\noindent\emph{Step 2: truncation, and the mollification is smooth.}  Fix
+$k\in I$ and drop the index, writing $B=B_r(z)$ and $K=\overline{B_{2r}(z)}$.
+By \noderef{MemW1pLocOn} applied at the compact set $K\subseteq\Omega$, both
+$u$ and $g$ lie in $L^{q}(K)$.  Since $|K|<\infty$ (Preamble: the volume of a
+ball) and $q\ge1$, H\"older's inequality on a set of finite measure (Preamble)
+gives $L^{q}(K)\subseteq L^{1}(K)$, so
+\[
+\check u=\mathbf1_K\,u,
+\qquad
+\check g=\mathbf1_K\,g
+\]
+are integrable on $\R^n$, hence locally integrable there; and since
+$u\in L^{q}(K)$ and $\check u$ vanishes off $K$, also
+$\check u\in L^{q}(\R^n)$, which is what Step~5 needs.  By the Preamble item
+on convolution with a smooth compactly supported kernel, for every $\delta>0$
+the function
+\[
+\Phi_\delta=\check u*\rho_\delta
+\]
+is of class $C^\infty$ on $\R^n$ and
+\[
+D_i\Phi_\delta=\check u*(D_i\rho_\delta)
+\qquad(i=1,\dots,n).
+\tag{2}
+\]
+In particular $\Phi_\delta$ is differentiable at every point of $\R^n$ with
+Fr\'echet derivative $\iota(\nabla\Phi_\delta(x))$ there.
+
+\medskip
+\noindent\emph{Step 3: on the inner ball the derivative of the mollification is
+the mollified continuous field.}  Let $x\in\overline{B_{3r/2}(z)}$ and
+$0<\delta<r/2$.  If $|y-x|\le\delta$ then
+$|y-z|\le|y-x|+|x-z|\le\delta+3r/2<2r$, so
+\[
+\overline{B_\delta(x)}\subseteq B_{2r}(z)\subseteq K\subseteq\Omega .
+\tag{3}
+\]
+Put $\psi(y)=\rho_\delta(x-y)$.  Then $\psi$ is of class $C^\infty$, has
+compact support, and $\operatorname{supp}\psi\subseteq\overline{B_\delta(x)}$,
+which by (3) is contained in $\Omega$; so $\psi$ lies in the test class of
+\noderef{HasWeakGradientOn} for $\Omega$ --- that class asks exactly for
+smoothness, compact support and $\operatorname{supp}\psi\subseteq\Omega$.
+Differentiating in $y$ gives $D_i\psi(y)=-(D_i\rho_\delta)(x-y)$.  The
+weak-gradient identity of \noderef{HasWeakGradientOn}, which the pair $(u,g)$
+satisfies on $\Omega$ by the first clause of \noderef{MemW1pLocOn}, applied to
+$\psi$ and the index $i$ reads
+$\int_\Omega u\,D_i\psi\,dy=-\int_\Omega g_i\,\psi\,dy$, that is
+\[
+-\int_\Omega u(y)\,(D_i\rho_\delta)(x-y)\,dy
+=-\int_\Omega g_i(y)\,\rho_\delta(x-y)\,dy .
+\]
+Both integrands vanish off $\overline{B_\delta(x)}$, which by (3) lies inside
+$K\subseteq\Omega$, and on $K$ one has $\check u=u$ and $\check g=g$; so each
+integral over $\Omega$ equals the corresponding integral over $\R^n$ with
+$\check u,\check g$ in place of $u,g$.  Comparing with (2) and multiplying by
+$-1$,
+\[
+D_i\Phi_\delta(x)=\bigl(\check g_i*\rho_\delta\bigr)(x)
+\qquad\bigl(x\in\overline{B_{3r/2}(z)},\ 0<\delta<r/2\bigr).
+\tag{4}
+\]
+Now $g=g_c$ almost everywhere on $\Omega$ and $K\subseteq\Omega$, so
+$\check g_i=\mathbf1_Kg_{c,i}$ almost everywhere on $\R^n$, and two functions
+equal almost everywhere have the same integral against $\rho_\delta(x-\cdot)$;
+hence (4) may be rewritten
+\[
+D_i\Phi_\delta(x)=\bigl((\mathbf1_Kg_{c,i})*\rho_\delta\bigr)(x)
+=\int_{\R^n}g_{c,i}(y)\,\rho_\delta(x-y)\,dy ,
+\tag{5}
+\]
+the last equality because $\rho_\delta(x-y)=0$ unless $|y-x|\le\delta$, and
+every such $y$ lies in $K$ by (3), where $\mathbf1_K=1$.
+
+\medskip
+\noindent\emph{Step 4: the mollified field converges to $g_c$ UNIFORMLY on the
+inner closed ball.}  The set $K$ is compact and contained in $\Omega$, and $g_c$
+is continuous on $\Omega$, hence continuous on $K$; a continuous function on a
+compact set in a metric space is uniformly continuous there (Heine--Cantor; in
+Mathlib \texttt{IsCompact.uniformContinuousOn\_of\_continuous}).  So given $\varepsilon>0$
+there is $\eta>0$ such that
+\[
+x,y\in K,\ |x-y|\le\eta\ \Longrightarrow\ |g_c(y)-g_c(x)|\le\varepsilon .
+\tag{6}
+\]
+Let $0<\delta<\min\{\eta,r/2\}$ and $x\in\overline{B_{3r/2}(z)}$.  Using
+$\int\rho_\delta=1$ and (5),
+\[
+D_i\Phi_\delta(x)-g_{c,i}(x)
+=\int_{\R^n}\bigl(g_{c,i}(y)-g_{c,i}(x)\bigr)\rho_\delta(x-y)\,dy .
+\]
+The integrand is pinched between $\mp\varepsilon\rho_\delta(x-y)$: indeed
+$\rho_\delta(x-y)=0$ unless $|y-x|\le\delta\le\eta$, and for such $y$ we have
+$y\in K$ by (3) and $x\in K$, so (6) gives
+$|g_c(y)-g_c(x)|\le\varepsilon$ and hence
+$|g_{c,i}(y)-g_{c,i}(x)|\le\varepsilon$, a single component of a vector having
+modulus at most the norm of the vector; multiplying by $\rho_\delta(x-y)\ge0$
+preserves the two inequalities.  So by ($\mathrm I_2$) applied twice and
+$\int\rho_\delta=1$,
+\[
+-\varepsilon\le D_i\Phi_\delta(x)-g_{c,i}(x)\le\varepsilon ,
+\qquad\text{i.e.}\qquad
+\bigl|D_i\Phi_\delta(x)-g_{c,i}(x)\bigr|\le\varepsilon .
+\]
+Summing the $n$ squared components,
+\[
+\bigl|\nabla\Phi_\delta(x)-g_c(x)\bigr|\le\sqrt n\,\varepsilon
+\qquad\bigl(x\in\overline{B_{3r/2}(z)},\ 0<\delta<\min\{\eta,r/2\}\bigr).
+\tag{7}
+\]
+Since $\varepsilon>0$ was arbitrary, (7) says that $\nabla\Phi_\delta\to g_c$
+uniformly on $\overline{B_{3r/2}(z)}$ as $\delta\downarrow0$.
+
+Fix once and for all the sequence $\delta_m=\tfrac r4\cdot\tfrac1{m+1}$,
+$m\in\mathbb N$, so that $0<\delta_m<r/2$ and $\delta_m\to0$, and abbreviate
+$\Phi_m=\Phi_{\delta_m}$.  Two consequences of (7) are what Step~5 consumes.
+First, $\iota\circ\nabla\Phi_m\to\iota\circ g_c$ uniformly on
+$\overline{B_{3r/2}(z)}$, because $\|\iota(a)-\iota(b)\|=\|\iota(a-b)\|=|a-b|$
+by linearity of $\iota$ and $\|\iota(\cdot)\|=|\cdot|$; in particular the
+convergence is uniform on every compact subset of $B$, and therefore
+\emph{locally uniform} on the open set $B$ --- a locally uniform limit on an open
+set is exactly a limit uniform on each compact subset, in the
+$\varepsilon$-formulation of \texttt{Metric.tendstoLocallyUniformlyOn\_iff}, and
+each $x\in B$ has a compact neighbourhood inside $B$.  Second, a uniformly
+convergent sequence is uniformly Cauchy, so $(\iota\circ\nabla\Phi_m)_m$ is
+uniformly Cauchy on $B$.
+
+\medskip
+\noindent\emph{Step 5: the mollifications converge in $L^{q}(\R^n)$, hence
+almost everywhere on $B$ along a subsequence.}  We claim
+$\|\Phi_\delta-\check u\|_{L^q(\R^n)}\to0$ as $\delta\downarrow0$.  Three
+Preamble items give it.
+
+\emph{(i) The contraction.}  For $v\in L^q(\R^n)$ and $\delta>0$,
+$\|v*\rho_\delta\|_{L^q(\R^n)}\le\|v\|_{L^q(\R^n)}$.  Indeed
+$(v*\rho_\delta)(x)=\int v(x-w)\rho_\delta(w)\,dw$ --- the change of variables
+$y=x-w$, which preserves Lebesgue measure (Preamble: invariance of Lebesgue
+measure under translations and unimodular linear maps, the map $w\mapsto x-w$
+being a translation composed with $w\mapsto-w$, of determinant $\pm1$) --- and
+$\rho_\delta\,dw$ is a probability measure.  By ($\mathrm I_3$),
+$|(v*\rho_\delta)(x)|\le\int|v(x-w)|\rho_\delta(w)\,dw$.  For $q>1$, writing
+$\rho_\delta(w)=\rho_\delta(w)^{1/q}\rho_\delta(w)^{1-1/q}$ and applying
+H\"older's inequality (Preamble), which is stated for nonnegative functions on
+an arbitrary measure space, in the variable $w$ at the conjugate exponents $q$
+and $q/(q-1)$, bounds the right side by
+$\bigl(\int|v(x-w)|^q\rho_\delta(w)\,dw\bigr)^{1/q}\bigl(\int\rho_\delta\bigr)^{1-1/q}$;
+raising to the power $q$ and using $\int\rho_\delta=1$ gives
+$|(v*\rho_\delta)(x)|^q\le\int|v(x-w)|^q\rho_\delta(w)\,dw$.  For $q=1$ that
+display is the previous one.  Integrating in $x$ and exchanging the order
+of integration (Preamble: Tonelli, the integrand being nonnegative and jointly
+measurable) gives
+$\int|v*\rho_\delta|^q\le\int\rho_\delta(w)\int|v(x-w)|^q\,dx\,dw
+=\|v\|^q_{L^q}$, again by translation invariance.
+
+\emph{(ii) Continuous compactly supported $v$.}  If $v$ is continuous with
+compact support then $v$ is uniformly continuous on $\R^n$ and bounded, and the
+estimate of Step~4 applied to $v$ in place of $g_{c,i}$ --- the same pinching
+between $\mp\varepsilon\rho_\delta(x-\cdot)$ followed by ($\mathrm I_2$), with
+$\int\rho_\delta=1$ and $\rho_\delta\ge0$, and with the uniform continuity now
+global so that no auxiliary compact set is needed --- gives
+$\sup_{\R^n}|v*\rho_\delta-v|\to0$.  All the functions $v*\rho_\delta$ with
+$\delta\le1$ vanish off the fixed compact set
+$\{x:\operatorname{dist}(x,\operatorname{supp}v)\le1\}$, of finite measure, so
+uniform convergence on that set forces $\|v*\rho_\delta-v\|_{L^q}\to0$.
+
+\emph{(iii) Density.}  Let $\varepsilon>0$.  By the Preamble's density item
+there is a continuous $v$ with compact support and
+$\|\check u-v\|_{L^q(\R^n)}\le\varepsilon/3$.  Then, by the $L^q$ triangle
+inequality (Preamble: Minkowski) and (i) applied to $\check u-v$,
+\[
+\|\Phi_\delta-\check u\|_{L^q}
+\le\|(\check u-v)*\rho_\delta\|_{L^q}+\|v*\rho_\delta-v\|_{L^q}
++\|v-\check u\|_{L^q}
+\le\tfrac{2\varepsilon}3+\|v*\rho_\delta-v\|_{L^q},
+\]
+and the last term is $\le\varepsilon/3$ for all small $\delta$ by (ii).  This
+proves the claim.
+
+Consequently $\|\Phi_m-\check u\|_{L^q(\R^n)}\to0$, so by the Preamble item on
+extracting an almost everywhere convergent subsequence out of $L^q$ convergence
+there is a strictly increasing sequence $m_1<m_2<\cdots$ with
+$\Phi_{m_i}\to\check u$ almost everywhere on $\R^n$.  Replace $(\Phi_m)$ by that
+subsequence, keeping the name; this does not disturb Step~4, since every
+property recorded there holds for every $\delta<r/2$ and hence for every term of
+any subsequence.  On $B\subseteq K$ we have $\check u=u$, so
+\[
+\Phi_m\to u\quad\text{almost everywhere on }B .
+\tag{8}
+\]
+
+\medskip
+\noindent\emph{Step 6: the limit $W$ on the ball $B$, differentiable with
+gradient $g_c$ and equal to $u$ almost everywhere.}  The set
+$Z=\{x\in B:\Phi_m(x)\to u(x)\}$ has full measure in $B$ by (8), and
+$|B|=\omega_nr^n>0$ (Preamble: the volume of a ball, with $r>0$ and $n\ge1$), so
+$Z\ne\emptyset$; fix $x_\ast\in Z$.  The ball $B$ is convex, hence preconnected
+(in Mathlib, \texttt{(convex\_ball z r).isPreconnected}), and it is open.  We may
+therefore apply the Cauchy-transfer theorem for uniformly Cauchy derivatives
+(\texttt{cauchy\_map\_of\_uniformCauchySeqOn\_fderiv}), whose hypotheses are:
+$B$ open and preconnected, just recorded; $(\iota\circ\nabla\Phi_m)_m$ uniformly
+Cauchy on $B$, which is Step~4's second consequence; that each $\Phi_m$ has
+Fr\'echet derivative $\iota(\nabla\Phi_m(y))$ at every $y\in B$, which is
+Step~2; and that $(\Phi_m(x_\ast))_m$ is Cauchy, which holds because it
+converges, to $u(x_\ast)$.  Its conclusion is that $(\Phi_m(x))_m$ is Cauchy for
+every $x\in B$.  Since $\R$ is complete, the limit
+\[
+W(x)=\lim_{m\to\infty}\Phi_m(x)
+\qquad(x\in B)
+\]
+exists at every point of $B$; extend $W$ to $\R^n$ by $0$ off $B$.
+
+Now apply the differentiation theorem for locally uniform limits of derivatives
+(\texttt{hasFDerivAt\_of\_tendstoLocallyUniformlyOn}), whose hypotheses are: $B$
+open; each $\Phi_m$ has derivative $\iota(\nabla\Phi_m(y))$ at every $y\in B$
+(Step~2); $\iota\circ\nabla\Phi_m\to\iota\circ g_c$ locally uniformly on $B$
+(Step~4's first consequence); and $\Phi_m(x)\to W(x)$ for every $x\in B$, which
+is the definition of $W$.  Its conclusion is that $W$ has Fr\'echet derivative
+$\iota(g_c(x))$ at every $x\in B$; that is, $W$ is differentiable at every
+$x\in B$ with
+\[
+D_iW(x)=\iota\bigl(g_c(x)\bigr)(e_i)=g_c(x)_i
+\qquad(x\in B,\ i=1,\dots,n).
+\tag{9}
+\]
+Finally, at every $x\in Z$ the sequence $\Phi_m(x)$ converges both to $u(x)$, by
+the definition of $Z$, and to $W(x)$, by the definition of $W$; limits in $\R$
+are unique, so $u=W$ on $Z$ and therefore
+\[
+u=W\quad\text{almost everywhere on }B .
+\tag{10}
+\]
+\emph{Note that no additive constant has been chosen anywhere}: the Cauchy step
+was seeded at a point where $\Phi_m$ converges to $u$ itself, so (10) is an
+equality and not an equality up to a constant.  This is what makes Step~7
+automatic.
+
+\medskip
+\noindent\emph{Step 7: a pointwise equality from an almost everywhere one, on an
+open set.}  We record the elementary step twice used below.  Let
+$V\subseteq\R^n$ be open, let $F,H$ be continuous on $V$ and let $F=H$ almost
+everywhere on $V$.  Then $F=H$ at every point of $V$.  Indeed, suppose
+$F(x)\ne H(x)$ for some $x\in V$ and put $c=|F(x)-H(x)|/2>0$.  The function
+$F-H$ is continuous on $V$, so $\{y\in V:|F(y)-H(y)|>c\}$ is open in $V$, hence
+open in $\R^n$, and it contains $x$, hence is nonempty; a nonempty open subset
+of $\R^n$ contains a ball $B_\sigma(y_0)$ with $\sigma>0$, whose measure
+$\omega_n\sigma^n$ is positive (Preamble: the volume of a ball; in Mathlib the
+packaged form is \texttt{IsOpen.measure\_pos}).  But that set
+is contained in $\{y\in V:F(y)\ne H(y)\}$, which is null by hypothesis --- a
+contradiction.
+
+\medskip
+\noindent\emph{Step 8: gluing the $W_k$ into one $w$.}  Carry out Steps~2--6 for
+each $k\in I$, writing $W_k$ for the function produced on $B_k$: by (9) and (10),
+\[
+W_k\ \text{is differentiable at every }x\in B_k\ \text{with}\ \nabla W_k=g_c
+\ \text{there},
+\qquad
+u=W_k\ \text{a.e.\ on }B_k .
+\tag{11}
+\]
+Let $j,k\in I$ with $V=B_j\cap B_k\ne\emptyset$.  Then $V$ is open, being an
+intersection of two open balls.  By (11) we have $u=W_j$ a.e.\ on $B_j$ and
+$u=W_k$ a.e.\ on $B_k$, so $W_j=W_k$ almost everywhere on $V$, the union of two
+null sets being null.  Both $W_j$ and $W_k$ are continuous on $V$, since by (11)
+they are differentiable at each of its points and differentiability at a point
+implies continuity there.  So Step~7 applies and
+\[
+W_j=W_k\quad\text{at every point of }B_j\cap B_k
+\qquad(j,k\in I).
+\tag{12}
+\]
+Since $I\subseteq\mathbb N$ is countable, for $x\in\Omega$ the set
+$\{k\in I:x\in B_k\}$ is a nonempty set of natural numbers by (1); let $k(x)$ be
+its least element, and define
+\[
+w(x)=W_{k(x)}(x)\ \ (x\in\Omega),
+\qquad
+w(x)=0\ \ (x\notin\Omega).
+\]
+\emph{$w$ agrees with $W_k$ on the whole of $B_k$, for every $k$.}  If $x\in B_k$
+then $x\in B_{k(x)}$ as well, so $x\in B_{k(x)}\cap B_k$ and (12) gives
+$w(x)=W_{k(x)}(x)=W_k(x)$.
+
+Conclusion (b).  Let $x\in\Omega$ and choose $k\in I$ with $x\in B_k$.  The set
+$B_k$ is open and $w=W_k$ on it by the previous paragraph, so $w$ and $W_k$
+agree on a neighbourhood of $x$; differentiability at a point and the value of
+the derivative there depend only on the germ of the function at that point (in
+Mathlib, \texttt{Filter.EventuallyEq.differentiableAt\_iff} together with
+\texttt{Filter.EventuallyEq.fderiv\_eq}), so
+by (11) $w$ is differentiable at $x$ with $D_iw(x)=D_iW_k(x)=g_c(x)_i$ for every
+$i$.  This is (b).
+
+Conclusion (a).  By (11) and the previous paragraph, for each $k$ the set
+$E_k=\{x\in B_k:u(x)\ne w(x)\}=\{x\in B_k:u(x)\ne W_k(x)\}$ is null.  If
+$x\in\Omega$ and $u(x)\ne w(x)$ then $x\in B_k$ for some $k\in I$ by (1), so
+$x\in E_k$; hence
+\[
+\{x\in\Omega:u(x)\ne w(x)\}\subseteq\bigcup_{k\in I}E_k ,
+\]
+a countable union of null sets, which is null.  This is (a), and the lemma is
+proved.
+\end{proof}

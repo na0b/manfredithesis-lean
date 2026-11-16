@@ -1,0 +1,111 @@
+\begin{lemma}[The model field of (1.3) of the thesis inhabits (Q1) of the thesis--(Q2) of the thesis at $\varepsilon=0$ on $1<p<2$]
+Let $n\ge1$ be an integer and let $1<p<2$.  Then the field
+\[
+A(x,z,h)=|h|^{p-2}h ,\qquad A(x,z,0)=0 ,
+\]
+of (1.3) of the thesis --- written $(|h|^2)^{\frac{p-2}2}h$, so that the value at
+$h=0$ is the one the convention of \noderef{EllipticStructureQ12} assigns ---
+satisfies
+\[
+\mathrm{EllipticStructureQ12}\bigl(n,p,\ \varepsilon=0,\ \gamma_0=p-1,\
+\gamma_1=3-p,\ \Omega=\R^n,\ A\bigr).
+\]
+
+\noindent\textbf{Why this node exists.}  The Note for the formalization requires
+at l.~258 that a cited result ``must not be vacuous (each must be a true
+statement for the operators to which it is applied)''.  The same demand applies
+a fortiori to the structure bundle every such citation is conditioned on: if
+$\mathrm{EllipticStructureQ12}$ were satisfied by no field, Theorems
+Theorem~1 of the thesis--Theorem~2 of the thesis and everything downstream would be vacuously true and
+the development would certify nothing.  This node discharges that demand for the
+one field the thesis names, (1.3) of the thesis, at the one parameter value where the
+risk is real: $\varepsilon=0$ with $1<p<2$, the singular range the thesis is
+about, where the bundle as printed in the thesis is \emph{contradictory} and
+\noderef{EllipticStructureQ12} therefore restricts clauses (4)--(6) to
+$D(\varepsilon)$.  That restriction is justified in that node's commentary; this
+node is the machine-checked half of the justification, and because it is
+Lean-closed it is re-checked whenever the bundle is edited --- which is what
+caught the two Carath\'eodory clauses (1) and (2) when they were added.
+
+The parameters are the ones \noderef{EllipticStructureQ12} records:
+$\gamma_0=p-1$ and $\gamma_1=3-p$, so $\gamma_1/\gamma_0=(3-p)/(p-1)$ depends
+only on $p$, as the constants of Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis require.
+$\gamma_1=3-p$ rather than $1$ because the tablet's (Q2) is the componentwise
+bound $|D_{h_j}A^i|\le\gamma_1(\varepsilon+|h|^2)^{\frac p2-1}$, not a bound on
+the quadratic form.  The statement is given on $\Omega=\R^n$ because the field
+is $x$-independent; a bundle on any $\Omega\subseteq\R^n$ follows, since every
+clause of \noderef{EllipticStructureQ12} is a condition quantified over
+$x\in\Omega$ or over all $x$.
+\end{lemma}
+\begin{proof}
+Write $W=|h|^2$ and $A(h)=W^{\frac{p-2}2}h$ for the field, which does not
+depend on $x$ or on $z$.  Note $p-1>0$ and $3-p>0$, so the two parameters are
+admissible, and $D(0)=\R^n\setminus\{0\}=\{h:W\ne0\}$.
+
+\emph{Clauses (1) and (2), the Carath\'eodory pair.}  For fixed $z$ and $h$ the
+map $x\mapsto A(h)$ is constant, hence Borel measurable.  For clause (2), fix
+$x$; the map $(z,h)\mapsto A(h)$ is the composition of the projection
+$(z,h)\mapsto h$ with $A$, so it suffices that $A$ is continuous on $\R^n$,
+which is clause (3).
+
+\emph{Clause (3), continuity in $h$ on all of $\R^n$.}  Away from the origin
+$h\mapsto W$ is smooth and positive, so $W^{\frac{p-2}2}$ is smooth there by
+smoothness of $t\mapsto t^{\frac{p-2}2}$ on $(0,\infty)$, and $A$ is smooth as a
+product of a scalar and the identity.  At the origin, $|A(h)|=|h|^{p-1}$: for
+$h\ne0$,
+\[
+|A(h)|=\bigl|W^{\frac{p-2}2}\bigr|\,|h|=|h|^{p-2}|h|=|h|^{p-1},
+\]
+using $W^{\frac{p-2}2}=(|h|^2)^{\frac{p-2}2}=|h|^{p-2}$ for $|h|>0$ and
+$W^{\frac{p-2}2}>0$; and at $h=0$ both sides are $0$, because $p-1\ne0$ makes
+$0^{p-1}=0$ under the real-power convention.  Since $p-1>0$, the right-hand side
+tends to $0$ as $h\to0$, so $A(h)\to0=A(0)$ by the squeeze.  Hence $A$ is
+continuous on $\R^n$.
+
+\emph{Clause (4), $C^1$ on $D(0)$.}  At $h$ with $W\ne0$ the map $y\mapsto|y|^2$
+is $C^\infty$ and does not vanish at $h$, so $y\mapsto W(y)^{\frac{p-2}2}$ is
+$C^1$ at $h$, and $A$ is $C^1$ at $h$ as the product of that scalar with the
+identity.  Its derivative is
+\begin{equation}
+D_hA(h)\xi=W^{\frac{p-2}2}\xi+(p-2)\,W^{\frac{p-2}2-1}(h,\xi)\,h ,
+\tag{$\ast$}
+\end{equation}
+by the product and chain rules, using $D(|y|^2)\xi=2(h,\xi)$ at $y=h$ and
+$\frac{p-2}2\cdot2=p-2$.
+
+\emph{Clause (5), (Q1).}  Fix $h\in D(0)$, so $W>0$, and fix $\xi$.  Pairing
+$(\ast)$ with $\xi$ and using $(\,\cdot\,,\cdot\,)$-bilinearity and
+$(\xi,\xi)=|\xi|^2$,
+\[
+\sum_{i,j}D_{h_j}A^i(h)\xi^i\xi^j=(D_hA(h)\xi,\xi)
+=W^{\frac{p-2}2}|\xi|^2+(p-2)\,W^{\frac{p-2}2-1}(h,\xi)^2 .
+\]
+By Cauchy--Schwarz $(h,\xi)^2\le W|\xi|^2$, and $2-p>0$, so
+\[
+(2-p)W^{\frac{p-2}2-1}\bigl(W|\xi|^2-(h,\xi)^2\bigr)\ge0 .
+\]
+Expanding and using $W^{\frac{p-2}2-1}\cdot W=W^{\frac{p-2}2}$ (valid since
+$W>0$) this says exactly
+\[
+W^{\frac{p-2}2}|\xi|^2+(p-2)W^{\frac{p-2}2-1}(h,\xi)^2
+\;\ge\;(p-1)\,W^{\frac{p-2}2}|\xi|^2 ,
+\]
+which is (Q1) with $\gamma_0=p-1$, since $\varepsilon=0$ gives
+$(\varepsilon+|h|^2)^{\frac p2-1}=W^{\frac{p-2}2}$.  The bound holds for
+\emph{every} $x$, hence a.e.
+
+\emph{Clause (6), (Q2).}  Fix $h\in D(0)$ and $i,j$.  Taking $\xi=e_j$ in
+$(\ast)$ and reading off the $i$-th component, $(h,e_j)=h_j$ gives
+\[
+D_{h_j}A^i(h)=W^{\frac{p-2}2}\delta_{ij}+(p-2)\,W^{\frac{p-2}2-1}h_jh_i .
+\]
+Here $|\delta_{ij}|\le1$ and $|h_jh_i|\le|h|^2=W$, the latter from
+$|h_k|\le|h|$ for each $k$ --- which is Cauchy--Schwarz against the unit vector
+$e_k$.  Writing $d=\delta_{ij}$, $u=h_jh_i$ and using
+$W^{\frac{p-2}2-1}W=W^{\frac{p-2}2}>0$ together with $2-p>0$,
+\[
+\bigl|W^{\frac{p-2}2}d+(p-2)W^{\frac{p-2}2-1}u\bigr|
+\le W^{\frac{p-2}2}+(2-p)W^{\frac{p-2}2}=(3-p)W^{\frac{p-2}2},
+\]
+which is (Q2) with $\gamma_1=3-p$.  Again this holds for every $x$, hence a.e.
+\end{proof}

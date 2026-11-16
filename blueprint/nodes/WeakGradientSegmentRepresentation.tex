@@ -1,0 +1,113 @@
+\begin{helper}[The integral representation of a coordinate increment]
+Let $n\in\N$, let $\Omega\subseteq\R^n$, let $f\colon\R^n\to\R$, let
+$g\colon\R^n\to\R^n$, let $K\subseteq\R^n$, let $k$ be an index in
+$\{1,\dots,n\}$ and let $d_0\in\R$.  Throughout, $e_k$ is the $k$-th standard
+basis vector, so $x+se_k$ translates $x$ by $s$ in the $k$-th coordinate
+direction; $K_r$ denotes the closed $r$-collar
+$\{x:\operatorname{dist}(x,K)\le r\}$ of $K$; $\operatorname{supp}$ is the
+\emph{closed} support; $I_h$ is the interval between $0$ and $h$; and $g^k$ is
+the $k$-th component of $g$.  Assume
+\begin{enumerate}
+\item[(H1)] $\Omega$ is open and measurable, $K$ is measurable, and $0<d_0$
+  with $K_{3d_0}\subseteq\Omega$;
+\item[(H2)] the collar is stable under small coordinate shifts: for every $x$
+  in $K_{d_0}$ and every $s$ with $|s|\le d_0$, the point $x+se_k$ lies in
+  $K_{2d_0}$;
+\item[(H3)] $g$ is a weak gradient of $f$ on $\Omega$
+  (\noderef{HasWeakGradientOn}).
+\end{enumerate}
+Let $F_h,G_h\colon\R^n\to\R$ agree with $f$ and with $g^k$ respectively on the
+collar $K_{3d_0}$, let both be integrable on $\R^n$, and let
+$G_h'\colon\R^n\to\R$ be measurable and integrable with
+\[
+(x,s)\mapsto G_h(x+se_k)\ =\ (x,s)\mapsto G_h'(x+se_k)
+\qquad\text{almost everywhere on }\R^n\times\R .
+\]
+Then for every $h$ with $0<|h|<d_0$ and for almost every $x\in K$, the function
+$s\mapsto G_h(x+se_k)$ is interval-integrable on $I_h$ and
+\[
+F_h(x+he_k)-F_h(x)=\int_0^hG_h(x+se_k)\,ds .
+\]
+The statement is given for $F_h,G_h$ agreeing with $f,g^k$ on the collar, rather
+than for $f$ and $g^k$ themselves, because \noderef{HasWeakGradientOn} controls
+$g$ only through an identity against test functions compactly supported in
+$\Omega$ and says nothing about $f$ off $\Omega$: the consumer applies this with
+the zero extensions $F_h=\mathbf1_{K_{3d_0}}f$ and
+$G_h=\mathbf1_{K_{3d_0}}g^k$, which are integrable on all of $\R^n$ while $f$
+need not be.  The auxiliary $G_h'$ is a measurable representative, carried as a
+hypothesis because the Fubini step below needs a genuinely measurable integrand
+on the product.  This is a $W^{1,q}$ statement with no exponent in it; nothing
+here is an $L^2$ claim.
+\end{helper}
+\begin{proof}
+Fix $h$ with $0<|h|<d_0$, and write $K_1=K_{d_0}$ and $K_2=K_{2d_0}$, so
+$K\subseteq K_1$ and, by (H2), $x+se_k\in K_2$ whenever $x\in K_1$ and
+$|s|\le|h|<d_0$.  All three collars lie inside $\Omega$ by (H1).
+
+\emph{Step 1: the identity for mollifications.}  Let $\rho_\delta$ be a standard
+mollifier at scale $\delta$ (Preamble) and put $f_\delta=F_h*\rho_\delta$,
+$(g^k)_\delta=G_h*\rho_\delta$; both are defined because $F_h$ and $G_h$ are
+integrable.  For $0<\delta<d_0$ and $x\in K_1$, the function
+$\Phi(s)=f_\delta(x+se_k)$ is differentiable in $s$ with
+$\Phi'(s)=D_kf_\delta(x+se_k)$, since $f_\delta$ is $C^\infty$ (Preamble:
+convolution with a smooth compactly supported kernel) and $s\mapsto x+se_k$ is
+affine.  For $|s|\le|h|$ the point $x+se_k$ lies in $K_2$, whose $\delta$-collar
+still lies in $\Omega$, so $y\mapsto\rho_\delta(x+se_k-y)$ is an admissible test
+function for (H3) and the weak-gradient identity gives
+$D_kf_\delta=(g^k)_\delta$ there --- here is the only use of (H3), and the only
+use of the containment $K_{3d_0}\subseteq\Omega$, which is what leaves room for
+both the $2d_0$-shift and the $\delta$-mollification.  That derivative is
+continuous, hence interval-integrable on $I_h$, so the fundamental theorem of
+calculus (Preamble) yields
+\[
+f_\delta(x+he_k)-f_\delta(x)=\int_0^h(g^k)_\delta(x+se_k)\,ds
+\qquad(x\in K_1,\ 0<\delta<d_0).
+\tag{7}
+\]
+
+\emph{Step 2: both sides converge in $L^1(K)$.}  Write
+$U_\delta(x)=f_\delta(x+he_k)-f_\delta(x)$,
+$V_\delta(x)=\int_0^h(g^k)_\delta(x+se_k)\,ds$, and let $U,V$ be the two sides
+of the assertion, with $F_h,G_h$ in place of $f_\delta,(g^k)_\delta$.
+
+For $U$: by the $L^1$ triangle inequality (Minkowski, Preamble),
+$\int_K|U_\delta-U|\le\int_K|f_\delta(\cdot+he_k)-F_h(\cdot+he_k)|+\int_K|f_\delta-F_h|$.
+Substituting $y=x+he_k$ in the first integral and using the translation
+invariance of Lebesgue measure (Preamble) turns it into
+$\int_{K+he_k}|f_\delta-F_h|\le\int_{K_2}|f_\delta-F_h|$, by (H2).  Both terms
+tend to $0$ because mollifications converge in $L^1$ on compact sets
+(Preamble).
+
+For $V$: the function $(x,s)\mapsto|(g^k)_\delta-G_h|(x+se_k)$ is nonnegative
+and measurable on $\R^n\times\R$.  Measurability is where the hypothesis on
+$G_h'$ is used: $(y,s)\mapsto|(g^k)_\delta-G_h'|(y)$ is measurable, being
+independent of $s$; the shear $T(x,s)=(x+se_k,s)$ is a linear automorphism of
+$\R^{n+1}$ of determinant $1$, hence preserves Lebesgue measure and
+measurability (Preamble); and $G_h=G_h'$ almost everywhere on the product along
+the shift, so the composition is measurable.  Therefore, using
+$\bigl|\int_0^hF\bigr|\le\int_{I_h}|F|$ and then Tonelli (Preamble),
+\[
+\int_K|V_\delta-V|
+\ \le\ \int_K\!\!\int_{I_h}\bigl|(g^k)_\delta-G_h\bigr|(x+se_k)\,ds\,dx
+= \int_{I_h}\!\!\int_K\bigl|(g^k)_\delta-G_h\bigr|(x+se_k)\,dx\,ds .
+\]
+For each fixed $s\in I_h$ the inner integral is
+$\int_{K+se_k}|(g^k)_\delta-G_h|\le\int_{K_2}|(g^k)_\delta-G_h|$ by translation
+invariance and (H2), so the whole expression is at most
+$|h|\int_{K_2}|(g^k)_\delta-G_h|\to0$.  The same computation with
+$(g^k)_\delta$ replaced by $0$ gives $\int_K|V|\le|h|\int_{K_2}|G_h|<\infty$, so
+$V$ is finite almost everywhere on $K$ and lies in $L^1(K)$; likewise
+$U\in L^1(K)$ because $F_h$ is integrable.  In particular, for almost every
+$x\in K$ the inner integral $\int_{I_h}|G_h(x+se_k)|\,ds$ is finite, which is
+the asserted interval integrability of $s\mapsto G_h(x+se_k)$.
+
+\emph{Step 3: conclusion.}  By (7), $U_\delta=V_\delta$ everywhere on $K$, so
+\[
+\int_K|U-V|\ \le\ \int_K|U-U_\delta|+\int_K|V_\delta-V|\ \longrightarrow\ 0
+\qquad(\delta\downarrow0),
+\]
+while the left-hand side does not depend on $\delta$; hence it is $0$.  Since
+$|U-V|\ge0$ and is integrable on $K$, a nonnegative integrable function with
+vanishing integral vanishes almost everywhere (Preamble), so $U=V$ almost
+everywhere on $K$, which is the assertion.
+\end{proof}

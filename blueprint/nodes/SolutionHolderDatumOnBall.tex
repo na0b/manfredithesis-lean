@@ -1,0 +1,133 @@
+\begin{lemma}[The H\"older datum at a single ball, from the cited oscillation estimate for solutions]
+Let $n\ge1$, let $p>1$, let $\mu>0$, let $0<\gamma_0\le\gamma_1$, let
+$\gamma_2,\gamma_3,\gamma_4>0$, let $M\ge0$ and let $d>0$, and assume the cited
+H\"older estimate \noderef{CitedHolderOscillationSolution}, which is part (b) of
+(C4), holds in dimension $n$ at the exponent $p$.  Then there are
+$\alpha,R_0,C_1\in\R$ with $0<\alpha\le1$, $R_0>0$ and $C_1\ge0$ --- depending
+only on $n,p,\mu,\gamma_0,\dots,\gamma_4,M$ and $d$ --- such that the following
+holds.
+
+Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open, let
+$\Omega'\subseteq\R^n$ satisfy $d\le|x-y|$ for every $x\in\Omega'$ and every
+$y\notin\Omega$, and let $x_0\in\Omega'$.  Let $A$ satisfy
+(Q1) of the thesis--(Q2) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}) and let
+$(A,B)$ satisfy (Q3) of the thesis--(Q5) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\mu,\gamma_2,\gamma_3,\gamma_4$
+(\noderef{EllipticStructureQ345}), let $u$ be a weak solution of
+$\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)$ in $\Omega$ with weak
+gradient $g$ (\noderef{IsWeakSolutionOn}), and suppose $|u|\le M$ almost
+everywhere on $\Omega$.  Let $0<R\le R_0$ and let $U\colon\R^n\to\R$ be
+continuous on $\overline B_R(x_0)$ with $U=u$ at every point of $B_R(x_0)$.
+Then
+\[
+|U(x)-U(x_0)|\le C_1R^{\alpha}\qquad\bigl(x\in\overline B_R(x_0)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the constants.}  Apply \noderef{CitedHolderOscillationSolution}
+with the present $\mu,\gamma_0,\gamma_1,\gamma_2,\gamma_3,\gamma_4$ and $M$; its
+hypotheses are $0<\gamma_0$, $0<\gamma_1$ (from $0<\gamma_0\le\gamma_1$),
+$0<\gamma_2$, $0<\gamma_3$, $0<\gamma_4$, $0<\mu$ and $0\le M$, all present.  It
+produces $\alpha,d_\ast$ with $0<\alpha\le1$ and $d_\ast>0$, depending only on
+$n,p,\mu,\gamma_0,\dots,\gamma_4,M$, and bound \emph{before} $\varepsilon$ and
+before all the data, which is what makes them $\varepsilon$-uniform.
+\emph{The subscript on $d_\ast$ is not decoration}: the cited node names its
+produced constant $d$, while the $d$ of the present lemma is the domain
+distance, and the two are unrelated --- in particular no inequality between
+them is available --- so the cited constant is written $d_\ast$ throughout.  Put
+\[
+R_0=\min\Bigl\{\frac d2,\,1\Bigr\}>0,
+\qquad
+C_1=4^{\alpha}\max\Bigl\{2M,\ d_\ast\frac d2\Bigr\}\Bigl(\frac2d\Bigr)^{\alpha} .
+\]
+Then $R_0>0$ because $d>0$, and $C_1\ge0$ because $4^{\alpha}>0$,
+$(2/d)^{\alpha}>0$ and the maximum is at least $2M\ge0$.  Both depend only on
+$n,p,\mu,\gamma_0,\dots,\gamma_4,M$ and $d$, as required.
+
+Now fix the data and let $0<R\le R_0$; in particular $R\le d/2$.
+
+\emph{Step 2: the closed ball of radius $d/2$ lies in $\Omega$.}  Let
+$y\in\overline B_{d/2}(x_0)$ and suppose $y\notin\Omega$.  Since $x_0\in\Omega'$
+the separation hypothesis gives $d\le|x_0-y|$, while $|y-x_0|\le d/2$, so
+$d\le d/2$, contradicting $d>0$.  Hence $\overline B_{d/2}(x_0)\subseteq\Omega$,
+and a fortiori $B_{d/2}(x_0)\subseteq\Omega$ and, since $R\le d/2$, also
+$B_R(x_0)\subseteq\Omega$.
+
+\emph{Step 3: the oscillation over $B_{d/2}$ is at most $2M$.}  The ball
+$B_{d/2}(x_0)$ has positive volume (Preamble: the volume of a ball), so the
+almost-everywhere filter of the restricted measure is nontrivial and the
+essential supremum and infimum of $u$ over it are genuine reals rather than
+junk values.  From $|u|\le M$ almost everywhere on $\Omega$ and
+$B_{d/2}(x_0)\subseteq\Omega$ we get $u\le M$ and $-M\le u$ almost everywhere
+on $B_{d/2}(x_0)$, hence
+$\operatorname{ess\,sup}_{B_{d/2}}u\le M$ and
+$-M\le\operatorname{ess\,inf}_{B_{d/2}}u$, and therefore
+\[
+\operatorname*{osc}\bigl(u,B_{d/2}(x_0)\bigr)
+=\operatorname{ess\,sup}_{B_{d/2}}u-\operatorname{ess\,inf}_{B_{d/2}}u\le2M
+\qquad(\noderef{EssOscOn}).
+\]
+
+\emph{Step 4: the cited estimate, scaled.}  Apply the conclusion of
+\noderef{CitedHolderOscillationSolution} at the present $\varepsilon$ (with
+$0\le\varepsilon\le1$), the open set $\Omega$, the fields $A$ and $B$, the pair
+$(u,g)$, the centre $x_0$, the outer radius $d/2$ and the inner radius $R$.  Its
+remaining hypotheses are: $\Omega$ open; the bundle
+(Q1) of the thesis--(Q2) of the thesis on $\Omega$
+(\noderef{EllipticStructureQ12}); the bundle (Q3) of the thesis--(Q5) of the thesis on
+$\Omega$ (\noderef{EllipticStructureQ345}); $u$ a weak solution with weak
+gradient $g$ (\noderef{IsWeakSolutionOn}); $|u|\le M$ almost everywhere on
+$\Omega$; $\overline B_{d/2}(x_0)\subseteq\Omega$, by Step 2; $0<R$; and
+$R\le d/2$.  It gives
+\[
+\operatorname*{osc}\bigl(u,B_R(x_0)\bigr)
+\le4^{\alpha}\max\Bigl\{\operatorname*{osc}\bigl(u,B_{d/2}(x_0)\bigr),\
+d_\ast\frac d2\Bigr\}\Bigl(\frac{R}{d/2}\Bigr)^{\alpha}.
+\]
+By Step 3 the maximum is at most $\max\{2M,d_\ast d/2\}$, and
+$4^{\alpha}>0$ and $(R/(d/2))^{\alpha}\ge0$, so the right-hand side is at most
+$4^{\alpha}\max\{2M,d_\ast d/2\}(R/(d/2))^{\alpha}$.  Finally
+$R/(d/2)=R\cdot(2/d)$ with both factors nonnegative, so
+$(R/(d/2))^{\alpha}=R^{\alpha}(2/d)^{\alpha}$, and therefore
+\[
+\operatorname*{osc}\bigl(u,B_R(x_0)\bigr)\le C_1R^{\alpha}.
+\tag{4}
+\]
+
+\emph{Step 5: a continuous function is pointwise trapped by its essential
+bounds.}  Write $S=\operatorname{ess\,sup}_{B_R(x_0)}u$ and
+$I=\operatorname{ess\,inf}_{B_R(x_0)}u$; as in Step 3 these are genuine reals,
+because $B_R(x_0)$ has positive volume and $u$ is essentially bounded there by
+$M$.  By definition of the essential supremum and infimum, $I\le u\le S$ almost
+everywhere on $B_R(x_0)$, and since $U=u$ at every point of $B_R(x_0)$ the same
+holds for $U$: $I\le U\le S$ almost everywhere on $B_R(x_0)$.
+
+We claim $I\le U(x)\le S$ at \emph{every} $x\in B_R(x_0)$.  Suppose
+$U(x)>S$ for some $x\in B_R(x_0)$.  The set
+$B_R(x_0)\cap U^{-1}\bigl((S,\infty)\bigr)$ is open, being the intersection of
+the open ball with the preimage of an open ray under a function continuous on
+the ball ($U$ is continuous on $\overline B_R(x_0)$, hence on $B_R(x_0)$), and
+it is nonempty, containing $x$; a nonempty open subset of $\R^n$ contains a
+ball of positive radius and so has positive volume (Preamble: the volume of a
+ball).  But that set is null, because $U\le S$ almost everywhere on
+$B_R(x_0)$.  This is a contradiction, so $U\le S$ everywhere on $B_R(x_0)$; the
+argument with $(-\infty,I)$ in place of $(S,\infty)$ gives $I\le U$ everywhere
+on $B_R(x_0)$.
+
+The bound extends to the closed ball.  The set
+$\overline B_R(x_0)\cap U^{-1}\bigl([I,S]\bigr)$ is closed, being the
+intersection of the closed ball with the preimage of a closed interval under a
+function continuous on the closed ball, and it contains $B_R(x_0)$ by the
+previous paragraph.  Hence it contains the closure of $B_R(x_0)$, which is
+$\overline B_R(x_0)$ because $R\ne0$.  So $I\le U(x)\le S$ for every
+$x\in\overline B_R(x_0)$.
+
+\emph{Step 6: conclusion.}  Let $x\in\overline B_R(x_0)$.  Also
+$x_0\in\overline B_R(x_0)$, since $R\ge0$.  By Step 5 both $U(x)$ and $U(x_0)$
+lie in $[I,S]$, so
+\[
+|U(x)-U(x_0)|\le S-I=\operatorname*{osc}\bigl(u,B_R(x_0)\bigr)\le C_1R^{\alpha}
+\]
+by (4).  That is the assertion.
+\end{proof}

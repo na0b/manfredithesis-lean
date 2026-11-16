@@ -1,0 +1,129 @@
+\begin{helper}[From an essential-oscillation decay bound on one ball to the pointwise H\"older datum of a continuous representative]
+Let $n\in\N$, let $\alpha,d_\ast,M\in\R$ and let $d>0$.  Let
+$\Omega\subseteq\R^n$, let $u,U\colon\R^n\to\R$, let $x_0\in\R^n$ and let
+$0<R\le d/2$.  Assume
+\begin{enumerate}
+\item $\overline B_{d/2}(x_0)\subseteq\Omega$;
+\item $|u|\le M$ almost everywhere on $\Omega$;
+\item $U$ is continuous on $\overline B_R(x_0)$ and $U=u$ at every point of
+  $B_R(x_0)$;
+\item the essential oscillation of $u$ on $B_R(x_0)$ (\noderef{EssOscOn})
+  satisfies
+  \[
+  \operatorname*{osc}\bigl(u,B_R(x_0)\bigr)
+  \le4^{\alpha}\max\Bigl\{\operatorname*{osc}\bigl(u,B_{d/2}(x_0)\bigr),\
+  d_\ast\frac d2\Bigr\}\Bigl(\frac{R}{d/2}\Bigr)^{\alpha}.
+  \]
+\end{enumerate}
+Then
+\[
+|U(x)-U(x_0)|\le4^{\alpha}\max\Bigl\{2M,\ d_\ast\frac d2\Bigr\}
+  \Bigl(\frac2d\Bigr)^{\alpha}R^{\alpha}
+\qquad\bigl(x\in\overline B_R(x_0)\bigr).
+\]
+\end{helper}
+\begin{proof}
+Throughout, $\operatorname*{osc}(u,S)
+=\operatorname{ess\,sup}_Su-\operatorname{ess\,inf}_Su$ by definition
+(\noderef{EssOscOn}), both essential bounds being taken with respect to
+Lebesgue measure restricted to $S$.
+
+\emph{Step 0: the two balls lie in $\Omega$, and both have positive volume.}
+Since $B_{d/2}(x_0)\subseteq\overline B_{d/2}(x_0)\subseteq\Omega$ by
+hypothesis (1), and $R\le d/2$, we have
+$B_R(x_0)\subseteq B_{d/2}(x_0)\subseteq\Omega$.  As $d>0$ and $R>0$, the balls
+$B_{d/2}(x_0)$ and $B_R(x_0)$ have positive Lebesgue measure (Preamble: the
+volume of a ball), so for each of them the almost-everywhere filter of the
+restricted measure is nontrivial, and the essential supremum and infimum of
+$u$ over them are genuine reals rather than lattice junk values.  Moreover,
+hypothesis (2) together with $B_{d/2}(x_0)\subseteq\Omega$ and
+$B_R(x_0)\subseteq\Omega$ gives
+\[
+-M\le u\le M\quad\text{almost everywhere on }B_{d/2}(x_0)\text{ and on }B_R(x_0),
+\]
+by restricting an almost-everywhere statement on $\Omega$ to a subset of
+$\Omega$ and splitting $|u|\le M$ into its two halves.
+
+\emph{Step 1: the oscillation over $B_{d/2}$ is at most $2M$.}  From
+$u\le M$ almost everywhere on $B_{d/2}(x_0)$ we get
+$\operatorname{ess\,sup}_{B_{d/2}}u\le M$, and from $-M\le u$ almost
+everywhere there we get $-M\le\operatorname{ess\,inf}_{B_{d/2}}u$; both are
+legitimate because, by Step 0, $u$ is essentially bounded on both sides over a
+set of positive measure, so the essential supremum is genuinely the least
+almost-everywhere upper bound and the essential infimum the greatest
+almost-everywhere lower bound.  Subtracting,
+\[
+\operatorname*{osc}\bigl(u,B_{d/2}(x_0)\bigr)
+=\operatorname{ess\,sup}_{B_{d/2}}u-\operatorname{ess\,inf}_{B_{d/2}}u
+\le M-(-M)=2M.
+\tag{1}
+\]
+
+\emph{Step 2: the decay bound, with the constant made data-free.}  Since
+$4^{\alpha}>0$ and $(R/(d/2))^{\alpha}\ge0$, monotonicity of multiplication by
+a nonnegative factor turns (1) into
+\[
+4^{\alpha}\max\Bigl\{\operatorname*{osc}\bigl(u,B_{d/2}(x_0)\bigr),\
+d_\ast\frac d2\Bigr\}\Bigl(\frac{R}{d/2}\Bigr)^{\alpha}
+\le4^{\alpha}\max\Bigl\{2M,\ d_\ast\frac d2\Bigr\}
+  \Bigl(\frac{R}{d/2}\Bigr)^{\alpha},
+\]
+because the maximum is monotone in its first argument.  Next, $d>0$ gives
+$R/(d/2)=R\cdot(2/d)$, and both $R\ge0$ and $2/d\ge0$, so the power of a
+product splits:
+$(R/(d/2))^{\alpha}=R^{\alpha}(2/d)^{\alpha}$.  Combining this with
+hypothesis (4) and the displayed inequality,
+\[
+\operatorname*{osc}\bigl(u,B_R(x_0)\bigr)
+\le4^{\alpha}\max\Bigl\{2M,\ d_\ast\frac d2\Bigr\}
+  \Bigl(\frac2d\Bigr)^{\alpha}R^{\alpha}=:K .
+\tag{2}
+\]
+
+\emph{Step 3: $U$ is trapped pointwise on the open ball.}  Write
+$S=\operatorname{ess\,sup}_{B_R(x_0)}u$ and
+$I=\operatorname{ess\,inf}_{B_R(x_0)}u$; by Step 0 these are genuine reals.  By
+the defining property of the essential supremum and infimum over a set of
+positive measure, $I\le u\le S$ almost everywhere on $B_R(x_0)$, and since
+$U=u$ at every point of $B_R(x_0)$ by hypothesis (3), also
+\[
+I\le U\le S\quad\text{almost everywhere on }B_R(x_0).
+\tag{3}
+\]
+
+We claim $I\le U(x)\le S$ at \emph{every} $x\in B_R(x_0)$.  Suppose
+$U(x)>S$ for some $x\in B_R(x_0)$.  The function $U$ is continuous on
+$\overline B_R(x_0)$ and hence on $B_R(x_0)$, so the set
+$E=B_R(x_0)\cap U^{-1}\bigl((S,\infty)\bigr)$ is the intersection of the open
+ball with the preimage of an open ray under a function continuous on that
+ball, and is therefore open; it is nonempty, since $x\in E$.  A nonempty open
+subset of $\R^n$ contains a ball of positive radius and so has positive
+Lebesgue measure (Preamble: the volume of a ball).  But $E$ is null by (3),
+since every point of $E$ violates $U\le S$.  This contradiction shows
+$U\le S$ everywhere on $B_R(x_0)$.  The same argument with the open ray
+$(-\infty,I)$ in place of $(S,\infty)$ shows $I\le U$ everywhere on
+$B_R(x_0)$.
+
+\emph{Step 4: the trap extends to the closed ball.}  The set
+\[
+F=\overline B_R(x_0)\cap U^{-1}\bigl([I,S]\bigr)
+\]
+is closed, being the intersection of the closed ball with the preimage of a
+closed interval under a function continuous on the closed ball.  By Step 3 it
+contains $B_R(x_0)$, so it contains $\overline{B_R(x_0)}$, which equals
+$\overline B_R(x_0)$ because $R\ne0$.  Hence
+\[
+I\le U(x)\le S\qquad\bigl(x\in\overline B_R(x_0)\bigr).
+\tag{4}
+\]
+
+\emph{Step 5: conclusion.}  Let $x\in\overline B_R(x_0)$.  Also
+$x_0\in\overline B_R(x_0)$, since $R\ge0$.  By (4) both $U(x)$ and $U(x_0)$ lie
+in the interval $[I,S]$, so $U(x)-U(x_0)\le S-I$ and
+$-(S-I)\le U(x)-U(x_0)$, i.e.
+\[
+|U(x)-U(x_0)|\le S-I=\operatorname*{osc}\bigl(u,B_R(x_0)\bigr)\le K
+\]
+by the definition of the essential oscillation (\noderef{EssOscOn}) and by (2).
+That is the assertion.
+\end{proof}

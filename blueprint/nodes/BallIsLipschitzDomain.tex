@@ -1,0 +1,112 @@
+\begin{lemma}
+Let $n\ge1$, let $z\in\R^n$ and let $\rho>0$.  Then the open ball $B_\rho(z)$
+is a bounded Lipschitz domain (\noderef{IsBoundedLipschitzDomain}).
+\end{lemma}
+\begin{proof}
+Write $B=B_\rho(z)$.  The four clauses of
+\noderef{IsBoundedLipschitzDomain} are verified in turn.
+
+\medskip
+\noindent\emph{Clauses \textup{(1)}--\textup{(3)}: open, connected and nonempty,
+bounded.}  $B$ is open, being a metric ball.  It is convex, since
+$|{(1-t)y_0+ty_1-z}|\le(1-t)|y_0-z|+t|y_1-z|<\rho$ for $y_0,y_1\in B$ and
+$t\in[0,1]$; a convex set is path-connected, hence connected, and $B$ is
+nonempty because $z\in B$ by $\rho>0$.  It is bounded, being contained in
+$\overline B_\rho(z)$.
+
+\medskip
+\noindent\emph{Clause \textup{(4)}: the boundary data.}  Let
+$x\in\partial B$.  Then $|x-z|=\rho$: the frontier of a metric ball in $\R^n$ is
+contained in the sphere, because $B$ is open, so no point of $B$ lies in
+$\partial B$, giving $|x-z|\ge\rho$; and $x$ is a limit of points of $B$, each at
+distance $<\rho$ from $z$, so $|x-z|\le\rho$ by continuity of
+$y\mapsto|y-z|$.  Put
+\[
+\nu=\frac{z-x}{\rho},
+\qquad
+r=\frac\rho2,
+\qquad
+L=1 ,
+\]
+so $|\nu|=1$ by $|x-z|=\rho$, and $\nu$ points from the boundary point towards
+the centre, which is the inward direction.  Define $m,\varphi\colon\R^n\to\R$ by
+\[
+m(y)=\min\Bigl\{\,\bigl|y-(y,\nu)\nu\bigr|^2,\ \frac{\rho^2}4\,\Bigr\},
+\qquad
+\varphi(y)=\rho-\sqrt{\rho^2-m(y)} .
+\]
+Both are well defined: $0\le m(y)\le\rho^2/4$, so
+$\rho^2-m(y)\ge\tfrac34\rho^2>0$ and the square root is of a positive number.
+
+\emph{$\varphi$ is invariant in the direction $\nu$.}  For $y\in\R^n$ and
+$t\in\R$, using $(\nu,\nu)=|\nu|^2=1$,
+\[
+(y+t\nu)-\bigl((y+t\nu),\nu\bigr)\nu
+=y+t\nu-\bigl((y,\nu)+t\bigr)\nu
+=y-(y,\nu)\nu ,
+\]
+so $m(y+t\nu)=m(y)$ and hence $\varphi(y+t\nu)=\varphi(y)$.  This is the second
+bullet of clause (4).
+
+\emph{$\varphi$ is $1$-Lipschitz.}  Let $P(y)=y-(y,\nu)\nu$, the orthogonal
+projection onto $\nu^{\perp}$; it is linear with $|P(y)|\le|y|$, because
+$|y|^2=|P(y)|^2+(y,\nu)^2$ by $|\nu|=1$, so $P$ is $1$-Lipschitz.  Next,
+$y\mapsto|P(y)|$ is $1$-Lipschitz as the composition of $P$ with the norm.  Now
+consider $\Psi(a)=\rho-\sqrt{\rho^2-\min\{a^2,\rho^2/4\}}$ for $a\ge0$, so that
+$\varphi(y)=\Psi(|P(y)|)$.  On $[0,\rho/2]$ we have $\min\{a^2,\rho^2/4\}=a^2$
+and $\Psi(a)=\rho-\sqrt{\rho^2-a^2}$, which is differentiable with
+\[
+\Psi'(a)=\frac a{\sqrt{\rho^2-a^2}}
+\le\frac{\rho/2}{\sqrt{\rho^2-\rho^2/4}}
+=\frac{\rho/2}{\tfrac{\sqrt3}2\rho}=\frac1{\sqrt3}\le1 ,
+\]
+the inequality in the numerator because $a\le\rho/2$ and in the denominator
+because $a^2\le\rho^2/4$ makes $\rho^2-a^2\ge\tfrac34\rho^2$.  On
+$[\rho/2,\infty)$ the minimum is the constant $\rho^2/4$ and $\Psi$ is constant.
+So $\Psi$ is continuous on $[0,\infty)$, is $1$-Lipschitz on each of the two
+pieces --- on the first by the mean value theorem applied to the bound on
+$\Psi'$, on the second because it is constant --- and the two pieces agree at
+$a=\rho/2$; hence $\Psi$ is $1$-Lipschitz on $[0,\infty)$, since for
+$a_1\le\rho/2\le a_2$ one has
+$|\Psi(a_2)-\Psi(a_1)|=|\Psi(\rho/2)-\Psi(a_1)|\le\rho/2-a_1\le a_2-a_1$.
+Composing, $\varphi=\Psi\circ|P(\cdot)|$ is $1$-Lipschitz, which is the first
+bullet of clause (4) with $L=1$.
+
+\emph{The graph description on $B_r(x)$.}  Let $y\in B_{\rho/2}(x)$ and write
+\[
+w=P(y-x),
+\qquad
+s=(y-x,\nu),
+\]
+so that $y-x=w+s\nu$, $(w,\nu)=0$ and $|y-x|^2=|w|^2+s^2$.  In particular
+$|w|\le|y-x|<\rho/2$, so the minimum in $m(y-x)$ is attained by the first
+entry and
+\[
+\varphi(y-x)=\rho-\sqrt{\rho^2-|w|^2} .
+\tag{1}
+\]
+Also $|s|\le|y-x|<\rho/2$.  Now compute $|y-z|^2$.  Since
+$z-x=\rho\nu$ we have $y-z=(y-x)-(z-x)=w+s\nu-\rho\nu=w+(s-\rho)\nu$, and
+$(w,\nu)=0$ with $|\nu|=1$ give
+\[
+|y-z|^2=|w|^2+(s-\rho)^2 .
+\]
+Therefore
+\[
+y\in B
+\iff |y-z|^2<\rho^2
+\iff (s-\rho)^2<\rho^2-|w|^2
+\iff |s-\rho|<\sqrt{\rho^2-|w|^2},
+\]
+the last step because both sides are nonnegative and $\rho^2-|w|^2>0$.  Since
+$s<\rho/2<\rho$ we have $s-\rho<0$, so $|s-\rho|=\rho-s$, and the condition
+becomes $\rho-s<\sqrt{\rho^2-|w|^2}$, that is
+\[
+\rho-\sqrt{\rho^2-|w|^2}<s .
+\]
+By (1) this is precisely $\varphi(y-x)<(y-x,\nu)$, which is the third bullet of
+clause (4) at the radius $r=\rho/2$.
+
+All four clauses hold, so $B_\rho(z)$ is a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}).
+\end{proof}

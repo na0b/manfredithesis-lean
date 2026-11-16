@@ -1,0 +1,116 @@
+\begin{helper}[The common core of the two sides of the subquadratic level transport]
+Let $n\in\N$ and let
+$p,r,C_1,L_c,C_2,C_b,\varepsilon,\lambda,\rho,\sigma,\rho_0,W,R\in\R$, let
+$g\colon\R^n\to\R^n$, let $Dg$ assign to each index $i$ a field
+$Dg^i\colon\R^n\to\R^n$, let $k$ be an index, let $\zeta\colon\R^n\to\R$ and
+let $x_0\in\R^n$.  Throughout, $B_\sigma(x_0)$ is the open ball,
+$\operatorname{supp}\zeta$ denotes the \emph{closed} support of $\zeta$,
+$|\cdot|$ is the Euclidean norm, and every power of a nonnegative real is the
+real power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight
+$(\varepsilon+|g|^2)^{\frac p2-1}$.  No closed form for $\sigma_2$ is assumed
+or used anywhere below.  Assume
+\begin{enumerate}
+\item[(H1)] $C_2=\bigl(2nrC_1p^2/(4(p-1))\bigr)^2$ and
+  $C_b=C_2(1+2^{p-1})^2(1+4n)^{1-\frac p2}L_c$;
+\item[(H2)] $0<\varepsilon$, $0<\lambda$, $0<\rho$, $0<\sigma$, $0<L_c$,
+  $\varepsilon\le\varepsilon+|g|^2$ pointwise, $\rho\le R$, $\rho_0<\rho$ and
+  $\rho-\rho_0=\sigma\rho$;
+\item[(H3)] the cut-off: $\operatorname{supp}\zeta\subseteq B_\rho(x_0)$,
+  $\zeta=1$ on $\overline{B_{\rho_0}(x_0)}$,
+  $|\nabla\zeta|^2\le L_c/(\rho-\rho_0)^2$ everywhere, and $|\nabla\zeta|^2=0$
+  off $\operatorname{supp}\zeta$;
+\item[(H4)] for every set $S$ the weighted integrand
+  $(\varepsilon+|g|^2)^{\frac p2-1}\bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2\zeta^2$
+  is integrable on $S$;
+\item[(H5)] $0<W$ and $W\le(\varepsilon+|g|^2)^{\frac p2-1}$ almost everywhere
+  on $B_R(x_0)$; $0<(\sigma\rho)^2$; $C_b\le\max\{1,C_b\}$;
+\item[(H6)] the power identities $(\lambda^{p/2})^2=\lambda^{p}$,
+  $(\lambda^{p-1})^2=\lambda^{2p-2}$,
+  $W^{-1}=(1+4n)^{1-\frac p2}\lambda^{2-p}$ and
+  $\lambda^{2-p}\lambda^{2p-2}=\lambda^{p}$;
+\item[(H7)] for every $S$ the right-hand side
+  $\max\{1,C_b\}(\lambda^{p/2})^2(\sigma\rho)^{-2}|B_\rho(x_0)\cap S|$ is
+  nonnegative.
+\end{enumerate}
+Then for every set $S\subseteq\R^n$ and every $d\colon\R^n\to\R$ such that
+\[
+\int_{B_R(x_0)\cap S}(\varepsilon+|g|^2)^{\frac p2-1}
+  \bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2\zeta^2
+\ \le\ C_2\int_{B_R(x_0)}d^2|\nabla\zeta|^2 ,
+\]
+with $d\ge0$ everywhere, $d\le(1+2^{p-1})\lambda^{p-1}$ almost everywhere on
+$B_R(x_0)$, and $d=0$ off $S$, one has
+\[
+\int_{B_{\rho_0}(x_0)\cap S}
+  \bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2
+\ \le\ \max\{1,C_b\}\,\frac{(\lambda^{p/2})^2}{(\sigma\rho)^2}\,
+  \bigl|B_\rho(x_0)\cap S\bigr| .
+\]
+The statement is abstract in the pair $(S,d)$ on purpose: the two consumers,
+the $-$ side and the $+$ side of the subquadratic case, differ only in which
+level set and which truncation of the signed power they supply, and the four
+conditions on $(S,d)$ above are exactly what each of them establishes.
+\end{helper}
+\begin{proof}
+Fix $S$ and $d$ with the four stated properties, and write
+$V=\bigl\|(\tfrac p2|g^k|^{\frac p2-1})Dg^k\bigr\|^2\ge0$ and
+$K_c=\bigl((1+2^{p-1})\lambda^{p-1}\bigr)^2L_c/(\sigma\rho)^2$, so $K_c\ge0$ by
+(H2).
+
+\emph{Step 1: the degenerate case.}  If $V$ is not integrable on
+$B_{\rho_0}(x_0)\cap S$ then the left-hand side is $0$ by convention, and the
+right-hand side is nonnegative by (H7), so the inequality holds.  Assume from
+now on that it is integrable.
+
+\emph{Step 2: inserting the cut-off and the weight.}  On $B_{\rho_0}(x_0)$ we
+have $\zeta=1$ by (H3), since $B_{\rho_0}(x_0)\subseteq\overline{B_{\rho_0}(x_0)}$,
+so $\zeta^2=1$ there and
+\[
+\int_{B_{\rho_0}\cap S}V=\int_{B_{\rho_0}\cap S}V\zeta^2
+\ \le\ \int_{B_R\cap S}V\zeta^2 ,
+\]
+the inequality by monotonicity of the integral over the larger domain
+(Preamble), legitimate because the integrand is nonnegative and
+$B_{\rho_0}\subseteq B_R$ by $\rho_0<\rho\le R$ from (H2).  By (H5),
+$W\le(\varepsilon+|g|^2)^{p/2-1}$ almost everywhere on $B_R(x_0)$ and $W>0$, so
+multiplying the integrand by $W/W$ and using monotonicity again,
+\[
+\int_{B_R\cap S}V\zeta^2
+\ \le\ W^{-1}\int_{B_R\cap S}(\varepsilon+|g|^2)^{\frac p2-1}V\zeta^2 ,
+\]
+both integrals being finite by (H4).
+
+\emph{Step 3: the Caccioppoli hypothesis and the annulus.}  The hypothesis on
+$(S,d)$ bounds the weighted integral by $C_2\int_{B_R}d^2|\nabla\zeta|^2$.  In
+that integral $d$ vanishes off $S$ and $|\nabla\zeta|^2$ vanishes off
+$\operatorname{supp}\zeta\subseteq B_\rho(x_0)$ by (H3), so the integrand
+vanishes off $B_\rho\cap S$ and
+\[
+\int_{B_R}d^2|\nabla\zeta|^2=\int_{B_\rho\cap S}d^2|\nabla\zeta|^2
+\ \le\ \bigl((1+2^{p-1})\lambda^{p-1}\bigr)^2\frac{L_c}{(\rho-\rho_0)^2}
+  \bigl|B_\rho\cap S\bigr|
+=K_c\bigl|B_\rho\cap S\bigr| ,
+\]
+using the uniform bound on $d$ and the gradient bound of (H3) pointwise,
+$\rho-\rho_0=\sigma\rho$ from (H2), and monotonicity of the integral.
+
+\emph{Step 4: collecting the constants.}  Chaining Steps 2 and 3,
+\[
+\int_{B_{\rho_0}\cap S}V\ \le\ W^{-1}C_2K_c\bigl|B_\rho\cap S\bigr| .
+\]
+By (H6), $W^{-1}=(1+4n)^{1-\frac p2}\lambda^{2-p}$ and
+$(\lambda^{p-1})^2=\lambda^{2p-2}$, so
+\[
+W^{-1}C_2K_c
+=C_2(1+2^{p-1})^2(1+4n)^{1-\frac p2}L_c\cdot
+  \frac{\lambda^{2-p}\lambda^{2p-2}}{(\sigma\rho)^2}
+=C_b\,\frac{\lambda^{p}}{(\sigma\rho)^2}
+=C_b\,\frac{(\lambda^{p/2})^2}{(\sigma\rho)^2},
+\]
+the second equality by $\lambda^{2-p}\lambda^{2p-2}=\lambda^{p}$ and the
+definition of $C_b$ in (H1), and the third by
+$(\lambda^{p/2})^2=\lambda^{p}$.  Finally $C_b\le\max\{1,C_b\}$ by (H5) and
+$(\lambda^{p/2})^2(\sigma\rho)^{-2}|B_\rho\cap S|\ge0$, so the constant may be
+enlarged, which is the assertion.
+\end{proof}

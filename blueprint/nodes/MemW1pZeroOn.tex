@@ -1,0 +1,19 @@
+\begin{definition}
+Let $1\le p<\infty$ and $\Omega\subseteq\R^n$. We write $f\in W^{1,p}_0(\Omega)$
+\emph{with weak gradient $g$}, denoted $\mathrm{MemW1pZeroOn}(n,p,\Omega,f,g)$,
+if $f\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}) and $f$ is
+the limit, in the $W^{1,p}(\Omega)$ seminorms, of a sequence of smooth functions
+compactly supported in $\Omega$: there are
+$\varphi_k\in C^\infty(\R^n)$ with compact support contained in $\Omega$ such
+that
+\[
+\int_\Omega|f-\varphi_k|^p\,dx\longrightarrow 0,
+\qquad
+\int_\Omega|g-\nabla\varphi_k|^p\,dx\longrightarrow 0
+\qquad(k\to\infty),
+\]
+where $|g-\nabla\varphi_k|^p=\bigl(\sum_{i=1}^n|g^i-D_i\varphi_k|^2\bigr)^{p/2}$.
+This is the usual space $W^{1,p}_0(\Omega)$, the closure of $C_0^\infty(\Omega)$
+in $W^{1,p}(\Omega)$, referred to in \S1 and used for the boundary conditions of
+\S3--\S5.
+\end{definition}

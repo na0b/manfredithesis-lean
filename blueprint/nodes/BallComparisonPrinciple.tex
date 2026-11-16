@@ -1,0 +1,365 @@
+\begin{helper}[Comparison principle on a ball]
+Let $n\ge2$, $p>1$, $\varepsilon\ge0$ and $0<\gamma_0\le\gamma_1$, and suppose
+the Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Let
+$A\colon\R^n\to\R^n$ satisfy (Q1) of the thesis--(Q2) of the thesis with these parameters
+on all of $\R^n$, i.e.\ \noderef{EllipticStructureQ12} holds with
+$\Omega=\R^n$ for the field $(x,z,h)\mapsto A(h)$, which is the setting of \S3
+where $A$ depends on $h$ alone.  Let $B_R=B_R(x_0)$ with $R>0$ and let $u,v\in
+W^{1,p}(B_R)$ (\noderef{MemW1pOn}) be weak solutions of
+$\operatorname{div}A(\nabla u)=0$ in $B_R$ (\noderef{IsWeakSolutionOn}), with
+weak gradients $g_u$, $g_v$.  Suppose $U$ and $V$ are continuous on
+$\overline B_R$ and extend $u$ and $v$ from $B_R$, and suppose
+\[
+U\le V\qquad\text{on }\partial B_R .
+\]
+Then $u\le v$ almost everywhere in $B_R$.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it: it is what turns ``$\varphi_\eta\in W^{1,1}(B_R)$ with weak
+gradient $0$'' into ``$\varphi_\eta$ equals its own mean on $B_R$ almost
+everywhere'' in Step 4.  It is a statement about $n$ alone, and $n$ is bound
+first, so it introduces no dependence on any quantity outside the list this
+lemma already names and carries no numerical content of its own.
+\end{helper}
+\begin{proof}
+Write $B_r=B_r(x_0)$ and $S_r=\partial B_r(x_0)$ throughout, and set
+$w=u-v$ on $B_R$, $W=U-V$ on $\overline B_R$.  Note $0<|B_R|<\infty$, since
+$B_R$ is a ball of positive finite radius.
+
+\emph{Step 1: strict monotonicity of $A$.}  Put $r_\ast=\gamma_1/\gamma_0$,
+which is well defined and positive because $\gamma_0>0$ and
+$\gamma_1\ge\gamma_0>0$, and note $\gamma_1=r_\ast\gamma_0$, so in particular
+$\gamma_1\le r_\ast\gamma_0$.  Let $C=C(n,p)>0$ be the constant supplied by
+\noderef{StructureMonotonicityBound} for this $n$, $p$ and $r_\ast$, available
+because $n\ge2$, $p>1$ and $r_\ast>0$.  Apply that node with the present
+$\varepsilon,\gamma_0,\gamma_1$, with $\Omega=\R^n$ and with the field
+$(x,z,h)\mapsto A(h)$: its remaining hypotheses are $\varepsilon\ge0$,
+$\gamma_0>0$, $\gamma_1\le r_\ast\gamma_0$ and
+\noderef{EllipticStructureQ12} for that field on $\R^n$, all of which are
+hypotheses of the present lemma or were just verified.  Its conclusion is that
+for almost every $x\in\R^n$, and then for every $z\in\R$ and all
+$a,b\in\R^n$,
+\[
+C\,\gamma_0\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\;\le\;\bigl(A(a)-A(b),\,a-b\bigr)
+\]
+(the membership $x\in\Omega=\R^n$ being automatic).  The displayed inequality
+involves neither $x$ nor $z$, because the field $(x,z,h)\mapsto A(h)$ does not;
+and the set of admissible $x$ has full Lebesgue measure in $\R^n$, hence is
+nonempty, Lebesgue measure on $\R^n$ not being the zero measure.  Fixing one
+admissible $x$ and any $z$ therefore yields, for all $a,b\in\R^n$,
+\[
+\bigl(A(a)-A(b),\,a-b\bigr)
+\;\ge\;C\,\gamma_0\,\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1}\,|a-b|^2 .
+\tag{1}
+\]
+
+Note what (1) does and does not say.  The right-hand side is nonnegative
+always, so $A$ is monotone.  We will \emph{not} assert that the weight is
+everywhere positive; what we need is only the implication
+\[
+\bigl(A(a)-A(b),a-b\bigr)=0\ \Longrightarrow\ a=b .
+\tag{2}
+\]
+To get (2), suppose $(A(a)-A(b),a-b)=0$.  Then (1) gives
+$C\gamma_0(\varepsilon+|a|^2+|b|^2)^{\frac p2-1}|a-b|^2\le0$, and $C\gamma_0>0$,
+so
+\[
+\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1}\,|a-b|^2\le0 .
+\]
+Both factors are nonnegative --- the first is a real power of the nonnegative
+real $\varepsilon+|a|^2+|b|^2$, the second a square --- so their product is $0$,
+and hence one of them is $0$.  If $|a-b|^2=0$ we are done.  Otherwise
+$(\varepsilon+|a|^2+|b|^2)^{\frac p2-1}=0$.  A real power $t^{s}$ of a
+nonnegative real $t$ vanishes only when $t=0$ and $s\ne0$: for $t>0$ one has
+$t^{s}>0$, and for $t=0$ one has $0^{0}=1$.  So this second alternative forces
+$\varepsilon+|a|^2+|b|^2=0$, i.e.\ $\varepsilon=0$ and $a=b=0$, in which case
+$a=b$ as well.  This proves (2).
+
+\emph{Step 2: the test functions.}  Fix $\eta>0$ and let $\varphi_\eta$ be the
+function on $\R^n$ given by
+\[
+\varphi_\eta=\begin{cases}
+(w-\eta)^+=\max\{u-v-\eta,\,0\} & \text{on }B_R,\\
+0 & \text{off }B_R .
+\end{cases}
+\]
+(The cut-off off $B_R$ matters only for the support bookkeeping below; on $B_R$,
+where the two weak formulations live, $\varphi_\eta$ is just $(w-\eta)^+$.)
+We check that $\varphi_\eta$ is an admissible test function for both weak
+formulations, i.e.\ that it lies in $W^{1,p}(B_R)$ with compact support contained
+in $B_R$, which is exactly the test class of \noderef{IsWeakSolutionOn}.
+
+\emph{Support.}  Put $K_\eta=\{x\in\overline B_R:W(x)\ge\eta\}$.  Since $U$ and
+$V$ are continuous on $\overline B_R$, so is $W$, hence $K_\eta$ is closed in the
+compact set $\overline B_R$ and therefore compact.  Moreover
+$K_\eta\cap S_R=\emptyset$: on $S_R$ we have $U\le V$ by hypothesis, i.e.\
+$W\le0<\eta$.  Hence $K_\eta\subseteq\overline B_R\setminus S_R=B_R$, the set
+identity being that a point of the closed ball is at distance $\le R$ from
+$x_0$, and is in the sphere exactly when that distance equals $R$, so removing
+the sphere leaves exactly the points at distance $<R$, which is $B_R$.  Now if
+$\varphi_\eta(x)\ne0$ for
+some $x\in B_R$ then $w(x)>\eta$, and $W(x)=U(x)-V(x)=u(x)-v(x)=w(x)>\eta$
+because $U=u$ and $V=v$ on $B_R$; so $x\in K_\eta$.  Since $\varphi_\eta$
+vanishes off $B_R$ by construction, this gives
+$\{\varphi_\eta\ne0\}\subseteq K_\eta$ on all of $\R^n$, and since $K_\eta$ is
+closed the closure of that set --- the support of $\varphi_\eta$ --- is contained
+in $K_\eta$.  So $\varphi_\eta$ has compact support and
+$\operatorname{supp}\varphi_\eta\subseteq B_R$, which is exactly the test class
+of \noderef{IsWeakSolutionOn}.
+
+\emph{Sobolev regularity.}  By hypothesis $u,v\in W^{1,p}(B_R)$ with weak
+gradients $g_u,g_v$ (\noderef{MemW1pOn}).  We first record that
+$w=u-v\in W^{1,p}(B_R)$ with weak gradient $g_u-g_v$, writing the splitting of
+the integrals out rather than appealing to linearity in the abstract.  Let
+$\varphi$ be smooth with compact support contained in $B_R$ and let
+$i\in\{1,\dots,n\}$.  By the $L^p$ clause of \noderef{MemW1pOn},
+$u,v\in L^p(B_R)$ and $|g_u|,|g_v|\in L^p(B_R)$; since $|B_R|<\infty$ and
+$p\ge1$, H\"older on a set of finite measure (Preamble) puts all four of
+$u,v,g_u^i,g_v^i$ in $L^1(B_R)$.  The functions $\varphi$ and $D_i\varphi$ are
+continuous with compact support, hence bounded on $\R^n$, and the product of an
+$L^1(B_R)$ function $f$ with a function bounded by $\Lambda$ is in $L^1(B_R)$,
+being measurable and dominated by $\Lambda|f|\in L^1(B_R)$ (domination,
+Preamble).  So
+each of the four integrals
+\[
+\int_{B_R}u\,D_i\varphi,\quad
+\int_{B_R}v\,D_i\varphi,\quad
+\int_{B_R}g_u^i\,\varphi,\quad
+\int_{B_R}g_v^i\,\varphi
+\]
+is finite, and subtracting the defining identity of
+\noderef{HasWeakGradientOn} for $(v,g_v)$ from the one for $(u,g_u)$ is
+legitimate and gives
+\[
+\int_{B_R}(u-v)\,D_i\varphi=-\int_{B_R}\bigl(g_u^i-g_v^i\bigr)\varphi ,
+\]
+which is the defining identity of \noderef{HasWeakGradientOn} for the pair
+$(w,g_u-g_v)$ on $B_R$.  Moreover $w\in L^p(B_R)$ and $|g_u-g_v|\in L^p(B_R)$
+by the $L^p$ triangle inequality (Minkowski, Preamble).  Hence
+$w\in W^{1,p}(B_R)$ with weak gradient $g_u-g_v$ (\noderef{MemW1pOn}).
+
+Now $B_R$ is open with $|B_R|<\infty$ and $p\ge1$, so
+\noderef{WeakGradientPositivePart} applied to
+$w$ with $c=\eta$ gives
+\[
+\varphi_\eta=(w-\eta)^+\in W^{1,p}(B_R)\quad\text{with weak gradient}\quad
+g_\eta=(g_u-g_v)\,\chi_{\{w>\eta\}} ,
+\tag{3}
+\]
+the $L^p$ memberships being part of that conclusion.  (Off $B_R$ our $\varphi_\eta$ is cut off to $0$.  This affects neither half of
+the conclusion (3): not the weak gradient, since
+\noderef{HasWeakGradientOn} on $B_R$ only ever integrates against test functions
+supported in $B_R$ and so sees no value of $\varphi_\eta$ outside $B_R$; and not
+the two $L^p$ memberships, since those are memberships with respect to the
+measure restricted to $B_R$, which likewise sees no value outside $B_R$.)
+
+\emph{Step 3: testing, integrability, and subtracting.}
+
+\emph{(3a) Measurability.}  By the $L^p$ clause of \noderef{MemW1pOn} --- its
+item 2, which carries both memberships --- the functions $u,v$ and the fields
+$g_u,g_v$ are measurable on $B_R$, hence so are $w=u-v$ and $g_u-g_v$.  (That
+item states plain measurability, which is what is used here and below; no
+almost-everywhere qualification is needed or claimed.)
+By the \emph{continuity} clause of \noderef{EllipticStructureQ12}
+(clause (1), read with $\Omega=\R^n$) the map $h\mapsto A(h)$ is continuous on
+all of $\R^n$, so $A\circ g_u$ and $A\circ g_v$ are measurable on $B_R$.  It is
+clause (1) and not the differentiability clause that is cited here, and the
+distinction is not cosmetic: clause (2) gives $C^1$ only on
+$D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$, and the present statement allows
+$\varepsilon\ge0$, so at $\varepsilon=0$ it says nothing at $h=0$.  An
+admissible field need not be differentiable there, nor even Lipschitz: for
+$1<p<2$ the field $A(h)=|h|^{p-2}h$ satisfies (Q1) of the thesis--(Q2) of the thesis at
+$\varepsilon=0$ with $\gamma_0=\gamma_1=p-1>0$, while
+$|A(h)-A(0)|/|h|=|h|^{p-2}\to\infty$ as $h\to0$.  Continuity on all of $\R^n$
+is what clause (1) asserts and is exactly and only what measurability of
+$A\circ g_u$ and $A\circ g_v$ needs.  The
+superlevel set $\{w>\eta\}$ of the measurable function $w$ is measurable
+(Preamble), so its intersection with the open set $B_R$ is measurable, and
+therefore $g_\eta=(g_u-g_v)\chi_{\{w>\eta\}}$ is measurable and so is the
+scalar function
+\[
+x\longmapsto\bigl(A(g_u(x))-A(g_v(x)),\,g_u(x)-g_v(x)\bigr),
+\]
+the Euclidean inner product being continuous.  These two measurability facts are
+what the ``nonnegative integral zero'' inference at the end of this step
+presupposes.
+
+\emph{(3b) Integrability, via the growth bound.}  This is where (Q2) of the thesis
+enters: (Q1) of the thesis alone says nothing about the size of $A$.  Let
+$c_\ast=c_\ast(n,p)>0$ be the constant of \noderef{StructureGrowthBound} for
+this $n$ and $p$, and apply that node with the present
+$\varepsilon,\gamma_0,\gamma_1$, with $\Omega=\R^n$ and with the field
+$(x,z,h)\mapsto A(h)$.  Its hypotheses are $n\ge2$, $p>1$, $\varepsilon\ge0$,
+$\gamma_0>0$, $\gamma_1>0$ --- the last from $0<\gamma_0\le\gamma_1$ --- and
+\noderef{EllipticStructureQ12} for that field, all hypotheses of the present
+lemma.  Its conclusion holds for almost every $x$ and, the field being
+independent of $(x,z)$, the inequality it asserts mentions neither; the
+full-measure set of admissible $x$ is nonempty as in Step 1, so fixing one such
+$x$ and any $z$ gives, for every $h\in\R^n$,
+\[
+|A(h)|\ \le\ |A(0)|+c_\ast\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|h| .
+\tag{4}
+\]
+Since $|h|=(|h|^2)^{1/2}\le(\varepsilon+|h|^2)^{1/2}$ and the exponent $p/2-1$
+acts on the same nonnegative base, (4) gives
+\[
+|A(h)|\ \le\ |A(0)|+c_\ast\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac{p-1}2} :
+\tag{5}
+\]
+if $\varepsilon+|h|^2>0$ this is the identity
+$(\varepsilon+|h|^2)^{\frac p2-1}(\varepsilon+|h|^2)^{1/2}
+=(\varepsilon+|h|^2)^{\frac{p-1}2}$ for powers of a positive base, together
+with the bound on $|h|$; and if $\varepsilon+|h|^2=0$ then $h=0$, so the second
+summand on the right of (4) is $c_\ast\gamma_1\cdot0^{\frac p2-1}\cdot0=0$ and
+the second summand on the right of (5) is
+$c_\ast\gamma_1\cdot0^{\frac{p-1}2}=0$, the exponent $\frac{p-1}2$ being
+positive because $p>1$ --- both right-hand sides equal $|A(0)|$, so (5) holds
+in that case too.
+
+Let $q'=p/(p-1)$, the H\"older conjugate of $p$, finite and $>1$ because
+$p>1$.  We claim $|A(g_u)|\in L^{q'}(B_R)$.  Put
+\[
+\Phi=|A(0)|+c_\ast\gamma_1\bigl(\varepsilon+|g_u|^2\bigr)^{\frac{p-1}2}\ \ge 0 ,
+\]
+so that $|A(g_u)|\le\Phi$ pointwise on $B_R$, by (5) applied at
+$h=g_u(x)$.  Both $|A(g_u)|$ and $\Phi$ are measurable by (3a), and
+$t\mapsto t^{q'}$ is nondecreasing on $[0,\infty)$, so
+$|A(g_u)|^{q'}\le\Phi^{q'}$ pointwise on $B_R$; by part (a) Domination of the
+Preamble's proposition on the integral --- which is the part stated for a general
+measure space, the monotonicity part (b) being stated only for interval
+integrals --- it therefore suffices to show $\Phi\in L^{q'}(B_R)$, since then
+$|A(g_u)|^{q'}$ is dominated by an integrable function and is itself
+integrable.  By the $L^{q'}$ triangle
+inequality (Minkowski, Preamble) it is enough to see that each of the two
+summands of $\Phi$ is in $L^{q'}(B_R)$.  The first is
+the constant $|A(0)|$, which is in $L^{q'}(B_R)$ because $|B_R|<\infty$.  For
+the second, $\bigl((\varepsilon+|g_u|^2)^{\frac{p-1}2}\bigr)^{q'}
+=(\varepsilon+|g_u|^2)^{\frac p2}$ since $\frac{p-1}2\cdot\frac p{p-1}
+=\frac p2$, and pointwise
+$\varepsilon+|g_u|^2\le2\max\{\varepsilon,|g_u|^2\}$, so raising to the power
+$\frac p2>0$, under which $t\mapsto t^{p/2}$ is nondecreasing on $[0,\infty)$,
+\[
+\bigl(\varepsilon+|g_u|^2\bigr)^{\frac p2}
+\le 2^{\frac p2}\max\bigl\{\varepsilon^{\frac p2},\,|g_u|^{p}\bigr\}
+\le 2^{\frac p2}\bigl(\varepsilon^{\frac p2}+|g_u|^{p}\bigr),
+\]
+whose integral over $B_R$ is finite because
+$\int_{B_R}\varepsilon^{p/2}=\varepsilon^{p/2}|B_R|<\infty$ and
+$|g_u|\in L^p(B_R)$ by the $L^p$ clause of \noderef{MemW1pOn}.  Hence
+$(\varepsilon+|g_u|^2)^{\frac{p-1}2}\in L^{q'}(B_R)$, so
+$\Phi\in L^{q'}(B_R)$ and therefore
+$|A(g_u)|\in L^{q'}(B_R)$.  The same argument, with $g_v$ in place of $g_u$,
+gives $|A(g_v)|\in L^{q'}(B_R)$.
+
+Consequently, by Cauchy--Schwarz pointwise (Preamble) and then H\"older with the
+conjugate exponents $q'$ and $p$ on $B_R$ (Preamble) --- all three integrands
+below being nonnegative and measurable, so that their integrals are well-defined
+elements of $[0,\infty]$ and the chain is an inequality there ---
+\[
+\int_{B_R}\bigl|\bigl(A(g_u),g_\eta\bigr)\bigr|dx
+\le\int_{B_R}|A(g_u)|\,|g_\eta|\,dx
+\le\bigl\||A(g_u)|\bigr\|_{L^{q'}(B_R)}\bigl\||g_\eta|\bigr\|_{L^{p}(B_R)}<\infty ,
+\]
+using $|g_\eta|\in L^p(B_R)$ from (3); and likewise with $g_v$ in place of
+$g_u$.  So both of the integrals appearing next are finite.
+
+\emph{(3c) Testing and subtracting.}  Both $u$ and $v$ are weak solutions of
+$\operatorname{div}A(\nabla\cdot)=0$ in $B_R$ (\noderef{IsWeakSolutionOn}, with
+the operator $A(x,z,h)=A(h)$ and $B\equiv0$), so testing each against
+$\varphi_\eta$, which is admissible by Step 2, gives
+\[
+\int_{B_R}\bigl(A(g_u),g_\eta\bigr)dx=0
+\qquad\text{and}\qquad
+\int_{B_R}\bigl(A(g_v),g_\eta\bigr)dx=0 .
+\]
+Subtracting --- legitimate because both integrals are finite by (3b) --- and
+inserting (3),
+\[
+0=\int_{B_R}\bigl(A(g_u)-A(g_v),\,g_\eta\bigr)dx
+=\int_{B_R}\bigl(A(g_u)-A(g_v),\,g_u-g_v\bigr)\chi_{\{w>\eta\}}\,dx .
+\tag{6}
+\]
+Call the integrand of the right-hand side $F$.  It is measurable by (3a).  It is
+integrable on $B_R$: by (3b) and the triangle inequality,
+$|F|\le|A(g_u)-A(g_v)|\,|g_\eta|\le\bigl(|A(g_u)|+|A(g_v)|\bigr)|g_\eta|$, which
+is integrable on $B_R$ by the two H\"older bounds of (3b).  And it is
+nonnegative: on $B_R\cap\{w>\eta\}$ it equals
+$(A(g_u)-A(g_v),g_u-g_v)$, which is $\ge0$ by (1) applied with $a=g_u(x)$ and
+$b=g_v(x)$, while off that set it is $0$.  A nonnegative integrable function
+with vanishing integral vanishes almost everywhere (Preamble), so $F=0$ a.e.\ on
+$B_R$; in particular
+\[
+\bigl(A(g_u(x))-A(g_v(x)),\,g_u(x)-g_v(x)\bigr)=0
+\qquad\text{for a.e.\ }x\in B_R\cap\{w>\eta\} ,
+\]
+and therefore, by (2), $g_u=g_v$ almost everywhere on $B_R\cap\{w>\eta\}$.  By
+(3) this says
+\[
+g_\eta=0\qquad\text{almost everywhere on }B_R .
+\tag{7}
+\]
+
+\emph{Step 4: a compactly supported function with vanishing gradient.}  By (3)
+and (7), $\varphi_\eta\in W^{1,p}(B_R)$ has weak gradient $g_\eta$, and
+$g_\eta=0$ almost everywhere on $B_R$.  We show first that $\varphi_\eta$ is
+almost everywhere equal to a constant on $B_R$; this is where the hypothesis
+\noderef{CitedSobolevPoincareBall} of the present lemma is consumed.
+
+That hypothesis is stated for $W^{1,1}$ of the ball, so we record the passage
+from $W^{1,p}$ to $W^{1,1}$.  The defining identity of
+\noderef{HasWeakGradientOn} mentions no exponent, so it holds for the pair
+$(\varphi_\eta,g_\eta)$ on $B_R$ exactly as given by (3).  For the memberships:
+$\varphi_\eta\in L^p(B_R)$ and $|g_\eta|\in L^p(B_R)$ by (3), while
+$|B_R|<\infty$ and $p\ge1$, so H\"older on a set of finite measure (Preamble)
+puts both in $L^1(B_R)$.  Hence $\varphi_\eta\in W^{1,1}(B_R)$ with weak
+gradient $g_\eta$ (\noderef{MemW1pOn}).
+
+Let $C_6=C_6(n)>0$ be the constant of \noderef{CitedSobolevPoincareBall} and put
+\[
+c=\frac1{|B_R|}\int_{B_R}\varphi_\eta\,dx ,
+\]
+a finite real number because $\varphi_\eta\in L^1(B_R)$ and $0<|B_R|<\infty$.
+Applying \noderef{CitedSobolevPoincareBall} to the ball $B_R(x_0)$, legitimate
+because $R>0$ and $\varphi_\eta\in W^{1,1}(B_R)$ with weak gradient $g_\eta$,
+\[
+\Bigl(\int_{B_R}|\varphi_\eta-c|^{\frac n{n-1}}dx\Bigr)^{\frac{n-1}n}
+\ \le\ C_6\int_{B_R}|g_\eta|\,dx\ =\ 0 ,
+\]
+the right-hand side vanishing because $g_\eta=0$ almost everywhere on $B_R$ by
+(7), so that its integral is $0$.  Write
+$X=\int_{B_R}|\varphi_\eta-c|^{n/(n-1)}dx$, the integral of a nonnegative
+measurable function and hence a well-defined element of $[0,\infty]$.  The
+exponent $\frac{n-1}n$ is positive because $n\ge2$, so $X^{\frac{n-1}n}\ge0$;
+with the display this forces $X^{\frac{n-1}n}=0$, and since $X>0$ would give
+$X^{\frac{n-1}n}>0$ we conclude $X=0$.  In particular
+$|\varphi_\eta-c|^{n/(n-1)}$ is integrable on $B_R$ with integral $0$, so, being
+nonnegative, it vanishes almost everywhere on $B_R$ (Preamble); and since
+$\frac n{n-1}>0$, a vanishing $|\varphi_\eta-c|^{n/(n-1)}$ forces
+$|\varphi_\eta-c|=0$.  Therefore
+\[
+\varphi_\eta=c\qquad\text{almost everywhere in }B_R .
+\]
+
+By Step 2 the support of $\varphi_\eta$ is contained in
+the compact set $K_\eta\subseteq B_R$, so $B_R\setminus K_\eta$ is open, being
+the intersection of the open set $B_R$ with the complement of the closed set
+$K_\eta$, and it is nonempty: were it empty we would have $B_R=K_\eta$, making
+the open ball $B_R$ compact, which it is not.  A nonempty open subset of $\R^n$
+has positive measure, and $\varphi_\eta=0$ on it.  Hence $c=0$, i.e.
+\[
+\varphi_\eta=0\quad\text{a.e.\ in }B_R,
+\qquad\text{that is}\qquad
+u-v\le\eta\quad\text{a.e.\ in }B_R .
+\tag{8}
+\]
+
+\emph{Step 5: letting $\eta\downarrow0$.}  Apply (8) with $\eta=1/j$ for
+$j=1,2,3,\dots$: for each $j$ there is a null set $N_j\subseteq B_R$ outside of
+which $u-v\le1/j$.  The union $N=\bigcup_jN_j$ is null, and for every
+$x\in B_R\setminus N$ we have $u(x)-v(x)\le1/j$ for every $j$, hence
+$u(x)-v(x)\le0$.  Therefore $u\le v$ almost everywhere in $B_R$, which is the
+assertion.
+\end{proof}

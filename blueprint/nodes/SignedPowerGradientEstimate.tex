@@ -1,0 +1,616 @@
+\begin{lemma}[The signed power of a partial derivative, and inequality (3.12)]
+Let $n\ge2$, $p>1$ and $r>0$.  Then there is a constant
+$C=C(n,p,r)>0$ with the following property.  Let
+$\varepsilon>0$, $\gamma_0>0$, $\gamma_1\le r\gamma_0$, let
+$x_0\in\R^n$ and $R>0$, write $B_\rho=B_\rho(x_0)$, let $\mu>0$ with
+\[
+\varepsilon<\Bigl(\frac\mu2\Bigr)^{2},
+\]
+let $A$ satisfy (Q1) of the thesis--(Q2) of the thesis on $B_R$ with parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}), assume the
+cited regularity result (C1) for $\varepsilon>0$
+(\noderef{CitedRegularityEpsPos}), let $u$ be a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $B_R$ (\noderef{IsWeakSolutionOn}) with weak
+gradient $g=\nabla u$, suppose that for each $i$ the component $g^i=D_iu$
+belongs to $W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $Dg^i$
+(\noderef{MemW1pLocOn}), and suppose
+\[
+|g^i|\le\mu\quad\text{almost everywhere on }B_R,\qquad i=1,\dots,n .
+\]
+Fix an index $k$ and put
+\[
+\lambda=\frac\mu2,\qquad h_0=\lambda^{p/2},\qquad
+v=|g^k|^{\frac p2-1}g^k,\qquad
+V=\Bigl(\frac p2|g^k|^{\frac p2-1}\Bigr)Dg^k .
+\]
+Then both of the following hold.
+\begin{enumerate}
+\item For every $T$ with $0<T<R$ one has $v\in W^{1,2}(B_T)$ with weak gradient
+  $V$ (\noderef{MemW1pOn}).
+\item For all $\rho$ with $0<\rho\le R$, all $\sigma$ with $0<\sigma<1$ and all
+  $h\in\R$:
+  \[
+  h\ge-h_0\ \Longrightarrow\
+  \int_{B_{\rho-\sigma\rho}\cap\{v>h\}}\|V\|^2\,dx
+  \ \le\ C\,\frac{h_0^2}{(\sigma\rho)^2}\,\bigl|B_\rho\cap\{v>h\}\bigr| ,
+  \]
+  \[
+  h\le h_0\ \Longrightarrow\
+  \int_{B_{\rho-\sigma\rho}\cap\{v<h\}}\|V\|^2\,dx
+  \ \le\ C\,\frac{h_0^2}{(\sigma\rho)^2}\,\bigl|B_\rho\cap\{v<h\}\bigr| .
+  \]
+\end{enumerate}
+
+Three remarks on the form of the statement.  First, the function written
+$|g^k|^{p/2}\operatorname{sgn}(g^k)$ in the thesis is written here as
+$|g^k|^{p/2-1}g^k$; the two agree at every real value of $g^k$, since for
+$g^k(x)\ne0$ one has $|g^k|^{p/2-1}g^k=|g^k|^{p/2}\operatorname{sgn}(g^k)$ and
+for $g^k(x)=0$ both are $0$, the second factor vanishing whatever value the real
+power $|0|^{p/2-1}$ is assigned.  The product form is used because it is the
+one in which the weak gradient $V$ is read off, and because it needs no sign
+function.  Second, $V$ is likewise written as a single real power: on
+$\{g^k\ne0\}$ it is the thesis' $\tfrac p2|g^k|^{p/2-1}Dg^k$, and on
+$\{g^k=0\}$ the real-power convention of the run gives
+$|0|^{p/2-1}=0$ when $p\ne2$ and $|0|^{0}=1$ when $p=2$, which are exactly the
+values the thesis prescribes there --- for $p=2$ the function $v$ is $g^k$
+itself and its weak gradient is $Dg^k$.  Third, the two ranges of $h$ are
+one-sided and different, as they are in the thesis at l.~728--729: the $+$ case
+needs only a lower bound on $h$ and the $-$ case only an upper one.
+
+The hypothesis $\varepsilon<(\mu/2)^2$ is the degenerate regime, in which the
+weight $w=\varepsilon+|g|^2$ is pinched between $\lambda^2$-sized constants on
+the level sets rather than between $\varepsilon$-sized ones; both conclusions
+are consumed only in that regime.  The minimality of $\mu$ is not assumed: only
+the bound $|g^i|\le\mu$ is used.
+\end{lemma}
+\begin{proof}
+Throughout, $w=\varepsilon+|g|^2$, and $C_1,C_2,\dots$ denote positive
+constants depending only on $n$, $p$ and $r$; this is checked at each
+occurrence.  Note $\lambda=\mu/2>0$ and $h_0=\lambda^{p/2}>0$.
+
+\emph{Step A: five preliminaries.}
+
+\textbf{(A1) The two-sided bound on $w$.}  Almost everywhere on $B_R$ we have
+$|g^i|\le\mu=2\lambda$ for every $i$, hence
+$|g|^2=\sum_i(g^i)^2\le 4n\lambda^2$, and therefore
+\[
+\varepsilon\ \le\ w\ \le\ \varepsilon+4n\lambda^2\ <\ (1+4n)\lambda^2
+\qquad\text{almost everywhere on }B_R,
+\tag{A.1}
+\]
+the last inequality by $\varepsilon<\lambda^2$.  Both bounds are used only under
+integral signs, so the almost-everywhere form is the form needed.
+
+\textbf{(A2) $\gamma_0\le\gamma_1$.}  The clauses \texttt{Q1} and \texttt{Q2} of
+\noderef{EllipticStructureQ12} each hold for almost every $x\in B_R$, hence
+simultaneously at almost every such $x$, and $|B_R|>0$ (Preamble: the volume of
+a ball, $R>0$); fix such an $x$.  Take $z$ arbitrary, $h=0$ and $\xi=e_1$ the
+first standard basis vector --- available because $n\ge2\ge1$ --- noting
+$\|e_1\|=1$; the guard
+$\varepsilon+\|0\|^2=\varepsilon\ne0$ holds because $\varepsilon>0$.  Then
+\texttt{Q1}, whose left-hand side is
+$\gamma_0\varepsilon^{p/2-1}\|e_1\|^2=\gamma_0\varepsilon^{p/2-1}$, gives
+$\gamma_0\varepsilon^{p/2-1}\le\sum_i\bigl(DA(0)e_1\bigr)_i(e_1)_i
+=\bigl(DA(0)e_1\bigr)_1$, the sum collapsing because $(e_1)_i$ vanishes for
+$i\ne1$ and is $1$ for $i=1$; and \texttt{Q2}, at $j=i=1$, gives
+$\bigl|\bigl(DA(0)e_1\bigr)_1\bigr|\le\gamma_1\varepsilon^{p/2-1}$, so
+$\gamma_0\varepsilon^{p/2-1}\le\gamma_1\varepsilon^{p/2-1}$; dividing by
+$\varepsilon^{p/2-1}>0$ gives $\gamma_0\le\gamma_1$.  This is the form in which
+\noderef{DifferentiatedEquationWeak} asks for the two constants, while the
+present lemma assumes $\gamma_1\le r\gamma_0$.
+
+\textbf{(A3) Localisation.}  Let $0<T<R$.  Then $\operatorname{closure}B_T
+=\overline B_T$ is compact and contained in $B_R$, so clause (4) of
+\noderef{WeakGradientRestrict}, applied with $q=2$ and the open sets $B_R$ and
+$B_T$, upgrades $g^k\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $Dg^k$
+(\noderef{MemW1pLocOn}) to
+\[
+g^k\in W^{1,2}(B_T)\ \text{with weak gradient }Dg^k\qquad(0<T<R).
+\tag{A.2}
+\]
+Conversely, if a pair $(f,G)$ satisfies $f\in W^{1,2}(B_T)$ with weak gradient
+$G$ for every $T<R$, then $f\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient
+$G$: the defining identity of \noderef{HasWeakGradientOn} on $B_R$ quantifies
+over test functions $\varphi$ with $\operatorname{tsupport}\varphi\subseteq B_R$
+compact, and every such $\operatorname{tsupport}\varphi$ lies in some $B_T$ with
+$T<R$, where the identity is available and where the integrals over $B_T$ and
+over $B_R$ agree because both integrands vanish off
+$\operatorname{tsupport}\varphi$; and every compact $K\subseteq B_R$ lies in such
+a $B_T$, so the $L^2$ bounds required by \noderef{MemW1pLocOn} follow from those
+supplied by \noderef{MemW1pOn} on $B_T$.  We refer to this passage as (A.2$'$).
+Finally $\operatorname{volume}B_T\ne\infty$ for every $T$ (Preamble: the volume
+of a ball), which is the finiteness hypothesis of
+\noderef{WeakGradientC1Comp}, \noderef{WeakGradientPositivePart} and clause (1)
+of \noderef{WeakGradientSmoothMul}.
+
+\textbf{(A4) The cut-off.}  Let $\rho_{1/8}$ be the standard mollifier of the
+Preamble in dimension one at scale $\tfrac18$ --- smooth, nonnegative, supported
+in $[-\tfrac18,\tfrac18]$, of total integral $1$ --- and put
+$\psi_\flat=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}$.  Then
+$\psi_\flat\in C^\infty(\R)$ with
+$\psi_\flat'=\mathbf1_{(-\infty,1/2]}*\rho_{1/8}'$ (Preamble: convolution with a
+smooth compactly supported kernel, the indicator being locally integrable);
+$0\le\psi_\flat\le1$, because $0\le\mathbf1_{(-\infty,1/2]}\le1$ and
+$\rho_{1/8}\ge0$ has total integral $1$, so the convolution is an average of
+values in $[0,1]$; $\psi_\flat=1$ on $(-\infty,\tfrac38]$ and $\psi_\flat=0$ on
+$[\tfrac58,\infty)$, since writing the convolution as
+$\int\mathbf1_{(-\infty,1/2]}(t-s)\rho_{1/8}(s)\,ds$ (a change of variable
+legitimate by the translation and reflection invariance of Lebesgue measure,
+Preamble) one finds for $t\le\tfrac38$ that every $s$ with $|s|\le\tfrac18$ has
+$t-s\le\tfrac12$, so the integrand is $\rho_{1/8}$ on its whole support and the
+integral is $1$, while for $t\ge\tfrac58$ every such $s$ has $t-s\ge\tfrac12$,
+so the indicator vanishes except possibly at the single point $s=t-\tfrac12$, a
+Lebesgue-null set, and the integral is $0$; and
+$|\psi_\flat'|\le\|\rho_{1/8}'\|_{L^1(\R)}=:\Lambda<\infty$, an absolute
+constant.  Given $0<\rho_0<\rho_1$ put
+\[
+\zeta_{\rho_0,\rho_1}(x)=\psi_\flat
+\Bigl(\frac{|x-x_0|-\rho_0}{\rho_1-\rho_0}\Bigr).
+\]
+Then $0\le\zeta\le1$; $\zeta=1$ on $\overline B_{\rho_0}$; $\zeta=0$ outside
+$\overline B_{\rho_0+\frac58(\rho_1-\rho_0)}$, so $\operatorname{supp}\zeta$ is
+compact and contained in $B_{\rho_1}$; $\zeta$ is smooth, because
+$x\mapsto|x-x_0|$ is smooth away from $x_0$ and $\zeta$ is constant on the
+neighbourhood $B_{\rho_0}$ of $x_0$; and
+$|\nabla\zeta|\le\Lambda/(\rho_1-\rho_0)$, with $\nabla\zeta$ supported in
+$B_{\rho_1}$.
+
+\textbf{(A5) The Caccioppoli inequality (3.4).}  Apply
+\noderef{CaccioppoliLevelWeight} with $n,p,r$ and let $c_4>0$ be the constant it
+produces; it depends only on $n,p,r$.  Its remaining hypotheses are the present
+lemma's $0<\varepsilon$, $0<\gamma_0$, $\gamma_1\le r\gamma_0$, the openness of
+$B_R$, (Q1) of the thesis--(Q2) of the thesis (\noderef{EllipticStructureQ12}), the cited
+regularity (C1) (\noderef{CitedRegularityEpsPos}), the weak solution property
+(\noderef{IsWeakSolutionOn}) and $g^i\in W^{1,2}_{\mathrm{loc}}(B_R)$ for every
+$i$ (\noderef{MemW1pLocOn}).  Hence for every $\ell\in\R$ and every $\zeta$
+smooth with compact support in $B_R$,
+\[
+\int_{B_R\cap\{g^k>\ell\}}w^{\frac p2-1}\|Dg^k\|^2\zeta^2\,dx
+\ \le\ c_4\int_{B_R}w^{\frac p2-1}\bigl((g^k-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx
+\tag{3.4$^+$}
+\]
+and
+\[
+\int_{B_R\cap\{g^k<\ell\}}w^{\frac p2-1}\|Dg^k\|^2\zeta^2\,dx
+\ \le\ c_4\int_{B_R}w^{\frac p2-1}\bigl((\ell-g^k)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+\tag{3.4$^-$}
+\]
+these being the two conclusions of that node verbatim, with
+$\sum_i(\partial_i\zeta)^2=|\nabla\zeta|^2$ and
+$\max(g^k-\ell,0)=(g^k-\ell)^+$.
+
+\emph{Step B: the level correspondence.}  The map
+$s\mapsto|s|^{p/2-1}s$ is a strictly increasing bijection of $\R$ onto $\R$: it
+is odd, it vanishes only at $0$, and on $(0,\infty)$ it is $s\mapsto s^{p/2}$
+with $p/2>0$, which is a strictly increasing bijection onto $(0,\infty)$.  Hence
+for every $\ell\in\R$, with
+$h=|\ell|^{p/2-1}\ell$,
+\[
+\{g^k>\ell\}=\{v>h\},\qquad \{g^k<\ell\}=\{v<h\},
+\tag{B.1}
+\]
+and $|\ell|\le\lambda\iff|h|\le h_0$, because $|h|=|\ell|^{p/2}$ and
+$h_0=\lambda^{p/2}$ and $t\mapsto t^{p/2}$ is increasing on $[0,\infty)$.
+Moreover $|v|=|g^k|^{p/2}\le(2\lambda)^{p/2}=2^{p/2}h_0$ almost everywhere on
+$B_R$, by the hypothesis $|g^k|\le\mu=2\lambda$.
+
+\emph{Step C: conclusion (1) for $p\ge2$.}  Let $F\colon\R\to\R$ agree with
+$s\mapsto|s|^{p/2-1}s$ on $[-\mu,\mu]$ and be extended affinely outside:
+$F(s)=\mu^{p/2}+\tfrac p2\mu^{p/2-1}(s-\mu)$ for $s>\mu$ and $F(s)=-F(-s)$ for
+$s<-\mu$.  On $[-\mu,\mu]$ the derivative is $\tfrac p2|s|^{p/2-1}$, which is
+continuous because $p/2-1\ge0$, and the two affine pieces match the value and
+the derivative of $F$ at $\pm\mu$; hence $F\in C^1(\R)$ with
+$|F'|\le L:=\tfrac p2\mu^{p/2-1}$ everywhere, $L\ge0$.  Fix $0<T<R$.  By (A.2),
+$g^k\in W^{1,2}(B_T)$ with weak gradient $Dg^k$, and
+$\operatorname{volume}B_T\ne\infty$ by (A3), so \noderef{WeakGradientC1Comp}
+with $q=2$, the bound $L$, the open set $B_T$ and this $F$ gives
+\[
+F\circ g^k\in W^{1,2}(B_T)\ \text{with weak gradient}\
+x\mapsto F'(g^k(x))\,Dg^k(x) .
+\]
+Since $|g^k|\le\mu$ almost everywhere on $B_R$ and $B_T\subseteq B_R$,
+\[
+F\circ g^k=v\qquad\text{and}\qquad F'(g^k)=\tfrac p2|g^k|^{p/2-1}
+\qquad\text{almost everywhere on }B_T .
+\tag{C.1}
+\]
+The restriction to ``almost everywhere'' is not removable: at a point with
+$|g^k(x)|>\mu$ the function $F$ and the function $s\mapsto|s|^{p/2-1}s$
+genuinely differ, and so do $F'(g^k(x))$ and $\tfrac p2|g^k(x)|^{p/2-1}$.  So
+(C.1) is an almost-everywhere identity between two \emph{pairs}, and the
+membership has to be transported across it.
+
+\emph{The transport.}  By \noderef{MemW1pOn} at the exponent $2$ on $B_T$, the
+assertion ``$f\in W^{1,2}(B_T)$ with weak gradient $G$'' is the conjunction of
+the defining identity of \noderef{HasWeakGradientOn},
+\[
+\int_{B_T}f\,D_i\varphi\,dx=-\int_{B_T}G^i\,\varphi\,dx\qquad(i=1,\dots,n)
+\]
+for every test function $\varphi$ of that node's class, together with
+$f\in L^2(B_T)$ and $G\in L^2(B_T)$.  Each of the three is an integral
+assertion whose integrand involves $f$, respectively $G$, as a factor, and an
+integral is unchanged when its integrand is altered on a null set; so each of
+the three holds for a pair $(f,G)$ exactly when it holds for any pair agreeing
+with $(f,G)$ almost everywhere on $B_T$.  Here \emph{both} members move, on the
+same null set $\{x\in B_T:|g^k(x)|>\mu\}$.  Applying the previous sentence to
+the pair $\bigl(F\circ g^k,\ F'(g^k)Dg^k\bigr)$, whose membership
+\noderef{WeakGradientC1Comp} has just supplied, and to the pair $(v,V)$, which
+agrees with it almost everywhere on $B_T$ by (C.1), gives conclusion (1) for
+$p\ge2$, together with
+\[
+\|V\|^2=\tfrac{p^2}4|g^k|^{p-2}\|Dg^k\|^2 \qquad\text{almost everywhere},
+\tag{C.2}
+\]
+which is the thesis' identity
+$|\nabla(|D_ku|^{p/2})|^2=(p^2/4)|D_ku|^{p-2}|\nabla D_ku|^2$.
+
+\emph{Step D: conclusion (1) and inequality (3.17) for $1<p<2$.}  Here
+$s\mapsto|s|^{p/2-1}s$ is not $C^1$ at $0$ and the thesis' regularisation is
+needed.  For $\eta>0$ put
+\[
+\pi_\eta(s)=(|s|+\eta)^{p-2}s,\qquad
+G_\eta(s)=\operatorname{sgn}(s)\bigl[(|s|+\eta)^{p/2}-\eta^{p/2}\bigr],
+\qquad \psi_\eta=\pi_\eta\circ g^k,\qquad v_\eta=G_\eta\circ g^k .
+\]
+Both $\pi_\eta$ and $G_\eta$ are odd and strictly increasing, and both are $C^1$
+with bounded derivative:
+\[
+\pi_\eta'(s)=(|s|+\eta)^{p-2}+(p-2)(|s|+\eta)^{p-3}|s|,
+\qquad
+G_\eta'(s)=\tfrac p2(|s|+\eta)^{p/2-1},
+\]
+the first continuous at $0$ because its second summand carries the factor $|s|$,
+and both bounded by $\eta^{p-2}$ resp.\ $\tfrac p2\eta^{p/2-1}$, since for
+$1<p<2$ the exponents $p-2$ and $p/2-1$ are negative and $|s|+\eta\ge\eta$.  One
+also has
+\[
+(p-1)(|s|+\eta)^{p-2}\ \le\ \pi_\eta'(s)\ \le\ (|s|+\eta)^{p-2} ,
+\tag{D.1}
+\]
+the upper bound because $(p-2)(|s|+\eta)^{p-3}|s|\le0$, the lower because
+$(|s|+\eta)^{p-3}|s|\le(|s|+\eta)^{p-2}$ and hence
+$\pi_\eta'(s)\ge(|s|+\eta)^{p-2}+(p-2)(|s|+\eta)^{p-2}=(p-1)(|s|+\eta)^{p-2}$.
+These are the thesis' inequalities on p.~21.  Fix $0<T<R$.  By (A.2), (A3) and
+\noderef{WeakGradientC1Comp} on $B_T$ with $q=2$, exactly as in Step C but with
+no transport needed since $\pi_\eta$ and $G_\eta$ are globally $C^1$ with
+bounded derivative,
+\[
+\psi_\eta\in W^{1,2}(B_T)\ \text{with weak gradient }\pi_\eta'(g^k)Dg^k,
+\qquad
+v_\eta\in W^{1,2}(B_T)\ \text{with weak gradient }
+V_\eta:=\tfrac p2(|g^k|+\eta)^{p/2-1}Dg^k ,
+\tag{D.2}
+\]
+so that $\|V_\eta\|^2=\tfrac{p^2}4(|g^k|+\eta)^{p-2}\|Dg^k\|^2$, which is the
+thesis' (3.14) of the thesis.  Note also
+$|\psi_\eta|\le(|g^k|+\eta)^{p-2}|g^k|\le|g^k|^{p-1}\le(2\lambda)^{p-1}$ almost
+everywhere, using $p-2<0$, and $|v_\eta|\le(2\lambda+\eta)^{p/2}$.
+
+\textbf{(D3) The differentiated equation against the regularised truncation.}
+Fix $\ell\in\R$, $0<\sigma<1$ and $0<\rho\le R$, and let
+$\zeta=\zeta_{\rho-\sigma\rho,\rho}$ of (A4).  Put
+\[
+\theta^+_\eta=(\psi_\eta-\ell)^+,\qquad \varphi^+=\theta^+_\eta\,\zeta^2 .
+\]
+Let $T<R$ be any radius with $\operatorname{tsupport}\zeta\subseteq B_T$; such a
+$T$ exists because $\operatorname{tsupport}\zeta$ is a compact subset of
+$B_\rho\subseteq B_R$.  By \noderef{WeakGradientPositivePart} with $q=2$, the
+level $c=\ell$, the open set $B_T$ of finite volume and the pair
+$(\psi_\eta,\pi_\eta'(g^k)Dg^k)$ of (D.2), $\theta^+_\eta\in W^{1,2}(B_T)$ with
+weak gradient $\chi_{\{\psi_\eta>\ell\}}\pi_\eta'(g^k)Dg^k$.  Since (D.2) holds
+for every $T<R$ and the construction of $\theta^+_\eta$ does not involve
+$\zeta$, (A.2$'$) gives $\theta^+_\eta\in W^{1,2}_{\mathrm{loc}}(B_R)$ with that
+weak gradient.  Now $\zeta^2$ is smooth with compact support in $B_R$, so clause
+(2) of \noderef{WeakGradientSmoothMul} with $q=2$ and $\Omega=B_R$ gives
+$\varphi^+\in W^{1,2}(B_R)$ with weak gradient
+\[
+g_{\varphi^+}=\zeta^2\chi_{\{\psi_\eta>\ell\}}\pi_\eta'(g^k)Dg^k
++\theta^+_\eta\,\nabla(\zeta^2),
+\qquad \nabla(\zeta^2)=2\zeta\nabla\zeta ,
+\]
+and $\varphi^+$ has compact support with
+$\operatorname{tsupport}\varphi^+\subseteq\operatorname{tsupport}\zeta\subseteq
+B_R$.  Apply \noderef{DifferentiatedEquationWeak} with
+$n,p,\varepsilon,\gamma_0,\gamma_1$ --- its hypotheses $2\le n$, $1<p$,
+$0<\varepsilon$, $0<\gamma_0$ and $\gamma_0\le\gamma_1$, the last by (A2) ---
+the open set $B_R$, the field $A$, the solution $u$ with gradient $g$, the
+family $Dg$, the index $k$ and the pair $(\varphi^+,g_{\varphi^+})$.  It gives
+\[
+\int_{B_R}\sum_{i,j}\bigl(DA(g)e_j\bigr)_i\,(Dg^k)_j\,(g_{\varphi^+})_i\,dx=0 ,
+\]
+Separating the two summands of $g_{\varphi^+}$, and using that for each fixed
+$i$ one has $\sum_j\bigl(DA(g)e_j\bigr)_i(Dg^k)_j=\bigl(DA(g)Dg^k\bigr)_i$,
+because $DA(g)$ is linear in its direction argument and
+$Dg^k=\sum_j(Dg^k)_je_j$, this reads
+\[
+\int_{B_R}\chi_{\{\psi_\eta>\ell\}}\pi_\eta'(g^k)\,
+\bigl\langle DA(g)Dg^k,Dg^k\bigr\rangle\zeta^2
+=-2\int_{B_R}\theta^+_\eta\,\zeta\,
+\bigl\langle DA(g)Dg^k,\nabla\zeta\bigr\rangle .
+\]
+On the left, \texttt{Q1} of \noderef{EllipticStructureQ12} with $\xi=Dg^k$ and
+$h=g(x)$ --- its guard $\varepsilon+\|g\|^2=w\ne0$ holding since
+$\varepsilon>0$ --- gives
+$\langle DA(g)Dg^k,Dg^k\rangle\ge\gamma_0w^{p/2-1}\|Dg^k\|^2$, and (D.1) gives
+$\pi_\eta'(g^k)\ge(p-1)(|g^k|+\eta)^{p-2}$.  On the right, \texttt{Q2} gives
+$|(DA(g)e_j)_i|\le\gamma_1w^{p/2-1}$, whence
+\[
+\bigl|\langle DA(g)Dg^k,\nabla\zeta\rangle\bigr|
+\le\gamma_1w^{\frac p2-1}\sum_{i,j}|(Dg^k)_j|\,|(\nabla\zeta)_i|
+\le n\gamma_1w^{\frac p2-1}\|Dg^k\|\,|\nabla\zeta| ,
+\]
+using $\sum_j|a_j|\le\sqrt n\,\|a\|$ (Cauchy--Schwarz, Preamble) twice.  Hence
+\[
+\gamma_0(p-1)\!\!\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|Dg^k\|^2(|g^k|+\eta)^{p-2}\zeta^2
+\ \le\ 2n\gamma_1\!\!\int_{B_R}\!\!
+w^{\frac p2-1}\|Dg^k\|\,\theta^+_\eta\,|\zeta|\,|\nabla\zeta| ,
+\tag{D.3}
+\]
+where $A^+_\ell(\eta)=B_R\cap\{\psi_\eta>\ell\}$; the integrand on the right
+vanishes off $A^+_\ell(\eta)$ because $\theta^+_\eta$ does.  This is the thesis'
+(3.13) of the thesis.
+
+\textbf{(D4) The Cauchy--Schwarz step.}  Assume in addition
+$\eta^2<\varepsilon$.  Then $w\ge\varepsilon>\eta^2$ and $w\ge(g^k)^2$, so
+$w^{1/2}\ge\max\{\eta,|g^k|\}\ge\tfrac12(|g^k|+\eta)$ and therefore, since
+$1-p/2>0$,
+\[
+(|g^k|+\eta)^{1-\frac p2}\le\bigl(2w^{1/2}\bigr)^{1-\frac p2}
+=2^{1-\frac p2}w^{\frac{2-p}4}.
+\]
+From (D.2), $\|Dg^k\|=\tfrac2p(|g^k|+\eta)^{1-\frac p2}\|V_\eta\|$, so
+\[
+w^{\frac p2-1}\|Dg^k\|\ \le\ \tfrac2p2^{1-\frac p2}\,
+w^{\frac p2-1+\frac{2-p}4}\|V_\eta\|\ =\ C_1\,w^{\frac{p-2}4}\|V_\eta\| ,
+\tag{D.4}
+\]
+with $C_1=C_1(p)=\tfrac2p2^{1-p/2}$, because
+$\tfrac p2-1+\tfrac{2-p}4=\tfrac{p-2}4$.  Substituting (D.4) and the identity
+$\|V_\eta\|^2=\tfrac{p^2}4(|g^k|+\eta)^{p-2}\|Dg^k\|^2$ into (D.3), and applying
+the Cauchy--Schwarz inequality (Preamble) to the right-hand side written as the
+product of $w^{\frac{p-2}4}\|V_\eta\|\,|\zeta|$ and
+$\theta^+_\eta|\nabla\zeta|$ --- and noting
+$\bigl(w^{\frac{p-2}4}\bigr)^2=w^{\frac p2-1}$ ---
+\[
+\tfrac{4\gamma_0(p-1)}{p^2}\!\!\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|V_\eta\|^2\zeta^2
+\ \le\ 2n\gamma_1C_1\Bigl(\int_{A^+_\ell(\eta)}\!\!
+w^{\frac p2-1}\|V_\eta\|^2\zeta^2\Bigr)^{\frac12}
+\Bigl(\int_{B_R}(\theta^+_\eta)^2|\nabla\zeta|^2\Bigr)^{\frac12}.
+\]
+The first factor on the left is finite: $\|V_\eta\|\le\tfrac
+p2\eta^{p/2-1}\|Dg^k\|$ and $\|Dg^k\|$ is in $L^2$ of the compact set
+$\operatorname{tsupport}\zeta$ by \noderef{MemW1pLocOn}, while
+$w^{p/2-1}\le\varepsilon^{p/2-1}$ since $p/2-1<0$ and $w\ge\varepsilon$, and
+$\zeta$ is bounded and vanishes off $\operatorname{tsupport}\zeta$.  So that
+factor may be divided out; squaring, and using $\gamma_1\le r\gamma_0$ to
+cancel $\gamma_0$,
+\[
+\int_{A^+_\ell(\eta)}w^{\frac p2-1}\|V_\eta\|^2\zeta^2\,dx
+\ \le\ C_2\int_{B_R}\bigl((\psi_\eta-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+\tag{D.5}
+\]
+with $C_2=\bigl(2nrC_1p^2/(4(p-1))\bigr)^2$, a function of $n,p,r$.  The $-$
+case, with $(\ell-\psi_\eta)^+$ and $A^-_\ell(\eta)=B_R\cap\{\psi_\eta<\ell\}$,
+follows by the same argument from $\varphi^-=(\ell-\psi_\eta)^+\zeta^2$: by
+\noderef{WeakGradientLinear} (clause (2), $q=2$, $a=-1$, $b=0$, both pairs taken
+to be the pair of (D.2)) the pair $(-\psi_\eta,-\pi_\eta'(g^k)Dg^k)$ lies in
+$W^{1,2}(B_T)$, and \noderef{WeakGradientPositivePart} applied to it at the
+level $-\ell$ gives $(\ell-\psi_\eta)^+\in W^{1,2}(B_T)$ with weak gradient
+$-\chi_{\{\psi_\eta<\ell\}}\pi_\eta'(g^k)Dg^k$; the remaining estimates are
+identical, the sign of the test function's gradient entering only through the
+absolute values taken above.
+
+\textbf{(D5) The limit $\eta\downarrow0$: conclusion (1).}  Put
+\[
+\psi=|g^k|^{p-2}g^k\ \text{on}\ \{g^k\ne0\},\quad\psi=0\ \text{on}\ \{g^k=0\} .
+\]
+We first claim $Dg^k=0$ almost everywhere on $\{g^k=0\}$.  Indeed on $B_T$,
+\noderef{WeakGradientPositivePart} at the level $c=0$ gives $(g^k)^+\in
+W^{1,2}(B_T)$ with weak gradient $\chi_{\{g^k>0\}}Dg^k$, and applied to
+$(-g^k,-Dg^k)$ --- which lies in $W^{1,2}(B_T)$ by clause (2) of
+\noderef{WeakGradientLinear} with $a=-1$, $b=0$ --- it gives $(-g^k)^+$ with
+weak gradient $-\chi_{\{g^k<0\}}Dg^k$; since $g^k=(g^k)^+-(-g^k)^+$, clause (2)
+of \noderef{WeakGradientLinear} with $a=1$, $b=-1$ shows that
+$\chi_{\{g^k>0\}}Dg^k+\chi_{\{g^k<0\}}Dg^k$ is also a weak gradient of $g^k$ on
+$B_T$; and a weak gradient is determined almost everywhere (Preamble: the
+fundamental lemma of the calculus of variations, second consequence).  Hence
+$\chi_{\{g^k=0\}}Dg^k=0$ almost everywhere, as claimed.  Consequently
+$\|V_\eta\|\uparrow\|V\|$ pointwise almost everywhere as $\eta\downarrow0$: on
+$\{g^k\ne0\}$ because $\eta\mapsto(|g^k|+\eta)^{p/2-1}$ increases to
+$|g^k|^{p/2-1}$ as $\eta\downarrow0$, the exponent being negative, and on
+$\{g^k=0\}$ because both sides are $0$ almost everywhere there.
+
+Take $\ell=0$ in (D.5) and its $-$ partner: then $A^+_0(\eta)=B_R\cap\{g^k>0\}$
+and $A^-_0(\eta)=B_R\cap\{g^k<0\}$ for every $\eta$, because $\pi_\eta$ is odd
+and strictly increasing so $\{\psi_\eta>0\}=\{g^k>0\}$; and
+$\bigl((\psi_\eta)^\pm\bigr)^2\le(2\lambda)^{2(p-1)}$ almost everywhere.  Fix
+$T<R$ and $\zeta=\zeta_{T,T'}$ with $T<T'<R$; then $\zeta=1$ on $\overline B_T$
+and $|\nabla\zeta|\le\Lambda/(T'-T)$, so (D.5), its $-$ partner and
+$w^{p/2-1}\ge\bigl((1+4n)\lambda^2\bigr)^{p/2-1}>0$ --- valid almost everywhere
+by (A.1) and $p/2-1<0$ --- give
+\[
+\int_{B_T\cap\{g^k\ne0\}}\|V_\eta\|^2
+\ \le\ \bigl((1+4n)\lambda^2\bigr)^{1-\frac p2}C_2
+\frac{\Lambda^2}{(T'-T)^2}(2\lambda)^{2(p-1)}\,2|B_R|\ =:\ \mathcal K<\infty
+\]
+for every $\eta$ with $\eta^2<\varepsilon$.  By Fatou's lemma (Preamble) and
+$\|V_\eta\|\uparrow\|V\|$ we get $\int_{B_T}\|V\|^2\le\mathcal K<\infty$.
+Next, restrict to $\eta\le1$: then $v_\eta\to v$ pointwise, because
+$G_\eta(s)\to|s|^{p/2}\operatorname{sgn}(s)=|s|^{p/2-1}s$ for every $s$, with
+$|v_\eta|\le(2\lambda+1)^{p/2}$ almost everywhere; and $V_\eta\to V$ pointwise
+almost everywhere with $\|V_\eta\|\le\|V\|\in L^2(B_T)$.  Hence for every test
+function $\varphi$ with $\operatorname{tsupport}\varphi\subseteq B_T$ compact,
+dominated convergence (Preamble) --- the dominating functions being
+$(2\lambda+1)^{p/2}|D_i\varphi|$ and $\|V\|\,|\varphi|$, both integrable on the
+finite-measure set $B_T$ --- passes to the limit in the identity of
+\noderef{HasWeakGradientOn} for $(v_\eta,V_\eta)$ and yields it for $(v,V)$.
+Together with $|v|\le2^{p/2}h_0$ almost everywhere (Step B) and
+$\|V\|\in L^2(B_T)$ this is $v\in W^{1,2}(B_T)$ with weak gradient $V$
+(\noderef{MemW1pOn}), which is conclusion (1) for $1<p<2$.
+
+\textbf{(D6) The limit $\eta\downarrow0$: inequality (3.17).}  Write
+$A^+_\ell=B_R\cap\{\psi>\ell\}$.  Fatou's lemma needs only a pointwise lower
+bound on the liminf of the integrands, and \emph{not} any monotonicity of the
+sets $A^+_\ell(\eta)$; what has to be checked is the pointwise statement
+\[
+x\in A^+_\ell\ \Longrightarrow\ x\in A^+_\ell(\eta)\ \text{ for all sufficiently
+small }\eta>0 ,
+\tag{D.6}
+\]
+and it holds for \emph{every} real $\ell$.  Let $x\in B_R$ with $\psi(x)>\ell$
+and put $t=g^k(x)$, so $\psi(x)=|t|^{p-2}t$ and $\psi_\eta(x)=(|t|+\eta)^{p-2}t$;
+recall $p-2<0$.  Three cases.
+\begin{itemize}
+\item $t>0$: then $\eta\mapsto(t+\eta)^{p-2}t$ is continuous at $\eta=0$,
+  because $t>0$ keeps the base away from $0$, with value $\psi(x)>\ell$; so
+  $\psi_\eta(x)>\ell$ for all small $\eta>0$.
+\item $t=0$: then $\psi(x)=0$ and $\psi_\eta(x)=\eta^{p-2}\cdot0=0$ for every
+  $\eta$, the factor $t$ vanishing whatever value the real power $\eta^{p-2}$
+  takes.  So $\psi(x)>\ell$ says $\ell<0$ and $\psi_\eta(x)=0>\ell$ for every
+  $\eta>0$.
+\item $t<0$: then $|t|+\eta>|t|>0$ and $p-2<0$ give
+  $(|t|+\eta)^{p-2}\le|t|^{p-2}$; multiplying by $t<0$ reverses the inequality,
+  so $\psi_\eta(x)\ge\psi(x)>\ell$ for every $\eta>0$.
+\end{itemize}
+It is worth recording what is \emph{not} true, since it is what a
+monotonicity-based argument would need: on $\{g^k>0\}$ the same computation run
+at $t>0$ gives $\psi_\eta\le\psi$, so the sets $A^+_\ell(\eta)$ do not increase
+to $A^+_\ell$.  That costs nothing, because Fatou consumes (D.6) and not
+inclusion.
+
+Fix $\ell\in\R$, $0<\sigma<1$, $0<\rho\le R$ and $\zeta=\zeta_{\rho-\sigma\rho,\rho}$,
+and apply Fatou's lemma (Preamble) to the nonnegative integrands
+$\chi_{A^+_\ell(\eta_j)}w^{p/2-1}\|V_{\eta_j}\|^2\zeta^2$ along any sequence
+$\eta_j\downarrow0$ with $\eta_j^2<\varepsilon$: at each $x\in A^+_\ell$ the
+characteristic factor equals $1$ for all large $j$ by (D.6), and
+$\|V_{\eta_j}(x)\|\uparrow\|V(x)\|$ almost everywhere by (D5), so the liminf of
+the integrands is at least $\chi_{A^+_\ell}w^{p/2-1}\|V\|^2\zeta^2$ almost
+everywhere; hence the integral of the latter is at most the liminf of the
+left-hand sides of (D.5).  Meanwhile $(\psi_{\eta}-\ell)^+\to(\psi-\ell)^+$
+pointwise: at a point with $t\ne0$ the map $\eta\mapsto(|t|+\eta)^{p-2}t$ is
+continuous at $\eta=0$ with value $\psi(x)$, and at a point with $t=0$ one has
+$\psi_\eta(x)=0=\psi(x)$ for every $\eta$, so $\psi_\eta\to\psi$ pointwise and
+$s\mapsto(s-\ell)^+$ is continuous.  The bound
+$\bigl((\psi_\eta-\ell)^+\bigr)^2\le\bigl((2\lambda)^{p-1}+|\ell|\bigr)^2$ holds
+almost everywhere, by $|\psi_\eta|\le|g^k|^{p-1}\le(2\lambda)^{p-1}$, and
+$|\nabla\zeta|^2$ is bounded and supported in $B_\rho$, hence integrable; so
+dominated convergence (Preamble) identifies the limit of the right-hand sides of
+(D.5).  Therefore, for every $\ell\in\R$,
+\[
+\int_{A^+_\ell}w^{\frac p2-1}\|V\|^2\zeta^2\,dx
+\ \le\ C_2\int_{B_R}\bigl((\psi-\ell)^+\bigr)^2|\nabla\zeta|^2\,dx ,
+\tag{3.17$^+$}
+\]
+and symmetrically (3.17$^-$) for every $\ell\in\R$, with
+$A^-_\ell=B_R\cap\{\psi<\ell\}$ and $(\ell-\psi)^+$ in place of
+$(\psi-\ell)^+$; there the three cases of (D.6) are $t<0$ (continuity, since
+$|t|>0$), $t=0$ (then $\psi(x)=0<\ell$ forces $\ell>0$ and $\psi_\eta(x)=0<\ell$
+for every $\eta$) and $t>0$ (where $\psi_\eta\le\psi<\ell$ for every $\eta$).
+
+\emph{Step E: conclusion (2).}  Fix $0<\rho\le R$ and $0<\sigma<1$ and let
+$\zeta=\zeta_{\rho-\sigma\rho,\rho}$ of (A4), so that
+$|\nabla\zeta|\le\Lambda/(\sigma\rho)$, $\zeta=1$ on
+$\overline B_{\rho-\sigma\rho}$, $0\le\zeta\le1$ and
+$\operatorname{supp}\zeta\subseteq B_\rho$.  In each case below the level $h$ is
+transported to a level $\ell$ by a strictly increasing bijection, and only a
+one-sided bound on $\ell$ is used.
+
+\textbf{(E1) Case $p\ge2$, the $+$ side.}  Let $h\ge-h_0$ and put
+$\ell=|h|^{\frac2p-1}h$, the inverse of $\ell\mapsto|\ell|^{p/2-1}\ell$ at $h$,
+so that $\{v>h\}=\{g^k>\ell\}$ by (B.1).  Then $\ell\ge-\lambda$: for $h\ge0$
+this is clear since $\ell\ge0$, and for $-h_0\le h<0$ it reads
+$|\ell|=|h|^{2/p}\le h_0^{2/p}=\lambda$.  In (3.4$^+$) bound the left-hand side
+from below using $w\ge(g^k)^2$ and $p/2-1\ge0$, so that
+$w^{p/2-1}\ge|g^k|^{p-2}$ almost everywhere, and then (C.2):
+\[
+\int_{B_R\cap\{g^k>\ell\}}w^{\frac p2-1}\|Dg^k\|^2\zeta^2
+\ \ge\ \int_{B_R\cap\{g^k>\ell\}}|g^k|^{p-2}\|Dg^k\|^2\zeta^2
+\ =\ \frac4{p^2}\int_{B_R\cap\{v>h\}}\|V\|^2\zeta^2 .
+\]
+Since $\zeta=1$ on $\overline B_{\rho-\sigma\rho}$ and the integrand is
+nonnegative, the last integral is at least
+$\int_{B_{\rho-\sigma\rho}\cap\{v>h\}}\|V\|^2$.  On the right-hand side of
+(3.4$^+$) the integrand is supported in $\{g^k>\ell\}\cap B_\rho$; there
+$w\le(1+4n)\lambda^2$ almost everywhere by (A.1), so
+$w^{p/2-1}\le(1+4n)^{p/2-1}\lambda^{p-2}$ (again $p/2-1\ge0$), and
+$0<g^k-\ell\le\mu-\ell\le2\lambda+\lambda=3\lambda$ because $\ell\ge-\lambda$
+and $g^k\le\mu$ almost everywhere.  Hence
+\[
+c_4\int_{B_R}w^{\frac p2-1}\bigl((g^k-\ell)^+\bigr)^2|\nabla\zeta|^2
+\le c_4(1+4n)^{\frac p2-1}\lambda^{p-2}\,9\lambda^2\,
+\frac{\Lambda^2}{(\sigma\rho)^2}\bigl|B_\rho\cap\{v>h\}\bigr| .
+\]
+Since $\lambda^{p-2}\lambda^2=\lambda^p=h_0^2$, combining the two displays gives
+the first inequality of conclusion (2) with
+$C=\tfrac{9p^2}4c_4(1+4n)^{p/2-1}\Lambda^2$.
+
+\textbf{(E2) Case $p\ge2$, the $-$ side.}  Let $h\le h_0$ and put the same
+$\ell=|h|^{\frac2p-1}h$, so that $\{v<h\}=\{g^k<\ell\}$ and now $\ell\le\lambda$
+by the mirror image of the computation just made.  Run the same two estimates on
+(3.4$^-$), whose right-hand integrand is supported in $\{g^k<\ell\}\cap B_\rho$
+and satisfies $0<\ell-g^k\le\ell+\mu\le\lambda+2\lambda=3\lambda$.  This gives
+the second inequality of conclusion (2) with the same constant.
+
+\textbf{(E3) Case $1<p<2$, the $-$ side.}  Let $h\le h_0$ and put
+\[
+\ell=|h|^{\frac{2(p-1)}p-1}h ,
+\qquad\text{equivalently}\qquad
+h=|\ell|^{\frac p{2(p-1)}-1}\ell .
+\]
+Both maps are strictly increasing bijections of $\R$ (odd, vanishing only at
+$0$, and on $(0,\infty)$ equal to $t\mapsto t^{2(p-1)/p}$ resp.\
+$t\mapsto t^{p/(2(p-1))}$, which are mutually inverse increasing bijections of
+$(0,\infty)$ since the two exponents are reciprocal).  Composing,
+$\{\psi<\ell\}=\{v<h\}$: indeed $\psi=|g^k|^{p-2}g^k$ and $v=|g^k|^{p/2-1}g^k$
+are both strictly increasing functions of $g^k$, and $\ell$ and $h$ are the
+images of the same point of $\R$ under the corresponding bijections, namely
+$\psi<\ell\iff g^k<|\ell|^{\frac1{p-1}-1}\ell\iff v<h$.  The level transports
+exactly:
+\[
+h\le h_0=\lambda^{p/2}\iff\ell\le\lambda^{p-1},
+\qquad\text{because}\qquad
+\bigl(\lambda^{p-1}\bigr)^{\frac p{2(p-1)}}=\lambda^{\frac p2}
+\]
+and $t\mapsto|t|^{\frac p{2(p-1)}-1}t$ is increasing.  Now use (3.17$^-$) at
+this $\ell$, available for \emph{every} real $\ell$ by (D6).  Its left-hand
+side: by (A.1), $\varepsilon<\lambda^2$ and $p/2-1<0$ we have
+$w^{p/2-1}\ge\bigl((1+4n)\lambda^2\bigr)^{p/2-1}=(1+4n)^{p/2-1}\lambda^{p-2}$
+almost everywhere, and $\zeta=1$ on $\overline B_{\rho-\sigma\rho}$, so
+\[
+(1+4n)^{\frac p2-1}\lambda^{p-2}
+\int_{B_{\rho-\sigma\rho}\cap\{v<h\}}\|V\|^2
+\ \le\ \int_{A^-_\ell}w^{\frac p2-1}\|V\|^2\zeta^2 .
+\]
+Its right-hand side: the integrand is supported in $\{\psi<\ell\}\cap B_\rho$,
+where $0<\ell-\psi\le\ell^++(2\lambda)^{p-1}\le\lambda^{p-1}
++2^{p-1}\lambda^{p-1}=(1+2^{p-1})\lambda^{p-1}$, using $\ell\le\lambda^{p-1}$
+and $|\psi|\le(2\lambda)^{p-1}$ almost everywhere, so
+\[
+C_2\int_{B_R}\bigl((\ell-\psi)^+\bigr)^2|\nabla\zeta|^2
+\le C_2(1+2^{p-1})^2\lambda^{2p-2}\frac{\Lambda^2}{(\sigma\rho)^2}
+\bigl|B_\rho\cap\{v<h\}\bigr| .
+\]
+Dividing both sides by $(1+4n)^{p/2-1}\lambda^{p-2}>0$ --- strictly positive for
+every real $p$ because $\lambda>0$, including the present case where $p-2<0$ ---
+and using $\lambda^{2p-2}/\lambda^{p-2}=\lambda^p=h_0^2$ gives the second
+inequality of conclusion (2) with
+$C=C_2(1+2^{p-1})^2(1+4n)^{1-p/2}\Lambda^2$.
+
+\textbf{(E4) Case $1<p<2$, the $+$ side.}  Let $h\ge-h_0$ and put the same
+$\ell$, so that $\{\psi>\ell\}=\{v>h\}$ and $\ell\ge-\lambda^{p-1}$ by the
+mirror image of the transport identity.  Run the same computation from
+(3.17$^+$) at this $\ell$ --- again available for every real $\ell$ --- the
+right-hand bound now being
+$0<\psi-\ell\le(2\lambda)^{p-1}+\ell^-\le(1+2^{p-1})\lambda^{p-1}$ with
+$\ell^-=\max\{-\ell,0\}\le\lambda^{p-1}$.  This gives the first inequality of
+conclusion (2).
+
+Taking for $C$ the maximum of the two expressions produced in (E1)--(E2) and in
+(E3)--(E4) --- each a function of $n$, $p$ and $r$ alone, since $c_4$, $C_2$ and
+$\Lambda$ are --- both inequalities of conclusion (2) hold in both exponent
+regimes, on the full one-sided ranges $h\ge-h_0$ and $h\le h_0$, with one
+constant.  Conclusion (1) was proved in Step C for $p\ge2$ and in (D5) for
+$1<p<2$.  This completes the proof.
+\end{proof}

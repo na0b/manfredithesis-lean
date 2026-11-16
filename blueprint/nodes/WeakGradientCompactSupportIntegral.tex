@@ -1,0 +1,110 @@
+\begin{lemma}[The weak gradient of a compactly supported function has mean zero]
+Let $n\ge1$ and $q\ge1$, let $x_0\in\R^n$ and $R>0$, and let
+$\varphi\in W^{1,q}(B_R(x_0))$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) be such that $\varphi$ has compact support and
+$\operatorname{tsupport}\varphi\subseteq B_R(x_0)$.  Then for every
+$i\in\{1,\dots,n\}$ the component $g_\varphi^{\,i}$ is integrable on $B_R(x_0)$
+and
+\[
+\int_{B_R(x_0)}g_\varphi^{\,i}\,dx\ =\ 0 .
+\]
+
+This is the weak-gradient analogue of ``the integral of a derivative of a
+compactly supported function vanishes''.  Both conclusions are needed together:
+the vanishing of the integral is empty information without the integrability
+that makes the integral the integral of $g_\varphi^{\,i}$ rather than the
+Bochner convention's $0$.  The hypotheses are exactly the ones carried by the
+test pairs of \noderef{IsWeakSolutionOn} at a ball, which is where the statement
+is consumed: a weak-solution identity is unchanged when a constant vector is
+subtracted from the field precisely because of this lemma.  Nothing here
+mentions an operator, a solution or a structure condition --- it is a statement
+about the weak-gradient predicate alone.
+
+Note that the support condition is on the \emph{closed} support
+$\operatorname{tsupport}\varphi=\overline{\{\varphi\ne0\}}$, and that $\varphi$
+is a function on all of $\R^n$ whose closed support happens to lie in the ball;
+this is the same convention as \noderef{MemW1pOn}'s consumers use.  The
+hypothesis $q\ge1$ is used only to get $L^{q}(B_R)\subseteq L^{1}(B_R)$ on the
+ball, which has finite measure; no upper bound on $q$ is needed.
+\end{lemma}
+\begin{proof}
+Write $B=B_R(x_0)$ and fix $i$.
+
+\emph{Step 1: integrability.}  By \noderef{MemW1pOn}, $g_\varphi\in L^{q}(B)$.
+The ball $B$ has finite Lebesgue measure, so $L^{q}(B)\subseteq L^{1}(B)$
+(Preamble: H\"older on a set of finite measure, the stated inclusion
+$L^{q}(E)\subseteq L^{1}(E)$ for $\mu(E)<\infty$ and $q\ge1$), and hence
+$g_\varphi$ is integrable on $B$.  For every $v\in\R^n$ and every $i$ one has
+$|v^i|\le\|v\|$, because $(v^i)^2\le\sum_m(v^m)^2=\|v\|^2$ and both
+$|v^i|$ and $\|v\|$ are nonnegative.  So
+$|g_\varphi^{\,i}|\le\|g_\varphi\|$ pointwise, and the measurable function
+$g_\varphi^{\,i}$ --- measurable because it is the composition of $g_\varphi$
+with the continuous linear coordinate projection --- is dominated by an
+integrable function on $B$; hence $g_\varphi^{\,i}$ is integrable on $B$
+(Preamble: domination).
+
+\emph{Step 2: extending the pair to $\R^n$.}  Apply
+\noderef{WeakGradientZeroExtend} with $n$, the exponent $q$, the open set
+$\Omega=\R^n$, the centre $x_0$, the radius $R$ and the pair
+$(\varphi,g_\varphi)$.  Its hypotheses are $1\le n$, $1\le q$, the openness of
+$\R^n$, the inclusion $B\subseteq\R^n$, the membership
+$\varphi\in W^{1,q}(B)$ with weak gradient $g_\varphi$, the compactness of the
+support of $\varphi$ and $\operatorname{tsupport}\varphi\subseteq B$; all are in
+hand.  Its conclusion is that
+$\varphi\in W^{1,q}(\R^n)$ with weak gradient $\mathbf1_Bg_\varphi$, the field
+equal to $g_\varphi$ on $B$ and to $0$ elsewhere (\noderef{MemW1pOn}).  In
+particular $\mathbf1_Bg_\varphi$ is a weak gradient of $\varphi$ on $\R^n$
+(\noderef{HasWeakGradientOn}).
+
+\emph{Step 3: a cut-off that is $1$ on a ball containing $B$.}  Put
+$M=\|x_0\|+R+1>0$.  Then $B\subseteq B_M(0)$: if $|y-x_0|<R$ then
+$|y|\le|y-x_0|+|x_0|<R+\|x_0\|<M$.  Apply \noderef{StandardRadialCutoff} with
+$n$ --- its hypothesis is $1\le n$ --- at the centre $0$ and the radii
+$\rho_0=M$ and $\rho_1=M+1$, whose hypotheses $0<\rho_0$ and $\rho_0<\rho_1$
+hold.  Let $\zeta$ be the resulting function: $\zeta$ is smooth, has compact
+support, $\operatorname{tsupport}\zeta\subseteq B_{M+1}(0)$, and $\zeta=1$ at
+every point of $\overline B_M(0)$.  (The gradient bound that node also supplies
+is not used here.)
+
+\emph{Step 4: the integration-by-parts identity at $\zeta$.}  The function
+$\zeta$ is an admissible test function for \noderef{HasWeakGradientOn} on
+$\R^n$: it is smooth, compactly supported, and
+$\operatorname{tsupport}\zeta\subseteq\R^n$ trivially.  So Step 2 gives
+\[
+\int_{\R^n}\varphi\,D_i\zeta\,dx\ =\ -\int_{\R^n}(\mathbf1_Bg_\varphi)^i\,\zeta\,dx .
+\]
+
+\emph{Step 5: the left-hand side is $0$.}  We show the integrand vanishes at
+every point $x$.  If $x\notin\operatorname{tsupport}\varphi$ then
+$\varphi(x)=0$ and the product is $0$.  If
+$x\in\operatorname{tsupport}\varphi$ then $x\in B\subseteq B_M(0)$, and $B_M(0)$
+is an open set on which $\zeta$ is identically $1$ --- by Step 3, since
+$B_M(0)\subseteq\overline B_M(0)$.  A function that is constant on a
+neighbourhood of $x$ has vanishing derivative at $x$, so $D_i\zeta(x)=0$ and the
+product is $0$ again.  Hence the left-hand side of Step 4 is the integral of the
+zero function, which is $0$.
+
+\emph{Step 6: the right-hand side is the integral we want.}  We show that at
+every point $x$,
+\[
+(\mathbf1_Bg_\varphi(x))^i\,\zeta(x)
+=\bigl(\mathbf1_B\,g_\varphi^{\,i}\bigr)(x) ,
+\]
+the right-hand side meaning $g_\varphi^{\,i}(x)$ for $x\in B$ and $0$ otherwise.
+If $x\in B$ then $\mathbf1_Bg_\varphi(x)=g_\varphi(x)$ and, since
+$B\subseteq B_M(0)\subseteq\overline B_M(0)$, also $\zeta(x)=1$ by Step 3, so
+both sides are $g_\varphi^{\,i}(x)$.  If $x\notin B$ then
+$\mathbf1_Bg_\varphi(x)=0$, so the left-hand side is $0\cdot\zeta(x)=0$, and the
+right-hand side is $0$ as well.  Therefore
+\[
+\int_{\R^n}(\mathbf1_Bg_\varphi)^i\,\zeta\,dx
+=\int_{\R^n}\mathbf1_B\,g_\varphi^{\,i}\,dx
+=\int_Bg_\varphi^{\,i}\,dx ,
+\]
+the last equality because $B$ is measurable and the integral over $\R^n$ of the
+zero-extension of a function off a measurable set is its integral over that set.
+
+\emph{Conclusion.}  Combining Steps 4, 5 and 6,
+$0=-\int_Bg_\varphi^{\,i}\,dx$, i.e.\ $\int_Bg_\varphi^{\,i}\,dx=0$.  With Step
+1 this is the assertion of the lemma.
+\end{proof}

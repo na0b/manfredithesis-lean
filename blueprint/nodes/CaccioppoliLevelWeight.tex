@@ -1,0 +1,512 @@
+\begin{helper}[Inequality (3.4)]
+Let $n\ge2$, $p>1$ and $r>0$.  Then there is a constant $c>0$, depending only on
+$n$, $p$ and $r$, with the following property.
+
+Let $\varepsilon>0$, $\gamma_0>0$ and $\gamma_1\le r\gamma_0$, let
+$\Omega\subseteq\R^n$ be open, let $A$ satisfy (Q1) of the thesis--(Q2) of the thesis on
+$\Omega$ with the parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}), assume the cited regularity result (C1) for
+$\varepsilon>0$ (\noderef{CitedRegularityEpsPos}) with these parameters on
+$\Omega$ for the field $A$, let $u$ be a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $\Omega$ (\noderef{IsWeakSolutionOn}) with
+weak gradient $g=\nabla u$ and with $u\in W^{2,2}_{\mathrm{loc}}(\Omega)$, i.e.\
+each $g^k=D_ku$ lies in $W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient
+$Dg^k$ (\noderef{MemW1pLocOn}), so that $D_jD_ku=(Dg^k)^j$.  Put
+$w=\varepsilon+|\nabla u|^2$.  Then for every $\zeta\in C_0^\infty(\Omega)$,
+every $k\in\{1,\dots,n\}$ and every $\ell\in\R$, in both the $+$ and the $-$
+case,
+\[
+\int_\Omega w^{\frac p2-1}\bigl|\nabla(D_ku-\ell)^{\pm}\bigr|^2\zeta^2\,dx
+\;\le\;c
+\int_\Omega w^{\frac p2-1}\bigl|(D_ku-\ell)^{\pm}\bigr|^2|\nabla\zeta|^2\,dx .
+\]
+On the left-hand side the weak gradient of $(D_ku-\ell)^+$ is
+$\nabla(D_ku)\cdot\chi_{\{D_ku>\ell\}}$, so the integral is that of
+$w^{p/2-1}|\nabla D_ku|^2\zeta^2$ over $\Omega\cap\{D_ku>\ell\}$, and
+symmetrically for the $-$ case over $\Omega\cap\{D_ku<\ell\}$; also
+$(D_ku-\ell)^+=\max\{D_ku-\ell,0\}$, $(D_ku-\ell)^-=\max\{\ell-D_ku,0\}$ and
+$|\nabla\zeta|^2=\sum_i(D_i\zeta)^2$.
+
+\noindent\textbf{The constant, and the quantifier order.}  The thesis displays
+(3.4) of the thesis with the constant $4(\gamma_1/\gamma_0)^2$ (p.~16): a constant
+depending only on the structure ratio, hence on nothing that is bound after it.
+The statement above records that dependence in the way the paper's Note
+prescribes --- bind $n$, $p$ and a bound $r$ for the ratio, \emph{then} the
+constant, \emph{then} all remaining data --- which is exactly the form the
+companion inequality (3.3) of the thesis carries, both in the thesis, where its
+constant is printed as $c(n,p,\gamma_1/\gamma_0)$ on the same page, and in this
+development.  The structure ratio enters through the single hypothesis
+$\gamma_1\le r\gamma_0$, so $c$ is a function of $n,p,r$ alone and of nothing
+else; the proof exhibits $c=4n^2r^2$.  Both the $+$ and the $-$ case are
+asserted with that one constant.
+
+The ordering $\gamma_0\le\gamma_1$ is \emph{not} assumed: it is a consequence of
+(Q1) of the thesis--(Q2) of the thesis, derived in the first step of the proof, and the
+statement is therefore free of it.
+
+The hypothesis (C1) is carried for the same reason as in (3.3) of the thesis: the differentiated equation
+(3.2) of the thesis (\noderef{DifferentiatedEquationWeak}), which this inequality is
+obtained from by substitution, carries it as an explicit hypothesis, because it
+is (C1) that puts $u$ in $W^{2,2}_{\mathrm{loc}}\cap C^1$ and so makes
+(3.2) of the thesis available at all.  Without it the present statement would have no
+route to its own hypothesis, and the Note for the formalization permits a cited
+result to be taken as an explicit hypothesis where it is used.
+\end{helper}
+\begin{proof}
+Put
+\[
+c=4n^2r^2 ,
+\]
+which is positive because $n\ge2$ and $r>0$, and which is built from $n$ and $r$
+alone, hence is chosen before
+$\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,Dg,\zeta,k,\ell$, as the quantifier
+order of the statement requires.  Now fix those data satisfying all the
+hypotheses.
+
+Throughout, $k$ and $\ell$ are the index and the level of the statement, and we
+write
+\[
+w(x)=\varepsilon+|g(x)|^2,\qquad
+W(x)=w(x)^{\frac p2-1},\qquad
+M_{ij}(x)=D_{h_j}A^i\bigl(g(x)\bigr),\qquad
+K=\operatorname{supp}\zeta ,
+\]
+so that $M_{ij}(x)$ is the $i$-th component of the derivative of $A$ at $g(x)$
+in the direction of the $j$-th standard basis vector, $K$ is compact and
+$K\subseteq\Omega$, and $w\ge\varepsilon>0$ everywhere.  Put also
+\[
+X^{+}=\int_{\Omega\cap\{D_ku>\ell\}}W\,|Dg^k|^2\zeta^2\,dx,
+\qquad
+Y^{+}=\int_\Omega W\,\bigl((D_ku-\ell)^{+}\bigr)^2|\nabla\zeta|^2\,dx,
+\]
+and let $X^{-},Y^{-}$ be the same with $\{D_ku<\ell\}$ and $(\ell-D_ku)^{+}$ in
+place of $\{D_ku>\ell\}$ and $(D_ku-\ell)^{+}$.  The assertion is
+$X^{\pm}\le cY^{\pm}$.  All four quantities are integrals of nonnegative
+functions, hence well defined in $[0,\infty]$; Step 6 shows they are finite.
+
+The route produces the sharper bound
+$X^{\pm}\le4n^2(\gamma_1/\gamma_0)^2Y^{\pm}$, and $c$ absorbs it because
+$\gamma_1\le r\gamma_0$ with $\gamma_0>0$ gives $\gamma_1/\gamma_0\le r$.  The
+dimensional factor $n^2$ is not slack in that bound, and the constant
+$4(\gamma_1/\gamma_0)^2$ printed in the thesis is not what
+(Q1) of the thesis--(Q2) of the thesis give: (Q2) of the thesis bounds the \emph{entries}
+$D_{h_j}A^i$, so the bilinear form $\sum_{i,j}M_{ij}a_jb_i$ admits only the
+bound $n\gamma_1W|a||b|$ of $(3)$ below, and that is attained --- a matrix all
+of whose entries equal $\gamma_1W$ has quadratic form $n\gamma_1W|\xi|^2$ at
+$\xi=(1,\dots,1)/\sqrt n$.  Reading (Q2) of the thesis instead as a bound on the
+matrix norm of $(M_{ij})$ would give the printed constant.  Since the thesis
+uses (3.4) of the thesis only through the constant of (2.1) of the thesis for $f=D_ku$,
+which the lemmas of \S2 let depend on $n$ and on that constant, the existential
+form above is what the statement needs and the factor costs nothing; the same
+factor is visible in the thesis' own derivation of (3.3) of the thesis on the same
+page, whose intermediate display carries $\gamma_1n^2$.
+
+\emph{Step 0: the empty case, and a point of $\Omega$.}  If
+$\Omega=\emptyset$ then all four of $X^{\pm}$ and $Y^{\pm}$ are integrals over
+subsets of $\Omega$, hence over the empty set, hence $0$, and both assertions
+read $0\le c\cdot0$; so assume $\Omega\ne\emptyset$ from now on.  Being open and
+nonempty, $\Omega$ contains a ball of positive radius and therefore has positive
+measure $\omega_n\rho^n>0$ (Preamble: the volume of a ball).  \emph{Every
+subsequent step uses this, and two of them use it essentially}, namely Step 1 and
+the measurability paragraph of Step 6, both of which read a clause of
+\noderef{EllipticStructureQ12} at a single point of $\Omega$.
+
+\emph{Step 1: the structure conditions hold at every point.}  The clauses
+(Q1) of the thesis and (Q2) of the thesis of \noderef{EllipticStructureQ12} are clauses
+(5) and (6) of that node and are stated for almost every $x$ --- precisely, as
+``for almost every $x$, if $x\in\Omega$ then \dots'' --- so their exceptional set
+is a subset of $\Omega$ and the two clauses say nothing at all when
+$\Omega=\emptyset$.  That case is disposed of in Step 0, so $\Omega$ has positive
+measure, and the union of the two exceptional null sets therefore cannot contain
+the whole of $\Omega$: there is a single point $x\in\Omega$ at which both clauses
+hold.  Fix such an $x$ and read clauses (5) and (6) there at $z=0$.  Because the
+field of the present node is $(x,z,h)\mapsto A(h)$, the derivative
+$D_{h_j}A^i(x,z,h)$ does not depend on $(x,z)$, so what those two clauses give at
+that one point is a statement about $h$ alone and holds for every $h$.  Hence,
+for every $h$ with $\varepsilon+|h|^2\ne0$ --- which by $\varepsilon>0$ is every
+$h$ --- and all $\xi$, $i$, $j$,
+\[
+\gamma_0\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1}|\xi|^2
+\le\sum_{i,j}D_{h_j}A^i(h)\,\xi^i\xi^j ,
+\qquad
+\bigl|D_{h_j}A^i(h)\bigr|\le\gamma_1\bigl(\varepsilon+|h|^2\bigr)^{\frac p2-1} .
+\tag{1}
+\]
+Reading $(1)$ at $h=g(x)$: for every $x$ and every $\xi\in\R^n$,
+\[
+\gamma_0W(x)|\xi|^2\le\sum_{i,j}M_{ij}(x)\xi^i\xi^j ,
+\qquad
+|M_{ij}(x)|\le\gamma_1W(x) .
+\tag{2}
+\]
+From the second bound and the Cauchy--Schwarz inequality applied twice,
+$\sum_j|a_j|\le\sqrt n\,|a|$ and $\sum_i|b_i|\le\sqrt n\,|b|$, we get the
+bilinear estimate used below:
+\[
+\Bigl|\sum_{i,j}M_{ij}(x)a_jb_i\Bigr|
+\le\gamma_1W(x)\Bigl(\sum_j|a_j|\Bigr)\Bigl(\sum_i|b_i|\Bigr)
+\le n\,\gamma_1W(x)\,|a|\,|b|
+\qquad(a,b\in\R^n).
+\tag{3}
+\]
+The same two bounds give the ordering of the structure constants, which the
+statement does not assume and which Step 5 needs:
+\[
+0<\gamma_0\le\gamma_1 .
+\tag{4}
+\]
+Indeed, take $h=\xi=e_1$ in $(1)$, where $e_1$ is the first standard basis
+vector, so that $\varepsilon+|h|^2=\varepsilon+1$ and $|\xi|^2=1$; the first
+bound gives
+$\gamma_0(\varepsilon+1)^{\frac p2-1}\le\sum_{i,j}D_{h_j}A^i(e_1)e_1^ie_1^j
+=D_{h_1}A^1(e_1)$, the second gives
+$D_{h_1}A^1(e_1)\le|D_{h_1}A^1(e_1)|\le\gamma_1(\varepsilon+1)^{\frac p2-1}$,
+and $(\varepsilon+1)^{\frac p2-1}>0$ may be cancelled.  In particular
+$\gamma_1>0$, so the ratio $\gamma_1/\gamma_0$ is positive and, by the
+hypothesis $\gamma_1\le r\gamma_0$, at most $r$.
+
+\emph{Step 2: what (C1) supplies.}  Instantiate
+\noderef{CitedRegularityEpsPos}, a hypothesis of the present node, at the
+present $n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A$: its own hypotheses are
+$0<\varepsilon$ and the bundle (Q1) of the thesis--(Q2) of the thesis
+(\noderef{EllipticStructureQ12}), both hypotheses here, and it is applied to the
+weak solution $u$ with weak gradient $g$ (\noderef{IsWeakSolutionOn}).  Among
+its conclusions is a field $g'$ with $g'$ continuous on $\Omega$ and $g=g'$
+almost everywhere on $\Omega$.  \emph{It does not assert continuity of the given
+$g$, and cannot: a weak gradient is an almost-everywhere class, so continuity is
+a property of a representative.  Every pointwise consequence drawn below is
+therefore drawn for $g'$, and transported back to $g$ across the
+almost-everywhere identity, which every integral and every almost-everywhere
+assertion is blind to.}
+
+Write $w'=\varepsilon+|g'|^2$ and $W'=(w')^{\frac p2-1}$ for the versions of $w$
+and $W$ built from $g'$.  Since $g'$ is continuous on $\Omega$ and
+$K=\operatorname{supp}\zeta$ is a compact subset of $\Omega$, the function
+$|g'|$ is bounded on $K$, say $|g'|\le G$ there, so
+\[
+\varepsilon\le w'\le\varepsilon+G^2\quad\text{on }K,
+\qquad\text{and therefore}\qquad
+0<m_W\le W'\le M_W<\infty\quad\text{on }K,
+\]
+where $m_W$ and $M_W$ are the minimum and the maximum of the continuous
+positive function $t\mapsto t^{\frac p2-1}$ on the compact interval
+$[\varepsilon,\varepsilon+G^2]\subseteq(0,\infty)$.  Transporting back: $g=g'$
+almost everywhere on $\Omega$, and $w$, $W$ are obtained from $g$ by the same
+two formulas that produce $w'$, $W'$ from $g'$, so $w=w'$ and $W=W'$ almost
+everywhere on $\Omega$, whence
+\[
+0<m_W\le W\le M_W<\infty\quad\text{almost everywhere on }K.
+\tag{5}
+\]
+The almost-everywhere form is all that $(5)$ is ever used for: its only two uses
+are the domination bounds of Step 6 and the finiteness bounds for $X^{\pm}$ and
+$Y^{\pm}$ there, and a bound valid almost everywhere dominates the same
+integral as one valid everywhere.  This is the second use of
+(C1) in this proof: the first is that it is a hypothesis of
+\noderef{DifferentiatedEquationWeak}, which Step 5 invokes.
+
+\emph{Step 3: the test function in the $+$ case.}  We produce a pair
+$(\varphi^{+},g_{\varphi^{+}})$ admissible in
+\noderef{DifferentiatedEquationWeak}, namely
+\[
+\varphi^{+}=(D_ku-\ell)^{+}\zeta^2,
+\qquad
+g_{\varphi^{+}}=\zeta^2\,Z^{+}+2(D_ku-\ell)^{+}\zeta\,\nabla\zeta ,
+\qquad
+Z^{+}=\chi_{\{D_ku>\ell\}}\,Dg^k .
+\]
+
+\emph{(3a) An intermediate open set.}  Let $L\subseteq\Omega$ be compact.  The
+distance $\operatorname{dist}(L,\R^n\setminus\Omega)$ is positive when
+$\R^n\setminus\Omega\ne\emptyset$, being the distance between a compact set and
+a disjoint closed set; choose $\delta>0$ with
+$\delta<\operatorname{dist}(L,\R^n\setminus\Omega)$, and $\delta=1$ when
+$\Omega=\R^n$.  Put $V_L=\{x:\operatorname{dist}(x,L)<\delta/2\}$.  Then $V_L$ is
+open (preimage of an open half-line under a continuous function), bounded ($L$ is
+bounded), contains $L$, and
+$\overline{V_L}\subseteq\{x:\operatorname{dist}(x,L)\le\delta/2\}$, a closed
+bounded --- hence compact --- subset of $\Omega$.  In particular
+$\operatorname{volume}(V_L)<\infty$.
+
+\emph{(3b) $D_ku$ on $V_L$.}  By hypothesis $g^k=D_ku$ lies in
+$W^{1,2}_{\mathrm{loc}}(\Omega)$ with weak gradient $Dg^k$
+(\noderef{MemW1pLocOn}).  Clause (4) of \noderef{WeakGradientRestrict}, applied
+with $q=2$, the open sets $\Omega$ and $V_L$ and the pair $(g^k,Dg^k)$ --- its
+hypotheses $1\le n$, $1\le2$, openness of both sets, $V_L\subseteq\Omega$,
+compactness of $\overline{V_L}$ and $\overline{V_L}\subseteq\Omega$ all hold by
+(3a) --- gives
+\[
+g^k\in W^{1,2}(V_L)\ \text{with weak gradient}\ Dg^k\quad(\noderef{MemW1pOn}).
+\tag{6}
+\]
+
+\emph{(3c) The positive part on $V_L$.}  Apply
+\noderef{WeakGradientPositivePart} with $q=2$, $c=\ell$, the open set $V_L$ and
+the pair of $(6)$: its hypotheses are $1\le n$, $1\le2$, openness of $V_L$,
+$\operatorname{volume}(V_L)\ne\infty$ and $(6)$.  Its conclusion is
+\[
+(D_ku-\ell)^{+}\in W^{1,2}(V_L)\ \text{with weak gradient}\ Z^{+} ,
+\tag{7}
+\]
+since $(D_ku-\ell)^{+}=\max\{D_ku-\ell,0\}$ and the node's conclusion names
+exactly the field that equals $Dg^k$ where $\ell<D_ku$ and $0$ elsewhere, which
+is $Z^{+}$.
+
+\emph{(3d) From the sets $V_L$ to $\Omega$.}  We claim
+\[
+(D_ku-\ell)^{+}\in W^{1,2}_{\mathrm{loc}}(\Omega)\ \text{with weak gradient}\ Z^{+}
+\quad(\noderef{MemW1pLocOn}).
+\tag{8}
+\]
+For the local integrability clause, let $L\subseteq\Omega$ be compact.  Then
+$|(D_ku-\ell)^{+}|\le|g^k|+|\ell|$ and $|Z^{+}|\le|Dg^k|$ pointwise; by
+\noderef{MemW1pLocOn} for the pair $(g^k,Dg^k)$ both $|g^k|$ and $|Dg^k|$ lie in
+$L^2(L)$, the constant $|\ell|$ lies in $L^2(L)$ because $|L|<\infty$
+(Preamble), and the $L^2$ triangle inequality (Minkowski, Preamble) together
+with domination (Preamble) puts $(D_ku-\ell)^{+}$ and $|Z^{+}|$ in $L^2(L)$.
+For the weak-gradient identity, let $\theta\in C^\infty(\R^n)$ have compact
+support with $\operatorname{supp}\theta\subseteq\Omega$, and fix an index $i$.
+Apply (3a)--(3c) with $L=\operatorname{supp}\theta$: then $\theta$ is a test
+function for the open set $V_L$, because
+$\operatorname{supp}\theta=L\subseteq V_L$, so the identity of
+\noderef{HasWeakGradientOn} contained in $(7)$ gives
+\[
+\int_{V_L}(D_ku-\ell)^{+}D_i\theta\,dx=-\int_{V_L}(Z^{+})^i\,\theta\,dx .
+\]
+Both integrands vanish off $\operatorname{supp}\theta\subseteq V_L\subseteq\Omega$,
+so each integral over $V_L$ equals the corresponding integral over $\Omega$, and
+the identity holds with $\Omega$ in place of $V_L$.  As $\theta$ and $i$ were
+arbitrary, this is $\mathrm{HasWeakGradientOn}(n,\Omega,(D_ku-\ell)^{+},Z^{+})$,
+and with the local integrability just proved, $(8)$ follows.
+
+\emph{(3e) Multiplication by $\zeta^2$.}  The function $\zeta^2$ is $C^\infty$,
+being a product of two $C^\infty$ functions; it has compact support, and
+$\operatorname{supp}(\zeta^2)\subseteq\operatorname{supp}\zeta=K\subseteq\Omega$.
+Clause (2) of \noderef{WeakGradientSmoothMul}, applied with $q=2$, the open set
+$\Omega$, the pair of $(8)$ and the factor $\zeta^2$ --- the clause that assumes
+only $W^{1,2}_{\mathrm{loc}}$ and no condition on the volume of $\Omega$, which
+is what is available here --- gives
+\[
+\varphi^{+}=(D_ku-\ell)^{+}\zeta^2\in W^{1,2}(\Omega)
+\ \text{with weak gradient}\
+\zeta^2Z^{+}+(D_ku-\ell)^{+}\nabla(\zeta^2)=g_{\varphi^{+}} ,
+\tag{9}
+\]
+the last equality by the classical product rule $\nabla(\zeta^2)=2\zeta\nabla\zeta$
+for the smooth function $\zeta$.  Finally $\varphi^{+}$ vanishes off $K$, so
+$\operatorname{supp}\varphi^{+}\subseteq K$ is compact and contained in $\Omega$.
+
+\emph{Step 4: the test function in the $-$ case.}  Identical, with one extra
+line.  On $V_L$ the pair $(-g^k,-Dg^k)$ lies in $W^{1,2}(V_L)$ by clause (2) of
+\noderef{WeakGradientLinear}, applied with $q=2$, $a=-1$, $b=0$ and both pairs
+taken to be the pair of $(6)$.  Applying
+\noderef{WeakGradientPositivePart} to it with $c=-\ell$ gives
+\[
+(\ell-D_ku)^{+}=\max\{-D_ku+\ell,0\}\in W^{1,2}(V_L)
+\ \text{with weak gradient}\
+Z^{-}:=-\chi_{\{D_ku<\ell\}}Dg^k ,
+\]
+because the node's conclusion names the field that equals $-Dg^k$ where
+$-\ell<-D_ku$, i.e.\ where $D_ku<\ell$, and $0$ elsewhere.  Steps (3d) and (3e)
+then apply verbatim and give
+\[
+\varphi^{-}=(\ell-D_ku)^{+}\zeta^2\in W^{1,2}(\Omega)
+\ \text{with weak gradient}\
+g_{\varphi^{-}}=\zeta^2Z^{-}+2(\ell-D_ku)^{+}\zeta\nabla\zeta ,
+\tag{10}
+\]
+again with compact support inside $\Omega$.  Note
+$(D_ku-\ell)^{-}=(\ell-D_ku)^{+}$, so $\varphi^{-}$ is the test function
+$-\varphi^{\pm}$ of the thesis in the $-$ case up to the sign that the thesis
+carries in front, and the identity below is unaffected by that sign because
+(3.2) of the thesis is linear in the test pair.
+
+\emph{Step 5: substitution into the differentiated equation.}  Apply
+\noderef{DifferentiatedEquationWeak} with the present
+$n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,Dg$, with the index $k$ and with
+the test pair $(\varphi^{+},g_{\varphi^{+}})$ of $(9)$.  Its hypotheses are
+$2\le n$, $1<p$, $0<\varepsilon$, $0<\gamma_0$, the openness of $\Omega$, the
+structure conditions (\noderef{EllipticStructureQ12}), the cited regularity
+result (C1) (\noderef{CitedRegularityEpsPos}), the weak-solution property
+(\noderef{IsWeakSolutionOn}) and the second-derivative clause
+(\noderef{MemW1pLocOn}) --- all hypotheses of the present node --- together with
+$\gamma_0\le\gamma_1$, which is $(4)$ of Step 1 and is the one hypothesis of
+that node that the present statement does not assume, and together with
+$\varphi^{+}\in W^{1,2}(\Omega)$ with weak gradient $g_{\varphi^{+}}$, compact
+support and $\operatorname{supp}\varphi^{+}\subseteq\Omega$, which is Step 3.
+Its conclusion is
+\[
+\int_\Omega\sum_{i,j}M_{ij}\,(Dg^k)_j\,(g_{\varphi^{+}})_i\,dx=0 .
+\tag{11}
+\]
+
+\emph{Step 6: the two terms of $(11)$, and their finiteness.}  Write
+$T_1$ and $T_2$ for the integrals obtained from $(11)$ by replacing
+$g_{\varphi^{+}}$ by its two summands $\zeta^2Z^{+}$ and
+$2(D_ku-\ell)^{+}\zeta\nabla\zeta$.  Both integrands vanish off $K$, because
+$\zeta$ does.  On $K$ they are dominated as follows, using $(3)$ and $(5)$:
+\[
+\Bigl|\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Z^{+})_i\Bigr|
+\le n\gamma_1M_W\Bigl(\sup_{\R^n}\zeta^2\Bigr)|Dg^k|^2 ,
+\]
+\[
+\Bigl|2(D_ku-\ell)^{+}\zeta\sum_{i,j}M_{ij}(Dg^k)_jD_i\zeta\Bigr|
+\le n\gamma_1M_W\Bigl(\sup_{\R^n}2|\zeta||\nabla\zeta|\Bigr)
+\Bigl(|Dg^k|^2+\bigl((D_ku-\ell)^{+}\bigr)^2\Bigr),
+\]
+where in the second line we used $|Z^{+}|\le|Dg^k|$, $(3)$ with $a=Dg^k$,
+$b=\nabla\zeta$ and the elementary $2st\le s^2+t^2$.  The functions $|Dg^k|^2$
+and $((D_ku-\ell)^{+})^2$ are integrable on $K$ by the local integrability
+recorded in Step (3d), and $\zeta$, $\nabla\zeta$ are continuous with compact
+support, hence bounded.
+
+\emph{Measurability of the dominated functions.}  Part (a) Domination of the
+Preamble's proposition on the integral requires the dominated function to be
+almost everywhere strongly measurable, and a pointwise bound alone does not
+supply that, so we record it.  Fix the point $x_\ast\in\Omega$ of Step 0 and read
+clause (4) of \noderef{EllipticStructureQ12} --- ``for every $x\in\Omega$ and
+every $z\in\R$ the map $h\mapsto A(x,z,h)$ is of class $C^1$ on
+$D(\varepsilon)$'' --- at $x_\ast$ and $z=0$.  Since the present node binds
+$0<\varepsilon$ \emph{strictly}, $D(\varepsilon)=\{h:\varepsilon+|h|^2\ne0\}$ is
+all of $\R^n$, so $A$ is of class $C^1$ on $\R^n$ and the symbols
+$D_{h_j}A^i$ used throughout are genuine partial derivatives of a $C^1$ map,
+with $D_hA$ continuous on $\R^n$.  \emph{The strictness of $\varepsilon>0$ is
+what makes this citation available}: at $\varepsilon\ge0$ clause (4) gives
+nothing at $h=0$, and an admissible field need not be differentiable there --- for
+$1<p<2$ the field $A(h)=|h|^{p-2}h$ satisfies
+(Q1) of the thesis--(Q2) of the thesis at $\varepsilon=0$ while
+$|A(h)-A(0)|/|h|=|h|^{p-2}\to\infty$ --- which is why the same citation is a
+defect in a node that allows $\varepsilon=0$ and is sound here.  Clause (4) is
+also a ``for every $x\in\Omega$'' clause, so this paragraph, like Step 1,
+depends on Step 0 having produced a point of $\Omega$ at all.
+
+By Step 2 the field $g'$ is continuous on $\Omega$ and $g=g'$ almost everywhere
+on $\Omega$.  Composing the continuous $D_hA$ with $g'$, each
+$M'_{ij}=D_{h_j}A^i(g'(\cdot))$ is continuous on $\Omega$, hence measurable
+there; and $M_{ij}=D_{h_j}A^i(g(\cdot))$ takes the same value as $M'_{ij}$ at
+every point where $g=g'$, hence almost everywhere on $\Omega$, so $M_{ij}$ is
+almost everywhere equal on $\Omega$ to a continuous function and is therefore
+almost everywhere strongly measurable there.  The same two sentences apply
+verbatim to $W=(\varepsilon+|g|^2)^{\frac p2-1}$, whose $g'$-version
+$W'=(\varepsilon+|g'|^2)^{\frac p2-1}$ is continuous on $\Omega$ --- the base
+being continuous and bounded below by $\varepsilon>0$ there, and
+$t\mapsto t^{p/2-1}$ being continuous on $(0,\infty)$ --- and to
+$(D_ku-\ell)^{+}=\max\{g^k-\ell,0\}$, whose $g'$-version
+$\max\{g'^k-\ell,0\}$ is continuous on $\Omega$.
+
+The fields $Z^{\pm}$ are measurable rather than continuous, and this is the one
+place where a \emph{set} is replaced by another, so we spell the transport out.
+First, $Dg^k$ is almost everywhere strongly measurable on $\Omega$, being a weak
+gradient in $W^{1,2}_{\mathrm{loc}}(\Omega)$ (\noderef{MemW1pLocOn}).  Second,
+the sets $\Omega\cap\{g'^k>\ell\}$ and $\Omega\cap\{g'^k<\ell\}$ are
+\emph{open}, being preimages of open half-lines under the function $g'^k$, which
+is continuous on the open set $\Omega$; the corresponding assertion for $g^k$ is
+false in general, since a weak gradient may be redefined on a null set, and this
+is exactly the point at which the given $g$ cannot be used.  Third, let
+$N=\{x\in\Omega:g(x)\ne g'(x)\}$, which is null.  Off $N$ the conditions
+$g^k>\ell$ and $g'^k>\ell$ hold together or fail together, so the indicator
+functions $\chi_{\Omega\cap\{g^k>\ell\}}$ and $\chi_{\Omega\cap\{g'^k>\ell\}}$
+agree off $N$, that is, almost everywhere on $\Omega$.  Hence
+\[
+Z^{+}=\chi_{\{D_ku>\ell\}}\,Dg^k
+=\chi_{\Omega\cap\{g'^k>\ell\}}\,Dg^k
+\quad\text{almost everywhere on }\Omega ,
+\]
+and the right-hand side is the product of the indicator of an open --- hence
+Borel --- set with an almost everywhere strongly measurable field, so it is
+almost everywhere strongly measurable; therefore so is $Z^{+}$, being almost
+everywhere equal to it.  The same argument with $<$ in place of $>$ gives
+$Z^{-}$.  Finally $\zeta$ and $\nabla\zeta$ are continuous.  Every integrand appearing in
+$T_1$, $T_2$, $X^{\pm}$ and $Y^{\pm}$ is therefore a finite sum of products of
+these, hence almost everywhere strongly measurable on $\Omega$, which is the
+hypothesis part (a) needs.
+
+So $T_1$ and $T_2$ are finite by domination
+(Preamble), $(11)$ splits as $T_1+T_2=0$, i.e.\ $T_1=-T_2$, and the same
+bounds give
+\[
+X^{+}\le M_W\Bigl(\sup\zeta^2\Bigr)\int_K|Dg^k|^2dx<\infty,
+\qquad
+Y^{+}\le M_W\Bigl(\sup|\nabla\zeta|^2\Bigr)\int_K\bigl((D_ku-\ell)^{+}\bigr)^2dx<\infty .
+\tag{12}
+\]
+
+\emph{Step 7: the lower bound for $T_1$.}  The integrand of $T_1$ vanishes at
+every point where $Z^{+}=0$, i.e.\ off $\{D_ku>\ell\}$, and equals
+$\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i$ on $\Omega\cap\{D_ku>\ell\}$, where
+$Z^{+}=Dg^k$.  By the first inequality of $(2)$ with $\xi=Dg^k(x)$,
+\[
+T_1=\int_{\Omega\cap\{D_ku>\ell\}}\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i\,dx
+\ \ge\ \gamma_0\int_{\Omega\cap\{D_ku>\ell\}}W|Dg^k|^2\zeta^2\,dx=\gamma_0X^{+},
+\]
+monotonicity of the integral (Preamble) being applicable because both
+integrands are integrable by Step 6.
+
+\emph{Step 8: the upper bound for $|T_2|$, and the conclusion in the $+$ case.}
+The integrand of $T_2$ vanishes off $\Omega\cap\{D_ku>\ell\}$, because
+$(D_ku-\ell)^{+}$ does.  By the norm inequality for the integral and $(3)$ with
+$a=Dg^k$, $b=\nabla\zeta$,
+\[
+|T_2|\le2n\gamma_1\int_{\Omega\cap\{D_ku>\ell\}}
+W\,(D_ku-\ell)^{+}\,|\zeta|\,|Dg^k|\,|\nabla\zeta|\,dx .
+\]
+Apply the Cauchy--Schwarz inequality (Preamble) on the set
+$\Omega\cap\{D_ku>\ell\}$ with respect to the measure $W\,dx$, to the two
+factors $|\zeta||Dg^k|$ and $(D_ku-\ell)^{+}|\nabla\zeta|$:
+\[
+|T_2|\ \le\ 2n\gamma_1
+\Bigl(\int_{\Omega\cap\{D_ku>\ell\}}W|Dg^k|^2\zeta^2dx\Bigr)^{1/2}
+\Bigl(\int_{\Omega\cap\{D_ku>\ell\}}W\bigl((D_ku-\ell)^{+}\bigr)^2|\nabla\zeta|^2dx\Bigr)^{1/2}
+\ \le\ 2n\gamma_1\bigl(X^{+}\bigr)^{1/2}\bigl(Y^{+}\bigr)^{1/2},
+\]
+the last step because the first integral is $X^{+}$ and the second is at most
+$Y^{+}$, the integrand being nonnegative and the domain a subset of $\Omega$.
+Combining with $T_1=-T_2$ and Step 7,
+\[
+\gamma_0X^{+}\ \le\ T_1=|T_1|=|T_2|\ \le\ 2n\gamma_1\bigl(X^{+}\bigr)^{1/2}\bigl(Y^{+}\bigr)^{1/2} .
+\tag{13}
+\]
+(Here $T_1\ge\gamma_0X^{+}\ge0$, so $T_1=|T_1|$.)  If $X^{+}=0$ then
+$X^{+}\le cY^{+}$ holds because the right-hand side is nonnegative.  If
+$X^{+}>0$ then, $X^{+}$ being finite by $(12)$, we may divide $(13)$ by
+$(X^{+})^{1/2}>0$ and obtain
+$\gamma_0(X^{+})^{1/2}\le2n\gamma_1(Y^{+})^{1/2}$; squaring and dividing by
+$\gamma_0^2>0$,
+\[
+X^{+}\ \le\ 4n^2\Bigl(\frac{\gamma_1}{\gamma_0}\Bigr)^2Y^{+}
+\ \le\ 4n^2r^2\,Y^{+}=cY^{+} ,
+\]
+the second inequality because $0<\gamma_1/\gamma_0\le r$ by Step 1 and the
+hypothesis $\gamma_1\le r\gamma_0$, so that
+$(\gamma_1/\gamma_0)^2\le r^2$, and because $Y^{+}\ge0$.  This is the first of
+the two asserted inequalities.
+
+\emph{Step 9: the $-$ case.}  Substituting the pair $(\varphi^{-},g_{\varphi^{-}})$
+of $(10)$ into \noderef{DifferentiatedEquationWeak} --- admissible by Step 4, the
+other hypotheses being the same as in Step 5 --- gives
+\[
+\int_\Omega\sum_{i,j}M_{ij}(Dg^k)_j\bigl(\zeta^2Z^{-}+2(\ell-D_ku)^{+}\zeta\nabla\zeta\bigr)_i dx=0 .
+\]
+Write $T_1^{-}$ and $T_2^{-}$ for its two terms, finite by the computation of
+Step 6 with $Z^{-}$ and $(\ell-D_ku)^{+}$ in place of $Z^{+}$ and
+$(D_ku-\ell)^{+}$, so that $T_1^{-}=-T_2^{-}$.  The integrand of $T_1^{-}$
+vanishes off $\{D_ku<\ell\}$ and equals
+$-\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i$ there, since $Z^{-}=-Dg^k$ on that
+set; hence, by the first inequality of $(2)$,
+\[
+-T_1^{-}=\int_{\Omega\cap\{D_ku<\ell\}}\zeta^2\sum_{i,j}M_{ij}(Dg^k)_j(Dg^k)_i\,dx
+\ \ge\ \gamma_0X^{-} .
+\]
+The integrand of $T_2^{-}$ vanishes off $\Omega\cap\{D_ku<\ell\}$, and exactly
+as in Step 8,
+\[
+|T_2^{-}|\le2n\gamma_1\bigl(X^{-}\bigr)^{1/2}\bigl(Y^{-}\bigr)^{1/2} .
+\]
+Since $-T_1^{-}=T_2^{-}$, we get
+$\gamma_0X^{-}\le|T_2^{-}|\le2n\gamma_1(X^{-})^{1/2}(Y^{-})^{1/2}$, and the
+dichotomy of Step 8, followed by the same passage from $\gamma_1/\gamma_0$ to
+$r$, gives
+$X^{-}\le4n^2(\gamma_1/\gamma_0)^2Y^{-}\le cY^{-}$.  This is the second
+asserted inequality, with the same constant $c$ as the first, and the proof is
+complete.
+\end{proof}

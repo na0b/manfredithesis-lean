@@ -1,0 +1,63 @@
+\begin{helper}[Coordinate and operator-norm bounds on $\R^n$]
+Let $n\in\N$.  Throughout, $w_i$ denotes the $i$-th coordinate of
+$w\in\R^n$, $\|\cdot\|$ the Euclidean norm, $e_j$ the $j$-th standard basis
+vector, and the matrix entries of a continuous linear map
+$L\colon\R^n\to\R^n$ are the numbers $(Le_j)_i$.  Then all three of the
+following hold.
+\begin{enumerate}
+\item[(i)] $\|w\|\le\sum_i|w_i|$ for every $w\in\R^n$.
+\item[(ii)] $|w_i|\le\|w\|$ for every $w\in\R^n$ and every index $i$.
+\item[(iii)] For every continuous linear $L\colon\R^n\to\R^n$ and every real
+  $B\ge0$ such that $|(Le_j)_i|\le B$ for all indices $i,j$, one has
+  \[
+  \|Lv\|\ \le\ \bigl((n:\R)\cdot n\bigr)\,B\,\|v\|
+  \qquad\text{for every }v\in\R^n .
+  \]
+\end{enumerate}
+The constant in (iii) is the product of two copies of the cast of $n$, written
+exactly as stated; the hypothesis there is a bound on every matrix ENTRY, not
+on the columns and not on the operator norm.  No hypothesis on $n$ is required:
+all three statements hold for $n=0$ as well, vacuously or trivially.  Nothing
+here refers to a domain, a Sobolev space or the structure conditions: these are
+generic linear-algebra facts.
+\end{helper}
+\begin{proof}
+\emph{(i).}  Expanding $w$ in the standard basis gives
+$w=\sum_i w_i\,e_i$, which is checked coordinatewise: the $j$-th coordinate of
+the right-hand side is $\sum_iw_i\delta_{ij}=w_j$.  The triangle inequality for
+a finite sum (Preamble) then gives
+$\|w\|=\bigl\|\sum_iw_i\,e_i\bigr\|\le\sum_i\|w_i\,e_i\|$, and
+$\|w_i\,e_i\|=|w_i|\,\|e_i\|=|w_i|$ since $\|e_i\|=1$.
+
+\emph{(ii).}  By definition $\|w\|=\bigl(\sum_l|w_l|^2\bigr)^{1/2}$, and
+$|w_i|=\bigl(|w_i|^2\bigr)^{1/2}$ because $|w_i|\ge0$.  A single summand of a
+sum of nonnegative terms is at most the whole sum, so
+$|w_i|^2\le\sum_l|w_l|^2$, and the square root is monotone, giving
+$|w_i|\le\|w\|$.
+
+\emph{(iii).}  Fix $L$ and $B\ge0$ with $|(Le_j)_i|\le B$ for all $i,j$, and fix
+$v$.
+
+\emph{Step 1: a column bound.}  For each $j$, applying (i) to the vector
+$Le_j$ and then the entry bound to each of its $n$ coordinates,
+\[
+\|Le_j\|\ \le\ \sum_i\bigl|(Le_j)_i\bigr|\ \le\ \sum_{i}B\ =\ nB,
+\]
+the last equality because the sum has exactly $n$ terms.
+
+\emph{Step 2: expansion and the triangle inequality.}  As in (i),
+$v=\sum_jv_j\,e_j$.  Since $L$ is linear, $Lv=\sum_jv_j\,Le_j$, so by the
+triangle inequality and homogeneity of the norm,
+\[
+\|Lv\|\ \le\ \sum_j\bigl\|v_j\,Le_j\bigr\|\ =\ \sum_j|v_j|\,\|Le_j\| .
+\]
+
+\emph{Step 3: conclusion.}  By (ii), $|v_j|\le\|v\|$, and by Step 1,
+$\|Le_j\|\le nB$; both factors are nonnegative, so each term is at most
+$\|v\|\,nB$.  Summing the $n$ terms,
+\[
+\|Lv\|\ \le\ \sum_{j}\|v\|\,(nB)\ =\ n\cdot\|v\|\cdot nB
+\ =\ \bigl((n:\R)\cdot n\bigr)\,B\,\|v\| ,
+\]
+which is the assertion.
+\end{proof}

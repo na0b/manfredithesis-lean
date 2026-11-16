@@ -1,0 +1,100 @@
+\begin{helper}[The absorption step in the subquadratic regime $1<p<2$]
+Let $p\in\R$ with $1<p<2$.  Then there are $b_0>0$ and $c>0$, depending only on
+$p$, with the following property.  Let $n\in\N$, let
+$\varepsilon,a,b\in\R$, let $B\subseteq\R^n$ and let
+$G,G_v\colon\R^n\to\R^n$.  Throughout, $|\cdot|$ is the Euclidean norm, all
+integrals are over $B$ against Lebesgue measure, and every power of a
+nonnegative real is the real power, written exactly as it is printed --- in
+particular the weight $(\varepsilon+|G|^2+|G_v|^2)^{\frac p2-1}$ is the real
+power, which for $p<2$ has a negative exponent and is therefore NOT bounded
+below by a constant.  Assume
+\begin{enumerate}
+\item[(H1)] $0\le\varepsilon\le1$, $0\le a$, $0\le b$ and $b\le b_0$;
+\item[(H2)] $B$ is measurable with $|B|<\infty$, and $G$, $G_v$ and $G-G_v$ all
+  lie in $L^p(B)$;
+\item[(H3)] the weighted inequality
+  \[
+  \int_B(\varepsilon+|G|^2+|G_v|^2)^{\frac p2-1}|G-G_v|^2
+  \ \le\ a\int_B(1+|G|^2)^{\frac p2}+b\int_B|G-G_v|^p .
+  \]
+\end{enumerate}
+Then
+\[
+\int_B|G-G_v|^p\ \le\ c\,\bigl(a+a^{\frac p2}+b^{\frac p2}\bigr)
+  \int_B(1+|G|^2)^{\frac p2}.
+\]
+The conclusion is stated in this single form, which is what the consumers use.
+It is deliberately not the paper's printed closed form
+$a^{p/2}(6+6a)^{1-p/2}+6b^{p/2}(1+a)$: that expression is false for $p>2$, and
+the constant asserted here is the one the statement names and nothing more.
+\end{helper}
+\begin{proof}
+Write $X=\int_B|G-G_v|^p$, $Y=\int_B(1+|G|^2)^{p/2}$,
+$Q(x)=\varepsilon+|G(x)|^2+|G_v(x)|^2$, $\theta=p/2$, so $0<\theta<1$ by
+hypothesis, and $I=\int_BQ^{\theta-1}|G-G_v|^2$.  All four quantities are
+finite and nonnegative: $X$ and $Y$ because $G$ and $G-G_v$ lie in $L^p(B)$ and
+$|B|<\infty$ --- for $Y$ use $(1+s^2)^{p/2}\le2^{p/2}(1+s^p)$, which follows
+from $1+s^2\le2\max\{1,s^2\}$ and monotonicity of $t\mapsto t^{p/2}$ --- and
+$I$ and $\int_BQ^\theta$ by the pointwise bounds established in Step 2 below.
+
+\emph{Step 1: an abstract absorption lemma.}  For every $\theta\in(0,1)$ there
+are $b_0\in(0,1]$ and $c>0$, depending only on $\theta$, such that whenever
+$X,Y,a,b\ge0$ with $b\le b_0$ satisfy
+\[
+X\ \le\ (aY+bX)^{\theta}\bigl(3^{\theta}Y+2^{\theta}X\bigr)^{1-\theta},
+\tag{A}
+\]
+one has $X\le c(a+a^{\theta}+b^{\theta})Y$.  This is elementary and uses only
+the parametrised Young inequality $uv\le\lambda u^{1/\theta}+C(\lambda,\theta)v^{1/(1-\theta)}$
+for $u,v\ge0$ and $\lambda>0$: applying it to the two factors of (A) splits the
+right-hand side into four terms, two of which are multiples of $X$ with
+coefficients that can be made $\le\tfrac14$ by choosing $\lambda$ small and
+then $b_0$ small, and two of which are multiples of $Y$ with coefficients of
+the stated form.  Absorbing the two $X$-terms on the left --- legitimate
+because $X<\infty$ --- and doubling gives the conclusion.  Fix such $b_0$ and
+$c$ for $\theta=p/2$; they depend only on $p$, as the statement requires.
+
+\emph{Step 2: two pointwise identities.}  First, for $Q>0$ and $d\ge0$,
+\[
+d^{p}=\bigl(Q^{\frac p2-1}d^{2}\bigr)^{\frac p2}\,Q^{\frac{(2-p)p}{4}} ,
+\tag{1}
+\]
+an identity, not an inequality: the exponents of $Q$ on the right are
+$(\tfrac p2-1)\tfrac p2$ and $\tfrac{(2-p)p}{4}$, which sum to $0$, and the
+exponent of $d$ is $2\cdot\tfrac p2=p$.  Second, $\varepsilon\le1$ and
+$|G_v|^2\le2(|G|^2+|G-G_v|^2)$ give $Q\le3(1+|G|^2)+2|G-G_v|^2$ pointwise,
+whence, by monotonicity of $t\mapsto t^{p/2}$ on $[0,\infty)$ and the
+subadditivity $(s+t)^{p/2}\le s^{p/2}+t^{p/2}$ valid for $0<p/2<1$,
+\[
+Q^{\frac p2}\ \le\ 3^{\frac p2}\bigl(1+|G|^2\bigr)^{\frac p2}
+  +2^{\frac p2}|G-G_v|^{p} .
+\tag{2}
+\]
+Integrating (2) gives $\int_BQ^{\theta}\le3^{\theta}Y+2^{\theta}X$, and in
+particular $\int_BQ^{\theta}<\infty$; integrating the bound
+$Q^{\theta-1}|G-G_v|^2\le2^{1-\theta}Q^{\theta}$, which follows from
+$|G-G_v|^2\le2Q$ and $\theta-1<0$, gives $I<\infty$.
+
+\emph{Step 3: Hölder with the conjugate pair $(2/p,\,2/(2-p))$.}  These two
+exponents are conjugate, both being $>1$ because $0<p<2$.  By (1), pointwise
+$|G-G_v|^p=f\cdot g$ with
+$f=\bigl(Q^{\theta-1}|G-G_v|^2\bigr)^{\theta}$ and
+$g=Q^{(2-p)p/4}$, both nonnegative and measurable, and
+$f^{2/p}=Q^{\theta-1}|G-G_v|^2$, $g^{2/(2-p)}=Q^{\theta}$.  Both lie in the
+respective Lebesgue classes by Step 2.  Hölder's inequality (Preamble) therefore
+gives
+\[
+X=\int_Bfg\ \le\ \Bigl(\int_BQ^{\theta-1}|G-G_v|^2\Bigr)^{\theta}
+   \Bigl(\int_BQ^{\theta}\Bigr)^{1-\theta}
+ = I^{\theta}\Bigl(\int_BQ^{\theta}\Bigr)^{1-\theta}.
+\]
+
+\emph{Step 4: insert the hypothesis and absorb.}  By (H3), $I\le aY+bX$, and by
+Step 2, $\int_BQ^{\theta}\le3^{\theta}Y+2^{\theta}X$.  Both bounds have
+nonnegative sides and both exponents $\theta$, $1-\theta$ are positive, so
+monotonicity of $t\mapsto t^{\theta}$ and $t\mapsto t^{1-\theta}$ on
+$[0,\infty)$ turns Step 3 into exactly the hypothesis (A) of Step 1.  Applying
+Step 1 with the present $X,Y,a,b$ --- its hypotheses $X,Y,a,b\ge0$ and
+$b\le b_0$ are (H1) and the finiteness of Step 2 --- yields
+$X\le c(a+a^{\theta}+b^{\theta})Y$, which is the assertion.
+\end{proof}

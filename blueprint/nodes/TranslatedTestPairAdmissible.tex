@@ -1,0 +1,154 @@
+\begin{helper}[A small translate of a compactly supported $W^{1,2}$ test pair is again admissible]
+Let $n\in\mathbb{N}$, let $\Omega\subseteq\R^n$ be open and let $k$ be an index
+in $\{1,\dots,n\}$, with $e_k$ the corresponding coordinate vector.  Let
+$\varphi\colon\R^n\to\R$ and $g_\varphi\colon\R^n\to\R^n$ satisfy
+\begin{enumerate}
+\item[(H1)] $\varphi\in W^{1,2}(\Omega)$ with weak gradient $g_\varphi$
+  (\noderef{MemW1pOn});
+\item[(H2)] $\varphi$ has compact support and
+  $\operatorname{supp}\varphi\subseteq\Omega$;
+\item[(H3)] $g_\varphi(x)=0$ for almost every $x$ with $x\in\Omega$ and
+  $x\notin\operatorname{supp}\varphi$.
+\end{enumerate}
+Let $\delta\in\R$ satisfy
+\begin{enumerate}
+\item[(H4)] $\delta>0$ and
+  $K_{3\delta}:=\{x:\operatorname{dist}(x,\operatorname{supp}\varphi)\le3\delta\}
+  \subseteq\Omega$.
+\end{enumerate}
+Write $K_0=\operatorname{supp}\varphi$,
+$K_s=\{x:\operatorname{dist}(x,K_0)\le s\}$ and
+$\widehat g_\varphi=\chi_{K_0}g_\varphi$.  Then for every $h\in\R$ with
+$0<|h|\le\delta$ the pair
+\[
+\varphi_h=\varphi(\cdot-he_k),
+\qquad
+G_h=\widehat g_\varphi(\cdot-he_k)
+\]
+satisfies all three of
+\begin{enumerate}
+\item[(i)] $\varphi_h\in W^{1,2}(\Omega)$ with weak gradient $G_h$
+  (\noderef{MemW1pOn});
+\item[(ii)] $\varphi_h$ has compact support;
+\item[(iii)] $\operatorname{supp}\varphi_h\subseteq\Omega$.
+\end{enumerate}
+\end{helper}
+\begin{proof}
+These three clauses are exactly the test class of the differentiated equation.
+That equation is an $L^2$ statement, so its test functions are $W^{1,2}$ with
+compact support in $\Omega$; the exponent is $2$ throughout and is never
+promoted to $p$.
+
+Fix $h$ with $0<|h|\le\delta$.  The sets $K_s$ are closed, and bounded for
+every $s$ because $K_0$ is compact, hence compact; and $K_s\subseteq
+K_{3\delta}\subseteq\Omega$ for $s\le3\delta$ by (H4), the $K_s$ being
+nondecreasing in $s$.  By (H3) we have $\widehat g_\varphi=g_\varphi$ almost
+everywhere on $\Omega$, while $\widehat g_\varphi$ vanishes \emph{everywhere}
+off $K_0$ by construction.  Note also
+$\|se_k\|=|s|$ for every $s\in\R$, so
+$\operatorname{dist}(x+se_k,x)=|s|$.
+
+\emph{Step 1: the cut-off.}  Let $\rho$ be a standard mollifier (Preamble): a
+$C^\infty$ function with $\rho\ge0$,
+$\operatorname{supp}\rho\subseteq\overline{B_1(0)}$ and $\int_{\R^n}\rho=1$, and
+put $\rho_\delta(z)=\delta^{-n}\rho(z/\delta)$, so that
+$\rho_\delta\in C^\infty$, $\rho_\delta\ge0$,
+$\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}$ and
+$\int\rho_\delta=1$.  Define
+\[
+\chi=\chi_{K_{2\delta}}*\rho_\delta,
+\qquad
+\chi(x)=\int_{\R^n}\chi_{K_{2\delta}}(y)\rho_\delta(x-y)\,dy .
+\]
+Then $\chi\in C^\infty(\R^n)$ by the Preamble item on convolution with a smooth
+compactly supported kernel, $\chi_{K_{2\delta}}$ being bounded with compact
+support and hence locally integrable; and $0\le\chi\le1$, because
+$\rho_\delta\ge0$ integrates to $1$ and $0\le\chi_{K_{2\delta}}\le1$.
+Moreover $\chi=1$ on the open set $\{x:\operatorname{dist}(x,K_0)<\delta\}$:
+for such $x$ and $|x-y|\le\delta$ one has
+$\operatorname{dist}(y,K_0)\le|x-y|+\operatorname{dist}(x,K_0)<2\delta$, so
+$y\in K_{2\delta}$, the integrand is $\rho_\delta(x-y)$, and its integral is
+$1$.  Consequently $\chi$ is constant on that open set and all its partial
+derivatives vanish there.  Finally $\chi=0$ off $K_{3\delta}$: if
+$\operatorname{dist}(x,K_0)>3\delta$ and $|x-y|\le\delta$ then
+$\operatorname{dist}(y,K_0)>2\delta$, so $y\notin K_{2\delta}$ and the integrand
+vanishes.  Hence $\operatorname{supp}\chi\subseteq K_{3\delta}\subseteq\Omega$
+is compact.
+
+\emph{Step 2: clauses (ii) and (iii).}  The function $\varphi_h$ vanishes off
+$K_0+he_k$: if $\varphi(x-he_k)\ne0$ then $x-he_k\in K_0$.  The set $K_0+he_k$
+is compact, being the image of the compact $K_0$ under a translation, and
+closed; hence $\operatorname{supp}\varphi_h\subseteq K_0+he_k$ is compact, which
+is (ii).  Moreover $\operatorname{dist}(x+he_k,K_0)\le|h|\le\delta$ for
+$x\in K_0$, so $K_0+he_k\subseteq K_\delta\subseteq\Omega$, which gives (iii).
+The same argument shows that $G_h$ vanishes off $K_0+he_k$, since
+$\widehat g_\varphi$ vanishes off $K_0$.
+
+\emph{Step 3: the $L^2$ memberships.}  The functions $\varphi$ and $g_\varphi$
+are almost everywhere strongly measurable on $\Omega$ by (H1)
+(\noderef{MemW1pOn}), and translation preserves Lebesgue measurability
+(Preamble), so $\varphi_h$ and $G_h$ are measurable.  By translation invariance
+of Lebesgue measure (Preamble), and because the integrands vanish off
+$K_0+he_k\subseteq\Omega$ respectively $K_0\subseteq\Omega$,
+\[
+\int_\Omega|\varphi_h|^2\,dx=\int_{\R^n}|\varphi(x-he_k)|^2\,dx
+=\int_{\R^n}|\varphi|^2\,dy=\int_\Omega|\varphi|^2\,dy<\infty,
+\]
+the last integral being finite by (H1) at the exponent $2$; and the same
+computation with $|\widehat g_\varphi|\le|g_\varphi|$ in place of $\varphi$
+gives $\int_\Omega|G_h|^2<\infty$.
+
+\emph{Step 4: the weak-gradient identity.}  Let $\psi\in C^\infty(\R^n)$ have
+compact support with $\operatorname{supp}\psi\subseteq\Omega$, and fix an index
+$i$.  Put $\widehat\psi=\psi(\cdot+he_k)$, again $C^\infty$ with compact
+support, and note $D_i\widehat\psi=(D_i\psi)(\cdot+he_k)$.  Then
+\[
+\int_\Omega\varphi_h\,D_i\psi\,dx
+=\int_{\R^n}\varphi(x-he_k)(D_i\psi)(x)\,dx
+=\int_{\R^n}\varphi(y)\,(D_i\psi)(y+he_k)\,dy
+=\int_{\R^n}\varphi\,D_i\widehat\psi\,dy ,
+\]
+the first equality because the integrand vanishes off $K_0+he_k\subseteq\Omega$
+and the second by translation invariance (Preamble).  Next, $\varphi$ vanishes
+off $K_0$, and on the open set $\{\operatorname{dist}(\cdot,K_0)<\delta\}
+\supseteq K_0$ we have $\chi=1$ and $D_i\chi=0$ by Step 1, so there
+$D_i(\chi\widehat\psi)=\chi D_i\widehat\psi+\widehat\psi D_i\chi
+=D_i\widehat\psi$; hence the two integrands $\varphi D_i\widehat\psi$ and
+$\varphi D_i(\chi\widehat\psi)$ agree at every point and
+\[
+\int_{\R^n}\varphi\,D_i\widehat\psi
+=\int_{\R^n}\varphi\,D_i\bigl(\chi\widehat\psi\bigr)
+=\int_\Omega\varphi\,D_i\bigl(\chi\widehat\psi\bigr) ,
+\]
+the last equality because the integrand vanishes off $K_0\subseteq\Omega$.  The
+function $\chi\widehat\psi$ is $C^\infty$, has compact support contained in
+$\operatorname{supp}\chi$, and
+$\operatorname{supp}(\chi\widehat\psi)\subseteq\operatorname{supp}\chi
+\subseteq\Omega$ by Step 1, so it is an admissible test function for the
+defining weak-gradient identity of (H1).  Applying that identity to
+$(\varphi,g_\varphi)$,
+\[
+\int_\Omega\varphi\,D_i\bigl(\chi\widehat\psi\bigr)
+=-\int_\Omega(g_\varphi)_i\,\chi\widehat\psi
+=-\int_\Omega(\widehat g_\varphi)_i\,\widehat\psi ,
+\]
+the last equality because $g_\varphi=\widehat g_\varphi$ almost everywhere on
+$\Omega$ by (H3), $\widehat g_\varphi$ vanishes off $K_0$, and $\chi=1$ on
+$K_0$.  Undoing the translation exactly as above,
+\[
+-\int_\Omega(\widehat g_\varphi)_i\,\widehat\psi
+=-\int_{\R^n}(\widehat g_\varphi)_i(y)\,\psi(y+he_k)\,dy
+=-\int_{\R^n}(G_h)_i(x)\,\psi(x)\,dx
+=-\int_\Omega(G_h)_i\,\psi ,
+\]
+using translation invariance again and that the integrands vanish off
+$K_0\subseteq\Omega$ respectively $K_0+he_k\subseteq\Omega$.  Chaining the four
+displays gives
+\[
+\int_\Omega\varphi_h\,D_i\psi\,dx=-\int_\Omega(G_h)_i\,\psi\,dx
+\]
+for every admissible $\psi$ and every index $i$, which is the weak-gradient
+identity for the pair $(\varphi_h,G_h)$ on $\Omega$.  Together with the $L^2$
+memberships of Step 3 this is clause (i) (\noderef{MemW1pOn}), and the proof is
+complete.
+\end{proof}

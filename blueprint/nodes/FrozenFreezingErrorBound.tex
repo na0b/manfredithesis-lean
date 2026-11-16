@@ -1,0 +1,202 @@
+\begin{lemma}[The two freezing errors, and the moduli of \textup{(4.7)}]
+Let $n\ge1$, let $p>1$, let $0<\alpha\le1$, let $C_1\ge0$, let $K>0$, let
+$C_\sigma\in\R$, and let $\sigma\colon\R\to\R$ be continuous and nondecreasing
+with $\sigma(0)=0$ and $\sigma(t)\le C_\sigma$ for every $t$.  Then there are a
+constant $C_2>0$ and functions $\sigma_0,\sigma_1\colon\R\to\R$ which satisfy
+\[
+\sigma_0(t)=K\bigl(\sigma(t+C_1t^{\alpha})+C_2\,\sigma(t+2C_1t^{\alpha})\bigr),
+\qquad
+\sigma_1(t)=K\,C_2\,\sigma(t+2C_1t^{\alpha})
+\qquad(t>0),
+\]
+and which are nonnegative, bounded above by one common constant, continuous and
+nondecreasing on all of $\R$, with $\sigma_0(0)=\sigma_1(0)=0$, such that the
+following holds.
+
+Let $\varepsilon,z_0,R\in\R$ with $R>0$, let $x_0\in\R^n$, let
+$f\colon\R^n\times\R\times\R^n\to\R$, let $f^0\colon\R^n\to\R$, let
+$u,v\colon\R^n\to\R$ and $g,g_v\colon\R^n\to\R^n$, and write $B=B_R(x_0)$.
+Assume
+\begin{itemize}
+\item $g\in L^p(B)$ and $g_v\in L^p(B)$;
+\item each of $x\mapsto f^0(g(x))$, $x\mapsto f^0(g_v(x))$,
+  $x\mapsto f(x,u(x),g(x))$ and $x\mapsto f(x,v(x),g_v(x))$ is integrable on
+  $B$;
+\item for every $x\in B$, every $z\in\R$ and every $h\in\R^n$,
+  \[
+  \bigl|f(x,z,h)-f^0(h)\bigr|
+  \le(1+|h|^2)^{\frac p2}\,\sigma\bigl(|x-x_0|+|z-z_0|\bigr);
+  \]
+\item $|u(x)-z_0|\le C_1R^{\alpha}$ and $|v(x)-z_0|\le C_1R^{\alpha}$ for
+  almost every $x\in B$;
+\item $\displaystyle\int_Bf(x,u,g)\,dx\le\int_Bf(x,v,g_v)\,dx$;
+\item $\displaystyle\int_B\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}
+  |g-g_v|^2dx\le K\Bigl\{\int_Bf^0(g)\,dx-\int_Bf^0(g_v)\,dx\Bigr\}$.
+\end{itemize}
+Then
+\[
+\int_B\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}|g-g_v|^2dx
+\le\sigma_0(R)\int_B(1+|g|^2)^{\frac p2}dx
++\sigma_1(R)\int_B|g-g_v|^{p}\,dx .
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the constants and the two moduli.}  Put
+\[
+C_2=\max\bigl\{1,2^{\frac p2-1}\bigr\}\cdot2^{\frac p2}>0,
+\]
+and define, for $t>0$,
+\[
+\sigma_0(t)=K\bigl(\sigma(t+C_1t^{\alpha})+C_2\,\sigma(t+2C_1t^{\alpha})\bigr),
+\qquad
+\sigma_1(t)=K\,C_2\,\sigma(t+2C_1t^{\alpha}),
+\]
+and $\sigma_0(t)=\sigma_1(t)=0$ for $t\le0$.  Note $C_\sigma\ge\sigma(0)=0$, and
+that the two displayed formulas for $t>0$ are the two assertions of the
+statement.  \emph{These are read off the thesis, not invented}: they are
+exactly the two bracketed coefficients the thesis displays in
+(4.7) of the thesis at l.~1150--1152, divided by the $\nu_0C$ of (4.5) of the thesis
+which the consumer supplies as $K$.  The thesis writes its own explicit
+formulas for the same construction one lemma later, at l.~1526--1527 for the
+\S5 analogue, and those differ in exactly two legitimate ways: they carry an
+extra $2\gamma_4C_1R^{\alpha}$, for which \S4 has no $\gamma_4$, and they use
+$C_1$ where these use $2C_1$, because \S5 compares against a fixed point of the
+sphere rather than against the centre value.
+
+For $c\ge0$ write $S_c(t)=t+c\,t^{\alpha}$.  Since $\alpha>0$, the real power
+$t\mapsto t^{\alpha}$ is continuous at every real $t$, so $S_c$ is continuous on
+$\R$; $S_c(0)=0+c\cdot0^{\alpha}=0$ because $0^{\alpha}=0$ for $\alpha\ne0$;
+$S_c(t)\ge0$ for $t\ge0$, since both summands are; and $S_c$ is nondecreasing on
+$[0,\infty)$, because $t\mapsto t^{\alpha}$ is nondecreasing there.
+
+\emph{Nonnegativity.}  For $t\le0$ both functions are $0$.  For $t>0$ we have
+$S_{C_1}(t)\ge0$ and $S_{2C_1}(t)\ge0$, so
+$\sigma(S_{C_1}(t))\ge\sigma(0)=0$ and $\sigma(S_{2C_1}(t))\ge0$ by
+monotonicity, and $K,C_2>0$.
+
+\emph{Boundedness.}  Take $C=K(1+C_2)C_\sigma$.  For $t\le0$ both functions are
+$0\le C$, because $K,C_2>0$ and $C_\sigma\ge0$.  For $t>0$,
+$\sigma_0(t)\le K(C_\sigma+C_2C_\sigma)=C$ and
+$\sigma_1(t)\le KC_2C_\sigma\le C$.
+
+\emph{Continuity.}  On $(-\infty,0]$ each function is the constant $0$, and on
+$(0,\infty)$ each is a composition and a linear combination of continuous
+functions, $\sigma$ and $S_c$ both being continuous.  At $t=0$ the two
+prescriptions agree: $S_{C_1}(0)=S_{2C_1}(0)=0$ and $\sigma(0)=0$, so the
+second prescription also returns $0$ there.  Hence both functions are
+continuous on $\R$.
+
+\emph{Monotonicity.}  Let $s\le t$.  If $t\le0$ both values are $0$.  If
+$s\le0<t$ the value at $s$ is $0$ and the value at $t$ is nonnegative, as just
+shown.  If $0<s\le t$ then $S_{C_1}(s)\le S_{C_1}(t)$ and
+$S_{2C_1}(s)\le S_{2C_1}(t)$, so the same inequalities hold after applying the
+nondecreasing $\sigma$, and then after multiplying by the positive $K$ and
+$C_2$.
+
+\emph{Value at $0$.}  Both are $0$ by definition, $0\le0$.
+
+Now fix the data, with $R>0$; since $R>0$ we have $\sigma_0(R)=
+K(\sigma(R+C_1R^{\alpha})+C_2\sigma(R+2C_1R^{\alpha}))$ and
+$\sigma_1(R)=KC_2\sigma(R+2C_1R^{\alpha})$.
+
+\emph{Step 2: two integrability facts.}  First, for $s\ge0$,
+$1+s^2\le(1+s)^2$, so $(1+s^2)^{p/2}\le(1+s)^{p}$ because $t\mapsto t^{p/2}$ is
+nondecreasing on $[0,\infty)$ and $((1+s)^2)^{p/2}=(1+s)^p$.  If
+$h\in L^p(B)$ is $\R^n$-valued then $1+|h|\in L^p(B)$, the constant $1$ lying
+in $L^p(B)$ because $|B|<\infty$ (Preamble: the volume of a ball), so
+$(1+|h|)^p\in L^1(B)$; and $x\mapsto(1+|h(x)|^2)^{p/2}$ is measurable, being a
+continuous function of $|h|$.  By domination (Preamble),
+$x\mapsto(1+|h(x)|^2)^{p/2}$ is integrable on $B$.  We use this for $h=g$ and
+$h=g_v$.  Second, $g-g_v\in L^p(B)$, so $|g-g_v|^p$ is integrable on $B$.
+
+\emph{Step 3: the elementary power inequality and \textup{(6.5)}.}  For
+$q>0$ and $X,Y\ge0$,
+\[
+(X+Y)^q\le\max\{1,2^{q-1}\}\,(X^q+Y^q),
+\tag{3a}
+\]
+by subadditivity of $t\mapsto t^q$ for $0<q\le1$ and by the power-mean
+inequality for $q\ge1$.  Now fix $x\in B$.  From $g_v=g-(g-g_v)$ we get
+$|g_v|\le|g|+|g-g_v|$, hence
+$|g_v|^2\le2|g|^2+2|g-g_v|^2$ and so
+\[
+1+|g_v(x)|^2\le2\bigl(1+|g(x)|^2\bigr)+2|g(x)-g_v(x)|^2 .
+\]
+Raising to the power $p/2\ge0$, which is nondecreasing on $[0,\infty)$, and
+applying (3a) with $q=p/2$, $X=2(1+|g|^2)$ and $Y=2|g-g_v|^2$, and then
+$(2Z)^{p/2}=2^{p/2}Z^{p/2}$ and $(|g-g_v|^2)^{p/2}=|g-g_v|^p$,
+\[
+\bigl(1+|g_v(x)|^2\bigr)^{\frac p2}
+\le C_2\Bigl(\bigl(1+|g(x)|^2\bigr)^{\frac p2}+|g(x)-g_v(x)|^{p}\Bigr).
+\]
+Both sides are integrable on $B$ by Step 2, so integrating,
+\[
+\int_B(1+|g_v|^2)^{\frac p2}
+\le C_2\Bigl\{\int_B(1+|g|^2)^{\frac p2}+\int_B|g-g_v|^{p}\Bigr\}.
+\tag{3b}
+\]
+
+\emph{Step 4: each freezing error.}  Let $w\colon\R^n\to\R$ and
+$h\colon\R^n\to\R^n$, let $c\ge0$, suppose $x\mapsto f(x,w(x),h(x))$,
+$x\mapsto f^0(h(x))$ and $x\mapsto(1+|h|^2)^{p/2}$ are integrable on $B$ and
+that $|w-z_0|\le c$ almost everywhere on $B$.  Then
+\[
+\Bigl|\int_Bf(x,w,h)\,dx-\int_Bf^0(h)\,dx\Bigr|
+\le\sigma(R+c)\int_B(1+|h|^2)^{\frac p2}dx .
+\tag{4a}
+\]
+Indeed, the difference of the two integrals is the integral of the difference,
+which is integrable; the absolute value of an integral is at most the integral
+of the absolute value (Preamble); and for almost every $x\in B$ the third
+hypothesis of the lemma at $(x,w(x),h(x))$ gives
+\[
+\bigl|f(x,w(x),h(x))-f^0(h(x))\bigr|
+\le(1+|h(x)|^2)^{\frac p2}\sigma\bigl(|x-x_0|+|w(x)-z_0|\bigr)
+\le(1+|h(x)|^2)^{\frac p2}\sigma(R+c),
+\]
+the second step because $|x-x_0|\le R$ on $B$, $|w(x)-z_0|\le c$ almost
+everywhere, and $\sigma$ is nondecreasing, the weight being nonnegative.
+Monotonicity of the integral (Preamble) gives (4a).
+
+Apply (4a) twice: with $(w,h,c)=(u,g,C_1R^{\alpha})$, and with
+$(w,h,c)=(v,g_v,2C_1R^{\alpha})$ --- legitimate because
+$|v-z_0|\le C_1R^{\alpha}\le2C_1R^{\alpha}$ almost everywhere, $C_1R^{\alpha}$
+being nonnegative.  This gives
+\[
+\int_Bf^0(g)-\int_Bf(x,u,g)\le\sigma(R+C_1R^{\alpha})\int_B(1+|g|^2)^{\frac p2},
+\qquad
+\int_Bf(x,v,g_v)-\int_Bf^0(g_v)
+\le\sigma(R+2C_1R^{\alpha})\int_B(1+|g_v|^2)^{\frac p2},
+\]
+each being at most the corresponding absolute value.
+
+\emph{Step 5: \textup{(4.7)} and the conclusion.}  Writing the four integrals
+as real numbers and adding the two displays of Step 4 to the minimality
+hypothesis $\int_Bf(x,u,g)\le\int_Bf(x,v,g_v)$,
+\[
+\int_Bf^0(g)-\int_Bf^0(g_v)
+\le\sigma(R+C_1R^{\alpha})\int_B(1+|g|^2)^{\frac p2}
++\sigma(R+2C_1R^{\alpha})\int_B(1+|g_v|^2)^{\frac p2},
+\]
+because the left-hand side is the sum of the three brackets
+$\bigl\{\int_Bf^0(g)-\int_Bf(x,u,g)\bigr\}$,
+$\bigl\{\int_Bf(x,v,g_v)-\int_Bf^0(g_v)\bigr\}$ and
+$\bigl\{\int_Bf(x,u,g)-\int_Bf(x,v,g_v)\bigr\}$, of which the third is at most
+$0$.  Substituting (3b) into the second term --- legitimate because
+$\sigma(R+2C_1R^{\alpha})\ge\sigma(0)=0$, the argument being nonnegative ---
+\[
+\int_Bf^0(g)-\int_Bf^0(g_v)
+\le\bigl\{\sigma(R+C_1R^{\alpha})+C_2\sigma(R+2C_1R^{\alpha})\bigr\}
+\int_B(1+|g|^2)^{\frac p2}
++C_2\sigma(R+2C_1R^{\alpha})\int_B|g-g_v|^{p} ,
+\]
+which is the thesis' (4.7) of the thesis.  Multiplying by $K>0$ and combining with
+the last hypothesis of the lemma,
+\[
+\int_B\bigl(\varepsilon+|g|^2+|g_v|^2\bigr)^{\frac p2-1}|g-g_v|^2
+\le K\Bigl\{\int_Bf^0(g)-\int_Bf^0(g_v)\Bigr\}
+\le\sigma_0(R)\int_B(1+|g|^2)^{\frac p2}+\sigma_1(R)\int_B|g-g_v|^{p},
+\]
+by the formulas for $\sigma_0(R)$ and $\sigma_1(R)$ recorded at the end of
+Step 1.  That is the assertion.
+\end{proof}

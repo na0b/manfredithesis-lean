@@ -1,0 +1,129 @@
+\begin{lemma}[The local data of a quasiregular map on an interposed set]
+Let $n\ge2$, $K\ge1$, let $\Omega,\Omega''\subseteq\R^n$ be open with
+$\overline{\Omega''}\subseteq\Omega$ and $\overline{\Omega''}$ compact.  Let
+$F\colon\R^n\to\R^n$ be $K$-quasiregular on $\Omega$ with component gradients
+$G$ (\noderef{IsQuasiregularOn}), let $\tau$ be its distortion matrix
+(\noderef{IsDistortionMatrix}), assume the cited result (C7)
+(\noderef{CitedQuasiregularBasics}) at $n,K$ for the data $F,G,\tau$ on
+\emph{every} open $\Omega_0\subseteq\Omega$, and assume that there is no
+$c\in\R^n$ with $F=c$ almost everywhere on $\Omega$.  Let
+$\tau'\colon\R^n\to\R^{n\times n}$ satisfy $\tau=\tau'$ almost everywhere on
+$\Omega$, let $f^0$ be an integrand with
+$f^0(x,z,h)=(\tau'(x)h,h)^{n/2}$ for every $x\in\Omega''$ and all $z\in\R$,
+$h\in\R^n$, and fix $i\in\{1,\dots,n\}$.  Write $u=F^i$ and $g=G^i$.  Then
+there are reals $M,W_n\ge0$ with
+\[
+u\in W^{1,n}(\Omega'')\ \text{with weak gradient}\ g
+\quad(\noderef{MemW1pOn}),\qquad
+|u|\le M\ \text{almost everywhere on }\Omega'',
+\]
+\[
+\int_{\Omega''}|u|^{\,n}+\int_{\Omega''}\|g\|^{\,n}\le W_n^{\,n},
+\qquad
+\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g
+\quad(\noderef{IsLocalMinimumOn}).
+\]
+\end{lemma}
+\begin{proof}
+\textbf{(1) The local minimum on $\Omega''$.}  First, $F$ is $K$-quasiregular on
+$\Omega''$ with component gradients $G$, and $\tau$ is its distortion matrix
+there.  Indeed \noderef{IsQuasiregularOn} is the conjunction of
+$F^j\in W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak gradient $G^j$ for every $j$
+and of an almost-everywhere inequality guarded by $x\in\Omega$: the first
+transfers to $\Omega''$ by clause (2) of \noderef{WeakGradientRestrict}, applied
+with $q=n$ and the open sets $\Omega\supseteq\Omega''$ --- its guards being
+$1\le n$, $1\le n$, the openness of both sets and the inclusion
+$\Omega''\subseteq\Omega$, which follows from
+$\Omega''\subseteq\overline{\Omega''}\subseteq\Omega$ --- and the second because
+$\Omega''\subseteq\Omega$, so the guard $x\in\Omega''$ implies the guard
+$x\in\Omega$ and the exceptional null set only shrinks.  And
+\noderef{IsDistortionMatrix} is a statement of the form ``for every
+$x\in\Omega$, \dots'', so it restricts to $\Omega''\subseteq\Omega$ at once.
+
+Now apply the (C7) hypothesis at $\Omega_0=\Omega''$, legitimate since
+$\Omega''$ is open and $\Omega''\subseteq\Omega$, and feed it the two
+restrictions just obtained.  Its clause (4) gives
+\[
+\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\
+\bigl(\textstyle(x,z,h)\mapsto(\tau(x)h,h)^{n/2}\bigr)\ u\ g
+\tag{3.1}
+\]
+(\noderef{IsLocalMinimumOn}).  \emph{This is the one clause of \textup{(C7)}
+taken at $\Omega''$ rather than at $\Omega$, and it is why the hypothesis is
+assumed in the universal form.}
+
+Next, (3.1) holds with $f^0$ in place of the $\tau$-integrand.  By
+\noderef{IsLocalMinimumOn} the assertion (3.1) is the conjunction of
+$u\in W^{1,n}_{\mathrm{loc}}(\Omega'')$ with weak gradient $g$, which does not
+mention the integrand at all, of the integrability on
+$\operatorname{tsupp}\varphi$ of \emph{both} of the integrands appearing below,
+and of the family of inequalities
+\[
+\int_{\operatorname{tsupp}\varphi}f^0\bigl(x,u(x),g(x)\bigr)dx
+\le\int_{\operatorname{tsupp}\varphi}
+f^0\bigl(x,u(x)+\varphi(x),g(x)+g_\varphi(x)\bigr)dx
+\]
+over all $\varphi$ with $\varphi\in W^{1,n}(\Omega'')$ of weak gradient
+$g_\varphi$ (\noderef{MemW1pOn}), $\varphi$ of compact support and
+$\operatorname{tsupp}\varphi\subseteq\Omega''$.  Each such integral is taken
+over $\operatorname{tsupp}\varphi\subseteq\Omega''\subseteq\Omega$, and on
+$\Omega''$ the hypothesis on $f^0$ gives
+$f^0(x,z,h)=(\tau'(x)h,h)^{n/2}$, while $\tau'=\tau$ almost everywhere on
+$\Omega$ by hypothesis; hence for almost every $x$ in the domain of integration
+the two integrands agree pointwise, for all values of their second and third
+arguments.
+
+This settles both of the clauses that mention the integrand, by the same
+observation.  For the integrability clause: (3.1) supplies, for each admissible
+$\varphi$, the integrability on $\operatorname{tsupp}\varphi$ of
+$x\mapsto(\tau(x)g(x),g(x))^{n/2}$ and of
+$x\mapsto(\tau(x)(g+g_\varphi)(x),(g+g_\varphi)(x))^{n/2}$; each of the two
+$f^0$-integrands agrees with the corresponding $\tau$-integrand at almost every
+point of $\operatorname{tsupp}\varphi$ by the previous paragraph, and
+integrability on a set is preserved under altering the function on a null subset
+of it, so both $f^0$-integrands are integrable on $\operatorname{tsupp}\varphi$
+as well.  For the inequality clause: integrals of functions agreeing almost
+everywhere on the domain of integration are equal, so each of the two sides is
+unchanged by the substitution.  Hence all three clauses hold for $f^0$ and
+$\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g$.
+
+\textbf{(2) The Sobolev membership, $M$ and $W_n$.}  By clause (1) of
+\noderef{IsQuasiregularOn}, $u\in W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak
+gradient $g$ (\noderef{MemW1pLocOn}).  By clause (4) of
+\noderef{WeakGradientRestrict}, applied with $q=n$ and the open sets
+$\Omega\supseteq\Omega''$ --- whose hypotheses are $1\le n$, $1\le n$, the
+openness of both, $\Omega''\subseteq\Omega$, that local membership,
+$\overline{\Omega''}$ compact and $\overline{\Omega''}\subseteq\Omega$, the last
+two by hypothesis --- we get
+\[
+u\in W^{1,n}(\Omega'')\ \text{with weak gradient}\ g
+\tag{3.2}
+\]
+(\noderef{MemW1pOn}).  For the sup bound, apply the (C7) hypothesis at
+$\Omega_0=\Omega$, legitimate since $\Omega$ is open and $\Omega\subseteq\Omega$,
+and feed it the present \noderef{IsQuasiregularOn} and
+\noderef{IsDistortionMatrix} hypotheses; its clause (1) supplies a field
+$\widetilde F$ with $\widetilde F$ continuous on $\Omega$ and
+$F=\widetilde F$ almost everywhere on $\Omega$.  \emph{Clause \textup{(1)} does
+not say that $F$ is continuous, and that is why the representative is used
+here}: $F$ is carried by \noderef{IsQuasiregularOn} only as a
+$W^{1,n}_{\mathrm{loc}}$ map, determined up to a null set, so continuity is a
+property of $\widetilde F$ and not of $F$.  Its $i$-th component
+$\widetilde F^i$ is continuous on $\Omega$, hence on $\overline{\Omega''}$,
+which is a compact subset of $\Omega$ by hypothesis; a continuous real function
+on a compact set is bounded, so
+\[
+M=\sup_{\overline{\Omega''}}\bigl|\widetilde F^i\bigr|<\infty,
+\qquad\text{and}\qquad 0\le M,
+\]
+the nonnegativity because $M$ is a supremum of absolute values, taken to be $0$
+in the degenerate case $\overline{\Omega''}=\emptyset$.  Transport the bound to
+$u$: $F=\widetilde F$ almost everywhere on $\Omega$, hence componentwise, and
+$\Omega''\subseteq\Omega$, so $u=F^i=\widetilde F^i$ almost everywhere on
+$\Omega''$ and therefore $|u|\le M$ almost everywhere on $\Omega''$.
+
+By (3.2) and \noderef{MemW1pOn}, $u$ and $g$ lie in $L^n(\Omega'')$, so
+$\int_{\Omega''}|u|^n+\int_{\Omega''}\|g\|^n$ is a finite nonnegative number;
+put $W_n$ equal to its $n$-th root, so that $0\le W_n$ and
+$\int_{\Omega''}|u|^n+\int_{\Omega''}\|g\|^n\le W_n^{\,n}$.
+\end{proof}

@@ -1,0 +1,141 @@
+\begin{helper}[A scale-invariant inequality on a ball passes from smooth compactly supported functions to the $W^{1,2}$ class]
+Let $n\ge2$ and let $q,a,C_1\in\R$ with $q>1$, $a\ge0$ and $C_1>0$.  Assume the
+inequality is known in the smooth case:
+\begin{enumerate}
+\item[(H)] for every $x_0\in\R^n$, every $\rho>0$ and every
+  $\Phi\in C^\infty(\R^n)$ with compact support and
+  $\operatorname{supp}\Phi\subseteq B_\rho(x_0)$,
+  \[
+  \Bigl(\int_{B_\rho(x_0)}|\Phi|^{q}\,dx\Bigr)^{1/q}
+  \ \le\ C_1\rho^{a}
+  \Bigl(\int_{B_\rho(x_0)}|\nabla\Phi|^2\,dx\Bigr)^{1/2},
+  \]
+  where $\nabla\Phi(x)$ is the vector of the partial derivatives
+  $D_i\Phi(x)=d\Phi_x(e_i)$ and $|\cdot|$ its Euclidean norm.
+\end{enumerate}
+Then the same inequality holds for the $W^{1,2}$ class: for every
+$x_0\in\R^n$, every $\rho>0$ and every pair $(\varphi,g_\varphi)$ with
+$\varphi\in W^{1,2}(B_\rho(x_0))$ of weak gradient $g_\varphi$
+(\noderef{MemW1pOn}), $\varphi$ of compact support and
+$\operatorname{supp}\varphi\subseteq B_\rho(x_0)$,
+\[
+\Bigl(\int_{B_\rho(x_0)}|\varphi|^{q}\,dx\Bigr)^{1/q}
+\ \le\ C_1\rho^{a}
+\Bigl(\int_{B_\rho(x_0)}|g_\varphi|^2\,dx\Bigr)^{1/2}.
+\]
+\end{helper}
+\begin{proof}
+Write $B_\rho=B_\rho(x_0)$.  Since $q>1$ we have $q>0$, so $t\mapsto t^{1/q}$
+is nondecreasing on $[0,\infty)$ and $t\mapsto t^{q}$ is nonnegative; these are
+used at the end.
+
+\emph{Step 1: the smooth approximating sequence.}  Apply
+\noderef{WeakGradientSmoothApprox} with this $n$, the exponent $2$, the open set
+$B_\rho$ and the pair $(\varphi,g_\varphi)$; its hypotheses are $1\le n$ (from
+$n\ge2$), $1\le2$, openness of $B_\rho$, the $W^{1,2}$ membership, compactness
+of the support of $\varphi$ and $\operatorname{supp}\varphi\subseteq B_\rho$.
+It produces a compact $K$ with
+$\operatorname{supp}\varphi\subseteq K\subseteq B_\rho$ and functions
+$\Phi_m\in C^\infty(\R^n)$, each with compact support contained in $K$, such
+that
+\[
+\int_K|\Phi_m-\varphi|^2\,dx\to0
+\qquad\text{and}\qquad
+\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^2\,dx\to0
+\quad(m\to\infty)
+\tag{1}
+\]
+for every index $i$.  In particular $K$ has finite measure, being compact.
+
+\emph{Step 2: the smooth case at each $\Phi_m$.}  Each $\Phi_m$ is $C^\infty$
+with compact support contained in $K\subseteq B_\rho$, hence
+$\operatorname{supp}\Phi_m\subseteq B_\rho$, so (H) applies to it at this $x_0$
+and this $\rho$:
+\[
+\Bigl(\int_{B_\rho}|\Phi_m|^{q}\Bigr)^{1/q}
+\le C_1\rho^{a}\Bigl(\int_{B_\rho}|\nabla\Phi_m|^2\Bigr)^{1/2}.
+\tag{2}
+\]
+We pass to the limit in (2).
+
+\emph{Step 3: which integrands vanish off $K$.}  The functions $\varphi$ and
+each $\Phi_m$ vanish off $K$, their closed supports lying in $K$; and
+$\nabla\Phi_m$ vanishes off $K$ as well, because the differential of a function
+vanishes at every point outside its closed support, so
+$\nabla\Phi_m(x)=0$ for $x\notin\operatorname{supp}\Phi_m$ and a fortiori for
+$x\notin K$.  Since $K\subseteq B_\rho$, for each of these three integrands the
+integral over $B_\rho$ equals the integral over $K$:
+\[
+\int_{B_\rho}|\Phi_m|^{q}=\int_K|\Phi_m|^{q},
+\qquad
+\int_{B_\rho}|\varphi|^{q}=\int_K|\varphi|^{q},
+\qquad
+\int_{B_\rho}|\nabla\Phi_m|^{2}=\int_K|\nabla\Phi_m|^{2}.
+\tag{2a}
+\]
+\emph{No such claim is made about $g_\varphi$}, which need not vanish off $K$;
+for it we use only that the integrand $|g_\varphi|^2$ is nonnegative and
+$K\subseteq B_\rho$, so that by monotonicity of the integral (Preamble)
+\[
+\int_K|g_\varphi|^{2}\ \le\ \int_{B_\rho}|g_\varphi|^{2}=:G^{2},
+\qquad G\ge0 ,
+\tag{2b}
+\]
+and $G<\infty$ because $|g_\varphi|\in L^2(B_\rho)$ by \noderef{MemW1pOn}.
+
+\emph{Step 4: the right-hand side.}  Put
+\[
+\epsilon_m=\sum_{i=1}^n
+\Bigl(\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^{2}\Bigr)^{1/2}\ \ge\ 0 ,
+\]
+so $\epsilon_m\to0$ by (1).  By the $L^2$ triangle inequality (Minkowski,
+Preamble), then $|v|\le\sum_i|v_i|$ for $v\in\R^n$ applied pointwise to
+$v=\nabla\Phi_m-g_\varphi$ together with Minkowski again, and finally (2b),
+\[
+\Bigl(\int_K|\nabla\Phi_m|^{2}\Bigr)^{1/2}
+\le\Bigl(\int_K|g_\varphi|^{2}\Bigr)^{1/2}
++\Bigl(\int_K|\nabla\Phi_m-g_\varphi|^{2}\Bigr)^{1/2}
+\le G+\epsilon_m .
+\]
+With (2a) and $C_1\rho^{a}\ge0$, inequality (2) therefore reads
+\[
+\Bigl(\int_K|\Phi_m|^{q}\Bigr)^{1/q}
+\ \le\ C_1\rho^{a}\bigl(G+\epsilon_m\bigr)
+\qquad(m\in\mathbb{N}).
+\tag{4}
+\]
+
+\emph{Step 5: the left-hand side.}  By the first limit in (1) and the Preamble
+item on extracting an almost everywhere convergent subsequence from $L^2$
+convergence --- applicable because $K$ has finite measure, being compact, and
+the exponent $2$ is finite --- there is a subsequence $\Phi_{m_l}$ with
+$\Phi_{m_l}\to\varphi$ almost everywhere on $K$.  The functions
+$|\Phi_{m_l}|^{q}$ are nonnegative and measurable and converge almost
+everywhere on $K$ to $|\varphi|^{q}$, so Fatou's lemma (Preamble) gives
+\[
+\int_K|\varphi|^{q}\ \le\ \liminf_{l\to\infty}\int_K|\Phi_{m_l}|^{q} .
+\tag{5}
+\]
+
+\emph{Step 6: conclusion.}  Raising (4) to the power $q$ --- legitimate because
+both sides are nonnegative and $t\mapsto t^{q}$ is nondecreasing on
+$[0,\infty)$ --- gives
+$\int_K|\Phi_{m}|^{q}\le\bigl(C_1\rho^{a}(G+\epsilon_m)\bigr)^{q}$ for every
+$m$.  Along the subsequence the right-hand side converges to
+$\bigl(C_1\rho^{a}G\bigr)^{q}$, since $\epsilon_{m_l}\to0$, $G<\infty$ and
+$t\mapsto(C_1\rho^{a}t)^q$ is continuous on $[0,\infty)$.  With (5),
+\[
+\int_K|\varphi|^{q}\ \le\ \bigl(C_1\rho^{a}G\bigr)^{q}<\infty .
+\]
+By (2a) the left-hand side is $\int_{B_\rho}|\varphi|^{q}$, so that integral is
+\emph{finite} --- the integral on the left of the assertion is a genuine finite
+integral and not the value a divergent one would be assigned.  Finally
+$t\mapsto t^{1/q}$ is nondecreasing on $[0,\infty)$ and both sides are
+nonnegative, so taking $q$-th roots and recalling
+$G=\bigl(\int_{B_\rho}|g_\varphi|^2\bigr)^{1/2}$,
+\[
+\Bigl(\int_{B_\rho}|\varphi|^{q}\Bigr)^{1/q}
+\le C_1\rho^{a}\Bigl(\int_{B_\rho}|g_\varphi|^2\Bigr)^{1/2},
+\]
+which is the assertion.
+\end{proof}

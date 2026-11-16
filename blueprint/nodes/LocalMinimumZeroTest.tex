@@ -1,0 +1,191 @@
+\begin{lemma}[Minimality tested against a $W^{1,p}_0$ perturbation]
+Let $n\ge1$, let $p>1$, let $0\le\varepsilon\le1$, let $0<\lambda\le\Lambda$
+and let $a,\nu_0,\nu_1\in\R$.  Let $\Omega\subseteq\R^n$ be open and let
+$B\subseteq\Omega$ be open with $|B|<\infty$.  Let
+$f\colon\R^n\times\R\times\R^n\to\R$ satisfy
+(F1) of the thesis--(F3) of the thesis on $\Omega$ with the parameters
+$p,\varepsilon,\lambda,\Lambda,a,\nu_0,\nu_1$ and a modulus $\sigma$
+(\noderef{VariationalStructureF123}).  Let
+$u,v\colon\R^n\to\R$ and $g,g_v\colon\R^n\to\R^n$ be such that
+\begin{itemize}
+\item $u\in L^p(B)$ and $g\in L^p(B)$;
+\item $u$ is a local minimum for $F(\cdot;E)=\int_Ef(x,\cdot,\nabla\cdot)\,dx$
+  in $\Omega$ with weak gradient $g$ (\noderef{IsLocalMinimumOn});
+\item $v-u$ lies in $W^{1,p}_0(B)$ with weak gradient $g_v-g$
+  (\noderef{MemW1pZeroOn}).
+\end{itemize}
+Then
+\[
+\int_Bf\bigl(x,u(x),g(x)\bigr)\,dx\ \le\ \int_Bf\bigl(x,v(x),g_v(x)\bigr)\,dx .
+\]
+\end{lemma}
+\begin{proof}
+Throughout, $f$ is written $f(x,z,h)$ and $|B|<\infty$ is used freely.  Note
+$\Lambda\ge\lambda>0$, so $\Lambda\ge0$.
+
+\emph{Step 1: the integrand is measurable along measurable data.}  Let
+$w\colon\R^n\to\R$ and $h\colon\R^n\to\R^n$ be almost everywhere strongly
+measurable on $B$.  Then $x\mapsto f(x,w(x),h(x))$ is almost everywhere
+strongly measurable on $B$.  Indeed, replacing $w$ and $h$ by strongly
+measurable representatives changes $x\mapsto f(x,w(x),h(x))$ only on a null
+set, so we may assume $w,h$ strongly measurable.  The two Carath\'eodory
+clauses of \noderef{VariationalStructureF123} say that $x\mapsto f(x,z,h_0)$ is
+measurable for each fixed $(z,h_0)$ and that $(z,h_0)\mapsto f(x,z,h_0)$ is
+continuous for each fixed $x$; since $\R\times\R^n$ is a second countable
+metrisable space, the map $(z,h_0,x)\mapsto f(x,z,h_0)$ is jointly measurable.
+Composing it with the measurable $x\mapsto(w(x),h(x),x)$ gives the claim.
+
+\emph{Step 2: the growth majorant, and integrability on $B$.}  First, for every
+$s\ge0$,
+\[
+(\varepsilon+s^2)^{\frac p2}\le(1+s)^{p},
+\tag{2a}
+\]
+because $\varepsilon\le1$ gives $\varepsilon+s^2\le1+s^2\le(1+s)^2$ and
+$t\mapsto t^{p/2}$ is nondecreasing on $[0,\infty)$, while
+$((1+s)^2)^{p/2}=(1+s)^p$.  Second, $s\mapsto(\varepsilon+s^2)^{p/2}$ is
+nondecreasing on $[0,\infty)$, for the same reason.
+
+Now let $W\in L^p(B)$ be real-valued.  Then $1+|W|\in L^p(B)$, because the
+constant $1$ lies in $L^p(B)$ ($|B|<\infty$) and $|W|\in L^p(B)$, so
+$(1+|W|)^p\in L^1(B)$.  By (2a) applied at $s=|W(x)|$, together with
+$W(x)^2=|W(x)|^2$, we get $(\varepsilon+W^2)^{p/2}\le(1+|W|)^p$ pointwise, and
+$(\varepsilon+W^2)^{p/2}$ is measurable because $t\mapsto(\varepsilon+t^2)^{p/2}$
+is continuous.  Hence
+\[
+x\mapsto\Lambda\bigl(\varepsilon+W(x)^2\bigr)^{\frac p2}+a
+\quad\text{is integrable on }B .
+\tag{2b}
+\]
+
+Next, let $w$ be almost everywhere strongly measurable on $B$ and let
+$h\in L^p(B)$ be $\R^n$-valued.  By clause \texttt{F1} of
+\noderef{VariationalStructureF123} at any $x\in B\subseteq\Omega$,
+\[
+-a+\lambda\bigl(\varepsilon+|h(x)|^2\bigr)^{\frac p2}\le f(x,w(x),h(x))
+\le\Lambda\bigl(\varepsilon+|h(x)|^2\bigr)^{\frac p2}+a ,
+\]
+and since $\lambda\ge0$ and $\Lambda\ge0$ make both weighted terms
+nonnegative, this gives
+$|f(x,w(x),h(x))|\le\Lambda(\varepsilon+|h(x)|^2)^{p/2}+a$.  With Step 1, (2b)
+applied to $W=|h|$ and domination (Preamble),
+\[
+x\mapsto f(x,w(x),h(x))\quad\text{is integrable on }B .
+\tag{2c}
+\]
+
+\emph{Step 3: the minimality instance, extended from $\operatorname{supp}$ to
+$B$.}  By the second clause of \noderef{MemW1pZeroOn} there are
+$\varphi_k\colon\R^n\to\R$, $k\in\N$, each of class $C^{\infty}$ with compact
+support and $\operatorname{supp}\varphi_k\subseteq B$, with
+\[
+\int_B|(v-u)-\varphi_k|^p\to0,
+\qquad
+\int_B\Bigl(\sum_i\bigl|(g_v-g)^i-D_i\varphi_k\bigr|^2\Bigr)^{\frac p2}\to0 .
+\tag{3a}
+\]
+Write $G_k=(D_i\varphi_k)_i$, $w_k=u+\varphi_k$ and $h_k=g+G_k$; the second
+limit of (3a) says $\|h_k-g_v\|_{L^p(B)}\to0$ and the first says
+$\|w_k-v\|_{L^p(B)}\to0$.
+
+By \noderef{SmoothCompactSupportMemW1p}, applied with $r=p$ and the open set
+$\Omega$ --- its hypotheses are $1\le n$, $1\le p$, the openness of $\Omega$,
+and the smoothness, compact support and the inclusion
+$\operatorname{supp}\varphi_k\subseteq B\subseteq\Omega$ --- each $\varphi_k$
+lies in $W^{1,p}(\Omega)$ with weak gradient $G_k$ (\noderef{MemW1pOn}).  So
+the second clause of \noderef{IsLocalMinimumOn} applies at the pair
+$(\varphi_k,G_k)$ and gives
+\[
+\int_{\operatorname{supp}\varphi_k}f(x,u,g)\,dx
+\le\int_{\operatorname{supp}\varphi_k}f(x,w_k,h_k)\,dx .
+\tag{3b}
+\]
+Off $\operatorname{supp}\varphi_k$ both $\varphi_k$ and $G_k$ vanish ---
+$\varphi_k$ because it vanishes off its closed support, and $G_k$ because
+$\varphi_k$ vanishes on a whole neighbourhood of any point outside that closed
+set, so its differential vanishes there --- hence the two integrands agree on
+$B\setminus\operatorname{supp}\varphi_k$.  Both are integrable on $B$ by (2c):
+the first with $w=u$, $h=g$, the second with $w=w_k$, $h=h_k$, which lie in the
+right classes because $\varphi_k,G_k\in L^p(\Omega)$ restrict to $L^p(B)$.
+Splitting $\int_B=\int_{\operatorname{supp}\varphi_k}+\int_{B\setminus
+\operatorname{supp}\varphi_k}$ for each of the two integrands --- legitimate
+since $\operatorname{supp}\varphi_k$ is closed, hence measurable, and contained
+in $B$ --- and adding the common second piece to (3b),
+\[
+\int_Bf(x,u,g)\,dx\le\int_Bf(x,w_k,h_k)\,dx\qquad(k\in\N).
+\tag{3c}
+\]
+
+\emph{Step 4: a subsequence with summable errors.}  Both
+$\int_B|v-w_k|^p$ and $\int_B|g_v-h_k|^p$ tend to $0$, hence so does their sum;
+so for each $k$ there is an index $N(k)$ with
+\[
+\int_B|v-w_{N(k)}|^p+\int_B|g_v-h_{N(k)}|^p\le2^{-k} .
+\tag{4a}
+\]
+(No monotonicity of $N$ is needed: (3c) holds at every index.)  Put, with
+values in $[0,+\infty]$,
+\[
+c_k(x)=|v(x)-w_{N(k)}(x)|^p+|g_v(x)-h_{N(k)}(x)|^p,
+\qquad
+T(x)=\sum_{k\ge0}c_k(x).
+\]
+Each $c_k$ is measurable and integrable on $B$ with
+$\int_Bc_k\le2^{-k}$ by (4a), so by Tonelli (Preamble)
+\[
+\int_BT=\sum_{k\ge0}\int_Bc_k\le\sum_{k\ge0}2^{-k}=2<\infty .
+\]
+Consequently $T<\infty$ almost everywhere on $B$.  Fix from now on a point
+$x\in B$ with $T(x)<\infty$; almost every point of $B$ is such.
+
+\emph{Step 5: pointwise convergence and a single dominating function.}  Since
+$\sum_kc_k(x)<\infty$, the terms $c_k(x)$ tend to $0$, hence so do the two
+nonnegative quantities $|v(x)-w_{N(k)}(x)|^p$ and $|g_v(x)-h_{N(k)}(x)|^p$ that
+they dominate.  Raising to the power $1/p>0$, which is continuous at $0$ with
+value $0$, gives
+\[
+w_{N(k)}(x)\to v(x),\qquad h_{N(k)}(x)\to g_v(x)\qquad(k\to\infty).
+\tag{5a}
+\]
+Moreover $|g_v(x)-h_{N(k)}(x)|^p\le c_k(x)\le T(x)$ for every $k$, so
+\[
+|h_{N(k)}(x)|\le|g_v(x)|+|g_v(x)-h_{N(k)}(x)|\le|g_v(x)|+T(x)^{1/p}
+=:\widetilde W(x) .
+\tag{5b}
+\]
+The function $\widetilde W$ lies in $L^p(B)$: $|g_v|\in L^p(B)$ because
+$g_v=g+(g_v-g)$ with $g\in L^p(B)$ and $g_v-g\in L^p(B)$ (the first clause of
+\noderef{MemW1pZeroOn}, which is \noderef{MemW1pOn} on $B$); and
+$T^{1/p}\in L^p(B)$ because $\int_B(T^{1/p})^p=\int_BT<\infty$.  The bound
+(5b) holds for almost every $x\in B$ and every $k$, with one and the same
+$\widetilde W$.
+
+\emph{Step 6: dominated convergence.}  By clause \texttt{cont\_zh} of
+\noderef{VariationalStructureF123} the map $(z,h)\mapsto f(x,z,h)$ is
+continuous for each $x$, so (5a) gives
+\[
+f\bigl(x,w_{N(k)}(x),h_{N(k)}(x)\bigr)\longrightarrow f\bigl(x,v(x),g_v(x)\bigr)
+\]
+for almost every $x\in B$.  By clause \texttt{F1} as in Step 2, together with
+(5b) and the monotonicity of $s\mapsto(\varepsilon+s^2)^{p/2}$ on $[0,\infty)$
+and $\Lambda\ge0$,
+\[
+\bigl|f\bigl(x,w_{N(k)}(x),h_{N(k)}(x)\bigr)\bigr|
+\le\Lambda\bigl(\varepsilon+|h_{N(k)}(x)|^2\bigr)^{\frac p2}+a
+\le\Lambda\bigl(\varepsilon+\widetilde W(x)^2\bigr)^{\frac p2}+a
+\]
+for almost every $x\in B$ and every $k$, and the right-hand side is integrable
+on $B$ by (2b) applied to $W=\widetilde W$.  Each
+$x\mapsto f(x,w_{N(k)}(x),h_{N(k)}(x))$ is almost everywhere strongly
+measurable by Step 1.  Lebesgue dominated convergence (Preamble) therefore
+gives
+\[
+\int_Bf(x,w_{N(k)},h_{N(k)})\,dx\longrightarrow\int_Bf(x,v,g_v)\,dx .
+\]
+By (3c) the left-hand side is at least $\int_Bf(x,u,g)\,dx$ for every $k$, so
+the same holds for the limit:
+\[
+\int_Bf(x,u,g)\,dx\le\int_Bf(x,v,g_v)\,dx ,
+\]
+which is the assertion.
+\end{proof}

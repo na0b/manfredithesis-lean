@@ -1,0 +1,206 @@
+\begin{helper}[The reverse-H\"older step of Moser's iteration]
+Let $n\in\mathbb{N}$ and $Q\in\R$ with $n\ge2$ and $Q>0$.  Throughout,
+$\operatorname{supp}$ denotes the \emph{closed} support, and for a function
+$\eta$ on $\R^n$ we write $D_i\eta$ for its $i$-th partial derivative and
+$|\nabla\eta|^2=\sum_i(D_i\eta)^2$.  Let $\chi,C_S\in\R$ with $\chi>1$ and
+$C_S>0$ satisfy the Sobolev inequality at exponent $2$ on balls:
+\begin{enumerate}
+\item[(H1)] for every $y\in\R^n$, every $\rho>0$ and every pair
+  $(\phi,g_\phi)$ with $\phi\in W^{1,2}(B_\rho(y))$ of weak gradient $g_\phi$
+  (\noderef{MemW1pOn}), $\phi$ of compact support and
+  $\operatorname{supp}\phi\subseteq B_\rho(y)$,
+  \[
+  \Bigl(\frac1{|B_\rho(y)|}\int_{B_\rho(y)}|\phi|^{2\chi}dx\Bigr)^{\frac1{2\chi}}
+  \ \le\ C_S\,\rho\,
+  \Bigl(\frac1{|B_\rho(y)|}\int_{B_\rho(y)}|g_\phi|^2dx\Bigr)^{\frac12}.
+  \]
+\end{enumerate}
+Let $\psi\colon\R\to\R$ and $\Lambda\in\R$ satisfy
+\begin{enumerate}
+\item[(H2)] $\psi$ is $C^\infty$, $1\le\Lambda$, $0\le\psi\le1$, $\psi=1$ on
+  $(-\infty,\tfrac38]$, $\psi=0$ on $[\tfrac58,\infty)$ and
+  $|\psi'|\le\Lambda$ everywhere.
+\end{enumerate}
+Let $D\in\R$ satisfy
+\begin{enumerate}
+\item[(H3)] $0<D$ and
+  $C_S\,(2Q+2)^{\frac12}\,(2\Lambda)\le D$.
+\end{enumerate}
+Let $x_0\in\R^n$, let $R\in\R$, let $v\colon\R^n\to\R$ and let $g_\bullet$
+assign to each $\theta$ a field $g_\theta\colon\R^n\to\R^n$, and assume
+\begin{enumerate}
+\item[(H4)] $0<R$, $v$ is measurable and $v\ge0$ everywhere;
+\item[(H5)] for every $\theta>1$, $v^\theta\in W^{1,2}_{\mathrm{loc}}(B_R(x_0))$
+  with weak gradient $g_\theta$ (\noderef{MemW1pLocOn});
+\item[(H6)] (the Caccioppoli hypothesis) for every $\theta>1$ and every
+  $\zeta\colon\R^n\to\R$ that is $C^\infty$ with compact support and
+  $\operatorname{supp}\zeta\subseteq B_R(x_0)$,
+  \[
+  \int_{B_R(x_0)}|g_\theta|^2\zeta^2\,dx
+  \ \le\ Q\int_{B_R(x_0)}\bigl(v^\theta\bigr)^2|\nabla\zeta|^2\,dx ;
+  \]
+\item[(H7)] $0<|B_R(x_0)|$.
+\end{enumerate}
+Finally let $Y\colon\R\times\R\to\R$ satisfy
+\begin{enumerate}
+\item[(H8)] $\displaystyle Y(s,\rho)=\Bigl(\frac1{|B_R(x_0)|}
+  \int_{B_\rho(x_0)}v^{2s}dx\Bigr)^{\frac1{2s}}$ for all $s,\rho$.
+  \emph{Both radii are normalised by the measure of the outer ball
+  $B_R(x_0)$}, never by $|B_\rho(x_0)|$: that is the convention that makes the
+  radii cancel in the iteration, and it is restated here because a helper
+  inherits none of its parent's notation.
+\end{enumerate}
+Assume moreover
+\begin{enumerate}
+\item[(H9)] for all $\rho$ with $0<\rho<R$: $\overline B_\rho(x_0)$ is compact
+  and $\overline B_\rho(x_0)\subseteq B_R(x_0)$;
+\item[(H10)] for all $s,\rho$ with $s>1$, $0<\rho<R$: $v^{2s}$ is integrable on
+  $B_\rho(x_0)$;
+\item[(H11)] $\sum_i(w_i)^2=|w|^2$ and $|w|^{2}$ computed as a real power
+  agrees with $|w|^2$, for every $w\in\R^n$;
+\item[(H12)] for all measurable $S\subseteq T\subseteq\R^n$ and every
+  $F\colon\R^n\to\R$ vanishing off $S$: $\int_TF\,dx=\int_SF\,dx$.
+\end{enumerate}
+Then for every $\theta>1$ and all radii $R/2\le r'<r\le\frac34R$,
+\[
+Y(\theta\chi,r')\ \le\ \Bigl(\frac{DR}{r-r'}\Bigr)^{\frac1\theta}Y(\theta,r).
+\]
+\end{helper}
+\begin{proof}
+Fix $\theta>1$ and $R/2\le r'<r\le\frac34R$, and write $B_\rho=B_\rho(x_0)$.
+Then $\theta>0$, $r'>0$ since $R>0$, $r-r'>0$, and $r<R$ since
+$r\le\frac34R$.  Also $\theta\chi>1$, because $\theta>1$ and $\chi\ge1$.
+
+\emph{Step 1: the radial cut-off between $B_{r'}$ and $B_r$.}  Put
+$a=r^2-r'^2>0$ and
+\[
+\zeta(x)=\psi\Bigl(\frac{|x-x_0|^2-r'^2}{a}\Bigr).
+\]
+The inner function $x\mapsto a^{-1}(|x-x_0|^2-r'^2)$ is $C^\infty$ on all of
+$\R^n$ --- it is a polynomial in the coordinates --- with differential
+$2a^{-1}\langle x-x_0,\cdot\rangle$, so $\zeta$ is $C^\infty$ by (H2) and the
+chain rule, and
+\[
+D_i\zeta(x)=\psi'\Bigl(\frac{|x-x_0|^2-r'^2}{a}\Bigr)\cdot
+\frac{2(x-x_0)_i}{a} .
+\]
+\emph{Using the squared distance rather than $|x-x_0|$ is what makes $\zeta$
+smooth at $x_0$}, the norm itself not being differentiable there.  From
+$0\le\psi\le1$ we get $0\le\zeta\le1$.  On $B_{r'}$ the argument of $\psi$ is
+negative, hence $\le\tfrac38$, so $\zeta=1$ there.  If
+$|x-x_0|\ge r$ the argument is $\ge1\ge\tfrac58$, so $\zeta=0$; hence
+$\{\zeta\ne0\}\subseteq B_r$, and since the argument is $\ge\tfrac58$ already on
+the closed set $\{|x-x_0|^2\ge r'^2+\tfrac58a\}$, whose complement is a ball of
+radius strictly less than $r$, we get
+$\operatorname{supp}\zeta\subseteq\overline B_{\rho_0}\subseteq B_r$ for some
+$\rho_0<r$.  In particular $\operatorname{supp}\zeta$ is a closed subset of a
+compact ball, hence compact, so $\zeta$ has compact support.  For the gradient,
+$|\psi'|\le\Lambda$ by (H2) and $|x-x_0|\le r$ on $\{\zeta\ne0\}$, while
+$D_i\zeta=0$ off $\operatorname{supp}\zeta$ --- the complement of the closed
+support being open with $\zeta$ identically $0$ on it, so all derivatives vanish
+there --- whence everywhere
+\[
+|\nabla\zeta|\ \le\ \Lambda\cdot\frac{2r}{a}
+=\frac{2\Lambda r}{(r-r')(r+r')}\ \le\ \frac{2\Lambda}{r-r'} ,
+\tag{1}
+\]
+the last step because $r\le r+r'$.  Finally
+$\operatorname{supp}\zeta\subseteq B_r\subseteq B_R$, since $r<R$.
+
+\emph{Step 2: $v^\theta\zeta$ is an admissible test function.}  Write
+$f=v^\theta$, $h=g_\theta$ and $\phi=f\zeta$.  By (H5),
+$f\in W^{1,2}_{\mathrm{loc}}(B_R)$ with weak gradient $h$
+(\noderef{MemW1pLocOn}); \emph{no global square integrability of $f$ on $B_R$ is
+claimed or needed}.  Since $\zeta$ is $C^\infty$ with compact support and
+$\operatorname{supp}\zeta\subseteq B_R$ by Step 1, clause (2) of
+\noderef{WeakGradientSmoothMul} applies at $q=2$, $\Omega=B_R$, the pair
+$(f,h)$ and the cut-off $\psi=\zeta$ --- that clause takes exactly a
+\emph{local} membership as its input, the compact support of $\zeta$ supplying
+the localisation, and its hypotheses are $1\le n$, $1\le2$, the openness of
+$B_R$ and the three cut-off conditions of Step 1.  It gives
+$\phi\in W^{1,2}(B_R)$ with weak gradient
+\[
+g_\phi=\zeta\,h+f\,\nabla\zeta
+\]
+(\noderef{MemW1pOn}).  Moreover $\phi$ vanishes wherever $\zeta$ does, so
+$\operatorname{supp}\phi\subseteq\operatorname{supp}\zeta\subseteq B_R$ on
+taking closures, and $\operatorname{supp}\phi$ is compact, being a closed
+subset of the compact $\operatorname{supp}\zeta$.  These are exactly the
+conditions (H1) binds on its test function.
+
+\emph{Step 3: the Sobolev inequality at radius $R$.}  Apply (H1) at the centre
+$x_0$ and the radius $\rho=R$ --- \emph{not} at $r$; the whole proof is
+normalised by $|B_R|$, in agreement with (H8) --- to the pair
+$(\phi,g_\phi)$ of Step 2.  Its hypotheses are $0<R$, the $W^{1,2}(B_R)$
+membership with weak gradient $g_\phi$, the compactness of
+$\operatorname{supp}\phi$ and $\operatorname{supp}\phi\subseteq B_R$, all
+established in Step 2.  It gives
+\[
+\Bigl(\frac1{|B_R|}\int_{B_R}|\phi|^{2\chi}dx\Bigr)^{\frac1{2\chi}}
+\ \le\ C_S\,R\,\Bigl(\frac1{|B_R|}\int_{B_R}|g_\phi|^2dx\Bigr)^{\frac12}.
+\tag{2}
+\]
+
+\emph{Step 4: the left-hand side.}  By Step 1, $\zeta=1$ on $B_{r'}$, so
+$\phi=v^\theta$ there and $|\phi|^{2\chi}=v^{2\theta\chi}$ on $B_{r'}$; and
+$|\phi|^{2\chi}\ge0$ everywhere.  Since $B_{r'}\subseteq B_R$ and the
+integrand is nonnegative, monotonicity of the integral (Preamble) gives
+$\int_{B_{r'}}v^{2\theta\chi}\le\int_{B_R}|\phi|^{2\chi}$, and the map
+$t\mapsto t^{1/(2\chi)}$ is nondecreasing on $[0,\infty)$, so the left-hand
+side of (2) is at least
+$\bigl(|B_R|^{-1}\int_{B_{r'}}v^{2\theta\chi}\bigr)^{1/(2\chi)}
+=Y(\theta\chi,r')^{\theta}$, by (H8) and $1/(2\theta\chi)\cdot\theta
+=1/(2\chi)$.
+
+\emph{Step 5: the right-hand side.}  Pointwise, by the triangle inequality and
+$2st\le s^2+t^2$,
+\[
+|g_\phi|^2=|\zeta h+f\nabla\zeta|^2\le2\zeta^2|h|^2+2f^2|\nabla\zeta|^2 ,
+\]
+where $|\cdot|^2$ on $\R^n$ is $\sum_i(\cdot)_i^2$ by (H11).  Apply (H6) at this
+$\theta$ and this $\zeta$ --- admissible by Step 1 --- to the first summand:
+\[
+\int_{B_R}|g_\phi|^2dx
+\ \le\ 2\int_{B_R}|h|^2\zeta^2dx+2\int_{B_R}f^2|\nabla\zeta|^2dx
+\ \le\ (2Q+2)\int_{B_R}f^2|\nabla\zeta|^2dx .
+\]
+By (1) and the fact that $\nabla\zeta$ vanishes off
+$\operatorname{supp}\zeta\subseteq B_r$ (Step 1), the integrand vanishes off
+$B_r$, so (H12) replaces the domain by $B_r$ and
+\[
+\int_{B_R}|g_\phi|^2dx
+\ \le\ (2Q+2)\Bigl(\frac{2\Lambda}{r-r'}\Bigr)^2\int_{B_r}v^{2\theta}dx ,
+\]
+the last integral being finite by (H10).  Multiplying by $|B_R|^{-1}\ge0$,
+taking square roots --- $t\mapsto t^{1/2}$ being nondecreasing and the product
+of two nonnegative reals splitting as $(st)^{1/2}=s^{1/2}t^{1/2}$ --- and
+inserting into (2),
+\[
+\Bigl(\frac1{|B_R|}\int_{B_{r'}}v^{2\theta\chi}\Bigr)^{\frac1{2\chi}}
+\ \le\ C_S\,R\,(2Q+2)^{\frac12}\frac{2\Lambda}{r-r'}
+\Bigl(\frac1{|B_R|}\int_{B_r}v^{2\theta}\Bigr)^{\frac12} .
+\]
+By (H3) the constant is at most $DR/(r-r')$, since
+$C_S R(2Q+2)^{1/2}(2\Lambda)/(r-r')
+=\bigl(C_S(2Q+2)^{1/2}(2\Lambda)\bigr)\cdot R/(r-r')
+\le D\cdot R/(r-r')$ and $R/(r-r')\ge0$.  Hence, with (H8),
+\[
+Y(\theta\chi,r')^{\theta}\ \le\ \frac{DR}{r-r'}\,Y(\theta,r)^{\theta}
+\quad\text{in the sense that}\quad
+\Bigl(\frac1{|B_R|}\int_{B_{r'}}v^{2\theta\chi}\Bigr)^{\frac1{2\chi}}
+\le\frac{DR}{r-r'}\Bigl(\frac1{|B_R|}\int_{B_r}v^{2\theta}\Bigr)^{\frac12}.
+\tag{3}
+\]
+
+\emph{Step 6: the $1/\theta$ power.}  Both sides of (3) are nonnegative and
+finite, and $t\mapsto t^{1/\theta}$ is nondecreasing on $[0,\infty)$ with
+$1/\theta>0$, so raising (3) to that power is legitimate.  On the right the
+power of a product splits, $DR/(r-r')$ being nonnegative by (H3) and (H4), and
+on both sides the exponents compose:
+$\frac1{2\chi}\cdot\frac1\theta=\frac1{2(\theta\chi)}$ and
+$\frac12\cdot\frac1\theta=\frac1{2\theta}$.  By (H8) that is exactly
+\[
+Y(\theta\chi,r')\ \le\ \Bigl(\frac{DR}{r-r'}\Bigr)^{\frac1\theta}Y(\theta,r),
+\]
+which is the assertion.
+\end{proof}

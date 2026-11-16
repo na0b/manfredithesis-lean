@@ -1,0 +1,88 @@
+\begin{helper}[Measurability and integrability of the power-weighted Caccioppoli data]
+Let $n\in\N$, let
+$p,\varepsilon,t,L_\zeta,L_{w,2},L_{w,1},L_{w,J},L_{\nabla\zeta}\in\R$, let
+$\Omega\subseteq\R^n$, let $A,g\colon\R^n\to\R^n$, let $u\colon\R^n\to\R$, let
+$Dg$ assign to each index $k$ a field $Dg^k\colon\R^n\to\R^n$, let
+$\zeta,w,w'\colon\R^n\to\R$ and let $Dw$ assign to each $x$ a vector
+$(Dw_i(x))_i$.  Throughout, $\operatorname{supp}\zeta$ denotes the
+\emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$, $|\cdot|$ is the Euclidean
+norm, and every power of a positive real is the real power with an arbitrary
+real exponent.  Assume
+\begin{enumerate}
+\item[(H1)] $u$ is a weak solution of $\operatorname{div}A(\nabla u)=0$ on
+  $\Omega$ with $\nabla u=g$ (\noderef{IsWeakSolutionOn}), and each $g_i$ lies
+  in $W^{1,2}_{loc}(\Omega)$ with weak gradient $Dg^i$
+  (\noderef{MemW1pLocOn});
+\item[(H2)] $\zeta$ is smooth, $\operatorname{supp}\zeta$ is compact and
+  measurable and contained in $\Omega$, and $\zeta$, $\partial_i\zeta$ vanish
+  off $\operatorname{supp}\zeta$;
+\item[(H3)] $w=\varepsilon+|g|^2$ pointwise, $w>0$, and
+  $Dw_i=2\sum_kg_kDg^k_i$ pointwise;
+\item[(H4)] $w=w'$ a.e.\ on $\Omega$, $w'^1=w'$ pointwise, and on
+  $\operatorname{supp}\zeta$ the bounds
+  $w'^{\frac{p+t}2-2}\le L_{w,2}$, $w'^1\le L_{w,1}$,
+  $w'^{\frac{p+t}2}\le L_{w,J}$ hold, with
+  $0\le L_{w,2}$, $0\le L_{w,1}$, $0\le L_{w,J}$;
+\item[(H5)] $\zeta^2\le L_\zeta$ and $|\nabla\zeta|^2\le L_{\nabla\zeta}$
+  everywhere, $\sum_i(Dw_i)^2\le4w\sum_k|Dg^k|^2$ pointwise, and
+  $\sum_k|Dg^k|^2$ is integrable on $\operatorname{supp}\zeta$;
+\item[(H6)] a function vanishing off $\operatorname{supp}\zeta$ and integrable
+  there is integrable on $\Omega$.
+\end{enumerate}
+Then all twelve of the following hold: $g$ is a.e.\ strongly measurable on
+$\operatorname{supp}\zeta$; $w$ is measurable there; every $w^\sigma$ is
+measurable there; every $g_k$, every $Dg^k_i$ and every $Dw_i$ is measurable
+there; the two integrands
+$w^{\frac{p+t}2-2}\bigl(\sum_i(Dw_i)^2\bigr)\zeta^2$ and
+$w^{\frac{p+t}2}|\nabla\zeta|^2$ are integrable on $\Omega$; finite sums and
+products of functions measurable on $\operatorname{supp}\zeta$ are measurable
+there; and $\zeta$ and every $\partial_i\zeta$ are measurable there.
+\end{helper}
+\begin{proof}
+\emph{Step 1: $g$ and $w$.}  By (H1), $u$ is a weak solution with $\nabla u=g$,
+and its local regularity clause gives $g$ a.e.\ strongly measurable on every
+compact subset of $\Omega$; $\operatorname{supp}\zeta$ is such a subset by (H2).
+Hence each coordinate $g_k$ is measurable there, so $|g|^2$ is, and
+$w=\varepsilon+|g|^2$ is by (H3).
+
+\emph{Step 2: the weight powers.}  $w>0$ by (H3), and
+$\lambda\mapsto\lambda^\sigma$ is continuous on $(0,\infty)$ for every real
+$\sigma$, so each $w^\sigma$ is measurable on $\operatorname{supp}\zeta$ as a
+composition of a continuous function with the measurable $w$.  This is the
+clause stated for all $\sigma$ at once; the consumer uses it at
+$\sigma=\frac{p+t}2-2$ and $\sigma=\frac{p+t}2$.
+
+\emph{Step 3: the derivatives.}  Each $g_k$ lies in $W^{1,2}_{loc}(\Omega)$
+with weak gradient $Dg^k$ by (H1), so each $Dg^k_i$ is measurable on
+$\operatorname{supp}\zeta$; then $Dw_i=2\sum_kg_kDg^k_i$ is measurable there by
+(H3), being a constant multiple of a finite sum of products of measurable
+functions.  $\zeta$ and each $\partial_i\zeta$ are continuous by (H2), hence
+measurable.
+
+\emph{Step 4: the closure clauses.}  A product of two functions measurable on
+$\operatorname{supp}\zeta$ is measurable there, and so is a finite sum of
+finitely many such; both are the standard closure properties of measurability
+(Preamble).
+
+\emph{Step 5: the first integrand.}  Almost everywhere on
+$\operatorname{supp}\zeta$, (H4), (H5) and $w=w'$ give
+\[
+w^{\frac{p+t}2-2}\Bigl(\sum_i(Dw_i)^2\Bigr)\zeta^2
+\ \le\ L_{w,2}\cdot4L_{w,1}\Bigl(\sum_k|Dg^k|^2\Bigr)\cdot L_\zeta
+=4L_{w,2}L_{w,1}L_\zeta\sum_k|Dg^k|^2,
+\]
+using $\sum_i(Dw_i)^2\le4w\sum_k|Dg^k|^2$ and then $w=w'^1\le L_{w,1}$, every
+factor being nonnegative by (H4) and (H5).  The majorant is integrable on
+$\operatorname{supp}\zeta$ by (H5), so the integrand is integrable there by
+domination (Preamble); it carries the factor $\zeta^2$, which vanishes off
+$\operatorname{supp}\zeta$ by (H2), so (H6) carries the integrability to
+$\Omega$.
+
+\emph{Step 6: the second integrand.}  Almost everywhere on
+$\operatorname{supp}\zeta$, $w^{\frac{p+t}2}|\nabla\zeta|^2\le L_{w,J}L_{\nabla\zeta}$
+by (H4) and (H5); a constant is integrable on the finite-measure set
+$\operatorname{supp}\zeta$, so the integrand is integrable there, and it carries
+the factor $\nabla\zeta$, which vanishes off $\operatorname{supp}\zeta$ by
+(H2), so (H6) again carries it to $\Omega$.
+\end{proof}

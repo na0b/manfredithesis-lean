@@ -1,0 +1,45 @@
+\begin{definition}
+Let $p>1$, let $\Omega\subseteq\R^n$ and let
+$A\colon\R^n\times\R\times\R^n\to\R^n$,
+$B\colon\R^n\times\R\times\R^n\to\R$.  A function $u$ with weak gradient $g$ is
+a \emph{weak solution of}
+\[
+\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)
+\]
+\emph{in} $\Omega$, written $\mathrm{IsWeakSolutionOn}(n,p,\Omega,A,B,u,g)$, if
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pLocOn}) and for all $\varphi\in W^{1,p}(\Omega)$
+(\noderef{MemW1pOn}, with weak gradient $g_\varphi$) having compact support
+contained in $\Omega$, the integrand
+\[
+x\longmapsto(A(x,u(x),g(x)),g_\varphi(x))+B(x,u(x),g(x))\,\varphi(x)
+\]
+is Lebesgue integrable on $\Omega$ and
+\[
+\int_\Omega\Bigl[(A(x,u(x),g(x)),g_\varphi(x))+B(x,u(x),g(x))\,\varphi(x)\Bigr]dx=0 .
+\]
+This is exactly (1.2) of the thesis, with the integrability of the integrand made
+explicit.
+
+\noindent\textbf{Why integrability is part of the definition.}  The thesis writes
+(1.2) of the thesis as an identity between an integral and $0$, which presupposes
+that the integral exists.  A formal reading cannot leave that implicit: Lebesgue
+integration assigns the value $0$ to the integral of a function that is not
+integrable, so without the integrability clause the identity is satisfied
+automatically whenever the integrand fails to be integrable, and \emph{every}
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ would be a weak solution for such a
+coefficient pair.  The Note for the formalization at l.~258 forbids cited
+results that are vacuous, and this clause is what keeps the ones stated in terms
+of weak solutions --- (C1) at l.~260, (C4)(b) at l.~263 and (C7) at l.~268 ---
+from being emptied in that way.  When $(A,B)$ satisfies
+(Q1) of the thesis--(Q5) of the thesis (\noderef{EllipticStructureQ12},
+\noderef{EllipticStructureQ345}) the clause is not an extra demand on the data:
+the Carath\'eodory clauses there make the integrand measurable, and (Q4) and (Q5)
+bound it by a constant multiple of $(1+|\nabla u|^2)^{p/2}(|g_\varphi|+|\varphi|)$,
+which is integrable on $\Omega$ because $\nabla u\in L^p$ on the compact
+$\operatorname{supp}\varphi$ and $\varphi,g_\varphi$ vanish off it.  The homogeneous equation with coefficients
+independent of $(x,z)$, namely $\operatorname{div}A(\nabla u)=0$ of (3.1) of the thesis,
+is this same notion instantiated at
+$A(x,z,h)=A(h)$ and $B\equiv0$; no separate definition of weak solution is
+introduced.
+\end{definition}

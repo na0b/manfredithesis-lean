@@ -1,0 +1,153 @@
+\begin{lemma}[The decay rate of the assembled modulus]
+Let $p>1$, let $0<\alpha\le1$ and let $\delta>0$.  Then there is $\delta'>0$ ---
+depending only on $p$, $\alpha$ and $\delta$ --- such that the following holds.
+
+Let $c_\sigma>0$, $C_1\ge0$, $K>0$, $\gamma_4>0$ and $c>0$, and let
+$\sigma,\sigma_0,\sigma_1\colon\R\to\R$ satisfy
+$\sigma(t)\le c_\sigma t^{\delta}$ for every $t\ge0$,
+\[
+\sigma_0(t)=K\Bigl(\frac{p-1}p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
++4\gamma_4C_1t^{\alpha}\Bigr),
+\qquad
+\sigma_1(t)=K\Bigl(\frac1p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)\Bigr)
+\]
+for every $t$ with $0<t\le1$, and $\sigma_0\ge0$, $\sigma_1\ge0$.  Then there is
+$R_1'$ with $0<R_1'\le1$ such that
+\[
+c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}+\sigma_1(t)^{\frac p2}\bigr)
+\ \le\ t^{\delta'}
+\qquad\bigl(0<t\le R_1'\bigr).
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the exponents.}  Put
+\[
+\beta=\alpha\min\{\delta,1\}>0,
+\qquad
+\gamma=\beta\min\Bigl\{1,\frac p2\Bigr\}>0,
+\qquad
+\delta'=\frac\gamma2>0 .
+\]
+All three are positive, since $\alpha>0$, $\delta>0$ and $p>1$, and each is a
+function of $p,\alpha,\delta$ alone.  \emph{That $\delta'$ carries no dependence
+on $c_\sigma$, $C_1$, $K$, $\gamma_4$, $c$ or $\sigma$ is the point of the
+statement}, and it is the thesis' requirement that the rate ``depend
+exclusively on the data'' while a radius threshold may depend on $c$; the whole
+dependence is pushed into $R_1'$ in Step 4.
+
+Throughout, fix $t$ with $0<t\le1$.  Then $t^{s}\le t^{s'}$ whenever
+$s\ge s'>0$, because $t\le1$ (pm-0024).
+
+\emph{Step 2: a power bound for $\sigma_0$ and $\sigma_1$.}  Since $\alpha\le1$
+and $0<t\le1$ we have $t=t^1\le t^{\alpha}$, so
+\[
+0\le t+C_1t^{\alpha}\le(1+C_1)t^{\alpha},
+\]
+using $C_1\ge0$.  Hence, by the power bound on $\sigma$ applied at the
+nonnegative argument $t+C_1t^{\alpha}$ and then monotonicity of $s\mapsto
+s^{\delta}$ on $[0,\infty)$,
+\[
+\sigma\bigl(t+C_1t^{\alpha}\bigr)\le c_\sigma\bigl(t+C_1t^{\alpha}\bigr)^{\delta}
+\le c_\sigma(1+C_1)^{\delta}t^{\alpha\delta}.
+\]
+Now $\alpha\delta\ge\alpha\min\{\delta,1\}=\beta$ and
+$\alpha\ge\alpha\min\{\delta,1\}=\beta$, so $t^{\alpha\delta}\le t^{\beta}$ and
+$t^{\alpha}\le t^{\beta}$.  Put
+\[
+K_1=K\bigl(c_\sigma(1+C_1)^{\delta}+4\gamma_4C_1\bigr),
+\]
+which is nonnegative, indeed positive, because $K>0$, $c_\sigma>0$,
+$(1+C_1)^{\delta}>0$ (a positive base raised to a real power, $1+C_1\ge1>0$),
+$\gamma_4>0$ and $C_1\ge0$.  We claim
+\[
+\sigma_0(t)\le K_1t^{\beta}
+\qquad\text{and}\qquad
+\sigma_1(t)\le K_1t^{\beta} .
+\tag{1}
+\]
+\emph{The two halves are derived separately, and they must be}: the two closed
+forms carry \emph{different} coefficients on the $\sigma$ term, $\frac{p-1}p$
+for $\sigma_0$ and $\frac1p$ for $\sigma_1$ --- exactly as the thesis prints
+them at l.~1526--1528 --- and for $1<p<2$ one has $\frac1p>\frac{p-1}p$, so no
+constant built from $\frac{p-1}p$ alone can dominate both.  The enlarged $K_1$
+above uses only $\frac{p-1}p\le1$ and $\frac1p\le1$, both of which hold for
+every $p>1$.
+
+For $\sigma_0$: its closed form is
+$K\bigl(\frac{p-1}p\sigma(t+C_1t^{\alpha})+4\gamma_4C_1t^{\alpha}\bigr)$, and
+\[
+\frac{p-1}p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
+\le\frac{p-1}p\,c_\sigma(1+C_1)^{\delta}t^{\beta}
+\le c_\sigma(1+C_1)^{\delta}t^{\beta},
+\qquad
+4\gamma_4C_1t^{\alpha}\le4\gamma_4C_1t^{\beta},
+\]
+the first step by the displayed bound on $\sigma$ together with
+$t^{\alpha\delta}\le t^{\beta}$ and $\frac{p-1}p\ge0$, the second by
+$\frac{p-1}p\le1$ and $c_\sigma(1+C_1)^{\delta}t^{\beta}\ge0$, and the third by
+$t^{\alpha}\le t^{\beta}$ with $4\gamma_4C_1\ge0$.  Adding the two and
+multiplying by $K>0$ gives $\sigma_0(t)\le K_1t^{\beta}$.
+
+For $\sigma_1$: its closed form is
+$K\bigl(\frac1p\sigma(t+C_1t^{\alpha})\bigr)$, and
+\[
+\frac1p\,\sigma\bigl(t+C_1t^{\alpha}\bigr)
+\le\frac1p\,c_\sigma(1+C_1)^{\delta}t^{\beta}
+\le c_\sigma(1+C_1)^{\delta}t^{\beta}
+\le c_\sigma(1+C_1)^{\delta}t^{\beta}+4\gamma_4C_1t^{\beta},
+\]
+the first step as before with $\frac1p\ge0$, the second by $\frac1p\le1$, and
+the third because $4\gamma_4C_1t^{\beta}\ge0$.  Multiplying by $K>0$ gives
+$\sigma_1(t)\le K_1t^{\beta}$.  \emph{Note that the $4\gamma_4C_1$ term of
+$K_1$ is pure slack here}, and is carried only so that one constant serves both
+halves.
+
+\emph{Step 3: the three terms of the assembled modulus.}  Raising (1) to the
+power $\frac p2>0$ is legitimate because $\sigma_0(t),\sigma_1(t)\ge0$ by
+hypothesis and $s\mapsto s^{p/2}$ is nondecreasing on $[0,\infty)$, so
+\[
+\sigma_0(t)^{\frac p2}\le K_1^{\frac p2}t^{\beta\frac p2},
+\qquad
+\sigma_1(t)^{\frac p2}\le K_1^{\frac p2}t^{\beta\frac p2},
+\]
+using $(K_1t^{\beta})^{p/2}=K_1^{p/2}t^{\beta p/2}$ (pm-0024, both factors
+nonnegative).  Each of the three exponents $\beta$, $\beta\frac p2$ and
+$\beta\frac p2$ is at least $\gamma=\beta\min\{1,\frac p2\}$, so each
+corresponding power of $t$ is at most $t^{\gamma}$.  Therefore
+\[
+c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}+\sigma_1(t)^{\frac p2}\bigr)
+\le c\bigl(K_1+2K_1^{\frac p2}\bigr)t^{\gamma}=K_2t^{\gamma},
+\qquad
+K_2=c\bigl(K_1+2K_1^{\frac p2}\bigr)\ge0 .
+\tag{2}
+\]
+
+\emph{Step 4: the threshold.}  Put
+\[
+R_1'=\min\Bigl\{1,\ \Bigl(\frac1{K_2+1}\Bigr)^{2/\gamma}\Bigr\} .
+\]
+Then $R_1'>0$, because $K_2+1\ge1>0$ makes $\frac1{K_2+1}>0$ and a positive
+real raised to a real power is positive, and $R_1'\le1$ by construction.  Let
+$0<t\le R_1'$.  Since $s\mapsto s^{\gamma/2}$ is nondecreasing on $[0,\infty)$,
+\[
+t^{\gamma/2}\le(R_1')^{\gamma/2}
+\le\Bigl(\Bigl(\frac1{K_2+1}\Bigr)^{2/\gamma}\Bigr)^{\gamma/2}
+=\frac1{K_2+1},
+\]
+the last step by $\frac2\gamma\cdot\frac\gamma2=1$ (pm-0024, the base being
+positive).  Hence, writing $t^{\gamma}=t^{\gamma/2}\,t^{\gamma/2}$,
+\[
+K_2t^{\gamma}=K_2\,t^{\gamma/2}\,t^{\gamma/2}
+\le K_2\cdot\frac1{K_2+1}\cdot t^{\gamma/2}
+\le t^{\gamma/2}=t^{\delta'},
+\]
+using $t^{\gamma/2}\ge0$ for the first inequality and
+$\frac{K_2}{K_2+1}\le1$, which holds because $K_2\ge0$, for the second.
+Combining with (2),
+\[
+c\bigl(\sigma_0(t)+\sigma_0(t)^{\frac p2}+\sigma_1(t)^{\frac p2}\bigr)
+\le K_2t^{\gamma}\le t^{\delta'}
+\qquad\bigl(0<t\le R_1'\bigr),
+\]
+which is the assertion.
+\end{proof}

@@ -1,0 +1,353 @@
+\begin{lemma}[From oscillation decay to a H\"older continuous representative]
+Let $n\ge1$ be an integer and let $\alpha,K,M$ be real with
+$0<\alpha\le1$, $K\ge0$ and $M\ge0$.  Then there is a constant $C>0$ --- which
+by the quantifier order may depend only on $n,\alpha,K,M$, and which the proof
+produces as the absolute constant $C=8$ --- with the following property.  Let
+$\Omega\subseteq\R^n$ be open, let $u\colon\R^n\to\R$, let $x_0\in\R^n$ and let
+$R>0$ be such that $\overline B_R(x_0)\subseteq\Omega$, and suppose
+\begin{enumerate}
+\item $|u|\le M$ almost everywhere on $\Omega$; and
+\item for every $y\in\R^n$ and every $\rho>0$ with
+  $\overline B_\rho(y)\subseteq\Omega$,
+  \[
+  \operatorname*{osc}\bigl(u,B_\rho(y)\bigr)\ \le\ K\Bigl(\frac\rho R\Bigr)^{\alpha}
+  \]
+  (\noderef{EssOscOn}).
+\end{enumerate}
+Then there is a function $U\colon\R^n\to\R$ such that
+\begin{enumerate}
+\item[(a)] $U=u$ almost everywhere on $\Omega$;
+\item[(b)] $U$ is continuous on $\Omega$;
+\item[(c)] $U$ is H\"older continuous of exponent $\alpha$ on
+  $\overline B_{R/2}(x_0)$ in the sense of \noderef{MemHolderOn} --- whose first
+  clause is the continuity of $U$ on that set; and
+\item[(d)] $|U(x)-U(y)|\le C\,K\,\bigl(|x-y|/R\bigr)^{\alpha}$ for all
+  $x,y\in\overline B_{R/2}(x_0)$.
+\end{enumerate}
+All powers are real powers of nonnegative reals.
+
+\medskip
+\emph{Why hypothesis (1) is not optional.}  The essential oscillation is the
+difference of two real numbers, $\esssup$ and
+$\essinf$ over the ball (\noderef{EssOscOn}), and the essential
+supremum of a function that is not essentially bounded above is a junk value
+rather than $+\infty$.  Without (1) hypothesis (2) can therefore hold vacuously
+for a function that has no continuous representative at all --- it suffices that
+the two junk values coincide on every ball --- so the statement without (1)
+would be false as written.  The hypothesis is a restoration and not a
+strengthening: the paper has local boundedness in hand \emph{before} it states
+the oscillation estimate (p.~31: ``It follows from Theorem 2.1, chapter VII of
+[G] that if $u$ is a local minimum for $F$ then $u\in L^\infty_{\mathrm{loc}}$'',
+followed by the oscillation estimate and then by ``Therefore $u$ is locally
+H\"older continuous''), and it normalises $M=\|u\|_{L^\infty(\Omega)}$ (p.~32)
+before the argument this lemma formalises.
+
+\emph{Why the quantitative conclusion is on the half ball.}  Conclusions (a) and
+(b) are global on $\Omega$: the representative is one function, defined and
+continuous on all of $\Omega$, which is what a consumer needs in order to
+replace $u$ by $U$ in predicates posed on $\Omega$.  The \emph{quantitative}
+conclusions (c) and (d), with a constant depending only on $n,\alpha,K,M$,
+cannot be had on all of $\overline B_R(x_0)$: hypothesis (2) constrains only
+balls whose \emph{closed} ball lies in $\Omega$, and a point of the sphere
+$\partial B_R(x_0)$ has no room to spare --- for such a point the admissible
+radii are bounded by its distance to $\R^n\setminus\Omega$, which is not among
+the quantities bound before $C$.  On $\overline B_{R/2}(x_0)$ every ball of
+radius at most $R/2$ about a point of the set is admissible, which is what makes
+the universal constant possible.  A consumer that needs the H\"older bound on
+$\overline B_r(x_0)$, and in particular on the sphere $\partial B_r(x_0)$,
+applies the lemma with $R=2r$.
+
+\emph{What the lemma is.}  It is the paper's inference ``Therefore $u$ is locally
+H\"older continuous'' (p.~31) from the displayed oscillation estimate, together
+with the choice of representative that inference presupposes: the paper
+immediately afterwards writes $f^0(h)=f(x_0,u(x_0),h)$ (p.~32), a pointwise
+value of $u$, which is meaningful only for the continuous representative.
+\end{lemma}
+\begin{proof}
+Take $C=8$; it depends on nothing, hence a fortiori only on $n,\alpha,K,M$.
+Fix $\Omega,u,x_0,R$ as in the statement and write
+\[
+D=\overline B_{R/2}(x_0),\qquad D\subseteq\overline B_R(x_0)\subseteq\Omega .
+\]
+
+\emph{Step 0: the four properties of the essential supremum and infimum that are
+used.}  For a measurable $E\subseteq\R^n$ of positive measure, ``almost
+everywhere on $E$'' refers to Lebesgue measure restricted to $E$, and
+$\esssup_E$, $\essinf_E$ are the essential
+supremum and infimum with respect to that restricted measure, as in
+\noderef{EssOscOn}.  We use:
+\begin{itemize}
+\item[(E1)] if $v\le t$ almost everywhere on $E$ for a real $t$, then
+  $\esssup_Ev\le t$;
+\item[(E2)] if there is a real $t$ with $v\le t$ almost everywhere on $E$, then
+  $v\le\esssup_Ev$ almost everywhere on $E$;
+\item[(E3)] if $t\le v$ almost everywhere on $E$ for a real $t$, then
+  $t\le\essinf_Ev$;
+\item[(E4)] if there is a real $t$ with $t\le v$ almost everywhere on $E$, then
+  $\essinf_Ev\le v$ almost everywhere on $E$.
+\end{itemize}
+(E1) and (E2) are the two facts about the essential supremum recorded in the
+Preamble item on the essential supremum as the limit of normalised $L^q$ means,
+namely \texttt{essSup\_le\_of\_ae\_le} and \texttt{ae\_le\_essSup}; the
+hypothesis of (E2) is exactly the essential boundedness above that the second of
+them requires.  (E3) and (E4) are (E1) and (E2) applied to $-v$, together with
+$\essinf_Ev=-\esssup_E(-v)$: the essential
+infimum is the limit inferior of $v$ along the almost-everywhere filter of the
+restricted measure and the essential supremum its limit superior, and
+$\liminf v=-\limsup(-v)$.
+
+We also use repeatedly that almost-everywhere statements pass to measurable
+subsets: if $E'\subseteq E$ are measurable and a property holds almost
+everywhere on $E$, it holds almost everywhere on $E'$, because the measure
+restricted to $E'$ is dominated by the measure restricted to $E$ (Preamble, the
+transport facts recorded with H\"older's inequality,
+\texttt{Measure.restrict\_mono}).
+
+\emph{Step 1: admissible pairs, and two monotone quantities.}  For $x\in\Omega$
+put
+\[
+\mathcal A(x)=\bigl\{\rho>0\ :\ \overline B_\rho(x)\subseteq\Omega\bigr\} .
+\]
+Since $\Omega$ is open and $x\in\Omega$, some closed ball about $x$ lies in
+$\Omega$, so $\mathcal A(x)\ne\emptyset$; and $\mathcal A(x)$ is closed
+downwards, i.e.\ $\rho\in\mathcal A(x)$ and $0<\rho'\le\rho$ imply
+$\rho'\in\mathcal A(x)$, because $\overline B_{\rho'}(x)\subseteq\overline
+B_\rho(x)$.  Call the pair $(x,\rho)$ \emph{admissible} if $x\in\Omega$ and
+$\rho\in\mathcal A(x)$.  Two instances will be used constantly:
+\[
+x\in D,\ 0<\rho\le R/2\ \Longrightarrow\ \rho\in\mathcal A(x),
+\tag{1}
+\]
+because $|z-x|\le\rho$ gives $|z-x_0|\le|z-x|+|x-x_0|\le\rho+R/2\le R$, so
+$z\in\overline B_R(x_0)\subseteq\Omega$; and, for $x\in\Omega$,
+every $\rho$ with $0<\rho<\operatorname{dist}(x,\R^n\setminus\Omega)$ lies in
+$\mathcal A(x)$ (with the convention that the distance is $+\infty$ when
+$\Omega=\R^n$, in which case every $\rho>0$ lies in $\mathcal A(x)$).
+
+For an admissible pair put
+\[
+S(x,\rho)=\esssup_{B_\rho(x)}u,
+\qquad
+I(x,\rho)=\essinf_{B_\rho(x)}u .
+\]
+The ball $B_\rho(x)$ has measure $\omega_n\rho^n>0$ by the Preamble item on the
+volume of a ball, with $\omega_n\in(0,\infty)$; in particular its restricted
+measure is not the zero measure.
+
+By hypothesis (1) of the statement, $-M\le u\le M$ almost everywhere on
+$\Omega$, hence almost everywhere on the subset
+$B_\rho(x)\subseteq\overline B_\rho(x)\subseteq\Omega$ (Step 0).  So (E1) gives
+$S(x,\rho)\le M$ and (E3) gives $-M\le I(x,\rho)$, while (E2) and (E4) ---
+whose side conditions are exactly that bound --- give
+\[
+I(x,\rho)\le u\le S(x,\rho)\qquad\text{almost everywhere on }B_\rho(x).
+\]
+The set of points of $B_\rho(x)$ at which both inequalities hold has full
+measure in $B_\rho(x)$, whose measure is positive, so that set is nonempty;
+evaluating at one of its points gives $I(x,\rho)\le S(x,\rho)$.  Altogether
+\[
+-M\ \le\ I(x,\rho)\ \le\ S(x,\rho)\ \le\ M
+\qquad\text{for every admissible }(x,\rho).
+\tag{2}
+\]
+
+Next, monotonicity in the set.  Let $E'\subseteq E\subseteq\Omega$ be measurable
+with positive measure.  By hypothesis (1) of the statement $u$ is essentially
+bounded above and below on $E$, so (E2) gives
+$u\le\esssup_Eu$ almost everywhere on $E$, hence almost
+everywhere on $E'$, and (E1) then gives
+$\esssup_{E'}u\le\esssup_Eu$; symmetrically,
+(E4) and (E3) give
+$\essinf_Eu\le\essinf_{E'}u$.  Thus
+\[
+E'\subseteq E\subseteq\Omega\ \Longrightarrow\
+\esssup_{E'}u\le\esssup_{E}u
+\ \text{ and }\
+\essinf_{E}u\le\essinf_{E'}u .
+\tag{3}
+\]
+In particular, for $x\in\Omega$ and $\rho,\rho'\in\mathcal A(x)$ with
+$\rho\le\rho'$ we have $B_\rho(x)\subseteq B_{\rho'}(x)$ and therefore
+\[
+S(x,\rho)\le S(x,\rho')\qquad\text{and}\qquad I(x,\rho')\le I(x,\rho).
+\tag{4}
+\]
+
+Finally, by the definition of the essential oscillation (\noderef{EssOscOn}) and
+hypothesis (2) of the statement --- applicable to the ball $B_\rho(x)$ because
+$\overline B_\rho(x)\subseteq\Omega$ for an admissible pair ---
+\[
+S(x,\rho)-I(x,\rho)=\operatorname*{osc}\bigl(u,B_\rho(x)\bigr)
+\ \le\ K\Bigl(\frac\rho R\Bigr)^{\alpha}
+\qquad\text{for every admissible }(x,\rho).
+\tag{5}
+\]
+
+\emph{Step 2: the representative.}  For $x\in\Omega$ set
+\[
+U(x)=\inf\bigl\{S(x,\rho)\ :\ \rho\in\mathcal A(x)\bigr\},
+\]
+and set $U(x)=0$ for $x\notin\Omega$.  The set on the right is nonempty, since
+$\mathcal A(x)\ne\emptyset$, and bounded below by $-M$ by $(2)$, so the infimum
+is a real number and $-M\le U(x)\le M$.
+
+For every admissible $(x,\rho)$,
+\[
+I(x,\rho)\ \le\ U(x)\ \le\ S(x,\rho).
+\tag{6}
+\]
+The upper bound holds because $S(x,\rho)$ is a member of the set whose infimum
+$U(x)$ is.  For the lower bound we check that $I(x,\rho)$ is a lower bound for
+that set: let $\rho'\in\mathcal A(x)$; if $\rho'\le\rho$ then
+$S(x,\rho')\ge I(x,\rho')\ge I(x,\rho)$ by $(2)$ and $(4)$, and if
+$\rho'\ge\rho$ then $S(x,\rho')\ge S(x,\rho)\ge I(x,\rho)$ by $(4)$ and $(2)$.
+Combining $(6)$ with $(5)$,
+\[
+0\le S(x,\rho)-U(x)\le K\Bigl(\frac\rho R\Bigr)^{\alpha}
+\qquad\text{and}\qquad
+0\le U(x)-I(x,\rho)\le K\Bigl(\frac\rho R\Bigr)^{\alpha}
+\tag{7}
+\]
+for every admissible $(x,\rho)$.
+
+\emph{Step 3: $U=u$ almost everywhere on $\Omega$, which is (a).}  Let
+$\mathcal Q$ be the set of pairs $(q,t)$ with $q\in\R^n$ having rational
+coordinates, $t$ a positive rational, and $\overline B_t(q)\subseteq\Omega$; the
+set $\mathcal Q$ is countable.  For $(q,t)\in\mathcal Q$ the ball $B_t(q)$ has
+positive measure and is contained in $\Omega$, so --- as in Step 1 --- $u$ is
+essentially bounded above and below on it and (E2), (E4) give a set
+$Z_{q,t}\subseteq B_t(q)$ of Lebesgue measure zero with
+\[
+\essinf_{B_t(q)}u\ \le\ u(x)\ \le\
+\esssup_{B_t(q)}u
+\qquad\text{for every }x\in B_t(q)\setminus Z_{q,t} .
+\]
+(The exceptional set is null for the measure restricted to $B_t(q)$, and that
+measure agrees with Lebesgue measure on measurable subsets of $B_t(q)$, so the
+exceptional set is Lebesgue null.)  Put $Z=\bigcup_{(q,t)\in\mathcal Q}Z_{q,t}$,
+a Lebesgue null set, being a countable union of null sets.
+
+Fix $x\in\Omega\setminus Z$.  Let $t$ be any rational with $0<t$ and
+$2t\in\mathcal A(x)$ --- such rationals exist, and they can be taken
+arbitrarily small, because $\mathcal A(x)$ is nonempty and closed downwards.
+Since the points with rational coordinates are dense in $\R^n$, choose $q$ with
+rational coordinates and $|q-x|<t$.  Then:
+\begin{itemize}
+\item $x\in B_t(q)$;
+\item $B_t(q)\subseteq B_{2t}(x)$, since $|z-q|<t$ gives
+  $|z-x|\le|z-q|+|q-x|<2t$;
+\item $\overline B_t(q)\subseteq\overline B_{2t}(x)\subseteq\Omega$, the second
+  inclusion because $2t\in\mathcal A(x)$; hence $(q,t)\in\mathcal Q$.
+\end{itemize}
+Since $x\in B_t(q)\setminus Z_{q,t}$ we get
+$\essinf_{B_t(q)}u\le u(x)\le
+\esssup_{B_t(q)}u$, and $(3)$ applied to
+$B_t(q)\subseteq B_{2t}(x)\subseteq\Omega$ turns this into
+\[
+I(x,2t)\ \le\ u(x)\ \le\ S(x,2t).
+\]
+The pair $(x,2t)$ is admissible, so $(6)$ gives $I(x,2t)\le U(x)\le S(x,2t)$ as
+well.  Two numbers lying in the same interval differ by at most its length, so
+by $(5)$
+\[
+|u(x)-U(x)|\ \le\ S(x,2t)-I(x,2t)\ \le\ K\Bigl(\frac{2t}R\Bigr)^{\alpha} .
+\]
+Letting $t$ run through a sequence of such rationals tending to $0$ and using
+that $s\mapsto s^{\alpha}$ is continuous on $[0,\infty)$ with value $0$ at $0$
+(here $\alpha>0$), the right-hand side tends to $0$, whence $|u(x)-U(x)|=0$,
+i.e.\ $U(x)=u(x)$.
+
+So $U=u$ on $\Omega\setminus Z$ with $Z$ Lebesgue null, which is (a).
+
+\emph{Step 4: a local two-sided comparison.}  We claim: if $x,y\in\Omega$ and
+$r=|x-y|$ satisfy $r>0$ and $2r\in\mathcal A(x)$, then
+\[
+|U(x)-U(y)|\ \le\ S(x,2r)-I(x,2r)\ \le\ K\Bigl(\frac{2r}R\Bigr)^{\alpha}
+\ \le\ 2K\Bigl(\frac rR\Bigr)^{\alpha} .
+\tag{8}
+\]
+Indeed $(x,2r)$ is admissible by assumption.  The pair $(y,r/2)$ is admissible
+too: if $|z-y|\le r/2$ then $|z-x|\le r/2+r=3r/2\le2r$, so
+$\overline B_{r/2}(y)\subseteq\overline B_{2r}(x)\subseteq\Omega$.  Moreover
+$B_{r/2}(y)\subseteq B_{2r}(x)$, since $|z-y|<r/2$ gives
+$|z-x|<3r/2<2r$.  Hence $(3)$, applied to
+$B_{r/2}(y)\subseteq B_{2r}(x)\subseteq\Omega$, gives
+\[
+I(x,2r)\le I(y,r/2)\qquad\text{and}\qquad S(y,r/2)\le S(x,2r),
+\]
+which together with $(6)$ for the admissible pair $(y,r/2)$ yields
+$I(x,2r)\le U(y)\le S(x,2r)$; and $(6)$ for $(x,2r)$ yields
+$I(x,2r)\le U(x)\le S(x,2r)$.  Both values lie in the interval
+$[I(x,2r),S(x,2r)]$, so they differ by at most its length, which is at most
+$K(2r/R)^{\alpha}$ by $(5)$.  Finally
+$(2r/R)^{\alpha}=2^{\alpha}(r/R)^{\alpha}$, because real powers of nonnegative
+reals are multiplicative in the base, and $2^{\alpha}\le2$ because
+$0<\alpha\le1$ and $2>1$.  This is $(8)$.
+
+\emph{Step 5: $U$ is continuous on $\Omega$, which is (b).}  Let $x\in\Omega$
+and $\varepsilon>0$.  Fix $\rho_x\in\mathcal A(x)$, which exists, and put
+\[
+\delta=\min\Bigl\{\frac{\rho_x}2,\ \Bigl(\frac{\varepsilon R^{\alpha}}{2K+1}\Bigr)^{1/\alpha}\Bigr\}>0 .
+\]
+Let $y\in\Omega$ with $0<r:=|x-y|<\delta$ (for $y=x$ there is nothing to prove).
+Then $2r<\rho_x$, so $2r\in\mathcal A(x)$ because $\mathcal A(x)$ is closed
+downwards, and $(8)$ applies:
+\[
+|U(x)-U(y)|\ \le\ 2K\Bigl(\frac rR\Bigr)^{\alpha}
+\ \le\ (2K+1)\frac{\delta^{\alpha}}{R^{\alpha}}
+\ \le\ \varepsilon ,
+\]
+using that $s\mapsto s^{\alpha}$ is nondecreasing on $[0,\infty)$ and that
+$\delta^{\alpha}\le\varepsilon R^{\alpha}/(2K+1)$ by the choice of $\delta$.  So
+$U$ is continuous at $x$ relative to $\Omega$; as $x\in\Omega$ was arbitrary,
+$U$ is continuous on $\Omega$.
+
+\emph{Step 6: the quantitative H\"older estimate on $D$, which is (d).}  Let
+$x,y\in D$ and $r=|x-y|$.  There are three cases.
+
+If $r=0$ then $x=y$, the left-hand side of (d) is $0$, and the right-hand side
+is $8K\cdot0^{\alpha}=0$ because $\alpha>0$; so (d) holds.
+
+If $0<r\le R/4$ then $2r\le R/2$, so $2r\in\mathcal A(x)$ by $(1)$, and $(8)$
+gives $|U(x)-U(y)|\le2K(r/R)^{\alpha}\le8K(r/R)^{\alpha}$, using $K\ge0$ and
+$(r/R)^{\alpha}\ge0$.
+
+If $r>R/4$, first note $r\le|x-x_0|+|x_0-y|\le R/2+R/2=R$ because
+$x,y\in D$.  Put
+\[
+z_k=\Bigl(1-\frac k4\Bigr)x+\frac k4\,y\qquad(k=0,1,2,3,4),
+\]
+so $z_0=x$ and $z_4=y$.  Each $z_k$ is a convex combination of $x$ and $y$, both
+of which lie in the closed ball $D$, and a closed ball in $\R^n$ is convex; so
+$z_k\in D$ for every $k$.  Moreover $|z_{k+1}-z_k|=\tfrac14|y-x|=r/4$ and
+$0<r/4\le R/4$, so the previous case applies to each consecutive pair and gives
+\[
+|U(z_k)-U(z_{k+1})|\ \le\ 2K\Bigl(\frac{r/4}R\Bigr)^{\alpha}
+=2K\,4^{-\alpha}\Bigl(\frac rR\Bigr)^{\alpha}
+\ \le\ 2K\Bigl(\frac rR\Bigr)^{\alpha},
+\]
+using $4^{-\alpha}\le1$ for $\alpha>0$.  Summing over $k=0,1,2,3$ and using the
+triangle inequality for the four increments,
+\[
+|U(x)-U(y)|\ \le\ 8K\Bigl(\frac rR\Bigr)^{\alpha}.
+\]
+
+In all three cases
+$|U(x)-U(y)|\le8K\bigl(|x-y|/R\bigr)^{\alpha}=C\,K\,\bigl(|x-y|/R\bigr)^{\alpha}$
+with $C=8$, which is (d).
+
+\emph{Step 7: conclusion (c).}  Since $|x-y|\ge0$ and $R>0$, and real powers of
+nonnegative reals satisfy $(a/b)^{\alpha}=a^{\alpha}/b^{\alpha}$ for $a\ge0$,
+$b>0$, Step 6 reads
+\[
+|U(x)-U(y)|\ \le\ C'\,|x-y|^{\alpha}\qquad(x,y\in D),
+\qquad C'=\frac{8K}{R^{\alpha}}\ \ge\ 0 .
+\tag{9}
+\]
+The predicate \noderef{MemHolderOn} at exponent $\alpha$ on the set $D$ asks for
+exactly two things: continuity of $U$ on $D$, which follows from (b) because
+$D\subseteq\Omega$ and continuity on a set passes to subsets; and the existence
+of a constant $C''\ge0$ with $|U(x)-U(y)|\le C''|x-y|^{\alpha}$ for all
+$x,y\in D$, for which $C''=C'$ serves by $(9)$.  This is (c), and the proof is
+complete.
+\end{proof}

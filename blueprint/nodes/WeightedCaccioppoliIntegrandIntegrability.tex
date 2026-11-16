@@ -1,0 +1,85 @@
+\begin{helper}[Integrability of the weighted Caccioppoli integrands]
+Let $n\in\N$, let $\gamma_1,L_\zeta,L_{\nabla\zeta},L_W\in\R$, let
+$\Omega\subseteq\R^n$, let $g,Z\colon\R^n\to\R^n$, let $Dg$ assign to each
+index $i$ a field $Dg^i\colon\R^n\to\R^n$, let
+$\zeta,W,v,Q_0,P_1,P_2\colon\R^n\to\R$, let $M$ assign to each $x$ a matrix
+$(M_{ij}(x))$ and let $k$ be an index.  Throughout,
+$\operatorname{supp}\zeta$ denotes the \emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$ with
+$\partial_i\zeta(x)=d\zeta(x)[e_i]$, $|\cdot|$ is the Euclidean norm, and all
+integrals are against Lebesgue measure.  Assume
+\begin{enumerate}
+\item[(H1)] each $x\mapsto g^i(x)$ lies in $W^{1,2}_{loc}(\Omega)$ with weak
+  gradient $Dg^i$ (\noderef{MemW1pLocOn}), and
+  $\operatorname{supp}\zeta\subseteq\Omega$ is compact;
+\item[(H2)] $W>0$ everywhere, $0<\gamma_1$, and
+  $|M_{ij}(x)|\le\gamma_1W(x)$ for a.e.\ $x\in\Omega$ and all $i,j$;
+\item[(H3)] $\zeta$ and every $\partial_i\zeta$ vanish off
+  $\operatorname{supp}\zeta$, and the extension principle holds: a function
+  vanishing off $\operatorname{supp}\zeta$ and integrable there is integrable
+  on $\Omega$;
+\item[(H4)] $W$, each $M_{ij}$, each $Dg^k_j$, $\zeta$ and each
+  $\partial_i\zeta$ are measurable on $\operatorname{supp}\zeta$, products and
+  finite sums of functions measurable there are measurable there, and
+  $|Dg^k|^2$ is integrable on $\operatorname{supp}\zeta$;
+\item[(H5)] $\zeta^2\le L_\zeta$ and $|\nabla\zeta|^2\le L_{\nabla\zeta}$
+  everywhere, $0\le L_W$, and $W\le L_W$ a.e.\ on $\operatorname{supp}\zeta$;
+\item[(H6)] the elementary bounds $|\sum_if_i|\le n\max_i|f_i|$ and
+  $|a||b|\le(a^2+b^2)/2$, and $|Dg^k_j(x)|\le|Dg^k(x)|$;
+\item[(H7)] $v\ge0$, $v\in W^{1,2}_{loc}(\Omega)$ with weak gradient $Z$, and
+  $|Z_i|\le|Dg^k|$ a.e.\ on $\operatorname{supp}\zeta$;
+\item[(H8)] the defining identities
+  $Q_0=\sum_i\sum_jM_{ij}Dg^k_jDg^k_i$,
+  $P_1=\zeta^2\sum_i\sum_jM_{ij}Dg^k_jZ_i$ and
+  $P_2=2v\zeta\sum_i\sum_jM_{ij}Dg^k_j\partial_i\zeta$.
+\end{enumerate}
+Then $v$ is measurable on $\operatorname{supp}\zeta$ and all five of $P_1$,
+$P_2$, $W|Dg^k|^2\zeta^2$, $\zeta^2Q_0$ and $Wv^2|\nabla\zeta|^2$ are
+integrable on $\Omega$.
+\end{helper}
+\begin{proof}
+Measurability of $v$ on $\operatorname{supp}\zeta$ is immediate from (H7):
+$v\in W^{1,2}_{loc}(\Omega)$ restricts to an $L^2$ function on the compact
+subset $\operatorname{supp}\zeta$ of $\Omega$ by (H1), and an $L^2$ function is
+measurable.  The same restriction applied to $Z$ makes each $Z_i$ measurable
+there.  By (H4) every integrand below is then measurable on
+$\operatorname{supp}\zeta$, being assembled from measurable factors by finitely
+many products and finite sums.
+
+\emph{The two densities.}  Almost everywhere on $\operatorname{supp}\zeta$,
+(H5) gives $W|Dg^k|^2\zeta^2\le L_WL_\zeta|Dg^k|^2$, and $|Dg^k|^2$ is
+integrable there by (H4), so $W|Dg^k|^2\zeta^2$ is integrable on
+$\operatorname{supp}\zeta$ by domination (Preamble).  Likewise
+$Wv^2|\nabla\zeta|^2\le L_WL_{\nabla\zeta}v^2$ a.e.\ there, and $v^2$ is
+integrable on $\operatorname{supp}\zeta$ because $v\in L^2$ there.
+
+\emph{The quadratic form.}  By (H8), (H2) and (H6), for a.e.\ $x$ in
+$\operatorname{supp}\zeta$,
+\[
+|\zeta(x)^2Q_0(x)|\le L_\zeta\Bigl|\sum_i\sum_jM_{ij}Dg^k_jDg^k_i\Bigr|
+\le L_\zeta n^2\gamma_1L_W|Dg^k(x)|^2 ,
+\]
+applying $|\sum|\le n\max$ twice and then
+$|Dg^k_j||Dg^k_i|\le|Dg^k|^2$, which follows from (H6).  Domination by the
+integrable $|Dg^k|^2$ gives integrability on $\operatorname{supp}\zeta$.
+
+\emph{$P_1$.}  The same computation with one factor $Dg^k_i$ replaced by $Z_i$
+and the bound $|Z_i|\le|Dg^k|$ of (H7) gives
+$|P_1|\le L_\zeta n^2\gamma_1L_W|Dg^k|^2$ a.e.\ on $\operatorname{supp}\zeta$,
+hence integrability there.
+
+\emph{$P_2$.}  Here the inner double sum is bounded a.e.\ by
+$n^2\gamma_1L_W|Dg^k|\,\sqrt{L_{\nabla\zeta}}$ by (H2), (H5) and (H6), and the
+outer factor satisfies $|2v\zeta|\le2\sqrt{L_\zeta}\,|v|$ by (H5).  Using
+$|a||b|\le(a^2+b^2)/2$ of (H6) on the product $|v|\cdot|Dg^k|$ bounds $|P_2|$
+a.e.\ on $\operatorname{supp}\zeta$ by a constant multiple of
+$v^2+|Dg^k|^2$, which is integrable there; hence so is $P_2$.
+
+\emph{Transport to $\Omega$.}  Each of the five integrands vanishes off
+$\operatorname{supp}\zeta$: $P_1$, $\zeta^2Q_0$ and $W|Dg^k|^2\zeta^2$ carry
+the factor $\zeta^2$, which vanishes there by (H3), and $P_2$ and
+$Wv^2|\nabla\zeta|^2$ carry $\partial_i\zeta$, which vanishes there as well.
+The extension principle of (H3) therefore upgrades each of the five
+integrabilities from $\operatorname{supp}\zeta$ to $\Omega$, which is the
+assertion.
+\end{proof}

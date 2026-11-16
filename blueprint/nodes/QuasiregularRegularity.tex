@@ -1,0 +1,565 @@
+\begin{theorem}[Theorem 7]
+Let $n\ge2$, $K\ge1$ and $0<\delta<1$, suppose the Sobolev--Poincar\'e
+inequality on balls holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}),
+and assume, all at the exponent $p=n$, the cited regularity result (C1)
+(\noderef{CitedRegularityEpsPos}), the cited solvability result (C2)
+(\noderef{CitedDirichletW1p}) and the cited Dirichlet result (C3) with
+H\"older boundary data (\noderef{CitedDirichletHolder}) in the universal forms
+described below, together with the cited H\"older estimates (C4)
+(\noderef{CitedHolderOscillationMinimum}) and the cited Campanato embedding (C5) at
+the exponent $n/(n-1)$ on \emph{every} ball
+(\noderef{CitedCampanatoEmbedding}).  Then there is $\beta>0$, depending only
+on $n$, $K$ and $\delta$, with the following property.  Let
+$\Omega\subseteq\R^n$ be a domain, let $F\colon\Omega\to\R^n$ be a
+$K$-quasiregular mapping with component gradients $G$
+(\noderef{IsQuasiregularOn}) and distortion matrix $\tau(x)$
+(\noderef{IsDistortionMatrix}) and assume the cited properties (C7)
+(\noderef{CitedQuasiregularBasics}) on \emph{every} open
+$\Omega_0\subseteq\Omega$.  Then
+\begin{itemize}
+\item[(i)] if $\tau$ is a continuous function, then $F\in C^\eta_{\mathrm{loc}}(\Omega)$
+  for each $0\le\eta<1$; and
+\item[(ii)] if $\tau$ is H\"older continuous with exponent $\delta$, then
+  $F\in C^{1+\beta}_{\mathrm{loc}}(\Omega)$.
+\end{itemize}
+Following the Note for the formalization, ``$\tau$ continuous'' (resp.\
+``H\"older continuous with exponent $\delta$'') means that $\tau$ agrees almost
+everywhere on $\Omega$ with a continuous (resp.\ $\delta$-H\"older continuous)
+matrix-valued function, and the local conclusions are stated on every nonempty
+bounded open $\Omega'$ with $\overline{\Omega'}\subseteq\Omega$ which is a
+bounded Lipschitz domain (\noderef{IsBoundedLipschitzDomain}) and for which the
+cited Campanato embedding (C5) holds on $\Omega'$, at the exponent $p=n$ and
+also at the exponent $n/(n-1)$ (\noderef{CitedCampanatoEmbedding}).  \emph{The
+Lipschitz hypothesis on $\Omega'$ is the one Theorem~Theorem~7 of the thesis inherits from
+Theorems~Theorem~3 of the thesis and~Theorem~4 of the thesis, which state it at l.~1274; it is carried
+as an explicit predicate rather than left in the phrase ``Lipschitz domain'',
+and it is what those two theorems now require of the set passed in their
+$\Omega'$ slot.}  Of the two (C5) instances the first is
+the instance Theorem~Theorem~4 of the thesis consumes and the second the instance
+Theorem~Theorem~3 of the thesis consumes, and both are carried per set because (C5) mentions
+$\Omega'$ and so cannot be hoisted above it.  A \emph{third} instance of (C5),
+at the exponent $n/(n-1)$ on every ball, is carried at the head instead: it
+mentions no set of the conclusion, it is the instance
+\noderef{MinimumGradientHolder} consumes internally and binds before that node's
+own existential, and so it cannot be attached to $\Omega'$.  It is the Note's own
+(C5) instantiated at a family each member of which satisfies its hypothesis,
+since a ball is a bounded Lipschitz domain, and so is neither a stronger form nor
+vacuous; and it carries no numerical content, mentioning only $n$.  The
+conclusions are then, componentwise:
+each $F^i$ agrees a.e.\ on $\Omega'$ with a function in
+$C^\eta(\overline{\Omega'})$ (\noderef{MemHolderOn}), resp.\ each $F^i$ agrees
+a.e.\ on $\Omega'$, together with its gradient $G^i$, with a function
+differentiable at every point of $\Omega'$ whose gradient is continuous and
+$\beta$-H\"older on $\overline{\Omega'}$ (\noderef{MemC1HolderOn} at the pair of
+sets $(\Omega',\overline{\Omega'})$), i.e.\ in $C^{1+\beta}(\Omega')$ with the
+gradient's H\"older seminorm taken on $\overline{\Omega'}$ (l.~278).
+
+No nondegeneracy hypothesis on $F$ is imposed: Theorem~Theorem~7 of the thesis as printed
+carries none, and the statement is true for constant maps as well.  For a
+constant $F$ all component weak gradients vanish, so the formal Jacobian $J_F$
+is identically $0$ and the second branch of \noderef{IsDistortionMatrix} gives
+$\tau\equiv I$, for which both conclusions hold trivially.
+
+\medskip
+\noindent\textbf{Correction reported.}  Following the paper's Note for the
+formalization, $\beta$ depends only on $n$, $K$ and $\delta$; the print has a
+lower-case ``$k$'' in ``depending only on $k$ and $\delta$'', which is the
+distortion constant $K$.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constants of \noderef{MinimumMorreyRegularity} and \noderef{MinimumGradientHolder} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $\beta$, it introduces no dependence of
+$\beta$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+
+\medskip
+\noindent\textbf{The cited results of \S4 and the exponent $p=n$.}  The cited
+regularity result (C1) (\noderef{CitedRegularityEpsPos}), the cited solvability
+result (C2) (\noderef{CitedDirichletW1p}) and the cited Dirichlet result (C3)
+with H\"older boundary data (\noderef{CitedDirichletHolder}) are assumed for
+\emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$ --- and,
+for (C1), for every open $\Omega_0\subseteq\R^n$ as well --- which are the forms
+these three results have in the paper's Note for the formalization, where they
+``may be taken as explicit hypotheses \ldots\ where they are used''.  They are
+used here, and only here, through Theorems 3 and 4: the paper reaches
+Theorem~Theorem~7 of the thesis by the sentence at l.~1626--1627, ``which is of the type
+considered in \S4, with $a=0$, $\varepsilon=0$ and $\lambda$, $\Lambda$
+depending only on $K$.  From Theorems 3 and 4 we deduce'', and both
+\noderef{MinimumMorreyRegularity} and \noderef{MinimumGradientHolder} carry
+(C1)--(C3) in exactly this universal form, bound before their own existentials.
+By pm-0019 the Note's cited list is closed, so none of them is derivable and
+each must be a hypothesis of the statement that uses it.
+
+There is no free exponent $p$ in this theorem: the functional of \S5 is
+$v\mapsto(\tau(x)\nabla v,\nabla v)^{n/2}$, so every one of (C1)--(C5) is
+instantiated at $p=n$, which satisfies the standing requirement $1<p$ because
+$n\ge2$.  (C4) mentions only $n$ and $p$ and is therefore bound at the head
+alongside (C1)--(C3); (C5) is bound three times, twice with $\Omega'$ --- once in
+each of the two conclusions --- and once at the head in the on-balls form, which
+mentions no set of the conclusion.  None of the five introduces a dependence of $\beta$ on
+any quantity outside the list the paper names at l.~1635 (``$\beta>0$ depending
+only on $k$ and $\delta$'', with $k$ the distortion constant $K$): each mentions
+only $n$ and the exponent $n$, both already bound, and each is universally
+quantified over its remaining parameters, so none carries numerical content of
+its own --- the same reading the Note's own wording licenses for (C6) above.
+
+\medskip
+\noindent\textbf{(C7) in the universal form.}  The cited properties (C7)
+(\noderef{CitedQuasiregularBasics}) are assumed for \emph{every} open
+$\Omega_0\subseteq\Omega$, not only for $\Omega$ itself.  That is the form (C7)
+has in the paper's Note, which states it for ``a $K$-quasiregular mapping $F$''
+with no distinguished domain and whose local-minimum clause already quantifies
+over the subsets $E$: the restriction of a $K$-quasiregular mapping to an open
+subset is again $K$-quasiregular, so the family is the cited result applied to
+restrictions, which is neither a stronger form nor vacuous --- each instance is
+moreover \emph{conditional} on $F$ being $K$-quasiregular on $\Omega_0$ with
+distortion matrix $\tau$ there (\noderef{IsQuasiregularOn},
+\noderef{IsDistortionMatrix}), so no instance asserts anything about a set on
+which the hypotheses fail.  It is needed because the proof consumes the
+local-minimum clause on an interposed bounded open set $\Omega''$ with
+$\overline{\Omega'}\subseteq\Omega''$ and
+$\overline{\Omega''}\subseteq\Omega$, which is where the boundedness that
+Theorems~Theorem~3 of the thesis and~Theorem~4 of the thesis require of their domain comes from, and
+$\Omega''$ is not in general a ball.  Being bound inside the quantifiers over
+$\Omega,F,G,\tau$ and after the existential for $\beta$, it carries no
+numerical content and no dependence of $\beta$ on anything.
+
+\textbf{On non-vacuity of the quasiregularity hypotheses.}  The statement is
+conditioned on \noderef{IsQuasiregularOn} and \noderef{IsDistortionMatrix}, so it
+would be vacuously true if no triple $(F,G,\tau)$ satisfied the two together,
+which the Note for the formalization forbids at l.~258.  It does not:
+\noderef{ModelQuasiregularIdentity} exhibits the identity map of $\R^n$, with
+$G^i(x)=e_i$ and $\tau(x)=I$, as a $1$-quasiregular mapping with distortion
+matrix $\tau$ on every open set --- the paper's own trivial instance of
+(5.10) of the thesis, which the identity satisfies with equality at the least
+admissible constant $K=1$.  The citation is for non-vacuity only; no step of the
+proof below uses the identity map.
+\end{theorem}
+\begin{proof}
+Throughout $p=n$ and $\varepsilon=0$, which is the instantiation the paper names
+at l.~1626--1627 (``which is of the type considered in \S4, with $a=0$,
+$\varepsilon=0$''), and $1<p$ holds because $n\ge2$.  For a matrix $S$ and
+vectors $v,w\in\R^n$ write $(Sv,w)=\sum_a\sum_bS_{ab}v_aw_b$.  We write $\tau_M$
+for the Morrey exponent that \noderef{MinimumMorreyRegularity} calls $\tau$, to
+avoid the clash with the distortion matrix.
+
+\medskip
+\noindent\emph{Part 0: the constants, fixed before $\Omega,F,G,\tau$.}
+
+\textbf{(0a)} Apply \noderef{TauPropertiesQuasiregular} with $n$ and $K$; its
+hypotheses are $2\le n$ and $1\le K$, both data of the present theorem.  It
+produces $\lambda,\Lambda$ with $0<\lambda\le\Lambda$, depending only on $n$ and
+$K$ because they are bound immediately after $n,K$ and before all remaining
+data.  Fix them.
+
+\textbf{(0b)} Put
+\[
+\varepsilon=0,\qquad a=1,\qquad
+\nu_0=\frac nK,\qquad \nu_1=2n(n-1)K^{\,n-1},\qquad \tau_M=\frac n2 .
+\]
+All four of $0\le\varepsilon\le1$, $0<a$, $0<\nu_0$ and $0<\tau_M<n$ hold: the
+first two by inspection; $\nu_0>0$ because $n\ge2>0$ and $K\ge1>0$; and
+$0<n/2<n$ because $n\ge2$.  For $\nu_0<\nu_1$, since $K>0$ the inequality
+$n/K<2n(n-1)K^{n-1}$ is equivalent to $1<2(n-1)K^{\,n}$, and $n\ge2$ gives
+$n-1\ge1$ while $K\ge1$ gives $K^{\,n}\ge1$, so $2(n-1)K^{\,n}\ge2>1$.
+
+\emph{Why $\nu_1$ is twice the derived constant.}  The (F2) computation inside
+\noderef{QuasiregularLocalVariationalData} produces the upper bound with the
+constant $n(n-1)K^{\,n-1}$, which is why that node asks only for
+$n(n-1)K^{\,n-1}\le\nu_1$.  That
+constant is \emph{not} usable as $\nu_1$, because
+\noderef{MinimumMorreyRegularity} and \noderef{MinimumGradientHolder} both
+require $\nu_0<\nu_1$ \emph{strictly}, and at $n=2$, $K=1$ one has
+$\nu_0=n/K=2$ and $n(n-1)K^{n-1}=2$, so the two would be equal and both nodes
+would be inapplicable --- and $n=2$, $K=1$ is a legitimate instance of
+Theorem~Theorem~7 of the thesis.  Doubling is free: (F2)'s upper half is an inequality, and
+$2n(n-1)K^{n-1}\ge n(n-1)K^{n-1}$, so the derived bound implies the bound with
+the doubled constant.  Both constants depend only on $n$ and $K$, as the theorem
+requires.
+
+\textbf{(0c)} Apply \noderef{MinimumGradientHolder} with $n$, $p=n$, the
+$\lambda,\Lambda$ of (0a), $a=1$, $\nu_0,\nu_1$ of (0b) and the $\delta$ of the
+present theorem.  Its head hypotheses are discharged thus: $2\le n$, $1<p$ (as
+$p=n\ge2$), $0<\lambda$ and $\lambda\le\Lambda$ by (0a), $0<a$, $0<\nu_0$ and
+$\nu_0<\nu_1$ by (0b), $0<\delta$ by hypothesis; the Sobolev--Poincar\'e
+inequality \noderef{CitedSobolevPoincareBall} is a hypothesis of the present
+theorem and is passed on unchanged; the three universal clauses (C1), (C2), (C3)
+(\noderef{CitedRegularityEpsPos}, \noderef{CitedDirichletW1p},
+\noderef{CitedDirichletHolder}) are hypotheses of the present theorem in exactly
+the shape that node asks for, namely for every field $A'$, all
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$ and, for
+(C1), every open $\Omega_0$, all at the exponent $p=n$; and the on-balls
+Campanato hypothesis --- (C5) at the exponent $n/(n-1)$ on $B_\rho(y)$ for every
+$y$ and every $\rho>0$ (\noderef{CitedCampanatoEmbedding}) --- is the head
+hypothesis of the present theorem, carried for this purpose.  The node produces
+\[
+\lambda_0\quad\text{with}\quad 0<\lambda_0\le p=n .
+\]
+Put $\beta=\lambda_0/n$.  Then $\beta>0$.  And $\beta$ depends only on $n$, $K$
+and $\delta$: in \noderef{MinimumGradientHolder} the constant $\lambda_0$ is
+bound immediately after $n,p,\lambda,\Lambda,a,\nu_0,\nu_1,\delta$ and the cited
+hypotheses, and \emph{before} $c_\sigma,d,M,W_n,\sigma$ and before
+$\varepsilon,\Omega,\Omega',f^0,u,g$; each of the quantities it may depend on is
+a function of $n,K,\delta$ alone ($p=n$; $\lambda,\Lambda$ from (0a) at $(n,K)$;
+$a=1$; $\nu_0,\nu_1$ from (0b); $\delta$ itself), and each cited hypothesis
+mentions only $n$ and the exponent $n$ and is universally quantified over its
+remaining parameters, so none carries numerical content.  This is the quantifier
+order pm-0007 requires, and it is why $\beta$ may be --- and is --- fixed here,
+before $\Omega,F,G,\tau$ are introduced.
+
+Now let $\Omega,F,G,\tau$ be given with $\Omega$ open and connected, $F$
+$K$-quasiregular on $\Omega$ with component gradients $G$
+(\noderef{IsQuasiregularOn}), $\tau$ its distortion matrix
+(\noderef{IsDistortionMatrix}), and (C7) (\noderef{CitedQuasiregularBasics})
+available on every open $\Omega_0\subseteq\Omega$.  The argument splits on
+whether $F$ is \emph{almost everywhere} constant on $\Omega$; no nondegeneracy
+hypothesis is needed, matching the printed statement of Theorem~Theorem~7 of the thesis,
+which carries none.  \emph{The split is taken almost-everywhere-invariantly
+because that is the form in which both \textup{(C7)} and
+\noderef{TauPropertiesQuasiregular} state their non-constancy condition}: $F$ is
+a $W^{1,n}_{\mathrm{loc}}$ map, determined only up to a null set, so a pointwise
+non-constancy condition would be a condition on the representative rather than
+on the map, and the two branches below must between them exhaust the genuine
+alternatives.  They do: either some $c$ has $F=c$ almost everywhere on $\Omega$,
+or none does.
+
+\medskip
+\noindent\emph{Part 1: the case $F$ almost everywhere constant on $\Omega$.}
+
+Suppose there is $c\in\R^n$ with $F=c$ almost everywhere on $\Omega$.  Fix $i$.
+Apply \noderef{QuasiregularConstantCase} with the parameters $n$ and $K$ --- its
+only guard is $2\le n$, a hypothesis of the present theorem --- on the open set
+$\Omega$, with the present $F$ and $G$ and with this $c$; its remaining
+hypotheses are the openness of $\Omega$ and \noderef{IsQuasiregularOn}, both
+hypotheses of the present theorem, and $F=c$ almost everywhere on $\Omega$, which
+is the branch hypothesis just assumed.  It gives, for the present $i$,
+\[
+G^i=0\quad\text{a.e.\ on }\Omega .
+\tag{1.1}
+\]
+\emph{That node is where the almost-everywhere uniqueness of a weak gradient is
+used}, and it is the only place in this proof that needs it; it is also the only
+thing the constant branch needs beyond the branch hypothesis itself.
+
+Both conclusions now follow with no cited input, and in particular without using
+either $\tau$-antecedent.  Let $\Omega'$ be as in the conclusion, so
+$\Omega'\subseteq\overline{\Omega'}\subseteq\Omega$.
+
+For (i), let $0\le\eta<1$ and put $w(x)=c_i$ for all $x$.  Then
+\[
+F^i=c_i=w\qquad\text{almost everywhere on }\Omega' ,
+\tag{1.2}
+\]
+which is the branch hypothesis restricted: it gives $F=c$ almost everywhere on
+$\Omega$, hence $F^i=c_i$ almost everywhere on $\Omega$ componentwise, and
+$\Omega'\subseteq\Omega$ as recorded above, so an almost-everywhere statement on
+$\Omega$ holds almost everywhere on $\Omega'$ --- the exceptional set only
+shrinks.  \emph{No pointwise identity is available or needed.}  $F$ is carried by
+\noderef{IsQuasiregularOn} as a $W^{1,n}_{\mathrm{loc}}$ map, determined up to a
+null set, and the branch hypothesis is itself an almost-everywhere statement, so
+$F(x)^i=c_i$ can fail at points of $\Omega'$; what clause (i) of the conclusion
+asks for is exactly the almost-everywhere identity $(1.2)$.  And
+$w\in C^\eta(\overline{\Omega'})$ (\noderef{MemHolderOn}): $w$ is continuous, and
+the H\"older constant $C=0$ works, since $|w(x)-w(y)|=0\le0\cdot\mathrm{dist}
+(x,y)^\eta$ for all $x,y$.
+
+For (ii), put $w(x)=c_i$ and $g_w(x)=0$ for all $x$.  Then $F^i=w$ almost
+everywhere on $\Omega'$, which is $(1.2)$ again, and $G^i=0=g_w$ almost
+everywhere on $\Omega'$ by (1.1), since $\Omega'\subseteq\Omega$ and the same
+restriction of an almost-everywhere statement applies.  These are the two
+almost-everywhere identities clause (ii) of the conclusion asks for; as in (i),
+no pointwise identity for $F^i$ is available.  And
+$\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$
+(\noderef{MemC1HolderOn}) holds, the three clauses in turn: $w$ is
+differentiable at every point of $\R^n$, in particular at every point of
+$\Omega'$, with vanishing differential, so each directional derivative equals
+the corresponding component of $g_w=0$; $g_w$ is continuous, hence continuous on
+$\overline{\Omega'}$; and the constant $C=0$ works for the H\"older seminorm of
+$g_w$ on $\overline{\Omega'}$, because $\|g_w(x)-g_w(y)\|=0$.  \emph{The
+constant branch is insensitive to which pair of sets is taken}, since all three
+clauses hold for $w=c_i$, $g_w=0$ on every subset of $\R^n$.  This
+holds for the $\beta>0$ fixed in (0c), which depends only on $n$, $K$ and
+$\delta$.
+
+\emph{Neither branch is vacuous on constant maps.}  Here every component weak
+gradient vanishes a.e.\ by (1.1), so the formal differential $DF=(G^i_j)_{ij}$
+is the zero matrix a.e.\ and $J_F=\det DF=0$ a.e.  At every $x\in\Omega$ where
+$DF(x)=0$ we have $\neg(0<J_F(x))$, so the second branch of
+\noderef{IsDistortionMatrix} applies and $\tau(x)=I$.  Thus $\tau=I$ a.e.\ on
+$\Omega$, and $I$ is continuous and $\delta$-H\"older for every $\delta$ (with
+constant $0$), so both antecedents are satisfiable; $I$ also satisfies the
+corrected two-sided bound $K^{-2/n}|\xi|^2\le|\xi|^2\le K^{2(n-1)/n}|\xi|^2$
+whenever $K\ge1$.
+
+\medskip
+\noindent\emph{Part 2: the case $F$ not almost everywhere constant on $\Omega$
+--- the common setup.}
+
+Assume now that there is no $c$ with $F=c$ almost everywhere on $\Omega$, which
+is exactly the nonconstancy hypothesis of
+\noderef{TauPropertiesQuasiregular}, and exactly the antecedent of the Jacobian
+clause of (C7) (\noderef{CitedQuasiregularBasics}); both state it
+almost-everywhere-invariantly, because $F$ is determined only up to a null set.
+
+\textbf{(2a)} Apply the (C7) hypothesis at $\Omega_0=\Omega$, legitimate since
+$\Omega$ is open and $\Omega\subseteq\Omega$, to get
+$\mathrm{CitedQuasiregularBasics}\ n\ K\ \Omega\ F\ G\ \tau$
+(\noderef{CitedQuasiregularBasics}).  Feeding it the present theorem's
+\noderef{IsQuasiregularOn} and \noderef{IsDistortionMatrix} hypotheses yields its
+four conclusions on $\Omega$.  We use clause (1), which supplies a field
+$\widetilde F$ with $\widetilde F$ continuous on $\Omega$ and $F=\widetilde F$
+almost everywhere on $\Omega$; and clause (2), which under the nonconstancy just
+assumed gives $0<J_F$ almost everywhere on $\Omega$.  Clause (3), the
+weak-solution property, is not used.
+
+\emph{Clause (1) does not say that $F$ is continuous, and this is used below at
+(3e).}  $F$ is carried by \noderef{IsQuasiregularOn} only as a
+$W^{1,n}_{\mathrm{loc}}$ map, determined up to a null set, so continuity is a
+property of the representative $\widetilde F$ and not of $F$: redefining $F$ at
+one point of $\Omega$ leaves every hypothesis of the present theorem intact and
+destroys continuity.  Fix such an $\widetilde F$ once and for all.
+
+\textbf{(2b)} Apply \noderef{TauPropertiesQuasiregular} --- the instance of (0a),
+at the same $n,K$ --- with the data $\Omega,F,G,\tau$.  Its hypotheses are: the
+openness of $\Omega$; \noderef{IsQuasiregularOn} and
+\noderef{IsDistortionMatrix}, both hypotheses of the present theorem;
+$\mathrm{CitedQuasiregularBasics}\ n\ K\ \Omega\ F\ G\ \tau$, which is (2a); and
+the nonconstancy of $F$ on $\Omega$, which is the case assumption.  It gives:
+for almost every $x\in\Omega$, $\tau(x)$ is symmetric, $\det\tau(x)=1$, and
+\[
+K^{-\frac2n}|\xi|^2\le(\tau(x)\xi,\xi)\le K^{\frac{2(n-1)}n}|\xi|^2
+\quad\text{for all }\xi\in\R^n,
+\tag{2.1}
+\]
+\[
+\lambda|h|^{\,n}\le(\tau(x)h,h)^{\frac n2}\le\Lambda|h|^{\,n}
+\quad\text{for all }h\in\R^n .
+\tag{2.2}
+\]
+
+\emph{The upper bound in \textup{(2.1)} is $K^{2(n-1)/n}|\xi|^2$ and not
+$|\xi|^2$.}  The thesis prints $(\tau(x)\xi,\xi)\le|\xi|^2$ at l.~1608--1610, and
+the manuscript's own \verb|% CHECK| at l.~1603--1605 records that this is false
+in general: $\det\tau=1$ forces the largest eigenvalue of $\tau$ to be at least
+$1$, with equality only for $\tau=I$ --- the counterexample given there is $n=2$,
+$DF=\mathrm{diag}(a,b)$ with $a>b$, for which $\tau=\mathrm{diag}(b/a,a/b)$ has
+largest eigenvalue $a/b>1$ --- and the same note prescribes the two-sided bound
+of (2.1), adding that any $K$-dependent bounds suffice.  Accordingly
+\noderef{TauPropertiesQuasiregular} states (2.1) and nothing stronger, and (2.1)
+is what this proof uses; this is why $\nu_1$ below carries a power of $K$, in
+agreement with l.~1617--1618's ``constants depending exclusively on $K$''.
+
+\medskip
+\noindent\emph{Part 3: the local data attached to a given $\Omega'$, from
+\noderef{QuasiregularLocalVariationalData}.}
+
+Both conclusions have the same shape: a set $\Omega'$ that is open, nonempty and
+bounded with $\overline{\Omega'}\subseteq\Omega$, carrying (C5) at the exponents
+$n$ and $n/(n-1)$ (\noderef{CitedCampanatoEmbedding}), and a representative
+$\tau'$ of $\tau$.  Fix such an $\Omega'$ and such a $\tau'$, so that
+\[
+\tau=\tau'\ \text{a.e.\ on }\Omega,
+\tag{3.1}
+\]
+and assume for the whole of Part 3 only this about $\tau'$: \emph{every entry
+$x\mapsto\tau'(x)_{jk}$ is continuous on $\Omega$.}  In part (i) that is the
+antecedent verbatim.  In part (ii) the antecedent gives $C\ge0$ with
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\,\mathrm{dist}(x,y)^\delta$ for all
+$x,y\in\Omega$, and since $\delta>0$ this forces continuity on $\Omega$: given
+$x\in\Omega$ and $\epsilon>0$, take the radius $(\epsilon/C)^{1/\delta}$ when
+$C>0$ and any radius when $C=0$, and for $y\in\Omega$ within it
+$|\tau'(y)_{jk}-\tau'(x)_{jk}|\le C\,\mathrm{dist}(y,x)^\delta<\epsilon$, the
+strict inequality because $r\mapsto r^{\delta}$ is strictly increasing on
+$[0,\infty)$ for $\delta>0$.  So Part 3 applies in both cases.  Fix also
+$i\in\{1,\dots,n\}$ and write $u=F^i$, $g=G^i$.
+
+Apply \noderef{QuasiregularLocalVariationalData} with the parameters $n$, $K$,
+the $\lambda,\Lambda$ of (0a) and the $\nu_0,\nu_1$ of (0b).  Its head guards
+hold: $2\le n$ and $1\le K$ are data of the present theorem; $0<\lambda$ and
+$\lambda\le\Lambda$ are (0a); $0<\nu_0$ is (0b), and $\nu_0\le n/K$ holds with
+equality by the choice $\nu_0=n/K$ there; and $n(n-1)K^{\,n-1}\le\nu_1$ is
+exactly the doubling of (0b), since $\nu_1=2n(n-1)K^{\,n-1}$ and
+$n(n-1)K^{\,n-1}\ge0$.  Its data hypotheses are, in order: the openness of
+$\Omega$ and of $\Omega'$, the nonemptiness and the boundedness of $\Omega'$ and
+$\overline{\Omega'}\subseteq\Omega$, all data of the conclusion being proved;
+\noderef{IsQuasiregularOn} and \noderef{IsDistortionMatrix}, hypotheses of the
+present theorem; the (C7) hypothesis in its universal form
+(\noderef{CitedQuasiregularBasics}), a hypothesis of the present theorem in
+exactly that shape; the nonconstancy of $F$ on $\Omega$, which is the case
+assumption of Part 2; the almost-everywhere equality $(3.1)$ and the continuity
+of the entries of $\tau'$, both just fixed; and the almost-everywhere two-sided
+bounds, which are $(2.1)$ and $(2.2)$ of (2b).
+
+It produces $\Omega''$, $f^0$, $\sigma$, $M$, $W_n$ and $d$ with
+\[
+\overline{\Omega'}\subseteq\Omega'',\qquad
+\overline{\Omega''}\subseteq\Omega,\qquad
+d\le\mathrm{dist}(x,y)\quad(x\in\Omega',\ y\notin\Omega''),
+\tag{3.3}
+\]
+$\Omega''$ open, and $0<d$, $0\le M$, $0\le W_n$; with
+\[
+\mathrm{VariationalStructureF123}\ n\ n\ 0\ \lambda\ \Lambda\ 1\ \nu_0\ \nu_1\
+\Omega''\ f^0\ \sigma
+\tag{3i}
+\]
+(\noderef{VariationalStructureF123}); with
+\[
+u\in W^{1,n}(\Omega'')\ \text{with weak gradient}\ g
+\tag{3.9}
+\]
+(\noderef{MemW1pOn}); with $|u|\le M$ almost everywhere on $\Omega''$ and
+$\int_{\Omega''}|u|^n\,dx+\int_{\Omega''}\|g\|^n\,dx\le W_n^{\,n}$, which we
+refer to below as (3e); with
+\[
+\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g
+\tag{3.8}
+\]
+(\noderef{IsLocalMinimumOn}); and with the conditional H\"older rate: for every
+$\delta$ with $0<\delta<1$ and every $C\ge0$ such that
+$|\tau'(x)_{jk}-\tau'(y)_{jk}|\le C\,\mathrm{dist}(x,y)^\delta$ for all
+$x,y\in\Omega$ and all $j,k$, there is $c_\sigma>0$ with
+$\sigma(t)\le c_\sigma t^\delta$ for every $t\ge0$.  \emph{That last clause is
+what Part 5 consumes and Part 4 does not}, which is why it is a conditional
+inside the node's conclusion rather than a hypothesis of it.
+
+\emph{The node's own $\Omega$ slot is the present $\Omega$ and its $\Omega'$ slot
+the present $\Omega'$; the interposed $\Omega''$ is produced, not supplied.}  In
+Parts 4 and 5 it is $\Omega''$ that occupies the ``$\Omega$'' slot of the two
+\S4 theorems and the present $\Omega'$ that occupies their ``$\Omega'$'' slot, so
+the Lipschitz and (C5) hypotheses those theorems place on that slot are the data
+of the conclusion being proved and nothing is asked of $\Omega''$ beyond
+$(3.3)$.
+
+\medskip
+\noindent\emph{Part 4: conclusion \textup{(i)}.}
+
+Assume the first antecedent: $\tau$ agrees a.e.\ on $\Omega$ with a $\tau'$ whose
+entries are continuous on $\Omega$.  Let $\Omega'$ and $\eta$ be given with
+$\Omega'$ open, nonempty and bounded, $\overline{\Omega'}\subseteq\Omega$, (C5)
+on $\Omega'$ at the exponents $n$ and $n/(n-1)$, and $0\le\eta<1$; fix $i$.  If
+$F$ is almost everywhere constant on $\Omega$ we are done by Part 1, so assume
+not and let Part 2 apply; the two branches are exhaustive because the branch
+condition is a disjunction of a statement and its negation.  \emph{The order
+matters: Part 3 consumes $(2.1)$, $(2.2)$ and (2a), which exist only under the
+nonconstancy assumption, so the branch must be taken first.}  Now run Part 3,
+obtaining $\Omega''$, $f^0$, $M$, $W_n$, $d$, $\sigma$ and the conclusions
+(3.8), (3.9) and (3i).
+
+Apply \noderef{MinimumMorreyRegularity} with $n$, $p=n$, $\tau_M=n/2$, the
+$\lambda,\Lambda$ of (0a), $a=1$, $\nu_0,\nu_1$ of (0b), and $d$, $M$, $W_n$,
+$\sigma$ of Part 3.  Its hypotheses, in order:
+\begin{itemize}
+\item $2\le n$, $1<p$ (as $p=n\ge2$), $0<\tau_M$ and $\tau_M<n$ (as
+  $\tau_M=n/2$ and $n\ge2$), $0<\lambda$, $\lambda\le\Lambda$, $0<a$, $0<\nu_0$,
+  $\nu_0<\nu_1$: by (0a) and (0b).  \emph{The exponent $\tau_M$ must be
+  positive}, which is why $n/2$ and not $0$ is passed: the node binds
+  $0<\tau_M<n$, matching the manuscript's \verb|% CHECK| at l.~1277 and l.~1554,
+  which records that $\tau_M=0$ must be excluded because at $\tau_M=0$ clause (i)
+  would assert $|\nabla u|\in L^{\infty}$ and the proof needs $\tau_M>0$.  The
+  clause of the conclusion used below does not mention $\tau_M$, so any
+  admissible value serves.
+\item $0<d$, $0\le M$, $0\le W_n$: by (3e).
+\item \noderef{CitedSobolevPoincareBall}, and the three universal clauses (C1),
+  (C2), (C3) at the exponent $p=n$ (\noderef{CitedRegularityEpsPos},
+  \noderef{CitedDirichletW1p}, \noderef{CitedDirichletHolder}): hypotheses of the
+  present theorem, in exactly that shape, passed on unchanged.
+\item $0\le\varepsilon$ and $\varepsilon\le1$: at $\varepsilon=0$.
+\item $\Omega''$ and $\Omega'$ open, $\Omega'$ nonempty and bounded,
+  $\overline{\Omega'}\subseteq\Omega''$: by (3.3) and the data of the conclusion.
+  Note the node's own ``$\Omega$'' is instantiated as $\Omega''$, not as
+  $\Omega$.
+\item $\forall x\in\Omega'$, $\forall y\notin\Omega''$,
+  $d\le\mathrm{dist}(x,y)$: by (3e).
+\item $\Omega'$ a bounded Lipschitz domain
+  (\noderef{IsBoundedLipschitzDomain}): a datum of the conclusion.  \emph{The
+  node's $\Omega'$ slot is the present $\Omega'$, not $\Omega''$}, so the
+  hypothesis Theorem~3 places on that slot is supplied by the conclusion's own
+  datum and nothing is asked of the interposed set.
+\item (C5) at the exponent $n/(n-1)$ on $\Omega'$
+  (\noderef{CitedCampanatoEmbedding}): a datum of the conclusion.
+\item (C4) at the exponent $p=n$ (\noderef{CitedHolderOscillationMinimum}): a hypothesis
+  of the present theorem.
+\item $\mathrm{VariationalStructureF123}$ at
+  $n,n,0,\lambda,\Lambda,1,\nu_0,\nu_1,\Omega'',f^0,\sigma$: by (3i).
+\item $u\in W^{1,n}(\Omega'')$ with weak gradient $g$: by (3.9).
+\item $|u|\le M$ a.e.\ on $\Omega''$, and
+  $\int_{\Omega''}|u|^n+\int_{\Omega''}\|g\|^n\le W_n^{\,n}$: by (3e).
+\item $\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g$: by (3.8).
+\end{itemize}
+Every hypothesis is discharged, so the conclusion holds; we use its third clause,
+which for every $\eta$ with $0\le\eta<1$ gives a $w$ with $u=w$ a.e.\ on
+$\Omega'$ and $w\in C^\eta(\overline{\Omega'})$ (\noderef{MemHolderOn}).  As
+$u=F^i$ and $i$ was arbitrary, this is conclusion (i).
+
+\medskip
+\noindent\emph{Part 5: conclusion \textup{(ii)}.}
+
+Assume the second antecedent: there are $\tau'$ and $C\ge0$ with
+$\tau=\tau'$ a.e.\ on $\Omega$ and
+$|\tau'(x)_{ij}-\tau'(y)_{ij}|\le C\,\mathrm{dist}(x,y)^\delta$ for all
+$x,y\in\Omega$ and all $i,j$.  Let $\Omega'$ be given as in the conclusion; fix
+$i$.  Again, if $F$ is almost everywhere constant on $\Omega$ we are done by
+Part 1, so assume not, and Part 2 applies; as in Part 4 the branch is taken
+before Part 3, which consumes data available only under the nonconstancy
+assumption.  Since $\delta>0$, the H\"older bound makes every entry of $\tau'$
+continuous on $\Omega$, so Part 3 applies verbatim and yields
+$\Omega''$, $f^0$, $M$, $W_n$, $d$, $\sigma$, (3.8), (3.9) and (3i).
+
+In addition, $\sigma$ satisfies the H\"older condition (F4).  This is the
+conditional clause of \noderef{QuasiregularLocalVariationalData} recorded at the
+end of Part 3, read at the present $\delta$ and at the $C$ of the antecedent: its
+three guards are $0<\delta$ and $\delta<1$, hypotheses of the present theorem,
+and $0\le C$, part of the antecedent, and its hypothesis is the H\"older bound
+$|\tau'(x)_{ij}-\tau'(y)_{ij}|\le C\,\mathrm{dist}(x,y)^\delta$ for all
+$x,y\in\Omega$ and all $i,j$, which is the antecedent verbatim.  It yields
+$c_\sigma>0$ with
+\[
+\sigma(t)\le c_\sigma t^\delta\qquad\text{for all }t\ge0 .
+\]
+\emph{The strictness $0<c_\sigma$ matters and is delivered by that node}, because
+\noderef{MinimumGradientHolder} requires it while the antecedent here allows
+$C=0$.
+
+Apply \noderef{MinimumGradientHolder} --- the instance of (0c), at the same
+$n,p=n,\lambda,\Lambda,a=1,\nu_0,\nu_1,\delta$, so that the $\lambda_0$ it
+produces is the one fixed there and $\beta=\lambda_0/n$ --- with
+$c_\sigma$, $d$, $M$, $W_n$ and $\sigma$.  The head hypotheses were discharged in
+(0c).  The remaining ones, in order:
+\begin{itemize}
+\item $0<c_\sigma$, $0<d$, $0\le M$, $0\le W_n$: just above, and (3e).
+\item $0\le\varepsilon$, $\varepsilon\le1$: at $\varepsilon=0$.
+\item $\Omega''$ and $\Omega'$ open, $\Omega'$ nonempty and bounded,
+  $\overline{\Omega'}\subseteq\Omega''$: by (3.3) and the data of the
+  conclusion; again the node's ``$\Omega$'' is $\Omega''$.
+\item $\forall x\in\Omega'$, $\forall y\notin\Omega''$,
+  $d\le\mathrm{dist}(x,y)$: by (3e).
+\item $\Omega'$ a bounded Lipschitz domain
+  (\noderef{IsBoundedLipschitzDomain}): a datum of the conclusion, and again it
+  is the present $\Omega'$ and not $\Omega''$ that occupies the node's $\Omega'$
+  slot.
+\item (C5) on $\Omega'$ at the exponent $p=n$ \emph{and} at the exponent
+  $n/(n-1)$ (\noderef{CitedCampanatoEmbedding}): both are data of the conclusion.
+\item (C4) at $p=n$ (\noderef{CitedHolderOscillationMinimum}): a hypothesis of the
+  present theorem.
+\item $\mathrm{VariationalStructureF123}$ at
+  $n,n,0,\lambda,\Lambda,1,\nu_0,\nu_1,\Omega'',f^0,\sigma$: by (3i).
+\item $\sigma(t)\le c_\sigma t^\delta$ for all $t\ge0$: just above.
+\item $u\in W^{1,n}(\Omega'')$ with weak gradient $g$: by (3.9).
+\item $|u|\le M$ a.e.\ on $\Omega''$ and the $L^n$ bound by $W_n^{\,n}$: by (3e).
+\item $\mathrm{IsLocalMinimumOn}\ n\ n\ \Omega''\ f^0\ u\ g$: by (3.8).
+\end{itemize}
+Every hypothesis is discharged.  The second clause of the conclusion gives $w$
+and $g_w$ with $u=w$ a.e.\ on $\Omega'$, $g=g_w$ a.e.\ on $\Omega'$ and
+$\mathrm{MemC1HolderOn}\;n\;(\lambda_0/p)\;\Omega'\;\overline{\Omega'}\;w\;g_w$
+(\noderef{MemC1HolderOn}) --- $w$ differentiable at every point of $\Omega'$
+with $\nabla w=g_w$ there, and $g_w$ continuous and
+$(\lambda_0/p)$-H\"older on $\overline{\Omega'}$.  That is the pair of sets the
+present conclusion (ii) asks for, so it is handed on unchanged.  Since $p=n$, the exponent is $\lambda_0/n=\beta$, the
+constant fixed in (0c), which depends only on $n$, $K$ and $\delta$.  As $u=F^i$,
+$g=G^i$ and $i$ was arbitrary, this is conclusion (ii).
+\end{proof}

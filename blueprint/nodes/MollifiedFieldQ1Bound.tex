@@ -1,0 +1,170 @@
+\begin{helper}[Condition (Q1) for the mollified field]
+Let $n\ge2$ and let $p\in\R$.  Let $\rho\colon\R^n\to\R$, let
+$c_1,C_2,\gamma_0,\gamma_1,C_M,c_4,e\in\R$ and let $A\colon\R^n\to\R^n$.
+Throughout, $(\cdot,\cdot)$ and $|\cdot|$ are the Euclidean inner product and
+norm, $D_{h_j}$ is the partial derivative in the $j$-th variable of the argument
+$h$, $\operatorname{supp}$ denotes the \emph{closed} support, and every power of
+a positive real is the real power, written exactly as the structure conditions
+(Q1) of the thesis--(Q2) of the thesis print the weight
+$(\varepsilon+|h|^2)^{\frac p2-1}$; no such power is rewritten as an integer
+power.  Write $q=\tfrac p2-1$, so $q\ge0$ exactly when $p\ge2$.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho$ is $C^\infty$ on $\R^n$, $\rho\ge0$ everywhere,
+  $\operatorname{supp}\rho\subseteq\overline{B_1(0)}$, and
+  $\int_{\R^n}\rho=1$;
+\item[(H2)] for every $h'\in\R^n$ and every $e'>0$ the scalar kernel
+  \[
+  K(h',e')=\int_{\R^n}\bigl(|h'+\sqrt{e'}\,z|^2\bigr)^{q}\rho(z)\,dz
+  \]
+  satisfies the two-sided bound
+  $c_1\bigl(e'+|h'|^2\bigr)^{q}\le K(h',e')\le C_2\bigl(e'+|h'|^2\bigr)^{q}$
+  (this is the weight sandwich, taken here as a hypothesis);
+\item[(H3)] $0<\gamma_0$ and the field $(x,z,h)\mapsto A(h)$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with the parameters
+  $p,\varepsilon=0,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item[(H4)] $0<C_M$ and, for almost every $x\in\R^n$, for every $z\in\R$ and all
+  $a,b\in\R^n$,
+  \[
+  C_M\gamma_0\bigl(0+|a|^2+|b|^2\bigr)^{q}|a-b|^2
+  \ \le\ \bigl(A(a)-A(b),\,a-b\bigr)
+  \tag{MA}
+  \]
+  (the monotonicity bound for $A$ itself, i.e.\ (Q1) of the thesis already integrated
+  along segments, taken here as a hypothesis and in the almost-every-$x$ form
+  its producer states it in; it carries no derivative and excludes no pair, the
+  case $a=b$ reading $0\le0$);
+\item[(H5)] $c_4\le2^{q}c_1$ and $c_4\le4^{q}$;
+\item[(H6)] $0<e$ and the mollified field
+  \[
+  A_e(h)=\int_{\R^n}\rho(z)A\bigl(h+\sqrt e\,z\bigr)dz
+    -\int_{\R^n}\rho(z)A\bigl(\sqrt e\,z\bigr)dz
+  \]
+  is $C^\infty$ on $\R^n$.
+\end{enumerate}
+Then, for almost every $x\in\R^n$ --- and in fact for every $x$ --- and for
+every $z\in\R$ and all $h,\xi\in\R^n$ with $e+|h|^2\ne0$,
+\[
+C_Mc_4\gamma_0\bigl(e+|h|^2\bigr)^{q}|\xi|^2
+\ \le\ \bigl(DA_e(h)\xi,\,\xi\bigr)
+=\sum_i\bigl(DA_e(h)\xi\bigr)^i\xi^i .
+\]
+That is: $A_e$, which depends on neither $x$ nor $z$, satisfies condition
+(Q1) of the thesis of \noderef{EllipticStructureQ12} on $\R^n$ at the nondegenerate
+parameter $\varepsilon=e$ with the constant $\gamma_0^{(e)}=C_Mc_4\gamma_0$.
+The conclusion is stated in the almost-every-$x$ form in which
+\noderef{EllipticStructureQ12} writes (Q1) of the thesis and (Q2) of the thesis --- its
+continuity and $C^1$ clauses are every-$x$ statements, and that distinction is
+load-bearing --- so that a consumer may supply this lemma as that field without
+reshaping it.  The subtracted constant in (H6) is the normalisation
+$A_e(0)=0$ and cancels in every difference $A_e(h_1)-A_e(h_2)$ used below;
+mollification is the route taken here, and it is not the perturbation
+$A(h)+e^{q}h$, which does not preserve the pair $\gamma_0,\gamma_1$.
+\end{helper}
+\begin{proof}
+The asserted bound involves neither $x$ nor $z$, so it suffices to prove it for
+all $h,\xi$, and the guard $e+|h|^2\ne0$ is automatic because $e>0$.  Fix $h$
+and $\xi$.  If $\xi=0$ both sides vanish and there is nothing to prove, so
+assume $\xi\ne0$, i.e.\ $|\xi|>0$, and put $W=e+|h|^2>0$, so that $W^{q}>0$.
+Since the field $(x,z,h)\mapsto A(h)$ of (H3)--(H4) does not depend on $x$ and
+Lebesgue measure on $\R^n$ is not the zero measure, the almost-everywhere
+statement (MA) has a witness; reading it at one such $x$ and at $z=0$ gives (MA)
+for \emph{all} $a,b\in\R^n$, and that is how it is used below.  Note also that
+$A$ is continuous on $\R^n$, by clause \texttt{hcont} of (H3).
+
+\emph{Step 1: the two-point increment, integrated.}  Let $0<t$.  Apply (MA) at
+\[
+a=h+t\xi+\sqrt e\,z,\qquad b=h-t\xi+\sqrt e\,z ,
+\]
+so that $a-b=2t\xi$ and, by the parallelogram law
+$|u+v|^2+|u-v|^2=2|u|^2+2|v|^2$ with $u=h+\sqrt e\,z$ and $v=t\xi$,
+\[
+|a|^2+|b|^2=2|h+\sqrt e\,z|^2+2t^2|\xi|^2 .
+\]
+Thus, for every $z$,
+\[
+4C_M\gamma_0t^2|\xi|^2
+\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{q}
+\ \le\ 2t\bigl(A(a)-A(b),\,\xi\bigr),
+\]
+where the base $2|h+\sqrt e\,z|^2+2t^2|\xi|^2$ is strictly positive because
+$t>0$ and $\xi\ne0$, so no reading of $0^{q}$ is involved.  Both sides are
+continuous in $z$ --- the left because its base is positive and
+$\lambda\mapsto\lambda^{q}$ is continuous on $(0,\infty)$, the right because $A$
+is continuous --- and, multiplied by $\rho$, both vanish off the compact
+$\operatorname{supp}\rho\subseteq\overline{B_1(0)}$ and are bounded there, since
+for $|z|\le1$ the two points $a,b$ lie in the compact ball
+$\overline{B_{|h|+t|\xi|+\sqrt e}(0)}$, on which the continuous $A$ is bounded.
+So both sides are integrable against $\rho(z)\,dz$ (Preamble: a continuous
+function with compact support is integrable).  Integrating, using
+\[
+\int_{\R^n}\bigl[A(h+t\xi+\sqrt e\,z)-A(h-t\xi+\sqrt e\,z)\bigr]\rho(z)\,dz
+=A_e(h+t\xi)-A_e(h-t\xi)
+\]
+--- the two renormalising constants cancel --- and dividing by $2t>0$, we get
+\[
+C_M\gamma_0|\xi|^2L(t)
+\ \le\ \frac{\bigl(A_e(h+t\xi)-A_e(h-t\xi),\,\xi\bigr)}{2t},
+\qquad
+L(t)=\int_{\R^n}\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{q}\rho(z)\,dz ,
+\tag{Q1-$t$}
+\]
+the monotonicity of the integral being the Preamble item on domination,
+monotonicity and the norm inequality.
+
+\emph{Step 2: the symmetric difference quotient converges.}  For any
+$G\in C^\infty(\R^n,\R^n)$ and any $h',\xi'$, the symmetric quotient
+$(2t)^{-1}\bigl(G(h'+t\xi')-G(h'-t\xi')\bigr)$ tends to $DG(h')\xi'$ as
+$t\downarrow0$.  Indeed $G$ is differentiable at $h'$, so
+$s\mapsto G(h'+s\xi')$ is differentiable at $s=0$ with derivative
+$DG(h')\xi'$, i.e.\ its difference quotient at $0$ tends to $DG(h')\xi'$ as
+$s\to0$ along $s\ne0$; composing that one-sided-from-both-sides limit with
+$t\mapsto t$ and with $t\mapsto-t$, both of which tend to $0$ through nonzero
+values as $t\downarrow0$, and taking the half-sum, gives the claim, because
+\[
+\frac12\Bigl[\frac{G(h'+t\xi')-G(h')}{t}
+ +\frac{G(h'-t\xi')-G(h')}{-t}\Bigr]
+=\frac{G(h'+t\xi')-G(h'-t\xi')}{2t}.
+\]
+Applying this to $G=A_e$, which is $C^\infty$ by (H6), and pairing with $\xi$
+(the inner product with a fixed vector being continuous), the right-hand side of
+(Q1-$t$) tends to $\bigl(DA_e(h)\xi,\xi\bigr)$ as $t\downarrow0$.
+
+\emph{Step 3: a lower bound for $L(t)$, in the two sign cases for $q$.}  No
+interchange of limit and integral is needed; in each case $L(t)$ is bounded
+below by a quantity whose limit as $t\downarrow0$ is explicit.
+\begin{itemize}
+\item If $q\ge0$ (i.e.\ $p\ge2$), then
+  $2|h+\sqrt e\,z|^2+2t^2|\xi|^2\ge2|h+\sqrt e\,z|^2$ and
+  $\lambda\mapsto\lambda^{q}$ is nondecreasing on $(0,\infty)$, so
+  $L(t)\ge2^{q}K(h,e)\ge2^{q}c_1W^{q}\ge c_4W^{q}$ by (H2) and (H5), a bound
+  independent of $t$.
+\item If $q<0$ (i.e.\ $p<2$), then for $|z|\le1$ one has
+  $|h+\sqrt e\,z|^2\le2|h|^2+2e=2W$, so the base is at most
+  $4W+2t^2|\xi|^2$; the exponent being negative,
+  $\lambda\mapsto\lambda^{q}$ is nonincreasing on $(0,\infty)$ and therefore
+  $\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{q}\ge\bigl(4W+2t^2|\xi|^2\bigr)^{q}$
+  for every $z\in\operatorname{supp}\rho$.  Integrating that constant against
+  $\rho$, whose mass is $1$ by (H1), gives
+  $L(t)\ge\bigl(4W+2t^2|\xi|^2\bigr)^{q}$, whose limit as $t\downarrow0$ is
+  $(4W)^{q}=4^{q}W^{q}\ge c_4W^{q}$ by (H5) --- the limit being legitimate
+  because $4W\ge4e>0$, so the base stays in $(0,\infty)$ and
+  $\lambda\mapsto\lambda^{q}$ is continuous there.
+\end{itemize}
+In both cases, therefore,
+\[
+\liminf_{t\downarrow0}C_M\gamma_0|\xi|^2L(t)\ \ge\ C_Mc_4\gamma_0W^{q}|\xi|^2 ,
+\]
+using $C_M>0$, $\gamma_0>0$ and $|\xi|^2\ge0$ to preserve the inequality under
+multiplication.
+
+\emph{Step 4: conclusion.}  Combining Steps 1--3 and letting $t\downarrow0$ in
+(Q1-$t$) --- a weak inequality between two functions of $t$, both of which
+converge (the right-hand side by Step 2, the left-hand bound by Step 3), passes
+to the limit ---
+\[
+C_Mc_4\gamma_0\bigl(e+|h|^2\bigr)^{q}|\xi|^2
+\ \le\ \bigl(DA_e(h)\xi,\,\xi\bigr),
+\]
+which is the assertion; as it holds for all $h,\xi$ with no reference to $x$ or
+$z$, it holds in particular for almost every $x$.
+\end{proof}

@@ -1,0 +1,112 @@
+\begin{helper}[Integrability of the structure weight along a segment]
+Let $n\ge0$ and $p>1$.  Then for every $\varepsilon\ge0$ and all
+$a,b\in\R^n$ the function
+\[
+t\ \longmapsto\ \bigl(\varepsilon+|ta+(1-t)b|^2\bigr)^{\frac p2-1}
+\]
+is interval-integrable with respect to Lebesgue measure on $[0,1]$.
+All powers are real powers of nonnegative reals, with the convention
+$0^{s}=0$ for $s\ne0$ and $0^{0}=1$; in the single degenerate configuration
+$\varepsilon=0$, $a=b=0$, $p<2$ the integrand is therefore the constant $0$
+rather than $+\infty$, and the statement is read with that convention.
+\end{helper}
+\begin{proof}
+Write $s=\frac p2-1$, so that $2s=p-2$ and the hypothesis $p>1$ says exactly
+$2s>-1$.  Put
+\[
+\varphi(t)=ta+(1-t)b=b+t(a-b),\qquad
+W(t)=\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s}\quad(t\in\R).
+\]
+
+\emph{Measurability.}  The map $t\mapsto\varepsilon+|\varphi(t)|^2$ is a real
+quadratic polynomial in $t$, hence continuous; it takes values in
+$[0,\infty)$ because $\varepsilon\ge0$.  The real power $u\mapsto u^{s}$ is
+Borel measurable on $\R$.  Hence $W$ is measurable, and in every case below it
+remains to produce an integrable majorant on $[0,1]$.
+
+\emph{Case 1: $p\ge2$, i.e.\ $s\ge0$.}  If $s=0$ then $W\equiv1$ by the
+convention $u^{0}=1$, which is continuous.  If $s>0$ then $u\mapsto u^{s}$ is
+continuous on $[0,\infty)$, so $W$ is continuous on $[0,1]$ as a composition of
+continuous maps.  A continuous function on a compact interval is
+interval-integrable, which settles this case.
+
+\emph{Case 2: $1<p<2$ and $\varepsilon>0$, i.e.\ $s<0$ with a positive floor.}
+For every $t$ we have $\varepsilon+|\varphi(t)|^2\ge\varepsilon>0$, so
+$t\mapsto\varepsilon+|\varphi(t)|^2$ takes values in $[\varepsilon,\infty)$,
+on which $u\mapsto u^{s}$ is continuous.  Hence $W$ is continuous on $[0,1]$
+and therefore interval-integrable.  (Quantitatively $0\le W\le\varepsilon^{s}$,
+since $s<0$ and the base is $\ge\varepsilon$.)
+
+\emph{Case 3: $1<p<2$ and $\varepsilon=0$, i.e.\ $s<0$ and no floor.}  This is
+the degenerate corner, and $W(t)=|\varphi(t)|^{2s}=|\varphi(t)|^{p-2}$.
+
+\emph{Case 3a: $a=b$.}  Then $\varphi\equiv b$ and $W$ is the constant
+$|b|^{p-2}$ (which is the constant $0$ if $b=0$, by the stated convention).  A
+constant is interval-integrable.
+
+\emph{Case 3b: $a\ne b$.}  Set
+\[
+A=|a-b|^2>0,\qquad B=(b,a-b),\qquad C=|b|^2 ,
+\]
+so that, expanding the inner product,
+\[
+|\varphi(t)|^2=|b+t(a-b)|^2=At^2+2Bt+C .
+\]
+Cauchy--Schwarz (Preamble) gives $B^2=(b,a-b)^2\le|b|^2|a-b|^2=AC$.  Let
+$t_0=-B/A$.  Completing the square,
+\[
+At^2+2Bt+C=A\Bigl(t+\frac BA\Bigr)^2+\Bigl(C-\frac{B^2}A\Bigr)
+=A(t-t_0)^2+\Bigl(C-\frac{B^2}A\Bigr),
+\]
+and $C-\frac{B^2}A\ge0$ by the Cauchy--Schwarz inequality just recorded, since
+$A>0$.  Therefore
+\[
+A(t-t_0)^2\ \le\ |\varphi(t)|^2\qquad\text{for every }t\in\R .
+\]
+Fix $t\ne t_0$.  Then $0<A(t-t_0)^2\le|\varphi(t)|^2$, and since $s<0$ the map
+$u\mapsto u^{s}$ is decreasing on $(0,\infty)$, so
+\[
+W(t)=\bigl(|\varphi(t)|^2\bigr)^{s}\ \le\ \bigl(A(t-t_0)^2\bigr)^{s}
+=A^{s}\,|t-t_0|^{2s}=A^{s}\,|t-t_0|^{p-2},
+\]
+where we used that both bases are positive, so the real-power identities
+$(uv)^{s}=u^{s}v^{s}$ and $(u^2)^{s}=|u|^{2s}$ apply.  Also $W\ge0$
+everywhere, because a real power of a nonnegative base is nonnegative.  Thus
+\[
+0\ \le\ W(t)\ \le\ A^{s}\,|t-t_0|^{p-2}
+\qquad\text{for all }t\in[0,1]\setminus\{t_0\},
+\]
+and $\{t_0\}$ is a Lebesgue null set, so the bound holds almost everywhere on
+$[0,1]$.
+
+It remains to see that $t\mapsto|t-t_0|^{p-2}$ is interval-integrable on
+$[0,1]$.  Since $p>1$ we have $p-2>-1$, so by the Preamble item on
+interval integrability of real powers, $u\mapsto u^{p-2}$ is
+interval-integrable on every interval; and Lebesgue measure on $\R$ is
+invariant under the translation $u=t-t_0$ and under the reflection
+$u\mapsto-u$, both of which preserve interval integrability.  We distinguish
+the position of $t_0$:
+
+\begin{itemize}
+\item If $t_0\le0$, then $t-t_0\ge0$ on $[0,1]$, so
+  $|t-t_0|^{p-2}=(t-t_0)^{p-2}$, and the translation $u=t-t_0$ turns the
+  integral into $\int_{-t_0}^{1-t_0}u^{p-2}\,du$, finite by the Preamble item.
+\item If $t_0\ge1$, then $t_0-t\ge0$ on $[0,1]$, so
+  $|t-t_0|^{p-2}=(t_0-t)^{p-2}$, and the reflected translation $u=t_0-t$ turns
+  the integral into $\int_{t_0-1}^{t_0}u^{p-2}\,du$, again finite.
+\item If $0<t_0<1$, split $[0,1]=[0,t_0]\cup[t_0,1]$.  On $[t_0,1]$ the first
+  bullet's computation applies and on $[0,t_0]$ the second bullet's does, and
+  interval integrability on two abutting intervals gives interval
+  integrability on their union.
+\end{itemize}
+
+So $t\mapsto A^{s}|t-t_0|^{p-2}$ is a nonnegative integrable majorant of the
+measurable function $W$ on $[0,1]$, whence $W$ is interval-integrable on
+$[0,1]$.  This exhausts all cases.  The hypothesis $p>1$ was used only in
+Case 3b, to get $p-2>-1$, and it is sharp there: if $\varepsilon=0$, $p\le1$
+and the line through $a$ and $b$ passes through the origin at a parameter
+$t_0\in[0,1]$ -- i.e.\ $C=B^2/A$ in the notation above, so that
+$|\varphi(t)|^2=A(t-t_0)^2$ exactly -- then
+$W(t)=A^{s}|t-t_0|^{p-2}$ with $p-2\le-1$, whose integral over $[0,1]$
+diverges.
+\end{proof}

@@ -1,0 +1,100 @@
+\begin{lemma}[A smooth compactly supported function lies in every $W^{1,r}$]
+Let $n\ge1$ be an integer and $r\ge1$ real, let $\Omega\subseteq\R^n$ be open,
+and let $\varphi\in C^\infty(\R^n)$ have compact support with
+$\operatorname{supp}\varphi\subseteq\Omega$.  Then
+\[
+\varphi\in W^{1,r}(\Omega)\quad\text{with weak gradient}\quad
+x\longmapsto\nabla\varphi(x)
+\]
+(\noderef{MemW1pOn}), where $\nabla\varphi$ is the classical gradient, i.e.\ the
+vector field whose $i$-th component is the classical partial derivative
+$D_i\varphi$.
+\end{lemma}
+\begin{proof}
+Write $K=\operatorname{supp}\varphi$, a compact subset of $\Omega$.  By
+\noderef{MemW1pOn} the assertion has three parts: the test-function identity
+\[
+\int_\Omega\varphi\,D_i\psi\,dx=-\int_\Omega D_i\varphi\,\psi\,dx
+\tag{1}
+\]
+for every $\psi\in C^\infty(\R^n)$ with compact support contained in $\Omega$
+and every $i\in\{1,\dots,n\}$ --- this is \noderef{HasWeakGradientOn} for the
+pair $(\varphi,\nabla\varphi)$ --- and the memberships $\varphi\in L^r(\Omega)$,
+$|\nabla\varphi|\in L^r(\Omega)$.
+
+\emph{Step 1: $\varphi$ and $\nabla\varphi$ are continuous, bounded, and
+supported in $K$.}  Being $C^\infty$, $\varphi$ is continuous and each
+$D_i\varphi$ is continuous, so $\nabla\varphi$ is continuous and so is
+$x\mapsto|\nabla\varphi(x)|$.  If $x\notin K$ then $\varphi$ vanishes
+identically on the open set $\R^n\setminus K$, which contains $x$, hence
+$\varphi(x)=0$ and $D\varphi(x)=0$, so also $\nabla\varphi(x)=0$: a function
+constant on an open set has vanishing derivative there.  Thus
+\[
+\varphi=0\ \text{and}\ \nabla\varphi=0\quad\text{on }\R^n\setminus K .
+\tag{2}
+\]
+Since $K$ is compact and $|\varphi|$, $|\nabla\varphi|$ are continuous, they
+attain finite maxima on $K$; combined with (2) they are bounded on all of
+$\R^n$.  Put
+$\Lambda=\sup_{\R^n}|\varphi|<\infty$ and
+$\Lambda'=\sup_{\R^n}|\nabla\varphi|<\infty$.
+
+\emph{Step 2: the two $L^r$ memberships.}  Both $\varphi$ and
+$|\nabla\varphi|$ are continuous, hence measurable.  By (2) and Step 1,
+\[
+\int_\Omega|\varphi|^r\,dx=\int_{\Omega\cap K}|\varphi|^r\,dx
+\le\Lambda^r\,|K|<\infty ,
+\qquad
+\int_\Omega|\nabla\varphi|^r\,dx\le(\Lambda')^r\,|K|<\infty ,
+\]
+using that $|K|<\infty$ because $K$ is compact, and that $t\mapsto t^r$ is
+nondecreasing on $[0,\infty)$ so that monotonicity of the integral (Preamble)
+applies.  Hence $\varphi\in L^r(\Omega)$ and $|\nabla\varphi|\in L^r(\Omega)$.
+
+\emph{Step 3: the three integrability hypotheses of integration by parts.}  Fix
+$\psi\in C^\infty(\R^n)$ with compact support contained in $\Omega$ and fix an
+index $i$; write $v=e_i$ for the $i$-th standard basis vector, so that
+$D_v=D_i$.  Each of the three functions
+\[
+x\mapsto D_i\varphi(x)\,\psi(x),
+\qquad
+x\mapsto \varphi(x)\,D_i\psi(x),
+\qquad
+x\mapsto \varphi(x)\,\psi(x)
+\]
+is continuous, being a product of continuous functions, and vanishes off $K$ by
+(2) --- for the middle one, $\varphi$ vanishes off $K$; for the other two,
+either factor does.  A continuous function vanishing off a compact set is
+integrable on $\R^n$: it is bounded, say by $\Lambda''$, so its integral of
+absolute values is at most $\Lambda''|K|<\infty$.  So all three are integrable.
+
+\emph{Step 4: integration by parts.}  Both $\varphi$ and $\psi$ are $C^\infty$,
+hence differentiable at every point of $\R^n$, so in particular $\varphi$ is
+differentiable at every point of $\operatorname{supp}\psi$ and $\psi$ at every
+point of $\operatorname{supp}\varphi$.  With Step 3 this is exactly the
+hypothesis package of the Preamble item on integration by parts in a direction,
+applied with $f=\varphi$, $g=\psi$ and $v=e_i$; it gives
+\[
+\int_{\R^n}\varphi\,D_i\psi\,dx=-\int_{\R^n}D_i\varphi\,\psi\,dx .
+\tag{3}
+\]
+
+\emph{Step 5: from $\R^n$ to $\Omega$.}  Both integrands in (3) vanish at every
+point outside $K$, by (2); and $K\subseteq\Omega$.  Hence for each of them the
+integral over $\Omega$ and the integral over $\R^n$ agree: the difference is the
+integral over $\R^n\setminus\Omega$ of a function that is identically $0$ there,
+since $\R^n\setminus\Omega\subseteq\R^n\setminus K$.  Therefore (3) reads
+\[
+\int_\Omega\varphi\,D_i\psi\,dx=-\int_\Omega D_i\varphi\,\psi\,dx ,
+\]
+which is (1); and since $D_i\varphi$ is the $i$-th component of
+$\nabla\varphi$, this is the defining identity of
+\noderef{HasWeakGradientOn} for the pair $(\varphi,\nabla\varphi)$ on $\Omega$
+at the index $i$.  As $\psi$ and $i$ were arbitrary, that identity holds for
+the whole test class.
+
+Together with Step 2 this is the assertion $\varphi\in W^{1,r}(\Omega)$ with
+weak gradient $\nabla\varphi$ (\noderef{MemW1pOn}).  Note that the exponent $r$
+entered only in Step 2, through the bound $\Lambda^r|K|<\infty$, so the
+conclusion holds simultaneously for every $r\ge1$.
+\end{proof}

@@ -1,0 +1,153 @@
+\begin{definition}
+Let $n\ge 2$, $p>1$, $\varepsilon\ge0$ and $\gamma_0,\gamma_1>0$, let
+$\Omega\subseteq\R^n$ and let
+$A\colon\R^n\times\R\times\R^n\to\R^n$.  Write
+\[
+D(\varepsilon)=\{h\in\R^n:\ \varepsilon+|h|^2\ne0\},
+\]
+so that $D(\varepsilon)=\R^n$ when $\varepsilon>0$ and
+$D(0)=\R^n\setminus\{0\}$.  We say that $A$ satisfies the \emph{restricted
+structure conditions} (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with parameters
+$p,\varepsilon,\gamma_0,\gamma_1$, written
+$\mathrm{EllipticStructureQ12}(n,p,\varepsilon,\gamma_0,\gamma_1,\Omega,A)$, if
+\begin{enumerate}
+\item (Carath\'eodory, measurability) for every $z\in\R$ and every $h\in\R^n$ the
+  map $x\mapsto A(x,z,h)$ is Borel measurable on $\R^n$;
+\item (Carath\'eodory, joint continuity) for every $x\in\R^n$ the map
+  $(z,h)\mapsto A(x,z,h)$ is continuous on $\R\times\R^n$;
+\item for every $x\in\Omega$ and every $z\in\R$ the map $h\mapsto A(x,z,h)$ is
+  continuous on all of $\R^n$;
+\item for every $x\in\Omega$ and every $z\in\R$ the map $h\mapsto A(x,z,h)$ is
+  of class $C^1$ on $D(\varepsilon)$;
+\item (Q1) for a.e.\ $x\in\Omega$, all $z\in\R$, all $h\in D(\varepsilon)$ and
+  all $\xi\in\R^n$, with $D(\varepsilon)$ as above,
+\[
+\gamma_0(\varepsilon+|h|^2)^{\frac p2-1}|\xi|^2
+\;\le\;\sum_{i,j=1}^n D_{h_j}A^i(x,z,h)\,\xi^i\xi^j ;
+\]
+\item (Q2) for a.e.\ $x\in\Omega$, all $z\in\R$, all $h\in D(\varepsilon)$ and
+  all $i,j\in\{1,\dots,n\}$,
+\[
+|D_{h_j}A^i(x,z,h)|\;\le\;\gamma_1(\varepsilon+|h|^2)^{\frac p2-1}.
+\]
+\end{enumerate}
+\noindent\textbf{On the Carath\'eodory clauses (1) and (2).}  They are the
+measurability hypothesis the literature attaches to a coefficient field
+$A(x,z,h)$, and the thesis assumes them silently: without them the composite
+$x\mapsto A(x,u(x),\nabla u(x))$ need not be measurable, so the integral in
+(1.2) of the thesis is not defined, and in a formal reading where the integral of a
+non-measurable function is assigned a junk value the weak-formulation identity
+becomes satisfiable by \emph{every} $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ for a
+suitably non-measurable $A$.  The Note for the formalization at l.~258 requires
+the cited results to be stated ``as in the literature'' and not to be vacuous,
+and (C4) is cited at l.~263 from [G, chapter VII, Theorems 2.1--2.2], [GG2] and
+[LU, chapter 4], all of which assume Carath\'eodory data; so clauses (1) and (2)
+restore the literature's hypothesis rather than adding to it.  Clause~(2) is
+stated jointly in $(z,h)$, and the joint form is what is needed: clause~(3)
+gives continuity in $h$ at \emph{fixed} $z$ only, and nothing in
+(Q1) of the thesis--(Q2) of the thesis constrains the dependence on $z$, so clause~(3)
+plus clause~(1) would not make $x\mapsto A(x,u(x),\nabla u(x))$ measurable for
+measurable $u$.  Clause~(3) is kept because it is the clause the development
+cites by name where only continuity in $h$ is at issue; it is implied by
+clause~(2) and is retained for that reason alone.  The same pair appears, in the
+same spelling, in \noderef{VariationalGrowthF1} for the variational density, and
+in \noderef{EllipticStructureQ345} for $B$.
+
+In (5) the sum $\sum_{i,j}D_{h_j}A^i\xi^i\xi^j$ is written in Lean as
+$\sum_i (D_hA(x,z,h)\xi)^i\xi^i$, where $D_hA(x,z,h)$ is the Fr\'echet
+derivative of $h\mapsto A(x,z,h)$; the two agree by linearity.  In (6)
+$D_{h_j}A^i$ is the $i$-th component of the derivative in the direction of the
+$j$-th basis vector.  The derivative is the ordinary Fr\'echet derivative, not a
+derivative relative to a subset: $D(\varepsilon)$ is an open set --- it is the
+preimage of $\R\setminus\{0\}$ under the continuous map $h\mapsto\varepsilon+|h|^2$
+--- so at $h\in D(\varepsilon)$ clause (4) gives $h\mapsto A(x,z,h)$ a genuine
+Fr\'echet derivative and the displays in (5) and (6) have their usual meaning.
+
+\textbf{On the domain of differentiability.}  Conditions
+(Q1) of the thesis--(Q2) of the thesis are stated in the thesis for $h\in\R^n$, with
+``$A$ is differentiable with respect to $h\in\R^n$'' and $\gamma_0,\gamma_1>0$.
+Clauses (4)--(6) restrict the differentiability and the two bounds to
+$D(\varepsilon)$, and this is a \emph{correction}, not a convenience.  Read on
+all of $\R^n$ the conditions are contradictory on the range
+$\varepsilon=0$, $1<p<2$, which is the singular range the thesis is about: for
+$h\ne0$, (Q1) with $\varepsilon=0$ forces
+$|D_hA(x,z,h)|\ge\gamma_0|h|^{p-2}$, which tends to $+\infty$ as $h\to0$, while
+differentiability on all of $\R^n$ in the $C^1$ sense makes $D_hA$ continuous at
+$0$; no field satisfies both, so with $\gamma_0>0$ the conditions would be
+satisfied by nothing at all and Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis would be
+vacuous there.  In particular the model field $A(h)=|h|^{p-2}h$ of
+(1.3) of the thesis --- the $p$-Laplacian the thesis is written about --- would be
+excluded, since it is not differentiable at the origin for $p<2$.  The paper
+requires the degenerate parameter: ``$\varepsilon\ge0$ is arbitrary there'' in
+Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis (Note for the formalization,
+\textbf{Definitions}), and \S5 applies (Q1) of the thesis--(Q5) ``with
+$\varepsilon=0$'' inside the proof of Theorem~Theorem~7 of the thesis.  So
+``differentiable with respect to $h$'' has to be read on the set where the
+weight the condition carries is finite, which is exactly $D(\varepsilon)$, and
+the global continuity clause (1) keeps $A$ defined and continuous at the
+excluded point --- which is what the nodes that integrate $D_hA$ along a
+segment through the origin consume, and what the Euler field
+$A=\nabla_hf^0$ of \S4 is.
+
+Three facts delimit the correction.  First, $D(\varepsilon)=\R^n$ whenever
+$\varepsilon>0$, so clauses (4)--(6) are literally the conditions as printed on
+the whole nondegenerate range, and every consumer that works at
+$\varepsilon>0$ is unaffected.  Second, at $\varepsilon=0$ exactly one point is
+given up, the origin, where the thesis' own weight is $+\infty$ for $p<2$.
+Third, the conditions are now satisfied on the singular range: for $1<p<2$ the
+field $A(h)=|h|^{p-2}h$, with $A(0)=0$, is continuous on $\R^n$, is $C^\infty$
+on $\R^n\setminus\{0\}$, and satisfies (Q1) and (Q2) there with
+$\gamma_0=p-1>0$ and $\gamma_1=3-p$, since
+$D_hA(h)\xi=|h|^{p-2}\xi+(p-2)|h|^{p-4}(h,\xi)h$ gives
+$(D_hA(h)\xi,\xi)=|h|^{p-2}\bigl(|\xi|^2+(p-2)(\hat h,\xi)^2\bigr)
+\ge(p-1)|h|^{p-2}|\xi|^2$ by Cauchy--Schwarz, and
+$|D_{h_j}A^i(h)|\le|h|^{p-2}\bigl(1+(2-p)\bigr)$ by $|h_i|,|h_j|\le|h|$.  The
+ratio $\gamma_1/\gamma_0=(3-p)/(p-1)$ depends only on $p$, which is what the
+constants of Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis require.
+
+For $p\ge2$ the weight is finite at the origin as well, so at $\varepsilon=0$
+clause (5) there discards an instance the thesis does assert.  Nothing in the
+development uses it: Theorems~Theorem~1 of the thesis and~Theorem~2 of the thesis at $\varepsilon=0$ are
+proved by approximation from problems with $\varepsilon>0$, where
+$D(\varepsilon)=\R^n$, exactly as the thesis prescribes (``it is enough to prove Theorems~1 and~2 when $\varepsilon>0$'',
+p.~16), and the structure conditions at $\varepsilon=0$ enter only through that
+approximation, whose argument uses (Q1)--(Q2) at points $h\ne0$ only.  The uniform
+guard is kept in preference to a $p$-dependent one so that
+$D(\varepsilon)$ is one set, independent of $p$, in every statement that
+mentions it.
+
+\textbf{On ``differentiable''.}  Within $D(\varepsilon)$, clause (4) renders
+``$A$ is differentiable with respect to $h$'' as ``of class $C^1$'', and the
+reading is adjudicated here, once, for the whole development.  The decisive
+ground is the Note for the formalization's own constraint on the results it
+permits to be cited: they ``must be stated as in the literature and not in a
+stronger form, and they must not be vacuous''.  The cited result (C1) is
+attributed to [LU, chapter 4], [DB] and [GT, chapter 15], and those regularity
+theorems are stated for a \emph{continuous} $D_hA$; under the merely-differentiable
+reading (C1) would assert $u\in W^{2,2}_{\mathrm{loc}}$ and
+$\nabla u\in C(\Omega)$ for a strictly wider class of operators than the
+literature covers, which is exactly what the Note forbids.  That the class
+really is wider is elementary: for $n=1$, $p=2$, $\varepsilon=1$ the map
+$A(h)=2h+h^2\sin(1/h)$, $A(0)=0$, is differentiable with
+$A'(h)=2+2h\sin(1/h)-\cos(1/h)\in[1,4]$, so it satisfies
+(Q1) of the thesis--(Q2) of the thesis with $\gamma_0=1$, $\gamma_1=4$ while $A'$ has no
+limit at $0$.  Moreover the Note's (C1) itself asserts that the differentiated
+equation (3.2) of the thesis holds in the weak sense, which is the weak chain rule
+for $x\mapsto A(\nabla u(x))$ and is unavailable without continuity of $D_hA$.
+Finally the reading costs the paper no application: the model operator of
+(1.3) of the thesis, the quasiregular field of Theorem~Theorem~7 of the thesis and the frozen
+operator $A=\nabla_hf^0$ of \S4 are all $C^1$ in $h$ on $D(\varepsilon)$.  Mere
+differentiability there remains available from clause (4).
+
+\textbf{Convention on the weight.}  The factor
+$(\varepsilon+|h|^2)^{p/2-1}$ is a real power ($\mathtt{Real.rpow}$) of a
+nonnegative real.  At $\varepsilon=0$, $h=0$ and $p\ne2$ the paper's weight is
+$+\infty$ while the real power is $0$; at $p=2$ the exponent is $0$ and the two
+readings agree.  This is the convention used throughout.  It is a convention
+about a value and nothing more: it is clauses (4)--(6), and not the convention,
+that make the conditions inhabited at $\varepsilon=0$ for $1<p<2$, because the
+obstruction described above lies in the limit along $h\ne0$, where no convention
+about the value at $h=0$ can reach.  Clauses (1)--(3) are untouched by the
+convention: measurability, joint continuity and continuity in $h$ make no
+reference to the weight.
+\end{definition}

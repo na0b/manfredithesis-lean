@@ -1,0 +1,210 @@
+\begin{helper}[(Q1) integrated along a segment: strict monotonicity of $A$]
+Let $n\ge2$, $p>1$ and $r>0$.  There is a constant $C=C(n,p,r)>0$ such that the
+following holds.  Let $\varepsilon\ge0$, let $\gamma_0>0$ and
+$\gamma_1\le r\gamma_0$, let $\Omega\subseteq\R^n$, and let
+$A\colon\R^n\times\R\times\R^n\to\R^n$ satisfy \noderef{EllipticStructureQ12}
+with these data --- \emph{all} of that node's clauses, as that node states them;
+they are not re-expanded here, and
+$D(\varepsilon)=\{h\in\R^n:\varepsilon+|h|^2\ne0\}$ is the set on which its
+differentiability clause and its two bounds are stated.  Then for a.e.\
+$x\in\R^n$: if
+$x\in\Omega$, then for every $z\in\R$ and all $a,b\in\R^n$,
+\[
+C\,\gamma_0\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+\ \le\ \bigl(A(x,z,a)-A(x,z,b),\,a-b\bigr) .
+\]
+All powers are real powers of nonnegative reals, with the convention
+$0^{s}=0$ for $s\ne0$.
+
+\noindent\textbf{On the dependence of $C$, which is $(n,p,r)$ as stated and
+$(n,p)$ in fact.}  The statement binds $r$ \emph{before} the existential for
+$C$, so what it asserts is a constant depending on $n$, $p$ and $r$; under
+pm-0007 that quantifier order is the dependence, and the annotation above says
+exactly what the order permits.  The constant the proof below actually produces
+depends only on $n$ and $p$ --- it comes from
+\noderef{MidpointGradientWeightBound}, which fixes it from $p$ alone, times $n$
+--- so the statement is not tight in $r$; binding $r$ after $C$ would be a
+strictly stronger statement, and it is not taken because no consumer needs it
+and because $r$ is the standing uniformity parameter under which the consumers of
+this bound fix their own constants.  The hypothesis $\gamma_1\le r\gamma_0$ is
+likewise not needed for the conclusion and is retained for the same reason;
+retaining it only weakens the statement.  Condition (Q2) of the thesis itself
+\emph{is} used, but only to make the segment integral below converge.
+\end{helper}
+\begin{proof}
+Write $s=\frac p2-1$ and let $C=C(p)>0$ be the constant supplied by
+\noderef{MidpointGradientWeightBound} for this $p$ (available since $p>1$),
+which that node chooses before any dimension; since $n\ge2$ gives $n\ge1$, its
+conclusion applies in the present dimension, so that for every
+$\varepsilon\ge0$ and all $a,b\in\R^n$
+\[
+C\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{s}
+\ \le\ \int_0^1(1-t)\bigl(\varepsilon+|ta+(1-t)b|^2\bigr)^{s}dt .
+\tag{$\dagger$}
+\]
+This choice is made before $\varepsilon,\gamma_0,\gamma_1,\Omega,A$ and the
+data, which is the required quantifier order, and $C>0$.  A constant depending
+on $p$ alone is in particular an admissible value for the $C=C(n,p)$ the
+present statement asks for.  The hypothesis $n\ge2$ enters only through the
+dimension-dependent factor in Step 1 below and, as just noted, through the
+$n\ge1$ that \noderef{MidpointGradientWeightBound} requires.
+
+\emph{Choice of $x$.}  By \noderef{EllipticStructureQ12}, (Q1) of the thesis holds
+for a.e.\ $x$ and (Q2) of the thesis holds for a.e.\ $x$; let $N_1$ and $N_2$ be the
+corresponding null sets and put $N=N_1\cup N_2$, again a null set.  For every
+$x\notin N$ with $x\in\Omega$, both (Q1) of the thesis and (Q2) of the thesis are
+available at $x$ for all $z$, $h$, $\xi$, $i$, $j$.  The complement
+$\R^n\setminus N$ has full Lebesgue measure and is in particular nonempty,
+since Lebesgue measure on $\R^n$ is not the zero measure; so this really does
+identify points at which the two conditions may be read off.  Because the
+conclusion is itself an ``a.e.\ $x$'' statement, it suffices to prove it for
+each such $x$.  Fix $x\notin N$ with $x\in\Omega$, fix $z\in\R$ and fix
+$a,b\in\R^n$.  Set
+\[
+\xi=a-b,\qquad \varphi(t)=ta+(1-t)b=b+t\xi,\qquad
+w(t)=\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s} .
+\]
+
+\emph{Step 1: the operator bound coming from (Q2) of the thesis.}  Let
+$g\in D(\varepsilon)$ and let $DA(x,z,g)$ be the differential of
+$A(x,z,\cdot)$ at $g$, which exists because $D(\varepsilon)$ is open and
+$A(x,z,\cdot)$ is $C^1$ there by \noderef{EllipticStructureQ12}, since
+$x\in\Omega$; (Q2) of the thesis is available at $g$ for the same reason.  Expanding $\xi=\sum_j\xi^je_j$ and using linearity,
+$\bigl(DA(x,z,g)\xi\bigr)^i=\sum_{j}\xi^j\,D_{h_j}A^i(x,z,g)$, so by
+(Q2) of the thesis and Cauchy--Schwarz (Preamble, applied to
+$(|\xi^1|,\dots,|\xi^n|)$ against $(1,\dots,1)$),
+\[
+\bigl|\bigl(DA(x,z,g)\xi\bigr)^i\bigr|
+\le\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}\sum_{j=1}^n|\xi^j|
+\le\sqrt n\,\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}|\xi| ,
+\]
+and summing the squares over $i$,
+\[
+\bigl|DA(x,z,g)\xi\bigr|\ \le\ n\,\gamma_1\bigl(\varepsilon+|g|^2\bigr)^{s}|\xi| .
+\tag{$*$}
+\]
+
+\emph{Step 2: the scalar function along the segment.}  Define
+$\psi\colon\R\to\R$ by
+\[
+\psi(t)=\bigl(A(x,z,\varphi(t)),\,\xi\bigr)
+=\sum_{i=1}^nA^i(x,z,\varphi(t))\,\xi^i .
+\]
+If $a=b$ the assertion is trivial: both sides vanish, the left because
+$|a-b|=0$.  So assume $a\ne b$, i.e.\ $\xi\ne0$; then $\varphi$ is injective, so
+the set
+\[
+T=\{t\in[0,1]:\ \varphi(t)\notin D(\varepsilon)\}
+=\{t\in[0,1]:\ \varepsilon+|\varphi(t)|^2=0\}
+\]
+is empty when $\varepsilon>0$ and has at most one element when
+$\varepsilon=0$ --- namely the unique $t_0$ with $\varphi(t_0)=0$, if it lies in
+$[0,1]$.  In all cases $T$ is a null set, and $[0,1]\setminus T$ is a union of
+at most two intervals.
+
+Now $\psi$ is continuous on $[0,1]$, because $\varphi$ is continuous,
+$A(x,z,\cdot)$ is continuous on all of $\R^n$ by the first clause of
+\noderef{EllipticStructureQ12}, and $v\mapsto(v,\xi)$ is continuous.  And for
+$t\in[0,1]\setminus T$ the point $\varphi(t)$ lies in the open set
+$D(\varepsilon)$, where $A(x,z,\cdot)$ is $C^1$; since
+$t\mapsto\varphi(t)$ is affine with $\varphi'(t)=\xi$ and $v\mapsto(v,\xi)$ is
+linear, the chain rule gives that $\psi$ is differentiable at every such $t$
+with
+\[
+\psi'(t)=\bigl(DA(x,z,\varphi(t))\,\xi,\ \xi\bigr)
+=\sum_{i,j=1}^nD_{h_j}A^i\bigl(x,z,\varphi(t)\bigr)\,\xi^j\xi^i
+\qquad(t\in[0,1]\setminus T).
+\]
+Note $\psi(1)=(A(x,z,a),\xi)$ and $\psi(0)=(A(x,z,b),\xi)$, so
+$\psi(1)-\psi(0)$ is exactly the right-hand side of the assertion.
+
+\emph{Step 3: $\psi'$ is interval-integrable on $[0,1]$.}  Measurability:
+$\psi'$ denotes the derivative function of $\psi$, and the derivative of an
+arbitrary function $\R\to\R$ is measurable (Preamble item on measurability of
+the derivative) --- the item is about an arbitrary function, so it does not
+matter that $\psi$ fails to be differentiable at the at most one point of $T$,
+where the derivative function takes its default value.  No continuity of the
+Jacobian enters this step, which is why that item is the right tool.
+Domination: by Cauchy--Schwarz (Preamble) and $(*)$ with $g=\varphi(t)$, which
+is legitimate for $t\notin T$ since then $\varphi(t)\in D(\varepsilon)$,
+\[
+|\psi'(t)|=\bigl|\bigl(DA(x,z,\varphi(t))\xi,\ \xi\bigr)\bigr|
+\le\bigl|DA(x,z,\varphi(t))\xi\bigr|\,|\xi|
+\le n\,\gamma_1\,|\xi|^2\,w(t)\qquad(t\in[0,1]\setminus T),
+\]
+hence for almost every $t\in[0,1]$, since $T$ is a null set.
+The function $w$ is interval-integrable on $[0,1]$ by
+\noderef{SegmentWeightIntegrable}, applied with this $n$, $p$, $\varepsilon$
+and these $a,b$; hence so is the constant multiple
+$n\gamma_1|\xi|^2w$, and therefore $\psi'$ is interval-integrable on $[0,1]$ by
+the Preamble item on domination.
+
+\emph{Step 4: integrating (Q1) of the thesis.}  First,
+\[
+\bigl(A(x,z,a)-A(x,z,b),\,a-b\bigr)=\psi(1)-\psi(0)=\int_0^1\psi'(t)\,dt .
+\]
+If $T=\emptyset$ this is the fundamental theorem of calculus (Preamble) in the
+form already used, applicable by Steps 2 and 3.  If $T=\{t_0\}$, apply instead
+the variant that asks for differentiability on the open interval and continuity
+on the closed one (Preamble) on each of $[0,t_0]$ and $[t_0,1]$: $\psi$ is
+continuous on $[0,1]$ and differentiable on $(0,t_0)$ and on $(t_0,1)$ by
+Step 2, and $\psi'$ is interval-integrable on each subinterval by Step 3, so
+\[
+\psi(t_0)-\psi(0)=\int_0^{t_0}\psi'(t)\,dt,
+\qquad
+\psi(1)-\psi(t_0)=\int_{t_0}^1\psi'(t)\,dt ,
+\]
+and adding these, with additivity of the interval integral over adjacent
+intervals for an interval-integrable function, gives the display.  (If
+$t_0\in\{0,1\}$ one of the two subintervals is degenerate and the single
+remaining application suffices.)
+
+Next, condition (Q1) of the thesis applied at $x$ with $h=\varphi(t)$ and the vector
+$\xi$ reads
+\[
+\gamma_0\bigl(\varepsilon+|\varphi(t)|^2\bigr)^{s}|\xi|^2
+=\gamma_0\,w(t)\,|\xi|^2\ \le\
+\sum_{i,j}D_{h_j}A^i\bigl(x,z,\varphi(t)\bigr)\xi^i\xi^j=\psi'(t)
+\]
+for every $t\in[0,1]\setminus T$, hence for almost every $t\in[0,1]$, which is
+what the hypothesis supplies: $\varphi(t)\in D(\varepsilon)$ for those $t$ and
+for no others.  Both $t\mapsto\gamma_0w(t)|\xi|^2$ and $\psi'$ are
+interval-integrable on $[0,1]$ (Step 3 and
+\noderef{SegmentWeightIntegrable}), so monotonicity of the integral under an
+almost-everywhere inequality (Preamble) gives
+\[
+\int_0^1\psi'(t)\,dt\ \ge\ \gamma_0|\xi|^2\int_0^1w(t)\,dt .
+\tag{$**$}
+\]
+
+\emph{Step 5: removing the factor $1-t$.}  The bound $(\dagger)$ supplied by
+\noderef{MidpointGradientWeightBound} carries the extra factor $1-t$ in its
+integrand, so it does not immediately bound $\int_0^1w$; we record the
+comparison rather than leave it to the reader.  For every $t\in[0,1]$ we have
+$0\le1-t\le1$, and $w(t)\ge0$ because a real power of a nonnegative base is
+nonnegative; hence
+\[
+0\le(1-t)\,w(t)\le w(t)\qquad(t\in[0,1]).
+\]
+The majorant $w$ is interval-integrable on $[0,1]$ by
+\noderef{SegmentWeightIntegrable}, and $t\mapsto(1-t)w(t)$ is measurable
+(a continuous function times a measurable one), so it too is
+interval-integrable, by the Preamble item on domination.  Monotonicity of the
+integral (Preamble) then gives
+\[
+\int_0^1(1-t)\,w(t)\,dt\ \le\ \int_0^1w(t)\,dt ,
+\]
+and combining this with $(\dagger)$,
+\[
+C\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{s}\ \le\ \int_0^1w(t)\,dt .
+\]
+
+\emph{Conclusion.}  Chaining Step 4 and Step 5, and using $\gamma_0>0$ and
+$|\xi|^2\ge0$,
+\[
+\bigl(A(x,z,a)-A(x,z,b),\,a-b\bigr)\ \ge\ \gamma_0|\xi|^2\int_0^1w(t)\,dt
+\ \ge\ C\,\gamma_0\bigl(\varepsilon+|a|^2+|b|^2\bigr)^{s}|a-b|^2 ,
+\]
+which is the assertion for this $x$.  Since $x$ was an arbitrary point of
+$\R^n\setminus N$, the assertion holds for a.e.\ $x$.
+\end{proof}

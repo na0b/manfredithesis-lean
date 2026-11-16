@@ -1,0 +1,133 @@
+\begin{lemma}[Weak gradient of a positive part]
+Let $n\ge1$, let $q\ge1$ and $c$ be real, let $\Omega\subseteq\R^n$ be open with
+$|\Omega|<\infty$, and let $u\in W^{1,q}(\Omega)$ with weak gradient $g$
+(\noderef{MemW1pOn}).  Then
+\[
+(u-c)^+=\max\{u-c,\,0\}\in W^{1,q}(\Omega)
+\quad\text{with weak gradient}\quad
+x\longmapsto g(x)\,\chi_{\{u>c\}}(x)
+\]
+(\noderef{MemW1pOn}), where $\chi_{\{u>c\}}$ is the indicator of
+$\{x:u(x)>c\}$, so that the weak gradient is $g(x)$ when $u(x)>c$ and $0$
+otherwise.
+\end{lemma}
+\begin{proof}
+By \noderef{MemW1pOn} the assertion has two halves: the test-function identity
+\[
+\int_\Omega(u-c)^+\,D_i\varphi\,dx=-\int_\Omega g^i\,\chi_{\{u>c\}}\,\varphi\,dx
+\tag{1}
+\]
+for every $\varphi\in C^\infty(\R^n)$ with compact support contained in $\Omega$
+and every $i\in\{1,\dots,n\}$ (that is, \noderef{HasWeakGradientOn} for the pair
+$((u-c)^+,\ g\chi_{\{u>c\}})$), and the integrability statements.
+
+\emph{Step 0: integrability.}  Pointwise $0\le(u-c)^+\le|u|+|c|$, and
+$u\in L^q(\Omega)$ by \noderef{MemW1pOn} while the constant $|c|$ lies in
+$L^q(\Omega)$ because $|\Omega|<\infty$; hence $(u-c)^+\in L^q(\Omega)$.  Also
+$|g\chi_{\{u>c\}}|\le|g|$ pointwise and $|g|\in L^q(\Omega)$, so
+$|g\chi_{\{u>c\}}|\in L^q(\Omega)$.  Finally, as in the companion lemma,
+$q\ge1$ and $|\Omega|<\infty$ give $g^i\in L^1(\Omega)$ for each $i$, which we
+use for the dominated convergence below.
+
+\emph{Step 1: a $C^1$ approximation of the positive part.}  For $\varepsilon>0$
+define $F_\varepsilon\colon\R\to\R$ by
+\[
+F_\varepsilon(t)=
+\begin{cases}
+0, & t\le0,\\[2pt]
+\dfrac{t^2}{2\varepsilon}, & 0\le t\le\varepsilon,\\[6pt]
+t-\dfrac{\varepsilon}{2}, & t\ge\varepsilon .
+\end{cases}
+\]
+The three formulas agree at the junctions ($0=0$ at $t=0$, and
+$\varepsilon^2/(2\varepsilon)=\varepsilon/2=\varepsilon-\varepsilon/2$ at
+$t=\varepsilon$), so $F_\varepsilon$ is well defined and continuous, and the
+piecewise derivative is
+\[
+F_\varepsilon'(t)=
+\begin{cases}
+0, & t\le0,\\[2pt]
+\dfrac{t}{\varepsilon}, & 0\le t\le\varepsilon,\\[6pt]
+1, & t\ge\varepsilon ,
+\end{cases}
+\]
+which again agrees at the junctions ($0=0$ at $t=0$ and $1=1$ at
+$t=\varepsilon$).  Hence $F_\varepsilon$ is of class $C^1$ on $\R$, and
+\[
+0\le F_\varepsilon'(t)\le1\qquad\text{for every }t\in\R .
+\tag{2}
+\]
+Two further properties, both immediate from the formulas:
+\[
+\bigl|F_\varepsilon(t)-t^+\bigr|\le\frac{\varepsilon}2
+\qquad\text{for every }t\in\R ,
+\tag{3}
+\]
+because the difference is $0$ for $t\le0$, equals
+$t-\frac{t^2}{2\varepsilon}\in[0,\varepsilon/2]$ for $0\le t\le\varepsilon$ (it
+is increasing there, with value $\varepsilon/2$ at $t=\varepsilon$), and equals
+$\varepsilon/2$ for $t\ge\varepsilon$; and
+\[
+F_\varepsilon'(t)\longrightarrow\chi_{\{t>0\}}
+\qquad\text{as }\varepsilon\downarrow0,\ \text{for every }t\in\R .
+\tag{4}
+\]
+For (4): if $t\le0$ then $F_\varepsilon'(t)=0$ for every $\varepsilon>0$, and if
+$t>0$ then $F_\varepsilon'(t)=1$ as soon as $\varepsilon<t$.  There is no
+exceptional level set: the convergence in (4) holds at \emph{every} real $t$,
+including $t=0$, which is the reason for using this piecewise $F_\varepsilon$
+rather than a smoothing of $t\mapsto t^+$ whose derivative at $0$ would tend to
+an unspecified value in $[0,1]$.
+
+\emph{Step 2: applying the $C^1$ chain rule.}  Put
+$H_\varepsilon(t)=F_\varepsilon(t-c)$.  Then $H_\varepsilon$ is $C^1$ with
+$H_\varepsilon'(t)=F_\varepsilon'(t-c)$, so $|H_\varepsilon'|\le1$ everywhere by
+(2).  By \noderef{WeakGradientC1Comp}, applied with $F=H_\varepsilon$, $L=1$ and
+the same $n,q,\Omega,u,g$ --- whose hypotheses are exactly the ones we have,
+namely $\Omega$ open with $|\Omega|<\infty$, $u\in W^{1,q}(\Omega)$ with weak
+gradient $g$, and $H_\varepsilon$ of class $C^1$ with derivative bounded by $1$
+---
+\[
+H_\varepsilon\circ u\in W^{1,q}(\Omega)
+\quad\text{with weak gradient}\quad
+H_\varepsilon'(u)\,g .
+\]
+In particular, by \noderef{HasWeakGradientOn}, for every admissible $\varphi$
+and every $i$,
+\[
+\int_\Omega F_\varepsilon(u-c)\,D_i\varphi\,dx
+=-\int_\Omega F_\varepsilon'(u-c)\,g^i\,\varphi\,dx .
+\tag{5}
+\]
+
+\emph{Step 3: letting $\varepsilon\downarrow0$ in (5).}  Fix $\varphi$ and $i$,
+and put $K=\operatorname{supp}\varphi$, a compact subset of $\Omega$; both
+integrands in (5) vanish off $K$.
+
+Left-hand side.  By (3), applied pointwise at $t=u(x)-c$,
+\[
+\Bigl|\int_\Omega\bigl(F_\varepsilon(u-c)-(u-c)^+\bigr)D_i\varphi\,dx\Bigr|
+\le\frac{\varepsilon}2\int_K|D_i\varphi|\,dx\longrightarrow0
+\qquad(\varepsilon\downarrow0),
+\]
+the integral $\int_K|D_i\varphi|\,dx$ being finite because $D_i\varphi$ is
+continuous and $K$ compact.  Hence the left-hand side of (5) converges to
+$\int_\Omega(u-c)^+D_i\varphi\,dx$.
+
+Right-hand side.  By (4), applied pointwise at $t=u(x)-c$, we have
+$F_\varepsilon'(u(x)-c)\to\chi_{\{u(x)-c>0\}}=\chi_{\{u>c\}}(x)$ for
+\emph{every} $x$, with no exceptional set.  Moreover, by (2),
+\[
+\bigl|F_\varepsilon'(u-c)\,g^i\,\varphi\bigr|\le\|\varphi\|_\infty\,|g^i|\,\chi_K ,
+\]
+which is integrable because $g^i\in L^1(\Omega)$ by Step 0 and $K\subseteq\Omega$.
+The dominated convergence theorem therefore gives
+\[
+\int_\Omega F_\varepsilon'(u-c)\,g^i\,\varphi\,dx
+\longrightarrow\int_\Omega\chi_{\{u>c\}}\,g^i\,\varphi\,dx .
+\]
+
+Passing to the limit on both sides of (5) yields (1).  Together with Step 0 this
+is precisely the assertion that $(u-c)^+\in W^{1,q}(\Omega)$ with weak gradient
+$g\chi_{\{u>c\}}$ (\noderef{MemW1pOn}).
+\end{proof}

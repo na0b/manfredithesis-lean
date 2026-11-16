@@ -1,0 +1,213 @@
+\begin{lemma}[Smooth approximation of a compactly supported $W^{1,q}$ function]
+Let $n\ge1$ be an integer and $q\ge1$ real, let $\Omega\subseteq\R^n$ be open,
+and let $\varphi\in W^{1,q}(\Omega)$ with weak gradient $g_\varphi$
+(\noderef{MemW1pOn}) have compact support with
+$\operatorname{supp}\varphi\subseteq\Omega$.  Then there are a compact set
+$K\subseteq\Omega$ with $\operatorname{supp}\varphi\subseteq K$ and functions
+$\Phi_m\in C^\infty(\R^n)$, $m\in\mathbb{N}$, each with compact support contained in
+$K$, such that
+\[
+\int_K|\Phi_m-\varphi|^q\,dx\longrightarrow0
+\qquad\text{and}\qquad
+\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^q\,dx\longrightarrow0
+\quad(m\to\infty)
+\]
+for each $i\in\{1,\dots,n\}$.  All powers are real powers of nonnegative reals.
+\end{lemma}
+\begin{proof}
+Write $K_0=\operatorname{supp}\varphi$.
+
+\emph{The degenerate case.}  If $K_0=\emptyset$ then $\varphi$ vanishes
+identically, and we may take $K=\emptyset$ --- compact, contained in $\Omega$,
+and containing $K_0$ --- together with $\Phi_m\equiv0$, which is $C^\infty$ with
+compact support $\emptyset\subseteq K$.  Every integral over $\emptyset$ is $0$,
+so both asserted limits are the constant sequence $0$.  Assume from now on
+$K_0\ne\emptyset$.
+
+\emph{Step 1: geometry.}  The set $K_0$ is compact, $\R^n\setminus\Omega$ is
+closed, and the two are disjoint, so
+$d=\operatorname{dist}(K_0,\R^n\setminus\Omega)>0$ (with $d=+\infty$ when
+$\Omega=\R^n$).  Fix $\delta_0>0$ with $3\delta_0<d$ and for $s>0$ put
+\[
+K_s'=\{x\in\R^n:\operatorname{dist}(x,K_0)\le s\} .
+\]
+Each $K_s'$ is closed, the distance function to $K_0$ being continuous, and
+bounded because $K_0$ is bounded, hence compact; and $K_s'\subseteq\Omega$
+whenever $s\le3\delta_0$, since a point outside $\Omega$ has distance at least
+$d>3\delta_0$ from $K_0$.  Set
+\[
+K=K_{2\delta_0}' ,
+\]
+so $K$ is compact, $K\subseteq\Omega$ and $K_0\subseteq K$, which are the first
+three assertions about $K$.
+
+\emph{Step 2: the data as functions on $\R^n$.}  By \noderef{MemW1pOn} we have
+$\varphi\in L^q(\Omega)$ and $|g_\varphi|\in L^q(\Omega)$, both almost
+everywhere strongly measurable on $\Omega$.
+The function $\varphi$ vanishes at every point outside
+$K_0=\operatorname{supp}\varphi$, by the definition of the support; in
+particular $\varphi$ agrees with $\varphi\chi_{K_0}$ everywhere, so, being
+almost everywhere strongly measurable on $\Omega$ and identically $0$ on the
+complement of $K_0\subseteq\Omega$, it is almost everywhere strongly measurable
+on all of $\R^n$.  Hence $\varphi\in L^q(\R^n)$ with
+$\int_{\R^n}|\varphi|^q=\int_{K_0}|\varphi|^q\le\int_\Omega|\varphi|^q<\infty$.
+Put
+\[
+\check g=g_\varphi\,\chi_\Omega ,
+\]
+the extension of $g_\varphi$ by $0$ off the (measurable, indeed open) set
+$\Omega$; then $\check g$ is almost everywhere strongly measurable on $\R^n$ ---
+almost everywhere strongly measurable on $\Omega$ by \noderef{MemW1pOn} and
+identically $0$ off $\Omega$ --- with $\check g=g_\varphi$ on
+$\Omega$, and $|\check g|\in L^q(\R^n)$ with
+$\int_{\R^n}|\check g|^q=\int_\Omega|g_\varphi|^q<\infty$.  Each component
+satisfies $|\check g_i|\le|\check g|$, so $\check g_i\in L^q(\R^n)$ as well.
+Finally, each of $\varphi$ and $\check g_i$ is locally integrable on $\R^n$: on
+a compact $K'$ we have $|K'|<\infty$ and $q\ge1$, so H\"older on a set of finite
+measure (Preamble) gives $L^q(K')\subseteq L^1(K')$.
+
+\emph{Step 3: the mollifier.}  For each $\delta>0$ let $\rho_\delta$ be the mollifier at scale $\delta$
+supplied by the Preamble item on a standard mollifier:
+\[
+\rho_\delta\in C^\infty(\R^n),\qquad \rho_\delta\ge0,\qquad
+\operatorname{supp}\rho_\delta\subseteq\overline{B_\delta(0)}\ \text{compact},
+\qquad \int_{\R^n}\rho_\delta\,dz=1 .
+\]
+Those four properties are the only ones used below.  In particular no explicit
+formula for $\rho_\delta$ is needed --- the Preamble item supplies the family
+directly at every scale, so $\rho_\delta$ is not obtained here by rescaling a
+single kernel and no change of variables has to be justified.  For $w$ locally integrable on $\R^n$ write
+$(w*\rho_\delta)(x)=\int_{\R^n}w(y)\rho_\delta(x-y)\,dy$.  Choose
+$\delta_m=\delta_0/(m+1)$ for $m\in\mathbb{N}$, so $0<\delta_m\le\delta_0$ and
+$\delta_m\downarrow0$, and define
+\[
+\Phi_m=\varphi*\rho_{\delta_m} .
+\]
+
+\emph{Step 4: $\Phi_m$ is smooth and supported in $K$.}  By the Preamble item on
+convolution with a smooth compactly supported kernel, applied to the locally
+integrable $\varphi$ of Step 2 and the kernel $\rho_{\delta_m}$, each $\Phi_m$
+is of class $C^\infty$ on $\R^n$ and
+\[
+D_i\Phi_m=\varphi*(D_i\rho_{\delta_m})\qquad(i=1,\dots,n).
+\tag{1}
+\]
+For the support: if $\Phi_m(x)\ne0$ then the integrand
+$y\mapsto\varphi(y)\rho_{\delta_m}(x-y)$ does not vanish identically, so there
+is $y$ with $\varphi(y)\ne0$ and $|x-y|\le\delta_m$; then $y\in K_0$ and
+$\operatorname{dist}(x,K_0)\le\delta_m\le\delta_0$.  Hence
+$\{\Phi_m\ne0\}\subseteq K_{\delta_0}'$, and $K_{\delta_0}'$ being closed, also
+$\operatorname{supp}\Phi_m\subseteq K_{\delta_0}'\subseteq
+K_{2\delta_0}'=K$.  In particular $\Phi_m$ has compact support, being a closed
+subset of the compact $K$.
+
+\emph{Step 5: the derivative of $\Phi_m$ on $K$ is the mollified weak gradient.}
+Let $x\in K$, let $m\in\mathbb{N}$ and let $i$ be an index.  If $|y-x|\le\delta_m$ then
+\[
+\operatorname{dist}(y,K_0)\le|y-x|+\operatorname{dist}(x,K_0)
+\le\delta_m+2\delta_0\le3\delta_0 ,
+\]
+so $\overline{B_{\delta_m}(x)}\subseteq K_{3\delta_0}'\subseteq\Omega$.  Define
+$\psi(y)=\rho_{\delta_m}(x-y)$.  Then $\psi\in C^\infty(\R^n)$ and
+$\operatorname{supp}\psi\subseteq\overline{B_{\delta_m}(x)}$, which is compact
+and contained in $\Omega$ by the display; so $\psi$ belongs to the test class of
+\noderef{HasWeakGradientOn} for $\Omega$.  Differentiating in the $y$ variable,
+$D_i\psi(y)=-(D_i\rho_{\delta_m})(x-y)$.  The defining identity of
+\noderef{HasWeakGradientOn}, which the pair $(\varphi,g_\varphi)$ satisfies on
+$\Omega$ by \noderef{MemW1pOn}, applied to $\psi$ and the index $i$, reads
+$\int_\Omega\varphi\,D_i\psi\,dy=-\int_\Omega(g_\varphi)_i\,\psi\,dy$, that is
+\[
+-\int_\Omega\varphi(y)(D_i\rho_{\delta_m})(x-y)\,dy
+=-\int_\Omega(g_\varphi)_i(y)\rho_{\delta_m}(x-y)\,dy .
+\]
+Both integrands vanish off $\overline{B_{\delta_m}(x)}\subseteq\Omega$, where
+$\check g=g_\varphi$, so each integral over $\Omega$ equals the corresponding
+integral over $\R^n$; comparing with (1) and multiplying by $-1$,
+\[
+D_i\Phi_m(x)=\bigl(\check g_i*\rho_{\delta_m}\bigr)(x)
+\qquad(x\in K,\ i=1,\dots,n,\ m\in\mathbb{N}).
+\tag{2}
+\]
+
+\emph{Step 6: the $L^q$ contraction of convolution against a probability
+density.}  Let $w\in L^q(\R^n)$ and $\delta>0$.  For each fixed $x$ the measure
+$\mu_x(dy)=\rho_\delta(x-y)\,dy$ is a nonnegative measure of total mass
+$\mu_x(\R^n)=\int\rho_\delta(x-y)\,dy=1$, by translation and reflection
+invariance of Lebesgue measure (Preamble) and $\int\rho_\delta=1$.  H\"older on
+a set of finite measure (Preamble), applied on $\R^n$ with the measure $\mu_x$
+and the exponent $q$, gives
+\[
+|(w*\rho_\delta)(x)|\le\int_{\R^n}|w|\,d\mu_x
+\le\mu_x(\R^n)^{1-\frac1q}\Bigl(\int_{\R^n}|w|^q\,d\mu_x\Bigr)^{1/q}
+=\Bigl(\int_{\R^n}|w(y)|^q\rho_\delta(x-y)\,dy\Bigr)^{1/q},
+\]
+so, raising to the power $q$ (which is nondecreasing on $[0,\infty)$) and
+integrating in $x$,
+\[
+\int_{\R^n}|w*\rho_\delta|^q\,dx
+\le\int_{\R^n}\!\!\int_{\R^n}|w(y)|^q\rho_\delta(x-y)\,dy\,dx
+=\int_{\R^n}|w(y)|^q\Bigl(\int_{\R^n}\rho_\delta(x-y)\,dx\Bigr)dy
+=\int_{\R^n}|w|^q\,dy ,
+\]
+the exchange by Tonelli (Preamble), the integrand
+$(x,y)\mapsto|w(y)|^q\rho_\delta(x-y)$ being nonnegative and measurable as the
+product of a measurable function of $y$ with a continuous function of $(x,y)$,
+and the inner integral being $1$ as above.  Thus
+\[
+\|w*\rho_\delta\|_{L^q(\R^n)}\le\|w\|_{L^q(\R^n)} .
+\tag{3}
+\]
+
+\emph{Step 7: mollifications converge in $L^q$.}  We claim that for every
+$w\in L^q(\R^n)$,
+\[
+\|w*\rho_\delta-w\|_{L^q(\R^n)}\longrightarrow0\qquad(\delta\downarrow0).
+\tag{4}
+\]
+Let $\sigma>0$.  By the Preamble item on density of the compactly supported
+continuous functions in $L^q$, applied at the exponent $q$, there is a
+continuous $v$ with compact support and $\|w-v\|_{L^q}\le\sigma/3$.  By the
+$L^q$ triangle inequality (Minkowski, Preamble) and (3),
+\[
+\|w*\rho_\delta-w\|_{L^q}
+\le\|(w-v)*\rho_\delta\|_{L^q}+\|v*\rho_\delta-v\|_{L^q}+\|v-w\|_{L^q}
+\le2\|w-v\|_{L^q}+\|v*\rho_\delta-v\|_{L^q} .
+\]
+For the middle term, $v$ is continuous with compact support, hence bounded and
+uniformly continuous, and since $\rho_\delta$ is a probability density supported
+in $\overline{B_\delta(0)}$,
+\[
+|(v*\rho_\delta)(x)-v(x)|
+=\Bigl|\int_{\R^n}\bigl(v(x-z)-v(x)\bigr)\rho_\delta(z)\,dz\Bigr|
+\le\sup_{|z|\le\delta}\ \sup_{x\in\R^n}|v(x-z)-v(x)|
+\xrightarrow[\delta\downarrow0]{}0
+\]
+by uniform continuity; and for $\delta\le1$ every function
+$v*\rho_\delta-v$ vanishes off the fixed compact set
+$C=\{x:\operatorname{dist}(x,\operatorname{supp}v)\le1\}$, so
+$\|v*\rho_\delta-v\|_{L^q}^q\le|C|\cdot\sup_x|(v*\rho_\delta)(x)-v(x)|^q\to0$.
+Hence $\limsup_{\delta\downarrow0}\|w*\rho_\delta-w\|_{L^q}\le2\sigma/3<\sigma$,
+and as $\sigma>0$ was arbitrary, (4) holds.
+
+\emph{Step 8: conclusion.}  Apply (4) to $w=\varphi$, which lies in
+$L^q(\R^n)$ by Step 2, along the sequence $\delta_m\downarrow0$: since
+$\Phi_m=\varphi*\rho_{\delta_m}$ and the integral over $K$ of a nonnegative
+function is at most its integral over $\R^n$,
+\[
+\int_K|\Phi_m-\varphi|^q\,dx\le\int_{\R^n}|\varphi*\rho_{\delta_m}-\varphi|^q\,dx
+=\|\varphi*\rho_{\delta_m}-\varphi\|_{L^q(\R^n)}^q\longrightarrow0 ,
+\]
+which is the first asserted limit.  Fix an index $i$ and apply (4) to
+$w=\check g_i\in L^q(\R^n)$: by (2) we have
+$D_i\Phi_m=\check g_i*\rho_{\delta_m}$ on $K$, and $\check g_i=(g_\varphi)_i$ on
+$K\subseteq\Omega$, so
+\[
+\int_K\bigl|D_i\Phi_m-(g_\varphi)_i\bigr|^q\,dx
+=\int_K\bigl|\check g_i*\rho_{\delta_m}-\check g_i\bigr|^q\,dx
+\le\bigl\|\check g_i*\rho_{\delta_m}-\check g_i\bigr\|_{L^q(\R^n)}^q
+\longrightarrow0 ,
+\]
+which is the second asserted limit.  Together with Steps 1 and 4 --- $K$
+compact, $K\subseteq\Omega$, $K_0\subseteq K$, each $\Phi_m$ of class
+$C^\infty$ with compact support contained in $K$ --- this is the assertion.
+\end{proof}

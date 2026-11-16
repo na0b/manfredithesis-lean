@@ -1,0 +1,92 @@
+\begin{helper}[Integrability of the regularised Caccioppoli integrands]
+Let $n\in\N$, let $p,\eta,\gamma_1,L_\zeta,L_{\nabla\zeta},L_W,R\in\R$, let
+$D\pi\colon\R\times\R\to\R$, let $x_0\in\R^n$, let $g,Z\colon\R^n\to\R^n$, let
+$Dg$ assign to each index $i$ a field $Dg^i\colon\R^n\to\R^n$, let
+$\zeta,W,v,Q_0,P_1,P_2\colon\R^n\to\R$, let $k$ be an index and let $M$ assign
+to each $x$ a matrix $(M_{ij}(x))$.  Write $B=B_R(x_0)$ and
+$b_\eta(x)=|g^k(x)|+\eta$.  Throughout, $\operatorname{supp}\zeta$ denotes the
+\emph{closed} support of $\zeta$,
+$|\nabla\zeta(x)|^2=\sum_i(\partial_i\zeta(x))^2$, $|\cdot|$ is the Euclidean
+norm, every power of a nonnegative real is the real power, and the exponent
+$p-2$ is NOT assumed nonnegative.  Assume
+\begin{enumerate}
+\item[(H1)] $|D\pi_\eta(s)|\le\eta^{p-2}$ for every $\eta>0$ and every real
+  $s$, and $0<\eta$, $0<\gamma_1$;
+\item[(H2)] each $x\mapsto g^i(x)$ lies in $W^{1,2}_{loc}(B)$ with weak
+  gradient $Dg^i$ (\noderef{MemW1pLocOn}), and
+  $\operatorname{supp}\zeta\subseteq B$ is compact;
+\item[(H3)] $W>0$ everywhere and $|M_{ij}(x)|\le\gamma_1W(x)$ for a.e.\
+  $x\in B$ and all $i,j$;
+\item[(H4)] $\zeta$ and every $\partial_i\zeta$ vanish off
+  $\operatorname{supp}\zeta$, and a function vanishing off
+  $\operatorname{supp}\zeta$ and integrable there is integrable on $B$;
+\item[(H5)] $W$, each $M_{ij}$, each $Dg^k_j$, $\zeta$, each $\partial_i\zeta$,
+  $b_\eta^{p-2}$ and $x\mapsto D\pi_\eta(g^k(x))$ are measurable on
+  $\operatorname{supp}\zeta$; products and finite sums of functions measurable
+  there are measurable there; and $|Dg^k|^2$ is integrable on
+  $\operatorname{supp}\zeta$;
+\item[(H6)] $0\le L_\zeta$, $0\le L_{\nabla\zeta}$, $0\le L_W$,
+  $0\le\eta^{p-2}$, $\zeta^2\le L_\zeta$ and
+  $|\nabla\zeta|^2\le L_{\nabla\zeta}$ everywhere, and $W\le L_W$ a.e.\ on
+  $\operatorname{supp}\zeta$;
+\item[(H7)] the elementary bounds $|\sum_if_i|\le n\max_i|f_i|$,
+  $|a||b|\le(a^2+b^2)/2$ and $|Dg^k_j(x)|\le|Dg^k(x)|$;
+\item[(H8)] $0<b_\eta$ and $b_\eta^{p-2}\le\eta^{p-2}$ everywhere;
+\item[(H9)] $v\ge0$, $v\in W^{1,2}_{loc}(B)$ with weak gradient $Z$, and
+  $|Z_i|\le\eta^{p-2}|Dg^k|$ a.e.\ on $\operatorname{supp}\zeta$;
+\item[(H10)] the defining identities
+  $Q_0=\sum_i\sum_jM_{ij}Dg^k_jDg^k_i$,
+  $P_1=\zeta^2\sum_i\sum_jM_{ij}Dg^k_jZ_i$ and
+  $P_2=2v\zeta\sum_i\sum_jM_{ij}Dg^k_j\partial_i\zeta$.
+\end{enumerate}
+Then $v$ is measurable on $\operatorname{supp}\zeta$ and all five of $P_1$,
+$P_2$, $Wb_\eta^{p-2}|Dg^k|^2\zeta^2$, $\zeta^2D\pi_\eta(g^k)Q_0$ and
+$v^2|\nabla\zeta|^2$ are integrable on $B$.
+\end{helper}
+\begin{proof}
+Measurability of $v$ on $\operatorname{supp}\zeta$ is immediate from (H9):
+$v\in W^{1,2}_{loc}(B)$ restricts to an $L^2$ function on the compact subset
+$\operatorname{supp}\zeta$ of $B$ by (H2), and an $L^2$ function is
+measurable; the same restriction makes each $Z_i$ measurable there.  With (H5)
+every integrand below is then measurable on $\operatorname{supp}\zeta$, being
+assembled from measurable factors by finitely many products and finite sums.
+
+\emph{The two densities.}  Almost everywhere on $\operatorname{supp}\zeta$,
+(H6) and (H8) give
+$Wb_\eta^{p-2}|Dg^k|^2\zeta^2\le L_W\eta^{p-2}L_\zeta|Dg^k|^2$, and
+$|Dg^k|^2$ is integrable there by (H5), so the regularised energy density is
+integrable on $\operatorname{supp}\zeta$ by domination (Preamble).  Likewise
+$v^2|\nabla\zeta|^2\le L_{\nabla\zeta}v^2$ everywhere by (H6), and $v^2$ is
+integrable on $\operatorname{supp}\zeta$ because $v\in L^2$ there.
+
+\emph{The regularised quadratic form.}  By (H10), (H3), (H7) and (H1), for
+a.e.\ $x\in\operatorname{supp}\zeta$,
+\[
+\bigl|\zeta(x)^2D\pi_\eta(g^k(x))Q_0(x)\bigr|
+\le L_\zeta\,\eta^{p-2}\Bigl|\sum_i\sum_jM_{ij}Dg^k_jDg^k_i\Bigr|
+\le L_\zeta\eta^{p-2}n^2\gamma_1L_W|Dg^k(x)|^2 ,
+\]
+applying $|\sum|\le n\max$ twice and $|Dg^k_j||Dg^k_i|\le|Dg^k|^2$.
+Domination by the integrable $|Dg^k|^2$ gives integrability on
+$\operatorname{supp}\zeta$.
+
+\emph{$P_1$.}  The same computation with one factor $Dg^k_i$ replaced by $Z_i$
+and the bound $|Z_i|\le\eta^{p-2}|Dg^k|$ of (H9) gives
+$|P_1|\le L_\zeta n^2\gamma_1L_W\eta^{p-2}|Dg^k|^2$ a.e.\ on
+$\operatorname{supp}\zeta$, hence integrability there.
+
+\emph{$P_2$.}  The inner double sum is bounded a.e.\ by
+$n^2\gamma_1L_W|Dg^k|\sqrt{L_{\nabla\zeta}}$ by (H3), (H6) and (H7), while
+$|2v\zeta|\le2\sqrt{L_\zeta}|v|$ by (H6).  Splitting the product
+$|v|\cdot|Dg^k|$ with $|a||b|\le(a^2+b^2)/2$ from (H7) bounds $|P_2|$ a.e.\ on
+$\operatorname{supp}\zeta$ by a constant multiple of $v^2+|Dg^k|^2$, which is
+integrable there; hence so is $P_2$.
+
+\emph{Transport to $B$.}  Each of the five integrands vanishes off
+$\operatorname{supp}\zeta$: $P_1$, $\zeta^2D\pi_\eta(g^k)Q_0$ and
+$Wb_\eta^{p-2}|Dg^k|^2\zeta^2$ carry the factor $\zeta^2$, which vanishes there
+by (H4), while $P_2$ and $v^2|\nabla\zeta|^2$ carry $\partial_i\zeta$, which
+vanishes there as well.  The extension principle of (H4) therefore upgrades
+each of the five integrabilities from $\operatorname{supp}\zeta$ to $B$, which
+is the assertion.
+\end{proof}

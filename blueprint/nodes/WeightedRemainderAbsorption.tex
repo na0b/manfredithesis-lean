@@ -1,0 +1,383 @@
+\begin{lemma}[The absorption step of Lemmas 4.1 and 5.1]
+Let $p>1$.  Then there are $b_0>0$ and $c>0$, depending only on $p$, with the
+following property.
+
+Let $n$ be a natural number, let $0\le\varepsilon\le1$, let $a\ge0$ and
+$0\le b\le b_0$, let $B\subseteq\R^n$ be measurable with $|B|<\infty$, and let
+$G,G_v\colon\R^n\to\R^n$ be vector fields with
+$|G|,|G_v|,|G-G_v|\in L^p(B)$.  If
+\[
+\int_B\bigl(\varepsilon+|G|^2+|G_v|^2\bigr)^{\frac p2-1}|G-G_v|^2\,dx
+\ \le\ a\int_B\bigl(1+|G|^2\bigr)^{\frac p2}dx
++b\int_B|G-G_v|^p\,dx ,
+\tag{H}
+\]
+then
+\[
+\int_B|G-G_v|^p\,dx
+\ \le\ c\,\bigl(a+a^{\frac p2}+b^{\frac p2}\bigr)
+\int_B\bigl(1+|G|^2\bigr)^{\frac p2}dx .
+\]
+
+\noindent\textbf{What this node is.}  It is the passage from (4.8) of the thesis to
+Lemma~Lemma~4.1 of the thesis, which is also the passage from (5.9) of the thesis to
+Lemma~Lemma~5.1 of the thesis: the thesis proves it once and then writes, at p.~50,
+``This follows from (5.9) of the thesis like Lemma~Lemma~4.1 of the thesis followed from''
+its own (4.8) of the thesis.  Nothing in it mentions the operator $A$, the density
+$f$, minimality, the equation, or the centre and radius of a ball: $G$ and $G_v$
+are arbitrary vector fields, $a$ and $b$ arbitrary nonnegative numbers in the
+range the threshold allows, and $B$ an arbitrary set of finite measure.  The two
+consumers instantiate it with $G=\nabla u$, $G_v=\nabla v$, $B=B_R(x_0)$,
+$a=\sigma_0(R)$, $b=\sigma_1(R)$, and read off
+$\sigma_2(R)=c\bigl(\sigma_0(R)+\sigma_0(R)^{p/2}+\sigma_1(R)^{p/2}\bigr)$,
+which is nonnegative, bounded, continuous and increasing with $\sigma_2(0)=0$
+whenever $\sigma_0$ and $\sigma_1$ are, because $t\mapsto t^{p/2}$ is
+continuous and increasing on $[0,\infty)$ and vanishes at $0$.
+
+\medskip
+\noindent\textbf{Correction reported: the thesis' displayed $\sigma_2$ is the
+$1<p<2$ formula and is false for $p>2$.}  The thesis' proof of
+Lemma~Lemma~4.1 of the thesis splits into two regimes.  At l.~1172--1177, ``If $p>2$'', it
+chooses $R_1$ with $\sigma_1(R_1)<1/2$ and absorbs directly, obtaining
+$\int|\nabla w|^p\le2\sigma_0(R)\int(1+|\nabla u|^2)^{p/2}$ --- a bound
+\emph{linear} in $\sigma_0$, with no H\"older split.  Only at l.~1179--1211, in
+the regime ``If $1<p<2$'', does the displayed formula
+\[
+\sigma_2=\sigma_0^{\frac p2}\bigl(6+6\sigma_0\bigr)^{1-\frac p2}
++\sigma_1^{\frac p2}\,6\bigl(1+\sigma_0\bigr)
+\tag{P}
+\]
+appear, and it is derived from the H\"older split at the exponents $2/p$ and
+$2/(2-p)$, which are conjugate exactly when $1<p<2$.  Formula $(P)$ must
+therefore not be carried over to $p>2$: for $p>2$ the exponent $1-\frac p2$ is
+negative, so $\sigma_0/(6+6\sigma_0)<1$ gives
+$\sigma_0^{p/2}(6+6\sigma_0)^{1-p/2}
+=\sigma_0\bigl(\sigma_0/(6+6\sigma_0)\bigr)^{p/2-1}<\sigma_0$ strictly, i.e.\
+$(P)$ is \emph{strictly stronger} than the linear-in-$\sigma_0$ bound that is
+all the absorption of the first regime can deliver.  Concretely, at $p=4$,
+$a=1/4$, $b=0$, $\varepsilon=0$, $|B|=1$, $G\equiv e_1$ and $G_v\equiv0$,
+hypothesis (H) holds with equality --- both sides equal $1$ --- while $(P)$
+would assert $1\le\frac1{30}$.  The thesis also never treats $p=2$; it writes
+``If $p>2$'' and ``If $1<p<2$''.  At $p=2$ the weight is $1$ and the absorption
+of the first regime applies verbatim, so the first regime is stated here for
+$p\ge2$.  The single conclusion above is what both regimes give: the proof below
+derives the linear bound $2^{p/2}a$ when $p\ge2$ and the bound
+$a^{p/2}(6+6a)^{1-p/2}+12b^{p/2}(1+a)$ --- which is $(P)$ with the factor
+$C(p)$ of the thesis' own \texttt{CHECK} at l.~1192 inserted --- when
+$1<p<2$, and then dominates both by $c\,(a+a^{p/2}+b^{p/2})$.  Nothing is lost:
+$a+a^{p/2}+b^{p/2}$ still tends to $0$ with $(a,b)$, which is all the four
+consumers use.
+
+\medskip
+\noindent\textbf{On the integrability hypotheses.}  The three memberships
+$|G|,|G_v|,|G-G_v|\in L^p(B)$ and $|B|<\infty$ are not decoration.  The
+argument absorbs $\int_B|G-G_v|^p$ from the right-hand side of (H) into the
+left, which is meaningless unless that integral is finite; with a divergent
+integrand the absorbed statement would be vacuous rather than false, since the
+integral of a non-integrable function is $0$.  The same hypotheses are what make
+the weighted integral on the left of (H) and the integral
+$\int_B(\varepsilon+|G|^2+|G_v|^2)^{p/2}dx$ finite, which the H\"older split of
+the second regime needs in order to apply at all.  No hypothesis on the
+dimension $n$ is required: every step is a pointwise inequality between
+nonnegative functions, an integration, or H\"older's inequality.
+
+\medskip
+\noindent\textbf{On the constants.}  $b_0$ and $c$ are bound after $p$ and
+before $n,\varepsilon,a,b,B,G,G_v$, which is the quantifier order the thesis'
+Note for the formalization prescribes for a constant said to depend only on $p$.
+The witnesses produced below are
+$b_0=\min\{2^{-p/2},\tfrac1{12}\}$ and $c=\max\{2^{p/2},24\}$.
+\end{lemma}
+\begin{proof}
+Throughout write
+\[
+T(x)=\varepsilon+|G(x)|^2+|G_v(x)|^2\ \ge0,
+\qquad
+W(x)=|G(x)-G_v(x)|\ \ge0,
+\]
+and
+\[
+I=\int_B\bigl(1+|G|^2\bigr)^{\frac p2}dx,\quad
+J=\int_BW^p\,dx,\quad
+K=\int_BT^{\frac p2-1}W^2\,dx,\quad
+S=\int_BT^{\frac p2}dx .
+\]
+In this notation (H) reads $K\le aI+bJ$ and the conclusion reads
+$J\le c(a+a^{p/2}+b^{p/2})I$.  All non-integer powers are real powers
+(\texttt{Real.rpow}) of nonnegative numbers, whose conventions at the origin are
+$0^{r}=0$ for $r\ne0$ and $0^{0}=1$ (the Preamble item on interval
+integrability of $t^{r}$ records them).  We use repeatedly, for $s,t\ge0$ and
+real $\alpha,\beta$: $(st)^{\alpha}=s^{\alpha}t^{\alpha}$;
+$t^{\alpha+\beta}=t^{\alpha}t^{\beta}$ and $(t^{\alpha})^{\beta}=t^{\alpha\beta}$
+when $t>0$; and the monotonicity of $t\mapsto t^{\alpha}$ on $[0,\infty)$ when
+$\alpha\ge0$, respectively its antitonicity on $(0,\infty)$ when $\alpha\le0$.
+
+\emph{Step 0: the constants, chosen before all the data.}  Put
+\[
+b_0=\min\Bigl\{2^{-\frac p2},\ \frac1{12}\Bigr\}>0,
+\qquad
+c=\max\Bigl\{2^{\frac p2},\ 24\Bigr\}>0 ,
+\]
+both determined by $p$ alone.  Note $b_0\le\frac1{12}\le1$ and
+$b_0\le2^{-p/2}$.  Now fix $n,\varepsilon,a,b,B,G,G_v$ satisfying all the
+hypotheses.
+
+\emph{Step 1: measurability.}  By the hypotheses $|G|,|G_v|,|G-G_v|\in L^p(B)$
+the fields $G$ and $G_v$ are almost everywhere strongly measurable on $B$, hence
+so are the nonnegative real functions $|G|$, $|G_v|$ and $W=|G-G_v|$ (the norm
+is continuous) and therefore $T=\varepsilon+|G|^2+|G_v|^2$ as well.  Since
+$(s,t)\mapsto s^{t}$ is Borel measurable on $[0,\infty)\times\R$, every
+integrand occurring below --- $T^{p/2-1}W^2$, $T^{p/2}$, $W^p$,
+$(1+|G|^2)^{p/2}$, $(\varepsilon+|G|^2)^{p/2}$, and the two factors of the
+H\"older split in Step 6 --- is a product of such compositions and is almost
+everywhere measurable on $B$.  All of them are nonnegative, so all four of
+$I,J,K,S$ are well defined and $\ge0$.
+
+\emph{Step 2: five pointwise inequalities.}  Fix $x\in B$ and abbreviate
+$T=T(x)$, $W=W(x)$, $X=G(x)$, $Y=G_v(x)$.
+\begin{enumerate}
+\item[(E1)] $W^2\le2T$.  Indeed $W=|X-Y|\le|X|+|Y|$ and
+  $(s+u)^2\le2s^2+2u^2$ for real $s,u$ (because $(s-u)^2\ge0$), so
+  $W^2\le2|X|^2+2|Y|^2\le2(\varepsilon+|X|^2+|Y|^2)=2T$, using
+  $\varepsilon\ge0$.
+\item[(E2)] $T^{\frac p2-1}W^2\le2T^{\frac p2}$.  If $T=0$ then
+  $\varepsilon=0$ and $X=Y=0$, so $W=0$ and both sides vanish ($0^{p/2}=0$
+  because $p/2>0$).  If $T>0$ then (E1) and $T^{p/2-1}\ge0$ give
+  $T^{p/2-1}W^2\le2T^{p/2-1}T=2T^{p/2}$.
+\item[(E3)] $T^{\frac p2}\le\bigl(1+|X|^2+|Y|^2\bigr)^{\frac p2}$ and
+  $\bigl(\varepsilon+|X|^2\bigr)^{\frac p2}\le\bigl(1+|X|^2\bigr)^{\frac p2}$,
+  both by $\varepsilon\le1$ and the monotonicity of $t\mapsto t^{p/2}$ on
+  $[0,\infty)$.
+\item[(E4)] $\bigl(1+|X|^2\bigr)^{\frac p2}\le2^{\frac p2}\bigl(1+|X|^{p}\bigr)$
+  and
+  $\bigl(1+|X|^2+|Y|^2\bigr)^{\frac p2}
+  \le3^{\frac p2}\bigl(1+|X|^{p}+|Y|^{p}\bigr)$.
+  Indeed $1+|X|^2\le2\max\{1,|X|^2\}$ and
+  $1+|X|^2+|Y|^2\le3\max\{1,|X|^2,|Y|^2\}$; raising to the power $p/2$ and using
+  $(st)^{p/2}=s^{p/2}t^{p/2}$ and
+  $\bigl(\max\{1,|X|^2,|Y|^2\}\bigr)^{p/2}=\max\{1,|X|^{p},|Y|^{p}\}$ --- the
+  maximum commutes with the increasing map $t\mapsto t^{p/2}$, and
+  $(|X|^2)^{p/2}=|X|^{p}$ --- gives the two bounds, because
+  $\max\{1,|X|^p\}\le1+|X|^p$ and $\max\{1,|X|^p,|Y|^p\}\le1+|X|^p+|Y|^p$.
+\item[(E5)] $W^p\le2^{\frac p2}T^{\frac p2}$.  By (E1) and the monotonicity of
+  $t\mapsto t^{p/2}$, $W^p=(W^2)^{p/2}\le(2T)^{p/2}=2^{p/2}T^{p/2}$.
+\end{enumerate}
+
+\emph{Step 3: the four integrals are finite.}  First $I<\infty$: by (E4) and
+monotonicity of the integral of nonnegative functions,
+\[
+I\le2^{\frac p2}\Bigl(|B|+\int_B|G|^{p}dx\Bigr)<\infty ,
+\]
+since $|B|<\infty$ and $|G|\in L^p(B)$; the dominating function is integrable,
+so the Preamble domination item makes $(1+|G|^2)^{p/2}$ integrable on $B$ and
+the inequality is an inequality between finite numbers.  Next $J<\infty$,
+because $|G-G_v|\in L^p(B)$ means exactly that $W^p$ is integrable on $B$.
+Next $S<\infty$: by (E3) and (E4),
+$T^{p/2}\le3^{p/2}(1+|G|^{p}+|G_v|^{p})$ pointwise on $B$, whose right-hand side
+is integrable because $|B|<\infty$ and $|G|,|G_v|\in L^p(B)$; so $T^{p/2}$ is
+integrable by domination and
+$S\le3^{p/2}(|B|+\int_B|G|^p+\int_B|G_v|^p)<\infty$.  Finally $K<\infty$: by
+(E2), $T^{p/2-1}W^2\le2T^{p/2}$ pointwise, the right-hand side is integrable, so
+$T^{p/2-1}W^2$ is integrable by domination and $K\le2S<\infty$.  Integrating
+(E5) over $B$ --- both integrands being integrable, by the previous two
+sentences --- also records
+\[
+J\ \le\ 2^{\frac p2}S .
+\tag{1}
+\]
+
+\emph{Step 4: the regime $p\ge2$.}  Assume $p\ge2$, so $\frac p2-1\ge0$.  For
+$x\in B$,
+\[
+W^p\ \le\ 2^{\frac p2-1}\,T^{\frac p2-1}W^2 .
+\tag{2}
+\]
+Indeed $W^p=(W^2)^{p/2}=(W^2)^{\frac p2-1}W^2$ --- the identity
+$s^{q}=s^{q-1}s$ for $s\ge0$ and $q\ge1$, which holds also at $s=0$ (for $q=1$
+both sides are $0$ because $0^0\cdot0=0$, and for $q>1$ because $0^{q-1}=0$) ---
+and, by (E1) and the monotonicity of $t\mapsto t^{\frac p2-1}$ on $[0,\infty)$
+(legitimate because $\frac p2-1\ge0$),
+$(W^2)^{\frac p2-1}\le(2T)^{\frac p2-1}=2^{\frac p2-1}T^{\frac p2-1}$;
+multiplying by $W^2\ge0$ gives $(2)$.
+
+Integrating $(2)$ over $B$ (both sides integrable by Step 3) and then using (H),
+\[
+J\ \le\ 2^{\frac p2-1}K\ \le\ 2^{\frac p2-1}\bigl(aI+bJ\bigr)
+=2^{\frac p2-1}aI+\bigl(2^{\frac p2-1}b\bigr)J .
+\]
+Now $b\le b_0\le2^{-p/2}$ gives
+$2^{\frac p2-1}b\le2^{\frac p2-1}2^{-\frac p2}=2^{-1}=\frac12$, so, $J$ being
+finite and nonnegative,
+\[
+\frac12J\ \le\ \bigl(1-2^{\frac p2-1}b\bigr)J\ \le\ 2^{\frac p2-1}aI,
+\qquad\text{hence}\qquad
+J\ \le\ 2^{\frac p2}aI .
+\]
+(This is where the finiteness of $J$ from Step 3 is used: the first inequality
+is the subtraction of $2^{p/2-1}bJ$ from both sides of the previous display.)
+Since $a^{p/2}\ge0$, $b^{p/2}\ge0$, $I\ge0$ and $c\ge2^{p/2}$, this gives
+$J\le c(a+a^{p/2}+b^{p/2})I$, which is the conclusion.  Note that
+$2^{p/2}=2\cdot2^{\frac p2-1}$ is exactly the thesis' $2\sigma_0(R)$ of
+l.~1177 with the constant $C(p)=2^{\frac p2-1}$ of its own \texttt{CHECK} at
+l.~1192 inserted, as $(2)$ requires.
+
+\emph{Step 5: the regime $1<p<2$, part one: the analogue of (4.9) of the thesis.}
+Assume $1<p<2$, so $0<\frac p2<1$ and $\frac p2-1<0$; note $2^{p/2}<2$.  For
+$x\in B$,
+\[
+T^{\frac p2}\ \le\ 3\bigl(\varepsilon+|X|^2\bigr)^{\frac p2}
++3\,T^{\frac p2-1}W^2 .
+\tag{3}
+\]
+There are three cases.  If $T=0$ then $\varepsilon=0$, $X=Y=0$ and $W=0$, so all
+three terms vanish.  If $T>0$ and $\varepsilon+|X|^2>0$: from
+$|Y|^2=|X-(X-Y)|^2\le2|X|^2+2|X-Y|^2=2|X|^2+2W^2$ --- the inequality
+$|\cdot|^2\le2|\cdot|^2+2|\cdot|^2$ used in (E1), applied now to the pair
+$X$ and $X-Y$ --- we get
+\[
+T=\varepsilon+|X|^2+|Y|^2\le\varepsilon+3|X|^2+2W^2
+\le3\bigl(\varepsilon+|X|^2\bigr)+3W^2 ,
+\]
+hence, multiplying by $T^{p/2-1}\ge0$ and using $T^{p/2-1}T=T^{p/2}$,
+\[
+T^{\frac p2}\le3T^{\frac p2-1}\bigl(\varepsilon+|X|^2\bigr)+3T^{\frac p2-1}W^2 ,
+\]
+and in the first term $0<\varepsilon+|X|^2\le T$ together with
+$\frac p2-1\le0$ gives $T^{\frac p2-1}\le(\varepsilon+|X|^2)^{\frac p2-1}$, so
+$T^{\frac p2-1}(\varepsilon+|X|^2)\le(\varepsilon+|X|^2)^{\frac p2-1}
+(\varepsilon+|X|^2)=(\varepsilon+|X|^2)^{\frac p2}$, which is $(3)$.  If $T>0$
+and $\varepsilon+|X|^2=0$ then $\varepsilon=0$ and $X=0$, so $T=|Y|^2$ and
+$W=|Y|$, whence $T^{\frac p2-1}W^2=(|Y|^2)^{\frac p2-1}|Y|^2
+=(|Y|^2)^{\frac p2}=T^{\frac p2}$ and the right-hand side of $(3)$ is
+$0+3T^{p/2}\ge T^{p/2}$.  (This third case is the reason $(3)$ is proved by
+cases rather than by monotonicity alone: at $\varepsilon+|X|^2=0$ the
+convention $0^{p/2-1}=0$ makes $t\mapsto t^{p/2-1}$ fail to be antitone across
+the origin.)
+
+Integrating $(3)$ over $B$ --- all three integrands integrable, the first by
+(E3) and the argument for $I$ in Step 3, the others by Step 3 --- and then using
+(E3) in the form $(\varepsilon+|G|^2)^{p/2}\le(1+|G|^2)^{p/2}$ and the
+monotonicity of the integral,
+\[
+S\ \le\ 3I+3K .
+\]
+By (H) and $(1)$, $3K\le3aI+3bJ\le3aI+3b\,2^{\frac p2}S\le3aI+\frac12S$, the
+last step because $b\le b_0\le\frac1{12}$ and $2^{p/2}<2$ give
+$3b\,2^{p/2}<3\cdot\frac1{12}\cdot2=\frac12$.  Hence
+$S\le3(1+a)I+\frac12S$ and, $S$ being finite and nonnegative,
+\[
+S\ \le\ 6(1+a)I=(6+6a)I .
+\tag{4}
+\]
+This is (4.9) of the thesis of the thesis, with $a$ in the role of $\sigma_0(R)$.
+
+\emph{Step 6: the regime $1<p<2$, part two: the H\"older split.}  For $x\in B$,
+\[
+W^p=\bigl\{T^{\frac p2-1}W^2\bigr\}^{\frac p2}
+\cdot\bigl\{T\bigr\}^{\left(1-\frac p2\right)\frac p2} .
+\tag{5}
+\]
+If $T=0$ then $W=0$ and both sides vanish, the right-hand side because
+$(1-\frac p2)\frac p2>0$ makes its second factor $0$.  If $T>0$ then
+\[
+\bigl\{T^{\frac p2-1}W^2\bigr\}^{\frac p2}
+=T^{\left(\frac p2-1\right)\frac p2}\bigl(W^2\bigr)^{\frac p2}
+=T^{\left(\frac p2-1\right)\frac p2}W^p ,
+\]
+and multiplying by
+$T^{\left(1-\frac p2\right)\frac p2}=T^{-\left(\frac p2-1\right)\frac p2}$
+gives $(5)$.
+
+Apply H\"older's inequality on the set $B$ of finite measure (Preamble) with the
+conjugate exponents
+\[
+q=\frac2p\in(1,2),\qquad q'=\frac2{2-p}\in(2,\infty),
+\qquad \frac1q+\frac1{q'}=\frac p2+\frac{2-p}2=1 ,
+\]
+to the two nonnegative measurable factors of $(5)$,
+$f=\{T^{p/2-1}W^2\}^{p/2}$ and $g=T^{(1-p/2)p/2}$.  Its hypotheses hold:
+$f^{q}=T^{p/2-1}W^2$ is integrable on $B$ with $\int_Bf^q=K<\infty$, and
+$g^{q'}=T^{p/2}$ is integrable on $B$ with $\int_Bg^{q'}=S<\infty$, both by
+Step 3; the exponent computations are
+$\bigl(\{T^{p/2-1}W^2\}^{p/2}\bigr)^{2/p}=T^{p/2-1}W^2$ and
+$\bigl(T^{(1-p/2)p/2}\bigr)^{2/(2-p)}=T^{p/2}$, the latter because
+$\bigl(1-\frac p2\bigr)\frac p2\cdot\frac2{2-p}=\frac p2$.  Therefore
+\[
+J=\int_Bfg\,dx\ \le\ \Bigl(\int_Bf^{q}dx\Bigr)^{\frac1q}
+\Bigl(\int_Bg^{q'}dx\Bigr)^{\frac1{q'}}
+=K^{\frac p2}S^{1-\frac p2} .
+\tag{6}
+\]
+
+\emph{Step 7: the regime $1<p<2$, part three: the constant.}  By (H) and $(1)$,
+\[
+K\le aI+bJ\le aI+b\,2^{\frac p2}S\le aI+2bS ,
+\]
+using $2^{p/2}<2$, $b\ge0$ and $S\ge0$.  Since $t\mapsto t^{p/2}$ is
+nondecreasing on $[0,\infty)$ and is subadditive there ---
+$(s+u)^{p/2}\le s^{p/2}+u^{p/2}$ for $s,u\ge0$: for $s+u=0$ both sides
+vanish, and for $s+u>0$ the two numbers $s/(s+u)$ and $u/(s+u)$ lie in $[0,1]$,
+so, $\frac p2$ being at most $1$, $(s/(s+u))^{p/2}\ge s/(s+u)$ and
+$(u/(s+u))^{p/2}\ge u/(s+u)$; since
+$(s/(s+u))^{p/2}=s^{p/2}/(s+u)^{p/2}$ and likewise for $u$, adding the two
+inequalities gives
+$\bigl(s^{p/2}+u^{p/2}\bigr)/(s+u)^{p/2}\ge\frac{s+u}{s+u}=1$, which is the
+claim --- we get
+\[
+K^{\frac p2}\le\bigl(aI+2bS\bigr)^{\frac p2}
+\le(aI)^{\frac p2}+(2bS)^{\frac p2}
+=a^{\frac p2}I^{\frac p2}+(2b)^{\frac p2}S^{\frac p2} .
+\]
+Substituting into $(6)$ and using $S^{1-p/2}\ge0$,
+\[
+J\ \le\ a^{\frac p2}I^{\frac p2}S^{1-\frac p2}
++(2b)^{\frac p2}S^{\frac p2}S^{1-\frac p2}
+=a^{\frac p2}I^{\frac p2}S^{1-\frac p2}+(2b)^{\frac p2}S ,
+\]
+the last equality because $S^{p/2}S^{1-p/2}=S$ (at $S=0$ both sides are $0$,
+since $p/2>0$ and $1-p/2>0$).  By $(4)$ and the monotonicity of
+$t\mapsto t^{1-p/2}$ on $[0,\infty)$,
+$S^{1-\frac p2}\le\bigl((6+6a)I\bigr)^{1-\frac p2}
+=(6+6a)^{1-\frac p2}I^{1-\frac p2}$, so the first term is at most
+$a^{p/2}(6+6a)^{1-p/2}I^{\frac p2+1-\frac p2}=a^{p/2}(6+6a)^{1-p/2}I$; and by
+$(4)$ again the second term is at most
+$2^{p/2}b^{p/2}(6+6a)I\le2b^{p/2}\cdot6(1+a)I=12b^{p/2}(1+a)I$.  Hence
+\[
+J\ \le\ \Bigl[a^{\frac p2}\bigl(6+6a\bigr)^{1-\frac p2}
++12\,b^{\frac p2}(1+a)\Bigr]I .
+\tag{7}
+\]
+This is the thesis' $(P)$ with the factor $2^{p/2}$ of the \texttt{CHECK} at
+l.~1192, bounded above by $2$, inserted in the second term; the first term is
+$(P)$'s first term unchanged.
+
+It remains to dominate the bracket by $24(a+a^{p/2}+b^{p/2})$.  First,
+\[
+a^{\frac p2}\bigl(6+6a\bigr)^{1-\frac p2}\ \le\ 12\bigl(a+a^{\frac p2}\bigr).
+\tag{8}
+\]
+If $a\le1$ then $6+6a\le12$ and $0<1-\frac p2<1$, so
+$(6+6a)^{1-p/2}\le12^{1-p/2}\le12^{1}=12$ (monotonicity in the base, then in
+the exponent, the base being $\ge1$), whence
+$a^{p/2}(6+6a)^{1-p/2}\le12a^{p/2}\le12(a+a^{p/2})$.  If $a>1$ then
+$6+6a\le12a$, so
+$(6+6a)^{1-p/2}\le(12a)^{1-p/2}=12^{1-p/2}a^{1-p/2}\le12a^{1-p/2}$, whence
+$a^{p/2}(6+6a)^{1-p/2}\le12a^{p/2}a^{1-p/2}=12a\le12(a+a^{p/2})$, using
+$a^{p/2}a^{1-p/2}=a^{1}=a$ for $a>0$.  Second,
+\[
+12\,b^{\frac p2}(1+a)=12b^{\frac p2}+12ab^{\frac p2}\le12b^{\frac p2}+12a ,
+\tag{9}
+\]
+because $0\le b\le b_0\le1$ and $\frac p2>0$ give $b^{p/2}\le1$.  Adding $(8)$
+and $(9)$ and substituting into $(7)$,
+\[
+J\ \le\ \bigl[12a+12a^{\frac p2}+12b^{\frac p2}+12a\bigr]I
+\ \le\ 24\bigl(a+a^{\frac p2}+b^{\frac p2}\bigr)I
+\ \le\ c\bigl(a+a^{\frac p2}+b^{\frac p2}\bigr)I ,
+\]
+the last step because $c\ge24$ and $(a+a^{p/2}+b^{p/2})I\ge0$.  This is the
+conclusion in the regime $1<p<2$.
+
+Steps 4 and 5--7 cover $p\ge2$ and $1<p<2$ respectively, and $p>1$ admits no
+other case, so the conclusion holds for every $p>1$.
+\end{proof}

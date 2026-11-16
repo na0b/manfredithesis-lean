@@ -1,0 +1,95 @@
+\begin{helper}[Integrability of the power-weighted integrands]
+Let $n\in\N$, let $p,\varepsilon,\gamma_0,\gamma_1,t,L_\zeta,L_w,L_{\nabla\zeta}\in\R$,
+let $\Omega\subseteq\R^n$, let $A,g\colon\R^n\to\R^n$, let $Dg$ assign to each
+index $k$ a field $Dg^k\colon\R^n\to\R^n$, let
+$\zeta,w,w'\colon\R^n\to\R$, let $Dw$ assign to each $x$ a vector
+$(Dw_i(x))_i$, let $a$ assign to each $x$ a matrix $(a_{ij}(x))$, and let
+$g\varphi$ assign to each index $k$ a field
+$g\varphi^k\colon\R^n\to\R^n$.  Throughout, $\operatorname{supp}\zeta$ denotes
+the \emph{closed} support of $\zeta$,
+$\partial_i\zeta(x)=d\zeta(x)[e_i]$, $|\cdot|$ is the Euclidean norm, every
+power of a positive real is the real power with an arbitrary real exponent, and
+all integrals are against Lebesgue measure.  Assume
+\begin{enumerate}
+\item[(H1)] $0<\varepsilon$, $0<\gamma_0\le\gamma_1$, and $A$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\Omega$ with parameters
+  $\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12});
+\item[(H2)] $\zeta$ has compact support, $\operatorname{supp}\zeta$ is compact
+  and measurable, and $\operatorname{supp}\zeta\subseteq\Omega$;
+\item[(H3)] $w=\varepsilon+|g|^2$ pointwise and $w>0$;
+\item[(H4)] $a_{ij}(x)=\partial A_i/\partial h_j\bigl(g(x)\bigr)$ for all
+  $x,i,j$;
+\item[(H5)] $w=w'$ a.e.\ on $\Omega$; for every real $\sigma$ and every compact
+  $K\subseteq\Omega$ there is $L\ge0$ with $w'^\sigma\le L$ on $K$; and
+  $w'^1=w'$ pointwise;
+\item[(H6)] the Cauchy--Schwarz bound
+  $\sum_i(Dw_i)^2\le4w\sum_k|Dg^k|^2$ pointwise;
+\item[(H7)] $\sum_k|Dg^k|^2$ is integrable on $\operatorname{supp}\zeta$;
+\item[(H8)] $0\le L_\zeta$, $\zeta^2\le L_\zeta$ and
+  $\sum_i(\partial_i\zeta)^2\le L_{\nabla\zeta}$ everywhere, and
+  $w'^1\le L_w$ on $\operatorname{supp}\zeta$;
+\item[(H9)] each $w^\sigma$, each $g_k$, each $Dg^k_i$, each $Dw_i$, each
+  $a_{ij}$, $\zeta$ and each $\partial_i\zeta$ is measurable on
+  $\operatorname{supp}\zeta$, and finite sums of functions measurable there are
+  measurable there;
+\item[(H10)] the pointwise formula
+  $(g\varphi^k)_i=\zeta^2\bigl(w^{t/2}Dg^k_i
+    +\tfrac t2g_kw^{\frac t2-1}Dw_i\bigr)+g_kw^{t/2}\cdot2\zeta\partial_i\zeta$.
+\end{enumerate}
+Then all of
+\[
+\zeta^2w^{\frac t2}\!\!\sum_k\sum_i\sum_j\!a_{ij}Dg^k_jDg^k_i,\quad
+\zeta^2w^{\frac t2-1}\!\!\sum_i\sum_j\!a_{ij}Dw_jDw_i,\quad
+\zeta w^{\frac t2}\!\!\sum_i\sum_j\!a_{ij}Dw_j\partial_i\zeta
+\]
+and, for each index $k$, $\sum_i\sum_ja_{ij}Dg^k_j(g\varphi^k)_i$ are
+integrable on $\operatorname{supp}\zeta$.
+\end{helper}
+\begin{proof}
+\emph{Constants.}  $\operatorname{supp}\zeta$ is compact and contained in
+$\Omega$ by (H2), so (H5) gives $L_{p/2-1},L_{t/2},L_{t/2-1}\ge0$ with
+$w'^{\,p/2-1}\le L_{p/2-1}$, $w'^{\,t/2}\le L_{t/2}$ and
+$w'^{\,t/2-1}\le L_{t/2-1}$ on $\operatorname{supp}\zeta$; since $w=w'$ a.e.\
+on $\Omega$, the same bounds hold for the powers of $w$ almost everywhere on
+$\operatorname{supp}\zeta$.  Also $0<\gamma_1$ by (H1).
+
+\emph{The coefficient bound.}  For a.e.\ $x\in\operatorname{supp}\zeta$,
+(Q2) of the thesis of (H1) at the point $x$ and the vector $g(x)$ gives
+$|a_{ij}(x)|\le\gamma_1\bigl(\varepsilon+|g(x)|^2\bigr)^{\frac p2-1}
+  =\gamma_1w(x)^{\frac p2-1}\le\gamma_1L_{p/2-1}$,
+using (H4) to identify $a_{ij}$ with the differential of $A$, (H3) to rewrite
+the weight, and $\varepsilon>0$ with $|g(x)|^2\ge0$ from (H1) to see that the
+weight is nonzero, as (Q2) of the thesis requires.  On the same set $|g_k|^2\le|g|^2
+\le w\le L_w$ by (H3), (H8) and $\varepsilon>0$.
+
+\emph{Domination.}  Write $S=\sum_m|Dg^m|^2$, which is integrable on
+$\operatorname{supp}\zeta$ by (H7).  For the FIRST integrand, bounding the
+triple sum by $|\sum|\le n\max$ applied three times and
+$|Dg^k_j||Dg^k_i|\le|Dg^k|^2$ gives, a.e.\ on $\operatorname{supp}\zeta$,
+\[
+\Bigl|\zeta^2w^{\frac t2}\sum_k\sum_i\sum_ja_{ij}Dg^k_jDg^k_i\Bigr|
+\le L_\zeta L_{t/2}\,n^2\gamma_1L_{p/2-1}\,S .
+\]
+For the SECOND, (H6) bounds each $|Dw_i|$ by
+$2\sqrt{w}\,S^{1/2}\le2\sqrt{L_w}\,S^{1/2}$, so the double sum is at most
+$n^2\gamma_1L_{p/2-1}\cdot4L_wS$ and the integrand by
+$L_\zeta L_{t/2-1}$ times that.  For the THIRD, one factor $Dw_j$ is handled as
+in the second and the factor $\partial_i\zeta$ by
+$|\partial_i\zeta|\le\sqrt{L_{\nabla\zeta}}$ from (H8), while
+$|\zeta|\le\sqrt{L_\zeta}$; splitting the resulting product $S^{1/2}\cdot1$
+with $|ab|\le(a^2+b^2)/2$ bounds the integrand by a constant multiple of
+$S+1$, and constants are integrable on the finite-measure set
+$\operatorname{supp}\zeta$.  For the FOURTH, (H10) expands
+$(g\varphi^k)_i$ into three terms carrying respectively $Dg^k_i$, $g_kDw_i$ and
+$g_k\partial_i\zeta$, each bounded on $\operatorname{supp}\zeta$ by a constant
+multiple of $S^{1/2}$ or of $1$ by the bounds already established together
+with $|g_k|\le\sqrt{L_w}$; pairing with $|a_{ij}Dg^k_j|\le
+\gamma_1L_{p/2-1}S^{1/2}$ and splitting products of two square roots by
+$|ab|\le(a^2+b^2)/2$ bounds the integrand by a constant multiple of $S+1$.
+
+\emph{Conclusion.}  Every integrand above is measurable on
+$\operatorname{supp}\zeta$ by (H9), being assembled from measurable factors by
+finitely many products and finite sums, and each is dominated almost everywhere
+there by a constant multiple of the integrable function $S+1$.  Domination
+(Preamble) therefore gives all four integrabilities on $\operatorname{supp}\zeta$.
+\end{proof}

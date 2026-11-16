@@ -1,0 +1,77 @@
+\begin{lemma}[The component gradients of an almost everywhere constant quasiregular map vanish]
+Let $n\ge2$, let $K\in\R$, let $\Omega\subseteq\R^n$, let
+$F\colon\R^n\to\R^n$, let $G=(G^1,\dots,G^n)$ be an $n$-tuple of fields
+$\R^n\to\R^n$, and let $c\in\R^n$.  Suppose $\Omega$ is open, that $F$ is
+$K$-quasiregular on $\Omega$ with component gradients $G$
+(\noderef{IsQuasiregularOn}), and that $F=c$ almost everywhere on $\Omega$.  Then for every $i=1,\dots,n$,
+\[
+G^i=0\qquad\text{almost everywhere on }\Omega .
+\]
+\end{lemma}
+\begin{proof}
+Fix $i$.  By clause (1) of \noderef{IsQuasiregularOn},
+$F^i\in W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak gradient $G^i$
+(\noderef{MemW1pLocOn}); in particular, by the first clause of
+\noderef{MemW1pLocOn}, $G^i$ is a weak gradient of $F^i$ on $\Omega$
+(\noderef{HasWeakGradientOn}).
+
+\emph{The zero field is a weak gradient of the constant function.}  Apply
+\noderef{WeakGradientLinear} with the parameters $n$ and $q=n$ --- its two
+guards are $1\le n$, which follows from $2\le n$, and $1\le q$, which is
+$1\le n$ again --- on the open set $\Omega$, with the constant $c_i$ in the role
+of its $c$; the remaining arguments of that node ($f_1,f_2,g_1,g_2,a,b$) are
+universally quantified and may be taken arbitrarily, since the clause used does
+not mention them.  Its \emph{third} clause is
+$\mathbf c_i\in W^{1,n}_{\mathrm{loc}}(\Omega)$ with weak gradient the zero
+field, where $\mathbf c_i\colon x\mapsto c_i$ (\noderef{MemW1pLocOn}); by the
+first clause of \noderef{MemW1pLocOn} again, the zero field is therefore a weak
+gradient of $\mathbf c_i$ on $\Omega$ (\noderef{HasWeakGradientOn}).
+
+\emph{So is $G^i$.}  The hypothesis gives $F=c$ almost everywhere on $\Omega$,
+hence $F^i=\mathbf c_i$ almost everywhere on $\Omega$ read componentwise, where
+$\mathbf c_i$ is the constant function $x\mapsto c_i$.  Apply
+clause (1) of \noderef{AEModificationInvariance} with the parameters $n$ and
+$q=n$ --- its guards $1\le n$ and $1\le q$ hold as above --- on the open set
+$\Omega$, with $F^i$ in the role of its $f$, $\mathbf c_i$ in the role of its
+$f'$, and $G^i$ in the role of its $g$, the almost-everywhere equality being the
+one just recorded.  That clause carries the weak-gradient property
+(\noderef{HasWeakGradientOn}) of $F^i$ over to $\mathbf c_i$: $G^i$ is a weak
+gradient of $\mathbf c_i$ on $\Omega$.
+
+\emph{Both fields are locally integrable on $\Omega$, which is what the
+Preamble's uniqueness statement asks of the fields it compares.}  The zero field
+is trivially locally integrable.  For $G^i$: let $A\subseteq\Omega$ be compact.
+The second clause of \noderef{MemW1pLocOn}, at the compact set $A$, gives
+$G^i\in L^n(A)$; since $A$ is compact it is bounded, so $|A|<\infty$, and
+H\"older's inequality on a set of finite measure (Preamble) gives
+$L^n(A)\subseteq L^1(A)$ because $n\ge1$.  So $G^i\in L^1(A)$ for every compact
+$A\subseteq\Omega$, which is local integrability on $\Omega$.  The same holds for
+each coordinate function $x\mapsto G^i(x)_j$, since
+$|G^i(x)_j|\le\|G^i(x)\|$ pointwise, the modulus of one coordinate of a vector of
+$\R^n$ being at most its Euclidean norm, and domination by an integrable
+function preserves integrability (Preamble, domination clause (a)).
+
+\emph{Conclusion.}  The zero field and $G^i$ are two weak gradients of the same
+function $\mathbf c_i$ on the open set $\Omega$, both locally integrable there.
+By the second consequence of the Preamble's fundamental lemma of the calculus of
+variations (du Bois--Reymond) --- ``a weak gradient is determined almost
+everywhere on $U$'' --- the two agree almost everywhere on $\Omega$, that is
+\[
+G^i=0\qquad\text{almost everywhere on }\Omega .
+\]
+Explicitly, for every $\varphi$ that is $C^\infty$, compactly supported with
+$\operatorname{tsupp}\varphi\subseteq\Omega$ and every $j$, the two
+weak-gradient identities of \noderef{HasWeakGradientOn} for $\mathbf c_i$ read
+\[
+\int_\Omega\mathbf c_i(x)\,D_j\varphi(x)\,dx=-\int_\Omega 0\cdot\varphi
+=0
+\qquad\text{and}\qquad
+\int_\Omega\mathbf c_i(x)\,D_j\varphi(x)\,dx=-\int_\Omega G^i(x)_j\,\varphi(x)\,dx,
+\]
+so $\int_\Omega G^i(x)_j\varphi(x)\,dx=0$ for every such $\varphi$; the test
+class here is verbatim the one the Preamble item requires, and $G^i_j$ is
+locally integrable on $\Omega$ by the previous paragraph, so that item gives
+$G^i_j=0$ almost everywhere on $\Omega$.  As this holds for each of the finitely
+many $j$, the union of the $n$ exceptional sets is null and $G^i=0$ almost
+everywhere on $\Omega$.
+\end{proof}

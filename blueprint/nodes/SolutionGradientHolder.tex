@@ -1,0 +1,743 @@
+\begin{theorem}[Theorem 6]
+Let $n\ge2$, $p>1$, let $\mu,\gamma_0,\dots,\gamma_4>0$ with
+$\gamma_0\le\gamma_1$, let $\delta>0$ and let $M\ge0$.  (Following \S5 of the
+paper, ``the data'' means $n$, $p$, $\mu$, $\gamma_0,\dots,\gamma_4$ and
+$M=\|u\|_{L^\infty(\Omega)}$.)  Suppose the Sobolev--Poincar\'e inequality on balls holds in
+dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume the cited
+regularity result (C1) (\noderef{CitedRegularityEpsPos}), the cited solvability
+result (C2) (\noderef{CitedDirichletW1p}) and the cited Dirichlet result (C3)
+with H\"older boundary data (\noderef{CitedDirichletHolder}) in the universal
+forms described below, and assume the cited Campanato embedding (C5) at the
+exponent $n/(n-1)$ on every ball (\noderef{CitedCampanatoEmbedding}), in the
+universal form described below.  Then there is a number $\lambda_0$ with
+$0<\lambda_0\le p$, depending only on the data and on $\delta$, such that for
+all $C>0$, $d>0$, $W\ge0$ and every modulus $\sigma\colon\R\to\R$ there is
+$N\ge0$ with the following property.
+
+Let $0\le\varepsilon\le1$, let $\Omega\subseteq\R^n$ be open and let $\Omega'$ be
+open, nonempty and bounded and a bounded Lipschitz domain
+(\noderef{IsBoundedLipschitzDomain}), with $\overline{\Omega'}\subseteq\Omega$ and
+$d\le d(\Omega',\partial\Omega)$ --- ``$\Omega'$ is a bounded Lipschitz domain'' being the hypothesis the paper states at l.~1551, now carried as the predicate \noderef{IsBoundedLipschitzDomain} and no longer only as the three clauses open, nonempty and bounded; those three are kept beside it, being implied by it, so that the proof sites discharging them by name read unchanged ---
+and assume the
+cited Campanato embedding (C5) on $\Omega'$ at the exponent $p$
+(\noderef{CitedCampanatoEmbedding}) --- and, at the second exponent
+$n/(n-1)$, the instance of (C5) on $\Omega'$ that the Morrey theorem this proof
+consumes requires in its turn (\noderef{CitedCampanatoEmbedding} again): both
+instances are hypotheses here, bound with $\Omega'$ because (C5) mentions
+$\Omega'$ and so cannot be hoisted above it; assume also the cited
+H\"older estimates (C4) (\noderef{CitedHolderOscillationSolution}).  Let $A$
+and $B$ satisfy (Q1) of the thesis--(Q6) of the thesis on $\Omega$ with these parameters and
+the modulus $\sigma$ fixed above (\noderef{EllipticStructureQ12},
+\noderef{EllipticStructureQ345}, \noderef{EllipticStructureQ6}), and assume in
+addition that $\sigma(t)\le Ct^{\delta}$ for $t\ge0$.  Let
+$u\in W^{1,p}(\Omega)\cap L^\infty(\Omega)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pOn}), $|u|\le M$ a.e.\ and
+$\int_\Omega|u|^p\,dx+\int_\Omega|\nabla u|^p\,dx\le W^p$ (that is,
+$\|u\|_{W^{1,p}(\Omega)}\le W$), be a weak solution of
+(1.1) of the thesis in $\Omega$ (\noderef{IsWeakSolutionOn}).  Then
+\begin{itemize}
+\item[(i)] $\|D_iu\|_{\mathcal L^{p,\,n+\lambda_0}(\Omega')}\le N$ for every
+  $i=1,\dots,n$, i.e.\ $\nabla u\in\mathcal L^{p,\,n+\lambda_0}(\Omega')$
+  componentwise (\noderef{CampanatoBoundOn});
+\item[(ii)] $u$ agrees almost everywhere on $\Omega'$, together with its
+  gradient, with a function $w$ that is differentiable at every point of
+  $\Omega'$ with $\nabla w=g_w$ there and whose gradient $g_w$ is continuous and
+  $\beta$-H\"older on $\overline{\Omega'}$, $\beta=\lambda_0/p$
+  (\noderef{MemC1HolderOn} at the pair of sets $(\Omega',\overline{\Omega'})$);
+  i.e.\ $u\in C^{1+\beta}(\Omega')$ for some $\beta$ with $0<\beta\le1$, the
+  H\"older seminorm of the gradient being taken on $\overline{\Omega'}$ as the
+  Note's Definitions paragraph at l.~278 prescribes.
+\end{itemize}
+The quantifier order records the dependences asserted by the paper: $\lambda_0$
+and $\beta=\lambda_0/p$ depend exclusively on the data --- which by the
+definition of \S5 includes $M=\|u\|_{L^\infty(\Omega)}$, so $M$ is bound before
+$\lambda_0$ --- together with the H\"older exponent $\delta$, while the norm $N$
+depends in addition on the H\"older constant $C$, on
+$d(\Omega',\partial\Omega)$, on $\|u\|_{W^{1,p}(\Omega)}$ and on the modulus
+$\sigma$ of (Q6) of the thesis.  Three points of the ordering deserve comment.  First, $M$ must precede $\lambda_0$: the route to
+part~(i) builds $\lambda_0$ from the exponent $\alpha$ of (5.1) of the thesis, and
+(5.1) of the thesis supplies $\alpha$ and $d$ only as constants depending on the data
+including $M$.  Second, $C$ must follow $\lambda_0$: the H\"older
+\emph{exponent} $\delta$ may influence $\lambda_0$ and $\beta$, but its
+\emph{constant} $C$ may not, exactly as in Theorem~Theorem~4 of the thesis, where the
+paper's proof produces a $\delta'$ depending on the exponent alone.  Third,
+$\sigma$ must follow $\lambda_0$ and precede $N$: $N$ is built from the Morrey
+constant of Theorem~Theorem~5 of the thesis, and the paper's remark on that constant
+(thesis p.~50--51) lists ``the function $\sigma$ given in condition
+(Q6) of the thesis'' among its dependences, while Theorem~Theorem~6 of the thesis's own list for
+$\lambda_0$ and $\beta$ --- ``the data'' --- does not contain $\sigma$.  As the
+Note for the formalization prescribes, the vector field of part (i) is
+$\nabla u$ taken componentwise.
+\noindent\textbf{On the $W^{1,p}$ datum.}  The hypothesis
+$\int_\Omega|u|^p\,dx+\int_\Omega|\nabla u|^p\,dx\le W^p$ is a bound on the
+genuine Sobolev norm $\|u\|_{W^{1,p}(\Omega)}$, which is the quantity the
+paper's dependency list names.  It must not be replaced by a bound on
+$\int_\Omega(1+|\nabla u|^2)^{p/2}dx$: that integrand is pointwise at least $1$,
+so such a bound would force $W\ge|\Omega|$, would be unsatisfiable whenever
+$|\Omega|=\infty$ --- and the paper states this result for an arbitrary open
+$\Omega\subseteq\R^n$, so $\Omega=\R^n$ is an instance --- and would let the
+conclusion's norm degrade with $|\Omega|$, which is not on the paper's list.
+The weighted integral is still available locally where the proof needs it: since
+$(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for $t\ge0$,
+\[
+\int_{B_R}(1+|\nabla u|^2)^{\frac p2}dx
+\;\le\;2^{\frac p2}\Bigl(|B_R|+\int_{B_R}|\nabla u|^p\,dx\Bigr)
+\;\le\;2^{\frac p2}\bigl(c_nR^{\,n}+W^p\bigr),
+\]
+in which every term is controlled by $n$, $p$, $R$ and $W$ alone.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note for the formalization, carried here as an explicit argument because
+the proof uses it --- it enters through the constants of \noderef{SolutionMorreyRegularity} and \noderef{GradientOscillationEstimate} --- which is what the
+Note permits for the results the thesis quotes without proof.  Although it is
+bound before the existential for $\lambda_0$, it introduces no dependence of
+$\lambda_0$ on any quantity outside the list the paper names: (C6) is a statement
+about $n$ alone, and $n$ is already bound first, so the hypothesis carries no
+numerical content of its own.
+
+\medskip
+\noindent\textbf{The cited Campanato embedding on balls.}  The cited result
+(C5) is assumed here at the exponent $n/(n-1)$ on \emph{every} ball
+$B_\rho(y)\subseteq\R^n$ with $\rho>0$ (\noderef{CitedCampanatoEmbedding}), in
+addition to the two per-instance assumptions on $\Omega'$ above.  A ball is a
+bounded Lipschitz domain, so this is an instance of (C5) exactly as the paper's
+Note states it, universally quantified over centre and radius in the same way
+\noderef{CitedSobolevPoincareBall} quantifies (C6), and the Note allows the
+cited results to ``be taken as explicit hypotheses \ldots\ where they are
+used''.  It is used in exactly one place: the proof needs the H\"older
+continuity of $u$ at a \emph{fixed} exponent, with a constant uniform over the
+centres $x_0\in\Omega'$, on balls \emph{around} the points of $\Omega'$ rather
+than on $\Omega'$ itself, and it gets it by applying part~(iii) of
+Theorem~Theorem~5 of the thesis (\noderef{SolutionMorreyRegularity}) on finitely many balls
+covering $\overline{\Omega'}$, each of which needs its own instance of (C5).
+Like (C6), the hypothesis is bound before the existential for $\lambda_0$ and
+introduces no dependence of $\lambda_0$ on anything outside the paper's list: it
+mentions only $n$, already bound, and is universally quantified over the ball.
+
+\medskip
+\noindent\textbf{The three cited results for the frozen operator.}  The cited
+regularity result (C1) (\noderef{CitedRegularityEpsPos}), the cited solvability
+result (C2) (\noderef{CitedDirichletW1p}) and the cited Dirichlet result (C3)
+with H\"older boundary data (\noderef{CitedDirichletHolder}) are assumed here
+for \emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$ and $\gamma_1'>0$ --- and,
+for (C1), for every open $\Omega_0\subseteq\R^n$ as well --- which are the forms
+these three results have in the paper's Note for the formalization, where they
+``may be taken as explicit hypotheses \ldots\ where they are used''.
+
+The universal shape is forced rather than convenient: the operator to which all
+three are applied is frozen at a centre and a value chosen inside the proof, so
+no single instance can be named in the statement.  The proof reaches (C1) and
+(C2) through \noderef{GradientSupEstimate} (Theorem~1) and all three through
+\noderef{SolutionMorreyRegularity} (Theorem~5), each of which carries them in
+exactly this universal form and binds them before its own existential.  Like
+(C6), none of the three introduces a dependence of $\lambda_0$ on any quantity
+outside the list the paper names: each mentions only $n$ and $p$, both already
+bound, and each is universally quantified over its remaining parameters, so none
+carries numerical content of its own.  The guards $\gamma_0'>0$, $\gamma_1'>0$
+are the thesis' own standing positivity conditions on the structure constants,
+and the openness guard on (C1) is the domain condition
+\noderef{CitedRegularityEpsPos} is stated for; (C2) and (C3) need no such guard
+because \noderef{CitedDirichletW1p} and \noderef{CitedDirichletHolder} are
+statements about balls and fix their own domains.
+\end{theorem}
+\begin{proof}
+By the thesis' remark at p.~50, with \noderef{ComparisonGradientEstimateGeneral}
+(Lemma~5.1) in place of Lemma~4.1 and \noderef{SolutionMorreyRegularity}
+(Theorem~5) in place of Theorem~3, the proof of Theorem~Theorem~4 of the thesis applies step
+for step.  As there, the route is clause (B) of
+\noderef{ComparisonSchemeCampanatoCore}.
+
+\emph{Step 1: the exponents, chosen before $C$, $d$, $W$ and $\sigma$.}  Put
+$r=\gamma_1/\gamma_0>0$ --- positive because $0<\gamma_0\le\gamma_1$.  Apply
+\noderef{ComparisonGradientEstimateGeneral} (Lemma~5.1) with
+$n,p,\mu,\gamma_0,\dots,\gamma_4$ --- its hypotheses $2\le n$, $1<p$, the
+positivity of $\mu,\gamma_0,\dots,\gamma_4$, $\gamma_0\le\gamma_1$, the
+Sobolev--Poincar\'e inequality (\noderef{CitedSobolevPoincareBall}) and the
+universal cited result (C3) (\noderef{CitedDirichletHolder}) are hypotheses of
+the present theorem --- and take clause (B) of its conclusion, read at the
+H\"older exponent $\alpha=\tfrac12$ and at the present $\delta$.  That clause
+quantifies over $\alpha$ and $\delta$ universally behind three guards, and all
+three hold: $0<\alpha$ and $\alpha\le1$ at $\alpha=\tfrac12$, and $0<\delta$, a
+hypothesis of the present theorem.  It produces
+$\delta'>0$ depending only on $n,p$, the data, $\alpha$ and $\delta$.  The
+exponent $\tfrac12$ is a fixed number, not (C4)'s exponent; Step~(2a$'$) is what
+supplies the H\"older datum at that exponent.  Put
+$\tau^\sharp=\tfrac12p\alpha\delta'/(n+p\alpha)$, which is positive and
+$<p\alpha\delta'/(n+p\alpha)$, and apply
+\noderef{ComparisonSchemeCampanatoCore} at the head parameters
+$n,p,\alpha=\tfrac12,\delta',\tau^\sharp$ and
+\[
+c_1=1,\qquad c_3=1 ,
+\]
+exactly as in Theorem~Theorem~4 of the thesis, and for the same reason: those two head
+parameters are read only by clause (A) --- $c_1$ in its Morrey hypothesis, $c_3$
+in its (4.16) of the thesis hypothesis --- while clause (B), the clause used here,
+carries its own Morrey constant and builds its own (4.16) of the thesis.  Passing
+Theorem~5's actual Morrey constant as the head's $c_1$ would be legal but fatal,
+since that constant carries $d(\Omega',\partial\Omega)$, $\|u\|_{W^{1,p}(\Omega)}$
+and $\sigma$ and the node's $\lambda_2$ lies inside the head prefix, whereas the
+present $\lambda_0$ is bound before $d$, $W$ and $\sigma$.  Then take clause
+(B) at $r$ and at the H\"older exponent $\alpha_H=\tfrac12$.  \emph{That clause
+quantifies over $r$ and $\alpha_H$ universally; the value $\tfrac12$ is our
+choice and not one the node prescribes}, and what the node asks of the choice is
+the guards below.  It must agree with the $\alpha$ of the
+\noderef{ComparisonGradientEstimateGeneral} instance above and with the exponent
+at which (2a$'$) supplies the H\"older datum, and it does.  Clause (B) binds
+seven hypotheses before the
+exponent it produces, and all seven are in hand: $0<r$, just checked;
+$0<\alpha_H$ and $\alpha_H\le1$, immediate at $\alpha_H=\tfrac12$; the
+Sobolev--Poincar\'e inequality (\noderef{CitedSobolevPoincareBall}); and the
+three universal cited results (C2) (\noderef{CitedDirichletW1p}), (C1)
+(\noderef{CitedRegularityEpsPos}) --- which, alone of the three, also quantifies
+over every open set $\Omega_0$, being a statement about weak solutions on an open
+set --- and (C3) (\noderef{CitedDirichletHolder}), the last four all hypotheses
+of the present theorem in those same universal forms.  It
+produces $\alpha_2\in(0,1]$.  Put $\delta_2=\delta'$,
+$\theta_2=\delta_2/(n+p\alpha_2)$ and
+\[
+\tau_2=\min\Bigl\{\tfrac12p\alpha_2\theta_2,\ \tfrac n2,\ \tfrac p2\Bigr\},
+\]
+so that $0<\tau_2<p\alpha_2\theta_2$, which is clause (B)'s admissibility guard
+--- that guard reads $\tau_2<p\alpha_2\delta_2/(n+p\alpha_2)$ and
+$\theta_2=\delta_2/(n+p\alpha_2)$, so the two are the same inequality --- and
+$0<\tau_2<n$, which is the guard Theorem~5 imposes on its own exponent below.
+\emph{The third term of the minimum is there for} (2a$'$), \emph{and it costs
+nothing here}: the guard clause (B) imposes is the strict upper bound just
+checked, which only gets easier as $\tau_2$ shrinks.  It gives $\tau_2\le p/2<p$,
+which with $\tau_2>0$ is what (2a$'$) needs in order to meet (C5)'s
+admissibility and to make the exponent $1-\tau_2/p$ that step delivers at least
+$\tfrac12$.
+Its two remaining guards at this stage are $0<\delta_2$, which holds because
+$\delta_2=\delta'>0$, and $0<\tau_2$, just checked --- the latter because
+$\alpha_2>0$, $\theta_2>0$ and $p>1$ make $\tfrac12p\alpha_2\theta_2>0$, while
+$n\ge2$ makes $n/2>0$ and $p>1$ makes $p/2>0$.  The clause produces
+$\lambda_2\in(0,p)$ and $R_3\in(0,1]$.  Put
+$\lambda_0=\lambda_2$ and $\beta=\lambda_0/p$; then $0<\lambda_0\le p$ and
+$0<\beta<1$, the strict bound $\lambda_2<p$ giving both $\beta\le1$ and (C5)'s
+admissibility $n+\lambda_0<n+p$ in Step 4.  Every quantity $\lambda_2$ may
+depend on --- $n,p,r,\alpha_H,\delta_2,\tau_2$ and the head's
+$\alpha,\delta',\tau^\sharp,1,1$ --- is a function of the data and $\delta$
+alone, so $\lambda_0$ and $\beta$ ``depend exclusively on the data'' as
+Theorem~Theorem~6 of the thesis asserts.
+
+\emph{Step 2: the case split on the rate hypothesis, the data, and clause
+\textup{(B)}'s four hypotheses.}  Clause (B) binds sixteen hypotheses in all,
+enumerated in Step~3; twelve of them are hypotheses of the present theorem or
+immediate from them, and the four that need work are the ones quantified over
+the centre $x_0\in\Omega'$ --- the frozen bundle, the H\"older datum, the
+Morrey bound and the smallness.  Those four are (2b), (2a$'$), (2c) and (2d).
+
+Fix $C,d,W$ and $\sigma$.  \emph{The data $\varepsilon,\Omega,\Omega',A,B,u,g$
+are not fixed yet, and must not be}: the statement binds $N$ above them, so
+every constant produced between here and Step~4 --- $N$ included --- has to be
+a function of $n,p,\mu,\gamma_0,\dots,\gamma_4,\delta$, the head's cited
+hypotheses, and $C,d,M,W,\sigma$ alone.
+
+\emph{The case split on the rate hypothesis.}  The condition
+$\sigma(t)\le C\,t^{\delta}$ for every $t\ge0$ is a statement about $\sigma$,
+$C$ and $\delta$ alone --- it mentions no datum --- and all three are bound
+above the existential for $N$: $\delta$ at the head of the theorem, with
+$0<\delta$, and $C$ and $\sigma$ in the block just fixed.  So we may decide it
+here and argue by cases.
+
+If it \emph{fails}, take $N=0$.  The only demand the statement makes on $N$
+outside the inner implication is $N\ge0$, and $0\ge0$.  The inner implication
+is then satisfied vacuously, because that condition is itself one of its
+hypotheses: the present theorem assumes, among the hypotheses on the data, that
+$\sigma(t)\le C\,t^{\delta}$ for $t\ge0$.  So for any
+$\varepsilon,\Omega,\Omega',A,B,u,g$ satisfying all of those hypotheses the
+condition would hold, contradicting the branch; hence no such data exist and
+there is nothing to prove.  Nothing further is needed in this branch, and no
+dependence list is affected, $0$ depending on nothing at all.
+
+The rest of the proof runs inside the branch in which the condition
+\emph{holds}.  It is fixed once, here, and every constant below is produced
+under it --- in particular the $R_1'$ of (2d), whose application consumes it.
+It contributes no new quantity to any dependence list, being a property of the
+already-bound $\sigma$, $C$ and $\delta$.
+
+\emph{Only now fix} $\varepsilon,\Omega,\Omega',A,B,u,g$.
+\begin{enumerate}
+\item[(2a)] \emph{The inner domain and the representative.}  The
+  cited H\"older estimates (C4)(b) (\noderef{CitedHolderOscillationSolution}) at
+  $\mu,\gamma_0,\dots,\gamma_4,M$ --- its seven guards there being $0<\gamma_0$,
+  $0<\gamma_1$, $0<\gamma_2$, $0<\gamma_3$, $0<\gamma_4$, $0<\mu$ and
+  $0\le M$, all hypotheses of the present theorem, the second from
+  $0<\gamma_0\le\gamma_1$ --- gives $\alpha_4\in(0,1]$ and $d_0>0$,
+  $\varepsilon$-uniform after the cycle-54 binder move.  Then apply
+  \noderef{InnerDomainRepresentative} at $n,p,\alpha_4,d_0,M,d$ with the data
+  $\Omega,\Omega',u,g$.  Its hypotheses are $1\le n$ (from $2\le n$), $1\le p$
+  (from $1<p$), $0<\alpha_4$ and $\alpha_4\le1$ (just produced), $0<d_0$ (just
+  produced), $0\le M$ and $0<d$, all present; the openness of $\Omega$; the
+  nonemptiness and boundedness of $\Omega'$; the separation
+  $d\le\operatorname{dist}(x,y)$ for $x\in\Omega'$ and $y\notin\Omega$;
+  $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}); $|u|\le M$
+  almost everywhere on $\Omega$ --- all seven of these being hypotheses of the
+  present theorem --- and its oscillation hypothesis, which is that clause of
+  (C4) read at the present $\varepsilon$, whose own remaining hypotheses are
+  $0\le\varepsilon$ and $\varepsilon\le1$, the openness of
+  $\Omega$, (Q1) of the thesis--(Q2) of the thesis (\noderef{EllipticStructureQ12}),
+  (Q3) of the thesis--(Q5) of the thesis (\noderef{EllipticStructureQ345}), the
+  weak-solution property (\noderef{IsWeakSolutionOn}) and $|u|\le M$ a.e.  It
+  produces an open bounded $\Omega_1$ with
+  $\overline{\Omega'}\subseteq\Omega_1$, $\overline{\Omega_1}\subseteq\Omega$,
+  $d/2\le\operatorname{dist}(x,y)$ for $x\in\Omega'$ and $y\notin\Omega_1$, and
+  a representative $U$ with $U=u$ a.e.\ on $\Omega$, $U\in W^{1,p}(\Omega)$ with
+  weak gradient $g$ (\noderef{MemW1pOn}) and $U$ continuous on $\Omega_1$.  Only
+  these are used; the exponent $\alpha_4$ of its last clause is not.  Note that
+  $B_{d/2}(x)\subseteq\Omega_1$ for every $x\in\Omega'$.
+\item[(2a$'$)] \emph{A H\"older datum at the fixed exponent $\tfrac12$, with a
+  constant uniform in the centre.}  Fix $y_0\in\Omega'$ and put
+  $B^{y_0}=B_{d/4}(y_0)$.  Then $B^{y_0}$ is open, nonempty and bounded;
+  $\overline{B^{y_0}}\subseteq\Omega$, since $|y-y_0|\ge d$ for $y\notin\Omega$
+  by the separation hypothesis; and
+  $\operatorname{dist}(z,y)\ge\operatorname{dist}(y_0,y)-d/4\ge d-d/4\ge d/4$
+  for $z\in B^{y_0}$, $y\notin\Omega$.  \emph{No covering of
+  $\overline{\Omega'}$ is taken: the ball is attached to the centre under
+  consideration, and the constants below are shown to be independent of it.}
+  Apply \noderef{SolutionMorreyRegularity} (Theorem~5) with $n,p$, the exponent
+  $\tau_2$ of Step~1 (whose guards $0<\tau_2<n$ hold there), the data
+  $\mu,\gamma_0,\dots,\gamma_4$, the separation constant $d/4$, the bounds $M$
+  and $W$, the modulus $\sigma$, the Sobolev--Poincar\'e inequality and the
+  three universal cited results.  Its guards before the two constants are
+  $2\le n$, $1<p$, $0<\tau_2$, $\tau_2<n$, $0<\mu$, $0<\gamma_0$,
+  $\gamma_0\le\gamma_1$, $0<\gamma_2$, $0<\gamma_3$, $0<\gamma_4$, $0<d/4$,
+  $0\le M$ and $0\le W$, followed by \noderef{CitedSobolevPoincareBall} and the
+  universal (C1), (C2) and (C3) clauses --- (C1) alone also quantifying over
+  every open set; all are hypotheses of the present theorem except the two on
+  $\tau_2$, which Step~1 supplies, and $0<d/4$, which follows from $0<d$.
+  \emph{None of these head parameters involves $y_0$, so the pair $N_1,N_2$ the
+  node produces is one pair serving every centre; that is what} (2c)
+  \emph{and the \textup{(C5)} step below use, and it is the whole reason this
+  route fixes the binder order.}
+  Now with the data
+  $\varepsilon,\Omega,B^{y_0},A,B,u,g$: its remaining hypotheses are
+  $0\le\varepsilon$ and $\varepsilon\le1$, the openness of
+  $\Omega$, the five displayed properties of $B^{y_0}$ --- that it is open, that it
+  is nonempty, that it is bounded, that $\overline{B^{y_0}}\subseteq\Omega$, and
+  the separation of $B^{y_0}$ from the complement of $\Omega$ by $d/4$ --- the fact that $B^{y_0}$ is a bounded Lipschitz domain
+  (\noderef{IsBoundedLipschitzDomain}), which \noderef{BallIsLipschitzDomain}
+  supplies for every open ball of positive radius --- its hypotheses there are
+  $1\le n$, from $2\le n$, and $0<d/4$, from $0<d$ --- and which Theorem~5 now
+  requires of the set in its $\Omega'$ slot, the instance
+  of (C5) at the
+  exponent $n/(n-1)$ on $B^{y_0}$, which is the present theorem's universal
+  (C5)-on-balls hypothesis (\noderef{CitedCampanatoEmbedding}) and whose own
+  Lipschitz antecedent at that ball is the same application of
+  \noderef{BallIsLipschitzDomain}, the cited
+  H\"older estimates (C4) (\noderef{CitedHolderOscillationSolution}),
+  (Q1) of the thesis--(Q6) of the thesis (\noderef{EllipticStructureQ12},
+  \noderef{EllipticStructureQ345}, \noderef{EllipticStructureQ6}),
+  $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}),
+  $|u|\le M$ a.e., the $W^{1,p}$ bound and the weak-solution property
+  (\noderef{IsWeakSolutionOn}) --- all of these last being hypotheses of the
+  present theorem, read at $\Omega'=B^{y_0}$ where they mention $\Omega'$.  Its
+  \emph{What this proof takes from Theorem~5 is parts \textup{(i)} and
+  \textup{(ii)}, and \emph{not} part \textup{(iii)}, even though part
+  \textup{(iii)} is the H\"older statement.}  Part (iii) reads ``for each
+  $0\le\eta<1$ there is $w$ with $u=w$ a.e.\ on $\Omega'$ and
+  $w\in C^{\eta}(\overline{\Omega'})$ (\noderef{MemHolderOn})'', and the
+  constant of that $\noderef{MemHolderOn}$ is existentially bound \emph{inside}
+  the clause, after $\Omega'$ and after $u$ --- unlike parts (i) and (ii), whose
+  norms $N_1,N_2$ Theorem~5 binds in its head.  The present theorem binds its
+  $N$ before $\varepsilon,\Omega,\Omega',A,B,u,g$, and $N$ depends on $C_1$
+  through $R_1$ and $R$; so a $C_1$ assembled from part (iii)'s constants would
+  be bound after the data and the quantifier order of the statement would fail
+  (pm-0007).  Part (ii) carries an early-bound norm, and the paper's own route
+  from (ii) to a H\"older bound is (4.10) of the thesis, i.e.\ the cited result (C5);
+  that is the route taken below.
+
+  \emph{Part \textup{(ii)}.}  The application gives
+  \[
+  \|u\|_{\mathcal L^{q,\,\lambda^\natural}(B^{y_0})}\le N_2 ,
+  \qquad
+  q=\frac n{n-1},\quad \lambda^\natural=n+\Bigl(1-\frac{\tau_2}p\Bigr)q
+  \tag{4.15b}
+  \]
+  (\noderef{CampanatoBoundOn}), with the $N_2$ of its head.
+
+  \emph{Part \textup{(i)}, recorded here because \textup{(2c)} consumes it.}
+  The same application gives
+  \[
+  \int_{B^{y_0}\cap B_\rho(x)}|\nabla u|^p\,dx\le N_1^{\,p}\rho^{\,n-\tau_2}
+  \qquad\bigl(x\in B^{y_0},\ 0<\rho<\operatorname{diam}B^{y_0}=d/2\bigr),
+  \tag{4.15a}
+  \]
+  with $N_1$ the first norm of this application (\noderef{MorreyBoundOn}); the
+  guards on $x$ and $\rho$ are the ones that node's definition carries, and
+  $N_1$ is independent of the centre by the remark above.  Only the second
+  clause of \noderef{MorreyBoundOn} is read here; its first clause,
+  $|\nabla u|\in L^p(B^{y_0})$, is not needed for (2c).
+
+  \emph{The H\"older datum at the fixed exponent $\tfrac12$, from
+  \noderef{UniformHolderDatumOnBalls}.}  The centre $y_0\in\Omega'$ above was
+  arbitrary, and the pair $N_1,N_2$ is one pair serving every centre, so
+  (4.15b) holds at every $y_0\in\Omega'$ with that one $N_2$.  Apply
+  \noderef{UniformHolderDatumOnBalls} with the parameters $n,p$, the exponent
+  $\tau_2$ of Step~1, the separation constant $d$, the bound $M$ and that
+  $N_2$.  Its head guards are $2\le n$, $1<p$, $0<\tau_2$, $\tau_2\le p/2$,
+  $0<d$, $0\le M$ and $0\le N_2$: $2\le n$, $1<p$, $0<d$ and $0\le M$ are
+  hypotheses of the present theorem; the two on $\tau_2$ are Step~1, which
+  fixes $\tau_2=\min\{\tfrac12p\alpha_2\theta_2,\tfrac n2,\tfrac p2\}$ and so
+  gives both $\tau_2>0$ and $\tau_2\le p/2$ --- \emph{the third term of that
+  minimum is there for exactly this guard}; and $0\le N_2$ is part of the head
+  of the application of \noderef{SolutionMorreyRegularity} just made.  Its
+  remaining head hypothesis is the cited Campanato embedding (C5) at the
+  exponent $q=n/(n-1)$ on the \emph{single} ball $B_{d/4}(0)$
+  (\noderef{CitedCampanatoEmbedding}), which is the present theorem's universal
+  (C5)-on-balls hypothesis read at the centre $0$ and the radius $d/4$, whose
+  guard $0<d/4$ follows from $0<d$.
+
+  \emph{The ball in that head is the origin's, not the centre's, and that is
+  what puts $C_1$ before the data.}  None of those head parameters involves
+  $\varepsilon,\Omega,\Omega',A,B,u,g$ or the centre $y_0$, so the constant
+  $C_1\ge0$ that node produces is bound before the data, which is what the
+  present theorem needs: $N$ depends on $C_1$ through $R_1$ and $R$, and $N$ is
+  bound before $\varepsilon,\Omega,\Omega',A,B,u,g$.  By that node $C_1$ is a
+  function of $n,p,\tau_2,d,M$ and $N_2$ alone, hence --- by Step~1 for
+  $\tau_2$ and by \noderef{SolutionMorreyRegularity}'s head for $N_2$ --- of
+  $n,p,\mu,\gamma_0,\dots,\gamma_4,\delta,C,d,M,W$ and $\sigma$.
+
+  Now supply that node's data hypotheses, with the present $\Omega$ and
+  $\Omega'$, with $u$ in the role of its $u$ and with the $U$ of (2a) in the
+  role of its $U$; collected in the node's own order they are:
+  \begin{itemize}
+  \item $\Omega$ is open, and $d\le\operatorname{dist}(x,y)$ for every
+    $x\in\Omega'$ and every $y\notin\Omega$: both are hypotheses of the present
+    theorem;
+  \item $|u|\le M$ almost everywhere on $\Omega$: a hypothesis of the present
+    theorem;
+  \item $U=u$ almost everywhere on $\Omega$: this is (2a);
+  \item $U$ is continuous on $B_{d/4}(y_0)$ for every $y_0\in\Omega'$: by (2a),
+    $U$ is continuous on $\Omega_1$, and
+    $B_{d/4}(y_0)\subseteq B_{d/2}(y_0)\subseteq\Omega_1$ for every
+    $y_0\in\Omega'$, the first inclusion because $d/4\le d/2$ and the second
+    being the one noted at the end of (2a); and continuity on a set restricts
+    to every subset of it;
+  \item $\|u\|_{\mathcal L^{q,\lambda^\natural}(B_{d/4}(y_0))}\le N_2$ for every
+    $y_0\in\Omega'$ (\noderef{CampanatoBoundOn}), at the exponent
+    $\lambda^\natural=n+\bigl(1-\tfrac{\tau_2}p\bigr)q$: this is
+    (4.15b), which is exactly the exponent and the constant that
+    display carries.
+  \end{itemize}
+  Its conclusion is that for every $x_0\in\Omega'$ and every $R$ with
+  $0<R\le d/16$ one has $U\in C^{1/2}(\overline B_R(x_0))$
+  (\noderef{MemHolderOn}) and
+  \[
+  |U(x)-U(y)|\le C_1\operatorname{dist}(x,y)^{1/2}
+  \qquad\bigl(x,y\in\overline B_R(x_0)\bigr),
+  \]
+  with the \emph{single} constant $C_1$ for every such centre and radius.  This
+  is both the datum clause (B) of
+  \noderef{ComparisonSchemeCampanatoCore} asks for at $\alpha_H=\tfrac12$
+  (\noderef{MemHolderOn}) and the two-point datum clause (B) of
+  \noderef{ComparisonGradientEstimateGeneral} asks for at $\alpha=\tfrac12$
+  with its constant $C_1$, which that clause binds before its radius and hence
+  before the centre --- and which, by the paragraph above, $C_1$ is eligible
+  for.
+\item[(2b)] \emph{The frozen family.}  Put $\mathcal A(x,z)=A(x,z,\cdot)$ and,
+  for $x_0\in\Omega'$, write $A^0=\mathcal A(x_0,U(x_0))$ and
+  $\widetilde A=A^0-A^0(0)$.  Apply \noderef{FrozenSolutionStructureQ12} with
+  the present $n,p,\varepsilon,\gamma_0,\gamma_1$, the open set $\Omega$, the
+  field $A$, the modulus $\sigma$, the point $x_0$ and the value $U(x_0)$.  Its
+  hypotheses are $2\le n$, $1<p$, $0\le\varepsilon$, $0<\gamma_0$ and
+  $0<\gamma_1$ --- the last from $0<\gamma_0\le\gamma_1$ --- the openness of
+  $\Omega$, the membership $x_0\in\Omega$, which holds because
+  $\Omega'\subseteq\overline{\Omega'}\subseteq\Omega$, and the present theorem's
+  (Q1) of the thesis--(Q2) of the thesis (\noderef{EllipticStructureQ12}) and
+  (Q6) of the thesis (\noderef{EllipticStructureQ6}) bundles, all present.  Its
+  second conclusion is
+  $\mathrm{EllipticStructureQ12}\;n\;p\;\varepsilon\;\gamma_0\;\gamma_1\;
+  \mathrm{univ}\;\widetilde A$ (\noderef{EllipticStructureQ12}), which is
+  exactly what Step 3 consumes; the normalisation is performed inside that node,
+  so the passage from $A^0$ to $\widetilde A$ --- the paper's own at thesis
+  l.~542 --- is not reproduced here.  \emph{The step that cannot be taken
+  naively is inside it as well}: (Q1) of the thesis and (Q2) of the thesis hold only for
+  \emph{almost every} $x$, while $x_0$ is a single point and hence null, so they
+  say nothing at the frozen centre until they are upgraded to hold at every
+  point of $\Omega$, and that upgrade is what consumes (Q6) of the thesis (pm-0034).
+  An earlier version of this proof assembled all six clauses here by hand, as
+  \noderef{ComparisonGradientEstimateGeneral} once did; the equation-side node
+  now states that conclusion, so what was an assembly is a citation.  The guard
+  $\gamma_1\le r\gamma_0$ holds with equality.
+\item[(2c)] \emph{The Morrey bound (4.15) of the thesis.}  The paper's step here is
+  the one Theorem~Theorem~4 of the thesis makes at l.~1371--1374, ``by
+  Theorem~Theorem~3 of the thesis there exists a constant $c_1$ such that
+  $\Lambda(x_0,R)\le c_1R^{-\tau}$'', with Theorem~5 in place of Theorem~3 and
+  applied to $\Omega'$.  \emph{Read against
+  \noderef{SolutionMorreyRegularity}'s statement, that application does not
+  deliver what clause \textup{(B)} asks for, and the gap is in the domain of
+  integration, not in the exponent.}  Part (i) of that node is a
+  \noderef{MorreyBoundOn} assertion about its own $\Omega'$ argument, and
+  \noderef{MorreyBoundOn} bounds $\int_{\Omega'\cap B_\rho(x)}|\nabla u|^p$ ---
+  the integral over the \emph{intersection}.  Clause (B) of
+  \noderef{ComparisonSchemeCampanatoCore} asks for
+  $R^{-n}\int_{B_R(x_0)}(1+|\nabla u|^2)^{p/2}\le c_2R^{-\tau_2}$, the integral
+  over the \emph{whole} ball; and for $x_0\in\Omega'$ the ball $B_R(x_0)$ need
+  not be contained in $\Omega'$, which is a bounded Lipschitz domain and so not
+  a neighbourhood of its own boundary points.  The bound is therefore taken
+  where the containment \emph{is} available, at the ball of (2a$'$) centred at
+  the same point.
+
+  Let $x_0\in\Omega'$ and $0<R\le d/16$, and take the ball
+  $B^{x_0}=B_{d/4}(x_0)$ of (2a$'$) at $y_0=x_0$; then
+  $\overline B_R(x_0)\subseteq B^{x_0}$ since $R\le d/16<d/4$, so
+  $x_0\in B^{x_0}$, $B^{x_0}\cap B_R(x_0)=B_R(x_0)$ and
+  $0<R\le d/16<d/2=\operatorname{diam}B^{x_0}$.  So (4.15a)'s two guards are met
+  at $x=x_0$ and $\rho=R$, and it reads
+  $\int_{B_R(x_0)}|\nabla u|^p\le N_1^{\,p}R^{\,n-\tau_2}$ with the single
+  centre-independent $N_1$ of (2a$'$).  Hence, by
+  $(1+t^2)^{p/2}\le2^{p/2}(1+t^p)$ for $t\ge0$ and $|B_R|=\omega_nR^n$
+  (Preamble: the volume of a ball), $\omega_n$ being the volume of the unit
+  ball,
+  \[
+  \Lambda(x_0,R)=R^{-n}\!\int_{B_R(x_0)}(1+|\nabla u|^2)^{\frac p2}dx
+  \le2^{\frac p2}\bigl(\omega_n+N_1^pR^{-\tau_2}\bigr)\le c_2R^{-\tau_2}
+  \]
+  for $x_0\in\Omega'$ and $0<R\le\min\{1,d/16\}$, with
+  $c_2=2^{\frac p2}(\omega_n+N_1^p)$; the last step uses $R^{-\tau_2}\ge1$ for
+  $R\le1$, which is where $R\le1$ enters.  This is clause
+  (B)'s fifteenth hypothesis, and $c_2$ is passed as its $c_2$, whose guard
+  $0<c_2$ holds because $\omega_n>0$ and $N_1^p\ge0$.  Clause (B) binds $c_2$
+  \emph{after} $\lambda_2$ and $R_3$, so the $d$, $W$ and $\sigma$ inside $N_1$
+  reach only the $c_{20}$ it then produces and never $\lambda_0$.  ($N_1$ does
+  carry $\sigma$,
+  because Theorem~5 binds $\sigma$ before its $N_1$; this is why the present
+  statement binds $\sigma$ before $N$ and after $\lambda_0$.)
+
+  \emph{The per-instance \textup{(C5)} hypothesis on $\Omega'$ at the exponent
+  $n/(n-1)$, and the second application of Theorem~5 it carries.}  Apply
+  \noderef{SolutionMorreyRegularity} once more, with the same head parameters
+  except the separation constant $d$ in place of $d/4$, and with the data
+  $\varepsilon,\Omega,\Omega',A,B,u,g$: its inner hypotheses are the same list
+  as in (2a$'$) read at the present $\Omega'$, every one of them a hypothesis of
+  the present theorem --- the openness, nonemptiness and boundedness of
+  $\Omega'$, $\overline{\Omega'}\subseteq\Omega$ and the separation
+  $d\le\operatorname{dist}(x,y)$ for $x\in\Omega'$, $y\notin\Omega$ among them
+  --- with the instance of (C5) at $n/(n-1)$ being this time the present
+  theorem's per-instance one on $\Omega'$ (\noderef{CitedCampanatoEmbedding}) and
+  the Lipschitz hypothesis on $\Omega'$ that Theorem~5 now carries being the
+  present theorem's own (\noderef{IsBoundedLipschitzDomain}),
+  which is where that hypothesis is consumed.  Its part (i) is the paper's
+  (4.15) of the thesis in the form Theorem~5 states it,
+  $\int_{\Omega'\cap B_\rho(x)}|\nabla u|^p\le N_1'^{\,p}\rho^{\,n-\tau_2}$
+  (\noderef{MorreyBoundOn}).  It is recorded because it is the paper's own
+  citation at this point; the bound clause (B) consumes is the one displayed
+  above, for the reason given there.
+\item[(2d)] \emph{The smallness (4.17) of the thesis.}  Read clause (B) of
+  \noderef{ComparisonGradientEstimateGeneral} --- the instance of Step~1, at
+  $\alpha=\tfrac12$ and the present $\delta$ --- at the present $M$, $d$ and
+  $\sigma$ and at $c_\sigma=C$ and the constant $C_1$ of (2a$'$).  The guards
+  that clause binds before $R_1'$ are $0\le M$ and $0<d$, both hypotheses of the
+  present theorem, then $0<c_\sigma$, which is the present theorem's $0<C$, and
+  $0\le C_1$, which (2a$'$) records, and finally
+  $\sigma(t)\le C\,t^{\delta}$ for $t\ge0$, which is the present theorem's.
+  \emph{Apply it with $U$, not $u$, in the role of its $W^{1,p}$ function:}
+  $U=u$ a.e.\ on $\Omega$ by (2a), so $|U|\le M$ a.e., and
+  $U\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}) and $U$ is
+  a weak solution of (1.1) of the thesis in $\Omega$ (\noderef{IsWeakSolutionOn}) by
+  \noderef{AEModificationInvariance} at $q=p$, the open set $\Omega$, the pair
+  $(u,U)$ and the field $g$ --- its hypotheses are $1\le n$ (from $2\le n$),
+  $1\le p$ (from $1<p$), the openness of $\Omega$ and the almost-everywhere
+  equality $u=U$ on $\Omega$, which is (2a) read with the two sides exchanged;
+  and the clauses used are its second, transporting $\mathrm{MemW1pOn}$, and its
+  fourth, transporting $\mathrm{IsWeakSolutionOn}$ at the present $A$ and $B$.  With that
+  choice the lemma's bundle argument list reads
+  $(n,p,x_0,R,\mathcal A(x_0,U(x_0)),U,U,g,v,V,g_v)$, which is exactly the list
+  clause (B) of \noderef{ComparisonSchemeCampanatoCore} quantifies over in its
+  fifth hypothesis; with $u$ instead, the bundle's clause ``$U=u$ on
+  $B_R(x_0)$'' would be a pointwise identity available here only almost
+  everywhere.  The lemma produces $R_1'>0$ such that, for every $x_0\in\Omega'$,
+  every $0<R\le R_1'$ with $\overline B_R(x_0)\subseteq\Omega$ and every such
+  bundle (\noderef{FrozenComparisonOn}),
+  \[
+  \int_{B_R(x_0)}|\nabla u-g_v|^p\,dx\le R^{\delta'}\!\int_{B_R(x_0)}
+  (1+|\nabla u|^2)^{\frac p2}dx=R^{\delta_2+n}\Lambda(x_0,R),
+  \]
+  which is clause (B)'s sixteenth hypothesis.  \emph{The lemma's own remaining
+  hypotheses are \textup{not} the list of} (2a$'$), \emph{which is a different
+  node's list read at the ball $B^{y_0}$ with separation $d/4$; they are the
+  following, every one a hypothesis of the present theorem except where stated.}
+  $0\le\varepsilon$ and $\varepsilon\le1$; the openness of $\Omega$ and of
+  $\Omega'$, the boundedness of $\Omega'$ and
+  $\overline{\Omega'}\subseteq\Omega$; the separation
+  $d\le\operatorname{dist}(x,y)$ for $x\in\Omega'$ and $y\notin\Omega$;
+  (Q1) of the thesis--(Q2) of the thesis (\noderef{EllipticStructureQ12}),
+  (Q3) of the thesis--(Q5) of the thesis (\noderef{EllipticStructureQ345}) and
+  (Q6) of the thesis (\noderef{EllipticStructureQ6}) at the present parameters and
+  modulus; the cited H\"older estimates (C4)
+  (\noderef{CitedHolderOscillationSolution}); $U\in W^{1,p}(\Omega)$ with weak gradient
+  $g$ (\noderef{MemW1pOn}), $|U|\le M$ a.e.\ and $U$ a weak solution of
+  (1.1) of the thesis in $\Omega$ (\noderef{IsWeakSolutionOn}) --- these three by
+  (2a) and the transfer just made, since the lemma is read with $U$ in the role
+  of its $u$; $x_0\in\Omega'$, $0<R$, $R\le R_1'$ and
+  $\overline B_R(x_0)\subseteq\Omega$, the per-centre guards the clause
+  quantifies over, which the choice of $R_1$ below supplies; the frozen
+  comparison bundle itself (\noderef{FrozenComparisonOn}), which clause (B) of
+  \noderef{ComparisonSchemeCampanatoCore} also quantifies over and hands in; and
+  the two-point H\"older bound for $U$ on $\overline B_R(x_0)$ at the exponent
+  $\tfrac12$ and the constant $C_1$, which (2a$'$) supplies for every
+  $x_0\in\Omega'$ and every $R\le d/16$.  The head parameters
+  $n,p,\mu,\gamma_0,\dots,\gamma_4$ and the two head hypotheses
+  \noderef{CitedSobolevPoincareBall} and the universal (C3)
+  (\noderef{CitedDirichletHolder}) were discharged in Step~1, where this same
+  instance was created; no second instance is taken here.  Put
+  \[
+  R_1=\min\{d/16,\,R_1',\,1\}>0 .
+  \]
+  Then $\overline B_R(x_0)\subseteq\Omega$ for
+  $x_0\in\Omega'$ and $0<R\le R_1$, since $R_1\le d/16<d$ and the separation
+  hypothesis gives $|y-x_0|\ge d$ for $y\notin\Omega$; $R_1\le R_1'$, which the
+  display above needs; and \emph{$R_1\le1$, which is what} (2c)
+  \emph{needs} --- without the third term in the minimum, $d/16$ and $R_1'$
+  could both exceed $1$ and the Morrey bound of (2c), which holds only for
+  $R\le1$, would not cover every $R\le R_1$.
+\end{enumerate}
+
+\emph{Step 3: the decay (4.19) of the thesis.}  Apply clause (B) of
+\noderef{ComparisonSchemeCampanatoCore} at the data
+$\varepsilon,\gamma_0,\gamma_1,\Omega,\Omega',\mathcal A,u,U,g,R_1$, and at the
+$c_2$ of (2c), whose guard $0<c_2$ holds since
+$c_2=2^{p/2}(\omega_n+N_1^p)>0$.  Let $c_{20}>0$ be the constant it then
+produces, bound after $\lambda_2$, $R_3$ and $c_2$ and before all of this data.
+That clause binds sixteen hypotheses, and each
+is supplied above; collected in the node's own order they are
+\begin{itemize}
+\item $0\le\varepsilon$, $\varepsilon\le1$, $0<\gamma_0$, $0<\gamma_1$ and
+  $\gamma_1\le r\gamma_0$ --- the first four hypotheses of the present theorem,
+  the fourth from $0<\gamma_0\le\gamma_1$, and the fifth with equality by the
+  definition of $r$ in Step~1;
+\item the openness of $\Omega$ and of $\Omega'$, and
+  $\overline{\Omega'}\subseteq\Omega$ --- hypotheses of the present theorem;
+\item $0<R_1$, by the choice $R_1=\min\{d/16,R_1',1\}$ at the end of (2d), all
+  three terms being positive;
+\item $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}), a
+  hypothesis of the present theorem, and $U\in W^{1,p}(\Omega)$ with the same
+  weak gradient, by (2a);
+\item $\overline B_R(x_0)\subseteq\Omega$ for every $x_0\in\Omega'$ and
+  $0<R\le R_1$, which is the inclusion recorded at the end of (2d);
+\item for every $x_0\in\Omega'$, the bundle
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ for the normalised frozen field
+  $\mathcal A(x_0,U(x_0))-\mathcal A(x_0,U(x_0))(0)$
+  (\noderef{EllipticStructureQ12}), which is (2b);
+\item for every $x_0\in\Omega'$, the H\"older datum
+  $U\in C^{\alpha_H}(\overline B_{R_1}(x_0))$ at $\alpha_H=\tfrac12$
+  (\noderef{MemHolderOn}), which is (2a$'$) --- whose constant $C_1$ is uniform
+  in the centre, which is what this per-centre clause requires;
+\item the Morrey hypothesis
+  $R^{-n}\int_{B_R(x_0)}(1+|\nabla u|^2)^{p/2}\le c_2R^{-\tau_2}$ for
+  $x_0\in\Omega'$ and $0<R\le R_1$, which is (2c), using $R_1\le1$ and
+  $R_1\le d/16$; and
+\item the smallness hypothesis, for every $x_0\in\Omega'$, every
+  $0<R\le R_1$ and every frozen comparison bundle
+  (\noderef{FrozenComparisonOn}), which is (2d), using $R_1\le R_1'$.
+\end{itemize}
+It gives (4.19) of the thesis: $\int_{B_\rho(x_0)}|\nabla u-(\nabla u)_{B_\rho(x_0)}|^pdx\le
+c_{20}\rho^{\,n+\lambda_2}$ for $x_0\in\Omega'$, $0<R\le\min\{R_1,R_3\}$ and
+$2\rho\le R^{1+\theta_2}$.  Fix
+\[
+R=\min\{R_1,R_3\},\qquad \rho_0=\tfrac12R^{1+\theta_2}
+\]
+once, so that (4.19) of the thesis holds for all $0<\rho\le\rho_0$.  \emph{Both are
+built from $R_1$ of \textup{(2d)}, $R_3$ of Step~1 and $\theta_2$ of Step~1, so
+both belong to the head half and were available before the data were fixed},
+which is what Step~2's order asserts of them; they are written here only
+because this is where (4.19) of the thesis is read.
+
+\emph{Step 4: parts \textup{(i)} and \textup{(ii)}, from
+\noderef{GradientDecayToC1Holder}.}  Apply that node with the parameters $n,p$,
+with $\lambda_0$ in the role of its $\lambda_0$ --- recall $\lambda_0=\lambda_2$
+by Step~1 --- with the $c_{20}$ of Step~3 in the role of its $c_{20}$, with the
+$\rho_0=\tfrac12R^{1+\theta_2}$ of Step~3 in the role of its $\rho_0$, and with
+$W$ in the role of its $W$.  \emph{Every one of those six head parameters was
+fixed in the head half, before $\varepsilon,\Omega,\Omega',A,B,u,g$}, and that
+node binds its constant in its own head, above the block quantifying its data;
+so the $N$ it produces is fixed there too, which is exactly what the
+statement's $\exists N$ above the data demands.  Its head guards hold:
+\begin{itemize}
+\item $2\le n$, $1<p$ and $0\le W$ are hypotheses of the present theorem;
+\item $0<\lambda_0$ and $\lambda_0<p$: the clause of Step~1 that produces
+  $\lambda_2$ asserts $\lambda_2\in(0,p)$, and $\lambda_0=\lambda_2$, so the
+  bound available here is the \emph{strict} one this node requires; the
+  statement's own $\lambda_0\le p$ is its weaker consequence;
+\item $0<c_{20}$ is recorded in Step~3, that clause producing $c_{20}$ with
+  $c_{20}>0$;
+\item $0<\rho_0$, because $R_1>0$ by (2d) and $R_3>0$ by Step~1, so $R>0$, and
+  $R^{1+\theta_2}>0$ for a positive base and any exponent; and $\rho_0\le1$,
+  because $R\le R_3\le1$ by Step~1 and $1+\theta_2>0$ give
+  $R^{1+\theta_2}\le1$, whence $\rho_0\le\tfrac12\le1$.
+\end{itemize}
+Let $N\ge0$ be the constant it produces.
+
+\emph{The dependence of $N$, against Theorem~Theorem~6 of the thesis's own list.}  By that
+node $N$ is a function of $n,p,\lambda_0,c_{20},\rho_0$ and $W$ alone.  Of
+these $\lambda_0=\lambda_2$ and $\theta_2$ are functions of the quantities
+Step~1 names; $\rho_0$ is built from $R=\min\{R_1,R_3\}$ and $\theta_2$, with
+$R_3$ from Step~1, again on that list, and $R_1$ from (2d), which carries $d$,
+$M$, $\sigma$, the constant $C$ of the rate hypothesis and the $C_1$ of
+(2a$'$) --- clause (B) of \noderef{ComparisonGradientEstimateGeneral} binds its
+$R_1'$ after all five --- and $C_1$ is, by (2a$'$), a function of
+$n,p,\tau_2,d,M$ and $N_2$, with $N_2$ bound in the head of the application of
+\noderef{SolutionMorreyRegularity} made there; and $c_{20}$ carries $c_2$,
+hence $N_1$, hence $d$, $M$, $W$ and $\sigma$ by (2c).  \emph{Every one of
+these is bound before $\varepsilon,\Omega,\Omega',A,B,u,g$, which is what the
+statement's quantifier order requires of $N$.}  So $N$ depends on
+$n,p,\mu,\gamma_0,\dots,\gamma_4,\delta$ together with $C,d,M,W$ and $\sigma$
+--- precisely what Theorem~Theorem~6 of the thesis permits at l.~1570--1571, where the norm
+may depend, ``in addition to the previous constants'', on
+$d(\Omega',\partial\Omega)$, $\|u\|_{L^\infty(\Omega)}$ and
+$\|u\|_{W^{1,p}(\Omega)}$.  \emph{The appearance of $M$ in $N$ is licensed, and
+licensed only for $N$}: $\lambda_0$ and $\beta$ are bound before $M$ by
+Step~1, which is the other half of the paper's remark and the reason Step~1
+takes the trouble it does.
+
+\emph{The data hypotheses of that node.}  Supply the present $\Omega,\Omega',u$
+and $g$:
+\begin{itemize}
+\item $\Omega$ and $\Omega'$ are open and $\overline{\Omega'}\subseteq\Omega$:
+  hypotheses of the present theorem;
+\item $\Omega'$ is a bounded Lipschitz domain
+  (\noderef{IsBoundedLipschitzDomain}): a hypothesis of the present theorem;
+\item the cited Campanato embedding (C5) at the exponent $p$ on $\Omega'$
+  (\noderef{CitedCampanatoEmbedding}): a hypothesis of the present theorem ---
+  this is the per-instance one at the exponent $p$, not the per-instance one at
+  $n/(n-1)$ on $\Omega'$ and not the universal one on balls;
+\item $u\in W^{1,p}(\Omega)$ with weak gradient $g$ (\noderef{MemW1pOn}): a
+  hypothesis of the present theorem;
+\item $\int_\Omega|\nabla u|^p\,dx\le W^p$: the present theorem assumes
+  $\int_\Omega|u|^p\,dx+\int_\Omega|\nabla u|^p\,dx\le W^p$, and
+  $\int_\Omega|u|^p\,dx\ge0$, being the integral of a nonnegative function, so
+  dropping it only decreases the left-hand side;
+\item \emph{the ball containment} $B_\rho(x_0)\subseteq\Omega$ for every
+  $x_0\in\Omega'$ and every $0<\rho\le\rho_0$.  This is the separation
+  hypothesis of the present theorem, read at the radius $\rho_0$ of Step~3.
+  Indeed (2d) records $\overline B_R(x_0)\subseteq\Omega$ for every
+  $x_0\in\Omega'$ and every $0<R\le R_1$, with $R_1=\min\{d/16,R_1',1\}$; and
+  $\rho_0=\tfrac12R^{1+\theta_2}$ with $R=\min\{R_1,R_3\}$, so $R\le R_1\le1$
+  and $\theta_2>0$ give $R^{1+\theta_2}\le R\le R_1$ and hence
+  $\rho_0\le\tfrac12R_1<R_1$.  So for $0<\rho\le\rho_0$ we have $\rho\le R_1$
+  and therefore $B_\rho(x_0)\subseteq\overline B_\rho(x_0)\subseteq\Omega$, an
+  open ball being contained in the closed ball of the same centre and radius;
+\item the decay hypothesis, namely
+  $\int_{B_\rho(x_0)}\bigl|\nabla u-(\nabla u)_{B_\rho(x_0)}\bigr|^pdx\le
+  c_{20}\rho^{\,n+\lambda_0}$ for every $x_0\in\Omega'$ and every
+  $0<\rho\le\rho_0$: this is (4.19) of the thesis at the fixed
+  $R=\min\{R_1,R_3\}$, exactly as recorded at the end of Step~3, since
+  $\lambda_0=\lambda_2$ and $\rho_0=\tfrac12R^{1+\theta_2}$.
+\end{itemize}
+
+Its conclusion is the conjunction of the two assertions of the present theorem:
+\begin{itemize}
+\item $\|D_iu\|_{\mathcal L^{p,\,n+\lambda_0}(\Omega')}\le N$ for every
+  $i=1,\dots,n$ (\noderef{CampanatoBoundOn}), which is (i); and
+\item functions $w$ and $g_w$ with $u=w$ almost everywhere on $\Omega'$,
+  $g=g_w$ almost everywhere on $\Omega'$, and
+  $\mathrm{MemC1HolderOn}\;n\;\beta\;\Omega'\;\overline{\Omega'}\;w\;g_w$ at
+  $\beta=\lambda_0/p$ (\noderef{MemC1HolderOn}) --- that is, $w$ differentiable
+  at every point of $\Omega'$ with $\nabla w=g_w$ there, and $g_w$ continuous
+  and $\beta$-H\"older on $\overline{\Omega'}$ --- which is (ii), with
+  $\beta=\lambda_0/p$ as the statement asserts and $0<\beta\le1$ by Step~1.
+\end{itemize}
+This completes the proof.
+\end{proof}

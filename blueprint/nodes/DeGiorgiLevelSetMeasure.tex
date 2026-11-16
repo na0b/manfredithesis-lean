@@ -1,0 +1,194 @@
+\begin{lemma}[Lemma 2.2]
+Let $n\ge2$ and suppose the Sobolev--Poincar\'e inequality on balls
+\noderef{CitedSobolevPoincareBall} holds in dimension $n$.  Then there is an
+absolute constant $\beta=\beta(n)>0$ with the following property.  Let
+$x_0\in\R^n$, let $R>0$, let $f\in W^{1,1}(B_R(x_0))$ with weak gradient $g$
+(\noderef{MemW1pOn}), and let $k\le\ell$ be real numbers.  Write
+\[
+A^+_{k,R}=\{x\in B_R(x_0):f(x)>k\},\qquad
+A^+_{\ell,R}=\{x\in B_R(x_0):f(x)>\ell\} .
+\]
+If $|B_R\setminus A^+_{k,R}|>0$, then
+\[
+(\ell-k)\,|A^+_{\ell,R}|^{1-\frac1n}
+\;\le\;\beta(n)\,\frac{R^n}{|B_R\setminus A^+_{k,R}|}
+\int_{A^+_{k,R}\setminus A^+_{\ell,R}}|g(x)|\,dx .
+\]
+\end{lemma}
+\begin{proof}
+Write $q=\frac n{n-1}$, so that $\frac1q=1-\frac1n$ and $\frac1q+\frac1n=1$; note
+$q>1$ because $n\ge2$.  Write $Z=B_R\setminus A^+_{k,R}=\{x\in B_R:f(x)\le k\}$,
+$\omega_n=|B_1|$, so $|B_R|=\omega_nR^n$.  Let $C=C(n)>0$ be the constant
+supplied by \noderef{CitedSobolevPoincareBall}, so that for every ball
+$B_\sigma(y)$ and every $w\in W^{1,1}(B_\sigma(y))$ with weak gradient $G$
+(\noderef{MemW1pOn} at exponent $1$),
+\[
+\Bigl(\int_{B_\sigma(y)}\bigl|w-w_{B_\sigma(y)}\bigr|^{q}dx\Bigr)^{1/q}
+\le C\int_{B_\sigma(y)}|G|\,dx ,
+\qquad
+w_{B_\sigma(y)}=\frac1{|B_\sigma(y)|}\int_{B_\sigma(y)}w\,dx .
+\tag{$*$}
+\]
+We prove the lemma with
+\[
+\beta(n)=2\,C(n)\,\omega_n .
+\]
+This depends only on $n$, as required, since $C$ and $\omega_n$ do.  Fix
+$x_0,R,f,g,k,\ell$ as in the statement.
+
+If $\ell=k$ the left-hand side is $0$ and the right-hand side is a product of
+nonnegative quantities, so the inequality is immediate.  Assume from now on
+$\ell>k$.
+
+\emph{Step 1: the truncation.}  Define $w\colon\R^n\to\R$ by
+\[
+w=\min\{\max\{f,k\},\ell\}-k .
+\]
+Then $w$ has the following four properties.
+\begin{enumerate}
+\item $0\le w\le\ell-k$ everywhere.  Indeed $\max\{f,k\}\ge k$ gives
+  $\min\{\max\{f,k\},\ell\}\ge\min\{k,\ell\}=k$, so $w\ge0$; and
+  $\min\{\max\{f,k\},\ell\}\le\ell$ gives $w\le\ell-k$.
+\item $w=0$ on $Z$.  If $f(x)\le k$ then $\max\{f(x),k\}=k$ and, as $k\le\ell$,
+  $\min\{k,\ell\}=k$, so $w(x)=0$.
+\item $w=\ell-k$ on $A^+_{\ell,R}$.  If $f(x)>\ell$ then
+  $\max\{f(x),k\}\ge f(x)>\ell$, so $\min\{\max\{f(x),k\},\ell\}=\ell$ and
+  $w(x)=\ell-k$.
+\item $w\in W^{1,1}(B_R)$ with weak gradient $G=g\cdot\chi_E$, where
+\[
+E=A^+_{k,R}\setminus A^+_{\ell,R}=\{x\in B_R:k<f(x)\le\ell\} .
+\]
+To see this, observe first the pointwise identity
+\[
+w=\min\{\max\{f,k\},\ell\}-k=(f-k)^+-(f-\ell)^+ ,
+\]
+valid because $k\le\ell$: if $f\le k$ both sides are $0$; if $k<f\le\ell$ the
+left side is $f-k$ and the right side is $(f-k)-0$; and if $f>\ell$ the left side
+is $\ell-k$ and the right side is $(f-k)-(f-\ell)=\ell-k$.  Now
+$B_R$ is open with $|B_R|<\infty$ and $f\in W^{1,1}(B_R)$ with weak gradient $g$
+(\noderef{MemW1pOn}), so \noderef{WeakGradientPositivePart}, applied once with
+$c=k$ and once with $c=\ell$, gives
+\[
+(f-k)^+\in W^{1,1}(B_R)\ \text{with weak gradient}\ g\,\chi_{A^+_{k,R}},
+\qquad
+(f-\ell)^+\in W^{1,1}(B_R)\ \text{with weak gradient}\ g\,\chi_{A^+_{\ell,R}} ,
+\]
+since $\{f>k\}\cap B_R=A^+_{k,R}$ and $\{f>\ell\}\cap B_R=A^+_{\ell,R}$.  The
+weak-gradient relation of \noderef{HasWeakGradientOn} is linear in the pair
+(function, candidate gradient): its defining identity
+$\int_\Omega f\,D_i\varphi=-\int_\Omega g^i\varphi$ is linear in $(f,g)$ for each
+fixed test function $\varphi$ and index $i$, so if $f_1,f_2$ have weak gradients
+$g_1,g_2$ on $B_R$ then $f_1-f_2$ has weak gradient $g_1-g_2$; and $L^1(B_R)$ is
+a vector space, so the membership statements of \noderef{MemW1pOn} subtract as
+well.  Hence $w\in W^{1,1}(B_R)$ with weak gradient
+\[
+G=g\,\chi_{A^+_{k,R}}-g\,\chi_{A^+_{\ell,R}}
+=g\,\bigl(\chi_{A^+_{k,R}}-\chi_{A^+_{\ell,R}}\bigr)=g\,\chi_{E} ,
+\]
+the last equality because $A^+_{\ell,R}\subseteq A^+_{k,R}$ (as $k\le\ell$), so
+the difference of the two indicators is the indicator of the difference of the
+two sets, which is $E$.
+\end{enumerate}
+The point of (4) is that $E$ is \emph{exactly} the paper's domain of integration
+$A^+_{k,R}\setminus A^+_{\ell,R}$.  Therefore, writing
+$I=\int_{A^+_{k,R}\setminus A^+_{\ell,R}}|g|\,dx$,
+\[
+\int_{B_R}|G|\,dx=\int_E|g|\,dx=I ,
+\tag{1}
+\]
+which is why the right-hand side of the lemma is an integral over
+$A^+_{k,R}\setminus A^+_{\ell,R}$ and not over all of $B_R$.
+
+\emph{Step 2: Sobolev--Poincar\'e.}  Apply $(*)$ to $w$ on $B_R=B_R(x_0)$,
+legitimate by (4) and $R>0$, and set
+\[
+a=w_{B_R}=\frac1{|B_R|}\int_{B_R}w\,dx,
+\qquad
+S=\Bigl(\int_{B_R}|w-a|^{q}dx\Bigr)^{1/q} .
+\]
+Then $(*)$ and (1) give
+\[
+S\le C\int_{B_R}|G|\,dx\le C\,I .
+\tag{2}
+\]
+Note also $a\ge0$, since $w\ge0$ by (1) of Step 1.
+
+\emph{Step 3: bounding the mean $a$.  This is where the hypothesis
+$|B_R\setminus A^+_{k,R}|>0$ is used.}  On $Z$ we have $w=0$ by (2) of Step 1,
+so $|w-a|=a$ pointwise on $Z$ and therefore
+\[
+a\,|Z|=\int_Z|w-a|\,dx .
+\]
+By H\"older's inequality on $Z$ with the conjugate exponents $q$ and $n$ (note
+$\frac1q+\frac1n=1$),
+\[
+\int_Z|w-a|\,dx\le|Z|^{1/n}\Bigl(\int_Z|w-a|^{q}dx\Bigr)^{1/q}\le|Z|^{1/n}S ,
+\]
+the last step because $Z\subseteq B_R$ and the integrand is nonnegative.
+Combining the two displays, $a|Z|\le|Z|^{1/n}S$.  Since $|Z|>0$ by hypothesis we
+may divide by $|Z|^{1/n}\cdot|Z|^{1-1/n}=|Z|$, obtaining
+\[
+a\;\le\;\frac{S}{|Z|^{1-\frac1n}} .
+\tag{3}
+\]
+(Without the hypothesis $|Z|>0$ this division is unavailable, and indeed the
+conclusion of the lemma fails in that case: if $f>k$ almost everywhere in $B_R$
+then the stated right-hand side is $0$ while the left-hand side can be positive.)
+
+\emph{Step 4: bounding the left-hand side.}  By (3) of Step 1, $w=\ell-k$
+pointwise on $A^+_{\ell,R}$, so
+\[
+(\ell-k)\,|A^+_{\ell,R}|^{1-\frac1n}
+=(\ell-k)\,|A^+_{\ell,R}|^{1/q}
+=\Bigl(\int_{A^+_{\ell,R}}(\ell-k)^{q}dx\Bigr)^{1/q}
+=\Bigl(\int_{A^+_{\ell,R}}|w|^{q}dx\Bigr)^{1/q} .
+\]
+By the triangle inequality in $L^{q}(A^+_{\ell,R})$ applied to $w=(w-a)+a$,
+\[
+\Bigl(\int_{A^+_{\ell,R}}|w|^{q}dx\Bigr)^{1/q}
+\le\Bigl(\int_{A^+_{\ell,R}}|w-a|^{q}dx\Bigr)^{1/q}
++\Bigl(\int_{A^+_{\ell,R}}a^{q}dx\Bigr)^{1/q}
+\le S+a\,|A^+_{\ell,R}|^{1-\frac1n} ,
+\]
+using $A^+_{\ell,R}\subseteq B_R$ and a nonnegative integrand for the first term,
+and $a\ge0$ with $\frac1q=1-\frac1n$ for the second.  Hence
+\[
+(\ell-k)\,|A^+_{\ell,R}|^{1-\frac1n}\le S+a\,|A^+_{\ell,R}|^{1-\frac1n} .
+\tag{4}
+\]
+
+\emph{Step 5: combining.}  Insert (3) into (4):
+\[
+(\ell-k)\,|A^+_{\ell,R}|^{1-\frac1n}
+\le S\Bigl(1+\Bigl(\frac{|A^+_{\ell,R}|}{|Z|}\Bigr)^{1-\frac1n}\Bigr) .
+\]
+Put $t=|B_R|/|Z|$.  Since $Z\subseteq B_R$ and $|Z|>0$ we have $1\le t<\infty$,
+and since $A^+_{\ell,R}\subseteq B_R$,
+\[
+\Bigl(\frac{|A^+_{\ell,R}|}{|Z|}\Bigr)^{1-\frac1n}\le t^{1-\frac1n}\le t ,
+\]
+the last step because $t\ge1$ and $1-\frac1n\le1$.  Therefore
+$1+(|A^+_{\ell,R}|/|Z|)^{1-1/n}\le1+t\le2t$, again because $t\ge1$, and so, using
+(2),
+\[
+(\ell-k)\,|A^+_{\ell,R}|^{1-\frac1n}
+\le 2tS
+\le 2\,\frac{|B_R|}{|Z|}\,C\,I
+= 2C\omega_n\,\frac{R^n}{|Z|}\,I
+= \beta(n)\,\frac{R^n}{|B_R\setminus A^+_{k,R}|}
+\int_{A^+_{k,R}\setminus A^+_{\ell,R}}|g(x)|\,dx ,
+\]
+which is the assertion.  The constant $\beta(n)=2C(n)\omega_n$ depends only on
+$n$.
+\medskip
+\noindent\textbf{Correction reported.}  The hypothesis
+$|B_R\setminus A^+_{k,R}|>0$ is explicit in the statement above; it is how the
+result is stated in [LU, p.~55] and it is supplied at every point where the
+paper uses the lemma (in the proof of Lemma~Lemma~2.3 of the thesis that measure is
+bounded below by $\tfrac12|B_{\lambda_1R}|$, and in the proof of
+Lemma~Lemma~2.4 of the thesis by $(1-c_0)|B_{\lambda_1R}|$).  Without it the displayed
+inequality is false as a formal statement: on a configuration with $f>k$ almost
+everywhere in $B_R$ the denominator vanishes, the right-hand side is then $0$ by
+the convention $x/0=0$, while the left-hand side is strictly positive whenever
+$\ell>k$ and $|A^+_{\ell,R}|>0$.  Step 3 above is the step that consumes it.
+\end{proof}

@@ -1,0 +1,86 @@
+\begin{helper}[A lower bound for the symmetric difference quotient of the mollified field]
+Let $n\in\N$, let $p,C_M,\gamma_0,e\in\R$, let $\rho\colon\R^n\to\R$, let
+$A\colon\R^n\to\R^n$ and let $h,\xi\in\R^n$.  Write
+\[
+A_e(h')=\int_{\R^n}\rho(z)A\bigl(h'+\sqrt e\,z\bigr)dz
+  -\int_{\R^n}\rho(z)A\bigl(\sqrt e\,z\bigr)dz .
+\]
+Throughout, $\langle\cdot,\cdot\rangle$ is the Euclidean inner product,
+$v_i$ the $i$-th coordinate of $v$, $|\cdot|$ the Euclidean norm, and every
+power of a nonnegative real is the real power, written exactly as the structure
+condition prints the weight.  Assume
+\begin{enumerate}
+\item[(H1)] $\rho\ge0$ pointwise;
+\item[(H2)] $\sum_iv_i\xi_i=\langle\xi,v\rangle$ for every $v\in\R^n$;
+\item[(H3)] the monotonicity inequality
+  $C_M\gamma_0\bigl(0+|a|^2+|b|^2\bigr)^{\frac p2-1}|a-b|^2
+    \le\sum_i\bigl(A(a)_i-A(b)_i\bigr)(a_i-b_i)$
+  for all $a,b\in\R^n$;
+\item[(H4)] $z\mapsto\rho(z)A(h'+\sqrt e\,z)$ is integrable for every $h'$;
+\item[(H5)] for every $t>0$ the function
+  $z\mapsto\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}\rho(z)$ is
+  integrable;
+\item[(H6)] for every $t$ the function
+  $z\mapsto\bigl\langle\xi,A(h+t\xi+\sqrt e\,z)-A(h-t\xi+\sqrt e\,z)\bigr\rangle\rho(z)$
+  is integrable.
+\end{enumerate}
+Then for every $t>0$,
+\[
+C_M\gamma_0|\xi|^2\int_{\R^n}\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}\rho(z)\,dz
+\ \le\ \frac1{2t}\bigl\langle\xi,\,A_e(h+t\xi)-A_e(h-t\xi)\bigr\rangle .
+\]
+Per pm-0024(1) the weight is the printed real power, here with the explicit
+argument $2|h+\sqrt e\,z|^2+2t^2|\xi|^2$, and (H3) is the structure condition at
+parameter $\varepsilon=0$.
+\end{helper}
+\begin{proof}
+Fix $t>0$ and $z\in\R^n$, and set
+$a=h+t\xi+\sqrt e\,z$, $b=h-t\xi+\sqrt e\,z$, so that $a-b=2t\xi$ and
+$|a-b|^2=4t^2|\xi|^2$.
+
+\emph{Step 1: the pointwise inequality.}  By (H3) at this pair and then (H2),
+\[
+C_M\gamma_0\bigl(|a|^2+|b|^2\bigr)^{\frac p2-1}4t^2|\xi|^2
+\ \le\ \sum_i\bigl(A(a)_i-A(b)_i\bigr)(a_i-b_i)
+\ =\ 2t\bigl\langle\xi,A(a)-A(b)\bigr\rangle ,
+\]
+the last equality because $a-b=2t\xi$ and the pairing is linear in its second
+argument.
+
+\emph{Step 2: the weight is bounded below by the stated one.}  By the
+parallelogram-type bound
+$|a|^2+|b|^2=2|h+\sqrt e\,z|^2+2t^2|\xi|^2$, which is an identity here since
+$a$ and $b$ are symmetric about $h+\sqrt e\,z$, the base of the power in Step 1
+is exactly the base appearing in the assertion.  Hence Step 1 reads
+\[
+C_M\gamma_0\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}4t^2|\xi|^2
+\ \le\ 2t\bigl\langle\xi,A(a)-A(b)\bigr\rangle .
+\]
+
+\emph{Step 3: multiply by $\rho$ and integrate.}  Multiplying by $\rho(z)\ge0$
+from (H1) preserves the inequality, and both sides are integrable in $z$ by
+(H5) and (H6), so monotonicity of the integral (Preamble) gives
+\[
+C_M\gamma_0\,4t^2|\xi|^2\!\int\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}\rho
+\ \le\ 2t\!\int\bigl\langle\xi,A(a)-A(b)\bigr\rangle\rho(z)\,dz .
+\]
+
+\emph{Step 4: identify the right-hand side.}  The pairing commutes with the
+integral by linearity and the integrability of each
+$z\mapsto\rho(z)A(h'+\sqrt e\,z)$ from (H4), so
+\[
+\int\bigl\langle\xi,A(a)-A(b)\bigr\rangle\rho(z)\,dz
+=\Bigl\langle\xi,\int\rho(z)A(h+t\xi+\sqrt e\,z)dz-\int\rho(z)A(h-t\xi+\sqrt e\,z)dz\Bigr\rangle
+=\bigl\langle\xi,A_e(h+t\xi)-A_e(h-t\xi)\bigr\rangle,
+\]
+the two constant terms $\int\rho(z)A(\sqrt e\,z)dz$ in the definition of $A_e$
+cancelling in the difference.
+
+\emph{Conclusion.}  Dividing the inequality of Step 3 by $4t^2>0$ and
+rearranging the positive factor $2t$ gives
+\[
+C_M\gamma_0|\xi|^2\!\int\bigl(2|h+\sqrt e\,z|^2+2t^2|\xi|^2\bigr)^{\frac p2-1}\rho
+\ \le\ \frac1{2t}\bigl\langle\xi,A_e(h+t\xi)-A_e(h-t\xi)\bigr\rangle,
+\]
+which is the assertion.
+\end{proof}

@@ -1,0 +1,162 @@
+\begin{lemma}[Testing a weak solution with a right-hand side against a bounded $W^{1,p}_0$ pair]
+Let $n\ge1$ and $p>1$.  Let $\Omega\subseteq\R^n$ be open, let $x_0\in\R^n$, let
+$r>0$ with $B_r(x_0)\subseteq\Omega$, let $A$ and $B$ be the field and the
+right-hand side, and let $u$ be a weak solution of
+$\operatorname{div}A(x,u,\nabla u)=B(x,u,\nabla u)$ in $\Omega$ with weak
+gradient $g$ (\noderef{IsWeakSolutionOn}).  Assume
+\[
+A(\cdot,u,\nabla u)\in L^{p/(p-1)}\bigl(B_r(x_0)\bigr),
+\qquad
+B(\cdot,u,\nabla u)\in L^{1}\bigl(B_r(x_0)\bigr).
+\]
+Let $(\varphi,g_\varphi)$ belong to $W^{1,p}_0(B_r(x_0))$
+(\noderef{MemW1pZeroOn}), let $T\ge0$ and suppose $|\varphi|\le T$ almost
+everywhere on $B_r(x_0)$.  Then
+\[
+\int_{B_r(x_0)}\Bigl(\sum_{i=1}^n A^i\bigl(x,u(x),\nabla u(x)\bigr)
+g_\varphi^{\,i}(x)+B\bigl(x,u(x),\nabla u(x)\bigr)\varphi(x)\Bigr)dx=0 .
+\]
+\end{lemma}
+\begin{proof}
+Write $B_r=B_r(x_0)$ and $T'=T+1$, so that $T'>0$ and $|\varphi|\le T<T'$
+almost everywhere on $B_r$, the second inequality \emph{strict}; the slack is
+what the gradient step below needs.  Note $|B_r|<\infty$ (Preamble: the volume
+of a ball).
+
+\emph{Step 1: the approximating sequence, and its membership on the ball and on
+$\Omega$.}  By \noderef{MemW1pZeroOn} there are $\varphi_k$, each of class
+$C^\infty$ with compact support and $\mathrm{tsupport}\,\varphi_k\subseteq B_r$,
+with $\int_{B_r}|\varphi-\varphi_k|^p\to0$ and
+$\int_{B_r}\bigl(\sum_i|g_\varphi^{\,i}-D_i\varphi_k|^2\bigr)^{p/2}\to0$; that
+is, $\varphi_k\to\varphi$ and $\nabla\varphi_k\to g_\varphi$ in $L^p(B_r)$.
+Apply \noderef{SmoothCompactSupportMemW1p} with the present $n$, with $r=p$,
+with the open set $B_r$ and with $\varphi_k$: its hypotheses are $1\le n$,
+$1\le p$ (from $1<p$), the openness of $B_r$, and the three conditions on
+$\varphi_k$ just recorded.  It gives
+$\mathrm{MemW1pOn}\;n\;p\;B_r\;\varphi_k\;\nabla\varphi_k$
+(\noderef{MemW1pOn}).
+
+\emph{Step 2: truncating the sequence.}  Let
+$\tau(s)=\max\{-T',\min\{s,T'\}\}$ and $\psi_k=\tau\circ\varphi_k$.  Then
+$\psi_k\in W^{1,p}(B_r)$ with weak gradient
+$G_k=\mathbf1_{\{|\varphi_k|<T'\}}\nabla\varphi_k$ (\noderef{MemW1pOn}).
+Indeed $\min\{s,T'\}=T'-\max\{(-s)-(-T'),0\}$, so applying
+\noderef{WeakGradientPositivePart} with the present $n$, $q=p$, the level
+$c=-T'$, the open set $B_r$ and the pair $(-\varphi_k,-\nabla\varphi_k)$ ---
+its hypotheses are $1\le n$, $1\le p$, the openness of $B_r$,
+$\mathrm{volume}\,B_r\ne\infty$, and that membership, which is $(-1)\cdot$ the
+one from Step 1, by clause (2) of \noderef{WeakGradientLinear} at $a=-1$, $b=0$
+--- gives $\max\{T'-\varphi_k,0\}\in W^{1,p}(B_r)$ with weak gradient
+$\mathbf1_{\{\varphi_k<T'\}}(-\nabla\varphi_k)$, and then clauses (2) and (4) of
+\noderef{WeakGradientLinear} --- the latter's guard
+$\mathrm{volume}\,B_r\ne\infty$ again from the Preamble --- subtract it from the
+constant $T'$ to give $\min\{\varphi_k,T'\}\in W^{1,p}(B_r)$ with weak gradient
+$\mathbf1_{\{\varphi_k<T'\}}\nabla\varphi_k$.  The same two steps applied to
+\emph{that} pair give $\psi_k$: since
+$\tau(s)=\max\{\min\{s,T'\}-(-T'),0\}+(-T')$, one application of
+\noderef{WeakGradientPositivePart} at the level $c=-T'$ to the pair
+$(\min\{\varphi_k,T'\},\mathbf1_{\{\varphi_k<T'\}}\nabla\varphi_k)$ ---
+hypotheses as before --- followed by clauses (2) and (4) of
+\noderef{WeakGradientLinear} at $a=1$, $b=1$ with the constant $-T'$ in the
+second slot, gives $\psi_k\in W^{1,p}(B_r)$ with weak gradient
+$\mathbf1_{\{-T'<\varphi_k\}}\mathbf1_{\{\varphi_k<T'\}}\nabla\varphi_k=G_k$,
+the indicator because $\min\{\varphi_k,T'\}>-T'$ if and only if
+$\varphi_k>-T'$, which uses $T'>-T'$, and the added constant contributing $0$
+to the gradient.  Moreover $|\psi_k|\le T'$ everywhere; $\tau(0)=0$, so
+$\psi_k$ vanishes wherever $\varphi_k$ does and hence
+$\{\psi_k\ne0\}\subseteq\{\varphi_k\ne0\}$, so on taking closures
+$\mathrm{tsupport}\,\psi_k\subseteq\mathrm{tsupport}\,\varphi_k\subseteq B_r$
+and $\mathrm{tsupport}\,\psi_k$, a closed subset of a compact set, is compact.
+
+\emph{Step 3: the truncated pair is admissible for the weak form on $\Omega$.}
+The test clause of \noderef{IsWeakSolutionOn} asks, for the form on $\Omega$,
+for $\mathrm{MemW1pOn}\;n\;p\;\Omega\;\psi_k\;g_{\psi_k}$ together with compact
+support and $\mathrm{tsupport}\subseteq\Omega$; it asks for \emph{no}
+smoothness, which is why the truncation is admissible at all.  The membership on
+$\Omega$ is a \emph{different} proposition from the one on $B_r$, and it is
+supplied by \noderef{WeakGradientZeroExtend} applied with the present $n$,
+$q=p$, the open set $\Omega$, the centre $x_0$, the radius $r$ and the pair
+$(\psi_k,G_k)$: its hypotheses are $1\le n$, $1\le p$, the openness of $\Omega$,
+the inclusion $B_r\subseteq\Omega$, the membership on $B_r$ from Step 2, the
+compactness of $\mathrm{tsupport}\,\psi_k$ and
+$\mathrm{tsupport}\,\psi_k\subseteq B_r$.  It gives
+$\mathrm{MemW1pOn}\;n\;p\;\Omega\;\psi_k\;(\mathbf1_{B_r}G_k)$, and
+$\mathrm{tsupport}\,\psi_k\subseteq B_r\subseteq\Omega$ is the test clause's
+third condition.  Hence, for every $k$,
+\[
+\int_\Omega\Bigl(\sum_iA^i(x,u,\nabla u)\,(\mathbf1_{B_r}G_k)^i
++B(x,u,\nabla u)\,\psi_k\Bigr)dx=0 .
+\]
+The $\Omega$-integral is the $B_r$-integral: the zero extension
+$\mathbf1_{B_r}G_k$ vanishes off $B_r$, and $\psi_k$ vanishes off
+$\mathrm{tsupport}\,\psi_k\subseteq B_r$, so both summands of the integrand
+vanish at every point of $\Omega\setminus B_r$, while on $B_r$ one has
+$\mathbf1_{B_r}G_k=G_k$.  Therefore
+\[
+\int_{B_r}\Bigl(\sum_iA^i(x,u,\nabla u)\,G_k^{\,i}
++B(x,u,\nabla u)\,\psi_k\Bigr)dx=0
+\tag{1}
+\]
+for every $k$.
+
+\emph{Step 4: the truncated sequence converges, in the right two senses.}
+First, $\psi_k\to\varphi$ in $L^p(B_r)$ and, along the subsequence chosen below,
+almost everywhere: the map $\tau$ is $1$-Lipschitz, so
+$|\psi_k-\tau(\varphi)|\le|\varphi_k-\varphi|$ pointwise, and
+$\tau(\varphi)=\varphi$ almost everywhere on $B_r$ because $|\varphi|\le T<T'$
+there; hence
+$\|\psi_k-\varphi\|_{L^p(B_r)}\le\|\varphi_k-\varphi\|_{L^p(B_r)}\to0$.
+Second, $G_k\to g_\varphi$ in $L^p(B_r)$ along a subsequence.  Pass to a
+subsequence along which $\varphi_k\to\varphi$ almost everywhere on $B_r$
+(Preamble: an almost everywhere convergent subsequence out of $L^q$
+convergence), and keep the same index for it.  At almost every $x\in B_r$ we
+have $|\varphi(x)|\le T<T'$, so $\varphi_k(x)\to\varphi(x)$ forces
+$|\varphi_k(x)|<T'$ for all large $k$ and therefore
+$\mathbf1_{\{|\varphi_k|<T'\}}(x)\to1$.  Writing
+\[
+G_k-g_\varphi
+=\mathbf1_{\{|\varphi_k|<T'\}}\bigl(\nabla\varphi_k-g_\varphi\bigr)
+-\bigl(1-\mathbf1_{\{|\varphi_k|<T'\}}\bigr)g_\varphi ,
+\]
+the first term has $L^p(B_r)$ norm at most
+$\|\nabla\varphi_k-g_\varphi\|_{L^p(B_r)}\to0$, and the second tends to $0$ in
+$L^p(B_r)$ by dominated convergence (Preamble), its integrand being dominated by
+$|g_\varphi|^p\in L^1(B_r)$ --- because $g_\varphi\in L^p(B_r)$, which is part
+of $\mathrm{MemW1pOn}$ inside \noderef{MemW1pZeroOn} --- and tending to $0$
+almost everywhere.  Also $\psi_k\to\varphi$ almost everywhere on $B_r$ along
+this subsequence, since $\varphi_k\to\varphi$ there and $\tau$ is continuous
+with $\tau(\varphi)=\varphi$ almost everywhere.
+
+\emph{Step 5: passing to the limit in} (1).  For the $A$-pairing, apply
+H\"older's inequality on the finite-measure set $B_r$ (Preamble) at the
+conjugate exponents $p/(p-1)$ and $p$: since
+$A(\cdot,u,\nabla u)\in L^{p/(p-1)}(B_r)$ by hypothesis and
+$G_k\to g_\varphi$ in $L^p(B_r)$,
+\[
+\int_{B_r}\sum_iA^i(x,u,\nabla u)\,G_k^{\,i}\,dx
+\longrightarrow\int_{B_r}\sum_iA^i(x,u,\nabla u)\,g_\varphi^{\,i}\,dx ,
+\]
+both integrals being finite for the same reason.  For the $B$-pairing,
+\emph{this is where the truncation is spent}:
+$|B(x,u,\nabla u)\,\psi_k|\le T'\,|B(x,u,\nabla u)|$ pointwise, by
+$|\psi_k|\le T'$, and that majorant is in $L^1(B_r)$ by hypothesis and is
+independent of $k$; while $\psi_k\to\varphi$ almost everywhere on $B_r$ along
+the chosen subsequence.  So dominated convergence (Preamble) gives
+\[
+\int_{B_r}B(x,u,\nabla u)\,\psi_k\,dx
+\longrightarrow\int_{B_r}B(x,u,\nabla u)\,\varphi\,dx ,
+\]
+the limit integral being finite because $|B(\cdot,u,\nabla u)\varphi|\le
+T\,|B(\cdot,u,\nabla u)|$ almost everywhere.  \emph{An untruncated sequence
+would not do}: with $|B(\cdot,u,\nabla u)|$ only in $L^1(B_r)$, no bound on
+$\int_{B_r}B(\cdot,u,\nabla u)\varphi_k$ follows from $\varphi_k\to\varphi$ in
+$L^p(B_r)$.
+
+Both limits taken in (1) along the chosen subsequence, and the left-hand side
+being identically $0$ along it, give
+\[
+\int_{B_r}\Bigl(\sum_iA^i(x,u,\nabla u)\,g_\varphi^{\,i}
++B(x,u,\nabla u)\,\varphi\Bigr)dx=0 ,
+\]
+which is the assertion.
+\end{proof}

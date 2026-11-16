@@ -1,0 +1,276 @@
+\begin{lemma}[Lemma 4.2]
+Let $n\ge2$, $p>1$, $0<\tau\le n$, $N\ge0$ and $d>0$, and suppose the
+Sobolev--Poincar\'e inequality on balls holds in dimension $n$
+(\noderef{CitedSobolevPoincareBall}).  Write
+\[
+q=\frac n{n-1},\qquad
+\lambda=n+\frac n{n-1}\Bigl(1-\frac\tau p\Bigr).
+\]
+Then there is $N'\ge0$, depending only on $n$, $p$, $\tau$, $N$ and $d$, with the
+following property.
+
+Let $\Omega,\Omega',\Omega''\subseteq\R^n$ be open with $\Omega'$ bounded,
+$\overline{\Omega'}\subseteq\Omega$ and $\overline{\Omega''}\subseteq\Omega'$,
+and suppose
+\[
+d\le|x-y|\qquad\text{for every }x\in\Omega''\text{ and every }y\notin\Omega'
+\]
+(that is, $d$ is a positive lower bound for $d(\Omega'',\partial\Omega')$).  Let
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g=\nabla u$
+(\noderef{MemW1pLocOn}), and suppose
+\[
+\|\,|\nabla u|\,\|_{L^{p,n-\tau}(\Omega')}\le N
+\qquad\text{and}\qquad
+\|u\|_{L^{q}(\Omega')}\le N
+\]
+(\noderef{MorreyBoundOn}; the second is the case $\lambda=0$ of that predicate,
+which is the bound $\int_{\Omega'(x,\rho)}|u|^q\,dx\le N^q$ for all
+$x\in\Omega'$ and $0<\rho<\operatorname{diam}\Omega'$, together with
+$u\in L^q(\Omega')$).  Then
+\[
+\|u\|_{\mathcal L^{q,\lambda}(\Omega'')}\le N'
+\]
+(\noderef{CampanatoBoundOn}), i.e.\
+$u\in\mathcal L^{\frac n{n-1},\,n+(\frac n{n-1})(1-\frac\tau p)}(\Omega'')$.
+
+Here, as in \S4 of the paper, $\Omega'(x,\rho)=\Omega'\cap B_\rho(x)$ and
+$\Omega''(x,\rho)=\Omega''\cap B_\rho(x)$, the Morrey bound on a set is the
+bound on $\int_{\cdot(x,\rho)}|\cdot|^q$ over all centres in that set and all
+$0<\rho<\operatorname{diam}$ of it, and the Campanato bound subtracts the mean
+over $\Omega''(x_0,\rho)$.
+
+This is Lemma~Lemma~4.2 of the thesis of the paper, whose Morrey and Campanato spaces are
+the local ones (``Campanato and Morrey spaces have obvious local versions'').
+The formal statement realises ``local'' on both sides, as the paper's statement
+does: the hypotheses are Morrey bounds on $\Omega'$ and the conclusion is a
+Campanato bound on an inner subdomain $\Omega''$ compactly contained in
+$\Omega'$.  The paper's Lemma~Lemma~4.2 of the thesis asserts membership only --- it names
+no constant and gives no dependency list.  The quantitative form above is the
+form the paper's own route delivers (``an immediate consequence of the
+Sobolev--Poincar\'e inequality'': that inequality carries a constant $C(n)$, and
+tracking it through H\"older's inequality and the Morrey hypothesis produces a
+bound of exactly this shape), and it is the form Theorems~Theorem~3 of the thesis(ii) and
+Theorem~5 of the thesis(ii) need, since those state bounds on
+$\|u\|_{\mathcal L^{q,\lambda}(\Omega')}$ rather than mere membership.  Within
+that quantitative form, $N'$ is allowed to depend on the separation $d$ of
+$\Omega''$ from $\partial\Omega'$ in addition to $n,p,\tau,N$.  That dependence is necessary and not an artefact: for
+$\rho$ comparable to $\operatorname{diam}\Omega''$ the ball $B_\rho(x_0)$ need
+not lie in $\Omega'$, the Sobolev--Poincar\'e inequality is then unavailable, and
+the only surviving estimate is the one coming from $\|u\|_{L^q(\Omega')}\le N$,
+which gives $\int_{\Omega''(x_0,\rho)}|u-u_{x_0,\rho}|^q\le 2^{q+1}N^q$ and
+therefore requires $(N')^q\ge2^{q+1}N^q\rho^{-\lambda}$; since $\lambda>0$
+throughout the declared parameter range, $\rho^{-\lambda}$ is unbounded as
+$\rho\downarrow0$, so no bound uniform in the position of $\Omega''$ inside
+$\Omega'$ is available.  Letting $N'$ depend on $d$ still yields a finite
+Campanato norm on every subdomain compactly contained in $\Omega'$, which is
+exactly what local membership asserts, so the statement remains at least as
+strong as the paper's.
+\end{lemma}
+\begin{proof}
+Throughout, $q=\frac n{n-1}$ and $\lambda=n+q(1-\frac\tau p)$.  Note first the
+two elementary facts used below.
+
+\emph{(0a) The exponent identity.}  $\lambda=q\bigl(n-\frac\tau p\bigr)$.
+Indeed
+\[
+q\Bigl(n-\frac\tau p\Bigr)
+=q\Bigl((n-1)+1-\frac\tau p\Bigr)
+=q(n-1)+q\Bigl(1-\frac\tau p\Bigr)
+=n+q\Bigl(1-\frac\tau p\Bigr)=\lambda ,
+\]
+since $q(n-1)=\frac n{n-1}(n-1)=n$.
+
+\emph{(0b) $\lambda>0$.}  As $n\ge2$ we have $q=\frac n{n-1}>0$.  Also
+$\tau>0$ and $p>1$ give $\frac\tau p<\tau\le n$, so $n-\frac\tau p>0$; by (0a),
+$\lambda=q(n-\frac\tau p)>0$.
+
+Let $C=C(n)>0$ be the constant supplied by
+\noderef{CitedSobolevPoincareBall}, so that for every ball $B_\sigma(y)$ and
+every $w\in W^{1,1}(B_\sigma(y))$ with weak gradient $g_w$,
+\[
+\Bigl(\int_{B_\sigma(y)}\bigl|w-w_{B_\sigma(y)}\bigr|^{q}dx\Bigr)^{1/q}
+\le C\int_{B_\sigma(y)}|g_w|\,dx ,
+\qquad
+w_{B_\sigma(y)}=\frac1{|B_\sigma(y)|}\int_{B_\sigma(y)}w\,dx
+\tag{$*$}
+\]
+(the exponent $\frac{n-1}n$ there is $1/q$).  Let $\omega_n=|B_1(0)|$, so
+$|B_\sigma(y)|=\omega_n\sigma^{\,n}$.  Define
+\[
+K=C\,\omega_n^{1-\frac1p},
+\qquad
+N'=2^{\frac{q+1}q}\,N\,\max\bigl\{K,\;d^{-\lambda/q}\bigr\} .
+\]
+Then $N'\ge0$, and $N'$ depends only on $n,p,\tau,N,d$: indeed $C$ and
+$\omega_n$ depend only on $n$, and $q$ and $\lambda$ only on $n,p,\tau$.  Fix
+$\Omega,\Omega',\Omega'',u,g$ as in the statement.
+
+\emph{Step 1: the oscillation lemma.}  We first record a fact used in both
+regimes below.  Let $A\subseteq B$ be measurable sets with $0<|A|<\infty$, let
+$w\in L^1(A)$ --- so that the mean $w_A=|A|^{-1}\int_Aw\,dx$ is defined --- and
+let $c\in\R$ be arbitrary.  Then
+\[
+\int_A|w-w_A|^{q}\,dx\;\le\;2^{\,q+1}\int_B|w-c|^{q}\,dx .
+\tag{1}
+\]
+Both sides are integrals of nonnegative measurable functions, so each lies in
+$[0,\infty]$ and the inequality is to be read there; in particular it is trivial
+if the right-hand side is $+\infty$, so we may assume
+$\int_B|w-c|^{q}dx<\infty$, and then also $\int_A|w-c|^{q}dx<\infty$ since
+$A\subseteq B$.  To see the inequality, note $c-w_A=|A|^{-1}\int_A(c-w)\,dx$,
+hence
+\[
+|c-w_A|\le\frac1{|A|}\int_A|w-c|\,dx=:m .
+\]
+Therefore $|w(x)-w_A|\le|w(x)-c|+|c-w_A|\le|w(x)-c|+m$ for every $x\in A$, and
+since $(s+t)^q\le2^q(s^q+t^q)$ for all $s,t\ge0$ and $q\ge1$ (here $q>1$),
+\[
+|w(x)-w_A|^{q}\le2^{q}\bigl(|w(x)-c|^{q}+m^{q}\bigr).
+\]
+Integrating over $A$,
+\[
+\int_A|w-w_A|^{q}dx\le2^{q}\Bigl(\int_A|w-c|^{q}dx+|A|\,m^{q}\Bigr).
+\]
+Here $m<\infty$ because $w\in L^1(A)$ and $|A|<\infty$.  By Jensen's inequality
+for the probability measure $|A|^{-1}\,dx$ on $A$ and the convex function
+$t\mapsto t^{q}$ on $[0,\infty)$ (convex because $q>1$),
+\[
+m^{q}=\Bigl(\frac1{|A|}\int_A|w-c|\,dx\Bigr)^{q}
+\le\frac1{|A|}\int_A|w-c|^{q}dx ,
+\qquad\text{so}\qquad
+|A|\,m^{q}\le\int_A|w-c|^{q}dx .
+\]
+Hence $\int_A|w-w_A|^{q}dx\le2^{q}\cdot2\int_A|w-c|^{q}dx=2^{q+1}\int_A|w-c|^{q}dx$,
+and since the integrand is nonnegative and $A\subseteq B$ this is at most
+$2^{q+1}\int_B|w-c|^{q}dx$, which is (1).
+
+\emph{Step 2: $u\in L^{q}(\Omega'')$.}  The hypothesis
+$\|u\|_{L^{q}(\Omega')}\le N$ (\noderef{MorreyBoundOn} with exponent $0$)
+includes $u\in L^{q}(\Omega')$, and $\Omega''\subseteq\overline{\Omega''}
+\subseteq\Omega'$, so $u\in L^{q}(\Omega'')$.  This is the first half of the
+assertion $\|u\|_{\mathcal L^{q,\lambda}(\Omega'')}\le N'$
+(\noderef{CampanatoBoundOn}).
+
+For the second half, fix $x_0\in\Omega''$ and $\rho$ with
+$0<\rho<\operatorname{diam}\Omega''$, and write $A=\Omega''(x_0,\rho)=
+\Omega''\cap B_\rho(x_0)$ and $u_A=|A|^{-1}\int_Au\,dx$.  We must show
+\[
+\int_A|u-u_A|^{q}dx\le (N')^{q}\rho^{\lambda}.
+\tag{2}
+\]
+Two preliminary remarks.  First, $A$ is a nonempty open set --- it contains
+$x_0$, and $\Omega''$ and $B_\rho(x_0)$ are open --- so $|A|>0$; and
+$A\subseteq\Omega'$ with $\Omega'$ bounded gives $|A|<\infty$.  So (1) applies to
+$A$.  Second, $\Omega''\subseteq\overline{\Omega''}\subseteq\Omega'$ and $\Omega'$
+is bounded, so $\Omega''$ is bounded as well and both diameters are finite;
+monotonicity of the diameter then gives
+$\operatorname{diam}\Omega''\le\operatorname{diam}\Omega'$, hence
+\[
+0<\rho<\operatorname{diam}\Omega' ,
+\tag{3}
+\]
+so both Morrey hypotheses are available at the centre $x_0$ (which lies in
+$\Omega'$) and the radius $\rho$.
+
+\emph{Step 3: the regime $\rho<d$.}  We claim $B_\rho(x_0)\subseteq\Omega'$.
+Indeed, let $z\in B_\rho(x_0)$ and suppose $z\notin\Omega'$; the separation
+hypothesis applied to $x=x_0\in\Omega''$ and $y=z$ gives $d\le|x_0-z|<\rho<d$, a
+contradiction.  Consequently
+\[
+\Omega'(x_0,\rho)=\Omega'\cap B_\rho(x_0)=B_\rho(x_0),
+\tag{4}
+\]
+so the Morrey hypothesis on the gradient becomes a bound over the full ball.
+Explicitly, that hypothesis is the Morrey bound of \noderef{MorreyBoundOn} for
+the scalar function $x\mapsto|\nabla u(x)|$ with exponents $p$ and $n-\tau$ on
+$\Omega'$ (note $n-\tau\ge0$ since $\tau\le n$, and
+$\bigl||\nabla u|\bigr|^p=|\nabla u|^p$), so by (3) and $x_0\in\Omega'$ it reads
+$\int_{\Omega'(x_0,\rho)}|\nabla u|^p\,dx\le N^p\rho^{\,n-\tau}$; with (4) this
+is
+\[
+\int_{B_\rho(x_0)}|\nabla u|^{p}dx\le N^{p}\rho^{\,n-\tau}.
+\tag{5}
+\]
+
+Next, $u\in W^{1,1}(B_\rho(x_0))$ with weak gradient $g$.  To see this, note
+$\overline{B_\rho(x_0)}\subseteq\overline{\Omega'}\subseteq\Omega$ by (4), and
+$\overline{B_\rho(x_0)}$ is compact, so the local integrability clause of
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ (\noderef{MemW1pLocOn}) gives
+$u\in L^{p}(\overline{B_\rho(x_0)})$ and $|g|\in L^{p}(\overline{B_\rho(x_0)})$;
+as $|B_\rho(x_0)|<\infty$ and $p>1$, H\"older's inequality upgrades these to
+$u\in L^{1}(B_\rho(x_0))$ and $|g|\in L^{1}(B_\rho(x_0))$.  The weak-gradient
+identity of \noderef{MemW1pLocOn} holds for every test function smooth with
+compact support inside $\Omega$, in particular for every test function with
+compact support inside $B_\rho(x_0)\subseteq\Omega$, and for such a test function
+the integrals over $\Omega$ and over $B_\rho(x_0)$ agree because the test
+function vanishes off $B_\rho(x_0)$; so $g$ is the weak gradient of $u$ on
+$B_\rho(x_0)$ as well.
+
+Now apply $(*)$ on $B_\rho(x_0)$ to $w=u$:
+\[
+\Bigl(\int_{B_\rho(x_0)}\bigl|u-u_{B_\rho(x_0)}\bigr|^{q}dx\Bigr)^{1/q}
+\le C\int_{B_\rho(x_0)}|\nabla u|\,dx .
+\]
+Estimate the right-hand side by H\"older's inequality with exponents $p$ and
+$\frac p{p-1}$ and then by (5):
+\[
+\int_{B_\rho(x_0)}|\nabla u|\,dx
+\le|B_\rho(x_0)|^{1-\frac1p}\Bigl(\int_{B_\rho(x_0)}|\nabla u|^{p}dx\Bigr)^{1/p}
+\le\bigl(\omega_n\rho^{\,n}\bigr)^{1-\frac1p}\bigl(N^{p}\rho^{\,n-\tau}\bigr)^{1/p} .
+\]
+The right-hand side equals
+$\omega_n^{1-\frac1p}N\,\rho^{\,n(1-\frac1p)+\frac{n-\tau}p}
+=\omega_n^{1-\frac1p}N\,\rho^{\,n-\frac\tau p}$, because
+$n-\frac np+\frac np-\frac\tau p=n-\frac\tau p$.  Combining the last two
+displays and raising to the power $q>0$,
+\[
+\int_{B_\rho(x_0)}\bigl|u-u_{B_\rho(x_0)}\bigr|^{q}dx
+\le\bigl(C\,\omega_n^{1-\frac1p}N\bigr)^{q}\rho^{\,q(n-\frac\tau p)}
+=(KN)^{q}\rho^{\lambda},
+\]
+the last step by (0a) and the definition of $K$.  Finally apply (1) with
+$A=\Omega''(x_0,\rho)$, $B=B_\rho(x_0)$ and the constant
+$c=u_{B_\rho(x_0)}$.  This is legitimate: $A=\Omega''\cap B_\rho(x_0)\subseteq
+B_\rho(x_0)=B$, we have $0<|A|<\infty$ as noted above, and
+$u\in L^{1}(B_\rho(x_0))$ was established in the previous paragraph, hence
+$u\in L^1(A)$.  We obtain
+\[
+\int_A|u-u_A|^{q}dx
+\le2^{\,q+1}\int_{B_\rho(x_0)}\bigl|u-u_{B_\rho(x_0)}\bigr|^{q}dx
+\le2^{\,q+1}(KN)^{q}\rho^{\lambda}
+=\bigl(2^{\frac{q+1}q}KN\bigr)^{q}\rho^{\lambda}
+\le(N')^{q}\rho^{\lambda},
+\]
+since $2^{\frac{q+1}q}KN\le N'$ by the definition of $N'$.  This is (2) in this
+regime.
+
+\emph{Step 4: the regime $\rho\ge d$.}  Here $A\subseteq\Omega'$ and
+$u\in L^{q}(\Omega')$ by Step 2, so $u\in L^{q}(A)$, and since $|A|<\infty$ and
+$q>1$ H\"older's inequality gives $u\in L^{1}(A)$.  Apply (1) with
+$A=\Omega''(x_0,\rho)$, $B=A$ and $c=0$:
+\[
+\int_A|u-u_A|^{q}dx\le2^{\,q+1}\int_A|u|^{q}dx .
+\]
+Since $A\subseteq\Omega'\cap B_\rho(x_0)=\Omega'(x_0,\rho)$ and the integrand is
+nonnegative, and since by (3) the Morrey hypothesis
+$\|u\|_{L^{q}(\Omega')}\le N$ (\noderef{MorreyBoundOn} with exponent $0$) applies
+at the centre $x_0\in\Omega'$ and radius $\rho$,
+\[
+\int_A|u|^{q}dx\le\int_{\Omega'(x_0,\rho)}|u|^{q}dx\le N^{q}\rho^{0}=N^{q}.
+\]
+Hence $\int_A|u-u_A|^{q}dx\le2^{\,q+1}N^{q}$.  On the other hand $\rho\ge d>0$
+and $\lambda>0$ by (0b), so $\rho^{\lambda}\ge d^{\lambda}$ and therefore
+\[
+\bigl(2^{\frac{q+1}q}N\,d^{-\lambda/q}\bigr)^{q}\rho^{\lambda}
+=2^{\,q+1}N^{q}d^{-\lambda}\rho^{\lambda}
+\ge2^{\,q+1}N^{q}.
+\]
+Since $2^{\frac{q+1}q}N\,d^{-\lambda/q}\le N'$ by the definition of $N'$, we get
+$\int_A|u-u_A|^{q}dx\le2^{\,q+1}N^{q}\le(N')^{q}\rho^{\lambda}$, which is (2) in
+this regime.
+
+Steps 3 and 4 cover all $\rho$ with $0<\rho<\operatorname{diam}\Omega''$, so (2)
+holds for every such $\rho$ and every $x_0\in\Omega''$.  Together with Step 2
+this is precisely $\|u\|_{\mathcal L^{q,\lambda}(\Omega'')}\le N'$
+(\noderef{CampanatoBoundOn}), with $N'$ depending only on $n,p,\tau,N$ and $d$.
+\end{proof}

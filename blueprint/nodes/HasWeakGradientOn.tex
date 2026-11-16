@@ -1,0 +1,17 @@
+\begin{definition}
+Let $n\ge 1$, let $\Omega\subseteq\R^n$ (we always work in the ambient space
+$\R^n=\mathtt{EuclideanSpace}\ \R\ (\mathtt{Fin}\ n)$ with Lebesgue measure), let
+$f\colon\R^n\to\R$ and let $g\colon\R^n\to\R^n$. We say that $g$ is the
+\emph{weak (distributional) gradient of $f$ on $\Omega$}, written
+$\mathrm{HasWeakGradientOn}(n,\Omega,f,g)$, if for every test function
+$\varphi\colon\R^n\to\R$ which is infinitely differentiable, has compact
+support, and satisfies $\operatorname{supp}\varphi\subseteq\Omega$, and for every
+index $i\in\{1,\dots,n\}$,
+\[
+\int_\Omega f(x)\,D_i\varphi(x)\,dx \;=\; -\int_\Omega g^i(x)\,\varphi(x)\,dx .
+\]
+Here $D_i\varphi(x)$ is the derivative of $\varphi$ at $x$ in the direction of
+the $i$-th standard basis vector, and $g^i$ is the $i$-th component of $g$.
+This is the notion of first distributional derivative used throughout \S1 of the
+paper.
+\end{definition}

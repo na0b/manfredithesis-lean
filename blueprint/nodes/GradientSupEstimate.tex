@@ -1,0 +1,740 @@
+\begin{theorem}[Theorem 1]
+Let $n\ge2$, $p>1$ and $r>0$, suppose the Sobolev--Poincar\'e inequality on balls
+holds in dimension $n$ (\noderef{CitedSobolevPoincareBall}), and assume the cited
+solvability result (C2) (\noderef{CitedDirichletW1p}) and the cited regularity
+result (C1) (\noderef{CitedRegularityEpsPos}) in the universal forms described
+below.  Then there is a constant $C=C(p,r,n)>0$ with the
+following property.  Let $\varepsilon\ge0$, $\gamma_0>0$ and
+$\gamma_1\le r\gamma_0$, let $\Omega\subseteq\R^n$ be open, let
+$A\colon\R^n\to\R^n$ satisfy $A(0)=0$ and (Q1) of the thesis--(Q2) of the thesis on
+$\Omega$ with parameters $p,\varepsilon,\gamma_0,\gamma_1$
+(\noderef{EllipticStructureQ12}),
+let $u$ be a weak solution of $\operatorname{div}A(\nabla u)=0$ in $\Omega$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g=\nabla u$, and let
+$B_R=B_R(x_0)$ with $R>0$ and $\overline B_R(x_0)\subseteq\Omega$.  Then
+\[
+\sup_{B_{R/2}}(\varepsilon+|\nabla u|^2)^{\frac p2}
+\;\le\;\frac{C}{R^n}\int_{B_R}(\varepsilon+|\nabla u|^2)^{\frac p2}\,dx .
+\]
+The supremum is the essential one (p.~6 of the paper), so the conclusion is
+written as: for almost every $x\in B_{R/2}$,
+\[
+(\varepsilon+|g(x)|^2)^{\frac p2}
+\le\frac{C}{R^n}\int_{B_R}(\varepsilon+|g|^2)^{\frac p2}\,dy .
+\]
+The containment hypothesis is $\overline B_R(x_0)\subseteq\Omega$, the closed
+ball, as the paper's Note prescribes for Theorems~1 and~2 (``the balls are
+concentric and $\overline B_R\subset\Omega$''); this is what makes
+$\overline B_R$ a compact subset of $\Omega$ and hence the right-hand side
+finite, since \noderef{IsWeakSolutionOn} puts $|g|$ in $L^p$ of the compact
+subsets of $\Omega$ only.
+
+The normalisation $A(0)=0$ is \S3's own standing hypothesis, fixed at the start
+of the section: ``Since $\operatorname{div}A(0)=0$ we may assume without loss of
+generality that $A(0)=0$ and that $A$ satisfies conditions (Q1) of the thesis and
+(Q2) of the thesis'' (thesis p.~14).  It is what the cited solvability result (C2)
+requires, and it therefore reaches this theorem through the reduction of the
+case $\varepsilon=0$ to $\varepsilon>0$, which goes through
+\noderef{DegenerateLimitTransfer}; the case $\varepsilon>0$ does not use it.
+Replacing $A$ by $A-A(0)$ changes neither (Q1) of the thesis--(Q2) of the thesis, which
+involve $A$ only through its derivative, nor the equation, which pairs $A$ with
+the gradient of a compactly supported test function; so the hypothesis costs the
+statement no generality, which is what the thesis means by ``without loss of
+generality''.
+
+The constant $C$ is bound before $\varepsilon,\gamma_0,\gamma_1$, the operator,
+the solution and the ball, and the structure constants enter only through the
+bound $\gamma_1\le r\gamma_0$: this is the formal content of ``$C$ depends only
+on $p$, $\gamma_1/\gamma_0$ and $n$''.
+
+The cited solvability result (C2) (\noderef{CitedDirichletW1p}) is assumed here
+for \emph{every} field $A'\colon\R^n\to\R^n$ and all parameters
+$\varepsilon',\gamma_0',\gamma_1'$ \emph{with $\gamma_0'>0$ and $\gamma_1'>0$},
+which is the form (C2) has in the paper's Note.  The hypothesis is bound before the constant, but it introduces no
+dependence on any quantity outside the list the paper names: it mentions only
+$n$ and $p$, both already bound, and it carries no numerical content of its own.
+It is needed because the reduction of the case $\varepsilon=0$ to
+$\varepsilon>0$ goes through \noderef{DegenerateLimitTransfer}, whose own (C2)
+hypothesis is of that universal shape --- it has to be, since the regularized
+fields to which (C2) is applied are produced inside that node's conclusion.
+
+The cited regularity result (C1) (\noderef{CitedRegularityEpsPos}) is assumed in
+the same way: for \emph{every} field $A'$, \emph{every} open set $\Omega'$ and
+all parameters $\varepsilon',\gamma_0',\gamma_1'$ with
+$\gamma_0'>0$ and $\gamma_1'>0$.  That is the form (C1) has in the
+paper's Note, which states it for an arbitrary operator and an arbitrary
+solution: ``If $\varepsilon>0$ and $A\colon\R^n\to\R^n$ satisfies
+(Q1) of the thesis and (Q2) of the thesis, then every weak solution
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ of (3.1) of the thesis satisfies
+$u\in W^{2,2}_{\mathrm{loc}}(\Omega)$ and $\nabla u\in C(\Omega)$'' (Note for the
+formalization, (C1)).  So the universal clause is the faithful transcription and
+a clause attached only to the field $A$ and the domain $\Omega$ of this theorem
+would be the weakening.  The clause is quantified over
+$\varepsilon',\gamma_0',\gamma_1'$ with $\gamma_0'>0$, $\gamma_1'>0$ and over
+open sets $\Omega'$ only, and those side conditions are not optional: the
+structure conditions (Q1) of the thesis--(Q2) of the thesis carry positive constants in
+the thesis (``$\gamma_0,\gamma_1>0$''), and (C1) is a statement about weak
+solutions on an open set, so a clause quantified over $\gamma_0'\le0$ or over
+arbitrary $\Omega'$ would assert more than the cited result does --- and since
+this is a hypothesis of the present theorem, asserting more than the literature
+gives risks making the theorem vacuously true.  The remaining antecedents need
+no guard, because \noderef{CitedRegularityEpsPos} carries $\varepsilon>0$,
+(Q1) of the thesis--(Q2) of the thesis and the weak-solution property inside its own
+statement.  The same two positivity conditions are attached to the (C2) clause;
+(C2) needs no openness condition, since \noderef{CitedDirichletW1p} is a
+statement about balls and fixes its own domain.  Quantifying the set is not decorative: the proof consumes (C1) on
+the ball $B_R$, where \noderef{CaccioppoliPowerWeight} needs the second
+derivatives, and \noderef{CaccioppoliPowerWeight} takes the family
+$D(\nabla u)$ as a parameter, so the proof has to produce one --- it is supplied
+by the existential inside (C1)'s conclusion, and there is nothing in this
+theorem's own statement for a bare $W^{2,2}_{\mathrm{loc}}$ hypothesis to attach
+to.  Like (C2) and (C6), (C1) carries no numerical content: it asserts
+membership and continuity and names no constant, so although it is bound before
+the existential for $C$ it introduces no dependence of $C$ on anything outside
+the list $p$, $\gamma_1/\gamma_0$, $n$ that the paper names.
+
+The hypothesis \noderef{CitedSobolevPoincareBall} is the cited result (C6) of the
+paper's Note, carried here as an explicit argument because the proof uses it: the
+Moser iteration runs on the scale-invariant Sobolev inequality of
+\noderef{SobolevExponentTwoBall}, whose own statement is conditional on (C6).
+It too is bound before the existential for $C$ and introduces no dependence of
+$C$ on anything outside the paper's list, since (C6) is a statement about $n$
+alone and $n$ is already bound first.
+\end{theorem}
+\begin{proof}
+Throughout write $B_\rho(y)$ for the open ball of radius $\rho$ about $y$,
+$\overline B_\rho(y)$ for the closed one, $B_\rho=B_\rho(x_0)$ for the balls
+concentric with the one in the statement, and $|E|$ for Lebesgue measure.  $D_i$
+is the derivative in the direction of the $i$-th standard basis vector,
+$(\cdot,\cdot)$ and $|\cdot|$ are the Euclidean inner product and norm, and all
+non-integer powers are real powers of nonnegative numbers.
+
+\emph{Step 0: the constants, chosen before all the data.}  Apply
+\noderef{DegenerateLimitTransfer} with the present $n,p,r$; its first three
+hypotheses $2\le n$, $1<p$, $0<r$ are hypotheses of the present theorem, and it
+supplies a number $r'>0$ depending only on $n,p,r$.  Put
+\[
+\bar r=\max\{r,r'\},
+\]
+so $\bar r>0$ and $\bar r$ depends only on $n,p,r$.  Let $c>0$ be the constant
+that \noderef{CaccioppoliPowerWeight} supplies for the triple $(n,p,\bar r)$ ---
+its hypotheses there are $2\le n$, $1<p$ and $\bar r>0$ --- so $c=c(n,p,\bar r)$,
+and let $C_0>0$ be the constant that \noderef{MoserLocalBoundedness} supplies for
+the pair $(n,Q)$ with $Q=c$; its hypotheses there are $2\le n$, $0<Q$ and the
+Sobolev--Poincar\'e inequality on balls in dimension $n$
+(\noderef{CitedSobolevPoincareBall}), which is a hypothesis of the present
+theorem.  So $C_0=C_0(n,c)$.  Finally put
+\[
+\kappa=\max\{1,2^{\frac p2-1}\},\qquad
+C_1=C_0^2,\qquad
+C=C_1\,\kappa^2\,2^{\frac p2} .
+\]
+All of $r',\bar r,c,C_0,\kappa,C_1,C$ are determined by $n$, $p$ and $r$ alone
+and are fixed before $\varepsilon,\gamma_0,\gamma_1,\Omega,A,u,g,x_0,R$, which is
+the quantifier order the statement requires; and $C\ge C_1>0$ because
+$\kappa\ge1$ and $2^{p/2}\ge1$.  This is the formal content of ``$C$ depends only
+on $p$, $\gamma_1/\gamma_0$ and $n$'': the structure constants enter only through
+the bound $\gamma_1\le r\gamma_0$.
+
+\emph{Step 1: $\gamma_0\le\gamma_1$, so $\gamma_1>0$.}  This is needed because
+the cited results (C1) and (C2) are assumed here only for positive structure
+constants.  The set $\Omega$ contains $\overline B_R$ with $R>0$, so it has
+positive measure (Preamble: the volume of a ball, so
+$|\Omega|\ge|B_R|=\omega_nR^n>0$); by \noderef{EllipticStructureQ12} the
+conditions (Q1) of the thesis and (Q2) of the thesis hold for almost every $x\in\Omega$,
+i.e.\ each fails only on a null set.  The union of those two null sets is null,
+and a null set cannot contain $\Omega$, whose measure is positive; so
+$\Omega$ minus that union is nonempty and there is a single $x\in\Omega$ at
+which both conditions hold.  \emph{This is the only promotion of an
+almost-everywhere clause in this proof that is used at a point}, and it is made
+inline here rather than by citation, which is what pm-0034's situation permits
+for a field that does not depend on $x$; B1 below makes the same argument once
+more, for the field at $\varepsilon=0$.  Fix such an $x$, take $z=0$,
+$h=e_1$ --- so that $\varepsilon+|h|^2=\varepsilon+1>0$ and in particular
+$h\in D(\varepsilon)$, where the two conditions are asserted --- and $\xi=e_1$.
+Then (Q1) of the thesis and (Q2) of the thesis give
+\[
+\gamma_0(\varepsilon+1)^{\frac p2-1}
+\le\bigl(D_hA(h)e_1,e_1\bigr)=\bigl(D_hA(h)e_1\bigr)^1
+\le\bigl|\bigl(D_hA(h)e_1\bigr)^1\bigr|
+\le\gamma_1(\varepsilon+1)^{\frac p2-1},
+\]
+and $(\varepsilon+1)^{p/2-1}>0$, so $\gamma_0\le\gamma_1$ and hence
+$0<\gamma_1$.
+
+\emph{Claim A (the nondegenerate case).}  \emph{Let $\varepsilon>0$,
+$\gamma_0>0$ and $\gamma_1\le\bar r\gamma_0$ with $\gamma_1>0$, let
+$\Omega'\subseteq\R^n$ be open, let $A'\colon\R^n\to\R^n$ satisfy
+(Q1) of the thesis--(Q2) of the thesis on $\Omega'$ with parameters
+$p,\varepsilon,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}), let $u'$ be a
+weak solution of $\operatorname{div}A'(\nabla u')=0$ in $\Omega'$
+(\noderef{IsWeakSolutionOn}) with weak gradient $g'$, and let $y\in\R^n$ and
+$\rho>0$ satisfy $\overline B_\rho(y)\subseteq\Omega'$.  Then for almost every
+$x\in B_{\rho/2}(y)$,}
+\[
+\bigl(\varepsilon+|g'(x)|^2\bigr)^{\frac p2}
+\ \le\ \frac{C_1}{\rho^n}\int_{B_\rho(y)}\bigl(\varepsilon+|g'|^2\bigr)^{\frac p2}dx .
+\tag{A}
+\]
+
+\emph{Proof of Claim A, step A1: what (C1) supplies.}  The present theorem
+assumes the cited regularity result (C1) for every field, every open set and all
+parameters with positive structure constants.  Instantiate that clause at
+$\varepsilon,\gamma_0,\gamma_1,\Omega',A'$: its side conditions
+$\gamma_0>0$, $\gamma_1>0$ and openness of $\Omega'$ hold.  The resulting
+predicate \noderef{CitedRegularityEpsPos} has as its own antecedents
+$\varepsilon>0$, the structure conditions on $\Omega'$ and the weak-solution
+property, all of which hold, and it yields
+\begin{enumerate}
+\item $u'\in W^{1,2}_{\mathrm{loc}}(\Omega')$ with weak gradient $g'$
+  (\noderef{MemW1pLocOn}); and
+\item a field $\hat g$ with (i) $\hat g$ continuous on $\Omega'$, (ii)
+  $g'=\hat g$ almost everywhere on $\Omega'$, and (iii) a family
+  $D\hat g=(D\hat g^1,\dots,D\hat g^n)$ with
+  $\hat g^k\in W^{1,2}_{\mathrm{loc}}(\Omega')$ and weak gradient $D\hat g^k$
+  for each $k$ (\noderef{MemW1pLocOn}).
+\end{enumerate}
+Fix such a $\hat g$ and such a family $D\hat g$ once and for all.
+
+\emph{A warning about the prime, because the notation collides.}  In this proof
+$g'$ is \emph{Claim A's own given field} --- the weak gradient of $u'$, named in
+the claim's hypotheses above --- and it is \textbf{not} the representative.
+\noderef{CitedRegularityEpsPos} happens to write $g'$ for \emph{its}
+representative, so its clauses (1)--(3) are transcribed here with $\hat g$ in
+that role, to keep the two apart.  Clauses (i) and (iii) are properties of
+$\hat g$ and \emph{not} of $g'$: a weak gradient is an almost-everywhere class,
+so neither continuity nor pointwise boundedness can be asserted of $g'$, and
+that node's own commentary records that a version asserting continuity of the
+given field would be a false $\mathrm{Prop}$.  \emph{The consequence for this
+proof is structural, not cosmetic: $w$ and $v$ below are built from $\hat g$,
+steps A2--A6 are run for $\hat g$, and the passage back to $g'$ is made once, at
+A7, where the conclusion is already an almost-everywhere statement.}  This is
+available here precisely because $w$ and $v$ are internal to Claim A --- no
+later step or cited node fixes their names --- so the representative may be
+carried where points are needed and the given field where only integrals are.
+
+\emph{A2: the functions $w$ and $v$, built from the representative.}  Put
+\[
+w=\varepsilon+|\hat g|^2,\qquad v=w^{\frac p4},
+\]
+both defined at every point.  On $\Omega'$ we have $w\ge\varepsilon>0$, so
+$v>0$ there; and $w$ is continuous on $\Omega'$ by A1(2)(i), hence so is $v$,
+because $s\mapsto s^{p/4}$ is continuous on $(0,\infty)$.  Note for later that
+$v^2=w^{p/2}$ and, for $\theta>0$, $(v^\theta)^2=w^{p\theta/2}$, the exponent
+rules for real powers being available since $w>0$ on $\Omega'$.
+
+\emph{A3: $v^\theta$ is a local $W^{1,2}$ function, with an explicit weak
+gradient.}  Fix $t>0$ and put $\theta=1+\frac tp$, so that $\theta>1$ and
+$v^\theta=w^{\frac{p+t}4}$; as $t$ runs over $(0,\infty)$, $\theta$ runs over all
+of $(1,\infty)$, and $t=p(\theta-1)$ recovers $t$ from $\theta$.  Apply
+\noderef{WeakGradientVectorComp} with $n$, $m=n$, $q=2$, the open set $\Omega'$,
+the functions $G_k=\hat g^k$ with weak gradients $DG_k=D\hat g^k$, and
+\[
+F(y_1,\dots,y_n)=\Bigl(\varepsilon+\sum_{k=1}^ny_k^2\Bigr)^{\frac{p+t}4}.
+\]
+Its hypotheses hold: $1\le n$ and $1\le 2$; $\Omega'$ is open; each
+$G_k\in W^{1,2}_{\mathrm{loc}}(\Omega')$ with weak gradient $DG_k$ by
+A1(2)(iii); the family is locally uniformly bounded, since for compact
+$K\subseteq\Omega'$ the function $|\hat g|$ is continuous on $K$ by A1(2)(i) and
+therefore bounded there, say by $L$, whence $|G_k(x)|\le|\hat g(x)|\le L$ for
+all $x\in K$ and all $k$.  \emph{This is the hypothesis that forces the
+representative on us: it asks for a bound at \emph{every} point of $K$, and the
+given $g'$ need not satisfy one, a weak gradient being alterable on a null set
+without disturbing any hypothesis of this claim.}  And $F$ is of
+class $C^1$ on $\R^n$, being the composition of the polynomial
+$y\mapsto\varepsilon+|y|^2$, which is smooth and takes values in
+$[\varepsilon,\infty)\subseteq(0,\infty)$ because $\varepsilon>0$, with
+$s\mapsto s^{(p+t)/4}$, which is smooth on $(0,\infty)$.  Since
+$F(G(x))=\bigl(\varepsilon+|\hat g(x)|^2\bigr)^{(p+t)/4}=v^\theta(x)$, the conclusion
+is that $v^\theta\in W^{1,2}_{\mathrm{loc}}(\Omega')$ with weak gradient
+\[
+G_\theta=\sum_{k=1}^nD_kF(G)\,D\hat g^k
+=\frac{p+t}4\,w^{\frac{p+t}4-1}\,\nabla w,
+\qquad
+\nabla w:=2\sum_{k=1}^n\hat g^k\,D\hat g^k ,
+\]
+where the middle equality is the computation
+$D_kF(y)=\frac{p+t}4\bigl(\varepsilon+|y|^2\bigr)^{\frac{p+t}4-1}\cdot2y_k$
+evaluated at $y=G(x)$.  Finally $B_\rho(y)$ is open and contained in
+$\overline B_\rho(y)\subseteq\Omega'$, so clause (2) of
+\noderef{WeakGradientRestrict}, applied with $q=2$, the sets
+$\Omega'\supseteq B_\rho(y)$ and the pair $(v^\theta,G_\theta)$, gives
+\[
+v^\theta\in W^{1,2}_{\mathrm{loc}}\bigl(B_\rho(y)\bigr)
+\quad\text{with weak gradient}\quad G_\theta .
+\tag{A3}
+\]
+
+\emph{A4: the Caccioppoli inequality in the form Moser's lemma consumes.}
+Apply \noderef{CaccioppoliPowerWeight} for the triple $(n,p,\bar r)$, whose
+constant $c$ was fixed in Step 0, to the data
+$\varepsilon,\gamma_0,\gamma_1,t,\Omega',A',u',g',D\hat g$ and an arbitrary
+$\zeta$ which is of class $C^\infty$ on $\R^n$, has compact support, and
+satisfies $\mathrm{tsupport}\,\zeta\subseteq\Omega'$ --- these are the three
+conditions that node binds on its cut-off, and $\mathrm{tsupport}$, the
+\emph{closure} of the support, is the one it asks about, so it is the one used
+here and below.  Its hypotheses are $\varepsilon>0$,
+$\gamma_0>0$, $\gamma_1\le\bar r\gamma_0$, $t>0$, openness of $\Omega'$, the
+structure conditions (\noderef{EllipticStructureQ12}), the cited regularity
+result (C1) (\noderef{CitedRegularityEpsPos}) at these very data, which is the
+instance A1 already formed, the weak-solution property
+(\noderef{IsWeakSolutionOn}), the membership
+$g'^k\in W^{1,2}_{\mathrm{loc}}(\Omega')$ with weak gradient $D\hat g^k$ for
+every $k$ (\noderef{MemW1pLocOn}), established in the next paragraph, and the
+three cut-off conditions
+just listed, namely $\mathrm{ContDiff}\;\R\;\infty\;\zeta$,
+$\mathrm{HasCompactSupport}\;\zeta$ and
+$\mathrm{tsupport}\,\zeta\subseteq\Omega'$.
+
+\emph{The one transfer back to the given field.}  That node carries its
+gradient-regularity hypothesis on the \emph{same} field as its weak-solution
+hypothesis, namely on $g'$, whereas A1(2)(iii) supplies it for $\hat g$.  The
+two are reconciled once, and the fact needed is that
+$\mathrm{MemW1pLocOn}$ is unchanged when the function is modified on a null set,
+the weak gradient being kept.  By \noderef{MemW1pLocOn} that assertion is two
+things, and each is an integral one.  First the identity of
+\noderef{HasWeakGradientOn}: for every test function $\psi$ of that node's class
+and every index $i$,
+$\int_{\Omega'}\hat g^k\,D_i\psi\,dx=-\int_{\Omega'}(D\hat g^k)_i\,\psi\,dx$,
+and $g'^k=\hat g^k$ almost everywhere on $\Omega'$ by A1(2)(ii), so the two
+left-hand integrands agree almost everywhere and the integrals are equal,
+giving $\int_{\Omega'}g'^k\,D_i\psi\,dx=-\int_{\Omega'}(D\hat g^k)_i\,\psi\,dx$.
+Second the $L^2$ clauses: for compact $K\subseteq\Omega'$ we have
+$g'^k=\hat g^k$ almost everywhere on $K$ and $D\hat g^k$ is not changed at all,
+so $g'^k\in L^2(K)$ and $D\hat g^k\in L^2(K)$ follow from the same statements
+for $\hat g^k$.  Hence
+\[
+g'^k\in W^{1,2}_{\mathrm{loc}}(\Omega')\ \text{ with weak gradient }\ D\hat g^k
+\qquad(k=1,\dots,n),
+\tag{A4a}
+\]
+which is the hypothesis just invoked.  (No further node is needed for it: the
+two clauses of \noderef{MemW1pLocOn} are the only facts used, and both are
+integral assertions.)
+
+Its conclusion is
+\[
+\int_{\Omega'}\Bigl(\frac{p+t}4\Bigr)^2w_\flat^{\frac{p+t}2-2}
+\Bigl(\sum_{i=1}^n(\nabla w_\flat)_i^2\Bigr)\zeta^2\,dx
+\ \le\ c\int_{\Omega'}w_\flat^{\frac{p+t}2}\,|\nabla\zeta|^2\,dx ,
+\]
+where $w_\flat=\varepsilon+|g'|^2$ and
+$(\nabla w_\flat)_i=2\sum_kg'^k(D\hat g^k)^i$ are the weight and the field that
+node forms from the data it was given, i.e.\ from $g'$ and $D\hat g$.
+
+\emph{The weights agree almost everywhere, so the display may be rewritten in
+$w$.}  By A1(2)(ii), $g'=\hat g$ almost everywhere on $\Omega'$, and
+$w_\flat$, $\nabla w_\flat$ are obtained from $g'$ by the same two formulas that
+produce $w$, $\nabla w$ from $\hat g$ --- the second with the \emph{same} family
+$D\hat g$ in both cases --- so
+\[
+w_\flat=w\quad\text{and}\quad \nabla w_\flat=\nabla w
+\qquad\text{almost everywhere on }\Omega' ,
+\tag{A4b}
+\]
+and hence so does every real power of the weight.  Both sides of the display are
+integrals, so altering their integrands on a null set changes neither, and the
+display holds verbatim with $w$ and $\nabla w$ in place of $w_\flat$ and
+$\nabla w_\flat$.  Now by A3
+\[
+|G_\theta|^2=\Bigl(\frac{p+t}4\Bigr)^2\bigl(w^{\frac{p+t}4-1}\bigr)^2|\nabla w|^2
+=\Bigl(\frac{p+t}4\Bigr)^2w^{\frac{p+t}2-2}\sum_{i=1}^n(\nabla w)_i^2
+\]
+on $\Omega'$, using $(w^a)^2=w^{2a}$ for $w>0$ and
+$2\bigl(\frac{p+t}4-1\bigr)=\frac{p+t}2-2$; and
+$(v^\theta)^2=w^{p\theta/2}=w^{\frac{p+t}2}$ by A2.  So the display reads
+\[
+\int_{\Omega'}|G_\theta|^2\zeta^2\,dx
+\ \le\ c\int_{\Omega'}(v^\theta)^2|\nabla\zeta|^2\,dx
+\]
+for every such $\zeta$.
+If moreover $\mathrm{tsupport}\,\zeta\subseteq B_\rho(y)$, then both integrands
+vanish at every point outside $\mathrm{tsupport}\,\zeta$: there $\zeta=0$,
+because $\mathrm{supp}\,\zeta\subseteq\mathrm{tsupport}\,\zeta$, so $\zeta^2=0$;
+and the complement of $\mathrm{tsupport}\,\zeta$ is open with $\zeta$
+identically $0$ on it, so $\nabla\zeta=0$ there as well.  Hence each integrand
+has the same product with the indicator of $\Omega'$ as with the indicator of
+$B_\rho(y)$, the two indicators agreeing on $\mathrm{tsupport}\,\zeta$, and the
+two integrals may be taken over $B_\rho(y)$:
+\[
+\int_{B_\rho(y)}|G_\theta|^2\zeta^2\,dx
+\ \le\ c\int_{B_\rho(y)}(v^\theta)^2|\nabla\zeta|^2\,dx
+\tag{A4}
+\]
+for every $\zeta$ of class $C^\infty$ with compact support and
+$\mathrm{tsupport}\,\zeta\subseteq B_\rho(y)$ --- which is exactly the cut-off
+class the Caccioppoli hypothesis of \noderef{MoserLocalBoundedness} quantifies
+over, at the ball $B_\rho(y)$.  The constant
+$c$ does not depend on $t$, hence not on $\theta$: it was chosen in Step 0,
+before $t$ was introduced, and this uniformity is exactly what
+\noderef{MoserLocalBoundedness} requires of its $Q$.  A $\theta$-dependent
+constant would not do, and would also not leave $C$ on the dependency list the
+statement prescribes.
+
+\emph{A5: truncation, and the three remaining hypotheses of Moser's lemma.}  Put
+$\tilde v=\mathbf1_{B_\rho(y)}v$, the function equal to $v$ on $B_\rho(y)$ and to
+$0$ elsewhere.  Then:
+\begin{enumerate}
+\item $\tilde v\ge0$ everywhere, since $v=w^{p/4}\ge0$ as a real power of a
+  nonnegative number.
+\item $\tilde v$ is measurable.  For $a<0$ the superlevel set
+  $\{\tilde v>a\}$ is all of $\R^n$; for $a\ge0$ it is
+  $\{x\in B_\rho(y):v(x)>a\}$, which is open because $v$ is continuous on the
+  open set $B_\rho(y)\subseteq\Omega'$ by A2 --- legitimately, $v$ having been
+  built from the continuous $\hat g$ and not from $g'$.  All superlevel sets being
+  measurable, $\tilde v$ is measurable (Preamble).
+\item $\tilde v^2$ is integrable on $B_\rho(y)$.  Indeed
+  $\tilde v^2=w^{p/2}$ there, $\overline B_\rho(y)$ is a compact subset of
+  $\Omega'$ and $w$ is continuous on $\Omega'$, so $w^{p/2}$ is continuous on
+  $\overline B_\rho(y)$ and therefore bounded there, while
+  $|B_\rho(y)|<\infty$; the Preamble item on domination gives integrability.
+\end{enumerate}
+Moreover $\tilde v^\theta=v^\theta$ on $B_\rho(y)$ for every $\theta>0$.  The two
+hypotheses of \noderef{MoserLocalBoundedness} that mention the powers of the
+function are statements about $B_\rho(y)$ only: the defining identity of
+\noderef{HasWeakGradientOn} on $B_\rho(y)$ and the local $L^2$ clauses of
+\noderef{MemW1pLocOn} on $B_\rho(y)$ integrate over $B_\rho(y)$ and over its
+compact subsets, and (A4) integrates over $B_\rho(y)$.  Since $\tilde v^\theta$
+and $v^\theta$ agree there, (A3) and (A4) hold verbatim with $\tilde v$ in place
+of $v$.
+
+\emph{A6: Moser's lemma.}  Apply \noderef{MoserLocalBoundedness} with $n$,
+$Q=c$, the hypothesis \noderef{CitedSobolevPoincareBall} of the present theorem,
+and then with the centre $y$, the radius $\rho$, the function $\tilde v$ and the
+family of fields $\theta\mapsto G_{p(\theta-1)}$ for $\theta>1$ (and, say, $0$
+for $\theta\le1$; the hypotheses only ever evaluate it at $\theta>1$).  Its
+hypotheses are: $2\le n$ and $0<c$ (Step 0); (C6), which the present theorem
+assumes; $0<\rho$; measurability and nonnegativity of $\tilde v$ and
+integrability of $\tilde v^2$ on $B_\rho(y)$, which are A5(1)--(3); the
+membership $\tilde v^\theta\in W^{1,2}_{\mathrm{loc}}(B_\rho(y))$ with weak
+gradient $G_{p(\theta-1)}$ for every $\theta>1$, which is (A3) together with
+A5, since $t=p(\theta-1)>0$ and then $\theta=1+t/p$; and the Caccioppoli
+inequality for every $\theta>1$ and every cut-off, with the single constant $c$,
+which is (A4) together with A5.  The conclusion is: for almost every
+$x\in B_{\rho/2}(y)$,
+\[
+\tilde v(x)\ \le\ C_0\Bigl(\rho^{-n}\int_{B_\rho(y)}\tilde v^2\,dx\Bigr)^{\frac12}.
+\]
+
+\emph{A7: squaring, and the passage back to the given field.}  Let
+$x\in B_{\rho/2}(y)$ be a point where the last display holds \emph{and} at which
+$g'(x)=\hat g(x)$; almost every point of $B_{\rho/2}(y)$ is such a point, being
+in the intersection of two sets of full measure in $B_\rho(y)$ --- the first
+from A6's conclusion, the second from A1(2)(ii).  There
+$\tilde v(x)=v(x)=w(x)^{p/4}$, since $B_{\rho/2}(y)\subseteq B_\rho(y)$, and
+$w(x)=\varepsilon+|\hat g(x)|^2=\varepsilon+|g'(x)|^2$ by the choice of $x$.
+Both sides of the display are nonnegative, so squaring preserves the inequality,
+and $\bigl(w(x)^{p/4}\bigr)^2=w(x)^{p/2}$ while
+$\int_{B_\rho(y)}\tilde v^2=\int_{B_\rho(y)}w^{p/2}$ by A5(3); and
+$\int_{B_\rho(y)}w^{p/2}=\int_{B_\rho(y)}(\varepsilon+|g'|^2)^{p/2}$, the two
+integrands agreeing almost everywhere by (A4b).  \emph{This is the single point
+at which the argument returns to $g'$, and it is legitimate because the
+conclusion (A) is itself an almost-everywhere statement and its right-hand side
+is an integral.}  Hence for almost
+every $x\in B_{\rho/2}(y)$
+\[
+\bigl(\varepsilon+|g'(x)|^2\bigr)^{\frac p2}=w(x)^{\frac p2}
+\ \le\ \frac{C_0^2}{\rho^n}\int_{B_\rho(y)}w^{\frac p2}\,dx
+=\frac{C_1}{\rho^n}\int_{B_\rho(y)}\bigl(\varepsilon+|g'|^2\bigr)^{\frac p2}dx ,
+\]
+which is (A).  This proves Claim A.
+
+\emph{Step 2: the theorem when $\varepsilon>0$.}  Apply Claim A with
+$\Omega'=\Omega$, $A'=A$, $u'=u$, $g'=g$, $y=x_0$ and $\rho=R$.  Its hypotheses
+hold: $\varepsilon>0$; $\gamma_0>0$; $\gamma_1\le r\gamma_0\le\bar r\gamma_0$,
+because $r\le\bar r$ and $\gamma_0>0$; $\gamma_1>0$ by Step 1; $\Omega$ open;
+the structure conditions and the weak-solution property, which are hypotheses of
+the theorem; $R>0$; and $\overline B_R\subseteq\Omega$, which is the containment
+hypothesis.  So for almost every $x\in B_{R/2}$
+\[
+\bigl(\varepsilon+|g(x)|^2\bigr)^{\frac p2}
+\le\frac{C_1}{R^n}\int_{B_R}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\le\frac{C}{R^n}\int_{B_R}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx ,
+\]
+the last step because $C_1\le C$ and the integral is nonnegative, its integrand
+being a real power of a nonnegative number.  This is the assertion.
+
+\emph{Step 3: the theorem when $\varepsilon=0$.}  Assume now $\varepsilon=0$.
+
+\emph{B1: the structure conditions hold on all of $\R^n$.}  The field of the
+present theorem is $(x,z,h)\mapsto A(h)$, independent of $x$ and $z$.
+Two of the six clauses of \noderef{EllipticStructureQ12} make no reference to
+the domain at all --- Carath\'eodory measurability in the point asserts that for
+every $z$ and $h$ the map $x\mapsto A(x,z,h)$ is Borel measurable on $\R^n$, and
+Carath\'eodory joint continuity asserts that for every $x\in\R^n$ the map
+$(z,h)\mapsto A(x,z,h)$ is continuous --- so each is literally the same
+assertion whichever domain the predicate is read with, and both carry over
+verbatim rather than by any argument about points.  The remaining four are the ones that have to be moved, and read
+for this field, those four clauses of \noderef{EllipticStructureQ12} on $\Omega$ say:
+$A$ is continuous on $\R^n$ and of class $C^1$ on
+$D(0)=\{h:|h|^2\ne0\}$, for every $x\in\Omega$ and every $z$; and
+(Q1) of the thesis--(Q2) of the thesis hold, for almost every $x\in\Omega$, for every $z$,
+every $h\in D(0)$ and every $\xi$.  None of the four assertions mentions $x$ or
+$z$ once the field is written out.  The set $\Omega$ contains $\overline B_R$
+with $R>0$, so it is nonempty and of positive measure (Preamble: the volume of
+a ball); the two almost-everywhere clauses each fail only on a null set, the
+union of those two null sets is null, and a null set cannot contain the
+positive-measure $\Omega$, so there is a point $x\in\Omega$ at which both hold;
+and the first two clauses hold at every point of $\Omega$, being asserted
+there.  Therefore all four of those assertions hold
+outright, and with the two domain-free clauses they are all six, and in particular they hold for every $x\in\R^n$ and almost every
+$x\in\R^n$ respectively, i.e.
+\[
+\text{$A$ satisfies (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with parameters
+$p,0,\gamma_0,\gamma_1$ (\noderef{EllipticStructureQ12}).}
+\tag{B1}
+\]
+
+\emph{B2: $u$ is a weak solution in the ball $B_R$.}  By
+\noderef{IsWeakSolutionOn} this has three parts: the membership clause, and,
+for each admissible test pair at the ball, the integrability of the integrand on
+the ball together with the vanishing of its integral.  First,
+$u\in W^{1,p}_{\mathrm{loc}}(B_R)$ with weak gradient $g$: this is clause (2) of
+\noderef{WeakGradientRestrict} applied with $q=p$, the sets
+$\Omega\supseteq B_R$ --- open, with $B_R\subseteq\overline B_R\subseteq\Omega$
+--- and the pair $(u,g)$, whose hypothesis
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$ is the first clause
+of \noderef{IsWeakSolutionOn} on $\Omega$.  Second, the integral identity for
+the test class of $B_R$: let $\varphi\in W^{1,p}(B_R)$ with weak gradient
+$g_\varphi$ (\noderef{MemW1pOn}) have compact support with
+$\mathrm{tsupport}\,\varphi\subseteq B_R$, these being the three conditions the
+test clause of \noderef{IsWeakSolutionOn} binds at the ball.  Apply
+\noderef{WeakGradientZeroExtend} with $q=p$, the open set $\Omega$, the ball
+$B_R\subseteq\Omega$ and the pair $(\varphi,g_\varphi)$: it gives
+$\varphi\in W^{1,p}(\Omega)$ with weak gradient
+$G_\varphi=\mathbf1_{B_R}g_\varphi$ --- its own hypotheses being $1\le n$,
+$1\le p$, the openness of $\Omega$, the inclusion $B_R\subseteq\Omega$, the
+membership just assumed, the compactness of $\mathrm{supp}\,\varphi$ and
+$\mathrm{tsupport}\,\varphi\subseteq B_R$ --- and $\varphi$ has compact support
+with $\mathrm{tsupport}\,\varphi\subseteq B_R\subseteq\Omega$, which is the
+inclusion the test clause on $\Omega$ requires.  So
+$(\varphi,G_\varphi)$ belongs to the test class of \noderef{IsWeakSolutionOn} on
+$\Omega$, and the identity there reads
+\[
+\int_\Omega\Bigl[\sum_{i=1}^nA^i\bigl(g(x)\bigr)G_\varphi^i(x)+0\cdot\varphi(x)\Bigr]dx=0 .
+\]
+The integrand vanishes at every point outside $B_R$: there $G_\varphi=0$,
+being the zero extension of $g_\varphi$, and $\varphi=0$, because
+$\mathrm{supp}\,\varphi\subseteq\mathrm{tsupport}\,\varphi\subseteq B_R$.  So the
+integral over $\Omega$ equals the integral over $B_R$, where
+$G_\varphi=g_\varphi$.  Hence
+$\int_{B_R}\bigl[\sum_iA^i(g)g_\varphi^i+0\cdot\varphi\bigr]dx=0$.
+
+Third, the integrability clause at the ball.  The test clause of
+\noderef{IsWeakSolutionOn} on $\Omega$, applied to the pair
+$(\varphi,G_\varphi)$ --- admissible there by the previous paragraph --- asserts
+not only the vanishing of the integral but also that the $\Omega$-integrand
+$x\mapsto\sum_iA^i(g(x))G_\varphi^i(x)+0\cdot\varphi(x)$ is integrable on
+$\Omega$.  The ball $B_R$ is a measurable subset of $\Omega$, and the
+restriction of an integrable function to a measurable subset is integrable, so
+that integrand is integrable on $B_R$; and on $B_R$ it coincides with the
+$B_R$-integrand $x\mapsto\sum_iA^i(g(x))g_\varphi^i(x)+0\cdot\varphi(x)$,
+because $G_\varphi=\mathbf1_{B_R}g_\varphi$ equals $g_\varphi$ there.  Hence the
+$B_R$-integrand is integrable on $B_R$, which is the clause required.
+
+As the test pair was arbitrary, $u$ is a weak solution of
+$\operatorname{div}A(\nabla u)=0$ in $B_R$ (\noderef{IsWeakSolutionOn}).
+
+\emph{B3: the approximating sequence.}  Apply
+\noderef{DegenerateLimitTransfer} with $n,p,r$ --- the same instance as in
+Step 0, so the number it supplies is the $r'$ of Step 0 --- and then with
+$\gamma_0,\gamma_1$ ($0<\gamma_0$ and $\gamma_1\le r\gamma_0$ are hypotheses of
+the theorem), with the field $A$, for which $A(0)=0$ is a hypothesis of the
+theorem and (B1) is the structure requirement, with the cited solvability result
+(C2) for every field and all parameters with positive structure constants, which
+is a hypothesis of the present theorem in exactly that form, and with
+$x_0,R,u,g$, for which $R>0$ holds, B2 gives the weak-solution requirement, and
+its remaining hypothesis $u\in W^{1,p}(B_R)$ with weak gradient $g$
+(\noderef{MemW1pOn}) is clause (4) of \noderef{WeakGradientRestrict} applied
+with $q=p$, the sets $\Omega$ and $\Omega'=B_R$ and the pair $(u,g)$: its
+hypotheses there are $1\le n$, $1\le p$, openness of $\Omega$ and of $B_R$,
+$B_R\subseteq\Omega$, compactness of $\overline{B_R}$ --- which is the closure of
+$B_R$ because $R>0$ --- together with $\overline{B_R}\subseteq\Omega$, the
+containment hypothesis of the theorem, and
+$u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $g$, the first clause of
+\noderef{IsWeakSolutionOn} on $\Omega$.  It
+supplies a sequence $e_m$, fields $A_{e_m}$ and functions $u_m$ with weak
+gradients $g_m$ such that
+\begin{enumerate}
+\item $e_m>0$ for every $m$ and $e_m\to0$;
+\item for every $m$, $A_{e_m}(0)=0$ and there are $\gamma_0^{(m)}>0$ and
+  $\gamma_1^{(m)}\le r'\gamma_0^{(m)}$ for which $A_{e_m}$ satisfies
+  (Q1) of the thesis--(Q2) of the thesis on $\R^n$ with parameter $e_m$ and those
+  constants (\noderef{EllipticStructureQ12});
+\item $u_m$ is a weak solution of $\operatorname{div}A_{e_m}(\nabla u_m)=0$ in
+  $B_R$ with weak gradient $g_m$ (\noderef{IsWeakSolutionOn});
+\item $\int_{B_R}|g_m-g|^p\,dx\to0$; and
+\item $g_m\to g$ almost everywhere on $B_R$.
+\end{enumerate}
+(The clause of that node about $u_m-u\in W^{1,p}_0(B_R)$ is not used here.)
+
+\emph{B4: the estimate for each $m$ on the smaller balls.}  Fix
+$\rho\in(0,R)$ and $m\in\mathbb{N}$.  Apply Claim A with $\varepsilon:=e_m>0$,
+$\gamma_0:=\gamma_0^{(m)}$, $\gamma_1:=\gamma_1^{(m)}$, $\Omega':=B_R$,
+$A':=A_{e_m}$, $u':=u_m$, $g':=g_m$, $y:=x_0$ and the radius $\rho$.  Its
+hypotheses hold: $e_m>0$ by B3(1); $\gamma_0^{(m)}>0$ by B3(2);
+$\gamma_1^{(m)}\le r'\gamma_0^{(m)}\le\bar r\gamma_0^{(m)}$ since
+$r'\le\bar r$ and $\gamma_0^{(m)}>0$; $\gamma_1^{(m)}>0$, by the argument of
+Step 1 applied to the field $A_{e_m}$ on the nonempty open set $B_R$ --- which is
+legitimate because B3(2) gives (Q1) of the thesis--(Q2) of the thesis for $A_{e_m}$ on
+$\R^n$ and therefore on $B_R$, the six clauses of
+\noderef{EllipticStructureQ12} being inherited by subsets: the first two, the
+Carath\'eodory pair, mention no domain and so are unchanged, and the remaining
+four are each an assertion about all, respectively almost all, points of the
+set, hence weaken when the set shrinks; $B_R$ is open;
+the structure conditions on $B_R$, as just noted; the weak-solution property on
+$B_R$, which is B3(3); $\rho>0$; and
+$\overline B_\rho(x_0)\subseteq B_R$, because $\rho<R$.  So for almost every
+$x\in B_{\rho/2}$
+\[
+\bigl(e_m+|g_m(x)|^2\bigr)^{\frac p2}
+\ \le\ \frac{C_1}{\rho^n}\int_{B_\rho}\bigl(e_m+|g_m|^2\bigr)^{\frac p2}dx .
+\tag{B4}
+\]
+
+\emph{B5: the limit in $m$.}  We bound the right-hand side of (B4) above, up to a
+factor, by the integral of $|g|^p$.  For $a,b\ge0$ one has
+\[
+(a+b)^{\frac p2}\le\kappa\bigl(a^{\frac p2}+b^{\frac p2}\bigr),
+\qquad \kappa=\max\{1,2^{\frac p2-1}\} :
+\]
+for $p\le2$ the exponent $p/2$ lies in $(0,1]$ and $s\mapsto s^{p/2}$ is
+subadditive on $[0,\infty)$, so the inequality holds with $1$; for $p\ge2$ it is
+the convexity of $s\mapsto s^{p/2}$ in the form
+$\bigl(\frac{a+b}2\bigr)^{p/2}\le\frac12\bigl(a^{p/2}+b^{p/2}\bigr)$.  Applying
+this twice, together with $|g_m|^2\le2|g|^2+2|g_m-g|^2$ --- which is
+$|g_m|\le|g|+|g_m-g|$ followed by $(s+u)^2\le2s^2+2u^2$ --- gives pointwise
+on $B_\rho$
+\[
+\bigl(e_m+|g_m|^2\bigr)^{\frac p2}
+\le\kappa\Bigl(e_m^{\frac p2}+\bigl(2|g|^2+2|g_m-g|^2\bigr)^{\frac p2}\Bigr)
+\le\kappa e_m^{\frac p2}+\kappa^2 2^{\frac p2}\bigl(|g|^p+|g_m-g|^p\bigr),
+\]
+where in the last step $\bigl(2(|g|^2+|g_m-g|^2)\bigr)^{p/2}
+=2^{p/2}\bigl(|g|^2+|g_m-g|^2\bigr)^{p/2}
+\le2^{p/2}\kappa\bigl(|g|^p+|g_m-g|^p\bigr)$, using
+$\bigl(|g|^2\bigr)^{p/2}=|g|^p$.  The two displayed inequalities hold at every
+point of $B_R$, not merely on $B_\rho$.  All the functions appearing are
+nonnegative and measurable, and $|g|^p$ and $|g_m-g|^p$ are integrable on $B_R$ --- the former
+because $\overline B_R\subseteq\Omega$ is compact and the first clause of
+\noderef{IsWeakSolutionOn} puts $|g|$ in $L^p$ of the compact subsets of
+$\Omega$ (\noderef{MemW1pLocOn}), whence $|g|\in L^p(B_R)$ because
+$|g|^p\mathbf 1_{B_R}\le|g|^p\mathbf 1_{\overline B_R}$ pointwise with the
+right-hand side integrable, so clause (a) of the Preamble's domination
+proposition applies; the latter from the clause of
+\noderef{DegenerateLimitTransfer} about $u_m-u\in W^{1,p}_0(B_R)$, which B3 set
+aside and which is needed here.  By \noderef{MemW1pZeroOn} that clause contains,
+as its first conjunct, $u_m-u\in W^{1,p}(B_R)$ with weak gradient $g_m-g$
+(\noderef{MemW1pOn}), and the $L^p$ clause of \noderef{MemW1pOn} is exactly
+$|g_m-g|\in L^p(B_R)$, i.e.\ $|g_m-g|^p$ integrable on $B_R$.  \emph{B3(4) will
+not serve in its place: it says only that $\int_{B_R}|g_m-g|^p\,dx\to0$, and the
+integral of a non-integrable function is $0$, so a vanishing or finite integral
+does not by itself give integrability --- which is the very reason
+\noderef{IsWeakSolutionOn} carries an explicit integrability clause.}  Now for a nonnegative
+measurable $h$ and measurable $E\subseteq F$ one has $h\mathbf 1_E\le h\mathbf
+1_F$ pointwise, so $\int_Eh\,dx\le\int_Fh\,dx$ whenever $h$ is integrable on $F$
+(this is monotonicity of the integral in the integrand on the fixed set $F$;
+Mathlib: \texttt{MeasureTheory.setIntegral\_mono\_set}).  Write
+$W=\kappa e_m^{p/2}+\kappa^22^{p/2}\bigl(|g|^p+|g_m-g|^p\bigr)$ for the
+right-hand side of the pointwise bound; $W$ is integrable on $B_R$, being a
+constant --- integrable because $|B_R|<\infty$ (Preamble: the volume of a
+ball) --- plus the two terms just shown
+integrable, so by clause (a) again $\bigl(e_m+|g_m|^2\bigr)^{p/2}$ is integrable
+on $B_R$ as well.  Taking $h=\bigl(e_m+|g_m|^2\bigr)^{p/2}$, $E=B_\rho$ and
+$F=B_R$ in the previous sentence, and then bounding $\int_{B_R}h\,dx$ by
+$\int_{B_R}W\,dx$ by monotonicity of the integral in the integrand on the fixed
+set $B_R$ --- both functions being integrable there and the inequality holding
+pointwise (Mathlib: \texttt{MeasureTheory.setIntegral\_mono\_on}) --- gives
+\[
+\int_{B_\rho}\bigl(e_m+|g_m|^2\bigr)^{\frac p2}dx
+\ \le\ \kappa\,e_m^{\frac p2}\,|B_R|
++\kappa^2 2^{\frac p2}\Bigl(\int_{B_R}|g|^p\,dx+\int_{B_R}|g_m-g|^p\,dx\Bigr).
+\]
+As $m\to\infty$ the first term tends to $0$: $e_m\to0$ by B3(1), and the real
+power $s\mapsto s^{p/2}$ is continuous on $[0,\infty)$ with $0^{p/2}=0$, the
+exponent $p/2$ being positive and nonzero (the conventions for real powers are
+those recorded in the Preamble).  The last term tends to $0$ by B3(4).  Hence
+\[
+\limsup_{m\to\infty}\int_{B_\rho}\bigl(e_m+|g_m|^2\bigr)^{\frac p2}dx
+\ \le\ \kappa^2 2^{\frac p2}\int_{B_R}|g|^p\,dx .
+\tag{B5}
+\]
+On the left-hand side of (B4), let $x\in B_{\rho/2}$ be a point at which
+$g_m(x)\to g(x)$; by B3(5) almost every point of $B_R$, hence almost every point
+of $B_{\rho/2}$, is such a point.  Then
+$e_m+|g_m(x)|^2\to0+|g(x)|^2$, and since the real power $s\mapsto s^{p/2}$ is continuous on
+$[0,\infty)$ --- again because $p/2>0$, which is what makes it continuous at $0$
+as well, with $0^{p/2}=0$ --- we get
+\[
+\bigl(e_m+|g_m(x)|^2\bigr)^{\frac p2}\longrightarrow
+\bigl(0+|g(x)|^2\bigr)^{\frac p2}=|g(x)|^p .
+\]
+Now fix $\rho\in(0,R)$ and collect the exceptional sets.  (B4) was obtained
+from Claim A \emph{one $m$ at a time}, so for each $m$ it holds at every
+$x\in B_{\rho/2}$ outside a null set $Z_m$; and the convergence
+$g_m(x)\to g(x)$ holds outside one further null set $Z_\infty$, by B3(5).  Put
+$Z=Z_\infty\cup\bigcup_{m\in\mathbb{N}}Z_m$, a null set, being a countable union of null
+sets (Preamble: the measurable sets are closed under countable unions, and a
+countable union of null sets is null by countable subadditivity of the measure).
+For every $x\in B_{\rho/2}\setminus Z$ both (B4) holds for every $m$ and the
+left-hand side converges to $|g(x)|^p$; and almost every point of $B_{\rho/2}$
+is such a point.  Passing to the limit in (B4) along such an $x$ and
+using (B5),
+\[
+\bigl(0+|g(x)|^2\bigr)^{\frac p2}\ \le\ \frac{C_1}{\rho^n}\,\kappa^2 2^{\frac p2}
+\int_{B_R}|g|^p\,dx
+=\frac{C}{\rho^n}\int_{B_R}\bigl(0+|g|^2\bigr)^{\frac p2}dx
+\tag{B6}
+\]
+for almost every $x\in B_{\rho/2}$, where $C=C_1\kappa^22^{p/2}$ is the constant
+of Step 0.
+
+\emph{B6: the limit in $\rho$.}  Choose a sequence $\rho_j\uparrow R$ with
+$0<\rho_j<R$, for instance $\rho_j=R(1-2^{-j-1})$.  For each $j$, (B6) holds for
+every $x\in B_{\rho_j/2}$ outside a null set $N_j$; put $N=\bigcup_jN_j$, again a
+null set.  Let $x\in B_{R/2}\setminus N$.  Since $|x-x_0|<R/2$ and
+$\rho_j\uparrow R$, we have $|x-x_0|<\rho_j/2$ for all large $j$, so (B6) holds
+at $x$ with $\rho=\rho_j$ for all large $j$:
+\[
+\bigl(0+|g(x)|^2\bigr)^{\frac p2}
+\le\frac{C}{\rho_j^n}\int_{B_R}\bigl(0+|g|^2\bigr)^{\frac p2}dx .
+\]
+Letting $j\to\infty$ and using $\rho_j\to R$ together with the continuity of
+$\rho\mapsto\rho^{-n}$ at $R>0$, the right-hand side converges to
+$\frac C{R^n}\int_{B_R}(0+|g|^2)^{p/2}dx$, and therefore
+\[
+\bigl(\varepsilon+|g(x)|^2\bigr)^{\frac p2}
+\le\frac{C}{R^n}\int_{B_R}\bigl(\varepsilon+|g|^2\bigr)^{\frac p2}dx
+\qquad\text{for almost every }x\in B_{R/2},
+\]
+since $\varepsilon=0$.  Together with Step 2 this proves the theorem in both
+cases, with the single constant $C$ of Step 0.
+
+\emph{Remark: the thesis' homogeneity argument, and why it is not needed here.}
+The thesis proves the case $R=1$ and removes the restriction by the rescaling of
+pp.~17--18: for $t>0$ put $B_t(h)=A(h/t)$ and $u_t(x)=u(tx)$.  Those identities
+are correct, and the three the thesis asserts ``it is easy to check'' are these.
+Differentiating, $D_hB_t(h)=\frac1tD_hA(h/t)$, so for $\xi\in\R^n$
+\[
+\bigl(D_hB_t(h)\xi,\xi\bigr)=\frac1t\bigl(D_hA(h/t)\xi,\xi\bigr)
+\ \ge\ \frac{\gamma_0}t\Bigl(\varepsilon+\frac{|h|^2}{t^2}\Bigr)^{\frac p2-1}|\xi|^2
+=\frac{\gamma_0}{t^{p-1}}\bigl(t^2\varepsilon+|h|^2\bigr)^{\frac p2-1}|\xi|^2 ,
+\]
+because
+$\bigl(\varepsilon+|h|^2/t^2\bigr)^{p/2-1}
+=\bigl(t^{-2}(t^2\varepsilon+|h|^2)\bigr)^{p/2-1}
+=t^{2-p}\bigl(t^2\varepsilon+|h|^2\bigr)^{p/2-1}$ and
+$t^{-1}t^{2-p}=t^{1-p}$; and the same computation applied to (Q2) of the thesis gives
+$|D_{h_j}B_t^i(h)|\le\gamma_1t^{1-p}\bigl(t^2\varepsilon+|h|^2\bigr)^{p/2-1}$.
+So $B_t$ satisfies (Q1) of the thesis--(Q2) of the thesis with
+$\varepsilon^t=t^2\varepsilon$, $\gamma_0^t=\gamma_0/t^{p-1}$ and
+$\gamma_1^t=\gamma_1/t^{p-1}$, and the ratio
+$\gamma_1^t/\gamma_0^t=\gamma_1/\gamma_0$ is unchanged --- which is also where
+\S3's convention that $\varepsilon$ may be arbitrarily large is consumed, since
+$t^2\varepsilon$ exceeds $1$ for large $t$.  The proof above does not use any of
+this: \noderef{CaccioppoliPowerWeight} already holds on an arbitrary open set
+with a constant depending on neither the set nor a radius, and
+\noderef{MoserLocalBoundedness} is stated at an arbitrary radius in
+scale-invariant form, so the reverse-H\"older family is available on $B_R$
+directly and the iteration runs there.
+\end{proof}

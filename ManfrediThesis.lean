@@ -1,0 +1,19 @@
+-- Root module: the paper's main results.
+import ManfrediThesis.DeGiorgiSequenceLemma
+import ManfrediThesis.DeGiorgiLevelSetMeasure
+import ManfrediThesis.LevelTruncationMaximumPrinciple
+import ManfrediThesis.LevelSetMeasureImprovement
+import ManfrediThesis.OscillationDecayLemma
+import ManfrediThesis.DirichletProblemRestricted
+import ManfrediThesis.GradientSupEstimate
+import ManfrediThesis.GradientOscillationEstimate
+import ManfrediThesis.DegenerateAlternative
+import ManfrediThesis.ComparisonGradientEstimateMin
+import ManfrediThesis.MorreyGradientToCampanato
+import ManfrediThesis.CampanatoIterationLemma
+import ManfrediThesis.MinimumMorreyRegularity
+import ManfrediThesis.MinimumGradientHolder
+import ManfrediThesis.ComparisonGradientEstimateGeneral
+import ManfrediThesis.SolutionMorreyRegularity
+import ManfrediThesis.SolutionGradientHolder
+import ManfrediThesis.QuasiregularRegularity

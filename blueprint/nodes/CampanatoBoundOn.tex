@@ -1,0 +1,17 @@
+\begin{definition}
+Let $q\ge1$, $\lambda\ge0$, let $\Omega\subseteq\R^n$, let $u\colon\R^n\to\R$
+and let $N\ge0$.  Write $\Omega(x_0,\rho)=\Omega\cap B_\rho(x_0)$ and
+\[
+u_{x_0,\rho}=\frac{1}{|\Omega(x_0,\rho)|}\int_{\Omega(x_0,\rho)}u(x)\,dx .
+\]
+We say that $u$ \emph{lies in the Campanato space $\mathcal L^{q,\lambda}(\Omega)$
+with norm at most $N$}, written
+$\mathrm{CampanatoBoundOn}(n,q,\lambda,\Omega,u,N)$, if $u\in L^q(\Omega)$ and
+\[
+\int_{\Omega(x_0,\rho)}|u(x)-u_{x_0,\rho}|^q\,dx\;\le\;N^q\rho^{\lambda}
+\qquad\text{for all }x_0\in\Omega\text{ and }0<\rho<\operatorname{diam}\Omega .
+\]
+This is the definition of \S4, and
+$\mathrm{CampanatoBoundOn}(\dots,N)$ says exactly
+$\|u\|_{\mathcal L^{q,\lambda}(\Omega)}\le N$.
+\end{definition}
