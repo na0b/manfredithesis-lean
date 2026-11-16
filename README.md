@@ -5,6 +5,13 @@ This repository contains a Lean 4 formalization of the numbered lemmas and theor
 > Juan J. Manfredi,
 > *Regularity of the gradient for a class of nonlinear possibly degenerate elliptic equations*,
 > Ph.D. thesis, Washington University in St. Louis, 1986. Advisor: Albert Baernstein II.
+> ProQuest LLC, Ann Arbor, MI ([ProQuest](http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&res_dat=xri:pqdiss&rft_dat=xri:pqdiss:8713052), [MR2635642](https://mathscinet.ams.org/mathscinet-getitem?mr=2635642)).
+
+The results of the thesis were published in
+
+> Juan J. Manfredi,
+> *Regularity for minima of functionals with p-growth*,
+> Journal of Differential Equations **76** (1988), no. 2, 203–212. [doi:10.1016/0022-0396(88)90070-8](https://doi.org/10.1016/0022-0396(88)90070-8)
 
 The thesis studies weak solutions of div A(x, u, ∇u) = B(x, u, ∇u) and local minima of variational integrals ∫ f(x, u, ∇u), with growth of order p > 1 that may degenerate (ε = 0) or be singular (p < 2). It proves:
 
@@ -167,7 +174,7 @@ Juan J. Manfredi chose the targets, decided which cited results are carried as h
 
 ## Citation
 
-Please cite the thesis; see [`CITATION.cff`](CITATION.cff).
+Please cite the thesis or the article; see [`CITATION.cff`](CITATION.cff).
 
 ## License
 

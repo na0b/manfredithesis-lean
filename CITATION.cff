@@ -16,4 +16,20 @@ preferred-citation:
   institution:
     name: "Washington University in St. Louis"
   thesis-type: "Ph.D. thesis"
+  publisher:
+    name: "ProQuest LLC, Ann Arbor, MI"
   year: 1986
+  url: "http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:dissertation&res_dat=xri:pqdiss&rft_dat=xri:pqdiss:8713052"
+references:
+  - type: article
+    title: "Regularity for minima of functionals with p-growth"
+    authors:
+      - family-names: Manfredi
+        given-names: Juan J.
+    journal: "Journal of Differential Equations"
+    volume: 76
+    issue: 2
+    start: 203
+    end: 212
+    year: 1988
+    doi: "10.1016/0022-0396(88)90070-8"
